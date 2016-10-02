@@ -1,5 +1,5 @@
 {
-  "name": "nlp-react-portfolio",
+  "name": "Bootcampspot2.0",
   "version": "1.0.0",
   "description": "",
   "main": "index.jsx",
@@ -9,7 +9,7 @@
     "build": "webpack --config webpack.config.js",
     "build:watch": "webpack --watch --config webpack.config.js"
   },
-  "author": "Nathaniel LaPier",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",

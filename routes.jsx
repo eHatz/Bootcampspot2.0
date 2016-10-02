@@ -9,13 +9,13 @@ import { Route } from 'react-router';
 import Application from './Components/Application';
 
 //Sample child component
-import Login from './Components/Login';
+import Login from './Components/Login/Login.jsx';
 
 //Another sample child component
-import Attendance from './Components/Attendance';
+import Attendance from './Components//Attendance/Attendance.jsx';
 
 //Title Component
-import Titlebar from "./Titlebar"
+import Titlebar from "./Components/Titlebar/Titlebar.jsx"
 
 
 export default (

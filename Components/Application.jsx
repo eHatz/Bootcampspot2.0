@@ -1,12 +1,6 @@
 import React, { Component, cloneElement } from 'react';
 import {Grid, Row, Col} from "react-bootstrap";
-import Radium from "radium";
-import Navbar from "./Navbar";
- 
-/*
-//Component for each individual app
-import PortfolioApp from './Components/PortfolioApp';
-*/
+import styles from "./Application.css";
 
 
 class Application extends Component {
@@ -18,11 +12,9 @@ class Application extends Component {
 
 			<div>
 
-				<Navbar style={styles.nav}/>
-
 				<Grid>
 
-					<div className="Application show-grid" style={styles.main}>
+					<div id="Application" className={styles.Application_main}>
 
 						{
 							cloneElement(this.props.children)
@@ -36,4 +28,10 @@ class Application extends Component {
 	}
 }
 
-export default Radium(Application);
+export default Application;
+
+
+
+
+
+
