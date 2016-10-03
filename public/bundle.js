@@ -44212,11 +44212,11 @@
 
 
 	// module
-	exports.push([module.id, ".Application__Application_main___kDJ6Y: {\n\t\tmax-width: 900px;\n\t\talign-items: center;\n\t\tmargin: 0 auto;\n\t\tposition: relative\n\t}", ""]);
+	exports.push([module.id, ".Application__Application_main___33GIR: {\r\n\t\tmax-width: 900px;\r\n\t\talign-items: center;\r\n\t\tmargin: 0 auto;\r\n\t\tposition: relative\r\n\t}", ""]);
 
 	// exports
 	exports.locals = {
-		"Application_main": "Application__Application_main___kDJ6Y"
+		"Application_main": "Application__Application_main___33GIR"
 	};
 
 /***/ },
@@ -44534,7 +44534,7 @@
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+					value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -44562,41 +44562,41 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Login = function (_Component) {
-		_inherits(Login, _Component);
+					_inherits(Login, _Component);
 
-		function Login() {
-			_classCallCheck(this, Login);
+					function Login() {
+									_classCallCheck(this, Login);
 
-			return _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).apply(this, arguments));
-		}
+									return _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).apply(this, arguments));
+					}
 
-		_createClass(Login, [{
-			key: "render",
-			value: function render() {
+					_createClass(Login, [{
+									key: "render",
+									value: function render() {
 
-				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(_Titlebar2.default, { title: "Login page" }),
-					_react2.default.createElement(
-						_reactBootstrap.Row,
-						{ className: "show-grid" },
-						_react2.default.createElement(
-							"p",
-							null,
-							"Epic login paragraph"
-						),
-						_react2.default.createElement(
-							"a",
-							{ href: "#/Attendance" },
-							"Go to Attendance page"
-						)
-					)
-				);
-			}
-		}]);
+													return _react2.default.createElement(
+																	"div",
+																	null,
+																	_react2.default.createElement(_Titlebar2.default, { title: "Login page" }),
+																	_react2.default.createElement(
+																					_reactBootstrap.Row,
+																					{ className: "show-grid" },
+																					_react2.default.createElement(
+																									"p",
+																									null,
+																									"Epic login paragraph"
+																					),
+																					_react2.default.createElement(
+																									"a",
+																									{ href: "#/Attendance" },
+																									"Go to Attendance page"
+																					)
+																	)
+													);
+									}
+					}]);
 
-		return Login;
+					return Login;
 	}(_react.Component);
 
 	exports.default = Login;
@@ -44702,11 +44702,11 @@
 
 
 	// module
-	exports.push([module.id, "\t.Titlebar__Titlebar_title___2CdAf {\n\t\ttext-align: center;\n\t\tcolor: #DFF0D8;\n\t\tmargin-top: 70px;\n\t\tmargin-bottom: 4%;\n\t\tfont-size: 70pt;\n\t\tfont-style: bold;\n\t\tborder-top: 2px #CCCCCC solid;\n\t\tborder-bottom: 2px #CCCCCC solid;\n\t}\n\n\n\n\t", ""]);
+	exports.push([module.id, "\t.Titlebar__Titlebar_title___V0bax {\r\n\t\ttext-align: center;\r\n\t\tcolor: #DFF0D8;\r\n\t\tmargin-top: 70px;\r\n\t\tmargin-bottom: 4%;\r\n\t\tfont-size: 70pt;\r\n\t\tfont-style: bold;\r\n\t\tborder-top: 2px #CCCCCC solid;\r\n\t\tborder-bottom: 2px #CCCCCC solid;\r\n\t}\r\n\r\n\r\n\r\n\t", ""]);
 
 	// exports
 	exports.locals = {
-		"Titlebar_title": "Titlebar__Titlebar_title___2CdAf"
+		"Titlebar_title": "Titlebar__Titlebar_title___V0bax"
 	};
 
 /***/ },
@@ -44770,6 +44770,10 @@
 	var _Panel = __webpack_require__(485);
 
 	var _Panel2 = _interopRequireDefault(_Panel);
+
+	var _homePage = __webpack_require__(488);
+
+	var _homePage2 = _interopRequireDefault(_homePage);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44847,19 +44851,23 @@
 		_createClass(Panel, [{
 			key: "render",
 			value: function render() {
-				var panelId = this.props.panelId;
+				var _props = this.props;
+				var panelId = _props.panelId;
+				var img = _props.img;
+				var name = _props.name;
+
 
 				return _react2.default.createElement(
 					_reactBootstrap.Col,
 					{ md: 2 },
 					_react2.default.createElement(
 						"div",
-						{ id: _Panel2.default.panelId, className: _Panel2.default.panelImage },
-						_react2.default.createElement("img", { src: this.props.img, alt: "icon", className: "img-responsive" }),
+						{ id: panelId, className: _Panel2.default.panelImage },
+						_react2.default.createElement("img", { src: img, alt: "icon", className: "img-responsive" }),
 						_react2.default.createElement(
 							"span",
 							null,
-							this.props.name
+							name
 						)
 					)
 				);
@@ -44906,13 +44914,52 @@
 
 
 	// module
-	exports.push([module.id, ".Panel__panelImage___Om5ij{\n\twidth: 150%;\n\toverflow: hidden;\n}\n#Panel__attendance___3ZDNK{\n\tbackground-color: grey;\n}", ""]);
+	exports.push([module.id, ".Panel__panelImage___2Xgx2{\r\n\twidth: 150%;\r\n\toverflow: hidden;\r\n}\r\n", ""]);
 
 	// exports
 	exports.locals = {
-		"panelImage": "Panel__panelImage___Om5ij",
-		"attendance": "Panel__attendance___3ZDNK"
+		"panelImage": "Panel__panelImage___2Xgx2"
 	};
+
+/***/ },
+/* 488 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(489);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(477)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./homePage.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./homePage.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 489 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(476)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "", ""]);
+
+	// exports
+
 
 /***/ }
 /******/ ]);

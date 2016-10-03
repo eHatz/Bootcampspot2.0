@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {Grid, Row, Col} from "react-bootstrap";
 import Panel from "../../Panel/Panel.jsx";
-
+import styles from "./homePage.css";
 
 class HomePage extends Component {
 

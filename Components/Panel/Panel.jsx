@@ -7,12 +7,13 @@ import styles from "./Panel.css";
 class Panel extends Component {
 
 	render() {
-		const {panelId}=this.props;
+		const { panelId, img, name } = this.props;
+
 		return (
 				<Col md={2}>
-					<div id={styles.panelId} className={styles.panelImage}>
-						<img src={this.props.img} alt="icon" className="img-responsive"/>
-						<span>{this.props.name}</span>
+					<div id={panelId} className={styles.panelImage}>
+						<img src={img} alt="icon" className="img-responsive"/>
+						<span>{name}</span>
 					</div>
 				</Col>
 
