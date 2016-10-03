@@ -10,7 +10,7 @@ class Panel extends Component {
 		const { panelId, img, name } = this.props;
 
 		return (
-				<Col md={2}>
+				<Col md={2} className="remove-all-margin-padding">
 					<div id={panelId} className={styles.panelImage}>
 						<img src={img} alt="icon" className="img-responsive"/>
 						<span>{name}</span>

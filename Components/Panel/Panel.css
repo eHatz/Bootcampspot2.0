@@ -1,4 +1,10 @@
 .panelImage{
-	width: 150%;
+	width: 100%;
 	overflow: hidden;
+
+}
+
+.remove-all-margin-padding{
+	padding: 0 !important;
+   margin: 0 !important;
 }
