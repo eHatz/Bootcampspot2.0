@@ -12,7 +12,7 @@ class Application extends Component {
 
 			<div>
 
-				<Grid>
+				<div id="width" className="container">
 
 					<div id="Application" className={styles.Application_main}>
 
@@ -21,7 +21,7 @@ class Application extends Component {
 						}
 
 					</div>
-				</Grid>
+				</div>
 
 			</div>
 		)

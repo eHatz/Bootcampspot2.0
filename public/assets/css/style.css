@@ -24,9 +24,14 @@ body{
 #projects{
 	background-color: #cdcbcb;	
 }
-
-.height{
-	height: 100%;
+#feedback{
+	background-color: #cc0000;	
+}
+#career{
+	background-color: #990000;	
+}
+#width{
+	width: 100%;
 }
 
 

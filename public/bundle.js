@@ -25508,8 +25508,8 @@
 					"div",
 					null,
 					_react2.default.createElement(
-						_reactBootstrap.Grid,
-						null,
+						"div",
+						{ id: "width", className: "container" },
 						_react2.default.createElement(
 							"div",
 							{ id: "Application", className: _Application2.default.Application_main },
@@ -44212,7 +44212,7 @@
 
 
 	// module
-	exports.push([module.id, ".Application__Application_main___kDJ6Y: {\n\t\tmax-width: 900px;\n\t\talign-items: center;\n\t\tmargin: 0 auto;\n\t\tposition: relative\n\t}", ""]);
+	exports.push([module.id, ".Application__Application_main___kDJ6Y: {\n\t\talign-items: center;\n\t\tmargin: 0 auto;\n\t\tposition: relative\n\t}", ""]);
 
 	// exports
 	exports.locals = {
@@ -44799,10 +44799,12 @@
 				return _react2.default.createElement(
 					"div",
 					{ className: "row height" },
-					_react2.default.createElement(_Panel2.default, { name: "Attendance", panelId: "attendance", img: "/assets/images/attendance_icon.png" }),
-					_react2.default.createElement(_Panel2.default, { name: "Homework", panelId: "homework", img: "/assets/images/homework_icon.png" }),
-					_react2.default.createElement(_Panel2.default, { name: "Syllabus", panelId: "syllabus", img: "/assets/images/syllabus_icon.png" }),
-					_react2.default.createElement(_Panel2.default, { name: "Projects", panelId: "projects", img: "/assets/images/projects_icon.png" })
+					_react2.default.createElement(_Panel2.default, { name: "ATTENDANCE", panelId: "attendance", img: "/assets/images/attendance_icon.png" }),
+					_react2.default.createElement(_Panel2.default, { name: "HOMEWORK", panelId: "homework", img: "/assets/images/homework_icon.png" }),
+					_react2.default.createElement(_Panel2.default, { name: "SYLLABUS", panelId: "syllabus", img: "/assets/images/syllabus_icon.png" }),
+					_react2.default.createElement(_Panel2.default, { name: "PROJECTS", panelId: "projects", img: "/assets/images/projects_icon.png" }),
+					_react2.default.createElement(_Panel2.default, { name: "FEEDBACK", panelId: "feedback", img: "/assets/images/feedback_icon.png" }),
+					_react2.default.createElement(_Panel2.default, { name: "CAREER", panelId: "career", img: "/assets/images/career_icon.png" })
 				);
 			}
 		}]);
@@ -44868,7 +44870,7 @@
 						{ id: panelId, className: _Panel2.default.panelImage },
 						_react2.default.createElement("img", { src: img, alt: "icon", className: "img-responsive" }),
 						_react2.default.createElement(
-							"span",
+							"h5",
 							null,
 							name
 						)
@@ -44917,7 +44919,7 @@
 
 
 	// module
-	exports.push([module.id, ".Panel__panelImage___Om5ij{\n\twidth: 100%;\n\toverflow: hidden;\n\n}\n\n.Panel__remove-all-margin-padding___3PG_j{\n\tpadding: 0 !important;\n   margin: 0 !important;\n}\n", ""]);
+	exports.push([module.id, ".Panel__panelImage___Om5ij{\n\theight: 100vh;\n}\nimg{\n\tposition: relative;\n  \ttop: 50%;\n  \ttransform: translateY(-50%);\n}\n.Panel__remove-all-margin-padding___3PG_j{\n\tpadding: 0 !important;\n  \tmargin: 0 !important;\n}\n\nh5{\n\ttext-align: center;\n\tposition: relative;\n  \ttop: 33%;\n  \ttransform: translateY(-50%);\n    font-size: initial;\n}\n", ""]);
 
 	// exports
 	exports.locals = {
