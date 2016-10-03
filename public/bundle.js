@@ -25438,34 +25438,28 @@
 
 	var _Login2 = _interopRequireDefault(_Login);
 
-	var _Attendance = __webpack_require__(484);
+	var _HomePage = __webpack_require__(484);
 
-	var _Attendance2 = _interopRequireDefault(_Attendance);
-
-	var _Titlebar = __webpack_require__(479);
-
-	var _Titlebar2 = _interopRequireDefault(_Titlebar);
+	var _HomePage2 = _interopRequireDefault(_HomePage);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	//Another sample child component
+	//Sample child component
+	exports.default = _react2.default.createElement(
+		_reactRouter.Route,
+		{ component: _Application2.default },
+		_react2.default.createElement(_reactRouter.Route, { path: '/', component: _HomePage2.default })
+	);
 
+	//Another sample child component
+	// import Attendance from './Components/Attendance/Attendance.jsx';
+
+	//Title Component
 
 	//===Import Components===
 
 	//Base component, including nav bar
 	//===React Dependencies===
-	exports.default = _react2.default.createElement(
-		_reactRouter.Route,
-		{ component: _Application2.default },
-		_react2.default.createElement(_reactRouter.Route, { path: '/', component: _Login2.default }),
-		_react2.default.createElement(_reactRouter.Route, { path: 'Attendance', component: _Attendance2.default })
-	);
-
-	//Title Component
-
-
-	//Sample child component
 
 /***/ },
 /* 223 */
@@ -44773,13 +44767,9 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	var _Titlebar = __webpack_require__(479);
+	var _Panel = __webpack_require__(485);
 
-	var _Titlebar2 = _interopRequireDefault(_Titlebar);
-
-	var _Attendance = __webpack_require__(485);
-
-	var _Attendance2 = _interopRequireDefault(_Attendance);
+	var _Panel2 = _interopRequireDefault(_Panel);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44789,54 +44779,106 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Attendance = function (_Component) {
-		_inherits(Attendance, _Component);
+	var HomePage = function (_Component) {
+		_inherits(HomePage, _Component);
 
-		function Attendance() {
-			_classCallCheck(this, Attendance);
+		function HomePage() {
+			_classCallCheck(this, HomePage);
 
-			return _possibleConstructorReturn(this, (Attendance.__proto__ || Object.getPrototypeOf(Attendance)).apply(this, arguments));
+			return _possibleConstructorReturn(this, (HomePage.__proto__ || Object.getPrototypeOf(HomePage)).apply(this, arguments));
 		}
 
-		_createClass(Attendance, [{
+		_createClass(HomePage, [{
 			key: "render",
 			value: function render() {
 
 				return _react2.default.createElement(
 					"div",
-					null,
-					_react2.default.createElement(_Titlebar2.default, { title: "Attendance page" }),
+					{ className: "row" },
+					_react2.default.createElement(_Panel2.default, { name: "Attendance", panelId: "attendance", img: "/assets/images/attendance_icon.png" })
+				);
+			}
+		}]);
+
+		return HomePage;
+	}(_react.Component);
+
+	exports.default = HomePage;
+
+/***/ },
+/* 485 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactBootstrap = __webpack_require__(224);
+
+	var _Panel = __webpack_require__(486);
+
+	var _Panel2 = _interopRequireDefault(_Panel);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Panel = function (_Component) {
+		_inherits(Panel, _Component);
+
+		function Panel() {
+			_classCallCheck(this, Panel);
+
+			return _possibleConstructorReturn(this, (Panel.__proto__ || Object.getPrototypeOf(Panel)).apply(this, arguments));
+		}
+
+		_createClass(Panel, [{
+			key: "render",
+			value: function render() {
+				var panelId = this.props.panelId;
+
+				return _react2.default.createElement(
+					_reactBootstrap.Col,
+					{ md: 2 },
 					_react2.default.createElement(
-						_reactBootstrap.Row,
-						{ className: "show-grid" },
+						"div",
+						{ id: _Panel2.default.panelId, className: _Panel2.default.panelImage },
+						_react2.default.createElement("img", { src: this.props.img, alt: "icon", className: "img-responsive" }),
 						_react2.default.createElement(
-							"p",
-							{ className: _Attendance2.default.Attendance_paragraph },
-							"Even more epic Attendance paragraph"
-						),
-						_react2.default.createElement(
-							"a",
-							{ href: "#/" },
-							"Go to Login page"
+							"span",
+							null,
+							this.props.name
 						)
 					)
 				);
 			}
 		}]);
 
-		return Attendance;
+		return Panel;
 	}(_react.Component);
 
-	exports.default = Attendance;
+	exports.default = Panel;
 
 /***/ },
-/* 485 */
+/* 486 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(486);
+	var content = __webpack_require__(487);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(477)(content, {});
@@ -44845,8 +44887,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Attendance.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Attendance.css");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Panel.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Panel.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -44856,7 +44898,7 @@
 	}
 
 /***/ },
-/* 486 */
+/* 487 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(476)();
@@ -44864,11 +44906,12 @@
 
 
 	// module
-	exports.push([module.id, ".Attendance__Attendance_paragraph___1EDgl{\n\tcolor: #FF9632;\n\tbackground-color: red;\n}", ""]);
+	exports.push([module.id, ".Panel__panelImage___Om5ij{\n\twidth: 150%;\n\toverflow: hidden;\n}\n#Panel__attendance___3ZDNK{\n\tbackground-color: grey;\n}", ""]);
 
 	// exports
 	exports.locals = {
-		"Attendance_paragraph": "Attendance__Attendance_paragraph___1EDgl"
+		"panelImage": "Panel__panelImage___Om5ij",
+		"attendance": "Panel__attendance___3ZDNK"
 	};
 
 /***/ }

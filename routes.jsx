@@ -12,15 +12,14 @@ import Application from './Components/Application';
 import Login from './Components/Login/Login.jsx';
 
 //Another sample child component
-import Attendance from './Components//Attendance/Attendance.jsx';
+// import Attendance from './Components/Attendance/Attendance.jsx';
 
 //Title Component
-import Titlebar from "./Components/Titlebar/Titlebar.jsx"
 
+import HomePage from "./Components/Pages/HomePage/HomePage.jsx";
 
 export default (
 	<Route component={Application}>
-		<Route path="/" component={Login} />
-		<Route path="Attendance" component={Attendance} />
+		<Route path="/" component={HomePage} />
 	</Route>
 );
