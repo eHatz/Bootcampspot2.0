@@ -44864,7 +44864,7 @@
 
 
 	// module
-	exports.push([module.id, ".Attendance__Attendance_paragraph___1EDgl{\n\tcolor: #FF9632;\n}", ""]);
+	exports.push([module.id, ".Attendance__Attendance_paragraph___1EDgl{\n\tcolor: #FF9632;\n\tbackground-color: red;\n}", ""]);
 
 	// exports
 	exports.locals = {
