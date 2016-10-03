@@ -1,5 +1,6 @@
 .Application_main: {
 		align-items: center;
 		margin: 0 auto;
-		position: relative
+		position: relative;
+		color:red;
 	}

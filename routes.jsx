@@ -12,7 +12,11 @@ import Application from './Components/Application';
 import Login from './Components/Login/Login.jsx';
 
 //Another sample child component
+<<<<<<< HEAD
+import Attendance from './Components/Attendance/Attendance.jsx';
+=======
 // import Attendance from './Components/Attendance/Attendance.jsx';
+>>>>>>> 61484bb1efaf593341c7e90189f75f02c6826066
 
 //Title Component
 
