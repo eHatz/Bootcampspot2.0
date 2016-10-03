@@ -25438,7 +25438,7 @@
 
 	var _Login2 = _interopRequireDefault(_Login);
 
-	var _Attendance = __webpack_require__(484);
+	var _Attendance = __webpack_require__(480);
 
 	var _Attendance2 = _interopRequireDefault(_Attendance);
 
@@ -44218,7 +44218,7 @@
 
 
 	// module
-	exports.push([module.id, ".Application__Application_main___kDJ6Y: {\n\t\tmax-width: 900px;\n\t\talign-items: center;\n\t\tmargin: 0 auto;\n\t\tposition: relative\n\t}", ""]);
+	exports.push([module.id, ".Application__Application_main___kDJ6Y: {\n\t\tmax-width: 900px;\n\t\talign-items: center;\n\t\tmargin: 0 auto;\n\t\tposition: relative;\n\t\tcolor:red;\n\t}", ""]);
 
 	// exports
 	exports.locals = {
@@ -44549,15 +44549,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactBootstrap = __webpack_require__(224);
-
 	var _Titlebar = __webpack_require__(479);
 
 	var _Titlebar2 = _interopRequireDefault(_Titlebar);
-
-	var _Login = __webpack_require__(482);
-
-	var _Login2 = _interopRequireDefault(_Login);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44583,10 +44577,9 @@
 				return _react2.default.createElement(
 					"div",
 					null,
-					_react2.default.createElement(_Titlebar2.default, { title: "Login page" }),
 					_react2.default.createElement(
-						_reactBootstrap.Row,
-						{ className: "show-grid" },
+						"div",
+						{ className: "col-md-3" },
 						_react2.default.createElement(
 							"p",
 							null,
@@ -44617,146 +44610,123 @@
 		value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactBootstrap = __webpack_require__(224);
-
-	var _Titlebar = __webpack_require__(480);
+	var _Titlebar = __webpack_require__(483);
 
 	var _Titlebar2 = _interopRequireDefault(_Titlebar);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	var Titlebar = _react2.default.createClass({
+		displayName: "Titlebar",
+		render: function render() {
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Titlebar = function (_Component) {
-		_inherits(Titlebar, _Component);
-
-		function Titlebar() {
-			_classCallCheck(this, Titlebar);
-
-			return _possibleConstructorReturn(this, (Titlebar.__proto__ || Object.getPrototypeOf(Titlebar)).apply(this, arguments));
-		}
-
-		_createClass(Titlebar, [{
-			key: "render",
-			value: function render() {
-
-				return _react2.default.createElement(
-					_reactBootstrap.Row,
-					{ className: "show-grid" },
-					_react2.default.createElement(_reactBootstrap.Col, { xsHidden: true, md: 2 }),
+			return _react2.default.createElement(
+				"div",
+				null,
+				_react2.default.createElement(
+					"div",
+					{ className: "row" },
 					_react2.default.createElement(
-						_reactBootstrap.Col,
-						{ xs: 12, md: 8 },
+						"div",
+						{ className: "col-md-3" },
 						_react2.default.createElement(
-							"h1",
+							"div",
 							{ className: _Titlebar2.default.Titlebar_title },
-							this.props.title
+							_react2.default.createElement(
+								"h4",
+								{ className: _Titlebar2.default.Titlebar_h4 },
+								"RUTGERS UNIVERSITY"
+							),
+							_react2.default.createElement(
+								"h1",
+								{ className: _Titlebar2.default.Titlebar_h1red },
+								"BOOTCAMP"
+							),
+							_react2.default.createElement(
+								"h1",
+								{ className: _Titlebar2.default.Titlebar_h1white },
+								"SPOT"
+							),
+							_react2.default.createElement(
+								"h1",
+								{ className: _Titlebar2.default.Titlebar_h1red },
+								"2.0"
+							)
 						)
 					),
-					_react2.default.createElement(_reactBootstrap.Col, { xsHidden: true, md: 2 })
-				);
-			}
-		}]);
-
-		return Titlebar;
-	}(_react.Component);
+					_react2.default.createElement(
+						"div",
+						{ className: "col-md-9" },
+						_react2.default.createElement(
+							"div",
+							{ className: _Titlebar2.default.Titlebar_redPanel },
+							_react2.default.createElement(
+								"p",
+								null,
+								"Hi Jennine"
+							),
+							_react2.default.createElement(
+								"p",
+								null,
+								"Logout"
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					"div",
+					{ className: "row" },
+					_react2.default.createElement(
+						"div",
+						{ className: "col-md-3" },
+						_react2.default.createElement(
+							"div",
+							{ className: _Titlebar2.default.Titlebar_blackpanel },
+							_react2.default.createElement(
+								"p",
+								null,
+								"Attendence"
+							),
+							_react2.default.createElement(
+								"p",
+								null,
+								"Homework"
+							),
+							_react2.default.createElement(
+								"p",
+								null,
+								"Syllabus"
+							),
+							_react2.default.createElement(
+								"p",
+								null,
+								"Projects"
+							),
+							_react2.default.createElement(
+								"p",
+								null,
+								"Feedback"
+							),
+							_react2.default.createElement(
+								"p",
+								null,
+								"Career"
+							)
+						)
+					)
+				)
+			);
+		}
+	});
 
 	exports.default = Titlebar;
 
 /***/ },
 /* 480 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(481);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(477)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Titlebar.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Titlebar.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 481 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(476)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "\t.Titlebar__Titlebar_title___2CdAf {\n\t\ttext-align: center;\n\t\tcolor: #DFF0D8;\n\t\tmargin-top: 70px;\n\t\tmargin-bottom: 4%;\n\t\tfont-size: 70pt;\n\t\tfont-style: bold;\n\t\tborder-top: 2px #CCCCCC solid;\n\t\tborder-bottom: 2px #CCCCCC solid;\n\t}\n\n\n\n\t", ""]);
-
-	// exports
-	exports.locals = {
-		"Titlebar_title": "Titlebar__Titlebar_title___2CdAf"
-	};
-
-/***/ },
-/* 482 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(483);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(477)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Login.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Login.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 483 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(476)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "", ""]);
-
-	// exports
-
-
-/***/ },
-/* 484 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -44777,7 +44747,7 @@
 
 	var _Titlebar2 = _interopRequireDefault(_Titlebar);
 
-	var _Attendance = __webpack_require__(485);
+	var _Attendance = __webpack_require__(481);
 
 	var _Attendance2 = _interopRequireDefault(_Attendance);
 
@@ -44830,13 +44800,13 @@
 	exports.default = Attendance;
 
 /***/ },
-/* 485 */
+/* 481 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(486);
+	var content = __webpack_require__(482);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(477)(content, {});
@@ -44856,7 +44826,7 @@
 	}
 
 /***/ },
-/* 486 */
+/* 482 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(476)();
@@ -44864,11 +44834,58 @@
 
 
 	// module
-	exports.push([module.id, ".Attendance__Attendance_paragraph___1EDgl{\n\tcolor: #FF9632;\n}", ""]);
+	exports.push([module.id, ".Attendance__Attendance_paragraph___1EDgl{\n\t\n}", ""]);
 
 	// exports
 	exports.locals = {
 		"Attendance_paragraph": "Attendance__Attendance_paragraph___1EDgl"
+	};
+
+/***/ },
+/* 483 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(484);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(477)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Titlebar.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Titlebar.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 484 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(476)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\t.Titlebar__Titlebar_title___2CdAf {\n\t\t\n\t\tbackground-color: #262626;\n\t\tmargin-right: 10%;\n\t\tmargin-left: -40%;\n\t\tpadding-top: 18%;\n\t\tfont-family: 'Roboto Condensed', sans-serif;\n\t\tcolor:red;\n\t\tpadding-bottom: 1%;\n\t}\n\n\t.Titlebar__Titlebar_blackpanel___2yOtO{\n\t\tbackground-color: black;\n\t\tpadding-bottom:150%;\n\t\tmargin-right: 10%;\n\t\tpadding-left: 40%;\n\t\tmargin-left: -22%;\n\t\tmargin-top: -4%;\n\t\tpadding-top: 10%;\n\t\tcolor:white;\n\t\tfont-family: 'Roboto Condensed', sans-serif;\n\t\tfont-size: 20px;\n\n\t}\n\n\t.Titlebar__Titlebar_h4___3aMnK{\n\t\ttext-align: center;\n\t\tcolor:#9D9B9C;\n\t\tfont-family: 'Krona One', sans-serif;\n\t\tmargin-left: 10%;\n\t\tmargin-top: -7%;\n\t}\n\n/*SPOT*/\n\t.Titlebar__Titlebar_h1white___3muz1{\n\t\tcolor:white;\n\t\tfloat:right;\n\t\tmargin-top: -14%;\n\t\tmargin-right: 10%;\n\n\t}\n\n/*BOOTCAMP*/\n\t.Titlebar__Titlebar_h1red___QGOt3{\n\t\tcolor:#B70002;\n\t\tmargin-left: 17%;\n\n\t}\n\n\t.Titlebar__Titlebar_redPanel___2U992{\n\t\tbackground-color: #B70002;\n\t\tpadding-top:12%;\n\t\tmargin-right: -10%;\n\t\tmargin-left: -6%;\n\t\tfont-family: 'Roboto Condensed', sans-serif;\n\t\tcolor:white;\n\t\tfont-size: 18px;\n\n\n\t}\n\n\t\n\n\n\t", ""]);
+
+	// exports
+	exports.locals = {
+		"Titlebar_title": "Titlebar__Titlebar_title___2CdAf",
+		"Titlebar_blackpanel": "Titlebar__Titlebar_blackpanel___2yOtO",
+		"Titlebar_h4": "Titlebar__Titlebar_h4___3aMnK",
+		"Titlebar_h1white": "Titlebar__Titlebar_h1white___3muz1",
+		"Titlebar_h1red": "Titlebar__Titlebar_h1red___QGOt3",
+		"Titlebar_redPanel": "Titlebar__Titlebar_redPanel___2U992"
 	};
 
 /***/ }
