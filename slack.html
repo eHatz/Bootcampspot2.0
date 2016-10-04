@@ -30,6 +30,10 @@ i<!DOCTYPE html>
 					3. Click the Edit button on the Configurations panel.
 					4. Find the webhook URL (which should NOT be pushed to github for security reasons) and insert below
 			*/
+			const db = require('dotenv').config();
+			db.connect({
+				host: process.env.SLACK_WEBHOOK,
+			});
 			
 			$(".btn-default").on("click", function(event){ 
 				let text = $("textarea").val();

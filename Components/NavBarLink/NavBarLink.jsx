@@ -10,11 +10,12 @@ class NavBarLink extends Component {
 		const { name, img, navLink } = this.props;
 
 		return (
-				<div className="col-md-4 remove-all-margin-padding">
-					<div className={styles.linkDiv}>
+				<div className={styles.linkDiv}>
+					<div className={styles.imageDiv}>
 						<img src={img} alt="icon" className="img-responsive"/>
-						<h5 className="caption">{name}</h5>
 					</div>
+						<h5 className={syles.linkText}>{name}</h5>
+					
 				</div>
 
 		)

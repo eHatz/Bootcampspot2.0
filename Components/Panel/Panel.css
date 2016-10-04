@@ -2,7 +2,7 @@
 	height: 100vh;
 
 }
-img{
+.panelImg{
 	position: relative;
   	top: 50%;
   	transform: translateY(-50%);
@@ -16,9 +16,9 @@ img{
 h5{
 	text-align: center;
 	position: relative;
-  	top: 33%;
-    font-size: initial;
-    display: inherit;
+	top: 33%;
+  font-size: initial;
+  display: inherit;
 }
 
 

@@ -1,18 +1,16 @@
 import React, { Component } from "react";
-
 import styles from "./Titlebar.css";
 import NavBarLink from "../NavBarLink/NavBarLink.jsx"
 
 
 var Titlebar = React.createClass ({
-
-
 	render() {
 
 		return (
 			<div className= "col-md-4 remove-all-margin-padding">
-				<NavBarLink name="Attendance" img=".." navLink="#/attendance"/> 
-				
+				<div id={styles.navBar}>
+					<NavBarLink name="Attendance" img=".." navLink="#/attendance"/> 
+				</div>
 			</div>
 			
 		);
