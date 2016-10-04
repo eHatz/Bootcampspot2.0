@@ -15,6 +15,11 @@ app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, './index.html'));
 });
 
+app.get("/slack", (req, res) => {
+	res.sendFile(path.join(__dirname, './slack.html'));
+
+})
+
 app.listen(PORT, () => {
 	console.log(`Server is now listening on ${PORT}`);
 });
