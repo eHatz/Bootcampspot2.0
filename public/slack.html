@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+ 		<!-- Meta tag for bootstrap scaling --><meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- jQuery --><script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+		<!-- Bootstrap JS --> <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<!-- Bootstrap CSS --><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<title>Slack Test</title>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<form>
+
+				<div class="form-group">
+					<label for="exampleInputEmail1">Input text here</label>
+					<textarea class="form-control" rows="3"></textarea>
+				</div>
+			
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+
+		<script type="text/javascript">
+
+			/*
+				For slack integration:
+					1. Go to https://bootcampspot2.slack.com/apps/A0F7XDUAZ-incoming-webhooks
+					2. Log in to our team, if you aren't already looged in
+					3. Click the Edit button on the Configurations panel.
+					4. Find the webhook URL (which should NOT be pushed to github for security reasons) and insert below
+			*/
+			
+			$(".btn-default").on("click", function(event){ 
+				let text = $("textarea").val();
+				const queryURL = ".env variable";
+				let slackBody = JSON.stringify({
+					'channel': '#general', 
+					'username': 'webhookbot', 
+					'text': text, 
+					'icon_emoji': ':ghost:'
+					});
+
+				console.log("slackBody: ", typeof slackBody);
+
+			    $.ajax({
+			        url: queryURL, //insert Webhook url here
+			        type: 'POST',
+			        data: slackBody
+			    }).done(function(response){
+
+			        console.log("response: " + response);
+         
+			    })
+
+			    $("textarea").val("");
+
+				return false;
+			});
+
+		
+
+		</script>
+	</body>
+</html>
