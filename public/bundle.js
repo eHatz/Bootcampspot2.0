@@ -25438,7 +25438,7 @@
 
 	var _Login2 = _interopRequireDefault(_Login);
 
-	var _HomePage = __webpack_require__(484);
+	var _HomePage = __webpack_require__(482);
 
 	var _HomePage2 = _interopRequireDefault(_HomePage);
 
@@ -44768,9 +44768,7 @@
 	};
 
 /***/ },
-/* 482 */,
-/* 483 */,
-/* 484 */
+/* 482 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -44787,11 +44785,11 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	var _Panel = __webpack_require__(485);
+	var _Panel = __webpack_require__(483);
 
 	var _Panel2 = _interopRequireDefault(_Panel);
 
-	var _homePage = __webpack_require__(488);
+	var _homePage = __webpack_require__(486);
 
 	var _homePage2 = _interopRequireDefault(_homePage);
 
@@ -44822,7 +44820,7 @@
 					_react2.default.createElement(_Panel2.default, { name: "ATTENDANCE", panelId: "attendance", img: "/assets/images/attendance_icon.png" }),
 					_react2.default.createElement(_Panel2.default, { name: "HOMEWORK", panelId: "homework", img: "/assets/images/homework_icon.png" }),
 					_react2.default.createElement(_Panel2.default, { name: "SYLLABUS", panelId: "syllabus", img: "/assets/images/syllabus_icon.png" }),
-					_react2.default.createElement(_Panel2.default, { name: "PROJECTS", panelId: "projects", img: "/assets/images/projects_icon.png" }),
+					_react2.default.createElement(_Panel2.default, { name: "PROJECTS", panelId: "projects", img: "/assets/images/projects1_icon.png" }),
 					_react2.default.createElement(_Panel2.default, { name: "FEEDBACK", panelId: "feedback", img: "/assets/images/feedback_icon.png" }),
 					_react2.default.createElement(_Panel2.default, { name: "CAREER", panelId: "career", img: "/assets/images/career_icon.png" })
 				);
@@ -44835,7 +44833,7 @@
 	exports.default = HomePage;
 
 /***/ },
-/* 485 */
+/* 483 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -44852,7 +44850,7 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	var _Panel = __webpack_require__(486);
+	var _Panel = __webpack_require__(484);
 
 	var _Panel2 = _interopRequireDefault(_Panel);
 
@@ -44905,13 +44903,13 @@
 	exports.default = Panel;
 
 /***/ },
-/* 486 */
+/* 484 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(487);
+	var content = __webpack_require__(485);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(477)(content, {});
@@ -44931,7 +44929,7 @@
 	}
 
 /***/ },
-/* 487 */
+/* 485 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(476)();
@@ -44948,13 +44946,13 @@
 	};
 
 /***/ },
-/* 488 */
+/* 486 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(489);
+	var content = __webpack_require__(487);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(477)(content, {});
@@ -44974,7 +44972,7 @@
 	}
 
 /***/ },
-/* 489 */
+/* 487 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(476)();
