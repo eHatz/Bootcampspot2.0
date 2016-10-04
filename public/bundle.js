@@ -25438,29 +25438,32 @@
 
 	var _Login2 = _interopRequireDefault(_Login);
 
+	var _Attendance = __webpack_require__(488);
+
+	var _Attendance2 = _interopRequireDefault(_Attendance);
+
 	var _HomePage = __webpack_require__(482);
 
 	var _HomePage2 = _interopRequireDefault(_HomePage);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	//Sample child component
-	exports.default = _react2.default.createElement(
-		_reactRouter.Route,
-		{ component: _Application2.default },
-		_react2.default.createElement(_reactRouter.Route, { path: '/', component: _HomePage2.default })
-	);
-
 	//Another sample child component
-	// import Attendance from './Components/Attendance/Attendance.jsx';
-
-
-	//Title Component
 
 	//===Import Components===
 
 	//Base component, including nav bar
 	//===React Dependencies===
+	exports.default = _react2.default.createElement(
+		_reactRouter.Route,
+		{ component: _Application2.default },
+		_react2.default.createElement(_reactRouter.Route, { path: '/', component: _HomePage2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: '/attendance', component: _Attendance2.default })
+	);
+
+	//Title Component
+
+	//Sample child component
 
 /***/ },
 /* 223 */
@@ -44984,6 +44987,122 @@
 
 	// exports
 
+
+/***/ },
+/* 488 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactBootstrap = __webpack_require__(224);
+
+	var _Titlebar = __webpack_require__(479);
+
+	var _Titlebar2 = _interopRequireDefault(_Titlebar);
+
+	var _Attendance = __webpack_require__(489);
+
+	var _Attendance2 = _interopRequireDefault(_Attendance);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Attendance = function (_Component) {
+		_inherits(Attendance, _Component);
+
+		function Attendance() {
+			_classCallCheck(this, Attendance);
+
+			return _possibleConstructorReturn(this, (Attendance.__proto__ || Object.getPrototypeOf(Attendance)).apply(this, arguments));
+		}
+
+		_createClass(Attendance, [{
+			key: "render",
+			value: function render() {
+
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(_Titlebar2.default, null),
+					_react2.default.createElement(
+						_reactBootstrap.Row,
+						{ className: "show-grid" },
+						_react2.default.createElement(
+							"p",
+							{ className: _Attendance2.default.Attendance_paragraph },
+							"Even more epic Attendance paragraph"
+						),
+						_react2.default.createElement(
+							"a",
+							{ href: "#/" },
+							"Go to Login page"
+						)
+					)
+				);
+			}
+		}]);
+
+		return Attendance;
+	}(_react.Component);
+
+	exports.default = Attendance;
+
+/***/ },
+/* 489 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(490);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(477)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Attendance.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Attendance.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 490 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(476)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".Attendance__Attendance_paragraph___1rF0a{\n\tcolor: #FF9632;\n\tbackground-color: red;\n}", ""]);
+
+	// exports
+	exports.locals = {
+		"Attendance_paragraph": "Attendance__Attendance_paragraph___1rF0a"
+	};
 
 /***/ }
 /******/ ]);
