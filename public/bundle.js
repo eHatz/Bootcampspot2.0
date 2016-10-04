@@ -44871,7 +44871,7 @@
 						_react2.default.createElement("img", { src: img, alt: "icon", className: "img-responsive" }),
 						_react2.default.createElement(
 							"h5",
-							null,
+							{ className: "caption" },
 							name
 						)
 					)
@@ -44919,7 +44919,7 @@
 
 
 	// module
-	exports.push([module.id, ".Panel__panelImage___Om5ij{\n\theight: 100vh;\n}\nimg{\n\tposition: relative;\n  \ttop: 50%;\n  \ttransform: translateY(-50%);\n}\n.Panel__remove-all-margin-padding___3PG_j{\n\tpadding: 0 !important;\n  \tmargin: 0 !important;\n}\n\nh5{\n\ttext-align: center;\n\tposition: relative;\n  \ttop: 33%;\n  \ttransform: translateY(-50%);\n    font-size: initial;\n}\n", ""]);
+	exports.push([module.id, ".Panel__panelImage___Om5ij{\n\theight: 100vh;\n\n}\nimg{\n\tposition: relative;\n  \ttop: 50%;\n  \ttransform: translateY(-50%);\n  \tfloat: right;\n}\n.Panel__remove-all-margin-padding___3PG_j{\n\tpadding: 0 !important;\n  \tmargin: 0 !important;\n}\n\nh5{\n\ttext-align: center;\n\tposition: relative;\n  \ttop: 33%;\n    font-size: initial;\n    display: inherit;\n}\n", ""]);
 
 	// exports
 	exports.locals = {

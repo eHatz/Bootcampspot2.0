@@ -13,7 +13,7 @@ class Panel extends Component {
 				<Col md={2} className="remove-all-margin-padding">
 					<div id={panelId} className={styles.panelImage}>
 						<img src={img} alt="icon" className="img-responsive"/>
-						<h5>{name}</h5>
+						<h5 className="caption">{name}</h5>
 					</div>
 				</Col>
 
