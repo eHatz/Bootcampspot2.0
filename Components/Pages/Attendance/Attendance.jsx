@@ -15,8 +15,7 @@ class Attendance extends Component {
 
 				<Row className="show-grid">
 
-					<p className={styles.Attendance_paragraph}>Even more epic Attendance paragraph</p>
-					<a href="#/">Go to Login page</a>
+			
 
 				</Row>
 

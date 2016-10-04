@@ -25438,18 +25438,17 @@
 
 	var _Login2 = _interopRequireDefault(_Login);
 
-	var _Attendance = __webpack_require__(482);
+	var _Attendance = __webpack_require__(485);
 
 	var _Attendance2 = _interopRequireDefault(_Attendance);
 
-	var _HomePage = __webpack_require__(485);
+	var _HomePage = __webpack_require__(488);
 
 	var _HomePage2 = _interopRequireDefault(_HomePage);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//Another sample child component
-
 
 	//===Import Components===
 
@@ -44217,11 +44216,11 @@
 
 
 	// module
-	exports.push([module.id, ".Application__Application_main___33GIR: {\r\n\t\talign-items: center;\r\n\t\tmargin: 0 auto;\r\n\t\tposition: relative;\r\n\t\tcolor:red;\r\n\t}", ""]);
+	exports.push([module.id, ".Application__Application_main___kDJ6Y: {\n\t\talign-items: center;\n\t\tmargin: 0 auto;\n\t\tposition: relative;\n\t\tcolor:red;\n\t}", ""]);
 
 	// exports
 	exports.locals = {
-		"Application_main": "Application__Application_main___33GIR"
+		"Application_main": "Application__Application_main___kDJ6Y"
 	};
 
 /***/ },
@@ -44617,6 +44616,10 @@
 
 	var _Titlebar2 = _interopRequireDefault(_Titlebar);
 
+	var _NavBarLink = __webpack_require__(482);
+
+	var _NavBarLink2 = _interopRequireDefault(_NavBarLink);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Titlebar = _react2.default.createClass({
@@ -44625,104 +44628,42 @@
 
 			return _react2.default.createElement(
 				"div",
-				null,
-				_react2.default.createElement(
-					"div",
-					{ className: "row" },
-					_react2.default.createElement(
-						"div",
-						{ className: "col-md-3" },
-						_react2.default.createElement(
-							"div",
-							{ className: _Titlebar2.default.Titlebar_title },
-							_react2.default.createElement(
-								"h4",
-								{ className: _Titlebar2.default.Titlebar_h4 },
-								"RUTGERS UNIVERSITY"
-							),
-							_react2.default.createElement(
-								"h1",
-								{ className: _Titlebar2.default.Titlebar_h1red },
-								"BOOTCAMP"
-							),
-							_react2.default.createElement(
-								"h1",
-								{ className: _Titlebar2.default.Titlebar_h1white },
-								"SPOT"
-							),
-							_react2.default.createElement(
-								"h1",
-								{ className: _Titlebar2.default.Titlebar_h1red },
-								"2.0"
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "col-md-9" },
-						_react2.default.createElement(
-							"div",
-							{ className: _Titlebar2.default.Titlebar_redPanel },
-							_react2.default.createElement(
-								"p",
-								null,
-								"Hi Jennine"
-							),
-							_react2.default.createElement(
-								"p",
-								null,
-								"Logout"
-							)
-						)
-					)
-				),
-				_react2.default.createElement(
-					"div",
-					{ className: "row" },
-					_react2.default.createElement(
-						"div",
-						{ className: "col-md-3" },
-						_react2.default.createElement(
-							"div",
-							{ className: _Titlebar2.default.Titlebar_blackpanel },
-							_react2.default.createElement(
-								"p",
-								null,
-								"Attendence"
-							),
-							_react2.default.createElement(
-								"p",
-								null,
-								"Homework"
-							),
-							_react2.default.createElement(
-								"p",
-								null,
-								"Syllabus"
-							),
-							_react2.default.createElement(
-								"p",
-								null,
-								"Projects"
-							),
-							_react2.default.createElement(
-								"p",
-								null,
-								"Feedback"
-							),
-							_react2.default.createElement(
-								"p",
-								null,
-								"Career"
-							)
-						)
-					)
-				)
+				{ className: "col-md-4 remove-all-margin-padding" },
+				_react2.default.createElement(_NavBarLink2.default, { name: "Attendance", img: "..", navLink: "#/attendance" })
 			);
 		}
 	});
 
 	exports.default = Titlebar;
+
+	// <div className = "row">
+	// 					<div className = "col-md-3">
+	// 						<div className = {styles.Titlebar_title}>
+	// 							<h4 className = {styles.Titlebar_h4}>RUTGERS UNIVERSITY</h4>
+	// 							<h1 className = {styles.Titlebar_h1red}>BOOTCAMP</h1>
+	// 							<h1 className = {styles.Titlebar_h1white}>SPOT</h1>
+	// 							<h1 className = {styles.Titlebar_h1red}>2.0</h1>
+	// 						</div>
+	// 					</div>
+	// 					<div className = "col-md-9">
+	// 						<div className = {styles.Titlebar_redPanel}>
+	// 							<p>Hi Jennine</p>
+	// 							<p>Logout</p>
+	// 						</div>
+	// 					</div>
+	// 				</div>
+	// 				<div className = "row">
+	// 					<div className = "col-md-3">
+	// 						<div className = {styles.Titlebar_blackpanel}>
+	// 							<p>Attendence</p>
+	// 							<p>Homework</p>
+	// 							<p>Syllabus</p>
+	// 							<p>Projects</p>
+	// 							<p>Feedback</p>
+	// 							<p>Career</p>
+	// 						</div>
+	// 					</div>
+	// 				</div>
 
 /***/ },
 /* 480 */
@@ -44759,16 +44700,16 @@
 
 
 	// module
-	exports.push([module.id, "\t.Titlebar__Titlebar_title___V0bax {\r\n\t\t\r\n\t\tbackground-color: #262626;\r\n\t\tmargin-right: 10%;\r\n\t\tmargin-left: -40%;\r\n\t\tpadding-top: 18%;\r\n\t\tfont-family: 'Roboto Condensed', sans-serif;\r\n\t\tcolor:red;\r\n\t\tpadding-bottom: 1%;\r\n\t}\r\n\r\n\t.Titlebar__Titlebar_blackpanel___SVXCc{\r\n\t\tbackground-color: black;\r\n\t\tpadding-bottom:150%;\r\n\t\tmargin-right: 10%;\r\n\t\tpadding-left: 40%;\r\n\t\tmargin-left: -22%;\r\n\t\tmargin-top: -4%;\r\n\t\tpadding-top: 10%;\r\n\t\tcolor:white;\r\n\t\tfont-family: 'Roboto Condensed', sans-serif;\r\n\t\tfont-size: 20px;\r\n\r\n\t}\r\n\r\n\t.Titlebar__Titlebar_h4___33aRI{\r\n\t\ttext-align: center;\r\n\t\tcolor:#9D9B9C;\r\n\t\tfont-family: 'Krona One', sans-serif;\r\n\t\tmargin-left: 10%;\r\n\t\tmargin-top: -7%;\r\n\t}\r\n\r\n/*SPOT*/\r\n\t.Titlebar__Titlebar_h1white___1R1bf{\r\n\t\tcolor:white;\r\n\t\tfloat:right;\r\n\t\tmargin-top: -14%;\r\n\t\tmargin-right: 10%;\r\n\r\n\t}\r\n\r\n/*BOOTCAMP*/\r\n\t.Titlebar__Titlebar_h1red____eBgw{\r\n\t\tcolor:#B70002;\r\n\t\tmargin-left: 17%;\r\n\r\n\t}\r\n\r\n\t.Titlebar__Titlebar_redPanel___WxXh5{\r\n\t\tbackground-color: #B70002;\r\n\t\tpadding-top:12%;\r\n\t\tmargin-right: -10%;\r\n\t\tmargin-left: -6%;\r\n\t\tfont-family: 'Roboto Condensed', sans-serif;\r\n\t\tcolor:white;\r\n\t\tfont-size: 18px;\r\n\r\n\r\n\t}\r\n\r\n\t\r\n\r\n\r\n\t", ""]);
+	exports.push([module.id, "\t.Titlebar__Titlebar_title___2CdAf {\n\t\t\n\t\tbackground-color: #262626;\n\t\tmargin-right: 10%;\n\t\tmargin-left: -40%;\n\t\tpadding-top: 18%;\n\t\tfont-family: 'Roboto Condensed', sans-serif;\n\t\tcolor:red;\n\t\tpadding-bottom: 1%;\n\t}\n\n\t.Titlebar__Titlebar_blackpanel___2yOtO{\n\t\tbackground-color: black;\n\t\tpadding-bottom:150%;\n\t\tmargin-right: 10%;\n\t\tpadding-left: 40%;\n\t\tmargin-left: -22%;\n\t\tmargin-top: -4%;\n\t\tpadding-top: 10%;\n\t\tcolor:white;\n\t\tfont-family: 'Roboto Condensed', sans-serif;\n\t\tfont-size: 20px;\n\n\t}\n\n\t.Titlebar__Titlebar_h4___3aMnK{\n\t\ttext-align: center;\n\t\tcolor:#9D9B9C;\n\t\tfont-family: 'Krona One', sans-serif;\n\t\tmargin-left: 10%;\n\t\tmargin-top: -7%;\n\t}\n\n/*SPOT*/\n\t.Titlebar__Titlebar_h1white___3muz1{\n\t\tcolor:white;\n\t\tfloat:right;\n\t\tmargin-top: -14%;\n\t\tmargin-right: 10%;\n\n\t}\n\n/*BOOTCAMP*/\n\t.Titlebar__Titlebar_h1red___QGOt3{\n\t\tcolor:#B70002;\n\t\tmargin-left: 17%;\n\n\t}\n\n\t.Titlebar__Titlebar_redPanel___2U992{\n\t\tbackground-color: #B70002;\n\t\tpadding-top:12%;\n\t\tmargin-right: -10%;\n\t\tmargin-left: -6%;\n\t\tfont-family: 'Roboto Condensed', sans-serif;\n\t\tcolor:white;\n\t\tfont-size: 18px;\n\n\n\t}\n\n\t\n\n\n\t", ""]);
 
 	// exports
 	exports.locals = {
-		"Titlebar_title": "Titlebar__Titlebar_title___V0bax",
-		"Titlebar_blackpanel": "Titlebar__Titlebar_blackpanel___SVXCc",
-		"Titlebar_h4": "Titlebar__Titlebar_h4___33aRI",
-		"Titlebar_h1white": "Titlebar__Titlebar_h1white___1R1bf",
-		"Titlebar_h1red": "Titlebar__Titlebar_h1red____eBgw",
-		"Titlebar_redPanel": "Titlebar__Titlebar_redPanel___WxXh5"
+		"Titlebar_title": "Titlebar__Titlebar_title___2CdAf",
+		"Titlebar_blackpanel": "Titlebar__Titlebar_blackpanel___2yOtO",
+		"Titlebar_h4": "Titlebar__Titlebar_h4___3aMnK",
+		"Titlebar_h1white": "Titlebar__Titlebar_h1white___3muz1",
+		"Titlebar_h1red": "Titlebar__Titlebar_h1red___QGOt3",
+		"Titlebar_redPanel": "Titlebar__Titlebar_redPanel___2U992"
 	};
 
 /***/ },
@@ -44778,7 +44719,7 @@
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-					value: true
+		value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -44787,15 +44728,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactBootstrap = __webpack_require__(224);
+	var _NavBarLink = __webpack_require__(483);
 
-	var _Titlebar = __webpack_require__(479);
-
-	var _Titlebar2 = _interopRequireDefault(_Titlebar);
-
-	var _Attendance = __webpack_require__(483);
-
-	var _Attendance2 = _interopRequireDefault(_Attendance);
+	var _NavBarLink2 = _interopRequireDefault(_NavBarLink);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44805,45 +44740,45 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Attendance = function (_Component) {
-					_inherits(Attendance, _Component);
+	var NavBarLink = function (_Component) {
+		_inherits(NavBarLink, _Component);
 
-					function Attendance() {
-									_classCallCheck(this, Attendance);
+		function NavBarLink() {
+			_classCallCheck(this, NavBarLink);
 
-									return _possibleConstructorReturn(this, (Attendance.__proto__ || Object.getPrototypeOf(Attendance)).apply(this, arguments));
-					}
+			return _possibleConstructorReturn(this, (NavBarLink.__proto__ || Object.getPrototypeOf(NavBarLink)).apply(this, arguments));
+		}
 
-					_createClass(Attendance, [{
-									key: "render",
-									value: function render() {
+		_createClass(NavBarLink, [{
+			key: "render",
+			value: function render() {
+				var _props = this.props;
+				var name = _props.name;
+				var img = _props.img;
+				var navLink = _props.navLink;
 
-													return _react2.default.createElement(
-																	"div",
-																	null,
-																	_react2.default.createElement(_Titlebar2.default, null),
-																	_react2.default.createElement(
-																					_reactBootstrap.Row,
-																					{ className: "show-grid" },
-																					_react2.default.createElement(
-																									"p",
-																									{ className: _Attendance2.default.Attendance_paragraph },
-																									"Even more epic Attendance paragraph"
-																					),
-																					_react2.default.createElement(
-																									"a",
-																									{ href: "#/" },
-																									"Go to Login page"
-																					)
-																	)
-													);
-									}
-					}]);
 
-					return Attendance;
+				return _react2.default.createElement(
+					"div",
+					{ className: "col-md-4 remove-all-margin-padding" },
+					_react2.default.createElement(
+						"div",
+						{ className: _NavBarLink2.default.linkDiv },
+						_react2.default.createElement("img", { src: img, alt: "icon", className: "img-responsive" }),
+						_react2.default.createElement(
+							"h5",
+							{ className: "caption" },
+							name
+						)
+					)
+				);
+			}
+		}]);
+
+		return NavBarLink;
 	}(_react.Component);
 
-	exports.default = Attendance;
+	exports.default = NavBarLink;
 
 /***/ },
 /* 483 */
@@ -44861,8 +44796,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Attendance.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Attendance.css");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./NavBarLink.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./NavBarLink.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -44880,11 +44815,11 @@
 
 
 	// module
-	exports.push([module.id, ".Attendance__Attendance_paragraph___1ZI4U{\r\n\tcolor: #FF9632;\r\n\tbackground-color: red;\r\n}", ""]);
+	exports.push([module.id, ".NavBarLink__linkDiv___2UnQg{\n\t\n}", ""]);
 
 	// exports
 	exports.locals = {
-		"Attendance_paragraph": "Attendance__Attendance_paragraph___1ZI4U"
+		"linkDiv": "NavBarLink__linkDiv___2UnQg"
 	};
 
 /***/ },
@@ -44905,11 +44840,114 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	var _Panel = __webpack_require__(486);
+	var _Titlebar = __webpack_require__(479);
+
+	var _Titlebar2 = _interopRequireDefault(_Titlebar);
+
+	var _Attendance = __webpack_require__(486);
+
+	var _Attendance2 = _interopRequireDefault(_Attendance);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Attendance = function (_Component) {
+		_inherits(Attendance, _Component);
+
+		function Attendance() {
+			_classCallCheck(this, Attendance);
+
+			return _possibleConstructorReturn(this, (Attendance.__proto__ || Object.getPrototypeOf(Attendance)).apply(this, arguments));
+		}
+
+		_createClass(Attendance, [{
+			key: "render",
+			value: function render() {
+
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(_Titlebar2.default, null),
+					_react2.default.createElement(_reactBootstrap.Row, { className: "show-grid" })
+				);
+			}
+		}]);
+
+		return Attendance;
+	}(_react.Component);
+
+	exports.default = Attendance;
+
+/***/ },
+/* 486 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(487);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(477)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Attendance.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Attendance.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 487 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(476)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".Attendance__Attendance_paragraph___1rF0a{\n\tcolor: #FF9632;\n\tbackground-color: red;\n}", ""]);
+
+	// exports
+	exports.locals = {
+		"Attendance_paragraph": "Attendance__Attendance_paragraph___1rF0a"
+	};
+
+/***/ },
+/* 488 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactBootstrap = __webpack_require__(224);
+
+	var _Panel = __webpack_require__(489);
 
 	var _Panel2 = _interopRequireDefault(_Panel);
 
-	var _homePage = __webpack_require__(489);
+	var _homePage = __webpack_require__(492);
 
 	var _homePage2 = _interopRequireDefault(_homePage);
 
@@ -44936,13 +44974,26 @@
 
 				return _react2.default.createElement(
 					"div",
-					{ className: "row height" },
-					_react2.default.createElement(_Panel2.default, { name: "ATTENDANCE", panelId: "attendance", img: "/assets/images/attendance_icon.png" }),
-					_react2.default.createElement(_Panel2.default, { name: "HOMEWORK", panelId: "homework", img: "/assets/images/homework_icon.png" }),
-					_react2.default.createElement(_Panel2.default, { name: "SYLLABUS", panelId: "syllabus", img: "/assets/images/syllabus_icon.png" }),
-					_react2.default.createElement(_Panel2.default, { name: "PROJECTS", panelId: "projects", img: "/assets/images/projects_icon.png" }),
-					_react2.default.createElement(_Panel2.default, { name: "FEEDBACK", panelId: "feedback", img: "/assets/images/feedback_icon.png" }),
-					_react2.default.createElement(_Panel2.default, { name: "CAREER", panelId: "career", img: "/assets/images/career_icon.png" })
+					null,
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(
+							"a",
+							{ href: "/" },
+							_react2.default.createElement("img", { className: "logo", src: "/assets/images/logo1.png", alt: "logo" })
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row height" },
+						_react2.default.createElement(_Panel2.default, { name: "ATTENDANCE", panelId: "attendance", img: "/assets/images/attendance_icon.png", className: "icons" }),
+						_react2.default.createElement(_Panel2.default, { name: "HOMEWORK", panelId: "homework", img: "/assets/images/homework_icon.png" }),
+						_react2.default.createElement(_Panel2.default, { name: "SYLLABUS", panelId: "syllabus", img: "/assets/images/syllabus_icon.png" }),
+						_react2.default.createElement(_Panel2.default, { name: "PROJECTS", panelId: "projects", img: "/assets/images/projects_icon.png" }),
+						_react2.default.createElement(_Panel2.default, { name: "FEEDBACK", panelId: "feedback", img: "/assets/images/feedback_icon.png" }),
+						_react2.default.createElement(_Panel2.default, { name: "CAREER", panelId: "career", img: "/assets/images/career_icon.png" })
+					)
 				);
 			}
 		}]);
@@ -44953,7 +45004,7 @@
 	exports.default = HomePage;
 
 /***/ },
-/* 486 */
+/* 489 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -44970,7 +45021,7 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	var _Panel = __webpack_require__(487);
+	var _Panel = __webpack_require__(490);
 
 	var _Panel2 = _interopRequireDefault(_Panel);
 
@@ -45009,7 +45060,7 @@
 						_react2.default.createElement("img", { src: img, alt: "icon", className: "img-responsive" }),
 						_react2.default.createElement(
 							"h5",
-							null,
+							{ className: "caption" },
 							name
 						)
 					)
@@ -45023,13 +45074,13 @@
 	exports.default = Panel;
 
 /***/ },
-/* 487 */
+/* 490 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(488);
+	var content = __webpack_require__(491);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(477)(content, {});
@@ -45049,7 +45100,7 @@
 	}
 
 /***/ },
-/* 488 */
+/* 491 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(476)();
@@ -45057,22 +45108,22 @@
 
 
 	// module
-	exports.push([module.id, ".Panel__panelImage___2Xgx2{\r\n\theight: 100vh;\r\n}\r\nimg{\r\n\tposition: relative;\r\n  \ttop: 50%;\r\n  \ttransform: translateY(-50%);\r\n}\r\n.Panel__remove-all-margin-padding___2KZeL{\r\n\tpadding: 0 !important;\r\n  \tmargin: 0 !important;\r\n}\r\n\r\nh5{\r\n\ttext-align: center;\r\n\tposition: relative;\r\n  \ttop: 33%;\r\n  \ttransform: translateY(-50%);\r\n    font-size: initial;\r\n}\r\n", ""]);
+	exports.push([module.id, ".Panel__panelImage___Om5ij{\n\theight: 100vh;\n\n}\nimg{\n\tposition: relative;\n  \ttop: 50%;\n  \ttransform: translateY(-50%);\n  \tfloat: right;\n}\n.Panel__remove-all-margin-padding___3PG_j{\n\tpadding: 0 !important;\n  \tmargin: 0 !important;\n}\n\nh5{\n\ttext-align: center;\n\tposition: relative;\n  \ttop: 33%;\n    font-size: initial;\n    display: inherit;\n}\n\n\n", ""]);
 
 	// exports
 	exports.locals = {
-		"panelImage": "Panel__panelImage___2Xgx2",
-		"remove-all-margin-padding": "Panel__remove-all-margin-padding___2KZeL"
+		"panelImage": "Panel__panelImage___Om5ij",
+		"remove-all-margin-padding": "Panel__remove-all-margin-padding___3PG_j"
 	};
 
 /***/ },
-/* 489 */
+/* 492 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(490);
+	var content = __webpack_require__(493);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(477)(content, {});
@@ -45092,7 +45143,7 @@
 	}
 
 /***/ },
-/* 490 */
+/* 493 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(476)();

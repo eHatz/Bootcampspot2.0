@@ -1,10 +1,12 @@
 .panelImage{
 	height: 100vh;
+
 }
 img{
 	position: relative;
   	top: 50%;
   	transform: translateY(-50%);
+  	float: right;
 }
 .remove-all-margin-padding{
 	padding: 0 !important;
@@ -15,6 +17,8 @@ h5{
 	text-align: center;
 	position: relative;
   	top: 33%;
-  	transform: translateY(-50%);
     font-size: initial;
+    display: inherit;
 }
+
+
