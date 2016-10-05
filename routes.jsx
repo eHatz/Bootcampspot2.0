@@ -8,8 +8,6 @@ import { Route } from 'react-router';
 //Base component, including nav bar
 import Application from './Components/Application';
 
-//Sample child component
-import Login from './Components/Login/Login.jsx';
 
 //Another sample child component
 

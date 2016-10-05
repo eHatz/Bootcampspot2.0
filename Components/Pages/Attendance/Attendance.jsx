@@ -9,15 +9,13 @@ class Attendance extends Component {
 
 		return (
 
-			<div>
 
-
-				<Navbar />
-
-				<Row className="show-grid">
-				</Row>
-
+			<div className="row">
+				<div className="col-sm-4 linkDiv">
+					<Navbar />
+				</div>
 			</div>
+	
 		);
 	}
 }

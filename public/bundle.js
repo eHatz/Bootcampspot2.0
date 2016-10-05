@@ -25434,10 +25434,6 @@
 
 	var _Application2 = _interopRequireDefault(_Application);
 
-	var _Login = __webpack_require__(478);
-
-	var _Login2 = _interopRequireDefault(_Login);
-
 	var _Attendance = __webpack_require__(485);
 
 	var _Attendance2 = _interopRequireDefault(_Attendance);
@@ -25450,10 +25446,6 @@
 
 	//Another sample child component
 
-	//===Import Components===
-
-	//Base component, including nav bar
-	//===React Dependencies===
 	exports.default = _react2.default.createElement(
 		_reactRouter.Route,
 		{ component: _Application2.default },
@@ -25463,7 +25455,10 @@
 
 	//Title Component
 
-	//Sample child component
+	//===Import Components===
+
+	//Base component, including nav bar
+	//===React Dependencies===
 
 /***/ },
 /* 223 */
@@ -44216,11 +44211,11 @@
 
 
 	// module
-	exports.push([module.id, ".Application__Application_main___33GIR: {\r\n\talign-items: center;\r\n\tmargin: 0 auto;\r\n\tposition: relative;\r\n\tcolor:red;\r\n}", ""]);
+	exports.push([module.id, ".Application__Application_main___kDJ6Y: {\n\talign-items: center;\n\tmargin: 0 auto;\n\tposition: relative;\n\tcolor:red;\n}", ""]);
 
 	// exports
 	exports.locals = {
-		"Application_main": "Application__Application_main___33GIR"
+		"Application_main": "Application__Application_main___kDJ6Y"
 	};
 
 /***/ },
@@ -44532,73 +44527,7 @@
 
 
 /***/ },
-/* 478 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _Navbar = __webpack_require__(479);
-
-	var _Navbar2 = _interopRequireDefault(_Navbar);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Login = function (_Component) {
-		_inherits(Login, _Component);
-
-		function Login() {
-			_classCallCheck(this, Login);
-
-			return _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).apply(this, arguments));
-		}
-
-		_createClass(Login, [{
-			key: "render",
-			value: function render() {
-
-				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(
-						"div",
-						{ className: "col-md-3" },
-						_react2.default.createElement(
-							"p",
-							null,
-							"Epic login paragraph"
-						),
-						_react2.default.createElement(
-							"a",
-							{ href: "#/Attendance" },
-							"Go to Attendance page"
-						)
-					)
-				);
-			}
-		}]);
-
-		return Login;
-	}(_react.Component);
-
-	exports.default = Login;
-
-/***/ },
+/* 478 */,
 /* 479 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -44705,17 +44634,10 @@
 
 
 	// module
-	exports.push([module.id, "\t.Navbar__Navbar_title___SNXtH {\r\n\t\t\r\n\t\tbackground-color: #262626;\r\n\t\tmargin-right: 10%;\r\n\t\tmargin-left: -40%;\r\n\t\tpadding-top: 18%;\r\n\t\tfont-family: 'Roboto Condensed', sans-serif;\r\n\t\tcolor:red;\r\n\t\tpadding-bottom: 1%;\r\n\t}\r\n\r\n\t.Navbar__Navbar_blackpanel___2sEgP{\r\n\t\tbackground-color: black;\r\n\t\tpadding-bottom:150%;\r\n\t\tmargin-right: 10%;\r\n\t\tpadding-left: 40%;\r\n\t\tmargin-left: -22%;\r\n\t\tmargin-top: -4%;\r\n\t\tpadding-top: 10%;\r\n\t\tcolor:white;\r\n\t\tfont-family: 'Roboto Condensed', sans-serif;\r\n\t\tfont-size: 20px;\r\n\r\n\t}\r\n\r\n\t.Navbar__Navbar_h4___135t-{\r\n\t\ttext-align: center;\r\n\t\tcolor:#9D9B9C;\r\n\t\tfont-family: 'Krona One', sans-serif;\r\n\t\tmargin-left: 10%;\r\n\t\tmargin-top: -7%;\r\n\t}\r\n\r\n/*SPOT*/\r\n\t.Navbar__Navbar_h1white___nv60K{\r\n\t\tcolor:white;\r\n\t\tfloat:right;\r\n\t\tmargin-top: -14%;\r\n\t\tmargin-right: 10%;\r\n\r\n\t}\r\n\r\n/*BOOTCAMP*/\r\n\t.Navbar__Navbar_h1red___3oWlJ{\r\n\t\tcolor:#B70002;\r\n\t\tmargin-left: 17%;\r\n\r\n\t}\r\n\r\n\t.Navbar__Navbar_redPanel___2Uv4P{\r\n\t\tbackground-color: #B70002;\r\n\t\tpadding-top:12%;\r\n\t\tmargin-right: -10%;\r\n\t\tmargin-left: -6%;\r\n\t\tfont-family: 'Roboto Condensed', sans-serif;\r\n\t\tcolor:white;\r\n\t\tfont-size: 18px;\r\n\r\n\r\n\t}\r\n\r\n\t\r\n\r\n\r\n\t", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
-	exports.locals = {
-		"Navbar_title": "Navbar__Navbar_title___SNXtH",
-		"Navbar_blackpanel": "Navbar__Navbar_blackpanel___2sEgP",
-		"Navbar_h4": "Navbar__Navbar_h4___135t-",
-		"Navbar_h1white": "Navbar__Navbar_h1white___nv60K",
-		"Navbar_h1red": "Navbar__Navbar_h1red___3oWlJ",
-		"Navbar_redPanel": "Navbar__Navbar_redPanel___2Uv4P"
-	};
+
 
 /***/ },
 /* 482 */
@@ -44769,12 +44691,12 @@
 					_react2.default.createElement(
 						"div",
 						{ className: _NavBarLink2.default.imageDiv },
-						_react2.default.createElement("img", { src: img, alt: "icon", className: "img-responsive" })
-					),
-					_react2.default.createElement(
-						"h5",
-						{ className: _NavBarLink2.default.linkText },
-						name
+						_react2.default.createElement("img", { src: img, alt: "icon", className: "img-responsive" }),
+						_react2.default.createElement(
+							"h3",
+							{ className: _NavBarLink2.default.navbar_linkText },
+							name
+						)
 					)
 				);
 			}
@@ -44820,11 +44742,13 @@
 
 
 	// module
-	exports.push([module.id, ".NavBarLink__linkDiv___3-O7i{\r\n\t\r\n}", ""]);
+	exports.push([module.id, ".NavBarLink__navbar_linkText___35D6B{\n\tcolor: #ddd7d7;\n\tfont-size: 14px;\n\tpadding-left: 20px;\n}\n\n.NavBarLink__imageDiv___35Kfe{\n\tdisplay: inline-flex;\n}\n\n.NavBarLink__linkDiv___2UnQg{\n\tbackground-color: black;\n}", ""]);
 
 	// exports
 	exports.locals = {
-		"linkDiv": "NavBarLink__linkDiv___3-O7i"
+		"navbar_linkText": "NavBarLink__navbar_linkText___35D6B",
+		"imageDiv": "NavBarLink__imageDiv___35Kfe",
+		"linkDiv": "NavBarLink__linkDiv___2UnQg"
 	};
 
 /***/ },
@@ -44876,9 +44800,12 @@
 
 				return _react2.default.createElement(
 					"div",
-					null,
-					_react2.default.createElement(_Navbar2.default, null),
-					_react2.default.createElement(_reactBootstrap.Row, { className: "show-grid" })
+					{ className: "row" },
+					_react2.default.createElement(
+						"div",
+						{ className: "col-sm-4 linkDiv" },
+						_react2.default.createElement(_Navbar2.default, null)
+					)
 				);
 			}
 		}]);
@@ -44923,12 +44850,10 @@
 
 
 	// module
-	exports.push([module.id, ".Attendance__Attendance_paragraph___1ZI4U{\r\n\tcolor: #FF9632;\r\n\tbackground-color: red;\r\n}", ""]);
+	exports.push([module.id, "", ""]);
 
 	// exports
-	exports.locals = {
-		"Attendance_paragraph": "Attendance__Attendance_paragraph___1ZI4U"
-	};
+
 
 /***/ },
 /* 488 */
@@ -45130,13 +45055,13 @@
 
 
 	// module
-	exports.push([module.id, ".Panel__panelDiv___1FShh{\r\n\theight: 100vh;\r\n  display: inline-block;\r\n  width: 100%;\r\n}\r\n.Panel__imageWrapper___1YU2w{\r\n\tposition: relative;\r\n\ttop: 58%;\r\n\ttransform: translateY(-50%);\r\n\tfloat: right;\r\n}\r\n.Panel__panelImg___H4ElD{\r\n  float: right;\r\n  max-height: 100%;\r\n  margin-bottom: 10%;\r\n}\r\n\r\nh5{\r\n\ttext-align: center;\r\n\tposition: relative;\r\n  font-size: initial;\r\n}\r\n\r\nh4{\r\n  color: white;\r\n  float: right;\r\n}\r\n\r\n\r\n@media screen and (max-width: 767px){\r\n  .Panel__panelDiv___1FShh{\r\n    height: 25vh;\r\n  }\r\n\r\n  .Panel__imageWrapper___1YU2w{\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    float: right;\r\n    height: 100%;\r\n    width: 100%\r\n  }\r\n  .Panel__panelImg___H4ElD {\r\n    height: 100%;\r\n  }\r\n\r\n  h5{\r\n    font-size: 21px;\r\n    line-height: 161px; \r\n  }\r\n\r\n}\r\n\r\n@media screen and (max-width: 353px){\r\n  h5{\r\n    font-size: 20px;\r\n    line-height: 7;\r\n  }\r\n  \r\n}\r\n\r\n", ""]);
+	exports.push([module.id, ".Panel__panelDiv___1frAX{\n\theight: 100vh;\n  display: inline-block;\n  width: 100%;\n}\n.Panel__imageWrapper___A_vP_{\n\tposition: relative;\n\ttop: 58%;\n\ttransform: translateY(-50%);\n\tfloat: right;\n}\n.Panel__panelImg___20d9V{\n  float: right;\n  max-height: 100%;\n  margin-bottom: 10%;\n}\n\nh5{\n\ttext-align: center;\n\tposition: relative;\n  font-size: initial;\n}\n\nh4{\n  color: white;\n  float: right;\n}\n\n\n@media screen and (max-width: 767px){\n  .Panel__panelDiv___1frAX{\n    height: 25vh;\n  }\n\n  .Panel__imageWrapper___A_vP_{\n    top: 50%;\n    transform: translateY(-50%);\n    float: right;\n    height: 100%;\n    width: 100%\n  }\n  .Panel__panelImg___20d9V {\n    height: 100%;\n  }\n\n  h5{\n    font-size: 21px;\n    line-height: 161px; \n  }\n\n}\n\n@media screen and (max-width: 353px){\n  h5{\n    font-size: 20px;\n    line-height: 7;\n  }\n  \n}\n\n", ""]);
 
 	// exports
 	exports.locals = {
-		"panelDiv": "Panel__panelDiv___1FShh",
-		"imageWrapper": "Panel__imageWrapper___1YU2w",
-		"panelImg": "Panel__panelImg___H4ElD"
+		"panelDiv": "Panel__panelDiv___1frAX",
+		"imageWrapper": "Panel__imageWrapper___A_vP_",
+		"panelImg": "Panel__panelImg___20d9V"
 	};
 
 /***/ },
@@ -45174,14 +45099,14 @@
 
 
 	// module
-	exports.push([module.id, "#HomePage__logo___2gE9i{\r\n\tz-index: 1; \r\n\tposition: absolute; \r\n\tpadding-top: 4%;\r\n    padding-right: 4%;\r\n    padding-left: 4%;\r\n\t\r\n}\r\n#HomePage__login___MJUKA{\r\n\tz-index: 1; \r\n\tposition: absolute; \r\n\tpadding-top: 7%;\r\n    padding-right:5%;\r\n    padding-left: 7%;\r\n\tright: 0px;\r\n\r\n}\r\n@media screen and (max-width: 767px){\r\n\t#HomePage__logo___2gE9i{\r\n\t\tz-index: 1; \r\n\t\tposition: static; \r\n\t\ttop: 0px; \r\n\t\tleft: 0px;\r\n\t\tpadding-top: 8%;\r\n    \tpadding-right: 4%;\r\n    \tpadding-left: 4%;\r\n    \tpadding-bottom: 0%;\r\n\t\tmax-width: 100%;\r\n\t\tbackground-color: black;\r\n\t}\r\n\r\n\t#HomePage__logoDiv___2H5Bk{\r\n\t\tbackground-color: black;\r\n\t\tmargin-right: -1px;\r\n\t}\r\n\r\n\t#HomePage__login___MJUKA {\r\n    z-index: 1;\r\n    position: static;\r\n    padding-top: 0%; \r\n    padding-right: 3%;\r\n    padding-bottom: 12%;\r\n    padding-left: 5%;\r\n    left: 0px; \r\n    max-width: 46%;\r\n\t}\r\n\t.HomePage__remove-all-margin-padding___10GpK {\r\n    margin-top: -6px;\r\n    margin-right: -1px;\r\n    margin-bottom: 0px;\r\n    margin-left: 0px;\r\n\t}\r\n}\r\n\r\n\r\n", ""]);
+	exports.push([module.id, "#HomePage__logo___2a6OD{\n\tz-index: 1; \n\tposition: absolute; \n\tpadding-top: 4%;\n    padding-right: 4%;\n    padding-left: 4%;\n\t\n}\n#HomePage__login___2lfF1{\n\tz-index: 1; \n\tposition: absolute; \n\tpadding-top: 7%;\n    padding-right:5%;\n    padding-left: 7%;\n\tright: 0px;\n\n}\n@media screen and (max-width: 767px){\n\t#HomePage__logo___2a6OD{\n\t\tz-index: 1; \n\t\tposition: static; \n\t\ttop: 0px; \n\t\tleft: 0px;\n\t\tpadding-top: 8%;\n    \tpadding-right: 4%;\n    \tpadding-left: 4%;\n    \tpadding-bottom: 0%;\n\t\tmax-width: 100%;\n\t\tbackground-color: black;\n\t}\n\n\t#HomePage__logoDiv___3B0zq{\n\t\tbackground-color: black;\n\t\tmargin-right: -1px;\n\t}\n\n\t#HomePage__login___2lfF1 {\n    z-index: 1;\n    position: static;\n    padding-top: 0%; \n    padding-right: 3%;\n    padding-bottom: 12%;\n    padding-left: 5%;\n    left: 0px; \n    max-width: 46%;\n\t}\n\t.HomePage__remove-all-margin-padding___2Rpmn {\n    margin-top: -6px;\n    margin-right: -1px;\n    margin-bottom: 0px;\n    margin-left: 0px;\n\t}\n}\n\n\n", ""]);
 
 	// exports
 	exports.locals = {
-		"logo": "HomePage__logo___2gE9i",
-		"login": "HomePage__login___MJUKA",
-		"logoDiv": "HomePage__logoDiv___2H5Bk",
-		"remove-all-margin-padding": "HomePage__remove-all-margin-padding___10GpK"
+		"logo": "HomePage__logo___2a6OD",
+		"login": "HomePage__login___2lfF1",
+		"logoDiv": "HomePage__logoDiv___3B0zq",
+		"remove-all-margin-padding": "HomePage__remove-all-margin-padding___2Rpmn"
 	};
 
 /***/ }
