@@ -44216,11 +44216,11 @@
 
 
 	// module
-	exports.push([module.id, ".Application__Application_main___33GIR: {\r\n\talign-items: center;\r\n\tmargin: 0 auto;\r\n\tposition: relative;\r\n\tcolor:red;\r\n}", ""]);
+	exports.push([module.id, ".Application__Application_main___kDJ6Y: {\n\talign-items: center;\n\tmargin: 0 auto;\n\tposition: relative;\n\tcolor:red;\n}", ""]);
 
 	// exports
 	exports.locals = {
-		"Application_main": "Application__Application_main___33GIR"
+		"Application_main": "Application__Application_main___kDJ6Y"
 	};
 
 /***/ },
@@ -44632,6 +44632,7 @@
 				_react2.default.createElement(
 					"div",
 					{ id: _Titlebar2.default.navBar },
+					"// we are assigning the props to the NavBarLink",
 					_react2.default.createElement(_NavBarLink2.default, { name: "Attendance", img: "..", navLink: "#/attendance" })
 				)
 			);
@@ -44704,16 +44705,16 @@
 
 
 	// module
-	exports.push([module.id, "\t.Titlebar__Titlebar_title___V0bax {\r\n\t\t\r\n\t\tbackground-color: #262626;\r\n\t\tmargin-right: 10%;\r\n\t\tmargin-left: -40%;\r\n\t\tpadding-top: 18%;\r\n\t\tfont-family: 'Roboto Condensed', sans-serif;\r\n\t\tcolor:red;\r\n\t\tpadding-bottom: 1%;\r\n\t}\r\n\r\n\t.Titlebar__Titlebar_blackpanel___SVXCc{\r\n\t\tbackground-color: black;\r\n\t\tpadding-bottom:150%;\r\n\t\tmargin-right: 10%;\r\n\t\tpadding-left: 40%;\r\n\t\tmargin-left: -22%;\r\n\t\tmargin-top: -4%;\r\n\t\tpadding-top: 10%;\r\n\t\tcolor:white;\r\n\t\tfont-family: 'Roboto Condensed', sans-serif;\r\n\t\tfont-size: 20px;\r\n\r\n\t}\r\n\r\n\t.Titlebar__Titlebar_h4___33aRI{\r\n\t\ttext-align: center;\r\n\t\tcolor:#9D9B9C;\r\n\t\tfont-family: 'Krona One', sans-serif;\r\n\t\tmargin-left: 10%;\r\n\t\tmargin-top: -7%;\r\n\t}\r\n\r\n/*SPOT*/\r\n\t.Titlebar__Titlebar_h1white___1R1bf{\r\n\t\tcolor:white;\r\n\t\tfloat:right;\r\n\t\tmargin-top: -14%;\r\n\t\tmargin-right: 10%;\r\n\r\n\t}\r\n\r\n/*BOOTCAMP*/\r\n\t.Titlebar__Titlebar_h1red____eBgw{\r\n\t\tcolor:#B70002;\r\n\t\tmargin-left: 17%;\r\n\r\n\t}\r\n\r\n\t.Titlebar__Titlebar_redPanel___WxXh5{\r\n\t\tbackground-color: #B70002;\r\n\t\tpadding-top:12%;\r\n\t\tmargin-right: -10%;\r\n\t\tmargin-left: -6%;\r\n\t\tfont-family: 'Roboto Condensed', sans-serif;\r\n\t\tcolor:white;\r\n\t\tfont-size: 18px;\r\n\r\n\r\n\t}\r\n\r\n\t\r\n\r\n\r\n\t", ""]);
+	exports.push([module.id, "\t.Titlebar__Titlebar_title___2CdAf {\n\t\t\n\t\tbackground-color: #262626;\n\t\tmargin-right: 10%;\n\t\tmargin-left: -40%;\n\t\tpadding-top: 18%;\n\t\tfont-family: 'Roboto Condensed', sans-serif;\n\t\tcolor:red;\n\t\tpadding-bottom: 1%;\n\t}\n\n\t.Titlebar__Titlebar_blackpanel___2yOtO{\n\t\tbackground-color: black;\n\t\tpadding-bottom:150%;\n\t\tmargin-right: 10%;\n\t\tpadding-left: 40%;\n\t\tmargin-left: -22%;\n\t\tmargin-top: -4%;\n\t\tpadding-top: 10%;\n\t\tcolor:white;\n\t\tfont-family: 'Roboto Condensed', sans-serif;\n\t\tfont-size: 20px;\n\n\t}\n\n\t.Titlebar__Titlebar_h4___3aMnK{\n\t\ttext-align: center;\n\t\tcolor:#9D9B9C;\n\t\tfont-family: 'Krona One', sans-serif;\n\t\tmargin-left: 10%;\n\t\tmargin-top: -7%;\n\t}\n\n/*SPOT*/\n\t.Titlebar__Titlebar_h1white___3muz1{\n\t\tcolor:white;\n\t\tfloat:right;\n\t\tmargin-top: -14%;\n\t\tmargin-right: 10%;\n\n\t}\n\n/*BOOTCAMP*/\n\t.Titlebar__Titlebar_h1red___QGOt3{\n\t\tcolor:#B70002;\n\t\tmargin-left: 17%;\n\n\t}\n\n\t.Titlebar__Titlebar_redPanel___2U992{\n\t\tbackground-color: #B70002;\n\t\tpadding-top:12%;\n\t\tmargin-right: -10%;\n\t\tmargin-left: -6%;\n\t\tfont-family: 'Roboto Condensed', sans-serif;\n\t\tcolor:white;\n\t\tfont-size: 18px;\n\n\n\t}\n\n\t\n\n\n\t", ""]);
 
 	// exports
 	exports.locals = {
-		"Titlebar_title": "Titlebar__Titlebar_title___V0bax",
-		"Titlebar_blackpanel": "Titlebar__Titlebar_blackpanel___SVXCc",
-		"Titlebar_h4": "Titlebar__Titlebar_h4___33aRI",
-		"Titlebar_h1white": "Titlebar__Titlebar_h1white___1R1bf",
-		"Titlebar_h1red": "Titlebar__Titlebar_h1red____eBgw",
-		"Titlebar_redPanel": "Titlebar__Titlebar_redPanel___WxXh5"
+		"Titlebar_title": "Titlebar__Titlebar_title___2CdAf",
+		"Titlebar_blackpanel": "Titlebar__Titlebar_blackpanel___2yOtO",
+		"Titlebar_h4": "Titlebar__Titlebar_h4___3aMnK",
+		"Titlebar_h1white": "Titlebar__Titlebar_h1white___3muz1",
+		"Titlebar_h1red": "Titlebar__Titlebar_h1red___QGOt3",
+		"Titlebar_redPanel": "Titlebar__Titlebar_redPanel___2U992"
 	};
 
 /***/ },
@@ -44760,7 +44761,7 @@
 				var name = _props.name;
 				var img = _props.img;
 				var navLink = _props.navLink;
-
+				// here we are assigning prop names this.props.name etc, which will be called at a future point
 
 				return _react2.default.createElement(
 					"div",
@@ -44772,7 +44773,7 @@
 					),
 					_react2.default.createElement(
 						"h5",
-						{ className: syles.linkText },
+						{ className: _NavBarLink2.default.linkText },
 						name
 					)
 				);
@@ -44819,11 +44820,11 @@
 
 
 	// module
-	exports.push([module.id, ".NavBarLink__linkDiv___3-O7i{\r\n\t\r\n}", ""]);
+	exports.push([module.id, ".NavBarLink__linkDiv___2UnQg{\n\t\n}", ""]);
 
 	// exports
 	exports.locals = {
-		"linkDiv": "NavBarLink__linkDiv___3-O7i"
+		"linkDiv": "NavBarLink__linkDiv___2UnQg"
 	};
 
 /***/ },
@@ -44833,7 +44834,7 @@
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-					value: true
+		value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -44861,28 +44862,28 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Attendance = function (_Component) {
-					_inherits(Attendance, _Component);
+		_inherits(Attendance, _Component);
 
-					function Attendance() {
-									_classCallCheck(this, Attendance);
+		function Attendance() {
+			_classCallCheck(this, Attendance);
 
-									return _possibleConstructorReturn(this, (Attendance.__proto__ || Object.getPrototypeOf(Attendance)).apply(this, arguments));
-					}
+			return _possibleConstructorReturn(this, (Attendance.__proto__ || Object.getPrototypeOf(Attendance)).apply(this, arguments));
+		}
 
-					_createClass(Attendance, [{
-									key: "render",
-									value: function render() {
+		_createClass(Attendance, [{
+			key: "render",
+			value: function render() {
 
-													return _react2.default.createElement(
-																	"div",
-																	null,
-																	_react2.default.createElement(_Titlebar2.default, null),
-																	_react2.default.createElement(_reactBootstrap.Row, { className: "show-grid" })
-													);
-									}
-					}]);
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(_Titlebar2.default, null),
+					_react2.default.createElement(_reactBootstrap.Row, { className: "show-grid" })
+				);
+			}
+		}]);
 
-					return Attendance;
+		return Attendance;
 	}(_react.Component);
 
 	exports.default = Attendance;
@@ -44922,11 +44923,11 @@
 
 
 	// module
-	exports.push([module.id, ".Attendance__Attendance_paragraph___1ZI4U{\r\n\tcolor: #FF9632;\r\n\tbackground-color: red;\r\n}", ""]);
+	exports.push([module.id, ".Attendance__Attendance_paragraph___1rF0a{\n\tcolor: #FF9632;\n\tbackground-color: red;\n}", ""]);
 
 	// exports
 	exports.locals = {
-		"Attendance_paragraph": "Attendance__Attendance_paragraph___1ZI4U"
+		"Attendance_paragraph": "Attendance__Attendance_paragraph___1rF0a"
 	};
 
 /***/ },
@@ -45116,13 +45117,13 @@
 
 
 	// module
-	exports.push([module.id, ".Panel__panelImage___2Xgx2{\r\n\theight: 100vh;\r\n\r\n}\r\n.Panel__panelImg___H4ElD{\r\n\tposition: relative;\r\n  \ttop: 50%;\r\n  \ttransform: translateY(-50%);\r\n  \tfloat: right;\r\n}\r\n.Panel__remove-all-margin-padding___2KZeL{\r\n\tpadding: 0 !important;\r\n  \tmargin: 0 !important;\r\n}\r\n\r\nh5{\r\n\ttext-align: center;\r\n\tposition: relative;\r\n\ttop: 33%;\r\n  font-size: initial;\r\n  display: inherit;\r\n}\r\n\r\n\r\n", ""]);
+	exports.push([module.id, ".Panel__panelImage___Om5ij{\n\theight: 100vh;\n\n}\n.Panel__panelImg___20d9V{\n\tposition: relative;\n  \ttop: 50%;\n  \ttransform: translateY(-50%);\n  \tfloat: right;\n}\n.Panel__remove-all-margin-padding___3PG_j{\n\tpadding: 0 !important;\n  \tmargin: 0 !important;\n}\n\nh5{\n\ttext-align: center;\n\tposition: relative;\n\ttop: 33%;\n  font-size: initial;\n  display: inherit;\n}\n\n\n", ""]);
 
 	// exports
 	exports.locals = {
-		"panelImage": "Panel__panelImage___2Xgx2",
-		"panelImg": "Panel__panelImg___H4ElD",
-		"remove-all-margin-padding": "Panel__remove-all-margin-padding___2KZeL"
+		"panelImage": "Panel__panelImage___Om5ij",
+		"panelImg": "Panel__panelImg___20d9V",
+		"remove-all-margin-padding": "Panel__remove-all-margin-padding___3PG_j"
 	};
 
 /***/ },
@@ -45160,12 +45161,12 @@
 
 
 	// module
-	exports.push([module.id, "#HomePage__logo___2gE9i{\r\n\tfloat: right;\r\n}\r\n#HomePage__logoDiv___2H5Bk {\r\n\tbackground-color: red;\r\n}", ""]);
+	exports.push([module.id, "#HomePage__logo___2a6OD{\n\tfloat: right;\n}\n#HomePage__logoDiv___3B0zq {\n\tbackground-color: red;\n}", ""]);
 
 	// exports
 	exports.locals = {
-		"logo": "HomePage__logo___2gE9i",
-		"logoDiv": "HomePage__logoDiv___2H5Bk"
+		"logo": "HomePage__logo___2a6OD",
+		"logoDiv": "HomePage__logoDiv___3B0zq"
 	};
 
 /***/ }
