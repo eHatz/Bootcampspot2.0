@@ -12,14 +12,15 @@ class AttendancePage extends Component {
 			
 			<div>
 
-				<Navbar />
-				<LogoutBar UserName='Tim' />
-				<Row className="show-grid">
-				</Row>
-
-			<div className="row">
-				<div className="col-sm-4 linkDiv">
 					<Navbar />
+					<LogoutBar UserName='Tim' />
+					<Row className="show-grid">
+					</Row>
+
+				<div className="row">
+					<div className="col-sm-4 linkDiv">
+						<Navbar />
+					</div>
 				</div>
 			</div>
 	
