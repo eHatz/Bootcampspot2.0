@@ -10,17 +10,17 @@ class Panel extends Component {
 		const { panelId, img, name, background } = this.props;
 	
 		return (
-				<a href={'#' + panelId}>
-					<Col sm={2} className="remove-all-margin-padding">
+			<a href={'#' + panelId}>
+				<Col sm={2} className="remove-all-margin-padding">
 
-						<div id={panelId} className="Panel_panelDiv" style={{backgroundColor: background}}>
-							<div className="Panel_imageWrapper">
-								<img src={img} alt="icon" className="img-responsive Panel_panelImg"/>
-								<h5 className="caption Panel_h5">{name}</h5>
-							</div>
+					<div id={panelId} className="Panel_panelDiv" style={{backgroundColor: background}}>
+						<div className="Panel_imageWrapper">
+							<img src={img} alt="icon" className="img-responsive Panel_panelImg"/>
+							<h5 className="caption Panel_h5">{name}</h5>
 						</div>
-					</Col>
-				</a>
+					</div>
+				</Col>
+			</a>
 		)
 	}
 }
