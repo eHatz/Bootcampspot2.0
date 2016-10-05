@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Grid, Row, Col} from "react-bootstrap";
-import Titlebar from "../../Titlebar/Titlebar.jsx";
+import Navbar from "../../Navbar/Navbar.jsx";
 import styles from "./Attendance.css";
 
 class Attendance extends Component {
@@ -11,7 +11,7 @@ class Attendance extends Component {
 
 			<div>
 
-				<Titlebar />
+				<Navbar />
 
 				<Row className="show-grid">
 

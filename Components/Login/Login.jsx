@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Titlebar from "../Titlebar/Titlebar.jsx";
+import Navbar from "../Navbar/Navbar.jsx";
 
 
 class Login extends Component {

@@ -44216,11 +44216,11 @@
 
 
 	// module
-	exports.push([module.id, ".Application__Application_main___kDJ6Y: {\n\talign-items: center;\n\tmargin: 0 auto;\n\tposition: relative;\n\tcolor:red;\n}", ""]);
+	exports.push([module.id, ".Application__Application_main___33GIR: {\r\n\talign-items: center;\r\n\tmargin: 0 auto;\r\n\tposition: relative;\r\n\tcolor:red;\r\n}", ""]);
 
 	// exports
 	exports.locals = {
-		"Application_main": "Application__Application_main___kDJ6Y"
+		"Application_main": "Application__Application_main___33GIR"
 	};
 
 /***/ },
@@ -44547,9 +44547,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Titlebar = __webpack_require__(479);
+	var _Navbar = __webpack_require__(479);
 
-	var _Titlebar2 = _interopRequireDefault(_Titlebar);
+	var _Navbar2 = _interopRequireDefault(_Navbar);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44612,9 +44612,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Titlebar = __webpack_require__(480);
+	var _Navbar = __webpack_require__(480);
 
-	var _Titlebar2 = _interopRequireDefault(_Titlebar);
+	var _Navbar2 = _interopRequireDefault(_Navbar);
 
 	var _NavBarLink = __webpack_require__(482);
 
@@ -44622,8 +44622,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Titlebar = _react2.default.createClass({
-		displayName: "Titlebar",
+	var Navbar = _react2.default.createClass({
+		displayName: "Navbar",
 		render: function render() {
 
 			return _react2.default.createElement(
@@ -44631,7 +44631,7 @@
 				{ className: "col-md-4 remove-all-margin-padding" },
 				_react2.default.createElement(
 					"div",
-					{ id: _Titlebar2.default.navBar },
+					{ id: _Navbar2.default.navBar },
 					"// we are assigning the props to the NavBarLink",
 					_react2.default.createElement(_NavBarLink2.default, { name: "Attendance", img: "..", navLink: "#/attendance" })
 				)
@@ -44639,19 +44639,19 @@
 		}
 	});
 
-	exports.default = Titlebar;
+	exports.default = Navbar;
 
 	// <div className = "row">
 	// 					<div className = "col-md-3">
-	// 						<div className = {styles.Titlebar_title}>
-	// 							<h4 className = {styles.Titlebar_h4}>RUTGERS UNIVERSITY</h4>
-	// 							<h1 className = {styles.Titlebar_h1red}>BOOTCAMP</h1>
-	// 							<h1 className = {styles.Titlebar_h1white}>SPOT</h1>
-	// 							<h1 className = {styles.Titlebar_h1red}>2.0</h1>
+	// 						<div className = {styles.Navbar_title}>
+	// 							<h4 className = {styles.Navbar_h4}>RUTGERS UNIVERSITY</h4>
+	// 							<h1 className = {styles.Navbar_h1red}>BOOTCAMP</h1>
+	// 							<h1 className = {styles.Navbar_h1white}>SPOT</h1>
+	// 							<h1 className = {styles.Navbar_h1red}>2.0</h1>
 	// 						</div>
 	// 					</div>
 	// 					<div className = "col-md-9">
-	// 						<div className = {styles.Titlebar_redPanel}>
+	// 						<div className = {styles.Navbar_redPanel}>
 	// 							<p>Hi Jennine</p>
 	// 							<p>Logout</p>
 	// 						</div>
@@ -44659,7 +44659,7 @@
 	// 				</div>
 	// 				<div className = "row">
 	// 					<div className = "col-md-3">
-	// 						<div className = {styles.Titlebar_blackpanel}>
+	// 						<div className = {styles.Navbar_blackpanel}>
 	// 							<p>Attendence</p>
 	// 							<p>Homework</p>
 	// 							<p>Syllabus</p>
@@ -44686,8 +44686,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Titlebar.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Titlebar.css");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Navbar.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Navbar.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -44705,16 +44705,16 @@
 
 
 	// module
-	exports.push([module.id, "\t.Titlebar__Titlebar_title___2CdAf {\n\t\t\n\t\tbackground-color: #262626;\n\t\tmargin-right: 10%;\n\t\tmargin-left: -40%;\n\t\tpadding-top: 18%;\n\t\tfont-family: 'Roboto Condensed', sans-serif;\n\t\tcolor:red;\n\t\tpadding-bottom: 1%;\n\t}\n\n\t.Titlebar__Titlebar_blackpanel___2yOtO{\n\t\tbackground-color: black;\n\t\tpadding-bottom:150%;\n\t\tmargin-right: 10%;\n\t\tpadding-left: 40%;\n\t\tmargin-left: -22%;\n\t\tmargin-top: -4%;\n\t\tpadding-top: 10%;\n\t\tcolor:white;\n\t\tfont-family: 'Roboto Condensed', sans-serif;\n\t\tfont-size: 20px;\n\n\t}\n\n\t.Titlebar__Titlebar_h4___3aMnK{\n\t\ttext-align: center;\n\t\tcolor:#9D9B9C;\n\t\tfont-family: 'Krona One', sans-serif;\n\t\tmargin-left: 10%;\n\t\tmargin-top: -7%;\n\t}\n\n/*SPOT*/\n\t.Titlebar__Titlebar_h1white___3muz1{\n\t\tcolor:white;\n\t\tfloat:right;\n\t\tmargin-top: -14%;\n\t\tmargin-right: 10%;\n\n\t}\n\n/*BOOTCAMP*/\n\t.Titlebar__Titlebar_h1red___QGOt3{\n\t\tcolor:#B70002;\n\t\tmargin-left: 17%;\n\n\t}\n\n\t.Titlebar__Titlebar_redPanel___2U992{\n\t\tbackground-color: #B70002;\n\t\tpadding-top:12%;\n\t\tmargin-right: -10%;\n\t\tmargin-left: -6%;\n\t\tfont-family: 'Roboto Condensed', sans-serif;\n\t\tcolor:white;\n\t\tfont-size: 18px;\n\n\n\t}\n\n\t\n\n\n\t", ""]);
+	exports.push([module.id, "\t.Navbar__Navbar_title___SNXtH {\r\n\t\t\r\n\t\tbackground-color: #262626;\r\n\t\tmargin-right: 10%;\r\n\t\tmargin-left: -40%;\r\n\t\tpadding-top: 18%;\r\n\t\tfont-family: 'Roboto Condensed', sans-serif;\r\n\t\tcolor:red;\r\n\t\tpadding-bottom: 1%;\r\n\t}\r\n\r\n\t.Navbar__Navbar_blackpanel___2sEgP{\r\n\t\tbackground-color: black;\r\n\t\tpadding-bottom:150%;\r\n\t\tmargin-right: 10%;\r\n\t\tpadding-left: 40%;\r\n\t\tmargin-left: -22%;\r\n\t\tmargin-top: -4%;\r\n\t\tpadding-top: 10%;\r\n\t\tcolor:white;\r\n\t\tfont-family: 'Roboto Condensed', sans-serif;\r\n\t\tfont-size: 20px;\r\n\r\n\t}\r\n\r\n\t.Navbar__Navbar_h4___135t-{\r\n\t\ttext-align: center;\r\n\t\tcolor:#9D9B9C;\r\n\t\tfont-family: 'Krona One', sans-serif;\r\n\t\tmargin-left: 10%;\r\n\t\tmargin-top: -7%;\r\n\t}\r\n\r\n/*SPOT*/\r\n\t.Navbar__Navbar_h1white___nv60K{\r\n\t\tcolor:white;\r\n\t\tfloat:right;\r\n\t\tmargin-top: -14%;\r\n\t\tmargin-right: 10%;\r\n\r\n\t}\r\n\r\n/*BOOTCAMP*/\r\n\t.Navbar__Navbar_h1red___3oWlJ{\r\n\t\tcolor:#B70002;\r\n\t\tmargin-left: 17%;\r\n\r\n\t}\r\n\r\n\t.Navbar__Navbar_redPanel___2Uv4P{\r\n\t\tbackground-color: #B70002;\r\n\t\tpadding-top:12%;\r\n\t\tmargin-right: -10%;\r\n\t\tmargin-left: -6%;\r\n\t\tfont-family: 'Roboto Condensed', sans-serif;\r\n\t\tcolor:white;\r\n\t\tfont-size: 18px;\r\n\r\n\r\n\t}\r\n\r\n\t\r\n\r\n\r\n\t", ""]);
 
 	// exports
 	exports.locals = {
-		"Titlebar_title": "Titlebar__Titlebar_title___2CdAf",
-		"Titlebar_blackpanel": "Titlebar__Titlebar_blackpanel___2yOtO",
-		"Titlebar_h4": "Titlebar__Titlebar_h4___3aMnK",
-		"Titlebar_h1white": "Titlebar__Titlebar_h1white___3muz1",
-		"Titlebar_h1red": "Titlebar__Titlebar_h1red___QGOt3",
-		"Titlebar_redPanel": "Titlebar__Titlebar_redPanel___2U992"
+		"Navbar_title": "Navbar__Navbar_title___SNXtH",
+		"Navbar_blackpanel": "Navbar__Navbar_blackpanel___2sEgP",
+		"Navbar_h4": "Navbar__Navbar_h4___135t-",
+		"Navbar_h1white": "Navbar__Navbar_h1white___nv60K",
+		"Navbar_h1red": "Navbar__Navbar_h1red___3oWlJ",
+		"Navbar_redPanel": "Navbar__Navbar_redPanel___2Uv4P"
 	};
 
 /***/ },
@@ -44820,11 +44820,11 @@
 
 
 	// module
-	exports.push([module.id, ".NavBarLink__linkDiv___2UnQg{\n\t\n}", ""]);
+	exports.push([module.id, ".NavBarLink__linkDiv___3-O7i{\r\n\t\r\n}", ""]);
 
 	// exports
 	exports.locals = {
-		"linkDiv": "NavBarLink__linkDiv___2UnQg"
+		"linkDiv": "NavBarLink__linkDiv___3-O7i"
 	};
 
 /***/ },
@@ -44834,7 +44834,7 @@
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+					value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -44845,9 +44845,9 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	var _Titlebar = __webpack_require__(479);
+	var _Navbar = __webpack_require__(479);
 
-	var _Titlebar2 = _interopRequireDefault(_Titlebar);
+	var _Navbar2 = _interopRequireDefault(_Navbar);
 
 	var _Attendance = __webpack_require__(486);
 
@@ -44862,28 +44862,28 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Attendance = function (_Component) {
-		_inherits(Attendance, _Component);
+					_inherits(Attendance, _Component);
 
-		function Attendance() {
-			_classCallCheck(this, Attendance);
+					function Attendance() {
+									_classCallCheck(this, Attendance);
 
-			return _possibleConstructorReturn(this, (Attendance.__proto__ || Object.getPrototypeOf(Attendance)).apply(this, arguments));
-		}
+									return _possibleConstructorReturn(this, (Attendance.__proto__ || Object.getPrototypeOf(Attendance)).apply(this, arguments));
+					}
 
-		_createClass(Attendance, [{
-			key: "render",
-			value: function render() {
+					_createClass(Attendance, [{
+									key: "render",
+									value: function render() {
 
-				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(_Titlebar2.default, null),
-					_react2.default.createElement(_reactBootstrap.Row, { className: "show-grid" })
-				);
-			}
-		}]);
+													return _react2.default.createElement(
+																	"div",
+																	null,
+																	_react2.default.createElement(_Navbar2.default, null),
+																	_react2.default.createElement(_reactBootstrap.Row, { className: "show-grid" })
+													);
+									}
+					}]);
 
-		return Attendance;
+					return Attendance;
 	}(_react.Component);
 
 	exports.default = Attendance;
@@ -44923,11 +44923,11 @@
 
 
 	// module
-	exports.push([module.id, ".Attendance__Attendance_paragraph___1rF0a{\n\tcolor: #FF9632;\n\tbackground-color: red;\n}", ""]);
+	exports.push([module.id, ".Attendance__Attendance_paragraph___1ZI4U{\r\n\tcolor: #FF9632;\r\n\tbackground-color: red;\r\n}", ""]);
 
 	// exports
 	exports.locals = {
-		"Attendance_paragraph": "Attendance__Attendance_paragraph___1rF0a"
+		"Attendance_paragraph": "Attendance__Attendance_paragraph___1ZI4U"
 	};
 
 /***/ },
@@ -45117,13 +45117,13 @@
 
 
 	// module
-	exports.push([module.id, ".Panel__panelImage___Om5ij{\n\theight: 100vh;\n\n}\n.Panel__panelImg___20d9V{\n\tposition: relative;\n  \ttop: 50%;\n  \ttransform: translateY(-50%);\n  \tfloat: right;\n}\n.Panel__remove-all-margin-padding___3PG_j{\n\tpadding: 0 !important;\n  \tmargin: 0 !important;\n}\n\nh5{\n\ttext-align: center;\n\tposition: relative;\n\ttop: 33%;\n  font-size: initial;\n  display: inherit;\n}\n\n\n", ""]);
+	exports.push([module.id, ".Panel__panelImage___2Xgx2{\r\n\theight: 100vh;\r\n\r\n}\r\n.Panel__panelImg___H4ElD{\r\n\tposition: relative;\r\n  \ttop: 50%;\r\n  \ttransform: translateY(-50%);\r\n  \tfloat: right;\r\n}\r\n.Panel__remove-all-margin-padding___2KZeL{\r\n\tpadding: 0 !important;\r\n  \tmargin: 0 !important;\r\n}\r\n\r\nh5{\r\n\ttext-align: center;\r\n\tposition: relative;\r\n\ttop: 33%;\r\n  font-size: initial;\r\n  display: inherit;\r\n}\r\n\r\n\r\n", ""]);
 
 	// exports
 	exports.locals = {
-		"panelImage": "Panel__panelImage___Om5ij",
-		"panelImg": "Panel__panelImg___20d9V",
-		"remove-all-margin-padding": "Panel__remove-all-margin-padding___3PG_j"
+		"panelImage": "Panel__panelImage___2Xgx2",
+		"panelImg": "Panel__panelImg___H4ElD",
+		"remove-all-margin-padding": "Panel__remove-all-margin-padding___2KZeL"
 	};
 
 /***/ },
@@ -45161,12 +45161,12 @@
 
 
 	// module
-	exports.push([module.id, "#HomePage__logo___2a6OD{\n\tfloat: right;\n}\n#HomePage__logoDiv___3B0zq {\n\tbackground-color: red;\n}", ""]);
+	exports.push([module.id, "#HomePage__logo___2gE9i{\r\n\tfloat: right;\r\n}\r\n#HomePage__logoDiv___2H5Bk {\r\n\tbackground-color: red;\r\n}", ""]);
 
 	// exports
 	exports.locals = {
-		"logo": "HomePage__logo___2a6OD",
-		"logoDiv": "HomePage__logoDiv___3B0zq"
+		"logo": "HomePage__logo___2gE9i",
+		"logoDiv": "HomePage__logoDiv___2H5Bk"
 	};
 
 /***/ }
