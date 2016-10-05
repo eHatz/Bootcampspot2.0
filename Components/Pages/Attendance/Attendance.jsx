@@ -9,6 +9,7 @@ class Attendance extends Component {
 
 		return (
 
+
 			<div className="row">
 				<div className="col-sm-4 linkDiv">
 					<Navbar />
