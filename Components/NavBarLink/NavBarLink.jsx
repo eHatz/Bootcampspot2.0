@@ -14,9 +14,8 @@ class NavBarLink extends Component {
 				<div className={styles.linkDiv}>
 					<div className={styles.imageDiv}>
 						<img src={img} alt="icon" className="img-responsive"/>
+						<h3 className={styles.navbar_linkText}>{name}</h3>
 					</div>
-						<h5 className={styles.linkText}>{name}</h5>
-					
 				</div>
 
 		)

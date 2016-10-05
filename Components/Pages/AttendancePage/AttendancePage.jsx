@@ -9,7 +9,7 @@ class AttendancePage extends Component {
 	render() {
 
 		return (
-
+			
 			<div>
 
 				<Navbar />
@@ -17,7 +17,12 @@ class AttendancePage extends Component {
 				<Row className="show-grid">
 				</Row>
 
+			<div className="row">
+				<div className="col-sm-4 linkDiv">
+					<Navbar />
+				</div>
 			</div>
+	
 		);
 	}
 }
