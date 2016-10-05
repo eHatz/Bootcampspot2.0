@@ -8,7 +8,7 @@ class Panel extends Component {
 
 	render() {
 		const { panelId, img, name } = this.props;
-
+	
 		return (
 				<Col md={2} className="remove-all-margin-padding">
 					<div id={panelId} className={styles.panelImage}>
