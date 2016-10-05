@@ -9,8 +9,10 @@ var Navbar = React.createClass ({
 		return (
 			<div className= "col-md-4 remove-all-margin-padding">
 				<div id={styles.navBar}>
-				// we are assigning the props to the NavBarLink
-					<NavBarLink name="Attendance" img=".." navLink="#/attendance"/> 
+					<NavBarLink name="Attendance" img="/assets/images/attendance_nav.png" navLink="#/attendance"/> 
+					<NavBarLink name="Homework" img="assets/images/homework_nav.png" navLink="#/homework"/> 
+
+
 				</div>
 			</div>
 			

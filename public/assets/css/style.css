@@ -1,9 +1,4 @@
 body{
-/*	background-image: url("../images/grey_@2X.png");
-*/
-/*	max-width: 1100px;
-	text-align: center;
-	margin: 0 auto;*/
 	font-family: 'Roboto Condensed', sans-serif;	
 	color: #fcfbfb;
 }
@@ -16,7 +11,7 @@ body{
 }
 .remove-all-margin-padding{
 	padding: 0 !important;
-   margin: 0 !important;
+   margin: 0;
 }
 #syllabus{
 	background-color: #8a8a8a;	
@@ -35,9 +30,12 @@ body{
 }
 
 
+@media screen and (max-width: 767px){
 
-
-/*
-font-family: 'Open Sans Condensed', sans-serif;
-
-*/
+.remove-all-margin-padding {
+    margin-top: -6px;
+    margin-right: -1px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+}

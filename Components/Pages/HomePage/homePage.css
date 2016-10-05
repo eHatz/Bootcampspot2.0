@@ -1,6 +1,55 @@
 #logo{
-	float: right;
+	z-index: 1; 
+	position: absolute; 
+	padding-top: 4%;
+    padding-right: 4%;
+    padding-left: 4%;
+	
 }
-#logoDiv {
-	background-color: red;
+#login{
+	z-index: 1; 
+	position: absolute; 
+	padding-top: 7%;
+    padding-right:5%;
+    padding-left: 7%;
+	right: 0px;
+
 }
+@media screen and (max-width: 767px){
+	#logo{
+		z-index: 1; 
+		position: static; 
+		top: 0px; 
+		left: 0px;
+		padding-top: 8%;
+    	padding-right: 4%;
+    	padding-left: 4%;
+    	padding-bottom: 0%;
+		max-width: 100%;
+		background-color: black;
+	}
+
+	#logoDiv{
+		background-color: black;
+		margin-right: -1px;
+	}
+
+	#login {
+    z-index: 1;
+    position: static;
+    padding-top: 0%; 
+    padding-right: 3%;
+    padding-bottom: 12%;
+    padding-left: 5%;
+    left: 0px; 
+    max-width: 46%;
+	}
+	.remove-all-margin-padding {
+    margin-top: -6px;
+    margin-right: -1px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+	}
+}
+
+

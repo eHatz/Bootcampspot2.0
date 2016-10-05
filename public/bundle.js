@@ -25438,7 +25438,7 @@
 
 	var _Login2 = _interopRequireDefault(_Login);
 
-	var _Attendance = __webpack_require__(485);
+	var _Attendance = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./Components/Pages/Attendance/Attendance.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _Attendance2 = _interopRequireDefault(_Attendance);
 
@@ -44216,11 +44216,11 @@
 
 
 	// module
-	exports.push([module.id, ".Application__Application_main___33GIR: {\r\n\talign-items: center;\r\n\tmargin: 0 auto;\r\n\tposition: relative;\r\n\tcolor:red;\r\n}", ""]);
+	exports.push([module.id, ".Application__Application_main___kDJ6Y: {\n\talign-items: center;\n\tmargin: 0 auto;\n\tposition: relative;\n\tcolor:red;\n}", ""]);
 
 	// exports
 	exports.locals = {
-		"Application_main": "Application__Application_main___33GIR"
+		"Application_main": "Application__Application_main___kDJ6Y"
 	};
 
 /***/ },
@@ -44547,7 +44547,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Navbar = __webpack_require__(479);
+	var _Navbar = __webpack_require__(496);
 
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 
@@ -44599,125 +44599,9 @@
 	exports.default = Login;
 
 /***/ },
-/* 479 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _Navbar = __webpack_require__(480);
-
-	var _Navbar2 = _interopRequireDefault(_Navbar);
-
-	var _NavBarLink = __webpack_require__(482);
-
-	var _NavBarLink2 = _interopRequireDefault(_NavBarLink);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Navbar = _react2.default.createClass({
-		displayName: "Navbar",
-		render: function render() {
-
-			return _react2.default.createElement(
-				"div",
-				{ className: "col-md-4 remove-all-margin-padding" },
-				_react2.default.createElement(
-					"div",
-					{ id: _Navbar2.default.navBar },
-					"// we are assigning the props to the NavBarLink",
-					_react2.default.createElement(_NavBarLink2.default, { name: "Attendance", img: "..", navLink: "#/attendance" })
-				)
-			);
-		}
-	});
-
-	exports.default = Navbar;
-
-	// <div className = "row">
-	// 					<div className = "col-md-3">
-	// 						<div className = {styles.Navbar_title}>
-	// 							<h4 className = {styles.Navbar_h4}>RUTGERS UNIVERSITY</h4>
-	// 							<h1 className = {styles.Navbar_h1red}>BOOTCAMP</h1>
-	// 							<h1 className = {styles.Navbar_h1white}>SPOT</h1>
-	// 							<h1 className = {styles.Navbar_h1red}>2.0</h1>
-	// 						</div>
-	// 					</div>
-	// 					<div className = "col-md-9">
-	// 						<div className = {styles.Navbar_redPanel}>
-	// 							<p>Hi Jennine</p>
-	// 							<p>Logout</p>
-	// 						</div>
-	// 					</div>
-	// 				</div>
-	// 				<div className = "row">
-	// 					<div className = "col-md-3">
-	// 						<div className = {styles.Navbar_blackpanel}>
-	// 							<p>Attendence</p>
-	// 							<p>Homework</p>
-	// 							<p>Syllabus</p>
-	// 							<p>Projects</p>
-	// 							<p>Feedback</p>
-	// 							<p>Career</p>
-	// 						</div>
-	// 					</div>
-	// 				</div>
-
-/***/ },
-/* 480 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(481);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(477)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Navbar.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Navbar.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 481 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(476)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "\t.Navbar__Navbar_title___SNXtH {\r\n\t\t\r\n\t\tbackground-color: #262626;\r\n\t\tmargin-right: 10%;\r\n\t\tmargin-left: -40%;\r\n\t\tpadding-top: 18%;\r\n\t\tfont-family: 'Roboto Condensed', sans-serif;\r\n\t\tcolor:red;\r\n\t\tpadding-bottom: 1%;\r\n\t}\r\n\r\n\t.Navbar__Navbar_blackpanel___2sEgP{\r\n\t\tbackground-color: black;\r\n\t\tpadding-bottom:150%;\r\n\t\tmargin-right: 10%;\r\n\t\tpadding-left: 40%;\r\n\t\tmargin-left: -22%;\r\n\t\tmargin-top: -4%;\r\n\t\tpadding-top: 10%;\r\n\t\tcolor:white;\r\n\t\tfont-family: 'Roboto Condensed', sans-serif;\r\n\t\tfont-size: 20px;\r\n\r\n\t}\r\n\r\n\t.Navbar__Navbar_h4___135t-{\r\n\t\ttext-align: center;\r\n\t\tcolor:#9D9B9C;\r\n\t\tfont-family: 'Krona One', sans-serif;\r\n\t\tmargin-left: 10%;\r\n\t\tmargin-top: -7%;\r\n\t}\r\n\r\n/*SPOT*/\r\n\t.Navbar__Navbar_h1white___nv60K{\r\n\t\tcolor:white;\r\n\t\tfloat:right;\r\n\t\tmargin-top: -14%;\r\n\t\tmargin-right: 10%;\r\n\r\n\t}\r\n\r\n/*BOOTCAMP*/\r\n\t.Navbar__Navbar_h1red___3oWlJ{\r\n\t\tcolor:#B70002;\r\n\t\tmargin-left: 17%;\r\n\r\n\t}\r\n\r\n\t.Navbar__Navbar_redPanel___2Uv4P{\r\n\t\tbackground-color: #B70002;\r\n\t\tpadding-top:12%;\r\n\t\tmargin-right: -10%;\r\n\t\tmargin-left: -6%;\r\n\t\tfont-family: 'Roboto Condensed', sans-serif;\r\n\t\tcolor:white;\r\n\t\tfont-size: 18px;\r\n\r\n\r\n\t}\r\n\r\n\t\r\n\r\n\r\n\t", ""]);
-
-	// exports
-	exports.locals = {
-		"Navbar_title": "Navbar__Navbar_title___SNXtH",
-		"Navbar_blackpanel": "Navbar__Navbar_blackpanel___2sEgP",
-		"Navbar_h4": "Navbar__Navbar_h4___135t-",
-		"Navbar_h1white": "Navbar__Navbar_h1white___nv60K",
-		"Navbar_h1red": "Navbar__Navbar_h1red___3oWlJ",
-		"Navbar_redPanel": "Navbar__Navbar_redPanel___2Uv4P"
-	};
-
-/***/ },
+/* 479 */,
+/* 480 */,
+/* 481 */,
 /* 482 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -44820,117 +44704,17 @@
 
 
 	// module
-	exports.push([module.id, ".NavBarLink__linkDiv___3-O7i{\r\n\t\r\n}", ""]);
+	exports.push([module.id, ".NavBarLink__linkDiv___2UnQg{\n\t\n}", ""]);
 
 	// exports
 	exports.locals = {
-		"linkDiv": "NavBarLink__linkDiv___3-O7i"
+		"linkDiv": "NavBarLink__linkDiv___2UnQg"
 	};
 
 /***/ },
-/* 485 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-					value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactBootstrap = __webpack_require__(224);
-
-	var _Navbar = __webpack_require__(479);
-
-	var _Navbar2 = _interopRequireDefault(_Navbar);
-
-	var _Attendance = __webpack_require__(486);
-
-	var _Attendance2 = _interopRequireDefault(_Attendance);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Attendance = function (_Component) {
-					_inherits(Attendance, _Component);
-
-					function Attendance() {
-									_classCallCheck(this, Attendance);
-
-									return _possibleConstructorReturn(this, (Attendance.__proto__ || Object.getPrototypeOf(Attendance)).apply(this, arguments));
-					}
-
-					_createClass(Attendance, [{
-									key: "render",
-									value: function render() {
-
-													return _react2.default.createElement(
-																	"div",
-																	null,
-																	_react2.default.createElement(_Navbar2.default, null),
-																	_react2.default.createElement(_reactBootstrap.Row, { className: "show-grid" })
-													);
-									}
-					}]);
-
-					return Attendance;
-	}(_react.Component);
-
-	exports.default = Attendance;
-
-/***/ },
-/* 486 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(487);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(477)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Attendance.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Attendance.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 487 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(476)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".Attendance__Attendance_paragraph___1ZI4U{\r\n\tcolor: #FF9632;\r\n\tbackground-color: red;\r\n}", ""]);
-
-	// exports
-	exports.locals = {
-		"Attendance_paragraph": "Attendance__Attendance_paragraph___1ZI4U"
-	};
-
-/***/ },
+/* 485 */,
+/* 486 */,
+/* 487 */,
 /* 488 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -44952,7 +44736,7 @@
 
 	var _Panel2 = _interopRequireDefault(_Panel);
 
-	var _HomePage = __webpack_require__(492);
+	var _HomePage = __webpack_require__(494);
 
 	var _HomePage2 = _interopRequireDefault(_HomePage);
 
@@ -44990,6 +44774,15 @@
 								"a",
 								{ href: "/#" },
 								_react2.default.createElement("img", { id: _HomePage2.default.logo, src: "/assets/images/logo1.png", alt: "logo" })
+							),
+							_react2.default.createElement(
+								"div",
+								null,
+								_react2.default.createElement(
+									"a",
+									{ href: "/#github" },
+									_react2.default.createElement("img", { id: _HomePage2.default.login, src: "/assets/images/github.png", alt: "githubLogo" })
+								)
 							)
 						)
 					),
@@ -45062,15 +44855,19 @@
 
 				return _react2.default.createElement(
 					_reactBootstrap.Col,
-					{ md: 2, className: "remove-all-margin-padding" },
+					{ sm: 2, className: "remove-all-margin-padding" },
 					_react2.default.createElement(
 						"div",
-						{ id: panelId, className: _Panel2.default.panelImage },
-						_react2.default.createElement("img", { src: img, alt: "icon", className: "img-responsive " + _Panel2.default.panelImg }),
+						{ id: panelId, className: _Panel2.default.panelDiv },
 						_react2.default.createElement(
-							"h5",
-							{ className: "caption" },
-							name
+							"div",
+							{ className: _Panel2.default.imageWrapper },
+							_react2.default.createElement("img", { src: img, alt: "icon", className: "img-responsive " + _Panel2.default.panelImg }),
+							_react2.default.createElement(
+								"h5",
+								{ className: "caption" },
+								name
+							)
 						)
 					)
 				);
@@ -45117,23 +44914,25 @@
 
 
 	// module
-	exports.push([module.id, ".Panel__panelImage___2Xgx2{\r\n\theight: 100vh;\r\n\r\n}\r\n.Panel__panelImg___H4ElD{\r\n\tposition: relative;\r\n  \ttop: 50%;\r\n  \ttransform: translateY(-50%);\r\n  \tfloat: right;\r\n}\r\n.Panel__remove-all-margin-padding___2KZeL{\r\n\tpadding: 0 !important;\r\n  \tmargin: 0 !important;\r\n}\r\n\r\nh5{\r\n\ttext-align: center;\r\n\tposition: relative;\r\n\ttop: 33%;\r\n  font-size: initial;\r\n  display: inherit;\r\n}\r\n\r\n\r\n", ""]);
+	exports.push([module.id, ".Panel__panelDiv___1frAX{\n\theight: 100vh;\n  display: inline-block;\n  width: 100%;\n}\n.Panel__imageWrapper___A_vP_{\n\tposition: relative;\n\ttop: 58%;\n\ttransform: translateY(-50%);\n\tfloat: right;\n}\n.Panel__panelImg___20d9V{\n  float: right;\n  max-height: 100%;\n  margin-bottom: 10%;\n}\n\nh5{\n\ttext-align: center;\n\tposition: relative;\n  font-size: initial;\n}\n\nh4{\n  color: white;\n  float: right;\n}\n\n\n@media screen and (max-width: 767px){\n  .Panel__panelDiv___1frAX{\n    height: 25vh;\n  }\n\n  .Panel__imageWrapper___A_vP_{\n    top: 50%;\n    transform: translateY(-50%);\n    float: right;\n    height: 100%;\n    width: 100%\n  }\n  .Panel__panelImg___20d9V {\n    height: 100%;\n  }\n\n  h5{\n    font-size: 21px;\n    line-height: 161px; \n  }\n\n}\n\n@media screen and (max-width: 353px){\n  h5{\n    font-size: 20px;\n    line-height: 7;\n  }\n  \n}\n\n", ""]);
 
 	// exports
 	exports.locals = {
-		"panelImage": "Panel__panelImage___2Xgx2",
-		"panelImg": "Panel__panelImg___H4ElD",
-		"remove-all-margin-padding": "Panel__remove-all-margin-padding___2KZeL"
+		"panelDiv": "Panel__panelDiv___1frAX",
+		"imageWrapper": "Panel__imageWrapper___A_vP_",
+		"panelImg": "Panel__panelImg___20d9V"
 	};
 
 /***/ },
-/* 492 */
+/* 492 */,
+/* 493 */,
+/* 494 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(493);
+	var content = __webpack_require__(495);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(477)(content, {});
@@ -45153,7 +44952,7 @@
 	}
 
 /***/ },
-/* 493 */
+/* 495 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(476)();
@@ -45161,12 +44960,133 @@
 
 
 	// module
-	exports.push([module.id, "#HomePage__logo___2gE9i{\r\n\tfloat: right;\r\n}\r\n#HomePage__logoDiv___2H5Bk {\r\n\tbackground-color: red;\r\n}", ""]);
+	exports.push([module.id, "#HomePage__logo___2a6OD{\n\tz-index: 1; \n\tposition: absolute; \n\tpadding-top: 4%;\n    padding-right: 4%;\n    padding-left: 4%;\n\t\n}\n#HomePage__login___2lfF1{\n\tz-index: 1; \n\tposition: absolute; \n\tpadding-top: 7%;\n    padding-right:5%;\n    padding-left: 7%;\n\tright: 0px;\n\n}\n@media screen and (max-width: 767px){\n\t#HomePage__logo___2a6OD{\n\t\tz-index: 1; \n\t\tposition: static; \n\t\ttop: 0px; \n\t\tleft: 0px;\n\t\tpadding-top: 8%;\n    \tpadding-right: 4%;\n    \tpadding-left: 4%;\n    \tpadding-bottom: 0%;\n\t\tmax-width: 100%;\n\t\tbackground-color: black;\n\t}\n\n\t#HomePage__logoDiv___3B0zq{\n\t\tbackground-color: black;\n\t\tmargin-right: -1px;\n\t}\n\n\t#HomePage__login___2lfF1 {\n    z-index: 1;\n    position: static;\n    padding-top: 0%; \n    padding-right: 3%;\n    padding-bottom: 12%;\n    padding-left: 5%;\n    left: 0px; \n    max-width: 46%;\n\t}\n\t.HomePage__remove-all-margin-padding___2Rpmn {\n    margin-top: -6px;\n    margin-right: -1px;\n    margin-bottom: 0px;\n    margin-left: 0px;\n\t}\n}\n\n\n", ""]);
 
 	// exports
 	exports.locals = {
-		"logo": "HomePage__logo___2gE9i",
-		"logoDiv": "HomePage__logoDiv___2H5Bk"
+		"logo": "HomePage__logo___2a6OD",
+		"login": "HomePage__login___2lfF1",
+		"logoDiv": "HomePage__logoDiv___3B0zq",
+		"remove-all-margin-padding": "HomePage__remove-all-margin-padding___2Rpmn"
+	};
+
+/***/ },
+/* 496 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Navbar = __webpack_require__(497);
+
+	var _Navbar2 = _interopRequireDefault(_Navbar);
+
+	var _NavBarLink = __webpack_require__(482);
+
+	var _NavBarLink2 = _interopRequireDefault(_NavBarLink);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Navbar = _react2.default.createClass({
+		displayName: "Navbar",
+		render: function render() {
+
+			return _react2.default.createElement(
+				"div",
+				{ className: "col-md-4 remove-all-margin-padding" },
+				_react2.default.createElement(
+					"div",
+					{ id: _Navbar2.default.navBar },
+					_react2.default.createElement(_NavBarLink2.default, { name: "Attendance", img: "/assets/images/attendance_nav.png", navLink: "#/attendance" }),
+					_react2.default.createElement(_NavBarLink2.default, { name: "Homework", img: "assets/images/homework_nav.png", navLink: "#/homework" })
+				)
+			);
+		}
+	});
+
+	exports.default = Navbar;
+
+	// <div className = "row">
+	// 					<div className = "col-md-3">
+	// 						<div className = {styles.Navbar_title}>
+	// 							<h4 className = {styles.Navbar_h4}>RUTGERS UNIVERSITY</h4>
+	// 							<h1 className = {styles.Navbar_h1red}>BOOTCAMP</h1>
+	// 							<h1 className = {styles.Navbar_h1white}>SPOT</h1>
+	// 							<h1 className = {styles.Navbar_h1red}>2.0</h1>
+	// 						</div>
+	// 					</div>
+	// 					<div className = "col-md-9">
+	// 						<div className = {styles.Navbar_redPanel}>
+	// 							<p>Hi Jennine</p>
+	// 							<p>Logout</p>
+	// 						</div>
+	// 					</div>
+	// 				</div>
+	// 				<div className = "row">
+	// 					<div className = "col-md-3">
+	// 						<div className = {styles.Navbar_blackpanel}>
+	// 							<p>Attendence</p>
+	// 							<p>Homework</p>
+	// 							<p>Syllabus</p>
+	// 							<p>Projects</p>
+	// 							<p>Feedback</p>
+	// 							<p>Career</p>
+	// 						</div>
+	// 					</div>
+	// 				</div>
+
+/***/ },
+/* 497 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(498);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(477)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Navbar.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Navbar.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 498 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(476)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\t.Navbar__Navbar_title___BS3kq {\n\t\t\n\t\tbackground-color: #262626;\n\t\tmargin-right: 10%;\n\t\tmargin-left: -40%;\n\t\tpadding-top: 18%;\n\t\tfont-family: 'Roboto Condensed', sans-serif;\n\t\tcolor:red;\n\t\tpadding-bottom: 1%;\n\t}\n\n\t.Navbar__Navbar_blackpanel___16anV{\n\t\tbackground-color: black;\n\t\tpadding-bottom:150%;\n\t\tmargin-right: 10%;\n\t\tpadding-left: 40%;\n\t\tmargin-left: -22%;\n\t\tmargin-top: -4%;\n\t\tpadding-top: 10%;\n\t\tcolor:white;\n\t\tfont-family: 'Roboto Condensed', sans-serif;\n\t\tfont-size: 20px;\n\n\t}\n\n\t.Navbar__Navbar_h4___2IwcH{\n\t\ttext-align: center;\n\t\tcolor:#9D9B9C;\n\t\tfont-family: 'Krona One', sans-serif;\n\t\tmargin-left: 10%;\n\t\tmargin-top: -7%;\n\t}\n\n/*SPOT*/\n\t.Navbar__Navbar_h1white___3Q-uB{\n\t\tcolor:white;\n\t\tfloat:right;\n\t\tmargin-top: -14%;\n\t\tmargin-right: 10%;\n\n\t}\n\n/*BOOTCAMP*/\n\t.Navbar__Navbar_h1red___1Xw2l{\n\t\tcolor:#B70002;\n\t\tmargin-left: 17%;\n\n\t}\n\n\t.Navbar__Navbar_redPanel___2qXAr{\n\t\tbackground-color: #B70002;\n\t\tpadding-top:12%;\n\t\tmargin-right: -10%;\n\t\tmargin-left: -6%;\n\t\tfont-family: 'Roboto Condensed', sans-serif;\n\t\tcolor:white;\n\t\tfont-size: 18px;\n\n\n\t}\n\n\t\n\n\n\t", ""]);
+
+	// exports
+	exports.locals = {
+		"Navbar_title": "Navbar__Navbar_title___BS3kq",
+		"Navbar_blackpanel": "Navbar__Navbar_blackpanel___16anV",
+		"Navbar_h4": "Navbar__Navbar_h4___2IwcH",
+		"Navbar_h1white": "Navbar__Navbar_h1white___3Q-uB",
+		"Navbar_h1red": "Navbar__Navbar_h1red___1Xw2l",
+		"Navbar_redPanel": "Navbar__Navbar_redPanel___2qXAr"
 	};
 
 /***/ }
