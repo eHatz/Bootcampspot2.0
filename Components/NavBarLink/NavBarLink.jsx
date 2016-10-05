@@ -8,6 +8,7 @@ class NavBarLink extends Component {
 	render() {
 
 		const { name, img, navLink } = this.props;
+		// here we are assigning prop names this.props.name etc, which will be called at a future point
 
 		return (
 				<div className={styles.linkDiv}>
