@@ -7,6 +7,7 @@ class HomeworkPage extends Component {
 
 			<div>
 				<Navbar/>
+				
 			</div>
 
 		);
