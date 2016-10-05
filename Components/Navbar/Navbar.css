@@ -1,4 +1,4 @@
-	.Titlebar_title {
+	.Navbar_title {
 		
 		background-color: #262626;
 		margin-right: 10%;
@@ -9,7 +9,7 @@
 		padding-bottom: 1%;
 	}
 
-	.Titlebar_blackpanel{
+	.Navbar_blackpanel{
 		background-color: black;
 		padding-bottom:150%;
 		margin-right: 10%;
@@ -23,7 +23,7 @@
 
 	}
 
-	.Titlebar_h4{
+	.Navbar_h4{
 		text-align: center;
 		color:#9D9B9C;
 		font-family: 'Krona One', sans-serif;
@@ -32,7 +32,7 @@
 	}
 
 /*SPOT*/
-	.Titlebar_h1white{
+	.Navbar_h1white{
 		color:white;
 		float:right;
 		margin-top: -14%;
@@ -41,13 +41,13 @@
 	}
 
 /*BOOTCAMP*/
-	.Titlebar_h1red{
+	.Navbar_h1red{
 		color:#B70002;
 		margin-left: 17%;
 
 	}
 
-	.Titlebar_redPanel{
+	.Navbar_redPanel{
 		background-color: #B70002;
 		padding-top:12%;
 		margin-right: -10%;

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import styles from "./Titlebar.css";
+import styles from "./Navbar.css";
 import NavBarLink from "../NavBarLink/NavBarLink.jsx"
 
 
-var Titlebar = React.createClass ({
+var Navbar = React.createClass ({
 	render() {
 
 		return (
@@ -18,19 +18,19 @@ var Titlebar = React.createClass ({
 	}
 })
 
-export default Titlebar;
+export default Navbar;
 
 // <div className = "row">
 // 					<div className = "col-md-3">
-// 						<div className = {styles.Titlebar_title}>
-// 							<h4 className = {styles.Titlebar_h4}>RUTGERS UNIVERSITY</h4>
-// 							<h1 className = {styles.Titlebar_h1red}>BOOTCAMP</h1>
-// 							<h1 className = {styles.Titlebar_h1white}>SPOT</h1>
-// 							<h1 className = {styles.Titlebar_h1red}>2.0</h1>
+// 						<div className = {styles.Navbar_title}>
+// 							<h4 className = {styles.Navbar_h4}>RUTGERS UNIVERSITY</h4>
+// 							<h1 className = {styles.Navbar_h1red}>BOOTCAMP</h1>
+// 							<h1 className = {styles.Navbar_h1white}>SPOT</h1>
+// 							<h1 className = {styles.Navbar_h1red}>2.0</h1>
 // 						</div>
 // 					</div>
 // 					<div className = "col-md-9">
-// 						<div className = {styles.Titlebar_redPanel}>
+// 						<div className = {styles.Navbar_redPanel}>
 // 							<p>Hi Jennine</p>
 // 							<p>Logout</p>
 // 						</div>
@@ -38,7 +38,7 @@ export default Titlebar;
 // 				</div>
 // 				<div className = "row">
 // 					<div className = "col-md-3">
-// 						<div className = {styles.Titlebar_blackpanel}>
+// 						<div className = {styles.Navbar_blackpanel}>
 // 							<p>Attendence</p>
 // 							<p>Homework</p>
 // 							<p>Syllabus</p>
