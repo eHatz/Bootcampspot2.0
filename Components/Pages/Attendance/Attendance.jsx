@@ -12,12 +12,7 @@ class Attendance extends Component {
 			<div>
 
 				<Titlebar />
-
-				<Row className="show-grid">
-
 			
-
-				</Row>
 
 			</div>
 		);

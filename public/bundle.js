@@ -44632,7 +44632,8 @@
 				_react2.default.createElement(
 					"div",
 					{ id: _Titlebar2.default.navBar },
-					_react2.default.createElement(_NavBarLink2.default, { name: "Attendance", img: "..", navLink: "#/attendance" })
+					_react2.default.createElement(_NavBarLink2.default, { name: "Attendance", img: "/assets/images/attendance_nav.png", navLink: "#/attendance" }),
+					_react2.default.createElement(_NavBarLink2.default, { name: "Homework", img: "assets/images/homework_nav.png", navLink: "#/homework" })
 				)
 			);
 		}
@@ -44772,7 +44773,7 @@
 					),
 					_react2.default.createElement(
 						"h5",
-						{ className: syles.linkText },
+						{ className: _NavBarLink2.default.linkText },
 						name
 					)
 				);
@@ -44876,8 +44877,7 @@
 				return _react2.default.createElement(
 					"div",
 					null,
-					_react2.default.createElement(_Titlebar2.default, null),
-					_react2.default.createElement(_reactBootstrap.Row, { className: "show-grid" })
+					_react2.default.createElement(_Titlebar2.default, null)
 				);
 			}
 		}]);
