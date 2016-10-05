@@ -1,4 +1,4 @@
-#logo{
+#HomePage_logo{
 	z-index: 1; 
 	position: absolute; 
 	padding-top: 4%;
@@ -6,7 +6,7 @@
     padding-left: 4%;
 	
 }
-#login{
+#HomePage_login{
 	z-index: 1; 
 	position: absolute; 
 	padding-top: 7%;
@@ -15,8 +15,9 @@
 	right: 0px;
 
 }
+
 @media screen and (max-width: 767px){
-	#logo{
+	#HomePage_logo{
 		z-index: 1; 
 		position: static; 
 		top: 0px; 
@@ -29,12 +30,12 @@
 		background-color: black;
 	}
 
-	#logoDiv{
+	#HomePage_logoDiv{
 		background-color: black;
 		margin-right: -1px;
 	}
 
-	#login {
+	#HomePage_login {
     z-index: 1;
     position: static;
     padding-top: 0%; 
@@ -44,7 +45,9 @@
     left: 0px; 
     max-width: 46%;
 	}
-	.remove-all-margin-padding {
+
+	/*What element does this style? -nlp*/
+	.remove-all-margin-padding { 
     margin-top: -6px;
     margin-right: -1px;
     margin-bottom: 0px;

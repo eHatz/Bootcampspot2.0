@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {Grid, Row, Col} from "react-bootstrap";
 import Panel from "../../Panel/Panel.jsx";
-import styles from "./HomePage.css";
+import "./HomePage.css";
 
 class HomePage extends Component {
 
@@ -11,13 +11,13 @@ class HomePage extends Component {
 
 			<div>
 				<div className="row">
-					<div id={styles.logoDiv}>
+					<div id="HomePage_logoDiv">
 						<a href="/#">
-							<img id={styles.logo} src="/assets/images/logo1.png" alt="logo"/>
+							<img id="HomePage_logo" src="/assets/images/logo1.png" alt="logo"/>
 						</a>
 						<div>
 							<a href="/#github">
-								<img id={styles.login} src="/assets/images/github.png" alt="githubLogo"/>
+								<img id="HomePage_login" src="/assets/images/github.png" alt="githubLogo"/>
 								{/*<h4 id="login">LOGIN WITH GITHUB</h4>*/}
 							</a>
 						</div>

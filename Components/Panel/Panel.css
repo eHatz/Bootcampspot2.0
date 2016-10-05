@@ -1,49 +1,49 @@
-.panelDiv{
+.Panel_panelDiv{
 	height: 100vh;
   display: inline-block;
   width: 100%;
 }
-.imageWrapper{
+.Panel_imageWrapper{
 	position: relative;
 	top: 58%;
 	transform: translateY(-50%);
 	float: right;
 }
-.panelImg{
+.Panel_panelImg{
   float: right;
   max-height: 100%;
   margin-bottom: 10%;
 }
 
-h5{
+.Panel_h5{
 	text-align: center;
 	position: relative;
   font-size: initial;
 }
 
-h4{
+.Panel_h4{
   color: white;
   float: right;
 }
 
 
 @media screen and (max-width: 767px){
-  .panelDiv{
+  .Panel_panelDiv{
     height: 25vh;
   }
 
-  .imageWrapper{
+  .Panel_imageWrapper{
     top: 50%;
     transform: translateY(-50%);
     float: right;
     height: 100%;
     width: 100%
   }
-  .panelImg {
+  .Panel_panelImg {
     height: 100%;
   }
 
-  h5{
+  .Panel_h5{
     font-size: 21px;
     line-height: 161px; 
   }
@@ -51,7 +51,7 @@ h4{
 }
 
 @media screen and (max-width: 353px){
-  h5{
+  .Panel_h5{
     font-size: 20px;
     line-height: 7;
   }

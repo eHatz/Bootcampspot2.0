@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Grid, Row, Col} from "react-bootstrap";
-import styles from "./Panel.css";
+import "./Panel.css";
 
 
 
@@ -13,10 +13,10 @@ class Panel extends Component {
 				<a href={'#' + panelId}>
 					<Col sm={2} className="remove-all-margin-padding">
 
-						<div id={panelId} className={styles.panelDiv}>
-							<div className={styles.imageWrapper}>
-								<img src={img} alt="icon" className={"img-responsive " + styles.panelImg}/>
-								<h5 className="caption">{name}</h5>
+						<div id={panelId} className="Panel_panelDiv">
+							<div className="Panel_imageWrapper">
+								<img src={img} alt="icon" className="img-responsive Panel_panelImg"/>
+								<h5 className="caption Panel_h5">{name}</h5>
 							</div>
 						</div>
 					</Col>

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "./NavBarLink.css";
+import "./NavBarLink.css";
 
 
 
@@ -11,10 +11,10 @@ class NavBarLink extends Component {
 		// here we are assigning prop names this.props.name etc, which will be called at a future point
 
 		return (
-				<div className={styles.linkDiv}>
-					<div className={styles.imageDiv}>
+				<div className="NavBarLink_linkDiv">
+					<div className="NavBarLink_imageDiv">
 						<img src={img} alt="icon" className="img-responsive"/>
-						<h3 className={styles.navbar_linkText}>{name}</h3>
+						<h3 className="NavBarLink_linkText">{name}</h3>
 					</div>
 				</div>
 

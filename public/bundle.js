@@ -25498,9 +25498,7 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	var _Application = __webpack_require__(474);
-
-	var _Application2 = _interopRequireDefault(_Application);
+	__webpack_require__(474);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25531,7 +25529,7 @@
 						{ id: "width", className: "container" },
 						_react2.default.createElement(
 							"div",
-							{ id: "Application", className: _Application2.default.Application_main },
+							{ id: "Application", className: "Application_main" },
 							(0, _react.cloneElement)(this.props.children)
 						)
 					)
@@ -44568,9 +44566,7 @@
 
 	var _Panel2 = _interopRequireDefault(_Panel);
 
-	var _HomePage = __webpack_require__(482);
-
-	var _HomePage2 = _interopRequireDefault(_HomePage);
+	__webpack_require__(482);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44601,11 +44597,11 @@
 						{ className: "row" },
 						_react2.default.createElement(
 							"div",
-							{ id: _HomePage2.default.logoDiv },
+							{ id: "HomePage_logoDiv" },
 							_react2.default.createElement(
 								"a",
 								{ href: "/#" },
-								_react2.default.createElement("img", { id: _HomePage2.default.logo, src: "/assets/images/logo1.png", alt: "logo" })
+								_react2.default.createElement("img", { id: "HomePage_logo", src: "/assets/images/logo1.png", alt: "logo" })
 							),
 							_react2.default.createElement(
 								"div",
@@ -44613,7 +44609,7 @@
 								_react2.default.createElement(
 									"a",
 									{ href: "/#github" },
-									_react2.default.createElement("img", { id: _HomePage2.default.login, src: "/assets/images/github.png", alt: "githubLogo" })
+									_react2.default.createElement("img", { id: "HomePage_login", src: "/assets/images/github.png", alt: "githubLogo" })
 								)
 							)
 						)
@@ -44655,9 +44651,7 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	var _Panel = __webpack_require__(480);
-
-	var _Panel2 = _interopRequireDefault(_Panel);
+	__webpack_require__(480);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44693,14 +44687,14 @@
 						{ sm: 2, className: "remove-all-margin-padding" },
 						_react2.default.createElement(
 							"div",
-							{ id: panelId, className: _Panel2.default.panelDiv },
+							{ id: panelId, className: "Panel_panelDiv" },
 							_react2.default.createElement(
 								"div",
-								{ className: _Panel2.default.imageWrapper },
-								_react2.default.createElement("img", { src: img, alt: "icon", className: "img-responsive " + _Panel2.default.panelImg }),
+								{ className: "Panel_imageWrapper" },
+								_react2.default.createElement("img", { src: img, alt: "icon", className: "img-responsive Panel_panelImg" }),
 								_react2.default.createElement(
 									"h5",
-									{ className: "caption" },
+									{ className: "caption Panel_h5" },
 									name
 								)
 							)
@@ -44750,13 +44744,15 @@
 
 
 	// module
-	exports.push([module.id, ".Panel__panelDiv___1frAX{\n\theight: 100vh;\n  display: inline-block;\n  width: 100%;\n}\n.Panel__imageWrapper___A_vP_{\n\tposition: relative;\n\ttop: 58%;\n\ttransform: translateY(-50%);\n\tfloat: right;\n}\n.Panel__panelImg___20d9V{\n  float: right;\n  max-height: 100%;\n  margin-bottom: 10%;\n}\n\nh5{\n\ttext-align: center;\n\tposition: relative;\n  font-size: initial;\n}\n\nh4{\n  color: white;\n  float: right;\n}\n\n\n@media screen and (max-width: 767px){\n  .Panel__panelDiv___1frAX{\n    height: 25vh;\n  }\n\n  .Panel__imageWrapper___A_vP_{\n    top: 50%;\n    transform: translateY(-50%);\n    float: right;\n    height: 100%;\n    width: 100%\n  }\n  .Panel__panelImg___20d9V {\n    height: 100%;\n  }\n\n  h5{\n    font-size: 21px;\n    line-height: 161px; \n  }\n\n}\n\n@media screen and (max-width: 353px){\n  h5{\n    font-size: 20px;\n    line-height: 7;\n  }\n  \n}\n\n", ""]);
+	exports.push([module.id, ".Panel__Panel_panelDiv___1_Ely{\n\theight: 100vh;\n  display: inline-block;\n  width: 100%;\n}\n.Panel__Panel_imageWrapper___3648V{\n\tposition: relative;\n\ttop: 58%;\n\ttransform: translateY(-50%);\n\tfloat: right;\n}\n.Panel__Panel_panelImg___3djyQ{\n  float: right;\n  max-height: 100%;\n  margin-bottom: 10%;\n}\n\n.Panel__Panel_h5___2To2C{\n\ttext-align: center;\n\tposition: relative;\n  font-size: initial;\n}\n\n.Panel__Panel_h4___3J34L{\n  color: white;\n  float: right;\n}\n\n\n@media screen and (max-width: 767px){\n  .Panel__Panel_panelDiv___1_Ely{\n    height: 25vh;\n  }\n\n  .Panel__Panel_imageWrapper___3648V{\n    top: 50%;\n    transform: translateY(-50%);\n    float: right;\n    height: 100%;\n    width: 100%\n  }\n  .Panel__Panel_panelImg___3djyQ {\n    height: 100%;\n  }\n\n  .Panel__Panel_h5___2To2C{\n    font-size: 21px;\n    line-height: 161px; \n  }\n\n}\n\n@media screen and (max-width: 353px){\n  .Panel__Panel_h5___2To2C{\n    font-size: 20px;\n    line-height: 7;\n  }\n  \n}\n\n", ""]);
 
 	// exports
 	exports.locals = {
-		"panelDiv": "Panel__panelDiv___1frAX",
-		"imageWrapper": "Panel__imageWrapper___A_vP_",
-		"panelImg": "Panel__panelImg___20d9V"
+		"Panel_panelDiv": "Panel__Panel_panelDiv___1_Ely",
+		"Panel_imageWrapper": "Panel__Panel_imageWrapper___3648V",
+		"Panel_panelImg": "Panel__Panel_panelImg___3djyQ",
+		"Panel_h5": "Panel__Panel_h5___2To2C",
+		"Panel_h4": "Panel__Panel_h4___3J34L"
 	};
 
 /***/ },
@@ -44794,13 +44790,13 @@
 
 
 	// module
-	exports.push([module.id, "#HomePage__logo___2a6OD{\n\tz-index: 1; \n\tposition: absolute; \n\tpadding-top: 4%;\n    padding-right: 4%;\n    padding-left: 4%;\n\t\n}\n#HomePage__login___2lfF1{\n\tz-index: 1; \n\tposition: absolute; \n\tpadding-top: 7%;\n    padding-right:5%;\n    padding-left: 7%;\n\tright: 0px;\n\n}\n@media screen and (max-width: 767px){\n\t#HomePage__logo___2a6OD{\n\t\tz-index: 1; \n\t\tposition: static; \n\t\ttop: 0px; \n\t\tleft: 0px;\n\t\tpadding-top: 8%;\n    \tpadding-right: 4%;\n    \tpadding-left: 4%;\n    \tpadding-bottom: 0%;\n\t\tmax-width: 100%;\n\t\tbackground-color: black;\n\t}\n\n\t#HomePage__logoDiv___3B0zq{\n\t\tbackground-color: black;\n\t\tmargin-right: -1px;\n\t}\n\n\t#HomePage__login___2lfF1 {\n    z-index: 1;\n    position: static;\n    padding-top: 0%; \n    padding-right: 3%;\n    padding-bottom: 12%;\n    padding-left: 5%;\n    left: 0px; \n    max-width: 46%;\n\t}\n\t.HomePage__remove-all-margin-padding___2Rpmn {\n    margin-top: -6px;\n    margin-right: -1px;\n    margin-bottom: 0px;\n    margin-left: 0px;\n\t}\n}\n\n\n", ""]);
+	exports.push([module.id, "#HomePage__HomePage_logo___2NXbh{\n\tz-index: 1; \n\tposition: absolute; \n\tpadding-top: 4%;\n    padding-right: 4%;\n    padding-left: 4%;\n\t\n}\n#HomePage__HomePage_login___1pYN7{\n\tz-index: 1; \n\tposition: absolute; \n\tpadding-top: 7%;\n    padding-right:5%;\n    padding-left: 7%;\n\tright: 0px;\n\n}\n\n@media screen and (max-width: 767px){\n\t#HomePage__HomePage_logo___2NXbh{\n\t\tz-index: 1; \n\t\tposition: static; \n\t\ttop: 0px; \n\t\tleft: 0px;\n\t\tpadding-top: 8%;\n    \tpadding-right: 4%;\n    \tpadding-left: 4%;\n    \tpadding-bottom: 0%;\n\t\tmax-width: 100%;\n\t\tbackground-color: black;\n\t}\n\n\t#HomePage__HomePage_logoDiv___3gi96{\n\t\tbackground-color: black;\n\t\tmargin-right: -1px;\n\t}\n\n\t#HomePage__HomePage_login___1pYN7 {\n    z-index: 1;\n    position: static;\n    padding-top: 0%; \n    padding-right: 3%;\n    padding-bottom: 12%;\n    padding-left: 5%;\n    left: 0px; \n    max-width: 46%;\n\t}\n\n\t/*What element does this style? -nlp*/\n\t.HomePage__remove-all-margin-padding___2Rpmn { \n    margin-top: -6px;\n    margin-right: -1px;\n    margin-bottom: 0px;\n    margin-left: 0px;\n\t}\n}\n\n\n", ""]);
 
 	// exports
 	exports.locals = {
-		"logo": "HomePage__logo___2a6OD",
-		"login": "HomePage__login___2lfF1",
-		"logoDiv": "HomePage__logoDiv___3B0zq",
+		"HomePage_logo": "HomePage__HomePage_logo___2NXbh",
+		"HomePage_login": "HomePage__HomePage_login___1pYN7",
+		"HomePage_logoDiv": "HomePage__HomePage_logoDiv___3gi96",
 		"remove-all-margin-padding": "HomePage__remove-all-margin-padding___2Rpmn"
 	};
 
@@ -44830,9 +44826,7 @@
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	var _AttendancePage = __webpack_require__(494);
-
-	var _AttendancePage2 = _interopRequireDefault(_AttendancePage);
+	__webpack_require__(494);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45006,9 +45000,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _NavBarLink = __webpack_require__(489);
-
-	var _NavBarLink2 = _interopRequireDefault(_NavBarLink);
+	__webpack_require__(489);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45038,14 +45030,14 @@
 
 				return _react2.default.createElement(
 					"div",
-					{ className: _NavBarLink2.default.linkDiv },
+					{ className: "NavBarLink_linkDiv" },
 					_react2.default.createElement(
 						"div",
-						{ className: _NavBarLink2.default.imageDiv },
+						{ className: "NavBarLink_imageDiv" },
 						_react2.default.createElement("img", { src: img, alt: "icon", className: "img-responsive" }),
 						_react2.default.createElement(
 							"h3",
-							{ className: _NavBarLink2.default.navbar_linkText },
+							{ className: "NavBarLink_linkText" },
 							name
 						)
 					)
@@ -45093,13 +45085,13 @@
 
 
 	// module
-	exports.push([module.id, ".NavBarLink__navbar_linkText___35D6B{\n\tcolor: #ddd7d7;\n\tfont-size: 14px;\n\tpadding-left: 20px;\n}\n\n.NavBarLink__imageDiv___35Kfe{\n\tdisplay: inline-flex;\n}\n\n.NavBarLink__linkDiv___2UnQg{\n\tbackground-color: black;\n}", ""]);
+	exports.push([module.id, ".NavBarLink__NavBarLink_linkText___X3Tfl{\n\tcolor: #ddd7d7;\n\tfont-size: 14px;\n\tpadding-left: 20px;\n}\n\n.NavBarLink__NavBarLink_imageDiv___kG_9k{\n\tdisplay: inline-flex;\n}\n\n.NavBarLink__NavBarLink_linkDiv___3glNX{\n\tbackground-color: black;\n}", ""]);
 
 	// exports
 	exports.locals = {
-		"navbar_linkText": "NavBarLink__navbar_linkText___35D6B",
-		"imageDiv": "NavBarLink__imageDiv___35Kfe",
-		"linkDiv": "NavBarLink__linkDiv___2UnQg"
+		"NavBarLink_linkText": "NavBarLink__NavBarLink_linkText___X3Tfl",
+		"NavBarLink_imageDiv": "NavBarLink__NavBarLink_imageDiv___kG_9k",
+		"NavBarLink_linkDiv": "NavBarLink__NavBarLink_linkDiv___3glNX"
 	};
 
 /***/ },
@@ -45267,9 +45259,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _CareerPage = __webpack_require__(497);
-
-	var _CareerPage2 = _interopRequireDefault(_CareerPage);
+	__webpack_require__(497);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45357,9 +45347,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _HomeworkPage = __webpack_require__(500);
-
-	var _HomeworkPage2 = _interopRequireDefault(_HomeworkPage);
+	__webpack_require__(500);
 
 	var _Navbar = __webpack_require__(485);
 
@@ -45454,9 +45442,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _SyllabusPage = __webpack_require__(503);
-
-	var _SyllabusPage2 = _interopRequireDefault(_SyllabusPage);
+	__webpack_require__(503);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45544,9 +45530,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _FeedbackPage = __webpack_require__(506);
-
-	var _FeedbackPage2 = _interopRequireDefault(_FeedbackPage);
+	__webpack_require__(506);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45634,9 +45618,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ProjectsPage = __webpack_require__(509);
-
-	var _ProjectsPage2 = _interopRequireDefault(_ProjectsPage);
+	__webpack_require__(509);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
