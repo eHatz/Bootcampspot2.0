@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "./Navbar.css";
+import "./Navbar.css";
 import NavBarLink from "../NavBarLink/NavBarLink.jsx"
 
 
@@ -8,7 +8,7 @@ var Navbar = React.createClass ({
 
 		return (
 			<div className= "col-md-4 remove-all-margin-padding">
-				<div id={styles.navBar}>
+				<div id="navBar"> {/*id={styles.navBar}*/}
 					<NavBarLink name="Attendance" img="/assets/images/attendance_nav.png" navLink="#/attendance"/> 
 					<NavBarLink name="Homework" img="assets/images/homework_nav.png" navLink="#/homework"/> 
 
