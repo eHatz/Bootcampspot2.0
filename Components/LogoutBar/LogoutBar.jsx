@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "./LogoutBar.css";
+import "./LogoutBar.css";
 
 class LogoutBar extends Component {
 

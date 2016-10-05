@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "./SyllabusPage.css";
+import "./SyllabusPage.css";
 
 class SyllabusPage extends Component {
 
