@@ -10,14 +10,17 @@ class Panel extends Component {
 		const { panelId, img, name } = this.props;
 	
 		return (
-				<Col sm={2} className="remove-all-margin-padding">
-					<div id={panelId} className={styles.panelDiv}>
-						<div className={styles.imageWrapper}>
-							<img src={img} alt="icon" className={"img-responsive " + styles.panelImg}/>
-							<h5 className="caption">{name}</h5>
+				<a href={'#' + panelId}>
+					<Col sm={2} className="remove-all-margin-padding">
+
+						<div id={panelId} className={styles.panelDiv}>
+							<div className={styles.imageWrapper}>
+								<img src={img} alt="icon" className={"img-responsive " + styles.panelImg}/>
+								<h5 className="caption">{name}</h5>
+							</div>
 						</div>
-					</div>
-				</Col>
+					</Col>
+				</a>
 
 		)
 	}

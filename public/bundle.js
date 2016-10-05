@@ -25434,31 +25434,51 @@
 
 	var _Application2 = _interopRequireDefault(_Application);
 
-	var _Attendance = __webpack_require__(485);
-
-	var _Attendance2 = _interopRequireDefault(_Attendance);
-
 	var _HomePage = __webpack_require__(488);
 
 	var _HomePage2 = _interopRequireDefault(_HomePage);
 
+	var _AttendancePage = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./Components/Pages/AttendancePage/AttendancePage.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _AttendancePage2 = _interopRequireDefault(_AttendancePage);
+
+	var _CareerPage = __webpack_require__(509);
+
+	var _CareerPage2 = _interopRequireDefault(_CareerPage);
+
+	var _HomeworkPage = __webpack_require__(500);
+
+	var _HomeworkPage2 = _interopRequireDefault(_HomeworkPage);
+
+	var _SyllabusPage = __webpack_require__(506);
+
+	var _SyllabusPage2 = _interopRequireDefault(_SyllabusPage);
+
+	var _FeedbackPage = __webpack_require__(515);
+
+	var _FeedbackPage2 = _interopRequireDefault(_FeedbackPage);
+
+	var _ProjectsPage = __webpack_require__(518);
+
+	var _ProjectsPage2 = _interopRequireDefault(_ProjectsPage);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	//Another sample child component
-
-	exports.default = _react2.default.createElement(
-		_reactRouter.Route,
-		{ component: _Application2.default },
-		_react2.default.createElement(_reactRouter.Route, { path: '/', component: _HomePage2.default }),
-		_react2.default.createElement(_reactRouter.Route, { path: '/attendance', component: _Attendance2.default })
-	);
-
-	//Title Component
 
 	//===Import Components===
 
 	//Base component, including nav bar
 	//===React Dependencies===
+	exports.default = _react2.default.createElement(
+		_reactRouter.Route,
+		{ component: _Application2.default },
+		_react2.default.createElement(_reactRouter.Route, { path: '/', component: _HomePage2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: '/attendance', component: _AttendancePage2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: '/career', component: _CareerPage2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: '/homework', component: _HomeworkPage2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: '/syllabus', component: _SyllabusPage2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: '/feedback', component: _FeedbackPage2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: '/projects', component: _ProjectsPage2.default })
+	);
 
 /***/ },
 /* 223 */
@@ -44211,11 +44231,11 @@
 
 
 	// module
-	exports.push([module.id, ".Application__Application_main___kDJ6Y: {\n\talign-items: center;\n\tmargin: 0 auto;\n\tposition: relative;\n\tcolor:red;\n}", ""]);
+	exports.push([module.id, ".Application__Application_main___33GIR: {\r\n\talign-items: center;\r\n\tmargin: 0 auto;\r\n\tposition: relative;\r\n\tcolor:red;\r\n}", ""]);
 
 	// exports
 	exports.locals = {
-		"Application_main": "Application__Application_main___kDJ6Y"
+		"Application_main": "Application__Application_main___33GIR"
 	};
 
 /***/ },
@@ -44634,7 +44654,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n", ""]);
 
 	// exports
 
@@ -44742,120 +44762,19 @@
 
 
 	// module
-	exports.push([module.id, ".NavBarLink__navbar_linkText___35D6B{\n\tcolor: #ddd7d7;\n\tfont-size: 14px;\n\tpadding-left: 20px;\n}\n\n.NavBarLink__imageDiv___35Kfe{\n\tdisplay: inline-flex;\n}\n\n.NavBarLink__linkDiv___2UnQg{\n\tbackground-color: black;\n}", ""]);
+	exports.push([module.id, ".NavBarLink__navbar_linkText___EaXfl{\r\n\tcolor: #ddd7d7;\r\n\tfont-size: 14px;\r\n\tpadding-left: 20px;\r\n}\r\n\r\n.NavBarLink__imageDiv___31nPG{\r\n\tdisplay: inline-flex;\r\n}\r\n\r\n.NavBarLink__linkDiv___3-O7i{\r\n\tbackground-color: black;\r\n}", ""]);
 
 	// exports
 	exports.locals = {
-		"navbar_linkText": "NavBarLink__navbar_linkText___35D6B",
-		"imageDiv": "NavBarLink__imageDiv___35Kfe",
-		"linkDiv": "NavBarLink__linkDiv___2UnQg"
+		"navbar_linkText": "NavBarLink__navbar_linkText___EaXfl",
+		"imageDiv": "NavBarLink__imageDiv___31nPG",
+		"linkDiv": "NavBarLink__linkDiv___3-O7i"
 	};
 
 /***/ },
-/* 485 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactBootstrap = __webpack_require__(224);
-
-	var _Navbar = __webpack_require__(479);
-
-	var _Navbar2 = _interopRequireDefault(_Navbar);
-
-	var _Attendance = __webpack_require__(486);
-
-	var _Attendance2 = _interopRequireDefault(_Attendance);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Attendance = function (_Component) {
-		_inherits(Attendance, _Component);
-
-		function Attendance() {
-			_classCallCheck(this, Attendance);
-
-			return _possibleConstructorReturn(this, (Attendance.__proto__ || Object.getPrototypeOf(Attendance)).apply(this, arguments));
-		}
-
-		_createClass(Attendance, [{
-			key: "render",
-			value: function render() {
-
-				return _react2.default.createElement(
-					"div",
-					{ className: "row" },
-					_react2.default.createElement(
-						"div",
-						{ className: "col-sm-4 linkDiv" },
-						_react2.default.createElement(_Navbar2.default, null)
-					)
-				);
-			}
-		}]);
-
-		return Attendance;
-	}(_react.Component);
-
-	exports.default = Attendance;
-
-/***/ },
-/* 486 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(487);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(477)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Attendance.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./Attendance.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 487 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(476)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "", ""]);
-
-	// exports
-
-
-/***/ },
+/* 485 */,
+/* 486 */,
+/* 487 */,
 /* 488 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -44995,19 +44914,23 @@
 
 
 				return _react2.default.createElement(
-					_reactBootstrap.Col,
-					{ sm: 2, className: "remove-all-margin-padding" },
+					"a",
+					{ href: '#' + panelId },
 					_react2.default.createElement(
-						"div",
-						{ id: panelId, className: _Panel2.default.panelDiv },
+						_reactBootstrap.Col,
+						{ sm: 2, className: "remove-all-margin-padding" },
 						_react2.default.createElement(
 							"div",
-							{ className: _Panel2.default.imageWrapper },
-							_react2.default.createElement("img", { src: img, alt: "icon", className: "img-responsive " + _Panel2.default.panelImg }),
+							{ id: panelId, className: _Panel2.default.panelDiv },
 							_react2.default.createElement(
-								"h5",
-								{ className: "caption" },
-								name
+								"div",
+								{ className: _Panel2.default.imageWrapper },
+								_react2.default.createElement("img", { src: img, alt: "icon", className: "img-responsive " + _Panel2.default.panelImg }),
+								_react2.default.createElement(
+									"h5",
+									{ className: "caption" },
+									name
+								)
 							)
 						)
 					)
@@ -45055,13 +44978,13 @@
 
 
 	// module
-	exports.push([module.id, ".Panel__panelDiv___1frAX{\n\theight: 100vh;\n  display: inline-block;\n  width: 100%;\n}\n.Panel__imageWrapper___A_vP_{\n\tposition: relative;\n\ttop: 58%;\n\ttransform: translateY(-50%);\n\tfloat: right;\n}\n.Panel__panelImg___20d9V{\n  float: right;\n  max-height: 100%;\n  margin-bottom: 10%;\n}\n\nh5{\n\ttext-align: center;\n\tposition: relative;\n  font-size: initial;\n}\n\nh4{\n  color: white;\n  float: right;\n}\n\n\n@media screen and (max-width: 767px){\n  .Panel__panelDiv___1frAX{\n    height: 25vh;\n  }\n\n  .Panel__imageWrapper___A_vP_{\n    top: 50%;\n    transform: translateY(-50%);\n    float: right;\n    height: 100%;\n    width: 100%\n  }\n  .Panel__panelImg___20d9V {\n    height: 100%;\n  }\n\n  h5{\n    font-size: 21px;\n    line-height: 161px; \n  }\n\n}\n\n@media screen and (max-width: 353px){\n  h5{\n    font-size: 20px;\n    line-height: 7;\n  }\n  \n}\n\n", ""]);
+	exports.push([module.id, ".Panel__panelDiv___1FShh{\r\n\theight: 100vh;\r\n  display: inline-block;\r\n  width: 100%;\r\n}\r\n.Panel__imageWrapper___1YU2w{\r\n\tposition: relative;\r\n\ttop: 58%;\r\n\ttransform: translateY(-50%);\r\n\tfloat: right;\r\n}\r\n.Panel__panelImg___H4ElD{\r\n  float: right;\r\n  max-height: 100%;\r\n  margin-bottom: 10%;\r\n}\r\n\r\nh5{\r\n\ttext-align: center;\r\n\tposition: relative;\r\n  font-size: initial;\r\n}\r\n\r\nh4{\r\n  color: white;\r\n  float: right;\r\n}\r\n\r\n\r\n@media screen and (max-width: 767px){\r\n  .Panel__panelDiv___1FShh{\r\n    height: 25vh;\r\n  }\r\n\r\n  .Panel__imageWrapper___1YU2w{\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    float: right;\r\n    height: 100%;\r\n    width: 100%\r\n  }\r\n  .Panel__panelImg___H4ElD {\r\n    height: 100%;\r\n  }\r\n\r\n  h5{\r\n    font-size: 21px;\r\n    line-height: 161px; \r\n  }\r\n\r\n}\r\n\r\n@media screen and (max-width: 353px){\r\n  h5{\r\n    font-size: 20px;\r\n    line-height: 7;\r\n  }\r\n  \r\n}\r\n\r\n", ""]);
 
 	// exports
 	exports.locals = {
-		"panelDiv": "Panel__panelDiv___1frAX",
-		"imageWrapper": "Panel__imageWrapper___A_vP_",
-		"panelImg": "Panel__panelImg___20d9V"
+		"panelDiv": "Panel__panelDiv___1FShh",
+		"imageWrapper": "Panel__imageWrapper___1YU2w",
+		"panelImg": "Panel__panelImg___H4ElD"
 	};
 
 /***/ },
@@ -45099,15 +45022,484 @@
 
 
 	// module
-	exports.push([module.id, "#HomePage__logo___2a6OD{\n\tz-index: 1; \n\tposition: absolute; \n\tpadding-top: 4%;\n    padding-right: 4%;\n    padding-left: 4%;\n\t\n}\n#HomePage__login___2lfF1{\n\tz-index: 1; \n\tposition: absolute; \n\tpadding-top: 7%;\n    padding-right:5%;\n    padding-left: 7%;\n\tright: 0px;\n\n}\n@media screen and (max-width: 767px){\n\t#HomePage__logo___2a6OD{\n\t\tz-index: 1; \n\t\tposition: static; \n\t\ttop: 0px; \n\t\tleft: 0px;\n\t\tpadding-top: 8%;\n    \tpadding-right: 4%;\n    \tpadding-left: 4%;\n    \tpadding-bottom: 0%;\n\t\tmax-width: 100%;\n\t\tbackground-color: black;\n\t}\n\n\t#HomePage__logoDiv___3B0zq{\n\t\tbackground-color: black;\n\t\tmargin-right: -1px;\n\t}\n\n\t#HomePage__login___2lfF1 {\n    z-index: 1;\n    position: static;\n    padding-top: 0%; \n    padding-right: 3%;\n    padding-bottom: 12%;\n    padding-left: 5%;\n    left: 0px; \n    max-width: 46%;\n\t}\n\t.HomePage__remove-all-margin-padding___2Rpmn {\n    margin-top: -6px;\n    margin-right: -1px;\n    margin-bottom: 0px;\n    margin-left: 0px;\n\t}\n}\n\n\n", ""]);
+	exports.push([module.id, "#HomePage__logo___2gE9i{\r\n\tz-index: 1; \r\n\tposition: absolute; \r\n\tpadding-top: 4%;\r\n    padding-right: 4%;\r\n    padding-left: 4%;\r\n\t\r\n}\r\n#HomePage__login___MJUKA{\r\n\tz-index: 1; \r\n\tposition: absolute; \r\n\tpadding-top: 7%;\r\n    padding-right:5%;\r\n    padding-left: 7%;\r\n\tright: 0px;\r\n\r\n}\r\n@media screen and (max-width: 767px){\r\n\t#HomePage__logo___2gE9i{\r\n\t\tz-index: 1; \r\n\t\tposition: static; \r\n\t\ttop: 0px; \r\n\t\tleft: 0px;\r\n\t\tpadding-top: 8%;\r\n    \tpadding-right: 4%;\r\n    \tpadding-left: 4%;\r\n    \tpadding-bottom: 0%;\r\n\t\tmax-width: 100%;\r\n\t\tbackground-color: black;\r\n\t}\r\n\r\n\t#HomePage__logoDiv___2H5Bk{\r\n\t\tbackground-color: black;\r\n\t\tmargin-right: -1px;\r\n\t}\r\n\r\n\t#HomePage__login___MJUKA {\r\n    z-index: 1;\r\n    position: static;\r\n    padding-top: 0%; \r\n    padding-right: 3%;\r\n    padding-bottom: 12%;\r\n    padding-left: 5%;\r\n    left: 0px; \r\n    max-width: 46%;\r\n\t}\r\n\t.HomePage__remove-all-margin-padding___10GpK {\r\n    margin-top: -6px;\r\n    margin-right: -1px;\r\n    margin-bottom: 0px;\r\n    margin-left: 0px;\r\n\t}\r\n}\r\n\r\n\r\n", ""]);
 
 	// exports
 	exports.locals = {
-		"logo": "HomePage__logo___2a6OD",
-		"login": "HomePage__login___2lfF1",
-		"logoDiv": "HomePage__logoDiv___3B0zq",
-		"remove-all-margin-padding": "HomePage__remove-all-margin-padding___2Rpmn"
+		"logo": "HomePage__logo___2gE9i",
+		"login": "HomePage__login___MJUKA",
+		"logoDiv": "HomePage__logoDiv___2H5Bk",
+		"remove-all-margin-padding": "HomePage__remove-all-margin-padding___10GpK"
 	};
+
+/***/ },
+/* 494 */,
+/* 495 */,
+/* 496 */,
+/* 497 */,
+/* 498 */,
+/* 499 */,
+/* 500 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _HomeworkPage = __webpack_require__(501);
+
+	var _HomeworkPage2 = _interopRequireDefault(_HomeworkPage);
+
+	var _Navbar = __webpack_require__(479);
+
+	var _Navbar2 = _interopRequireDefault(_Navbar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var HomeworkPage = function (_Component) {
+		_inherits(HomeworkPage, _Component);
+
+		function HomeworkPage() {
+			_classCallCheck(this, HomeworkPage);
+
+			return _possibleConstructorReturn(this, (HomeworkPage.__proto__ || Object.getPrototypeOf(HomeworkPage)).apply(this, arguments));
+		}
+
+		_createClass(HomeworkPage, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(_Navbar2.default, null)
+				);
+			}
+		}]);
+
+		return HomeworkPage;
+	}(_react.Component);
+
+	exports.default = HomeworkPage;
+
+/***/ },
+/* 501 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(502);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(477)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./HomeworkPage.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./HomeworkPage.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 502 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(476)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "", ""]);
+
+	// exports
+
+
+/***/ },
+/* 503 */,
+/* 504 */,
+/* 505 */,
+/* 506 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _SyllabusPage = __webpack_require__(507);
+
+	var _SyllabusPage2 = _interopRequireDefault(_SyllabusPage);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SyllabusPage = function (_Component) {
+		_inherits(SyllabusPage, _Component);
+
+		function SyllabusPage() {
+			_classCallCheck(this, SyllabusPage);
+
+			return _possibleConstructorReturn(this, (SyllabusPage.__proto__ || Object.getPrototypeOf(SyllabusPage)).apply(this, arguments));
+		}
+
+		_createClass(SyllabusPage, [{
+			key: "render",
+			value: function render() {
+
+				return _react2.default.createElement("div", null);
+			}
+		}]);
+
+		return SyllabusPage;
+	}(_react.Component);
+
+	exports.default = SyllabusPage;
+
+/***/ },
+/* 507 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(508);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(477)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./SyllabusPage.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./SyllabusPage.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 508 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(476)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "", ""]);
+
+	// exports
+
+
+/***/ },
+/* 509 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _CareerPage = __webpack_require__(510);
+
+	var _CareerPage2 = _interopRequireDefault(_CareerPage);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var CareerPage = function (_Component) {
+		_inherits(CareerPage, _Component);
+
+		function CareerPage() {
+			_classCallCheck(this, CareerPage);
+
+			return _possibleConstructorReturn(this, (CareerPage.__proto__ || Object.getPrototypeOf(CareerPage)).apply(this, arguments));
+		}
+
+		_createClass(CareerPage, [{
+			key: "render",
+			value: function render() {
+
+				return _react2.default.createElement("div", null);
+			}
+		}]);
+
+		return CareerPage;
+	}(_react.Component);
+
+	exports.default = CareerPage;
+
+/***/ },
+/* 510 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(511);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(477)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./CareerPage.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./CareerPage.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 511 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(476)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "", ""]);
+
+	// exports
+
+
+/***/ },
+/* 512 */,
+/* 513 */,
+/* 514 */,
+/* 515 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _FeedbackPage = __webpack_require__(516);
+
+	var _FeedbackPage2 = _interopRequireDefault(_FeedbackPage);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var FeedbackPage = function (_Component) {
+		_inherits(FeedbackPage, _Component);
+
+		function FeedbackPage() {
+			_classCallCheck(this, FeedbackPage);
+
+			return _possibleConstructorReturn(this, (FeedbackPage.__proto__ || Object.getPrototypeOf(FeedbackPage)).apply(this, arguments));
+		}
+
+		_createClass(FeedbackPage, [{
+			key: "render",
+			value: function render() {
+
+				return _react2.default.createElement("div", null);
+			}
+		}]);
+
+		return FeedbackPage;
+	}(_react.Component);
+
+	exports.default = FeedbackPage;
+
+/***/ },
+/* 516 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(517);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(477)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./FeedbackPage.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./FeedbackPage.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 517 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(476)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "", ""]);
+
+	// exports
+
+
+/***/ },
+/* 518 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ProjectsPage = __webpack_require__(519);
+
+	var _ProjectsPage2 = _interopRequireDefault(_ProjectsPage);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ProjectsPage = function (_Component) {
+		_inherits(ProjectsPage, _Component);
+
+		function ProjectsPage() {
+			_classCallCheck(this, ProjectsPage);
+
+			return _possibleConstructorReturn(this, (ProjectsPage.__proto__ || Object.getPrototypeOf(ProjectsPage)).apply(this, arguments));
+		}
+
+		_createClass(ProjectsPage, [{
+			key: "render",
+			value: function render() {
+
+				return _react2.default.createElement("div", null);
+			}
+		}]);
+
+		return ProjectsPage;
+	}(_react.Component);
+
+	exports.default = ProjectsPage;
+
+/***/ },
+/* 519 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(520);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(477)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./ProjectsPage.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]___[hash:base64:5]\"}!./ProjectsPage.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 520 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(476)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "", ""]);
+
+	// exports
+
 
 /***/ }
 /******/ ]);
