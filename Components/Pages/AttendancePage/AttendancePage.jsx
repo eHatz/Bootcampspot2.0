@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import {Grid, Row, Col} from "react-bootstrap";
 import Navbar from "../../Navbar/Navbar.jsx";
-import styles from "./Attendance.css";
+import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
+import styles from "./AttendancePage.css";
 
-class Attendance extends Component {
+class AttendancePage extends Component {
 
 	render() {
 
@@ -11,9 +12,8 @@ class Attendance extends Component {
 
 			<div>
 
-
 				<Navbar />
-
+				<LogoutBar UserName='Tim' />
 				<Row className="show-grid">
 				</Row>
 
@@ -22,5 +22,5 @@ class Attendance extends Component {
 	}
 }
 
-export default Attendance;
+export default AttendancePage;
 
