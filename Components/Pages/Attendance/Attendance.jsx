@@ -15,7 +15,7 @@ class Attendance extends Component {
 				<Navbar />
 
 				<Row className="show-grid">
-			
+				</Row>
 
 			</div>
 		);
