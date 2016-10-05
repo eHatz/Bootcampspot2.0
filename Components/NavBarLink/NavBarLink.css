@@ -1,13 +1,13 @@
-.navbar_linkText{
+.NavBarLink_linkText{
 	color: #ddd7d7;
 	font-size: 14px;
 	padding-left: 20px;
 }
 
-.imageDiv{
+.NavBarLink_imageDiv{
 	display: inline-flex;
 }
 
-.linkDiv{
+.NavBarLink_linkDiv{
 	background-color: black;
 }

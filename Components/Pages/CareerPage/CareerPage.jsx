@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "./CareerPage.css";
+import "./CareerPage.css";
 
 class CareerPage extends Component {
 

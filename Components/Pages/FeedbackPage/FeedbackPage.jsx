@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "./FeedbackPage.css";
+import "./FeedbackPage.css";
 
 class FeedbackPage extends Component {
 

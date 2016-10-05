@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "./ProjectsPage.css";
+import "./ProjectsPage.css";
 
 class ProjectsPage extends Component {
 
