@@ -1,13 +1,20 @@
-.panelImage{
+.panelDiv{
 	height: 100vh;
-
+  display: inline-block;
+  width: 100%;
+}
+.imageWrapper{
+	position: relative;
+	top: 58%;
+	transform: translateY(-50%);
+	float: right;
 }
 .panelImg{
-	position: relative;
-  	top: 50%;
-  	transform: translateY(-50%);
-  	float: right;
+  float: right;
+  max-height: 100%;
+  margin-bottom: 10%;
 }
+
 .remove-all-margin-padding{
 	padding: 0 !important;
   	margin: 0 !important;
@@ -16,9 +23,42 @@
 h5{
 	text-align: center;
 	position: relative;
-	top: 33%;
   font-size: initial;
-  display: inherit;
 }
 
+h4{
+  color: white;
+  float: right;
+}
+
+
+@media screen and (max-width: 767px){
+  .panelDiv{
+    height: 25vh;
+  }
+
+  .imageWrapper{
+    top: 50%;
+    transform: translateY(-50%);
+    float: right;
+    height: 100%;
+    width: 100%
+  }
+  .panelImg {
+    height: 100%;
+  }
+
+  h5{
+    font-size: 21px;
+    line-height: 161px; 
+  }
+
+}
+
+@media screen and (max-width: 353px){
+  h5{
+    font-size: 20px;
+    line-height: 7;
+  }
+}
 

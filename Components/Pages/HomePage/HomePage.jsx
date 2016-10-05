@@ -15,6 +15,12 @@ class HomePage extends Component {
 						<a href="/#">
 							<img id={styles.logo} src="/assets/images/logo1.png" alt="logo"/>
 						</a>
+						<div>
+							<a href="/#github">
+								<img id={styles.login} src="/assets/images/github.png" alt="githubLogo"/>
+								{/*<h4 id="login">LOGIN WITH GITHUB</h4>*/}
+							</a>
+						</div>
 					</div>
 				</div>
 				
