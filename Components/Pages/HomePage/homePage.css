@@ -10,7 +10,7 @@
 	z-index: 1; 
 	position: absolute; 
 	padding-top: 7%;
-    padding-right:3%;
+    padding-right:5%;
     padding-left: 7%;
 	right: 0px;
 
@@ -21,7 +21,7 @@
 		position: static; 
 		top: 0px; 
 		left: 0px;
-		padding-top: 4%;
+		padding-top: 8%;
     	padding-right: 4%;
     	padding-left: 4%;
     	padding-bottom: 0%;
@@ -31,6 +31,7 @@
 
 	#logoDiv{
 		background-color: black;
+		margin-right: -1px;
 	}
 
 	#login {
@@ -38,10 +39,17 @@
     position: static;
     padding-top: 0%; 
     padding-right: 3%;
-    padding-bottom: 7%;
+    padding-bottom: 12%;
     padding-left: 5%;
     left: 0px; 
-    max-width: 60%;
+    max-width: 46%;
+	}
+	.remove-all-margin-padding {
+    margin-top: -6px;
+    margin-right: -1px;
+    margin-bottom: 0px;
+    margin-left: 0px;
 	}
 }
+
 

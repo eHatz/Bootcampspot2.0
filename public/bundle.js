@@ -45129,14 +45129,13 @@
 
 
 	// module
-	exports.push([module.id, ".Panel__panelDiv___1frAX{\n\theight: 100vh;\n  display: inline-block;\n  width: 100%;\n}\n.Panel__imageWrapper___A_vP_{\n\tposition: relative;\n\ttop: 58%;\n\ttransform: translateY(-50%);\n\tfloat: right;\n}\n.Panel__panelImg___20d9V{\n  float: right;\n  max-height: 100%;\n  margin-bottom: 10%;\n}\n\n.Panel__remove-all-margin-padding___3PG_j{\n\tpadding: 0 !important;\n  \tmargin: 0 !important;\n}\n\nh5{\n\ttext-align: center;\n\tposition: relative;\n  font-size: initial;\n}\n\nh4{\n  color: white;\n  float: right;\n}\n\n\n@media screen and (max-width: 767px){\n  .Panel__panelDiv___1frAX{\n    height: 25vh;\n  }\n\n  .Panel__imageWrapper___A_vP_{\n    top: 50%;\n    transform: translateY(-50%);\n    float: right;\n    height: 100%;\n    width: 100%\n  }\n  .Panel__panelImg___20d9V {\n    height: 100%;\n  }\n\n  h5{\n    font-size: 21px;\n    line-height: 161px; \n  }\n\n}\n\n@media screen and (max-width: 353px){\n  h5{\n    font-size: 20px;\n    line-height: 7;\n  }\n}\n\n", ""]);
+	exports.push([module.id, ".Panel__panelDiv___1frAX{\n\theight: 100vh;\n  display: inline-block;\n  width: 100%;\n}\n.Panel__imageWrapper___A_vP_{\n\tposition: relative;\n\ttop: 58%;\n\ttransform: translateY(-50%);\n\tfloat: right;\n}\n.Panel__panelImg___20d9V{\n  float: right;\n  max-height: 100%;\n  margin-bottom: 10%;\n}\n\nh5{\n\ttext-align: center;\n\tposition: relative;\n  font-size: initial;\n}\n\nh4{\n  color: white;\n  float: right;\n}\n\n\n@media screen and (max-width: 767px){\n  .Panel__panelDiv___1frAX{\n    height: 25vh;\n  }\n\n  .Panel__imageWrapper___A_vP_{\n    top: 50%;\n    transform: translateY(-50%);\n    float: right;\n    height: 100%;\n    width: 100%\n  }\n  .Panel__panelImg___20d9V {\n    height: 100%;\n  }\n\n  h5{\n    font-size: 21px;\n    line-height: 161px; \n  }\n\n}\n\n@media screen and (max-width: 353px){\n  h5{\n    font-size: 20px;\n    line-height: 7;\n  }\n  \n}\n\n", ""]);
 
 	// exports
 	exports.locals = {
 		"panelDiv": "Panel__panelDiv___1frAX",
 		"imageWrapper": "Panel__imageWrapper___A_vP_",
-		"panelImg": "Panel__panelImg___20d9V",
-		"remove-all-margin-padding": "Panel__remove-all-margin-padding___3PG_j"
+		"panelImg": "Panel__panelImg___20d9V"
 	};
 
 /***/ },
@@ -45176,13 +45175,14 @@
 
 
 	// module
-	exports.push([module.id, "#HomePage__logo___2a6OD{\n\tz-index: 1; \n\tposition: absolute; \n\tpadding-top: 4%;\n    padding-right: 4%;\n    padding-left: 4%;\n\t\n}\n#HomePage__login___2lfF1{\n\tz-index: 1; \n\tposition: absolute; \n\tpadding-top: 7%;\n    padding-right:3%;\n    padding-left: 7%;\n\tright: 0px;\n\n}\n@media screen and (max-width: 767px){\n\t#HomePage__logo___2a6OD{\n\t\tz-index: 1; \n\t\tposition: static; \n\t\ttop: 0px; \n\t\tleft: 0px;\n\t\tpadding-top: 4%;\n    \tpadding-right: 4%;\n    \tpadding-left: 4%;\n    \tpadding-bottom: 0%;\n\t\tmax-width: 100%;\n\t\tbackground-color: black;\n\t}\n\n\t#HomePage__logoDiv___3B0zq{\n\t\tbackground-color: black;\n\t}\n\n\t#HomePage__login___2lfF1 {\n    z-index: 1;\n    position: static;\n    padding-top: 0%; \n    padding-right: 3%;\n    padding-bottom: 7%;\n    padding-left: 5%;\n    left: 0px; \n    max-width: 60%;\n\t}\n}\n\n", ""]);
+	exports.push([module.id, "#HomePage__logo___2a6OD{\n\tz-index: 1; \n\tposition: absolute; \n\tpadding-top: 4%;\n    padding-right: 4%;\n    padding-left: 4%;\n\t\n}\n#HomePage__login___2lfF1{\n\tz-index: 1; \n\tposition: absolute; \n\tpadding-top: 7%;\n    padding-right:5%;\n    padding-left: 7%;\n\tright: 0px;\n\n}\n@media screen and (max-width: 767px){\n\t#HomePage__logo___2a6OD{\n\t\tz-index: 1; \n\t\tposition: static; \n\t\ttop: 0px; \n\t\tleft: 0px;\n\t\tpadding-top: 8%;\n    \tpadding-right: 4%;\n    \tpadding-left: 4%;\n    \tpadding-bottom: 0%;\n\t\tmax-width: 100%;\n\t\tbackground-color: black;\n\t}\n\n\t#HomePage__logoDiv___3B0zq{\n\t\tbackground-color: black;\n\t\tmargin-right: -1px;\n\t}\n\n\t#HomePage__login___2lfF1 {\n    z-index: 1;\n    position: static;\n    padding-top: 0%; \n    padding-right: 3%;\n    padding-bottom: 12%;\n    padding-left: 5%;\n    left: 0px; \n    max-width: 46%;\n\t}\n\t.HomePage__remove-all-margin-padding___2Rpmn {\n    margin-top: -6px;\n    margin-right: -1px;\n    margin-bottom: 0px;\n    margin-left: 0px;\n\t}\n}\n\n\n", ""]);
 
 	// exports
 	exports.locals = {
 		"logo": "HomePage__logo___2a6OD",
 		"login": "HomePage__login___2lfF1",
-		"logoDiv": "HomePage__logoDiv___3B0zq"
+		"logoDiv": "HomePage__logoDiv___3B0zq",
+		"remove-all-margin-padding": "HomePage__remove-all-margin-padding___2Rpmn"
 	};
 
 /***/ }

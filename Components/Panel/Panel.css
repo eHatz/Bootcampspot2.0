@@ -15,11 +15,6 @@
   margin-bottom: 10%;
 }
 
-.remove-all-margin-padding{
-	padding: 0 !important;
-  	margin: 0 !important;
-}
-
 h5{
 	text-align: center;
 	position: relative;
@@ -60,5 +55,6 @@ h4{
     font-size: 20px;
     line-height: 7;
   }
+  
 }
 
