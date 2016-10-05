@@ -26,8 +26,21 @@
   float: right;
 }
 
+.remove-all-margin-padding{
+  padding: 0 !important;
+   margin: 0;
+}
 
 @media screen and (max-width: 767px){
+
+  .remove-all-margin-padding {
+      margin-top: -6px;
+      margin-right: -1px;
+      margin-bottom: 0px;
+      margin-left: 0px;
+  }
+
+
   .Panel_panelDiv{
     height: 25vh;
   }
