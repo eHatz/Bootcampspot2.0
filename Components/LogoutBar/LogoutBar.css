@@ -1,11 +1,15 @@
 #logoutBar_logo{
 	z-index: 1; 
 	position: absolute; 
-	padding-top: 1%;
 	background-color: #2f2f2f;
-	padding-right: 17px;
-	padding-bottom: 17px;
-	padding-left: 1%;
+	height:20%;
+	display:inline-block;
+	padding-left:3%;
+	padding-right: 3%;
+	padding-top:2%;
+	padding-bottom:5%; 
+
+
   	
 }
 #logoutBar_textDiv{
@@ -15,8 +19,9 @@
 	color: black;
 }
 #logoutBar_username, #logoutBar_logout {
-	color: black;
+	color: white;
 	display: inline-block;
+	padding-right: 4%	
 
 }
 
@@ -28,14 +33,15 @@
 
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 768px){
 	#logoutBar_logo{
 		z-index: 1; 
 		position: static; 
 		top: 0px; 
 		left: 0px;
 		max-width: 100%;
-		background-color: #ccc;
+		background-color: #2f2f2f;
+		max-height: 100%;
 	}
 
 	#logoutBar{
@@ -53,51 +59,15 @@
 }
 
 
-
-
-/*#logoutBar {
-	background-color: #ccc;
-	height: 15vh;
-}
-
-#logoutBar_textDiv {
-	z-index: 1; 
-	position: absolute; 
-	right: 0px;
-
-}
-
-#logoutBar_logo{
-	z-index: 1; 
-	position: absolute; 
-
-	
-}
-
-#logoutBar_username, #logoutBar_logout {
-	color: black;
-	display: inline-block;
-}
-
-@media screen and (max-width: 767px){
+@media screen and (max-width: 640px){
 	#logoutBar_logo{
-		z-index: 1; 
-		position: static; 
-		top: 0px; 
-		left: 0px;
-		max-width: 100%;
+		top:0;
+		left:0;
+		
+
+
+
 	}
 
-	#logoutBar{
-		background-color: #ccc;
-		margin-right: -1px;
-	}
 
-	#logoutBar_textDiv {
-    z-index: 1;
-    position: static;
-    left: 0px; 
-    max-width: 46%;
-	}
 }
-*/

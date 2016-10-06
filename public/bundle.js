@@ -25450,15 +25450,15 @@
 
 	var _HomeworkPage2 = _interopRequireDefault(_HomeworkPage);
 
-	var _SyllabusPage = __webpack_require__(502);
+	var _SyllabusPage = __webpack_require__(508);
 
 	var _SyllabusPage2 = _interopRequireDefault(_SyllabusPage);
 
-	var _FeedbackPage = __webpack_require__(505);
+	var _FeedbackPage = __webpack_require__(511);
 
 	var _FeedbackPage2 = _interopRequireDefault(_FeedbackPage);
 
-	var _ProjectsPage = __webpack_require__(508);
+	var _ProjectsPage = __webpack_require__(514);
 
 	var _ProjectsPage2 = _interopRequireDefault(_ProjectsPage);
 
@@ -44456,15 +44456,11 @@
 				return _react2.default.createElement(
 					"div",
 					null,
-<<<<<<< HEAD
 					_react2.default.createElement(
 						"div",
 						{ className: "row show-grid" },
 						_react2.default.createElement(_LogoutBar2.default, { UserName: "Andalicious" })
 					),
-=======
-					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" }),
->>>>>>> 2e1c14e63d4d72f3d215115f48f64155b33ad02e
 					_react2.default.createElement(
 						"div",
 						{ className: "row" },
@@ -44690,21 +44686,21 @@
 							"div",
 							{ id: "logoutBar_logo" },
 							_react2.default.createElement("img", { src: "/assets/images/logo2.png" })
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ id: "logoutBar_textDiv" },
+						" ",
+						_react2.default.createElement(
+							"h2",
+							{ id: "logoutBar_username" },
+							UserName
 						),
 						_react2.default.createElement(
-							"div",
-							{ id: "logoutBar_textDiv" },
-							" ",
-							_react2.default.createElement(
-								"h2",
-								{ id: "logoutBar_username" },
-								UserName
-							),
-							_react2.default.createElement(
-								"h2",
-								{ id: "logoutBar_logout" },
-								"Log Out"
-							)
+							"h2",
+							{ id: "logoutBar_logout" },
+							"| Log Out"
 						)
 					)
 				);
@@ -44819,7 +44815,7 @@
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	var _Table = __webpack_require__(511);
+	var _Table = __webpack_require__(502);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -44887,196 +44883,7 @@
 
 	__webpack_require__(503);
 
-	var _LogoutBar = __webpack_require__(491);
-
-	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var SyllabusPage = function (_Component) {
-		_inherits(SyllabusPage, _Component);
-
-		function SyllabusPage() {
-			_classCallCheck(this, SyllabusPage);
-
-			return _possibleConstructorReturn(this, (SyllabusPage.__proto__ || Object.getPrototypeOf(SyllabusPage)).apply(this, arguments));
-		}
-
-		_createClass(SyllabusPage, [{
-			key: "render",
-			value: function render() {
-
-				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" })
-				);
-			}
-		}]);
-
-		return SyllabusPage;
-	}(_react.Component);
-
-	exports.default = SyllabusPage;
-
-/***/ },
-/* 503 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 504 */,
-/* 505 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	__webpack_require__(506);
-
-	var _LogoutBar = __webpack_require__(491);
-
-	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var FeedbackPage = function (_Component) {
-		_inherits(FeedbackPage, _Component);
-
-		function FeedbackPage() {
-			_classCallCheck(this, FeedbackPage);
-
-			return _possibleConstructorReturn(this, (FeedbackPage.__proto__ || Object.getPrototypeOf(FeedbackPage)).apply(this, arguments));
-		}
-
-		_createClass(FeedbackPage, [{
-			key: "render",
-			value: function render() {
-
-				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" })
-				);
-			}
-		}]);
-
-		return FeedbackPage;
-	}(_react.Component);
-
-	exports.default = FeedbackPage;
-
-/***/ },
-/* 506 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 507 */,
-/* 508 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	__webpack_require__(509);
-
-	var _LogoutBar = __webpack_require__(491);
-
-	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var ProjectsPage = function (_Component) {
-		_inherits(ProjectsPage, _Component);
-
-		function ProjectsPage() {
-			_classCallCheck(this, ProjectsPage);
-
-			return _possibleConstructorReturn(this, (ProjectsPage.__proto__ || Object.getPrototypeOf(ProjectsPage)).apply(this, arguments));
-		}
-
-		_createClass(ProjectsPage, [{
-			key: "render",
-			value: function render() {
-
-				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" })
-				);
-			}
-		}]);
-
-		return ProjectsPage;
-	}(_react.Component);
-
-	exports.default = ProjectsPage;
-
-/***/ },
-/* 509 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 510 */,
-/* 511 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	__webpack_require__(512);
-
-	var _TableRow = __webpack_require__(514);
+	var _TableRow = __webpack_require__(505);
 
 	var _TableRow2 = _interopRequireDefault(_TableRow);
 
@@ -45170,14 +44977,14 @@
 	exports.default = Table;
 
 /***/ },
-/* 512 */
+/* 503 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 513 */,
-/* 514 */
+/* 504 */,
+/* 505 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45192,7 +44999,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(515);
+	__webpack_require__(506);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45260,6 +45067,195 @@
 	}(_react.Component);
 
 	exports.default = TableRow;
+
+/***/ },
+/* 506 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 507 */,
+/* 508 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(509);
+
+	var _LogoutBar = __webpack_require__(491);
+
+	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SyllabusPage = function (_Component) {
+		_inherits(SyllabusPage, _Component);
+
+		function SyllabusPage() {
+			_classCallCheck(this, SyllabusPage);
+
+			return _possibleConstructorReturn(this, (SyllabusPage.__proto__ || Object.getPrototypeOf(SyllabusPage)).apply(this, arguments));
+		}
+
+		_createClass(SyllabusPage, [{
+			key: "render",
+			value: function render() {
+
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" })
+				);
+			}
+		}]);
+
+		return SyllabusPage;
+	}(_react.Component);
+
+	exports.default = SyllabusPage;
+
+/***/ },
+/* 509 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 510 */,
+/* 511 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(512);
+
+	var _LogoutBar = __webpack_require__(491);
+
+	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var FeedbackPage = function (_Component) {
+		_inherits(FeedbackPage, _Component);
+
+		function FeedbackPage() {
+			_classCallCheck(this, FeedbackPage);
+
+			return _possibleConstructorReturn(this, (FeedbackPage.__proto__ || Object.getPrototypeOf(FeedbackPage)).apply(this, arguments));
+		}
+
+		_createClass(FeedbackPage, [{
+			key: "render",
+			value: function render() {
+
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" })
+				);
+			}
+		}]);
+
+		return FeedbackPage;
+	}(_react.Component);
+
+	exports.default = FeedbackPage;
+
+/***/ },
+/* 512 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 513 */,
+/* 514 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(515);
+
+	var _LogoutBar = __webpack_require__(491);
+
+	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ProjectsPage = function (_Component) {
+		_inherits(ProjectsPage, _Component);
+
+		function ProjectsPage() {
+			_classCallCheck(this, ProjectsPage);
+
+			return _possibleConstructorReturn(this, (ProjectsPage.__proto__ || Object.getPrototypeOf(ProjectsPage)).apply(this, arguments));
+		}
+
+		_createClass(ProjectsPage, [{
+			key: "render",
+			value: function render() {
+
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" })
+				);
+			}
+		}]);
+
+		return ProjectsPage;
+	}(_react.Component);
+
+	exports.default = ProjectsPage;
 
 /***/ },
 /* 515 */

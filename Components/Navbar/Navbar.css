@@ -1,5 +1,27 @@
 #navBar {
 	background-color: black;
-	height: 85vh;
+	height: 84vh;
 	width: 70%;
+
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px){
+
+
+
+}
+
+
+@media screen and (max-width: 640px){
+
+
+
+
 }
