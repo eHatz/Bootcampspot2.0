@@ -1,7 +1,12 @@
 #logoutBar_logo{
 	z-index: 1; 
 	position: absolute; 
-	
+	padding-top: 1%;
+	background-color: #2f2f2f;
+	padding-right: 17px;
+	padding-bottom: 17px;
+	padding-left: 1%;
+  	
 }
 #logoutBar_textDiv{
 	z-index: 1; 
@@ -20,7 +25,11 @@
 	background-color: #343333;
 	position: static;
 	height: 19vh;
+
+
 }
+
+
 
 @media screen and (max-width: 767px){
 	#logoutBar_logo{
