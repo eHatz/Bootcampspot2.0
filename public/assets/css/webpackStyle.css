@@ -253,5 +253,34 @@
     max-width: 46%;
 	}
 }
-*/
+*/.tableHeader {
+	display: inline-block;
+	text-align: center;
+	color: black;
+	width: 25%;
+	padding: 10px 0px;
+	margin-top: 5px;
+	margin-bottom: 0px;
+	overflow: hidden;
+	background-color: #ccc;
+	border-bottom: 3px;
+	border color: white;
+}
+.tableData {
+	display: inline-block;
+	text-align: center;
+	color: black;
+	width: 25%;
+
+	margin: 0px;
+	overflow: hidden;
+	background-color: #ccc;
+	border-bottom: 3px;
+	border color: white;
+	height: 36px;
+	font-size: 18px;
+	line-height: 36px;
+
+}
+
 /*# sourceMappingURL=webpackStyle.css.map*/
