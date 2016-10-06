@@ -44456,15 +44456,17 @@
 				return _react2.default.createElement(
 					"div",
 					null,
-					_react2.default.createElement(_Navbar2.default, null),
-					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" }),
-					_react2.default.createElement(_reactBootstrap.Row, { className: "show-grid" }),
+					_react2.default.createElement(
+						"div",
+						{ className: "row show-grid" },
+						_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" })
+					),
 					_react2.default.createElement(
 						"div",
 						{ className: "row" },
 						_react2.default.createElement(
 							"div",
-							{ className: "col-sm-4 linkDiv" },
+							{ className: "linkDiv" },
 							_react2.default.createElement(_Navbar2.default, null)
 						)
 					)
@@ -44671,11 +44673,16 @@
 
 				return _react2.default.createElement(
 					"div",
-					{ id: "logoutBar" },
+					{ id: "logoutBar", className: "col-md-12" },
 					" ",
 					_react2.default.createElement(
 						"div",
-						{ id: "logoutBar_textWrapper" },
+						{ id: "logoutBar_logo" },
+						_react2.default.createElement("img", { src: "/assets/images/logo2.png" })
+					),
+					_react2.default.createElement(
+						"div",
+						{ id: "logoutBar_textDiv" },
 						" ",
 						_react2.default.createElement(
 							"h2",
