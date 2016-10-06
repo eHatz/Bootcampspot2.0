@@ -6,6 +6,7 @@
 
 .NavBarLink_imageDiv{
 	display: inline-flex;
+	padding-left: 16%;
 }
 
 .NavBarLink_linkDiv{
