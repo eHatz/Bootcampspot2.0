@@ -137,7 +137,7 @@
 #navBar {
 	background-color: black;
 	height: 85vh;
-	width: 100%;
+	width: 70%;
 }.NavBarLink_linkText{
 	color: #ddd7d7;
 	font-size: 14px;
@@ -150,10 +150,15 @@
 
 .NavBarLink_linkDiv{
 	background-color: black;
+	
 }#logoutBar_logo{
 	z-index: 1; 
 	position: absolute; 
-	
+	padding-top: 1%;
+	background-color: #2f2f2f;
+	padding-right: 17px;
+	padding-bottom: 1%;
+  	
 }
 #logoutBar_textDiv{
 	z-index: 1; 
@@ -167,9 +172,11 @@
 }
 
 #logoutBar{
-	background-color: #ccc;
+	background-color: #c30c0c;
 	position: static;
-	height: 15vh;
+	height: 22vh;
+
+
 }
 
 @media screen and (max-width: 767px){

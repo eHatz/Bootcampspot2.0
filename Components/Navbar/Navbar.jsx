@@ -11,7 +11,10 @@ var Navbar = React.createClass ({
 				<div id="navBar"> {/*id={styles.navBar}*/}
 					<NavBarLink name="Attendance" img="/assets/images/attendance_nav.png" navLink="#/attendance"/> 
 					<NavBarLink name="Homework" img="assets/images/homework_nav.png" navLink="#/homework"/> 
-
+					<NavBarLink name="Syllabus" img="assets/images/syllabus_nav.png" navLink="#/syllabus"/>
+					<NavBarLink name="Projects" img="assets/images/projects_nav.png" navLink="#/projects"/>
+					<NavBarLink name="Feedback" img="assets/images/feedback_nav.png" navLink="#/feedback"/>
+					<NavBarLink name="Career" img="assets/images/career_nav.png" navLink="#/career"/>
 
 				</div>
 			</div>
