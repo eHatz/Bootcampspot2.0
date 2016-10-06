@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./FeedbackPage.css";
-
+import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
 class FeedbackPage extends Component {
 
 	render() {
@@ -8,7 +8,7 @@ class FeedbackPage extends Component {
 		return (
 
 			<div>
-
+				<LogoutBar UserName='Tim' />
 			</div>
 		);
 	}
