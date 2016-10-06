@@ -21,30 +21,33 @@
 #logoutBar{
 	background-color: #343333;
 	position: static;
-	height: 19vh;
+	height: 15vh;
 }
 
 
 @media screen and (max-width: 767px){
 
 	#logoutBar_logo{
-		/*z-index: 1; 
+		z-index: 1; 
 		position: static; 
-		padding-left: 20px;
-		height: 20px;*/
+		max-height: 70%;
+		max-width: 70%;
 	}
 
 	#logoutBar{
 		background-color: #343333;
-		height: 19vh;
+		height: 15vh;
 	}
 
 	#logoutBar_textDiv {
-    z-index: 1;
-    position: static;
-    left: 0px; 
-    max-height: 5vh;
-    
+	    z-index: 1;
+	    position: static;
+	    left: 0px; 
+	    max-height: 30%;
+	    padding: 0px;
+	}
+	#logoutBar_username, #logoutBar_logout {
+		padding: 0px 20px;
 	}
 }
 

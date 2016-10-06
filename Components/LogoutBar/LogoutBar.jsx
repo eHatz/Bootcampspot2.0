@@ -10,8 +10,8 @@ class LogoutBar extends Component {
 			<div className="row">
 				<div id='logoutBar' className='col-md-12'> 
 
-					<div id='logoutBar_logo'>
-						<img src='/assets/images/logo2.png'/>
+					<div >
+						<img id='logoutBar_logo' src='/assets/images/logo2.png'/>
 					</div>
 
 					<div id='logoutBar_textDiv'>
