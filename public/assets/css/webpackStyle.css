@@ -24,6 +24,7 @@
 	text-align: center;
 	position: relative;
 	font-size: initial;
+  color: white;
 }
 
 .Panel_h4{
@@ -138,21 +139,26 @@
 	background-color: black;
 	height: 85vh;
 	width: 100%;
-}.NavBarLink_linkText{
+}
+
+
+.NavBarLink_linkText{
 	color: #ddd7d7;
 	font-size: 14px;
-	padding-left: 40px;
+	padding-left: 23px;
 }
 
 .NavBarLink_imageDiv{
 	display: inline-flex;
-
+	padding-left: 19%;
+	padding-top: 7%;
 }
 
 .NavBarLink_linkDiv{
 	background-color: black;
-	text-align: center;
-}#logoutBar_logo{
+	
+}
+#logoutBar_logo{
 	z-index: 1; 
 	position: absolute; 
 	
@@ -161,17 +167,19 @@
 	z-index: 1; 
 	position: absolute; 
 	right: 0px;
-	color: black;
+	
 }
 #logoutBar_username, #logoutBar_logout {
-	color: black;
+	font-family: 'Roboto Condensed', sans-serif;	
+	color: #fcfbfb;
 	display: inline-block;
+	padding: 20px;
 }
 
 #logoutBar{
-	background-color: #ccc;
+	background-color: #343333;
 	position: static;
-	height: 15vh;
+	height: 19vh;
 }
 
 @media screen and (max-width: 767px){
@@ -194,57 +202,17 @@
     position: static;
     left: 0px; 
     max-width: 46%;
-    color: black;
+    
 	}
 }
 
 
 
 
-/*#logoutBar {
-	background-color: #ccc;
-	height: 15vh;
-}
-
-#logoutBar_textDiv {
-	z-index: 1; 
-	position: absolute; 
-	right: 0px;
-
-}
-
-#logoutBar_logo{
-	z-index: 1; 
-	position: absolute; 
-
+/*.attendanceBackground{
+	background-image: url('../../assets/images/attendance_watermark.png')
 	
-}
 
-#logoutBar_username, #logoutBar_logout {
-	color: black;
-	display: inline-block;
-}
-
-@media screen and (max-width: 767px){
-	#logoutBar_logo{
-		z-index: 1; 
-		position: static; 
-		top: 0px; 
-		left: 0px;
-		max-width: 100%;
-	}
-
-	#logoutBar{
-		background-color: #ccc;
-		margin-right: -1px;
-	}
-
-	#logoutBar_textDiv {
-    z-index: 1;
-    position: static;
-    left: 0px; 
-    max-width: 46%;
-	}
 }
 */
 /*# sourceMappingURL=webpackStyle.css.map*/
