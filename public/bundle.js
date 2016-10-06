@@ -44461,10 +44461,9 @@
 					_react2.default.createElement(
 						"div",
 						{ className: "row" },
-						_react2.default.createElement(_Navbar2.default, null),
 						_react2.default.createElement(
 							"div",
-							{ className: "col-md-8 remove-all-margin-padding" },
+							{ className: "col-sm-9 remove-all-margin-padding" },
 							_react2.default.createElement(_Table2.default, { pageName: "attendancePage",
 								header1: "NOTES",
 								header2: "TIME",
@@ -44683,7 +44682,7 @@
 			key: "render",
 			value: function render() {
 				var UserName = this.props.UserName;
-				{/* this prop will have to change dynamically based on user logged in*/}
+
 
 				return _react2.default.createElement(
 					"div",
@@ -44691,12 +44690,6 @@
 					_react2.default.createElement(
 						"div",
 						{ id: "logoutBar", className: "col-md-12" },
-						" ",
-						_react2.default.createElement(
-							"div",
-							{ id: "logoutBar_logo" },
-							_react2.default.createElement("img", { src: "/assets/images/logo2.png" })
-						),
 						_react2.default.createElement(
 							"div",
 							{ id: "logoutBar_logo" },
@@ -44705,7 +44698,6 @@
 						_react2.default.createElement(
 							"div",
 							{ id: "logoutBar_textDiv" },
-							" ",
 							_react2.default.createElement(
 								"h4",
 								{ id: "logoutBar_username" },

@@ -2,9 +2,6 @@
 	z-index: 1; 
 	position: absolute; 
 	padding-top: 1%;
-	background-color: #2f2f2f;
-	padding-right: 17px;
-	padding-bottom: 17px;
 	padding-left: 1%;
   	
 }
@@ -25,32 +22,28 @@
 	background-color: #343333;
 	position: static;
 	height: 19vh;
-
-
 }
 
 
-
 @media screen and (max-width: 767px){
+
 	#logoutBar_logo{
-		z-index: 1; 
+		/*z-index: 1; 
 		position: static; 
-		top: 0px; 
-		left: 0px;
-		max-width: 100%;
-		background-color: #ccc;
+		padding-left: 20px;
+		height: 20px;*/
 	}
 
 	#logoutBar{
-		background-color: #ccc;
-		height: 15vh;
+		background-color: #343333;
+		height: 19vh;
 	}
 
 	#logoutBar_textDiv {
     z-index: 1;
     position: static;
     left: 0px; 
-    max-width: 46%;
+    max-height: 5vh;
     
 	}
 }
