@@ -44275,7 +44275,7 @@
 					),
 					_react2.default.createElement(
 						"div",
-						{ className: "row height" },
+						{ className: "row" },
 						_react2.default.createElement(_Panel2.default, { background: "#181818", name: "ATTENDANCE", panelId: "attendance", img: "/assets/images/attendance_icon.png" }),
 						_react2.default.createElement(_Panel2.default, { background: "#302e2e", name: "HOMEWORK", panelId: "homework", img: "/assets/images/homework_icon.png" }),
 						_react2.default.createElement(_Panel2.default, { background: "#8a8a8a", name: "SYLLABUS", panelId: "syllabus", img: "/assets/images/syllabus_icon.png" }),
