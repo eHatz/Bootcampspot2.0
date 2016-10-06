@@ -44673,26 +44673,30 @@
 
 				return _react2.default.createElement(
 					"div",
-					{ id: "logoutBar", className: "col-md-12" },
-					" ",
+					{ className: "row" },
 					_react2.default.createElement(
 						"div",
-						{ id: "logoutBar_logo" },
-						_react2.default.createElement("img", { src: "/assets/images/logo2.png" })
-					),
-					_react2.default.createElement(
-						"div",
-						{ id: "logoutBar_textDiv" },
+						{ id: "logoutBar", className: "col-md-12" },
 						" ",
 						_react2.default.createElement(
-							"h2",
-							{ id: "logoutBar_username" },
-							UserName
+							"div",
+							{ id: "logoutBar_logo" },
+							_react2.default.createElement("img", { src: "/assets/images/logo2.png" })
 						),
 						_react2.default.createElement(
-							"h2",
-							{ id: "logoutBar_logout" },
-							"Log Out"
+							"div",
+							{ id: "logoutBar_textDiv" },
+							" ",
+							_react2.default.createElement(
+								"h2",
+								{ id: "logoutBar_username" },
+								UserName
+							),
+							_react2.default.createElement(
+								"h2",
+								{ id: "logoutBar_logout" },
+								"Log Out"
+							)
 						)
 					)
 				);
@@ -44736,6 +44740,10 @@
 
 	__webpack_require__(497);
 
+	var _LogoutBar = __webpack_require__(491);
+
+	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -44757,7 +44765,11 @@
 			key: "render",
 			value: function render() {
 
-				return _react2.default.createElement("div", null);
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" })
+				);
 			}
 		}]);
 
@@ -44795,6 +44807,10 @@
 
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 
+	var _LogoutBar = __webpack_require__(491);
+
+	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -44818,6 +44834,7 @@
 				return _react2.default.createElement(
 					"div",
 					null,
+					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" }),
 					_react2.default.createElement(_Navbar2.default, null)
 				);
 			}
@@ -44853,6 +44870,10 @@
 
 	__webpack_require__(503);
 
+	var _LogoutBar = __webpack_require__(491);
+
+	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -44874,7 +44895,11 @@
 			key: "render",
 			value: function render() {
 
-				return _react2.default.createElement("div", null);
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" })
+				);
 			}
 		}]);
 
@@ -44908,6 +44933,10 @@
 
 	__webpack_require__(506);
 
+	var _LogoutBar = __webpack_require__(491);
+
+	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -44929,7 +44958,11 @@
 			key: "render",
 			value: function render() {
 
-				return _react2.default.createElement("div", null);
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" })
+				);
 			}
 		}]);
 
@@ -44963,6 +44996,10 @@
 
 	__webpack_require__(509);
 
+	var _LogoutBar = __webpack_require__(491);
+
+	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -44984,7 +45021,11 @@
 			key: "render",
 			value: function render() {
 
-				return _react2.default.createElement("div", null);
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" })
+				);
 			}
 		}]);
 
