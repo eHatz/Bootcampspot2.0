@@ -141,7 +141,7 @@
 }.NavBarLink_linkText{
 	color: #ddd7d7;
 	font-size: 14px;
-	padding-left: 20px;
+	padding-left: 40px;
 }
 
 .NavBarLink_imageDiv{
@@ -150,7 +150,7 @@
 
 .NavBarLink_linkDiv{
 	background-color: black;
-	
+
 }#logoutBar_logo{
 	z-index: 1; 
 	position: absolute; 

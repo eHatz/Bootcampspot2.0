@@ -1,7 +1,7 @@
 .NavBarLink_linkText{
 	color: #ddd7d7;
 	font-size: 14px;
-	padding-left: 20px;
+	padding-left: 40px;
 }
 
 .NavBarLink_imageDiv{
@@ -10,5 +10,9 @@
 
 .NavBarLink_linkDiv{
 	background-color: black;
+<<<<<<< HEAD
 	
+=======
+	text-align: center;
+>>>>>>> 3320aab967ca85d46acba56c828355c840353da3
 }

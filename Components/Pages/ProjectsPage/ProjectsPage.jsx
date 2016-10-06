@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./ProjectsPage.css";
-
+import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
 class ProjectsPage extends Component {
 
 	render() {
@@ -8,7 +8,7 @@ class ProjectsPage extends Component {
 		return (
 
 			<div>
-
+				<LogoutBar UserName='Tim' />
 			</div>
 		);
 	}
