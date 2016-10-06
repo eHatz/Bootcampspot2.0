@@ -12,7 +12,7 @@ class AttendancePage extends Component {
 			
 			<div>
 					
-				<LogoutBar UserName='Tim' />
+
 
 				<div className="row">
 					<div className="linkDiv">

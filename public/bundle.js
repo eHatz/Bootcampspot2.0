@@ -44456,7 +44456,15 @@
 				return _react2.default.createElement(
 					"div",
 					null,
+<<<<<<< HEAD
+					_react2.default.createElement(
+						"div",
+						{ className: "row show-grid" },
+						_react2.default.createElement(_LogoutBar2.default, { UserName: "Andalicious" })
+					),
+=======
 					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" }),
+>>>>>>> 2e1c14e63d4d72f3d215115f48f64155b33ad02e
 					_react2.default.createElement(
 						"div",
 						{ className: "row" },
@@ -44509,7 +44517,11 @@
 					{ id: "navBar" },
 					" ",
 					_react2.default.createElement(_NavBarLink2.default, { name: "Attendance", img: "/assets/images/attendance_nav.png", navLink: "#/attendance" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Homework", img: "assets/images/homework_nav.png", navLink: "#/homework" })
+					_react2.default.createElement(_NavBarLink2.default, { name: "Homework", img: "assets/images/homework_nav.png", navLink: "#/homework" }),
+					_react2.default.createElement(_NavBarLink2.default, { name: "Syllabus", img: "assets/images/syllabus_nav.png", navLink: "#/syllabus" }),
+					_react2.default.createElement(_NavBarLink2.default, { name: "Projects", img: "assets/images/projects_nav.png", navLink: "#/projects" }),
+					_react2.default.createElement(_NavBarLink2.default, { name: "Feedback", img: "assets/images/feedback_nav.png", navLink: "#/feedback" }),
+					_react2.default.createElement(_NavBarLink2.default, { name: "Career", img: "assets/images/career_nav.png", navLink: "#/career" })
 				)
 			);
 		}
