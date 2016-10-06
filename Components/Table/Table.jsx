@@ -25,15 +25,15 @@ import TableRow from './TableRow/TableRow.jsx'
 class Table extends Component {
 
 	render() {
-		const { header1, header2, header3, header4 } = this.props;
-	
+		const { header1, header2, header3, header4, pageName } = this.props;
+{/*styling for width of each column shouldgo on the page css under the class pagenameCol1, 2, 3 ex: homePageCol1*/}
 		return (
-			<div className= "col-md-8 remove-all-margin-padding">
+			<div>
 				<div id='headRow' className='row remove-all-margin-padding'>
-					<p className='tableHeader'>{header1}</p>
-					<p className='tableHeader'>{header2}</p>
-					<p className='tableHeader'>{header3}</p>
-					<p className='tableHeader'>{header4}</p>
+					<p className={pageName +'Col1 tableHeader'}>{header1}</p> 
+					<p className={pageName +'Col2 tableHeader'}>{header2}</p>
+					<p className={pageName +'Col3 tableHeader'}>{header3}</p>
+					<p className={pageName +'Col4 tableHeader'}>{header4}</p>
 				</div>
 				{
 					dummyData.map((item, index) =>
@@ -42,6 +42,7 @@ class Table extends Component {
 							col2={item.homework}
 							col3={item.dueDate}
 							col4={item.submission}
+							pageName = {pageName}
 							key= {index}
 						/>
 					)

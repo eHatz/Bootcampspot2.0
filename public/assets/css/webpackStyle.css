@@ -134,7 +134,18 @@
 }
 
 
-#navBar {
+.attendancePageCol1 {
+	width: 40%;
+}
+.attendancePageCol2 {
+	width: 20%;
+}
+.attendancePageCol3 {
+	width: 20%;
+}
+.attendancePageCol4 {
+	width: 20%;
+}#navBar {
 	background-color: black;
 	height: 85vh;
 	width: 100%;
@@ -249,7 +260,6 @@
 	display: inline-block;
 	text-align: center;
 	color: black;
-	width: 25%;
 	padding: 10px 0px;
 	margin-top: 5px;
 	margin-bottom: 0px;
@@ -262,17 +272,51 @@
 	display: inline-block;
 	text-align: center;
 	color: black;
-	width: 25%;
-
 	margin: 0px;
 	overflow: hidden;
 	background-color: #ccc;
-	border-bottom: 3px;
-	border color: white;
 	height: 36px;
 	font-size: 18px;
 	line-height: 36px;
-
+}
+.homeworkPageCol1 {
+	width: 10%;
+}
+.homeworkPageCol2 {
+	width: 40%;
+}
+.homeworkPageCol3 {
+	width: 25%;
+}
+.homeworkPageCol4 {
+	width: 25%;
+}.syllabusPageCol1 {
+	width: 55%;
 }
 
+.syllabusPageCol2 {
+	width: 15%;
+}
+
+.syllabusPageCol3{
+	width: 15%;
+}
+
+.syllabusPageCol4 {
+	width: 15%;
+}
+#syllabus {
+	color: black;
+}.projectsPageCol1 {
+	width: 10%;
+}
+.projectsPageCol2 {
+	width: 40%;
+}
+.projectsPageCol3 {
+	width: 25%;
+}
+.projectsPageCol4 {
+	width: 25%;
+}
 /*# sourceMappingURL=webpackStyle.css.map*/
