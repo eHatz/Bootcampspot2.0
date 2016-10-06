@@ -8,8 +8,13 @@ class LogoutBar extends Component {
 		
 		return (
 
-			<div id='logoutBar'> {/*this div should take up width 100% with background color red*/}
-				<div id='logoutBar_textWrapper'> {/*this div will wrap around the h tags and likely be floated right*/}
+			<div id='logoutBar' className='col-md-12'> {/*this div should take up width 100% with background color red*/}
+
+				<div id='logoutBar_logo'>
+					<img src='/assets/images/logo2.png'/>
+				</div>
+
+				<div id='logoutBar_textDiv'> {/*this div will wrap around the h tags and likely be floated right*/}
 					<h2 id='logoutBar_username'>{UserName}</h2>
 					<h2 id='logoutBar_logout'>Log Out</h2>
 				</div>

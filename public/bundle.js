@@ -44651,10 +44651,12 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "#Navbar__navBar____GlVV {\n\tbackground-color: black;\n\theight: 85vh;\n\twidth: 100%;\n}", ""]);
 
 	// exports
-
+	exports.locals = {
+		"navBar": "Navbar__navBar____GlVV"
+	};
 
 /***/ },
 /* 482 */
@@ -44757,7 +44759,7 @@
 
 
 	// module
-	exports.push([module.id, ".NavBarLink__NavBarLink_linkText___X3Tfl{\n\tcolor: #ddd7d7;\n\tfont-size: 14px;\n\tpadding-left: 20px;\n}\n\n.NavBarLink__NavBarLink_imageDiv___kG_9k{\n\tdisplay: inline-flex;\n\tpadding-left: 16%;\n}\n\n.NavBarLink__NavBarLink_linkDiv___3glNX{\n\tbackground-color: black;\n}", ""]);
+	exports.push([module.id, ".NavBarLink__NavBarLink_linkText___X3Tfl{\n\tcolor: #ddd7d7;\n\tfont-size: 14px;\n\tpadding-left: 40px;\n}\n\n.NavBarLink__NavBarLink_imageDiv___kG_9k{\n\tdisplay: inline-flex;\n}\n\n.NavBarLink__NavBarLink_linkDiv___3glNX{\n\tbackground-color: black;\n\ttext-align: center;\n}", ""]);
 
 	// exports
 	exports.locals = {
@@ -44841,7 +44843,7 @@
 					),
 					_react2.default.createElement(
 						"div",
-						{ className: "row height" },
+						{ className: "row" },
 						_react2.default.createElement(_Panel2.default, { background: "#181818", name: "ATTENDANCE", panelId: "attendance", img: "/assets/images/attendance_icon.png" }),
 						_react2.default.createElement(_Panel2.default, { background: "#302e2e", name: "HOMEWORK", panelId: "homework", img: "/assets/images/homework_icon.png" }),
 						_react2.default.createElement(_Panel2.default, { background: "#8a8a8a", name: "SYLLABUS", panelId: "syllabus", img: "/assets/images/syllabus_icon.png" }),
@@ -44991,7 +44993,7 @@
 
 
 	// module
-	exports.push([module.id, ".Panel__Panel_panelDiv___1_Ely{\n\theight: 100vh;\n  display: inline-block;\n  width: 100%;\n}\n.Panel__Panel_imageWrapper___3648V{\n\tposition: relative;\n\ttop: 58%;\n\ttransform: translateY(-50%);\n\tfloat: right;\n}\n.Panel__Panel_panelImg___3djyQ{\n  float: right;\n  max-height: 100%;\n  margin-bottom: 10%;\n}\n\n.Panel__Panel_h5___2To2C{\n\ttext-align: center;\n\tposition: relative;\n  font-size: initial;\n}\n\n.Panel__Panel_h4___3J34L{\n  color: white;\n  float: right;\n}\n\n.Panel__remove-all-margin-padding___3PG_j{\n  padding: 0 !important;\n   margin: 0;\n}\n\n@media screen and (max-width: 767px){\n\n  .Panel__remove-all-margin-padding___3PG_j {\n      margin-top: -6px;\n      margin-right: -1px;\n      margin-bottom: 0px;\n      margin-left: 0px;\n  }\n\n\n  .Panel__Panel_panelDiv___1_Ely{\n    height: 25vh;\n  }\n\n  .Panel__Panel_imageWrapper___3648V{\n    top: 50%;\n    transform: translateY(-50%);\n    float: right;\n    height: 100%;\n    width: 100%\n  }\n  .Panel__Panel_panelImg___3djyQ {\n    height: 100%;\n  }\n\n  .Panel__Panel_h5___2To2C{\n    font-size: 21px;\n    line-height: 161px; \n  }\n\n}\n\n@media screen and (max-width: 353px){\n  .Panel__Panel_h5___2To2C{\n    font-size: 20px;\n    line-height: 7;\n  }\n  \n}\n\n", ""]);
+	exports.push([module.id, ".Panel__Panel_panelDiv___1_Ely{\n\theight: 100vh;\n  display: inline-block;\n  width: 100%;\n}\n.Panel__Panel_imageWrapper___3648V{\n\tposition: relative;\n\ttop: 58%;\n\ttransform: translateY(-50%);\n\tfloat: right;\n}\n.Panel__Panel_panelImg___3djyQ{\n  float: right;\n  max-height: 100%;\n  margin-bottom: 10%;\n}\n\n.Panel__Panel_h5___2To2C{\n\ttext-align: center;\n\tposition: relative;\n\tfont-size: initial;\n}\n\n.Panel__Panel_h4___3J34L{\n  color: white;\n  float: right;\n}\n\n.Panel__remove-all-margin-padding___3PG_j{\n  padding: 0 !important;\n   margin: 0;\n}\n\n@media screen and (max-width: 767px){\n\n  .Panel__remove-all-margin-padding___3PG_j {\n      margin-top: -6px;\n      margin-right: -1px;\n      margin-bottom: 0px;\n      margin-left: 0px;\n  }\n\n\n  .Panel__Panel_panelDiv___1_Ely{\n    height: 25vh;\n  }\n\n  .Panel__Panel_imageWrapper___3648V{\n    top: 50%;\n    transform: translateY(-50%);\n    float: right;\n    height: 100%;\n    width: 100%\n  }\n  .Panel__Panel_panelImg___3djyQ {\n    height: 100%;\n  }\n\n  .Panel__Panel_h5___2To2C{\n    font-size: 21px;\n    line-height: 161px; \n  }\n\n}\n\n@media screen and (max-width: 353px){\n  .Panel__Panel_h5___2To2C{\n    font-size: 20px;\n    line-height: 7;\n  }\n  \n}\n\n", ""]);
 
 	// exports
 	exports.locals = {
@@ -45055,7 +45057,7 @@
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+		value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -45085,41 +45087,40 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var AttendancePage = function (_Component) {
-	    _inherits(AttendancePage, _Component);
+		_inherits(AttendancePage, _Component);
 
-	    function AttendancePage() {
-	        _classCallCheck(this, AttendancePage);
+		function AttendancePage() {
+			_classCallCheck(this, AttendancePage);
 
-	        return _possibleConstructorReturn(this, (AttendancePage.__proto__ || Object.getPrototypeOf(AttendancePage)).apply(this, arguments));
-	    }
+			return _possibleConstructorReturn(this, (AttendancePage.__proto__ || Object.getPrototypeOf(AttendancePage)).apply(this, arguments));
+		}
 
-	    _createClass(AttendancePage, [{
-	        key: "render",
-	        value: function render() {
+		_createClass(AttendancePage, [{
+			key: "render",
+			value: function render() {
 
-	            return _react2.default.createElement(
-	                "div",
-	                { className: "pageWrapper" },
-	                _react2.default.createElement(
-	                    "div",
-	                    { className: "pageHeader" },
-	                    _react2.default.createElement("img", { src: "/assets/images/logo2.png" })
-	                ),
-	                _react2.default.createElement(
-	                    "div",
-	                    { className: "pageContents attendanceContents" },
-	                    _react2.default.createElement(_Navbar2.default, null),
-	                    _react2.default.createElement(
-	                        "p",
-	                        null,
-	                        " THIS IS MY CONTENT "
-	                    )
-	                )
-	            );
-	        }
-	    }]);
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(
+						"div",
+						{ className: "row show-grid" },
+						_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" })
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(
+							"div",
+							{ className: "linkDiv" },
+							_react2.default.createElement(_Navbar2.default, null)
+						)
+					)
+				);
+			}
+		}]);
 
-	    return AttendancePage;
+		return AttendancePage;
 	}(_react.Component);
 
 	exports.default = AttendancePage;
@@ -45167,11 +45168,16 @@
 
 				return _react2.default.createElement(
 					"div",
-					{ id: "logoutBar" },
+					{ id: "logoutBar", className: "col-md-12" },
 					" ",
 					_react2.default.createElement(
 						"div",
-						{ id: "logoutBar_textWrapper" },
+						{ id: "logoutBar_logo" },
+						_react2.default.createElement("img", { src: "/assets/images/logo2.png" })
+					),
+					_react2.default.createElement(
+						"div",
+						{ id: "logoutBar_textDiv" },
 						" ",
 						_react2.default.createElement(
 							"h2",
@@ -45228,10 +45234,16 @@
 
 
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, "#LogoutBar__logoutBar_logo___c5Dr8{\n\tz-index: 1; \n\tposition: absolute; \n\t\n}\n#LogoutBar__logoutBar_textDiv___3fYxR{\n\tz-index: 1; \n\tposition: absolute; \n\tright: 0px;\n\tcolor: black;\n}\n#LogoutBar__logoutBar_username___3avFW, #LogoutBar__logoutBar_logout___2pXeh {\n\tcolor: black;\n\tdisplay: inline-block;\n}\n\n#LogoutBar__logoutBar___1LB4W{\n\tbackground-color: #ccc;\n\tposition: static;\n\theight: 15vh;\n}\n\n@media screen and (max-width: 767px){\n\t#LogoutBar__logoutBar_logo___c5Dr8{\n\t\tz-index: 1; \n\t\tposition: static; \n\t\ttop: 0px; \n\t\tleft: 0px;\n\t\tmax-width: 100%;\n\t\tbackground-color: #ccc;\n\t}\n\n\t#LogoutBar__logoutBar___1LB4W{\n\t\tbackground-color: #ccc;\n\t\theight: 15vh;\n\t}\n\n\t#LogoutBar__logoutBar_textDiv___3fYxR {\n    z-index: 1;\n    position: static;\n    left: 0px; \n    max-width: 46%;\n    color: black;\n\t}\n}\n\n\n\n\n/*#logoutBar {\n\tbackground-color: #ccc;\n\theight: 15vh;\n}\n\n#logoutBar_textDiv {\n\tz-index: 1; \n\tposition: absolute; \n\tright: 0px;\n\n}\n\n#logoutBar_logo{\n\tz-index: 1; \n\tposition: absolute; \n\n\t\n}\n\n#logoutBar_username, #logoutBar_logout {\n\tcolor: black;\n\tdisplay: inline-block;\n}\n\n@media screen and (max-width: 767px){\n\t#logoutBar_logo{\n\t\tz-index: 1; \n\t\tposition: static; \n\t\ttop: 0px; \n\t\tleft: 0px;\n\t\tmax-width: 100%;\n\t}\n\n\t#logoutBar{\n\t\tbackground-color: #ccc;\n\t\tmargin-right: -1px;\n\t}\n\n\t#logoutBar_textDiv {\n    z-index: 1;\n    position: static;\n    left: 0px; \n    max-width: 46%;\n\t}\n}\n*/", ""]);
 
 	// exports
-
+	exports.locals = {
+		"logoutBar_logo": "LogoutBar__logoutBar_logo___c5Dr8",
+		"logoutBar_textDiv": "LogoutBar__logoutBar_textDiv___3fYxR",
+		"logoutBar_username": "LogoutBar__logoutBar_username___3avFW",
+		"logoutBar_logout": "LogoutBar__logoutBar_logout___2pXeh",
+		"logoutBar": "LogoutBar__logoutBar___1LB4W"
+	};
 
 /***/ },
 /* 498 */

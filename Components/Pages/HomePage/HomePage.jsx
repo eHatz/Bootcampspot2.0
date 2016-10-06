@@ -24,7 +24,7 @@ class HomePage extends Component {
 					</div>
 				</div>
 	
-				<div className="row height">
+				<div className="row">
 					<Panel background="#181818" name="ATTENDANCE" panelId="attendance" img="/assets/images/attendance_icon.png"/>
 					<Panel background="#302e2e" name="HOMEWORK" panelId="homework" img="/assets/images/homework_icon.png"/>
 					<Panel background="#8a8a8a" name="SYLLABUS" panelId="syllabus" img="/assets/images/syllabus_icon.png"/>

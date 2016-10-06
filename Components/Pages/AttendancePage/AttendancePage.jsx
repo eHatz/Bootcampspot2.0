@@ -9,19 +9,20 @@ class AttendancePage extends Component {
 	render() {
 
 		return (
+			
+			<div>
+					
+				<div className="row show-grid">
+					<LogoutBar UserName='Tim' />
+				</div>
 
-            <div className = "pageWrapper">
-            	{/*<LogoutBar UserName='Tim' />*/}
-                <div className ="pageHeader">
-                	<img src ="/assets/images/logo2.png" />
-            	</div>
-               	<div className="pageContents attendanceContents" >
-                    <Navbar />
-
-                        {/* add all attendance specifc page content here */}
-                            <p> THIS IS MY CONTENT </p>
-                </div>
-            </div>	
+				<div className="row">
+					<div className="linkDiv">
+						<Navbar />
+					</div>
+				</div>
+			</div>
+	
 		);
 	}
 }

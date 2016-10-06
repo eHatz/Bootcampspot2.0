@@ -23,7 +23,7 @@
 .Panel_h5{
 	text-align: center;
 	position: relative;
-  font-size: initial;
+	font-size: initial;
 }
 
 .Panel_h4{
@@ -134,60 +134,117 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.NavBarLink_linkText{
+#navBar {
+	background-color: black;
+	height: 85vh;
+	width: 100%;
+}.NavBarLink_linkText{
 	color: #ddd7d7;
 	font-size: 14px;
-	padding-left: 20px;
+	padding-left: 40px;
 }
 
 .NavBarLink_imageDiv{
 	display: inline-flex;
+
 }
 
 .NavBarLink_linkDiv{
 	background-color: black;
+	text-align: center;
+}#logoutBar_logo{
+	z-index: 1; 
+	position: absolute; 
+	
 }
+#logoutBar_textDiv{
+	z-index: 1; 
+	position: absolute; 
+	right: 0px;
+	color: black;
+}
+#logoutBar_username, #logoutBar_logout {
+	color: black;
+	display: inline-block;
+}
+
+#logoutBar{
+	background-color: #ccc;
+	position: static;
+	height: 15vh;
+}
+
+@media screen and (max-width: 767px){
+	#logoutBar_logo{
+		z-index: 1; 
+		position: static; 
+		top: 0px; 
+		left: 0px;
+		max-width: 100%;
+		background-color: #ccc;
+	}
+
+	#logoutBar{
+		background-color: #ccc;
+		height: 15vh;
+	}
+
+	#logoutBar_textDiv {
+    z-index: 1;
+    position: static;
+    left: 0px; 
+    max-width: 46%;
+    color: black;
+	}
+}
+
+
+
+
+/*#logoutBar {
+	background-color: #ccc;
+	height: 15vh;
+}
+
+#logoutBar_textDiv {
+	z-index: 1; 
+	position: absolute; 
+	right: 0px;
+
+}
+
+#logoutBar_logo{
+	z-index: 1; 
+	position: absolute; 
+
+	
+}
+
+#logoutBar_username, #logoutBar_logout {
+	color: black;
+	display: inline-block;
+}
+
+@media screen and (max-width: 767px){
+	#logoutBar_logo{
+		z-index: 1; 
+		position: static; 
+		top: 0px; 
+		left: 0px;
+		max-width: 100%;
+	}
+
+	#logoutBar{
+		background-color: #ccc;
+		margin-right: -1px;
+	}
+
+	#logoutBar_textDiv {
+    z-index: 1;
+    position: static;
+    left: 0px; 
+    max-width: 46%;
+	}
+}
+*/
 /*# sourceMappingURL=webpackStyle.css.map*/
