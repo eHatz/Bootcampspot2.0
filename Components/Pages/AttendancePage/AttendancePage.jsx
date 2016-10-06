@@ -12,9 +12,7 @@ class AttendancePage extends Component {
 			
 			<div>
 					
-				<div className="row show-grid">
-					<LogoutBar UserName='Tim' />
-				</div>
+				<LogoutBar UserName='Tim' />
 
 				<div className="row">
 					<div className="linkDiv">
