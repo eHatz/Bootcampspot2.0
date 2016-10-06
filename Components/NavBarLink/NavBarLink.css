@@ -1,14 +1,17 @@
 .NavBarLink_linkText{
 	color: #ddd7d7;
 	font-size: 14px;
-	padding-left: 40px;
+	padding-left: 23px;
 }
 
 .NavBarLink_imageDiv{
 	display: inline-flex;
+	padding-left: 19%;
+	padding-top: 7%;
 }
 
 .NavBarLink_linkDiv{
 	background-color: black;
-	text-align: center;
+	padding-top: 1%;
 }
+
