@@ -16,24 +16,37 @@
 	z-index: 1; 
 	position: absolute; 
 	right: 0px;
-	color: black;
+	
 }
 #logoutBar_username, #logoutBar_logout {
+<<<<<<< HEAD
 	color: white;
 	display: inline-block;
 	padding-right: 4%	
 
+=======
+	font-family: 'Roboto Condensed', sans-serif;	
+	color: #fcfbfb;
+	display: inline-block;
+	padding: 20px;
+>>>>>>> 70a9f5a76141806d635bc7920ea7679b26eb29aa
 }
 
 #logoutBar{
-	background-color: #c30c0c;
+	background-color: #343333;
 	position: static;
-	height: 22vh;
+	height: 19vh;
 
 
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 768px){
+=======
+
+
+@media screen and (max-width: 767px){
+>>>>>>> 70a9f5a76141806d635bc7920ea7679b26eb29aa
 	#logoutBar_logo{
 		z-index: 1; 
 		position: static; 
@@ -54,7 +67,7 @@
     position: static;
     left: 0px; 
     max-width: 46%;
-    color: black;
+    
 	}
 }
 
@@ -65,9 +78,12 @@
 		left:0;
 		
 
+<<<<<<< HEAD
 
 
 	}
 
 
 }
+=======
+>>>>>>> 70a9f5a76141806d635bc7920ea7679b26eb29aa

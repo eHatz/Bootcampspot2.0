@@ -1,11 +1,13 @@
 .NavBarLink_linkText{
 	color: #ddd7d7;
 	font-size: 14px;
-	padding-left: 40px;
+	padding-left: 23px;
 }
 
 .NavBarLink_imageDiv{
 	display: inline-flex;
+	padding-left: 19%;
+	padding-top: 7%;
 }
 
 .NavBarLink_linkDiv{
@@ -13,6 +15,7 @@
 	padding-top: 1%;
 }
 
+<<<<<<< HEAD
 
 @media screen and (max-width: 768px){
 
@@ -27,3 +30,5 @@
 }
 
 
+=======
+>>>>>>> 70a9f5a76141806d635bc7920ea7679b26eb29aa
