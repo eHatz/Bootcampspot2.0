@@ -150,14 +150,15 @@
 
 .NavBarLink_linkDiv{
 	background-color: black;
-
+	padding-top: 1%;
 }#logoutBar_logo{
 	z-index: 1; 
 	position: absolute; 
 	padding-top: 1%;
 	background-color: #2f2f2f;
 	padding-right: 17px;
-	padding-bottom: 1%;
+	padding-bottom: 17px;
+	padding-left: 1%;
   	
 }
 #logoutBar_textDiv{
@@ -169,6 +170,7 @@
 #logoutBar_username, #logoutBar_logout {
 	color: black;
 	display: inline-block;
+
 }
 
 #logoutBar{

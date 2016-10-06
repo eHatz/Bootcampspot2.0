@@ -44459,7 +44459,7 @@
 					_react2.default.createElement(
 						"div",
 						{ className: "row show-grid" },
-						_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" })
+						_react2.default.createElement(_LogoutBar2.default, { UserName: "Andalicious" })
 					),
 					_react2.default.createElement(
 						"div",
