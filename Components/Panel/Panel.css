@@ -1,6 +1,5 @@
 .Panel_panelDiv{
 	height: 100vh;
-  display: inline-block;
   width: 100%;
 }
 .Panel_imageWrapper{
@@ -15,17 +14,13 @@
   margin-bottom: 10%;
 }
 
-.Panel_h5{
+.caption{
 	text-align: center;
 	position: relative;
 	font-size: initial;
   color: white;
 }
 
-.Panel_h4{
-  color: white;
-  float: right;
-}
 
 .remove-all-margin-padding{
   padding: 0 !important;
@@ -55,9 +50,10 @@
   }
   .Panel_panelImg {
     height: 100%;
+    margin-bottom: 0px;
   }
 
-  .Panel_h5{
+  .caption{
     font-size: 21px;
     line-height: 161px; 
   }
@@ -65,7 +61,7 @@
 }
 
 @media screen and (max-width: 353px){
-  .Panel_h5{
+  .caption{
     font-size: 20px;
     line-height: 7;
   }
