@@ -44461,6 +44461,7 @@
 					_react2.default.createElement(
 						"div",
 						{ className: "row" },
+						_react2.default.createElement(_Navbar2.default, null),
 						_react2.default.createElement(
 							"div",
 							{ className: "col-sm-9 remove-all-margin-padding" },
@@ -44692,8 +44693,8 @@
 						{ id: "logoutBar", className: "col-md-12" },
 						_react2.default.createElement(
 							"div",
-							{ id: "logoutBar_logo" },
-							_react2.default.createElement("img", { src: "/assets/images/logo2.png" })
+							null,
+							_react2.default.createElement("img", { id: "logoutBar_logo", src: "/assets/images/logo2.png" })
 						),
 						_react2.default.createElement(
 							"div",
