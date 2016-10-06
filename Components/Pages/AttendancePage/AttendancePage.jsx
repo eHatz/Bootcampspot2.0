@@ -11,8 +11,8 @@ class AttendancePage extends Component {
 			<div>
 				<LogoutBar UserName='Tim' />
 				<div className='row'>
-					<Navbar/>
-					<div className= "col-md-8 remove-all-margin-padding">
+				
+					<div className= "col-sm-9 remove-all-margin-padding">
 						<Table pageName='attendancePage'
 							header1='NOTES' 
 							header2 = 'TIME' 
