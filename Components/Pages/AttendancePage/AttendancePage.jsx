@@ -12,9 +12,11 @@ class AttendancePage extends Component {
 			
 			<div>
 					
-
-
 				<div className="row">
+					<LogoutBar UserName=' Hi Jennine ' />
+				</div>
+
+				<div className="row attendanceBackground">
 					<div className="linkDiv">
 						<Navbar />
 					</div>

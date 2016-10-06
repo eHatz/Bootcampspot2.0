@@ -44422,11 +44422,11 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	var _Navbar = __webpack_require__(485);
+	var _Navbar = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../../Navbar/Navbar.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 
-	var _LogoutBar = __webpack_require__(491);
+	var _LogoutBar = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../../LogoutBar/LogoutBar.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
@@ -44456,18 +44456,14 @@
 				return _react2.default.createElement(
 					"div",
 					null,
-<<<<<<< HEAD
-					_react2.default.createElement(
-						"div",
-						{ className: "row show-grid" },
-						_react2.default.createElement(_LogoutBar2.default, { UserName: "Andalicious" })
-					),
-=======
-					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" }),
->>>>>>> 2e1c14e63d4d72f3d215115f48f64155b33ad02e
 					_react2.default.createElement(
 						"div",
 						{ className: "row" },
+						_react2.default.createElement(_LogoutBar2.default, { UserName: " Hi Jennine " })
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row attendanceBackground" },
 						_react2.default.createElement(
 							"div",
 							{ className: "linkDiv" },
@@ -44484,245 +44480,14 @@
 	exports.default = AttendancePage;
 
 /***/ },
-/* 485 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	__webpack_require__(486);
-
-	var _NavBarLink = __webpack_require__(488);
-
-	var _NavBarLink2 = _interopRequireDefault(_NavBarLink);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Navbar = _react2.default.createClass({
-		displayName: "Navbar",
-		render: function render() {
-
-			return _react2.default.createElement(
-				"div",
-				{ className: "col-md-4 remove-all-margin-padding" },
-				_react2.default.createElement(
-					"div",
-					{ id: "navBar" },
-					" ",
-					_react2.default.createElement(_NavBarLink2.default, { name: "Attendance", img: "/assets/images/attendance_nav.png", navLink: "#/attendance" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Homework", img: "assets/images/homework_nav.png", navLink: "#/homework" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Syllabus", img: "assets/images/syllabus_nav.png", navLink: "#/syllabus" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Projects", img: "assets/images/projects_nav.png", navLink: "#/projects" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Feedback", img: "assets/images/feedback_nav.png", navLink: "#/feedback" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Career", img: "assets/images/career_nav.png", navLink: "#/career" })
-				)
-			);
-		}
-	});
-
-	exports.default = Navbar;
-
-	// <div className = "row">
-	// 					<div className = "col-md-3">
-	// 						<div className = {styles.Navbar_title}>
-	// 							<h4 className = {styles.Navbar_h4}>RUTGERS UNIVERSITY</h4>
-	// 							<h1 className = {styles.Navbar_h1red}>BOOTCAMP</h1>
-	// 							<h1 className = {styles.Navbar_h1white}>SPOT</h1>
-	// 							<h1 className = {styles.Navbar_h1red}>2.0</h1>
-	// 						</div>
-	// 					</div>
-	// 					<div className = "col-md-9">
-	// 						<div className = {styles.Navbar_redPanel}>
-	// 							<p>Hi Jennine</p>
-	// 							<p>Logout</p>
-	// 						</div>
-	// 					</div>
-	// 				</div>
-	// 				<div className = "row">
-	// 					<div className = "col-md-3">
-	// 						<div className = {styles.Navbar_blackpanel}>
-	// 							<p>Attendence</p>
-	// 							<p>Homework</p>
-	// 							<p>Syllabus</p>
-	// 							<p>Projects</p>
-	// 							<p>Feedback</p>
-	// 							<p>Career</p>
-	// 						</div>
-	// 					</div>
-	// 				</div>
-
-/***/ },
-/* 486 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
+/* 485 */,
+/* 486 */,
 /* 487 */,
-/* 488 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	__webpack_require__(489);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var NavBarLink = function (_Component) {
-		_inherits(NavBarLink, _Component);
-
-		function NavBarLink() {
-			_classCallCheck(this, NavBarLink);
-
-			return _possibleConstructorReturn(this, (NavBarLink.__proto__ || Object.getPrototypeOf(NavBarLink)).apply(this, arguments));
-		}
-
-		_createClass(NavBarLink, [{
-			key: "render",
-			value: function render() {
-				var _props = this.props;
-				var name = _props.name;
-				var img = _props.img;
-				var navLink = _props.navLink;
-				// here we are assigning prop names this.props.name etc, which will be called at a future point
-
-				return _react2.default.createElement(
-					"div",
-					{ className: "NavBarLink_linkDiv" },
-					_react2.default.createElement(
-						"div",
-						{ className: "NavBarLink_imageDiv" },
-						_react2.default.createElement("img", { src: img, alt: "icon", className: "img-responsive" }),
-						_react2.default.createElement(
-							"h3",
-							{ className: "NavBarLink_linkText" },
-							name
-						)
-					)
-				);
-			}
-		}]);
-
-		return NavBarLink;
-	}(_react.Component);
-
-	exports.default = NavBarLink;
-
-/***/ },
-/* 489 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
+/* 488 */,
+/* 489 */,
 /* 490 */,
-/* 491 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	__webpack_require__(492);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var LogoutBar = function (_Component) {
-		_inherits(LogoutBar, _Component);
-
-		function LogoutBar() {
-			_classCallCheck(this, LogoutBar);
-
-			return _possibleConstructorReturn(this, (LogoutBar.__proto__ || Object.getPrototypeOf(LogoutBar)).apply(this, arguments));
-		}
-
-		_createClass(LogoutBar, [{
-			key: "render",
-			value: function render() {
-				var UserName = this.props.UserName;
-				{/* this prop will have to change dynamically based on user logged in*/}
-
-				return _react2.default.createElement(
-					"div",
-					{ className: "row" },
-					_react2.default.createElement(
-						"div",
-						{ id: "logoutBar", className: "col-md-12" },
-						" ",
-						_react2.default.createElement(
-							"div",
-							{ id: "logoutBar_logo" },
-							_react2.default.createElement("img", { src: "/assets/images/logo2.png" })
-						),
-						_react2.default.createElement(
-							"div",
-							{ id: "logoutBar_textDiv" },
-							" ",
-							_react2.default.createElement(
-								"h2",
-								{ id: "logoutBar_username" },
-								UserName
-							),
-							_react2.default.createElement(
-								"h2",
-								{ id: "logoutBar_logout" },
-								"Log Out"
-							)
-						)
-					)
-				);
-			}
-		}]);
-
-		return LogoutBar;
-	}(_react.Component);
-
-	exports.default = LogoutBar;
-
-/***/ },
-/* 492 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
+/* 491 */,
+/* 492 */,
 /* 493 */,
 /* 494 */
 /***/ function(module, exports) {
@@ -44748,7 +44513,7 @@
 
 	__webpack_require__(497);
 
-	var _LogoutBar = __webpack_require__(491);
+	var _LogoutBar = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../../LogoutBar/LogoutBar.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
@@ -44811,11 +44576,11 @@
 
 	__webpack_require__(500);
 
-	var _Navbar = __webpack_require__(485);
+	var _Navbar = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../../Navbar/Navbar.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 
-	var _LogoutBar = __webpack_require__(491);
+	var _LogoutBar = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../../LogoutBar/LogoutBar.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
@@ -44887,7 +44652,7 @@
 
 	__webpack_require__(503);
 
-	var _LogoutBar = __webpack_require__(491);
+	var _LogoutBar = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../../LogoutBar/LogoutBar.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
@@ -44950,7 +44715,7 @@
 
 	__webpack_require__(506);
 
-	var _LogoutBar = __webpack_require__(491);
+	var _LogoutBar = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../../LogoutBar/LogoutBar.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
@@ -45013,7 +44778,7 @@
 
 	__webpack_require__(509);
 
-	var _LogoutBar = __webpack_require__(491);
+	var _LogoutBar = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../../LogoutBar/LogoutBar.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 

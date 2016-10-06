@@ -14,10 +14,14 @@ class LogoutBar extends Component {
 						<img src='/assets/images/logo2.png'/>
 					</div>
 
-					<div id='logoutBar_textDiv'> {/*this div will wrap around the h tags and likely be floated right*/}
-						<h2 id='logoutBar_username'>{UserName}</h2>
-						<h2 id='logoutBar_logout'>Log Out</h2>
-					</div>
+
+				<div id='logoutBar_logo'>
+					<img src='/assets/images/logo2.png'/>
+				</div>
+
+				<div id='logoutBar_textDiv'> {/*this div will wrap around the h tags and likely be floated right*/}
+					<h4 id='logoutBar_username'>{UserName} </h4>
+					<h4 id='logoutBar_logout'>Log Out</h4
 				</div>
 			</div>
 		);

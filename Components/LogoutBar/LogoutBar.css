@@ -12,21 +12,24 @@
 	z-index: 1; 
 	position: absolute; 
 	right: 0px;
-	color: black;
+	
 }
 #logoutBar_username, #logoutBar_logout {
-	color: black;
+	font-family: 'Roboto Condensed', sans-serif;	
+	color: #fcfbfb;
 	display: inline-block;
-
+	padding: 20px;
 }
 
 #logoutBar{
-	background-color: #c30c0c;
+	background-color: #343333;
 	position: static;
-	height: 22vh;
+	height: 19vh;
 
 
 }
+
+
 
 @media screen and (max-width: 767px){
 	#logoutBar_logo{
@@ -48,56 +51,9 @@
     position: static;
     left: 0px; 
     max-width: 46%;
-    color: black;
+    
 	}
 }
 
 
 
-
-/*#logoutBar {
-	background-color: #ccc;
-	height: 15vh;
-}
-
-#logoutBar_textDiv {
-	z-index: 1; 
-	position: absolute; 
-	right: 0px;
-
-}
-
-#logoutBar_logo{
-	z-index: 1; 
-	position: absolute; 
-
-	
-}
-
-#logoutBar_username, #logoutBar_logout {
-	color: black;
-	display: inline-block;
-}
-
-@media screen and (max-width: 767px){
-	#logoutBar_logo{
-		z-index: 1; 
-		position: static; 
-		top: 0px; 
-		left: 0px;
-		max-width: 100%;
-	}
-
-	#logoutBar{
-		background-color: #ccc;
-		margin-right: -1px;
-	}
-
-	#logoutBar_textDiv {
-    z-index: 1;
-    position: static;
-    left: 0px; 
-    max-width: 46%;
-	}
-}
-*/
