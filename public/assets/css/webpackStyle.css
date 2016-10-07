@@ -155,12 +155,7 @@
 	height: 85vh;
 }
 
-
-@media screen and (max-width: 768px){
-	#navBar {
-		display: none;
-	}
-}.NavBarLink_linkText{
+.NavBarLink_linkText{
 	color: #ddd7d7;
 	font-size: 14px;
 	padding-left: 23px;
