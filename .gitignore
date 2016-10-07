@@ -1,4 +1,9 @@
-/node_modules
+node_modules
 npm-debug.log
 .DS_Store
 .env
+bundle.js
+bundle.js.map
+webpackStyle.css
+webpackStyle.css.map
+public/assets/css/webpackStyle.css
