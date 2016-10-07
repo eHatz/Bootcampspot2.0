@@ -44693,22 +44693,26 @@
 						{ id: "logoutBar", className: "col-md-12" },
 						_react2.default.createElement(
 							"div",
-							null,
-							_react2.default.createElement("img", { id: "logoutBar_logo", src: "/assets/images/logo2.png" })
+							{ id: "logoutBar_logo", className: "col-sm-3" },
+							_react2.default.createElement("img", { id: "logoImg", src: "/assets/images/logo2.png" })
 						),
 						_react2.default.createElement(
 							"div",
-							{ id: "logoutBar_textDiv" },
+							{ id: "logoutBar_textDiv", className: "col-sm-9" },
 							_react2.default.createElement(
-								"h4",
-								{ id: "logoutBar_username" },
-								UserName,
-								" "
-							),
-							_react2.default.createElement(
-								"h4",
-								{ id: "logoutBar_logout" },
-								"Log Out"
+								"div",
+								{ id: "logoutBar_textDiv" },
+								_react2.default.createElement(
+									"h4",
+									{ id: "logoutBar_username" },
+									UserName,
+									" "
+								),
+								_react2.default.createElement(
+									"h4",
+									{ id: "logoutBar_logout" },
+									"Log Out"
+								)
 							)
 						)
 					)
