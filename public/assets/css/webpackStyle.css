@@ -131,31 +131,25 @@
 }
 
 
-.attendancePageCol1 {
+.homeworkPageCol1 {
+	width: 10%;
+}
+.homeworkPageCol2 {
 	width: 40%;
 }
-.attendancePageCol2 {
-	width: 20%;
-}
-.attendancePageCol3 {
-	width: 20%;
-}
-.attendancePageCol4 {
-	width: 20%;
-}
-
-/*.attendanceBackground{
-	background-image: url('../../assets/images/attendance_watermark.png')
-	
-
-}
+<<<<<<< HEAD
+.homeworkPageCol3 {
+	width: 25%;
+=======
 */
 #navBar {
 	background-color: black;
 	height: 85vh;
+>>>>>>> 6d287a728d426cd22958951d421e77b823ceb730
 }
-
-.NavBarLink_linkText{
+.homeworkPageCol4 {
+	width: 25%;
+}.NavBarLink_linkText{
 	color: #ddd7d7;
 	font-size: 14px;
 	padding-left: 23px;
@@ -172,6 +166,12 @@
 	padding-top: 1%;
 }
 
+<<<<<<< HEAD
+
+
+@media screen and (max-width: 768px){
+
+=======
 #logoutBar_logo{
 	z-index: 1; 
 	position: absolute; 
@@ -197,8 +197,17 @@
 	position: static;
 	height: 15vh;
 }
+>>>>>>> 6d287a728d426cd22958951d421e77b823ceb730
+
+}
+
+<<<<<<< HEAD
+
+@media screen and (max-width: 640px){
 
 
+	
+=======
 @media screen and (max-width: 767px){
 
 	#logoutBar_logo{
@@ -223,8 +232,8 @@
 	#logoutBar_username, #logoutBar_logout {
 		padding: 0px 20px;
 	}
+>>>>>>> 6d287a728d426cd22958951d421e77b823ceb730
 }
-
 
 
 .tableHeader {
@@ -250,18 +259,7 @@
 	font-size: 18px;
 	line-height: 36px;
 }
-.homeworkPageCol1 {
-	width: 10%;
-}
-.homeworkPageCol2 {
-	width: 40%;
-}
-.homeworkPageCol3 {
-	width: 25%;
-}
-.homeworkPageCol4 {
-	width: 25%;
-}.syllabusPageCol1 {
+.syllabusPageCol1 {
 	width: 55%;
 }
 

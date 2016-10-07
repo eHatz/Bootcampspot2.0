@@ -8,6 +8,13 @@ class AttendancePage extends Component {
 	render() {
 		return (
 
+				<div className="row show-grid">
+					<LogoutBar UserName='Name' />
+				</div>
+
+				<div className="row">
+					<div className="linkDiv">
+						<Navbar />
 			<div>
 				<LogoutBar UserName='Tim' />
 				<div className='row'>
@@ -19,6 +26,7 @@ class AttendancePage extends Component {
 							header3='DATE' 
 							header4='ATTENDANCE'
 						/>
+
 					</div>
 				</div>
 			</div>

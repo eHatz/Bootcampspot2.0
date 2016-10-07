@@ -1,8 +1,7 @@
 #logoutBar_logo{
 	z-index: 1; 
 	position: absolute; 
-	padding-top: 1%;
-	padding-left: 1%;
+
   	
 }
 #logoutBar_textDiv{
@@ -12,10 +11,7 @@
 	
 }
 #logoutBar_username, #logoutBar_logout {
-	font-family: 'Roboto Condensed', sans-serif;	
-	color: #fcfbfb;
-	display: inline-block;
-	padding: 20px;
+
 }
 
 #logoutBar{
@@ -25,13 +21,22 @@
 }
 
 
-@media screen and (max-width: 767px){
+	#logoutBar_logo{
+		z-index: 1; 
+		position: static; 
+		top: 0px; 
+		left: 0px;
+		max-width: 100%;
+		background-color: #2f2f2f;
+		max-height: 100%;
+
 
 	#logoutBar_logo{
 		z-index: 1; 
 		position: static; 
 		max-height: 70%;
 		max-width: 70%;
+
 	}
 
 	#logoutBar{
@@ -52,4 +57,9 @@
 }
 
 
+@media screen and (max-width: 640px){
+	#logoutBar_logo{
+		top:0;
+		left:0;
+		
 
