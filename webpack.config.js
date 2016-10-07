@@ -1,3 +1,5 @@
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 module.exports = {
   
   entry: "./index.jsx",
@@ -21,15 +23,7 @@ module.exports = {
       },
       { 
         test: /\.css$/, 
-        loader: 'style-loader' 
-      },
-      {
-        test: /\.css$/,
-        loader: 'css-loader',
-        query: {
-          modules: true,
-          localIdentName: '[name]__[local]___[hash:base64:5]'
-        },
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader")      
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -40,6 +34,10 @@ module.exports = {
       }
     ]
   },
+
+  plugins: [
+    new ExtractTextPlugin("public/assets/css/webpackStyle.css")
+  ],
 
   resolve: {
     extensions: ['', '.jsx', '.js']

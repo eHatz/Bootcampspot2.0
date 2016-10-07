@@ -1,0 +1,11 @@
+.tableData {
+	display: inline-block;
+	text-align: center;
+	color: black;
+	margin: 0px;
+	overflow: hidden;
+	background-color: #ccc;
+	height: 36px;
+	font-size: 18px;
+	line-height: 36px;
+}

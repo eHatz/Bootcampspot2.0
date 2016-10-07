@@ -1,6 +1,6 @@
 import React, { Component, cloneElement } from 'react';
 import {Grid, Row, Col} from "react-bootstrap";
-import styles from "./Application.css";
+import "./Application.css";
 
 
 class Application extends Component {
@@ -12,16 +12,16 @@ class Application extends Component {
 
 			<div>
 
-				<Grid>
+				<div id="width" className="container">
 
-					<div id="Application" className={styles.Application_main}>
+					<div id="Application" className="Application_main">
 
 						{
 							cloneElement(this.props.children)
 						}
 
 					</div>
-				</Grid>
+				</div>
 
 			</div>
 		)
