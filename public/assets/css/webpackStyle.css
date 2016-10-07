@@ -35,12 +35,59 @@
 }
 
 
-.Application_main: {
-	align-items: center;
-	margin: 0 auto;
-	position: relative;
-	color:red;
-}.Panel_panelDiv{
+#logoutBar_logo{
+	padding-top: 1%;
+	padding-left: 1%;
+	background-color: #343333;
+	text-align: center;
+	height: 15vh;
+}
+#logoutBar_textDiv{
+	float: right;	
+}
+#logoImg {
+	text-align: center;
+	max-width: 100%;
+}
+#logoutBar_username, #logoutBar_logout {
+	font-family: 'Roboto Condensed', sans-serif;	
+	color: #fcfbfb;
+	display: inline-block;
+	padding: 20px;
+}
+
+#logoutBar{
+	background-color: red;
+	position: static;
+	height: 15vh;
+	padding: 0px;
+}
+
+
+@media screen and (max-width: 767px){
+
+	#logoutBar_logo{ 
+		max-height: 70%;
+		max-width: 70%;
+	}
+
+	#logoutBar{
+		background-color: #343333;
+		height: 15vh;
+	}
+
+	#logoutBar_textDiv {
+	    max-height: 30%;
+	    padding: 0px;
+	}
+	#logoutBar_username, #logoutBar_logout {
+		padding: 0px 20px;
+	}
+}
+
+
+
+.Panel_panelDiv{
 	height: 100vh;
   width: 100%;
 }
@@ -187,67 +234,6 @@
 
 }
 */
-#logoutBar_logo{
-	z-index: 1; 
-	position: absolute; 
-	padding-top: 1%;
-	padding-left: 1%;
-	background-color: #343333;
-	height: 15vh;
-  	
-}
-#logoutBar_textDiv{
-	z-index: 1; 
-	position: absolute; 
-	right: 0px;
-	
-}
-#logoImg {
-	text-align: center;
-}
-#logoutBar_username, #logoutBar_logout {
-	font-family: 'Roboto Condensed', sans-serif;	
-	color: #fcfbfb;
-	display: inline-block;
-	padding: 20px;
-}
-
-#logoutBar{
-	background-color: red;
-	position: static;
-	height: 15vh;
-	padding: 0px;
-}
-
-
-@media screen and (max-width: 767px){
-
-	#logoutBar_logo{
-		z-index: 1; 
-		position: static; 
-		max-height: 70%;
-		max-width: 70%;
-	}
-
-	#logoutBar{
-		background-color: #343333;
-		height: 15vh;
-	}
-
-	#logoutBar_textDiv {
-	    z-index: 1;
-	    position: static;
-	    left: 0px; 
-	    max-height: 30%;
-	    padding: 0px;
-	}
-	#logoutBar_username, #logoutBar_logout {
-		padding: 0px 20px;
-	}
-}
-
-
-
 .tableHeader {
 	display: inline-block;
 	text-align: center;
