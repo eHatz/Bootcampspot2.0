@@ -44905,8 +44905,7 @@
 			_this.componentWillMount = _this.componentWillMount.bind(_this);
 			_this.componentWillUnmount = _this.componentWillUnmount.bind(_this);
 			_this.mediaQueryChanged = _this.mediaQueryChanged.bind(_this);
-			_this.sidebarOff = _this.sidebarOff.bind(_this);
-			_this.sidebarOn = _this.sidebarOn.bind(_this);
+			_this.toggleSidebar = _this.toggleSidebar.bind(_this);
 			return _this;
 		}
 
@@ -44914,16 +44913,6 @@
 			key: "onSetSidebarOpen",
 			value: function onSetSidebarOpen(open) {
 				this.setState({ sidebarOpen: open });
-			}
-		}, {
-			key: "sidebarOff",
-			value: function sidebarOff() {
-				this.setState({ sidebarDocked: false });
-			}
-		}, {
-			key: "sidebarOn",
-			value: function sidebarOn() {
-				this.setState({ sidebarDocked: true });
 			}
 		}, {
 			key: "componentWillMount",
@@ -45015,18 +45004,14 @@
 					_react2.default.createElement(
 						"div",
 						{ id: "width", className: "container remove-all-margin-padding" },
-						_react2.default.createElement(_LogoutBar2.default, null),
+						_react2.default.createElement(_LogoutBar2.default, { toggleSidebar: this.toggleSidebar }),
 						_react2.default.createElement(
 							"div",
 							{ className: "row" },
 							_react2.default.createElement(
 								"div",
 								{ className: "col-sm-12 remove-all-margin-padding" },
-								(0, _react.cloneElement)(this.props.children, {
-									sidebarOff: this.sidebarOff,
-									sidebarOn: this.sidebarOn,
-									toggleSidebar: this.toggleSidebar
-								})
+								(0, _react.cloneElement)(this.props.children)
 							)
 						)
 					)
@@ -45095,7 +45080,7 @@
 							{ id: "logoutBar_logo", className: "col-sm-3" },
 							_react2.default.createElement(
 								_reactBootstrap.Button,
-								{ bsStyle: "danger", onClick: toggleSidebar },
+								{ bsStyle: "danger", onClick: toggleSidebar, className: "LogoutBar_button" },
 								"="
 							),
 							_react2.default.createElement("img", { id: "logoImg", src: "/assets/images/logo2.png" })
@@ -45185,13 +45170,6 @@
 		}
 
 		_createClass(HomePage, [{
-			key: "componentDidMount",
-			value: function componentDidMount() {
-				var sidebarOff = this.props.sidebarOff;
-
-				sidebarOff();
-			}
-		}, {
 			key: "render",
 			value: function render() {
 
@@ -45399,13 +45377,6 @@
 		}
 
 		_createClass(AttendancePage, [{
-			key: "componentDidMount",
-			value: function componentDidMount() {
-				var sidebarOn = this.props.sidebarOn;
-
-				sidebarOn();
-			}
-		}, {
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
@@ -45686,21 +45657,10 @@
 		}
 
 		_createClass(CareerPage, [{
-			key: "componentDidMount",
-			value: function componentDidMount() {
-				var sidebarOn = this.props.sidebarOn;
-
-				sidebarOn();
-			}
-		}, {
 			key: "render",
 			value: function render() {
 
-				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" })
-				);
+				return _react2.default.createElement("div", null);
 			}
 		}]);
 
@@ -45764,19 +45724,11 @@
 		}
 
 		_createClass(HomeworkPage, [{
-			key: "componentDidMount",
-			value: function componentDidMount() {
-				var sidebarOn = this.props.sidebarOn;
-
-				sidebarOn();
-			}
-		}, {
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
 					"div",
 					null,
-					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" }),
 					_react2.default.createElement(_Table2.default, { pageName: "homeworkPage",
 						header1: "WEEK",
 						header2: "HOMEWORK",
@@ -45847,20 +45799,12 @@
 		}
 
 		_createClass(SyllabusPage, [{
-			key: "componentDidMount",
-			value: function componentDidMount() {
-				var sidebarOn = this.props.sidebarOn;
-
-				sidebarOn();
-			}
-		}, {
 			key: "render",
 			value: function render() {
 
 				return _react2.default.createElement(
 					"div",
 					null,
-					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" }),
 					_react2.default.createElement(
 						"div",
 						{ id: "syllabus" },
@@ -45983,21 +45927,10 @@
 		}
 
 		_createClass(FeedbackPage, [{
-			key: "componentDidMount",
-			value: function componentDidMount() {
-				var sidebarOn = this.props.sidebarOn;
-
-				sidebarOn();
-			}
-		}, {
 			key: "render",
 			value: function render() {
 
-				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" })
-				);
+				return _react2.default.createElement("div", null);
 			}
 		}]);
 
@@ -46061,19 +45994,11 @@
 		}
 
 		_createClass(ProjectsPage, [{
-			key: "componentDidMount",
-			value: function componentDidMount() {
-				var sidebarOn = this.props.sidebarOn;
-
-				sidebarOn();
-			}
-		}, {
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
 					"div",
 					null,
-					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" }),
 					_react2.default.createElement(_Table2.default, { pageName: "projectsPage",
 						header1: "WEEK",
 						header2: "PROJECT",

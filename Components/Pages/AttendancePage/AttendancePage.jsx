@@ -5,10 +5,7 @@ import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
 import Table from "../../Table/Table.jsx";
 
 class AttendancePage extends Component {
-	componentDidMount(){
-		const { sidebarOn } = this.props;
-		sidebarOn();
-	}
+	
 	render() {
 		return (
 
