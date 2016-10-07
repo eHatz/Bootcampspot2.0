@@ -137,8 +137,15 @@
 .homeworkPageCol2 {
 	width: 40%;
 }
+<<<<<<< HEAD
 .homeworkPageCol3 {
 	width: 25%;
+=======
+*/
+#navBar {
+	background-color: black;
+	height: 85vh;
+>>>>>>> 6d287a728d426cd22958951d421e77b823ceb730
 }
 .homeworkPageCol4 {
 	width: 25%;
@@ -159,18 +166,73 @@
 	padding-top: 1%;
 }
 
+<<<<<<< HEAD
 
 
 @media screen and (max-width: 768px){
 
+=======
+#logoutBar_logo{
+	z-index: 1; 
+	position: absolute; 
+	padding-top: 1%;
+	padding-left: 1%;
+  	
+}
+#logoutBar_textDiv{
+	z-index: 1; 
+	position: absolute; 
+	right: 0px;
+	
+}
+#logoutBar_username, #logoutBar_logout {
+	font-family: 'Roboto Condensed', sans-serif;	
+	color: #fcfbfb;
+	display: inline-block;
+	padding: 20px;
+}
+
+#logoutBar{
+	background-color: #343333;
+	position: static;
+	height: 15vh;
+}
+>>>>>>> 6d287a728d426cd22958951d421e77b823ceb730
 
 }
 
+<<<<<<< HEAD
 
 @media screen and (max-width: 640px){
 
 
 	
+=======
+@media screen and (max-width: 767px){
+
+	#logoutBar_logo{
+		z-index: 1; 
+		position: static; 
+		max-height: 70%;
+		max-width: 70%;
+	}
+
+	#logoutBar{
+		background-color: #343333;
+		height: 15vh;
+	}
+
+	#logoutBar_textDiv {
+	    z-index: 1;
+	    position: static;
+	    left: 0px; 
+	    max-height: 30%;
+	    padding: 0px;
+	}
+	#logoutBar_username, #logoutBar_logout {
+		padding: 0px 20px;
+	}
+>>>>>>> 6d287a728d426cd22958951d421e77b823ceb730
 }
 
 
