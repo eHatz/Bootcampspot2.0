@@ -22,13 +22,12 @@ class LogoutBar extends Component {
 					</div>
 
 					<div id='logoutBar_textDiv'> {/*this div will wrap around the h tags and likely be floated right*/}
-<<<<<<< HEAD
+
 						<h2 id='logoutBar_username'>{UserName}</h2>
-						<h2 id='logoutBar_logout'>| Log Out</h2>
-=======
+
 						<h4 id='logoutBar_username'>{UserName} </h4>
 						<h4 id='logoutBar_logout'>Log Out</h4>
->>>>>>> 70a9f5a76141806d635bc7920ea7679b26eb29aa
+
 					</div>
 					
 			</div>
