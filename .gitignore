@@ -2,7 +2,7 @@ node_modules
 npm-debug.log
 .DS_Store
 .env
-public/bundle.js
-public/bundle.js.map
-public/assets/css/webpackStyle.css
-public/assets/css/webpackStyle.css.map
+bundle.js
+bundle.js.map
+webpackStyle.css
+webpackStyle.css.map
