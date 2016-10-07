@@ -12,7 +12,7 @@ class LogoutBar extends Component {
 				<div id='logoutBar' className='col-md-12'> 
 
 					<div id='logoutBar_logo' className='col-sm-3'>
-						<Button bsStyle="danger" onClick={toggleSidebar}>=</Button>{/*Added burger button*/}
+						<Button bsStyle="danger" onClick={toggleSidebar} className="LogoutBar_button">=</Button>{/*Added burger button*/}
 						<img id='logoImg' src='/assets/images/logo2.png'/>
 					</div>
 

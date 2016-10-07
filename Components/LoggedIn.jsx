@@ -21,20 +21,11 @@ class LoggedIn extends Component {
 		this.componentWillMount = this.componentWillMount.bind(this);
 		this.componentWillUnmount = this.componentWillUnmount.bind(this);
 		this.mediaQueryChanged = this.mediaQueryChanged.bind(this);
-		this.sidebarOff = this.sidebarOff.bind(this);
-		this.sidebarOn = this.sidebarOn.bind(this);
+		this.toggleSidebar = this.toggleSidebar.bind(this);
 	}
 
 	onSetSidebarOpen(open) {
 	    this.setState({sidebarOpen: open});
-	}
-
-	sidebarOff(){
-		this.setState({sidebarDocked: false})
-	}
-
-	sidebarOn(){
-		this.setState({sidebarDocked: true})
 	}
 
 	componentWillMount() {
@@ -117,16 +108,12 @@ class LoggedIn extends Component {
 				style={styles}
 			>	
 				<div id="width" className="container remove-all-margin-padding">
-					<LogoutBar/>
+					<LogoutBar toggleSidebar={this.toggleSidebar}/>
 					
 					<div className='row'>
 						<div className= "col-sm-12 remove-all-margin-padding">
 							{
-								cloneElement(this.props.children, {
-									sidebarOff: this.sidebarOff,
-									sidebarOn: this.sidebarOn,
-									toggleSidebar: this.toggleSidebar
-								})
+								cloneElement(this.props.children)
 							}
 						</div>
 					</div>

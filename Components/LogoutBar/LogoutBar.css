@@ -1,3 +1,7 @@
+.LogoutBar_button{
+	display: none;
+}
+
 #logoutBar_logo{
 	padding-top: 1%;
 	padding-left: 1%;
@@ -28,6 +32,10 @@
 
 
 @media screen and (max-width: 767px){
+
+	.LogoutBar_button{
+		display: inline;
+	}
 
 	#logoutBar_logo{ 
 		max-height: 70%;
