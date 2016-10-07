@@ -28321,7 +28321,7 @@
 	      _react2['default'].createElement(
 	        'span',
 	        null,
-	        '\xD7'
+	        '×'
 	      )
 	    );
 	  };
@@ -31023,11 +31023,12 @@
 	  Collapse.prototype.handleExit = function handleExit(elem) {
 	    var dimension = this._dimension();
 	    elem.style[dimension] = this.props.getDimensionValue(dimension, elem) + 'px';
-	    triggerBrowserReflow(elem);
 	  };
 
 	  Collapse.prototype.handleExiting = function handleExiting(elem) {
 	    var dimension = this._dimension();
+
+	    triggerBrowserReflow(elem);
 	    elem.style[dimension] = '0';
 	  };
 
@@ -32893,27 +32894,30 @@
 
 	    var classes = (0, _extends4['default'])({}, (0, _bootstrapUtils.getClassSet)(bsProps), (_extends2 = {}, _extends2[(0, _bootstrapUtils.prefix)(bsProps, 'right')] = pullRight, _extends2));
 
-	    return _react2['default'].createElement(
-	      _RootCloseWrapper2['default'],
-	      {
-	        disabled: !open,
-	        onRootClose: onClose
-	      },
-	      _react2['default'].createElement(
-	        'ul',
-	        (0, _extends4['default'])({}, elementProps, {
-	          role: 'menu',
-	          className: (0, _classnames2['default'])(className, classes),
-	          'aria-labelledby': labelledBy
-	        }),
-	        _ValidComponentChildren2['default'].map(children, function (child) {
-	          return _react2['default'].cloneElement(child, {
-	            onKeyDown: (0, _createChainedFunction2['default'])(child.props.onKeyDown, _this2.handleKeyDown),
-	            onSelect: (0, _createChainedFunction2['default'])(child.props.onSelect, onSelect)
-	          });
-	        })
-	      )
+	    var list = _react2['default'].createElement(
+	      'ul',
+	      (0, _extends4['default'])({}, elementProps, {
+	        role: 'menu',
+	        className: (0, _classnames2['default'])(className, classes),
+	        'aria-labelledby': labelledBy
+	      }),
+	      _ValidComponentChildren2['default'].map(children, function (child) {
+	        return _react2['default'].cloneElement(child, {
+	          onKeyDown: (0, _createChainedFunction2['default'])(child.props.onKeyDown, _this2.handleKeyDown),
+	          onSelect: (0, _createChainedFunction2['default'])(child.props.onSelect, onSelect)
+	        });
+	      })
 	    );
+
+	    if (open) {
+	      return _react2['default'].createElement(
+	        _RootCloseWrapper2['default'],
+	        { noWrap: true, onRootClose: onClose },
+	        list
+	      );
+	    }
+
+	    return list;
 	  };
 
 	  return DropdownMenu;
@@ -33143,28 +33147,13 @@
 	var RootCloseWrapper = function (_React$Component) {
 	  _inherits(RootCloseWrapper, _React$Component);
 
-	  function RootCloseWrapper(props, context) {
+	  function RootCloseWrapper(props) {
 	    _classCallCheck(this, RootCloseWrapper);
 
-	    var _this = _possibleConstructorReturn(this, (RootCloseWrapper.__proto__ || Object.getPrototypeOf(RootCloseWrapper)).call(this, props, context));
+	    var _this = _possibleConstructorReturn(this, (RootCloseWrapper.__proto__ || Object.getPrototypeOf(RootCloseWrapper)).call(this, props));
 
-	    _this.handleMouseCapture = function (e) {
-	      _this.preventMouseRootClose = isModifiedEvent(e) || !isLeftClickEvent(e) || (0, _contains2.default)(_reactDom2.default.findDOMNode(_this), e.target);
-	    };
-
-	    _this.handleMouse = function () {
-	      if (!_this.preventMouseRootClose && _this.props.onRootClose) {
-	        _this.props.onRootClose();
-	      }
-	    };
-
-	    _this.handleKeyUp = function (e) {
-	      if (e.keyCode === 27 && _this.props.onRootClose) {
-	        _this.props.onRootClose();
-	      }
-	    };
-
-	    _this.preventMouseRootClose = false;
+	    _this.handleDocumentMouse = _this.handleDocumentMouse.bind(_this);
+	    _this.handleDocumentKeyUp = _this.handleDocumentKeyUp.bind(_this);
 	    return _this;
 	  }
 
@@ -33172,54 +33161,64 @@
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      if (!this.props.disabled) {
-	        this.addEventListeners();
+	        this.bindRootCloseHandlers();
 	      }
 	    }
 	  }, {
 	    key: 'componentDidUpdate',
 	    value: function componentDidUpdate(prevProps) {
 	      if (!this.props.disabled && prevProps.disabled) {
-	        this.addEventListeners();
+	        this.bindRootCloseHandlers();
 	      } else if (this.props.disabled && !prevProps.disabled) {
-	        this.removeEventListeners();
+	        this.unbindRootCloseHandlers();
 	      }
 	    }
 	  }, {
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {
 	      if (!this.props.disabled) {
-	        this.removeEventListeners();
+	        this.unbindRootCloseHandlers();
 	      }
 	    }
 	  }, {
-	    key: 'addEventListeners',
-	    value: function addEventListeners() {
-	      var event = this.props.event;
-
+	    key: 'bindRootCloseHandlers',
+	    value: function bindRootCloseHandlers() {
 	      var doc = (0, _ownerDocument2.default)(this);
 
 	      // Use capture for this listener so it fires before React's listener, to
 	      // avoid false positives in the contains() check below if the target DOM
 	      // element is removed in the React mouse callback.
-	      this.documentMouseCaptureListener = (0, _addEventListener2.default)(doc, event, this.handleMouseCapture, true);
+	      this._onDocumentMouseListener = (0, _addEventListener2.default)(doc, this.props.event, this.handleDocumentMouse, true);
 
-	      this.documentMouseListener = (0, _addEventListener2.default)(doc, event, this.handleMouse);
-
-	      this.documentKeyupListener = (0, _addEventListener2.default)(doc, 'keyup', this.handleKeyUp);
+	      this._onDocumentKeyupListener = (0, _addEventListener2.default)(doc, 'keyup', this.handleDocumentKeyUp);
 	    }
 	  }, {
-	    key: 'removeEventListeners',
-	    value: function removeEventListeners() {
-	      if (this.documentMouseCaptureListener) {
-	        this.documentMouseCaptureListener.remove();
+	    key: 'unbindRootCloseHandlers',
+	    value: function unbindRootCloseHandlers() {
+	      if (this._onDocumentMouseListener) {
+	        this._onDocumentMouseListener.remove();
 	      }
 
-	      if (this.documentMouseListener) {
-	        this.documentMouseListener.remove();
+	      if (this._onDocumentKeyupListener) {
+	        this._onDocumentKeyupListener.remove();
+	      }
+	    }
+	  }, {
+	    key: 'handleDocumentMouse',
+	    value: function handleDocumentMouse(e) {
+	      if (this.props.disabled || isModifiedEvent(e) || !isLeftClickEvent(e) || (0, _contains2.default)(_reactDom2.default.findDOMNode(this), e.target)) {
+	        return;
 	      }
 
-	      if (this.documentKeyupListener) {
-	        this.documentKeyupListener.remove();
+	      if (this.props.onRootClose) {
+	        this.props.onRootClose();
+	      }
+	    }
+	  }, {
+	    key: 'handleDocumentKeyUp',
+	    value: function handleDocumentKeyUp(e) {
+	      if (e.keyCode === 27 && this.props.onRootClose) {
+	        this.props.onRootClose();
 	      }
 	    }
 	  }, {
@@ -33269,7 +33268,6 @@
 
 	exports.default = function (node, event, handler, capture) {
 	  (0, _on2.default)(node, event, handler, capture);
-
 	  return {
 	    remove: function remove() {
 	      (0, _off2.default)(node, event, handler, capture);
@@ -38065,7 +38063,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-hidden': 'true' },
-	          '\xD7'
+	          '×'
 	        )
 	      ),
 	      children
@@ -39281,10 +39279,10 @@
 	      return true;
 	    }
 
-	    if (_ValidComponentChildren2['default'].some(props.children, function (child) {
-	      return _this2.isActive(child, activeKey, activeHref);
-	    })) {
-	      return true;
+	    if (props.children) {
+	      return _ValidComponentChildren2['default'].some(props.children, function (child) {
+	        return _this2.isActive(child, activeKey, activeHref);
+	      });
 	    }
 
 	    return props.active;
@@ -41279,8 +41277,8 @@
 
 	    if (maxButtons) {
 	      var hiddenPagesBefore = activePage - parseInt(maxButtons / 2, 10);
-	      startPage = hiddenPagesBefore > 2 ? hiddenPagesBefore : 1;
-	      hasHiddenPagesAfter = startPage + maxButtons < items;
+	      startPage = hiddenPagesBefore > 1 ? hiddenPagesBefore : 1;
+	      hasHiddenPagesAfter = startPage + maxButtons <= items;
 
 	      if (!hasHiddenPagesAfter) {
 	        endPage = items;
@@ -41319,7 +41317,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'More' },
-	          ellipsis === true ? '\u2026' : ellipsis
+	          ellipsis === true ? '…' : ellipsis
 	        )
 	      ));
 
@@ -41345,7 +41343,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'More' },
-	          ellipsis === true ? '\u2026' : ellipsis
+	          ellipsis === true ? '…' : ellipsis
 	        )
 	      ));
 
@@ -41408,7 +41406,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'First' },
-	          first === true ? '\xAB' : first
+	          first === true ? '«' : first
 	        )
 	      ),
 	      prev && _react2['default'].createElement(
@@ -41420,7 +41418,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'Previous' },
-	          prev === true ? '\u2039' : prev
+	          prev === true ? '‹' : prev
 	        )
 	      ),
 	      this.renderPageButtons(activePage, items, maxButtons, boundaryLinks, ellipsis, buttonProps),
@@ -41433,7 +41431,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'Next' },
-	          next === true ? '\u203A' : next
+	          next === true ? '›' : next
 	        )
 	      ),
 	      last && _react2['default'].createElement(
@@ -41445,7 +41443,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'Last' },
-	          last === true ? '\xBB' : last
+	          last === true ? '»' : last
 	        )
 	      )
 	    );
