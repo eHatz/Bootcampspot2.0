@@ -113,10 +113,7 @@ class LoggedIn extends Component {
 					<div className='row'>
 						<div className= "col-sm-12 remove-all-margin-padding">
 							{
-								cloneElement(this.props.children, {
-									sidebarOff: this.sidebarOff,
-									sidebarOn: this.sidebarOn,
-								})
+								cloneElement(this.props.children)
 							}
 						</div>
 					</div>

@@ -45011,10 +45011,7 @@
 							_react2.default.createElement(
 								"div",
 								{ className: "col-sm-12 remove-all-margin-padding" },
-								(0, _react.cloneElement)(this.props.children, {
-									sidebarOff: this.sidebarOff,
-									sidebarOn: this.sidebarOn
-								})
+								(0, _react.cloneElement)(this.props.children)
 							)
 						)
 					)
