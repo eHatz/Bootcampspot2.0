@@ -72,7 +72,7 @@ class LoggedIn extends Component {
 			  sidebar: {
 			    zIndex: 2,
 			    position: 'absolute',
-			    top: 0,
+			    top: 20,
 			    bottom: 0,
 			    transition: 'transform .3s ease-out',
 			    WebkitTransition: '-webkit-transform .3s ease-out',

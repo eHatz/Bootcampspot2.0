@@ -44969,7 +44969,7 @@
 					sidebar: {
 						zIndex: 2,
 						position: 'absolute',
-						top: 0,
+						top: 20,
 						bottom: 0,
 						transition: 'transform .3s ease-out',
 						WebkitTransition: '-webkit-transform .3s ease-out',
@@ -45371,7 +45371,7 @@
 
 	__webpack_require__(499);
 
-	var _Navbar = __webpack_require__(476);
+	var _Navbar = __webpack_require__(522);
 
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 
@@ -45418,7 +45418,8 @@
 						header2: "TIME",
 						header3: "DATE",
 						header4: "ATTENDANCE"
-					})
+					}),
+					_react2.default.createElement(_Navbar2.default, null)
 				);
 			}
 		}]);
@@ -46093,6 +46094,215 @@
 
 /***/ },
 /* 520 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 521 */,
+/* 522 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(523);
+
+	var _MenuItem = __webpack_require__(525);
+
+	var _MenuItem2 = _interopRequireDefault(_MenuItem);
+
+	var _Menu = __webpack_require__(528);
+
+	var _Menu2 = _interopRequireDefault(_Menu);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Navbar2 = _react2.default.createClass({
+	    displayName: "Navbar2",
+
+	    showLeft: function showLeft() {
+	        this.refs.left.show();
+	    },
+
+	    showRight: function showRight() {
+	        this.refs.right.show();
+	    },
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            "div",
+	            null,
+	            _react2.default.createElement(
+	                "button",
+	                { onClick: this.showLeft },
+	                "Show Left Menu!"
+	            ),
+	            _react2.default.createElement(
+	                "button",
+	                { onClick: this.showRight },
+	                "Show Right Menu!"
+	            ),
+	            _react2.default.createElement(
+	                _Menu2.default,
+	                { ref: "left", alignment: "left" },
+	                _react2.default.createElement(
+	                    _MenuItem2.default,
+	                    { hash: "first-page" },
+	                    "First Page"
+	                ),
+	                _react2.default.createElement(
+	                    _MenuItem2.default,
+	                    { hash: "second-page" },
+	                    "Second Page"
+	                ),
+	                _react2.default.createElement(
+	                    _MenuItem2.default,
+	                    { hash: "third-page" },
+	                    "Third Page"
+	                )
+	            ),
+	            _react2.default.createElement(
+	                _Menu2.default,
+	                { ref: "right", alignment: "right" },
+	                _react2.default.createElement(
+	                    _MenuItem2.default,
+	                    { hash: "first-page" },
+	                    "First Page"
+	                ),
+	                _react2.default.createElement(
+	                    _MenuItem2.default,
+	                    { hash: "second-page" },
+	                    "Second Page"
+	                ),
+	                _react2.default.createElement(
+	                    _MenuItem2.default,
+	                    { hash: "third-page" },
+	                    "Third Page"
+	                )
+	            )
+	        );
+	    }
+	});
+
+	exports.default = Navbar2;
+
+/***/ },
+/* 523 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 524 */,
+/* 525 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(526);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var MenuItem = _react2.default.createClass({
+	    displayName: "MenuItem",
+
+	    navigate: function navigate(hash) {
+	        window.location.hash = hash;
+	    },
+
+	    render: function render() {
+	        var hash = this.props.hash;
+
+	        return _react2.default.createElement(
+	            "div",
+	            { className: "menu-item" },
+	            this.props.children
+	        );
+	    }
+	});
+
+	exports.default = MenuItem;
+
+/***/ },
+/* 526 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 527 */,
+/* 528 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(529);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//import Menu from "./Menu/Menu.jsx"
+
+
+	var Menu = _react2.default.createClass({
+	    displayName: "Menu",
+
+	    getInitialState: function getInitialState() {
+	        return {
+	            visible: false
+	        };
+	    },
+
+	    show: function show() {
+	        this.setState({ visible: true });
+	        document.addEventListener("click", this.hide.bind(this));
+	    },
+
+	    hide: function hide() {
+	        document.removeEventListener("click", this.hide.bind(this));
+	        this.setState({ visible: false });
+	    },
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            "div",
+	            { className: "menu" },
+	            _react2.default.createElement(
+	                "div",
+	                { className: (this.state.visible ? "visible " : "") + this.props.alignment },
+	                this.props.children
+	            )
+	        );
+	    }
+	});
+
+	exports.default = Menu;
+
+/***/ },
+/* 529 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

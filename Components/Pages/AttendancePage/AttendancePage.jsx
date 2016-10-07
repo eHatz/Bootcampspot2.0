@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./AttendancePage.css";
-import Navbar from "../../Navbar/Navbar.jsx"
+import Navbar2 from "../../Navbar2/Navbar2.jsx"
 import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
 import Table from "../../Table/Table.jsx";
 
@@ -19,6 +19,8 @@ class AttendancePage extends Component {
 					header3='DATE' 
 					header4='ATTENDANCE'
 				/>
+				<Navbar2/>
+
 			</div>
 
 		);
