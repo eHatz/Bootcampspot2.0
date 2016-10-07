@@ -1,3 +1,40 @@
+#navBar {
+	background-color: black;
+	height: 85vh;
+}
+
+.NavBarLink_linkText{
+	color: #ddd7d7;
+	font-size: 14px;
+	padding-left: 23px;
+}
+
+.NavBarLink_imageDiv{
+	display: inline-flex;
+	padding-left: 19%;
+	padding-top: 7%;
+}
+
+.NavBarLink_linkDiv{
+	background-color: black;
+	padding-top: 1%;
+}
+
+
+
+@media screen and (max-width: 768px){
+
+
+}
+
+
+@media screen and (max-width: 640px){
+
+
+	
+}
+
+
 .Application_main: {
 	align-items: center;
 	margin: 0 auto;
@@ -150,43 +187,6 @@
 
 }
 */
-#navBar {
-	background-color: black;
-	height: 85vh;
-}
-
-.NavBarLink_linkText{
-	color: #ddd7d7;
-	font-size: 14px;
-	padding-left: 23px;
-}
-
-.NavBarLink_imageDiv{
-	display: inline-flex;
-	padding-left: 19%;
-	padding-top: 7%;
-}
-
-.NavBarLink_linkDiv{
-	background-color: black;
-	padding-top: 1%;
-}
-
-
-
-@media screen and (max-width: 768px){
-
-
-}
-
-
-@media screen and (max-width: 640px){
-
-
-	
-}
-
-
 #logoutBar_logo{
 	z-index: 1; 
 	position: absolute; 

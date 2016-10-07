@@ -1,6 +1,7 @@
 import React, { Component, cloneElement } from 'react';
 import {Grid, Row, Col} from "react-bootstrap";
 import Sidebar from "react-sidebar";
+import Navbar from "./Navbar/Navbar.jsx";
 import "./Application.css";
 
 
@@ -107,12 +108,13 @@ class Application extends Component {
 
 		return (
 
-			<Sidebar sidebar={sidebarContent}
-		               open={this.state.sidebarOpen}
-		               docked={this.state.sidebarDocked}
-		               onSetOpen={this.onSetSidebarOpen}
-		               style={styles}
-		               >
+			<Sidebar 	
+				sidebar={<Navbar />}
+				open={this.state.sidebarOpen}
+				docked={this.state.sidebarDocked}
+				onSetOpen={this.onSetSidebarOpen}
+				style={styles}
+			>
 				<div id="width" className="container">
 
 					<div id="Application" className="Application_main">

@@ -25502,6 +25502,10 @@
 
 	var _reactSidebar2 = _interopRequireDefault(_reactSidebar);
 
+	var _Navbar = __webpack_require__(484);
+
+	var _Navbar2 = _interopRequireDefault(_Navbar);
+
 	__webpack_require__(476);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -25630,7 +25634,8 @@
 
 				return _react2.default.createElement(
 					_reactSidebar2.default,
-					{ sidebar: sidebarContent,
+					{
+						sidebar: _react2.default.createElement(_Navbar2.default, null),
 						open: this.state.sidebarOpen,
 						docked: this.state.sidebarDocked,
 						onSetOpen: this.onSetSidebarOpen,
@@ -44973,21 +44978,12 @@
 					"div",
 					null,
 					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" }),
-					_react2.default.createElement(
-						"div",
-						{ className: "row" },
-						_react2.default.createElement(_Navbar2.default, null),
-						_react2.default.createElement(
-							"div",
-							{ className: "col-sm-9 remove-all-margin-padding" },
-							_react2.default.createElement(_Table2.default, { pageName: "attendancePage",
-								header1: "NOTES",
-								header2: "TIME",
-								header3: "DATE",
-								header4: "ATTENDANCE"
-							})
-						)
-					)
+					_react2.default.createElement(_Table2.default, { pageName: "attendancePage",
+						header1: "NOTES",
+						header2: "TIME",
+						header3: "DATE",
+						header4: "ATTENDANCE"
+					})
 				);
 			}
 		}]);
@@ -45032,7 +45028,8 @@
 
 			return _react2.default.createElement(
 				"div",
-				{ className: "col-sm-3 remove-all-margin-padding" },
+				null,
+				" ",
 				_react2.default.createElement(
 					"div",
 					{ id: "navBar" },
