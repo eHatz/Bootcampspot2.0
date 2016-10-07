@@ -14,7 +14,7 @@ class LogoutBar extends Component {
 						<img id='logoImg' src='/assets/images/logo2.png'/>
 					</div>
 
-					<div id='logoutBar_textDiv' className='col-sm-9'>
+					<div className='col-sm-9'>
 						<div id='logoutBar_textDiv'>
 							<h4 id='logoutBar_username'>{UserName} </h4>
 							<h4 id='logoutBar_logout'>Log Out</h4>
