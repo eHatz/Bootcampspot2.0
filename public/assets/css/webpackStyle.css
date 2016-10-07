@@ -155,7 +155,12 @@
 	height: 85vh;
 }
 
-.NavBarLink_linkText{
+
+@media screen and (max-width: 768px){
+	#navBar {
+		display: none;
+	}
+}.NavBarLink_linkText{
 	color: #ddd7d7;
 	font-size: 14px;
 	padding-left: 23px;
@@ -177,6 +182,8 @@
 	position: absolute; 
 	padding-top: 1%;
 	padding-left: 1%;
+	background-color: #343333;
+	height: 15vh;
   	
 }
 #logoutBar_textDiv{
@@ -184,6 +191,9 @@
 	position: absolute; 
 	right: 0px;
 	
+}
+#logoImg {
+	text-align: center;
 }
 #logoutBar_username, #logoutBar_logout {
 	font-family: 'Roboto Condensed', sans-serif;	
@@ -193,9 +203,10 @@
 }
 
 #logoutBar{
-	background-color: #343333;
+	background-color: red;
 	position: static;
 	height: 15vh;
+	padding: 0px;
 }
 
 
