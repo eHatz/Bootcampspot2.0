@@ -27,6 +27,7 @@
     "react-dom": "^0.14.3",
     "react-imageloader": "^2.1.0",
     "react-router": "^2.8.1",
+    "react-sidebar": "^2.2.1",
     "request": "^2.75.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",

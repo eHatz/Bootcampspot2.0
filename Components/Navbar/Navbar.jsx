@@ -7,7 +7,7 @@ var Navbar = React.createClass ({
 	render() {
 
 		return (
-			<div className= "col-sm-3 remove-all-margin-padding">
+			<div > {/*className= "col-sm-3 remove-all-margin-padding"*/}
 				<div id="navBar"> {/*id={styles.navBar}*/}
 					<NavBarLink name="Attendance" img="/assets/images/attendance_nav.png" navLink="#/attendance"/> 
 					<NavBarLink name="Homework" img="assets/images/homework_nav.png" navLink="#/homework"/> 

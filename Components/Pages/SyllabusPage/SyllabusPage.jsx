@@ -6,16 +6,18 @@ import Navbar from "../../Navbar/Navbar.jsx";
 
 class SyllabusPage extends Component {
 
+	componentDidMount(){
+		const { sidebarOn } = this.props;
+		sidebarOn();
+	}
+
 	render() {
 
 		return (
 
 			<div>
 				<LogoutBar UserName='Tim' />
-				<div className='row'>
-					<Navbar/>
-					<div className= "col-md-8 remove-all-margin-padding">
-						<div className='row remove-all-margin-padding'>
+				
 							<div id='syllabus'>
 								<h6>HOMEWORK</h6>
 								<ul>
@@ -32,7 +34,7 @@ class SyllabusPage extends Component {
 									<li>You must give a full effort on every group and individual project.</li>
 								</ul>
 							</div>
-						</div>
+					
 						
 						<div className='row remove-all-margin-padding'>
 							<Table pageName='syllabusPage'
@@ -42,8 +44,7 @@ class SyllabusPage extends Component {
 								header4='RECORDINGS'
 							/>
 						</div>
-					</div>
-				</div>
+
 			</div>
 		);
 	}
