@@ -36,6 +36,12 @@ class Application extends Component {
 		this.setState({sidebarDocked: true})
 	}
 
+	//This method allows the burger button to open and close Sidebar
+	toggleSidebar(){
+		this.setState({sidebarDocked: !this.state.sidebarDocked});
+		console.log("toggleSidebar -- ", this.state.sidebarOpen);
+	}
+
 	componentWillMount() {
 		let mql = window.matchMedia(`(min-width: 768px)`);
 		mql.addListener(this.mediaQueryChanged);
@@ -120,7 +126,8 @@ class Application extends Component {
 						{
 							cloneElement(this.props.children, {
 								sidebarOff: this.sidebarOff,
-								sidebarOn: this.sidebarOn
+								sidebarOn: this.sidebarOn,
+								toggleSidebar: this.toggleSidebar//Tim, in the new layout, pass this prop directly from Loggedin to LogoutBar
 							})
 						}
 
