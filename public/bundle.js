@@ -25528,62 +25528,13 @@
 	var Application = function (_Component) {
 		_inherits(Application, _Component);
 
-		//===React-Sidebar====
-		function Application(props) {
+		function Application() {
 			_classCallCheck(this, Application);
 
-			var _this = _possibleConstructorReturn(this, (Application.__proto__ || Object.getPrototypeOf(Application)).call(this, props));
-
-			_this.state = {
-				sidebarOpen: false,
-				sidebarDocked: true
-			};
-
-			_this.onSetSidebarOpen = _this.onSetSidebarOpen.bind(_this);
-			_this.componentWillMount = _this.componentWillMount.bind(_this);
-			_this.componentWillUnmount = _this.componentWillUnmount.bind(_this);
-			_this.mediaQueryChanged = _this.mediaQueryChanged.bind(_this);
-			_this.sidebarOff = _this.sidebarOff.bind(_this);
-			_this.sidebarOn = _this.sidebarOn.bind(_this);
-			return _this;
+			return _possibleConstructorReturn(this, (Application.__proto__ || Object.getPrototypeOf(Application)).apply(this, arguments));
 		}
 
 		_createClass(Application, [{
-			key: "onSetSidebarOpen",
-			value: function onSetSidebarOpen(open) {
-				this.setState({ sidebarOpen: open });
-			}
-		}, {
-			key: "sidebarOff",
-			value: function sidebarOff() {
-				this.setState({ sidebarDocked: false });
-			}
-		}, {
-			key: "sidebarOn",
-			value: function sidebarOn() {
-				this.setState({ sidebarDocked: true });
-			}
-		}, {
-			key: "componentWillMount",
-			value: function componentWillMount() {
-				var mql = window.matchMedia("(min-width: 768px)");
-				mql.addListener(this.mediaQueryChanged);
-				this.setState({ mql: mql, sidebarDocked: mql.matches });
-			}
-		}, {
-			key: "componentWillUnmount",
-			value: function componentWillUnmount() {
-				this.state.mql.removeListener(this.mediaQueryChanged);
-			}
-		}, {
-			key: "mediaQueryChanged",
-			value: function mediaQueryChanged() {
-				this.setState({ sidebarDocked: this.state.mql.matches });
-			}
-			//===React-Sidebar====
-
-
-		}, {
 			key: "render",
 			value: function render() {
 
@@ -44943,14 +44894,14 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Application = function (_Component) {
-		_inherits(Application, _Component);
+	var LoggedIn = function (_Component) {
+		_inherits(LoggedIn, _Component);
 
 		//===React-Sidebar====
-		function Application(props) {
-			_classCallCheck(this, Application);
+		function LoggedIn(props) {
+			_classCallCheck(this, LoggedIn);
 
-			var _this = _possibleConstructorReturn(this, (Application.__proto__ || Object.getPrototypeOf(Application)).call(this, props));
+			var _this = _possibleConstructorReturn(this, (LoggedIn.__proto__ || Object.getPrototypeOf(LoggedIn)).call(this, props));
 
 			_this.state = {
 				sidebarOpen: false,
@@ -44966,7 +44917,7 @@
 			return _this;
 		}
 
-		_createClass(Application, [{
+		_createClass(LoggedIn, [{
 			key: "onSetSidebarOpen",
 			value: function onSetSidebarOpen(open) {
 				this.setState({ sidebarOpen: open });
@@ -44987,6 +44938,12 @@
 				var mql = window.matchMedia("(min-width: 768px)");
 				mql.addListener(this.mediaQueryChanged);
 				this.setState({ mql: mql, sidebarDocked: mql.matches });
+			}
+		}, {
+			key: "toggleSidebar",
+			value: function toggleSidebar() {
+				this.setState({ sidebarDocked: !this.state.sidebarDocked });
+				console.log("toggleSidebar -- ", this.state.sidebarOpen);
 			}
 		}, {
 			key: "componentWillUnmount",
@@ -45022,8 +44979,7 @@
 						transition: 'transform .3s ease-out',
 						WebkitTransition: '-webkit-transform .3s ease-out',
 						willChange: 'transform',
-						overflowY: 'auto',
-						height: 50
+						overflowY: 'auto'
 					},
 					content: {
 						position: 'absolute',
@@ -45055,27 +45011,29 @@
 				};
 
 				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(_LogoutBar2.default, null),
+					_reactSidebar2.default,
+					{
+						sidebar: _react2.default.createElement(_Navbar2.default, null),
+						open: this.state.sidebarOpen,
+						docked: this.state.sidebarDocked,
+						onSetOpen: this.onSetSidebarOpen,
+						style: styles
+					},
 					_react2.default.createElement(
-						_reactSidebar2.default,
-						{
-							sidebar: _react2.default.createElement(_Navbar2.default, null),
-							open: this.state.sidebarOpen,
-							docked: this.state.sidebarDocked,
-							onSetOpen: this.onSetSidebarOpen,
-							style: styles
-						},
+						"div",
+						{ id: "width", className: "container remove-all-margin-padding" },
+						_react2.default.createElement(_LogoutBar2.default, null),
 						_react2.default.createElement(
 							"div",
-							{ id: "width", className: "container" },
+							{ className: "row" },
+							_react2.default.createElement("div", { className: "col-sm-3 remove-all-margin-padding" }),
 							_react2.default.createElement(
 								"div",
-								{ id: "Application", className: "Application_main" },
+								{ className: "col-sm-9 remove-all-margin-padding" },
 								(0, _react.cloneElement)(this.props.children, {
 									sidebarOff: this.sidebarOff,
-									sidebarOn: this.sidebarOn
+									sidebarOn: this.sidebarOn,
+									toggleSidebar: this.toggleSidebar
 								})
 							)
 						)
@@ -45084,10 +45042,10 @@
 			}
 		}]);
 
-		return Application;
+		return LoggedIn;
 	}(_react.Component);
 
-	exports.default = Application;
+	exports.default = LoggedIn;
 
 /***/ },
 /* 487 */
@@ -45105,6 +45063,8 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactBootstrap = __webpack_require__(224);
+
 	__webpack_require__(488);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -45113,7 +45073,8 @@
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } //Add to new LogoutBar
+
 
 	var LogoutBar = function (_Component) {
 		_inherits(LogoutBar, _Component);
@@ -45127,8 +45088,9 @@
 		_createClass(LogoutBar, [{
 			key: "render",
 			value: function render() {
-				var UserName = this.props.UserName;
-
+				var _props = this.props;
+				var UserName = _props.UserName;
+				var toggleSidebar = _props.toggleSidebar; //Add toogleSidebar to destructured props 
 
 				return _react2.default.createElement(
 					"div",
@@ -45139,6 +45101,11 @@
 						_react2.default.createElement(
 							"div",
 							{ id: "logoutBar_logo", className: "col-sm-3" },
+							_react2.default.createElement(
+								_reactBootstrap.Button,
+								{ bsStyle: "danger", onClick: toggleSidebar },
+								"="
+							),
 							_react2.default.createElement("img", { id: "logoImg", src: "/assets/images/logo2.png" })
 						),
 						_react2.default.createElement(
@@ -45452,21 +45419,12 @@
 				return _react2.default.createElement(
 					"div",
 					null,
-					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" }),
-					_react2.default.createElement(
-						"div",
-						{ className: "row" },
-						_react2.default.createElement(
-							"div",
-							{ className: "col-sm-9 remove-all-margin-padding" },
-							_react2.default.createElement(_Table2.default, { pageName: "attendancePage",
-								header1: "NOTES",
-								header2: "TIME",
-								header3: "DATE",
-								header4: "ATTENDANCE"
-							})
-						)
-					)
+					_react2.default.createElement(_Table2.default, { pageName: "attendancePage",
+						header1: "NOTES",
+						header2: "TIME",
+						header3: "DATE",
+						header4: "ATTENDANCE"
+					})
 				);
 			}
 		}]);

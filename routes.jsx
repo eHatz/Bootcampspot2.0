@@ -28,7 +28,6 @@ export default (
 	<Route component={Application}>
 		<Route path="/" component={HomePage} />
 		
-
 		<Route component={LoggedIn}>
 			<Route path="/attendance" component={AttendancePage} />
 			<Route path="/career" component={CareerPage} />

@@ -6,7 +6,7 @@ import LogoutBar from "./LogoutBar/LogoutBar.jsx";
 import "./LoggedIn.css";
 
 
-class Application extends Component {
+class LoggedIn extends Component {
 
 	//===React-Sidebar====
 	constructor(props){
@@ -43,6 +43,11 @@ class Application extends Component {
 		this.setState({mql: mql, sidebarDocked: mql.matches});
 	}
 
+	toggleSidebar(){
+		this.setState({sidebarDocked: !this.state.sidebarDocked});
+		console.log("toggleSidebar -- ", this.state.sidebarOpen);
+	}
+
 	componentWillUnmount() {
 		this.state.mql.removeListener(this.mediaQueryChanged);
 	}
@@ -73,7 +78,6 @@ class Application extends Component {
 			    WebkitTransition: '-webkit-transform .3s ease-out',
 			    willChange: 'transform',
 			    overflowY: 'auto',
-			    height: 50,
 			  },
 			  content: {
 			    position: 'absolute',
@@ -104,39 +108,38 @@ class Application extends Component {
 			  },
 		}
 
-		return (
-			<div>
-				<LogoutBar/>
-				<Sidebar 	
-					sidebar={<Navbar />}
-					open={this.state.sidebarOpen}
-					docked={this.state.sidebarDocked}
-					onSetOpen={this.onSetSidebarOpen}
-					style={styles}
-				>
-					<div id="width" className="container">
-
-						<div id="Application" className="Application_main">
-
+		return (	
+			<Sidebar 	
+				sidebar={<Navbar />}
+				open={this.state.sidebarOpen}
+				docked={this.state.sidebarDocked}
+				onSetOpen={this.onSetSidebarOpen}
+				style={styles}
+			>
+				<div id="width" className="container remove-all-margin-padding">
+					<LogoutBar/>
+					<div className='row'>
 						
-
+						<div className= "col-sm-3 remove-all-margin-padding">
+						</div>
+				
+						<div className= "col-sm-9 remove-all-margin-padding">
 							{
 								cloneElement(this.props.children, {
 									sidebarOff: this.sidebarOff,
-									sidebarOn: this.sidebarOn
+									sidebarOn: this.sidebarOn,
+									toggleSidebar: this.toggleSidebar
 								})
 							}
-
-
 						</div>
 					</div>
-				</Sidebar>
-			</div>
+				</div>
+			</Sidebar>
 		)
 	}
 }
 
-export default Application;
+export default LoggedIn;
 
 
 

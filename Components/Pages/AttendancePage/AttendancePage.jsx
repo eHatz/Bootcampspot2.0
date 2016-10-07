@@ -13,17 +13,12 @@ class AttendancePage extends Component {
 		return (
 
 			<div>
-				<LogoutBar UserName='Tim' />
-				<div className='row'>
-					<div className= "col-sm-9 remove-all-margin-padding">
-						<Table pageName='attendancePage'
-							header1='NOTES' 
-							header2 = 'TIME' 
-							header3='DATE' 
-							header4='ATTENDANCE'
-						/>
-					</div>
-				</div>
+				<Table pageName='attendancePage'
+					header1='NOTES' 
+					header2 = 'TIME' 
+					header3='DATE' 
+					header4='ATTENDANCE'
+				/>
 			</div>
 
 		);
