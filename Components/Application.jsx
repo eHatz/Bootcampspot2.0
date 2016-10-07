@@ -36,6 +36,12 @@ class Application extends Component {
 		this.setState({sidebarDocked: true})
 	}
 
+	//This method allows the burger button to open and close Sidebar
+	toggleSidebar(){
+		this.setState({sidebarDocked: !this.state.sidebarDocked});
+		console.log("toggleSidebar -- ", this.state.sidebarOpen);
+	}
+
 	componentWillMount() {
 		let mql = window.matchMedia(`(min-width: 768px)`);
 		mql.addListener(this.mediaQueryChanged);

@@ -1,16 +1,18 @@
 import React, { Component } from "react";
+import { Button } from "react-bootstrap"; //Add to new LogoutBar
 import "./LogoutBar.css";
 
 class LogoutBar extends Component {
 
 	render() {
-		const { UserName } = this.props;
-		
+		const { UserName, toggleSidebar } = this.props;	//Add toogleSidebar to destructured props 
+
 		return (
 			<div className="row">
 				<div id='logoutBar' className='col-md-12'> 
 
 					<div id='logoutBar_logo' className='col-sm-3'>
+						<Button bsStyle="danger" onClick={toggleSidebar}>=</Button>{/*Added burger button*/}
 						<img id='logoImg' src='/assets/images/logo2.png'/>
 					</div>
 
