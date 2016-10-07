@@ -6,6 +6,11 @@ import Navbar from "../../Navbar/Navbar.jsx";
 
 class SyllabusPage extends Component {
 
+	componentDidMount(){
+		const { sidebarOn } = this.props;
+		sidebarOn();
+	}
+
 	render() {
 
 		return (

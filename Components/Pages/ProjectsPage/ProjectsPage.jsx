@@ -5,6 +5,12 @@ import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
 import Table from "../../Table/Table.jsx";
 
 class ProjectsPage extends Component {
+
+	componentDidMount(){
+		const { sidebarOn } = this.props;
+		sidebarOn();
+	}
+
 	render() {
 		return (
 

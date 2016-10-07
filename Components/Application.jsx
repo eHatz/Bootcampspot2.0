@@ -13,21 +13,30 @@ class Application extends Component {
 		this.state = {
 			sidebarOpen: false,
 			sidebarDocked: true,
-			mql: false
 		}
 
 		this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
 		this.componentWillMount = this.componentWillMount.bind(this);
 		this.componentWillUnmount = this.componentWillUnmount.bind(this);
 		this.mediaQueryChanged = this.mediaQueryChanged.bind(this);
+		this.sidebarOff = this.sidebarOff.bind(this);
+		this.sidebarOn = this.sidebarOn.bind(this);
 	}
 
 	onSetSidebarOpen(open) {
 	    this.setState({sidebarOpen: open});
 	}
 
+	sidebarOff(){
+		this.setState({sidebarDocked: false})
+	}
+
+	sidebarOn(){
+		this.setState({sidebarDocked: true})
+	}
+
 	componentWillMount() {
-		let mql = window.matchMedia(`(min-width: 800px)`);
+		let mql = window.matchMedia(`(min-width: 768px)`);
 		mql.addListener(this.mediaQueryChanged);
 		this.setState({mql: mql, sidebarDocked: mql.matches});
 	}
@@ -98,29 +107,30 @@ class Application extends Component {
 
 		return (
 
-			<div>
-
-				<div id="width" className="container">
-
-					<div id="Application" className="Application_main">
-
-					<Sidebar sidebar={sidebarContent}
+			<Sidebar sidebar={sidebarContent}
 		               open={this.state.sidebarOpen}
 		               docked={this.state.sidebarDocked}
 		               onSetOpen={this.onSetSidebarOpen}
 		               style={styles}
 		               >
+				<div id="width" className="container">
+
+					<div id="Application" className="Application_main">
+
+					
 
 						{
-							cloneElement(this.props.children)
+							cloneElement(this.props.children, {
+								sidebarOff: this.sidebarOff,
+								sidebarOn: this.sidebarOn
+							})
 						}
 
-					</Sidebar>
 
 					</div>
 				</div>
 
-			</div>
+			</Sidebar>
 		)
 	}
 }
