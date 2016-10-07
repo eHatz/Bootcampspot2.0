@@ -45083,7 +45083,7 @@
 							{ id: "logoutBar_logo", className: "col-sm-3" },
 							_react2.default.createElement(
 								_reactBootstrap.Button,
-								{ bsStyle: "danger", onClick: toggleSidebar },
+								{ bsStyle: "danger", onClick: toggleSidebar, className: "LogoutBar_button" },
 								"="
 							),
 							_react2.default.createElement("img", { id: "logoImg", src: "/assets/images/logo2.png" })
