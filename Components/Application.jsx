@@ -54,10 +54,6 @@ class Application extends Component {
 
 	render() {
 
-		const sidebarContent = (
-				<h1>TEST!TEST!TEST!</h1>
-			)
-
 		const styles = {
 			root: {
 			    position: 'absolute',

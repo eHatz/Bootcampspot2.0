@@ -25578,12 +25578,6 @@
 			key: "render",
 			value: function render() {
 
-				var sidebarContent = _react2.default.createElement(
-					"h1",
-					null,
-					"TEST!TEST!TEST!"
-				);
-
 				var styles = {
 					root: {
 						position: 'absolute',
@@ -45588,21 +45582,12 @@
 					"div",
 					null,
 					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" }),
-					_react2.default.createElement(
-						"div",
-						{ className: "row" },
-						_react2.default.createElement(_Navbar2.default, null),
-						_react2.default.createElement(
-							"div",
-							{ className: "col-md-8 remove-all-margin-padding" },
-							_react2.default.createElement(_Table2.default, { pageName: "homeworkPage",
-								header1: "WEEK",
-								header2: "HOMEWORK",
-								header3: "DUE DATE",
-								header4: "SUBMISSION"
-							})
-						)
-					)
+					_react2.default.createElement(_Table2.default, { pageName: "homeworkPage",
+						header1: "WEEK",
+						header2: "HOMEWORK",
+						header3: "DUE DATE",
+						header4: "SUBMISSION"
+					})
 				);
 			}
 		}]);
@@ -45683,82 +45668,69 @@
 					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" }),
 					_react2.default.createElement(
 						"div",
-						{ className: "row" },
-						_react2.default.createElement(_Navbar2.default, null),
+						{ id: "syllabus" },
 						_react2.default.createElement(
-							"div",
-							{ className: "col-md-8 remove-all-margin-padding" },
+							"h6",
+							null,
+							"HOMEWORK"
+						),
+						_react2.default.createElement(
+							"ul",
+							null,
 							_react2.default.createElement(
-								"div",
-								{ className: "row remove-all-margin-padding" },
-								_react2.default.createElement(
-									"div",
-									{ id: "syllabus" },
-									_react2.default.createElement(
-										"h6",
-										null,
-										"HOMEWORK"
-									),
-									_react2.default.createElement(
-										"ul",
-										null,
-										_react2.default.createElement(
-											"li",
-											null,
-											"You must complete 90% of the homework assignments. (You can miss no more than 2 assignments)"
-										),
-										_react2.default.createElement(
-											"li",
-											null,
-											"Homework submissions must be on time AS IS. Late submissions will not be counted."
-										)
-									),
-									_react2.default.createElement(
-										"h6",
-										null,
-										"ATTENDANCE"
-									),
-									_react2.default.createElement(
-										"ul",
-										null,
-										_react2.default.createElement(
-											"li",
-											null,
-											"Attendance must be maintained at a 95% rate. (You can miss no more than a total of 4 classes)"
-										),
-										_react2.default.createElement(
-											"li",
-											null,
-											"Written permission must be obtained to miss class or it's considered one of your 4 absences."
-										)
-									),
-									_react2.default.createElement(
-										"h6",
-										null,
-										"PROJECTS"
-									),
-									_react2.default.createElement(
-										"ul",
-										null,
-										_react2.default.createElement(
-											"li",
-											null,
-											"You must give a full effort on every group and individual project."
-										)
-									)
-								)
+								"li",
+								null,
+								"You must complete 90% of the homework assignments. (You can miss no more than 2 assignments)"
 							),
 							_react2.default.createElement(
-								"div",
-								{ className: "row remove-all-margin-padding" },
-								_react2.default.createElement(_Table2.default, { pageName: "syllabusPage",
-									header1: "SUBJECT",
-									header2: "LESSON #",
-									header3: "DATE",
-									header4: "RECORDINGS"
-								})
+								"li",
+								null,
+								"Homework submissions must be on time AS IS. Late submissions will not be counted."
+							)
+						),
+						_react2.default.createElement(
+							"h6",
+							null,
+							"ATTENDANCE"
+						),
+						_react2.default.createElement(
+							"ul",
+							null,
+							_react2.default.createElement(
+								"li",
+								null,
+								"Attendance must be maintained at a 95% rate. (You can miss no more than a total of 4 classes)"
+							),
+							_react2.default.createElement(
+								"li",
+								null,
+								"Written permission must be obtained to miss class or it's considered one of your 4 absences."
+							)
+						),
+						_react2.default.createElement(
+							"h6",
+							null,
+							"PROJECTS"
+						),
+						_react2.default.createElement(
+							"ul",
+							null,
+							_react2.default.createElement(
+								"li",
+								null,
+								"You must give a full effort on every group and individual project."
 							)
 						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row remove-all-margin-padding" },
+						_react2.default.createElement(_Table2.default, { pageName: "syllabusPage",
+							header1: "SUBJECT",
+							header2: "LESSON #",
+							header3: "DATE",
+							header4: "RECORDINGS"
+						})
 					)
 				);
 			}
@@ -45907,21 +45879,12 @@
 					"div",
 					null,
 					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" }),
-					_react2.default.createElement(
-						"div",
-						{ className: "row" },
-						_react2.default.createElement(_Navbar2.default, null),
-						_react2.default.createElement(
-							"div",
-							{ className: "col-md-8 remove-all-margin-padding" },
-							_react2.default.createElement(_Table2.default, { pageName: "projectsPage",
-								header1: "WEEK",
-								header2: "PROJECT",
-								header3: "DUE DATE",
-								header4: "SUBMISSION"
-							})
-						)
-					)
+					_react2.default.createElement(_Table2.default, { pageName: "projectsPage",
+						header1: "WEEK",
+						header2: "PROJECT",
+						header3: "DUE DATE",
+						header4: "SUBMISSION"
+					})
 				);
 			}
 		}]);

@@ -16,19 +16,13 @@ class HomeworkPage extends Component {
 
 			<div>
 				<LogoutBar UserName='Tim' />
-				<div className='row'>
-					<Navbar/>
-					<div className= "col-md-8 remove-all-margin-padding">
-						<Table pageName='homeworkPage'
-							header1='WEEK' 
-							header2 = 'HOMEWORK' 
-							header3='DUE DATE' 
-							header4='SUBMISSION'
-						/>
-					</div>
-				</div>
+					<Table pageName='homeworkPage'
+						header1='WEEK' 
+						header2 = 'HOMEWORK' 
+						header3='DUE DATE' 
+						header4='SUBMISSION'
+					/>
 			</div>
-
 		);
 	}
 }
