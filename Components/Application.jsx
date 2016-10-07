@@ -15,10 +15,7 @@ class Application extends Component {
 
 				<div id="Application" className="Application_main">
 					{
-						cloneElement(this.props.children, {
-							sidebarOff: this.sidebarOff,
-							sidebarOn: this.sidebarOn
-						})
+						cloneElement(this.props.children,{})
 					}
 					
 				</div>

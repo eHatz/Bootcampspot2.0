@@ -108,22 +108,19 @@ class LoggedIn extends Component {
 			  },
 		}
 
-		return (	
+		return (
 			<Sidebar 	
 				sidebar={<Navbar />}
 				open={this.state.sidebarOpen}
 				docked={this.state.sidebarDocked}
 				onSetOpen={this.onSetSidebarOpen}
 				style={styles}
-			>
+			>	
 				<div id="width" className="container remove-all-margin-padding">
 					<LogoutBar/>
+					
 					<div className='row'>
-						
-						<div className= "col-sm-3 remove-all-margin-padding">
-						</div>
-				
-						<div className= "col-sm-9 remove-all-margin-padding">
+						<div className= "col-sm-12 remove-all-margin-padding">
 							{
 								cloneElement(this.props.children, {
 									sidebarOff: this.sidebarOff,

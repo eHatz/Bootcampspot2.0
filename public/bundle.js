@@ -25544,10 +25544,7 @@
 					_react2.default.createElement(
 						"div",
 						{ id: "Application", className: "Application_main" },
-						(0, _react.cloneElement)(this.props.children, {
-							sidebarOff: this.sidebarOff,
-							sidebarOn: this.sidebarOn
-						})
+						(0, _react.cloneElement)(this.props.children, {})
 					)
 				);
 			}
@@ -45026,10 +45023,9 @@
 						_react2.default.createElement(
 							"div",
 							{ className: "row" },
-							_react2.default.createElement("div", { className: "col-sm-3 remove-all-margin-padding" }),
 							_react2.default.createElement(
 								"div",
-								{ className: "col-sm-9 remove-all-margin-padding" },
+								{ className: "col-sm-12 remove-all-margin-padding" },
 								(0, _react.cloneElement)(this.props.children, {
 									sidebarOff: this.sidebarOff,
 									sidebarOn: this.sidebarOn,
