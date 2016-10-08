@@ -1,9 +1,12 @@
 #navBar {
-	background-color: black;
-	height: 80vh;
-	padding-top: 44px;
-
+   background-color: black;
+   height: 80vh;
+   padding-top: 44px;
+   border-bottom-style: solid;
 }
+
+
+
 .NavBarLink_linkText{
 	color: #ddd7d7;
 	font-size: 14px;
@@ -134,11 +137,14 @@ a:visited{
 
 
 #navBar {
-	background-color: black;
-	height: 80vh;
-	padding-top: 44px;
-
+   background-color: black;
+   height: 80vh;
+   padding-top: 44px;
+   border-bottom-style: solid;
 }
+
+
+
 .hideBtn {
 	display: none;
 }
@@ -365,12 +371,14 @@ a:visited{
 	width: 20%;
 }
 
-/*.attendanceBackground{
-	background-image: url('../../assets/images/attendance_watermark.png')
-	
+
+
+.attendanceBackground{
+	background-image: url('/assets/images/attendance_watermark.png');
+	height: 100vh;
 
 }
-*/
+
 .tableHeader {
 	display: inline-block;
     text-align: center;
@@ -381,6 +389,7 @@ a:visited{
     overflow: hidden;
     font-weight: bolder;
     border-bottom: 1px solid #2d2d2d;
+  
 }
 .tableData {
 	 display: inline-block;
@@ -401,7 +410,7 @@ a:visited{
     border-color: #868585;
     font-size: small;
     padding-top: 1px;
-    padding-bottom: 2px;
+    padding-bottom: 3px;
 }
 .homeworkPageCol1 {
 	width: 10%;
@@ -414,7 +423,9 @@ a:visited{
 }
 .homeworkPageCol4 {
 	width: 25%;
-}.syllabusPageCol1 {
+}
+
+.syllabusPageCol1 {
 	width: 55%;
 }
 
