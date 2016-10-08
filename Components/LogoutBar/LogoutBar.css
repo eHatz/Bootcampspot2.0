@@ -41,11 +41,18 @@
 
 	.LogoutBar_button{
 		display: inline;
+
 	}
+
+	#logoImg {
+		display: none;
+	}
+
 
 	#logoutBar_logo{ 
 		max-height: 70%;
 		max-width: 70%;
+
 	}
 
 	#logoutBar{
