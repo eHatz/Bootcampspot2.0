@@ -44817,11 +44817,15 @@
 					_react2.default.createElement(
 						"div",
 						{ className: "NavBarLink_imageDiv" },
-						_react2.default.createElement("img", { src: img, alt: "icon", className: "img-responsive" }),
 						_react2.default.createElement(
-							"h3",
-							{ className: "NavBarLink_linkText" },
-							name
+							"a",
+							{ id: "hover", href: navLink },
+							_react2.default.createElement("img", { src: img, alt: "icon", className: "img-responsive" }),
+							_react2.default.createElement(
+								"h3",
+								{ className: "NavBarLink_linkText" },
+								name
+							)
 						)
 					)
 				);

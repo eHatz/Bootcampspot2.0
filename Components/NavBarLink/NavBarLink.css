@@ -12,7 +12,10 @@
 
 .NavBarLink_linkDiv{
 	background-color: black;
-	padding-top: 1%;
+}
+
+#hover{
+	display: inherit;
 }
 
 

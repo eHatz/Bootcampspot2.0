@@ -9,7 +9,7 @@ var Navbar = React.createClass ({
 		return (
 			<div>
 				<div id="navBar">
-					<NavBarLink name="Attendance" img="/assets/images/attendance_nav.png" navLink="#/attendance"/> 
+					<NavBarLink name="Attendance" img="/assets/images/attendance_nav.png" navLink="#/attendance"/>
 					<NavBarLink name="Homework" img="assets/images/homework_nav.png" navLink="#/homework"/> 
 					<NavBarLink name="Syllabus" img="/assets/images/syllabus_nav.png" navLink="#/syllabus"/> 
 					<NavBarLink name="Projects" img="assets/images/projects_nav.png" navLink="#/projects"/> 

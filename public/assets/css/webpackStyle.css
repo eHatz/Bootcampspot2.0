@@ -1,6 +1,7 @@
 #navBar {
 	background-color: black;
-	height: 100%;
+	height: 80vh;
+	padding-top: 44px;
 }
 
 .NavBarLink_linkText{
@@ -17,7 +18,10 @@
 
 .NavBarLink_linkDiv{
 	background-color: black;
-	padding-top: 1%;
+}
+
+#hover{
+	display: inherit;
 }
 
 
@@ -40,11 +44,12 @@
 }
 
 #logoutBar_logo{
-	padding-top: 1%;
-	padding-left: 1%;
-	background-color: #343333;
-	text-align: center;
-	height: 15vh;
+	padding-top: 2%;
+    /* padding-left: 1%; */
+    background-color: #343333;
+    text-align: center;
+    height: 20vh;
+    padding-bottom: 2%;
 }
 #logoutBar_textDiv{
 	float: right;	
@@ -62,14 +67,14 @@
 }
 
 #logoutBar{
-	background-color: red;
-	position: static;
-	height: 15vh;
-	padding: 0px;
+	background-color: #de0303;
+    position: static;
+    height: 20vh;
+    padding: 0px;
 }
 
 
-/*@media screen and (max-width: 767px){
+@media screen and (max-width: 767px){
 
 	.LogoutBar_button{
 		display: inline;
@@ -93,12 +98,13 @@
 		padding: 0px 20px;
 	}
 }
-*/
+
 
 
 #navBar {
 	background-color: black;
-	height: 100%;
+	height: 80vh;
+	padding-top: 44px;
 }
 
 .hideBtn {
