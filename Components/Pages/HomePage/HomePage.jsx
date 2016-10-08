@@ -5,11 +5,6 @@ import "./HomePage.css";
 
 class HomePage extends Component {
 
-	componentDidMount(){
-		const { sidebarOff } = this.props;
-		sidebarOff();
-	}
-
 	render() {
 
 		return (
