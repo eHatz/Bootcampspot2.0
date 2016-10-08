@@ -16,13 +16,14 @@ class LogoutBar extends Component {
 							<div className="modal-content">
 								<div className="modal-header">
 									<button type="button" className="close" onClick={closeModal} data-dismiss="modal" aria-label="Close">X</button>
-									<NavBar/>
 								</div>
+								<NavBar/>
+								
 							</div>
 						</div>
 					</Modal>
 					<div id='logoutBar_logo' className='col-sm-3'>
-						<Button bsStyle="danger" className='hideBtn' onClick={openModal}>=</Button>
+						<Button className='hideBtn' onClick={openModal}>=</Button>
 						<img id='logoImg' src='/assets/images/logo2.png'/>
 					</div>
  
