@@ -12,9 +12,15 @@ class LogoutBar extends Component {
 			<div className="row">
 				<div id='logoutBar' className='col-md-12'> 
 					<Modal className="modal left fade" id="myModal" show={showModal} onHide={closeModal}>
-						<NavBar/>
+						<div className="modal-dialog" role="document">
+							<div className="modal-content">
+								<div className="modal-header">
+									<button type="button" className="close" onClick={closeModal} data-dismiss="modal" aria-label="Close">X</button>
+									<NavBar/>
+								</div>
+							</div>
+						</div>
 					</Modal>
-
 					<div id='logoutBar_logo' className='col-sm-3'>
 						<Button bsStyle="danger" className='hideBtn' onClick={openModal}>=</Button>
 						<img id='logoImg' src='/assets/images/logo2.png'/>

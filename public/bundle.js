@@ -25438,31 +25438,31 @@
 
 	var _LoggedIn2 = _interopRequireDefault(_LoggedIn);
 
-	var _HomePage = __webpack_require__(495);
+	var _HomePage = __webpack_require__(490);
 
 	var _HomePage2 = _interopRequireDefault(_HomePage);
 
-	var _AttendancePage = __webpack_require__(501);
+	var _AttendancePage = __webpack_require__(496);
 
 	var _AttendancePage2 = _interopRequireDefault(_AttendancePage);
 
-	var _CareerPage = __webpack_require__(510);
+	var _CareerPage = __webpack_require__(505);
 
 	var _CareerPage2 = _interopRequireDefault(_CareerPage);
 
-	var _HomeworkPage = __webpack_require__(513);
+	var _HomeworkPage = __webpack_require__(508);
 
 	var _HomeworkPage2 = _interopRequireDefault(_HomeworkPage);
 
-	var _SyllabusPage = __webpack_require__(516);
+	var _SyllabusPage = __webpack_require__(511);
 
 	var _SyllabusPage2 = _interopRequireDefault(_SyllabusPage);
 
-	var _FeedbackPage = __webpack_require__(519);
+	var _FeedbackPage = __webpack_require__(514);
 
 	var _FeedbackPage2 = _interopRequireDefault(_FeedbackPage);
 
-	var _ProjectsPage = __webpack_require__(522);
+	var _ProjectsPage = __webpack_require__(517);
 
 	var _ProjectsPage2 = _interopRequireDefault(_ProjectsPage);
 
@@ -44875,7 +44875,7 @@
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	__webpack_require__(493);
+	__webpack_require__(488);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44967,9 +44967,9 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	__webpack_require__(488);
+	__webpack_require__(520);
 
-	var _NavBar = __webpack_require__(490);
+	var _NavBar = __webpack_require__(522);
 
 	var _NavBar2 = _interopRequireDefault(_NavBar);
 
@@ -45009,7 +45009,24 @@
 						_react2.default.createElement(
 							_reactBootstrap.Modal,
 							{ className: "modal left fade", id: "myModal", show: showModal, onHide: closeModal },
-							_react2.default.createElement(_NavBar2.default, null)
+							_react2.default.createElement(
+								"div",
+								{ className: "modal-dialog", role: "document" },
+								_react2.default.createElement(
+									"div",
+									{ className: "modal-content" },
+									_react2.default.createElement(
+										"div",
+										{ className: "modal-header" },
+										_react2.default.createElement(
+											"button",
+											{ type: "button", className: "close", onClick: closeModal, "data-dismiss": "modal", "aria-label": "Close" },
+											"X"
+										),
+										_react2.default.createElement(_NavBar2.default, null)
+									)
+								)
+							)
 						),
 						_react2.default.createElement(
 							"div",
@@ -45067,94 +45084,6 @@
 		value: true
 	});
 
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	__webpack_require__(491);
-
-	var _NavBarLink = __webpack_require__(481);
-
-	var _NavBarLink2 = _interopRequireDefault(_NavBarLink);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Navbar = _react2.default.createClass({
-		displayName: "Navbar",
-		render: function render() {
-
-			return _react2.default.createElement(
-				"div",
-				null,
-				_react2.default.createElement(
-					"div",
-					{ id: "navBar" },
-					_react2.default.createElement(_NavBarLink2.default, { name: "Attendance", img: "/assets/images/attendance_nav.png", navLink: "#/attendance" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Homework", img: "assets/images/homework_nav.png", navLink: "#/homework" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Syllabus", img: "/assets/images/syllabus_nav.png", navLink: "#/syllabus" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Projects", img: "assets/images/projects_nav.png", navLink: "#/projects" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Feedback", img: "/assets/images/feedback_nav.png", navLink: "#/feedback" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Career", img: "assets/images/career_nav.png", navLink: "#/career" })
-				)
-			);
-		}
-	});
-
-	exports.default = Navbar;
-
-	// <div className = "row">
-	// 					<div className = "col-md-3">
-	// 						<div className = {styles.Navbar_title}>
-	// 							<h4 className = {styles.Navbar_h4}>RUTGERS UNIVERSITY</h4>
-	// 							<h1 className = {styles.Navbar_h1red}>BOOTCAMP</h1>
-	// 							<h1 className = {styles.Navbar_h1white}>SPOT</h1>
-	// 							<h1 className = {styles.Navbar_h1red}>2.0</h1>
-	// 						</div>
-	// 					</div>
-	// 					<div className = "col-md-9">
-	// 						<div className = {styles.Navbar_redPanel}>
-	// 							<p>Hi Jennine</p>
-	// 							<p>Logout</p>
-	// 						</div>
-	// 					</div>
-	// 				</div>
-	// 				<div className = "row">
-	// 					<div className = "col-md-3">
-	// 						<div className = {styles.Navbar_blackpanel}>
-	// 							<p>Attendence</p>
-	// 							<p>Homework</p>
-	// 							<p>Syllabus</p>
-	// 							<p>Projects</p>
-	// 							<p>Feedback</p>
-	// 							<p>Career</p>
-	// 						</div>
-	// 					</div>
-	// 				</div>
-
-/***/ },
-/* 491 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 492 */,
-/* 493 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 494 */,
-/* 495 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(1);
@@ -45163,11 +45092,11 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	var _Panel = __webpack_require__(496);
+	var _Panel = __webpack_require__(491);
 
 	var _Panel2 = _interopRequireDefault(_Panel);
 
-	__webpack_require__(499);
+	__webpack_require__(494);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45256,7 +45185,7 @@
 	*/
 
 /***/ },
-/* 496 */
+/* 491 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45273,7 +45202,7 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	__webpack_require__(497);
+	__webpack_require__(492);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45333,21 +45262,21 @@
 	exports.default = Panel;
 
 /***/ },
-/* 497 */
+/* 492 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 498 */,
-/* 499 */
+/* 493 */,
+/* 494 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 500 */,
-/* 501 */
+/* 495 */,
+/* 496 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45362,13 +45291,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(502);
+	__webpack_require__(497);
 
 	var _LogoutBar = __webpack_require__(487);
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	var _Table = __webpack_require__(504);
+	var _Table = __webpack_require__(499);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -45417,14 +45346,14 @@
 	exports.default = AttendancePage;
 
 /***/ },
-/* 502 */
+/* 497 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 503 */,
-/* 504 */
+/* 498 */,
+/* 499 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45439,9 +45368,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(505);
+	__webpack_require__(500);
 
-	var _TableRow = __webpack_require__(507);
+	var _TableRow = __webpack_require__(502);
 
 	var _TableRow2 = _interopRequireDefault(_TableRow);
 
@@ -45537,14 +45466,14 @@
 	exports.default = Table;
 
 /***/ },
-/* 505 */
+/* 500 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 506 */,
-/* 507 */
+/* 501 */,
+/* 502 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45559,7 +45488,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(508);
+	__webpack_require__(503);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45630,14 +45559,14 @@
 	exports.default = TableRow;
 
 /***/ },
-/* 508 */
+/* 503 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 509 */,
-/* 510 */
+/* 504 */,
+/* 505 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45652,7 +45581,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(511);
+	__webpack_require__(506);
 
 	var _LogoutBar = __webpack_require__(487);
 
@@ -45689,14 +45618,14 @@
 	exports.default = CareerPage;
 
 /***/ },
-/* 511 */
+/* 506 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 512 */,
-/* 513 */
+/* 507 */,
+/* 508 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45711,7 +45640,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(514);
+	__webpack_require__(509);
 
 	var _Navbar = __webpack_require__(476);
 
@@ -45721,7 +45650,7 @@
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	var _Table = __webpack_require__(504);
+	var _Table = __webpack_require__(499);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -45764,14 +45693,14 @@
 	exports.default = HomeworkPage;
 
 /***/ },
-/* 514 */
+/* 509 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 515 */,
-/* 516 */
+/* 510 */,
+/* 511 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45786,13 +45715,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(517);
+	__webpack_require__(512);
 
 	var _LogoutBar = __webpack_require__(487);
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	var _Table = __webpack_require__(504);
+	var _Table = __webpack_require__(499);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -45900,14 +45829,14 @@
 	exports.default = SyllabusPage;
 
 /***/ },
-/* 517 */
+/* 512 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 518 */,
-/* 519 */
+/* 513 */,
+/* 514 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45922,7 +45851,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(520);
+	__webpack_require__(515);
 
 	var _LogoutBar = __webpack_require__(487);
 
@@ -45959,14 +45888,14 @@
 	exports.default = FeedbackPage;
 
 /***/ },
-/* 520 */
+/* 515 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 521 */,
-/* 522 */
+/* 516 */,
+/* 517 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45981,7 +45910,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(523);
+	__webpack_require__(518);
 
 	var _Navbar = __webpack_require__(476);
 
@@ -45991,7 +45920,7 @@
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	var _Table = __webpack_require__(504);
+	var _Table = __webpack_require__(499);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -46032,6 +45961,94 @@
 	}(_react.Component);
 
 	exports.default = ProjectsPage;
+
+/***/ },
+/* 518 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 519 */,
+/* 520 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 521 */,
+/* 522 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(523);
+
+	var _NavBarLink = __webpack_require__(481);
+
+	var _NavBarLink2 = _interopRequireDefault(_NavBarLink);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Navbar = _react2.default.createClass({
+		displayName: "Navbar",
+		render: function render() {
+
+			return _react2.default.createElement(
+				"div",
+				null,
+				_react2.default.createElement(
+					"div",
+					{ id: "navBar" },
+					_react2.default.createElement(_NavBarLink2.default, { name: "Attendance", img: "/assets/images/attendance_nav.png", navLink: "#/attendance" }),
+					_react2.default.createElement(_NavBarLink2.default, { name: "Homework", img: "assets/images/homework_nav.png", navLink: "#/homework" }),
+					_react2.default.createElement(_NavBarLink2.default, { name: "Syllabus", img: "/assets/images/syllabus_nav.png", navLink: "#/syllabus" }),
+					_react2.default.createElement(_NavBarLink2.default, { name: "Projects", img: "assets/images/projects_nav.png", navLink: "#/projects" }),
+					_react2.default.createElement(_NavBarLink2.default, { name: "Feedback", img: "/assets/images/feedback_nav.png", navLink: "#/feedback" }),
+					_react2.default.createElement(_NavBarLink2.default, { name: "Career", img: "assets/images/career_nav.png", navLink: "#/career" })
+				)
+			);
+		}
+	});
+
+	exports.default = Navbar;
+
+	// <div className = "row">
+	// 					<div className = "col-md-3">
+	// 						<div className = {styles.Navbar_title}>
+	// 							<h4 className = {styles.Navbar_h4}>RUTGERS UNIVERSITY</h4>
+	// 							<h1 className = {styles.Navbar_h1red}>BOOTCAMP</h1>
+	// 							<h1 className = {styles.Navbar_h1white}>SPOT</h1>
+	// 							<h1 className = {styles.Navbar_h1red}>2.0</h1>
+	// 						</div>
+	// 					</div>
+	// 					<div className = "col-md-9">
+	// 						<div className = {styles.Navbar_redPanel}>
+	// 							<p>Hi Jennine</p>
+	// 							<p>Logout</p>
+	// 						</div>
+	// 					</div>
+	// 				</div>
+	// 				<div className = "row">
+	// 					<div className = "col-md-3">
+	// 						<div className = {styles.Navbar_blackpanel}>
+	// 							<p>Attendence</p>
+	// 							<p>Homework</p>
+	// 							<p>Syllabus</p>
+	// 							<p>Projects</p>
+	// 							<p>Feedback</p>
+	// 							<p>Career</p>
+	// 						</div>
+	// 					</div>
+	// 				</div>
 
 /***/ },
 /* 523 */
