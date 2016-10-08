@@ -45007,7 +45007,24 @@
 						_react2.default.createElement(
 							_reactBootstrap.Modal,
 							{ className: "modal left fade", id: "myModal", show: showModal, onHide: closeModal },
-							_react2.default.createElement(_NavBar2.default, null)
+							_react2.default.createElement(
+								"div",
+								{ className: "modal-dialog", role: "document" },
+								_react2.default.createElement(
+									"div",
+									{ className: "modal-content" },
+									_react2.default.createElement(
+										"div",
+										{ className: "modal-header" },
+										_react2.default.createElement(
+											"button",
+											{ type: "button", className: "close", onClick: closeModal, "data-dismiss": "modal", "aria-label": "Close" },
+											"X"
+										),
+										_react2.default.createElement(_NavBar2.default, null)
+									)
+								)
+							)
 						),
 						_react2.default.createElement(
 							"div",
