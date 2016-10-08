@@ -12,10 +12,10 @@ class LoggedIn extends Component {
 
 		super(props, context);
 		this.state = {
+
 			showModal: false,
 		};
 	}
-
 
 	close(){
 		this.setState({ showModal: false });
@@ -46,6 +46,7 @@ class LoggedIn extends Component {
 								closeModal: this.close.bind(this)
 							})
 						}
+
 					</div>
 				</div>
 			</div>

@@ -44894,6 +44894,7 @@
 			var _this = _possibleConstructorReturn(this, (LoggedIn.__proto__ || Object.getPrototypeOf(LoggedIn)).call(this, props, context));
 
 			_this.state = {
+
 				showModal: false
 			};
 			return _this;
@@ -45675,21 +45676,10 @@
 		}
 
 		_createClass(CareerPage, [{
-			key: "componentDidMount",
-			value: function componentDidMount() {
-				var sidebarOn = this.props.sidebarOn;
-
-				sidebarOn();
-			}
-		}, {
 			key: "render",
 			value: function render() {
 
-				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" })
-				);
+				return _react2.default.createElement("div", null);
 			}
 		}]);
 
@@ -45753,19 +45743,11 @@
 		}
 
 		_createClass(HomeworkPage, [{
-			key: "componentDidMount",
-			value: function componentDidMount() {
-				var sidebarOn = this.props.sidebarOn;
-
-				sidebarOn();
-			}
-		}, {
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
 					"div",
 					null,
-					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" }),
 					_react2.default.createElement(_Table2.default, { pageName: "homeworkPage",
 						header1: "WEEK",
 						header2: "HOMEWORK",
@@ -45836,20 +45818,12 @@
 		}
 
 		_createClass(SyllabusPage, [{
-			key: "componentDidMount",
-			value: function componentDidMount() {
-				var sidebarOn = this.props.sidebarOn;
-
-				sidebarOn();
-			}
-		}, {
 			key: "render",
 			value: function render() {
 
 				return _react2.default.createElement(
 					"div",
 					null,
-					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" }),
 					_react2.default.createElement(
 						"div",
 						{ id: "syllabus" },
@@ -45972,21 +45946,10 @@
 		}
 
 		_createClass(FeedbackPage, [{
-			key: "componentDidMount",
-			value: function componentDidMount() {
-				var sidebarOn = this.props.sidebarOn;
-
-				sidebarOn();
-			}
-		}, {
 			key: "render",
 			value: function render() {
 
-				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" })
-				);
+				return _react2.default.createElement("div", null);
 			}
 		}]);
 
@@ -46050,19 +46013,11 @@
 		}
 
 		_createClass(ProjectsPage, [{
-			key: "componentDidMount",
-			value: function componentDidMount() {
-				var sidebarOn = this.props.sidebarOn;
-
-				sidebarOn();
-			}
-		}, {
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
 					"div",
 					null,
-					_react2.default.createElement(_LogoutBar2.default, { UserName: "Tim" }),
 					_react2.default.createElement(_Table2.default, { pageName: "projectsPage",
 						header1: "WEEK",
 						header2: "PROJECT",

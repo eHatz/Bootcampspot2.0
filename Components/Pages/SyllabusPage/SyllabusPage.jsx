@@ -6,18 +6,11 @@ import Navbar from "../../Navbar/Navbar.jsx";
 
 class SyllabusPage extends Component {
 
-	componentDidMount(){
-		const { sidebarOn } = this.props;
-		sidebarOn();
-	}
-
 	render() {
 
 		return (
 
-			<div>
-				<LogoutBar UserName='Tim' />
-				
+			<div>				
 							<div id='syllabus'>
 								<h6>HOMEWORK</h6>
 								<ul>
@@ -44,7 +37,6 @@ class SyllabusPage extends Component {
 								header4='RECORDINGS'
 							/>
 						</div>
-
 			</div>
 		);
 	}

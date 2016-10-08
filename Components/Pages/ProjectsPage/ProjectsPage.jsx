@@ -6,16 +6,10 @@ import Table from "../../Table/Table.jsx";
 
 class ProjectsPage extends Component {
 
-	componentDidMount(){
-		const { sidebarOn } = this.props;
-		sidebarOn();
-	}
-
 	render() {
 		return (
 
 			<div>
-				<LogoutBar UserName='Tim' />
 					<Table pageName='projectsPage'
 						header1='WEEK' 
 						header2 = 'PROJECT' 
