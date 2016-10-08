@@ -25438,31 +25438,31 @@
 
 	var _LoggedIn2 = _interopRequireDefault(_LoggedIn);
 
-	var _HomePage = __webpack_require__(492);
+	var _HomePage = __webpack_require__(495);
 
 	var _HomePage2 = _interopRequireDefault(_HomePage);
 
-	var _AttendancePage = __webpack_require__(498);
+	var _AttendancePage = __webpack_require__(501);
 
 	var _AttendancePage2 = _interopRequireDefault(_AttendancePage);
 
-	var _CareerPage = __webpack_require__(507);
+	var _CareerPage = __webpack_require__(510);
 
 	var _CareerPage2 = _interopRequireDefault(_CareerPage);
 
-	var _HomeworkPage = __webpack_require__(510);
+	var _HomeworkPage = __webpack_require__(513);
 
 	var _HomeworkPage2 = _interopRequireDefault(_HomeworkPage);
 
-	var _SyllabusPage = __webpack_require__(513);
+	var _SyllabusPage = __webpack_require__(516);
 
 	var _SyllabusPage2 = _interopRequireDefault(_SyllabusPage);
 
-	var _FeedbackPage = __webpack_require__(516);
+	var _FeedbackPage = __webpack_require__(519);
 
 	var _FeedbackPage2 = _interopRequireDefault(_FeedbackPage);
 
-	var _ProjectsPage = __webpack_require__(519);
+	var _ProjectsPage = __webpack_require__(522);
 
 	var _ProjectsPage2 = _interopRequireDefault(_ProjectsPage);
 
@@ -44716,12 +44716,40 @@
 				_react2.default.createElement(
 					"div",
 					{ id: "navBar" },
-					_react2.default.createElement(_NavBarLink2.default, { name: "Attendance", img: "/assets/images/attendance_nav.png", navLink: "#/attendance" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Homework", img: "assets/images/homework_nav.png", navLink: "#/homework" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Syllabus", img: "/assets/images/syllabus_nav.png", navLink: "#/syllabus" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Projects", img: "assets/images/projects_nav.png", navLink: "#/projects" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Feedback", img: "/assets/images/feedback_nav.png", navLink: "#/feedback" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Career", img: "assets/images/career_nav.png", navLink: "#/career" })
+					_react2.default.createElement(
+						"ul",
+						null,
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Attendance", img: "/assets/images/attendance_nav.png", navLink: "#/attendance" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Homework", img: "assets/images/homework_nav.png", navLink: "#/homework" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Syllabus", img: "/assets/images/syllabus_nav.png", navLink: "#/syllabus" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Projects", img: "assets/images/projects_nav.png", navLink: "#/projects" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Feedback", img: "/assets/images/feedback_nav.png", navLink: "#/feedback" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Career", img: "assets/images/career_nav.png", navLink: "#/career" })
+						)
+					)
 				)
 			);
 		}
@@ -44817,11 +44845,15 @@
 					_react2.default.createElement(
 						"div",
 						{ className: "NavBarLink_imageDiv" },
-						_react2.default.createElement("img", { src: img, alt: "icon", className: "img-responsive" }),
 						_react2.default.createElement(
-							"h3",
-							{ className: "NavBarLink_linkText" },
-							name
+							"a",
+							{ id: "hover", href: navLink },
+							_react2.default.createElement("img", { src: img, alt: "icon", className: "img-responsive" }),
+							_react2.default.createElement(
+								"h3",
+								{ className: "NavBarLink_linkText" },
+								name
+							)
 						)
 					)
 				);
@@ -44865,10 +44897,6 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	var _reactSidebar = __webpack_require__(474);
-
-	var _reactSidebar2 = _interopRequireDefault(_reactSidebar);
-
 	var _Navbar = __webpack_require__(476);
 
 	var _Navbar2 = _interopRequireDefault(_Navbar);
@@ -44877,7 +44905,7 @@
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	__webpack_require__(490);
+	__webpack_require__(493);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44890,129 +44918,56 @@
 	var LoggedIn = function (_Component) {
 		_inherits(LoggedIn, _Component);
 
-		//===React-Sidebar====
-		function LoggedIn(props) {
+		function LoggedIn(props, context) {
 			_classCallCheck(this, LoggedIn);
 
-			var _this = _possibleConstructorReturn(this, (LoggedIn.__proto__ || Object.getPrototypeOf(LoggedIn)).call(this, props));
+			var _this = _possibleConstructorReturn(this, (LoggedIn.__proto__ || Object.getPrototypeOf(LoggedIn)).call(this, props, context));
 
 			_this.state = {
-				sidebarOpen: false,
-				sidebarDocked: true
-			};
 
-			_this.onSetSidebarOpen = _this.onSetSidebarOpen.bind(_this);
-			_this.componentWillMount = _this.componentWillMount.bind(_this);
-			_this.componentWillUnmount = _this.componentWillUnmount.bind(_this);
-			_this.mediaQueryChanged = _this.mediaQueryChanged.bind(_this);
-			_this.toggleSidebar = _this.toggleSidebar.bind(_this);
+				showModal: false
+			};
 			return _this;
 		}
 
 		_createClass(LoggedIn, [{
-			key: "onSetSidebarOpen",
-			value: function onSetSidebarOpen(open) {
-				this.setState({ sidebarOpen: open });
+			key: "close",
+			value: function close() {
+				this.setState({ showModal: false });
 			}
 		}, {
-			key: "componentWillMount",
-			value: function componentWillMount() {
-				var mql = window.matchMedia("(min-width: 768px)");
-				mql.addListener(this.mediaQueryChanged);
-				this.setState({ mql: mql, sidebarDocked: mql.matches });
+			key: "open",
+			value: function open() {
+				this.setState({ showModal: true });
 			}
-		}, {
-			key: "toggleSidebar",
-			value: function toggleSidebar() {
-				this.setState({ sidebarDocked: !this.state.sidebarDocked });
-				console.log("toggleSidebar -- ", this.state.sidebarOpen);
-			}
-		}, {
-			key: "componentWillUnmount",
-			value: function componentWillUnmount() {
-				this.state.mql.removeListener(this.mediaQueryChanged);
-			}
-		}, {
-			key: "mediaQueryChanged",
-			value: function mediaQueryChanged() {
-				this.setState({ sidebarDocked: this.state.mql.matches });
-			}
-			//===React-Sidebar====
-
-
 		}, {
 			key: "render",
 			value: function render() {
 
-				var styles = {
-					root: {
-						position: 'absolute',
-						top: 0,
-						left: 0,
-						right: 0,
-						overflow: 'hidden',
-						bottom: 0
-					},
-					sidebar: {
-						zIndex: 2,
-						position: 'absolute',
-						top: 0,
-						bottom: 0,
-						transition: 'transform .3s ease-out',
-						WebkitTransition: '-webkit-transform .3s ease-out',
-						willChange: 'transform',
-						overflowY: 'auto'
-					},
-					content: {
-						position: 'absolute',
-						top: 0,
-						left: 0,
-						right: 0,
-						bottom: 0,
-						overflow: 'auto',
-						transition: 'left .3s ease-out, right .3s ease-out'
-					},
-					overlay: {
-						zIndex: 1,
-						position: 'fixed',
-						top: 0,
-						left: 0,
-						right: 0,
-						bottom: 0,
-						opacity: 0,
-						visibility: 'hidden',
-						transition: 'opacity .3s ease-out',
-						backgroundColor: 'rgba(0,0,0,.3)'
-					},
-					dragHandle: {
-						zIndex: 1,
-						position: 'fixed',
-						top: 0,
-						bottom: 0
-					}
-				};
-
 				return _react2.default.createElement(
-					_reactSidebar2.default,
-					{
-						sidebar: _react2.default.createElement(_Navbar2.default, null),
-						open: this.state.sidebarOpen,
-						docked: this.state.sidebarDocked,
-						onSetOpen: this.onSetSidebarOpen,
-						style: styles
-					},
+					"div",
+					{ id: "width", className: "container remove-all-margin-padding" },
+					_react2.default.createElement(_LogoutBar2.default, {
+						showModal: this.state.showModal,
+						openModal: this.open.bind(this),
+						closeModal: this.close.bind(this)
+					}),
 					_react2.default.createElement(
 						"div",
-						{ id: "width", className: "container remove-all-margin-padding" },
-						_react2.default.createElement(_LogoutBar2.default, { toggleSidebar: this.toggleSidebar }),
+						{ className: "row" },
 						_react2.default.createElement(
 							"div",
-							{ className: "row" },
-							_react2.default.createElement(
-								"div",
-								{ className: "col-sm-12 remove-all-margin-padding" },
-								(0, _react.cloneElement)(this.props.children)
-							)
+							{ className: "col-sm-3 remove-all-margin-padding hideBar" },
+							_react2.default.createElement(_Navbar2.default, null)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-9 remove-all-margin-padding" },
+							(0, _react.cloneElement)(this.props.children, {
+								showModal: this.state.showModal,
+								openModal: this.open.bind(this),
+								closeModal: this.close.bind(this)
+							})
 						)
 					)
 				);
@@ -45044,6 +44999,10 @@
 
 	__webpack_require__(488);
 
+	var _NavBar = __webpack_require__(490);
+
+	var _NavBar2 = _interopRequireDefault(_NavBar);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -45067,7 +45026,9 @@
 			value: function render() {
 				var _props = this.props;
 				var UserName = _props.UserName;
-				var toggleSidebar = _props.toggleSidebar; //Add toogleSidebar to destructured props 
+				var showModal = _props.showModal;
+				var openModal = _props.openModal;
+				var closeModal = _props.closeModal; //Add toogleSidebar to destructured props 
 
 				return _react2.default.createElement(
 					"div",
@@ -45076,11 +45037,33 @@
 						"div",
 						{ id: "logoutBar", className: "col-md-12" },
 						_react2.default.createElement(
+							_reactBootstrap.Modal,
+							{ className: "modal left fade", id: "myModal", show: showModal, onHide: closeModal },
+							_react2.default.createElement(
+								"div",
+								{ className: "modal-dialog", role: "document" },
+								_react2.default.createElement(
+									"div",
+									{ className: "modal-content" },
+									_react2.default.createElement(
+										"div",
+										{ className: "modal-header" },
+										_react2.default.createElement(
+											"button",
+											{ type: "button", className: "close", onClick: closeModal, "data-dismiss": "modal", "aria-label": "Close" },
+											"X"
+										),
+										_react2.default.createElement(_NavBar2.default, null)
+									)
+								)
+							)
+						),
+						_react2.default.createElement(
 							"div",
 							{ id: "logoutBar_logo", className: "col-sm-3" },
 							_react2.default.createElement(
 								_reactBootstrap.Button,
-								{ bsStyle: "danger", onClick: toggleSidebar, className: "LogoutBar_button" },
+								{ bsStyle: "danger", className: "hideBtn", onClick: openModal },
 								"="
 							),
 							_react2.default.createElement("img", { id: "logoImg", src: "/assets/images/logo2.png" })
@@ -45123,13 +45106,122 @@
 /***/ },
 /* 489 */,
 /* 490 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(491);
+
+	var _NavBarLink = __webpack_require__(481);
+
+	var _NavBarLink2 = _interopRequireDefault(_NavBarLink);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Navbar = _react2.default.createClass({
+		displayName: "Navbar",
+		render: function render() {
+
+			return _react2.default.createElement(
+				"div",
+				null,
+				_react2.default.createElement(
+					"div",
+					{ id: "navBar" },
+					_react2.default.createElement(
+						"ul",
+						null,
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Attendance", img: "/assets/images/attendance_nav.png", navLink: "#/attendance" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Homework", img: "assets/images/homework_nav.png", navLink: "#/homework" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Syllabus", img: "/assets/images/syllabus_nav.png", navLink: "#/syllabus" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Projects", img: "assets/images/projects_nav.png", navLink: "#/projects" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Feedback", img: "/assets/images/feedback_nav.png", navLink: "#/feedback" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Career", img: "assets/images/career_nav.png", navLink: "#/career" })
+						)
+					)
+				)
+			);
+		}
+	});
+
+	exports.default = Navbar;
+
+	// <div className = "row">
+	// 					<div className = "col-md-3">
+	// 						<div className = {styles.Navbar_title}>
+	// 							<h4 className = {styles.Navbar_h4}>RUTGERS UNIVERSITY</h4>
+	// 							<h1 className = {styles.Navbar_h1red}>BOOTCAMP</h1>
+	// 							<h1 className = {styles.Navbar_h1white}>SPOT</h1>
+	// 							<h1 className = {styles.Navbar_h1red}>2.0</h1>
+	// 						</div>
+	// 					</div>
+	// 					<div className = "col-md-9">
+	// 						<div className = {styles.Navbar_redPanel}>
+	// 							<p>Hi Jennine</p>
+	// 							<p>Logout</p>
+	// 						</div>
+	// 					</div>
+	// 				</div>
+	// 				<div className = "row">
+	// 					<div className = "col-md-3">
+	// 						<div className = {styles.Navbar_blackpanel}>
+	// 							<p>Attendence</p>
+	// 							<p>Homework</p>
+	// 							<p>Syllabus</p>
+	// 							<p>Projects</p>
+	// 							<p>Feedback</p>
+	// 							<p>Career</p>
+	// 						</div>
+	// 					</div>
+	// 				</div>
+
+/***/ },
+/* 491 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 491 */,
-/* 492 */
+/* 492 */,
+/* 493 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 494 */,
+/* 495 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45146,11 +45238,11 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	var _Panel = __webpack_require__(493);
+	var _Panel = __webpack_require__(496);
 
 	var _Panel2 = _interopRequireDefault(_Panel);
 
-	__webpack_require__(496);
+	__webpack_require__(499);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45239,7 +45331,7 @@
 	*/
 
 /***/ },
-/* 493 */
+/* 496 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45256,7 +45348,7 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	__webpack_require__(494);
+	__webpack_require__(497);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45316,88 +45408,13 @@
 	exports.default = Panel;
 
 /***/ },
-/* 494 */
+/* 497 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 495 */,
-/* 496 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 497 */,
-/* 498 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	__webpack_require__(499);
-
-	var _Navbar = __webpack_require__(476);
-
-	var _Navbar2 = _interopRequireDefault(_Navbar);
-
-	var _LogoutBar = __webpack_require__(487);
-
-	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
-
-	var _Table = __webpack_require__(501);
-
-	var _Table2 = _interopRequireDefault(_Table);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var AttendancePage = function (_Component) {
-		_inherits(AttendancePage, _Component);
-
-		function AttendancePage() {
-			_classCallCheck(this, AttendancePage);
-
-			return _possibleConstructorReturn(this, (AttendancePage.__proto__ || Object.getPrototypeOf(AttendancePage)).apply(this, arguments));
-		}
-
-		_createClass(AttendancePage, [{
-			key: "render",
-			value: function render() {
-				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(_Table2.default, { pageName: "attendancePage",
-						header1: "NOTES",
-						header2: "TIME",
-						header3: "DATE",
-						header4: "ATTENDANCE"
-					})
-				);
-			}
-		}]);
-
-		return AttendancePage;
-	}(_react.Component);
-
-	exports.default = AttendancePage;
-
-/***/ },
+/* 498 */,
 /* 499 */
 /***/ function(module, exports) {
 
@@ -45422,7 +45439,84 @@
 
 	__webpack_require__(502);
 
-	var _TableRow = __webpack_require__(504);
+	var _LogoutBar = __webpack_require__(487);
+
+	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
+
+	var _Table = __webpack_require__(504);
+
+	var _Table2 = _interopRequireDefault(_Table);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var AttendancePage = function (_Component) {
+		_inherits(AttendancePage, _Component);
+
+		function AttendancePage() {
+			_classCallCheck(this, AttendancePage);
+
+			return _possibleConstructorReturn(this, (AttendancePage.__proto__ || Object.getPrototypeOf(AttendancePage)).apply(this, arguments));
+		}
+
+		_createClass(AttendancePage, [{
+			key: "render",
+			value: function render() {
+				var _props = this.props;
+				var openModal = _props.openModal;
+				var closeModal = _props.closeModal;
+				var showModal = _props.showModal;
+
+
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(_Table2.default, { pageName: "attendancePage",
+						header1: "NOTES",
+						header2: "TIME",
+						header3: "DATE",
+						header4: "ATTENDANCE"
+					})
+				);
+			}
+		}]);
+
+		return AttendancePage;
+	}(_react.Component);
+
+	exports.default = AttendancePage;
+
+/***/ },
+/* 502 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 503 */,
+/* 504 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(505);
+
+	var _TableRow = __webpack_require__(507);
 
 	var _TableRow2 = _interopRequireDefault(_TableRow);
 
@@ -45518,14 +45612,14 @@
 	exports.default = Table;
 
 /***/ },
-/* 502 */
+/* 505 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 503 */,
-/* 504 */
+/* 506 */,
+/* 507 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45540,7 +45634,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(505);
+	__webpack_require__(508);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45611,14 +45705,14 @@
 	exports.default = TableRow;
 
 /***/ },
-/* 505 */
+/* 508 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 506 */,
-/* 507 */
+/* 509 */,
+/* 510 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45633,7 +45727,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(508);
+	__webpack_require__(511);
 
 	var _LogoutBar = __webpack_require__(487);
 
@@ -45670,14 +45764,14 @@
 	exports.default = CareerPage;
 
 /***/ },
-/* 508 */
+/* 511 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 509 */,
-/* 510 */
+/* 512 */,
+/* 513 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45692,7 +45786,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(511);
+	__webpack_require__(514);
 
 	var _Navbar = __webpack_require__(476);
 
@@ -45702,7 +45796,7 @@
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	var _Table = __webpack_require__(501);
+	var _Table = __webpack_require__(504);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -45745,14 +45839,14 @@
 	exports.default = HomeworkPage;
 
 /***/ },
-/* 511 */
+/* 514 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 512 */,
-/* 513 */
+/* 515 */,
+/* 516 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45767,13 +45861,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(514);
+	__webpack_require__(517);
 
 	var _LogoutBar = __webpack_require__(487);
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	var _Table = __webpack_require__(501);
+	var _Table = __webpack_require__(504);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -45881,14 +45975,14 @@
 	exports.default = SyllabusPage;
 
 /***/ },
-/* 514 */
+/* 517 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 515 */,
-/* 516 */
+/* 518 */,
+/* 519 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45903,7 +45997,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(517);
+	__webpack_require__(520);
 
 	var _LogoutBar = __webpack_require__(487);
 
@@ -45940,14 +46034,14 @@
 	exports.default = FeedbackPage;
 
 /***/ },
-/* 517 */
+/* 520 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 518 */,
-/* 519 */
+/* 521 */,
+/* 522 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45962,7 +46056,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(520);
+	__webpack_require__(523);
 
 	var _Navbar = __webpack_require__(476);
 
@@ -45972,7 +46066,7 @@
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	var _Table = __webpack_require__(501);
+	var _Table = __webpack_require__(504);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -46015,7 +46109,7 @@
 	exports.default = ProjectsPage;
 
 /***/ },
-/* 520 */
+/* 523 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

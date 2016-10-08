@@ -13,8 +13,10 @@ class NavBarLink extends Component {
 		return (
 				<div className="NavBarLink_linkDiv">
 					<div className="NavBarLink_imageDiv">
-						<img src={img} alt="icon" className="img-responsive"/>
-						<h3 className="NavBarLink_linkText">{name}</h3>
+						<a id="hover" href={navLink}>
+							<img src={img} alt="icon" className="img-responsive"/>
+							<h3 className="NavBarLink_linkText">{name}</h3>
+						</a>
 					</div>
 				</div>
 
