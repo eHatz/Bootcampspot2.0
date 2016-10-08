@@ -8,7 +8,6 @@ class FeedbackPage extends Component {
 		return (
 
 			<div>
-				<LogoutBar UserName='Tim' />
 			</div>
 		);
 	}

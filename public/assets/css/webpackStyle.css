@@ -1,9 +1,103 @@
-.Application_main: {
-	align-items: center;
-	margin: 0 auto;
-	position: relative;
-	color:red;
-}.Panel_panelDiv{
+#navBar {
+	background-color: black;
+
+
+}
+
+
+.NavBarLink_linkText{
+	color: #ddd7d7;
+	font-size: 14px;
+	padding-left: 23px;
+}
+
+.NavBarLink_imageDiv{
+	display: inline-flex;
+	padding-left: 19%;
+	padding-top: 7%;
+}
+
+.NavBarLink_linkDiv{
+	background-color: black;
+	padding-top: 1%;
+}
+
+
+
+@media screen and (max-width: 768px){
+
+
+}
+
+
+@media screen and (max-width: 640px){
+
+
+	
+}
+
+
+.LogoutBar_button{
+	display: none;
+}
+
+#logoutBar_logo{
+	padding-top: 1%;
+	padding-left: 1%;
+	background-color: #343333;
+	text-align: center;
+	height: 15vh;
+}
+#logoutBar_textDiv{
+	float: right;	
+}
+#logoImg {
+	text-align: center;
+	max-width: 100%;
+}
+#logoutBar_username, #logoutBar_logout {
+	font-family: 'Roboto Condensed', sans-serif;	
+	color: #fcfbfb;
+	display: inline-block;
+	padding: 20px;
+}
+
+#logoutBar{
+	background-color: red;
+	position: static;
+	height: 15vh;
+	padding: 0px;
+}
+
+
+@media screen and (max-width: 767px){
+
+	.LogoutBar_button{
+		display: inline;
+	}
+
+	#logoutBar_logo{ 
+		max-height: 70%;
+		max-width: 70%;
+	}
+
+	#logoutBar{
+		background-color: #343333;
+		height: 15vh;
+	}
+
+	#logoutBar_textDiv {
+	    max-height: 30%;
+	    padding: 0px;
+	}
+	#logoutBar_username, #logoutBar_logout {
+		padding: 0px 20px;
+	}
+}
+
+
+
+.Panel_panelDiv{
 	height: 100vh;
   width: 100%;
 }
@@ -131,57 +225,25 @@
 }
 
 
-.homeworkPageCol1 {
-	width: 10%;
-}
-.homeworkPageCol2 {
+.attendancePageCol1 {
 	width: 40%;
 }
-.homeworkPageCol3 {
-	width: 25%;
+.attendancePageCol2 {
+	width: 20%;
 }
-.homeworkPageCol4 {
-	width: 25%;
-}#navBar {
-	background-color: black;
-
+.attendancePageCol3 {
+	width: 20%;
 }
-
-
-
-
-.NavBarLink_linkText{
-	color: #ddd7d7;
-	font-size: 14px;
-	padding-left: 23px;
+.attendancePageCol4 {
+	width: 20%;
 }
 
-.NavBarLink_imageDiv{
-	display: inline-flex;
-	padding-left: 19%;
-	padding-top: 7%;
-}
-
-.NavBarLink_linkDiv{
-	background-color: black;
-	padding-top: 1%;
-}
-
-
-
-@media screen and (max-width: 768px){
-
-
-}
-
-
-@media screen and (max-width: 640px){
-
-
+/*.attendanceBackground{
+	background-image: url('../../assets/images/attendance_watermark.png')
 	
+
 }
-
-
+*/
 .tableHeader {
 	display: inline-block;
 	text-align: center;
@@ -205,7 +267,18 @@
 	font-size: 18px;
 	line-height: 36px;
 }
-.syllabusPageCol1 {
+.homeworkPageCol1 {
+	width: 10%;
+}
+.homeworkPageCol2 {
+	width: 40%;
+}
+.homeworkPageCol3 {
+	width: 25%;
+}
+.homeworkPageCol4 {
+	width: 25%;
+}.syllabusPageCol1 {
 	width: 55%;
 }
 
