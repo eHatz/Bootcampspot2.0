@@ -20,13 +20,12 @@
     padding-left: 27%;
     padding-top: 4%;
     width: 100%;
-    border-bottom: 1px solid #2d2d2d;
     padding-bottom: 4%;
 }
 
 .NavBarLink_linkDiv:hover  {
 	background-color: black;
-	
+
 }
 
 #hover{
@@ -383,6 +382,7 @@ a:visited{
 .attendanceBackground{
 	background-image: url('/assets/images/attendance_watermark.png');
 	height: 80vh;
+	background-size: 100% auto;
 
 }
 
