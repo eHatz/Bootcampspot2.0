@@ -21,8 +21,9 @@
     padding-bottom: 4%;
 }
 
-.NavBarLink_linkDiv {
+.NavBarLink_linkDiv:hover  {
 	background-color: black;
+	
 }
 
 #hover{
@@ -48,12 +49,17 @@ a:visited{
 
 
 @media screen and (max-width: 768px){
+	.NavBarLink_imageDiv:hover { 
+	background-color: #343333;
+    width: 100%;
+	}
 
 
 }
 
 
 @media screen and (max-width: 640px){
+
 
 
 	
