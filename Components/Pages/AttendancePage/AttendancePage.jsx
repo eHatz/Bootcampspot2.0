@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import "./AttendancePage.css";
-import Navbar from "../../Navbar/Navbar.jsx"
 import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
 import Table from "../../Table/Table.jsx";
-
 class AttendancePage extends Component {
-	
+
 	render() {
+
+		const { openModal, closeModal, showModal } = this.props;
+
 		return (
 
 			<div>
@@ -21,5 +22,4 @@ class AttendancePage extends Component {
 		);
 	}
 }
-
 export default AttendancePage;

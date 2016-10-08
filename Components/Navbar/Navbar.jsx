@@ -9,12 +9,14 @@ var Navbar = React.createClass ({
 		return (
 			<div>
 				<div id="navBar">
-					<NavBarLink name="Attendance" img="/assets/images/attendance_nav.png" navLink="#/attendance"/> 
-					<NavBarLink name="Homework" img="assets/images/homework_nav.png" navLink="#/homework"/> 
-					<NavBarLink name="Syllabus" img="/assets/images/syllabus_nav.png" navLink="#/syllabus"/> 
-					<NavBarLink name="Projects" img="assets/images/projects_nav.png" navLink="#/projects"/> 
-					<NavBarLink name="Feedback" img="/assets/images/feedback_nav.png" navLink="#/feedback"/> 
-					<NavBarLink name="Career" img="assets/images/career_nav.png" navLink="#/career"/> 
+					<ul>
+						<li><NavBarLink name="Attendance" img="/assets/images/attendance_nav.png" navLink="#/attendance"/></li>
+						<li><NavBarLink name="Homework" img="assets/images/homework_nav.png" navLink="#/homework"/></li> 
+						<li><NavBarLink name="Syllabus" img="/assets/images/syllabus_nav.png" navLink="#/syllabus"/></li> 
+						<li><NavBarLink name="Projects" img="assets/images/projects_nav.png" navLink="#/projects"/></li> 
+						<li><NavBarLink name="Feedback" img="/assets/images/feedback_nav.png" navLink="#/feedback"/></li> 
+						<li><NavBarLink name="Career" img="assets/images/career_nav.png" navLink="#/career"/></li> 
+					</ul>
 				</div>
 			</div>
 			
