@@ -24,8 +24,9 @@
     padding-bottom: 4%;
 }
 
-.NavBarLink_linkDiv {
+.NavBarLink_linkDiv:hover  {
 	background-color: black;
+	
 }
 
 #hover{
@@ -51,12 +52,17 @@ a:visited{
 
 
 @media screen and (max-width: 768px){
+	.NavBarLink_imageDiv:hover { 
+	background-color: #343333;
+    width: 100%;
+	}
 
 
 }
 
 
 @media screen and (max-width: 640px){
+
 
 
 	
@@ -98,7 +104,7 @@ a:visited{
     position: static;
     height: 20vh;
     padding: 0px;
-    border-bottom: 12px double #fff;
+    border-bottom: 12px double #343333;
 }
 
 
@@ -117,6 +123,7 @@ a:visited{
 	#logoutBar_logo{ 
 		max-height: 70%;
 		max-width: 70%;
+		border-bottom: none;
 
 	}
 
@@ -375,7 +382,7 @@ a:visited{
 
 .attendanceBackground{
 	background-image: url('/assets/images/attendance_watermark.png');
-	height: 100vh;
+	height: 80vh;
 
 }
 
@@ -397,10 +404,10 @@ a:visited{
     color: black;
     margin: 0px;
     overflow: hidden;
-    background-color: #f3f2f2;
     height: 52px;
     font-size: 15px;
     line-height: 53px;
+    border-bottom: 1px solid #d2cfcf;
 
 }
 
