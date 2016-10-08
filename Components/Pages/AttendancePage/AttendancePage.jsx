@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./AttendancePage.css";
 import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
 import Table from "../../Table/Table.jsx";
+import "./AttendancePage.css";
+
 class AttendancePage extends Component {
 
 	render() {
@@ -10,7 +12,7 @@ class AttendancePage extends Component {
 
 		return (
 
-			<div>
+			<div className="attendanceBackground">
 				<Table pageName='attendancePage'
 					header1='NOTES' 
 					header2 = 'TIME' 
