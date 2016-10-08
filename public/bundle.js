@@ -45032,7 +45032,7 @@
 
 				return _react2.default.createElement(
 					"div",
-					{ className: "row" },
+					{ id: "attendanceBackground", className: "row" },
 					_react2.default.createElement(
 						"div",
 						{ id: "logoutBar", className: "col-md-12" },
@@ -45475,7 +45475,7 @@
 
 				return _react2.default.createElement(
 					"div",
-					null,
+					{ className: "attendanceBackground" },
 					_react2.default.createElement(_Table2.default, { pageName: "attendancePage",
 						header1: "NOTES",
 						header2: "TIME",

@@ -30,10 +30,11 @@ class Table extends Component {
 		return (
 			<div>
 				<div id='headRow' className='row remove-all-margin-padding'>
-					<p className={pageName +'Col1 tableHeader'}>{header1}</p> 
+			 		<p className={pageName +'Col1 tableHeader'}>{header1}</p>
 					<p className={pageName +'Col2 tableHeader'}>{header2}</p>
 					<p className={pageName +'Col3 tableHeader'}>{header3}</p>
 					<p className={pageName +'Col4 tableHeader'}>{header4}</p>
+
 				</div>
 				{
 					dummyData.map((item, index) =>

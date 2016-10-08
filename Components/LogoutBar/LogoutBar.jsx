@@ -9,7 +9,7 @@ class LogoutBar extends Component {
 		const { UserName, showModal, openModal, closeModal } = this.props;	//Add toogleSidebar to destructured props 
 
 		return (
-			<div className="row">
+			<div id="attendanceBackground" className="row">
 				<div id='logoutBar' className='col-md-12'> 
 					<Modal className="modal left fade" id="myModal" show={showModal} onHide={closeModal}>
 						<div className="modal-dialog" role="document">
