@@ -2,7 +2,7 @@
 	background-color: black;
 	height: 80vh;
 	padding-top: 44px;
-	border-bottom-style: solid;
+
 }
 .NavBarLink_linkText{
 	color: #ddd7d7;
@@ -103,11 +103,18 @@ a:visited{
 
 	.LogoutBar_button{
 		display: inline;
+
 	}
+
+	#logoImg {
+		display: none;
+	}
+
 
 	#logoutBar_logo{ 
 		max-height: 70%;
 		max-width: 70%;
+
 	}
 
 	#logoutBar{
@@ -130,7 +137,7 @@ a:visited{
 	background-color: black;
 	height: 80vh;
 	padding-top: 44px;
-	border-bottom-style: solid;
+
 }
 .hideBtn {
 	display: none;
@@ -142,7 +149,7 @@ a:visited{
 		display: none;
 	}
 	.hideBtn {
-		display: inline-block;
+		display: table;
 	}
 
 }
@@ -211,6 +218,7 @@ a:visited{
 	background-color: #FAFAFA;
 	padding: 0px;
 	margin: 0px;
+	height: 20vh;
 }
 .close {
 	padding: 5px;

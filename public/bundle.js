@@ -45052,9 +45052,9 @@
 											"button",
 											{ type: "button", className: "close", onClick: closeModal, "data-dismiss": "modal", "aria-label": "Close" },
 											"X"
-										),
-										_react2.default.createElement(_NavBar2.default, null)
-									)
+										)
+									),
+									_react2.default.createElement(_NavBar2.default, null)
 								)
 							)
 						),
@@ -45063,7 +45063,7 @@
 							{ id: "logoutBar_logo", className: "col-sm-3" },
 							_react2.default.createElement(
 								_reactBootstrap.Button,
-								{ bsStyle: "danger", className: "hideBtn", onClick: openModal },
+								{ className: "hideBtn", onClick: openModal },
 								"="
 							),
 							_react2.default.createElement("img", { id: "logoImg", src: "/assets/images/logo2.png" })
