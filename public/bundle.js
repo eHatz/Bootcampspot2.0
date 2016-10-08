@@ -44716,12 +44716,40 @@
 				_react2.default.createElement(
 					"div",
 					{ id: "navBar" },
-					_react2.default.createElement(_NavBarLink2.default, { name: "Attendance", img: "/assets/images/attendance_nav.png", navLink: "#/attendance" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Homework", img: "assets/images/homework_nav.png", navLink: "#/homework" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Syllabus", img: "/assets/images/syllabus_nav.png", navLink: "#/syllabus" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Projects", img: "assets/images/projects_nav.png", navLink: "#/projects" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Feedback", img: "/assets/images/feedback_nav.png", navLink: "#/feedback" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Career", img: "assets/images/career_nav.png", navLink: "#/career" })
+					_react2.default.createElement(
+						"ul",
+						null,
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Attendance", img: "/assets/images/attendance_nav.png", navLink: "#/attendance" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Homework", img: "assets/images/homework_nav.png", navLink: "#/homework" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Syllabus", img: "/assets/images/syllabus_nav.png", navLink: "#/syllabus" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Projects", img: "assets/images/projects_nav.png", navLink: "#/projects" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Feedback", img: "/assets/images/feedback_nav.png", navLink: "#/feedback" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Career", img: "assets/images/career_nav.png", navLink: "#/career" })
+						)
+					)
 				)
 			);
 		}
@@ -45108,12 +45136,40 @@
 				_react2.default.createElement(
 					"div",
 					{ id: "navBar" },
-					_react2.default.createElement(_NavBarLink2.default, { name: "Attendance", img: "/assets/images/attendance_nav.png", navLink: "#/attendance" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Homework", img: "assets/images/homework_nav.png", navLink: "#/homework" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Syllabus", img: "/assets/images/syllabus_nav.png", navLink: "#/syllabus" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Projects", img: "assets/images/projects_nav.png", navLink: "#/projects" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Feedback", img: "/assets/images/feedback_nav.png", navLink: "#/feedback" }),
-					_react2.default.createElement(_NavBarLink2.default, { name: "Career", img: "assets/images/career_nav.png", navLink: "#/career" })
+					_react2.default.createElement(
+						"ul",
+						null,
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Attendance", img: "/assets/images/attendance_nav.png", navLink: "#/attendance" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Homework", img: "assets/images/homework_nav.png", navLink: "#/homework" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Syllabus", img: "/assets/images/syllabus_nav.png", navLink: "#/syllabus" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Projects", img: "assets/images/projects_nav.png", navLink: "#/projects" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Feedback", img: "/assets/images/feedback_nav.png", navLink: "#/feedback" })
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(_NavBarLink2.default, { name: "Career", img: "assets/images/career_nav.png", navLink: "#/career" })
+						)
+					)
 				)
 			);
 		}
