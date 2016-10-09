@@ -53,7 +53,7 @@ app.use(passport.session());
 app.get('/login', function(req, res){
 	console.log('=============================LOGIN GET=============================================');
     //res.setHeader('Content-Type', 'application/json');
-    res.json(JSON.stringify(req.user));
+    res.json((req.user));
 });
 
 app.get('/', (req, res) => {

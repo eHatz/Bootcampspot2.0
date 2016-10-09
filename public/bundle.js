@@ -25556,13 +25556,13 @@
 						return;
 					};
 					console.log(response.json);
-					// response.json().then(function(data) {
-					// 	// this.setState({ 
-					// 	// 	LoggedIn: true,
-					// 	// 	UserInfo: [data]
-					// 	//  }); 
-					// 	console.log(data);  
-					// });  
+					response.json().then(function (data) {
+						// this.setState({ 
+						// 	LoggedIn: true,
+						// 	UserInfo: [data]
+						//  }); 
+						console.log(data);
+					});
 				});
 			}
 		}, {
