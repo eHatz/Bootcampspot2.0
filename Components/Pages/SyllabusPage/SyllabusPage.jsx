@@ -10,7 +10,7 @@ class SyllabusPage extends Component {
 
 		return (
 
-			<div>				
+			<div className= 'syllabusBackground'>				
 				<div id='syllabus'>
 					<h3>HOMEWORK</h3>
 					<ul>
