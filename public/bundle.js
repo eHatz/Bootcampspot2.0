@@ -45069,7 +45069,7 @@
 								{ className: "hideBtn", onClick: openModal },
 								_react2.default.createElement("img", { id: "hamburger", src: "assets/images/hamburger.png" })
 							),
-							_react2.default.createElement("img", { id: "logoImg", src: "/assets/images/logo2.png" })
+							_react2.default.createElement("img", { id: "logoImg1", src: "/assets/images/logo2.png" })
 						),
 						_react2.default.createElement(
 							"div",
@@ -45081,7 +45081,7 @@
 									"h4",
 									{ id: "logoutBar_username" },
 									UserName,
-									" "
+									"Hi Jennine"
 								),
 								_react2.default.createElement(
 									"h4",
