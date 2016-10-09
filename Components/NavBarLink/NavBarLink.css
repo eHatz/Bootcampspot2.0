@@ -2,28 +2,57 @@
 	color: #ddd7d7;
 	font-size: 14px;
 	padding-left: 23px;
+	text-decoration: none;
+	display:block;
 }
 
 .NavBarLink_imageDiv{
 	display: inline-flex;
-	padding-left: 19%;
-	padding-top: 7%;
+    padding-left: 27%;
+    padding-top: 4%;
+    width: 100%;
+    padding-bottom: 4%;
 }
 
-.NavBarLink_linkDiv{
+.NavBarLink_linkDiv:hover  {
 	background-color: black;
-	padding-top: 1%;
+
 }
 
+#hover{
+	display: inherit;
+	
+}
+a:hover { 
+    background-color: #343333;
+    width: 212PX;
+   
+}
+
+.NavBarLink_imageDiv:hover { 
+	background-color: #343333;
+    width: 100%;
+}
+
+
+
+a:visited{
+	color: red;
+}
 
 
 @media screen and (max-width: 768px){
+	.NavBarLink_imageDiv:hover { 
+	background-color: #343333;
+    width: 100%;
+	}
 
 
 }
 
 
 @media screen and (max-width: 640px){
+
 
 
 	

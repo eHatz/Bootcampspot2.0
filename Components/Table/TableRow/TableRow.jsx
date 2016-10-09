@@ -15,7 +15,7 @@ class TableRow extends Component {
 					<p className={pageName +'Col2 tableData'}>{col2}</p>
 					<p className={pageName +'Col3 tableData'}>{col3}</p>
 					<div className={pageName +'Col4 tableData'}>
-						<button id='hwButton' className='btn btn-primary'>Submit</button>
+					<button id='hwButton' className='btn btn-primary'>Submit</button>
 					</div>
 				</div>
 			</div>

@@ -3,18 +3,23 @@
 }
 
 #logoutBar_logo{
-	padding-top: 1%;
-	padding-left: 1%;
-	background-color: #343333;
-	text-align: center;
-	height: 15vh;
+	padding-top: 2%;
+    /* padding-left: 1%; */
+    background-color: #343333;
+    text-align: center;
+    height: 20vh;
+    padding-bottom: 2%;
+    border-bottom: 12px double #de0303;
+
 }
 #logoutBar_textDiv{
 	float: right;	
 }
 #logoImg {
 	text-align: center;
-	max-width: 100%;
+	max-width: 81%;
+	max-height: 100%;
+	
 }
 #logoutBar_username, #logoutBar_logout {
 	font-family: 'Roboto Condensed', sans-serif;	
@@ -24,10 +29,11 @@
 }
 
 #logoutBar{
-	background-color: red;
-	position: static;
-	height: 15vh;
-	padding: 0px;
+	background-color: #de0303;
+    position: static;
+    height: 20vh;
+    padding: 0px;
+    border-bottom: 12px double #343333;
 }
 
 
@@ -35,11 +41,19 @@
 
 	.LogoutBar_button{
 		display: inline;
+
 	}
+
+	#logoImg {
+		display: none;
+	}
+
 
 	#logoutBar_logo{ 
 		max-height: 70%;
 		max-width: 70%;
+		border-bottom: none;
+
 	}
 
 	#logoutBar{

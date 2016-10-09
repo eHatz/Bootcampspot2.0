@@ -11,9 +11,12 @@
 	width: 20%;
 }
 
-/*.attendanceBackground{
-	background-image: url('../../assets/images/attendance_watermark.png')
-	
+
+
+.attendanceBackground{
+	background-image: url('/assets/images/attendance_watermark.png');
+	height: 80vh;
+	background-size: 100% auto;
 
 }
-*/
+
