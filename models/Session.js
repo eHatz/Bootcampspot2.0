@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-	const Section = sequelize.define('Session', {
+	const Session = sequelize.define('Session', {
 		Subject: DataTypes.STRING,
 		LessonNumber: DataTypes.DECIMAL,
 		Date: DataTypes.DATEONLY,
@@ -17,5 +17,5 @@ module.exports = function(sequelize, DataTypes) {
 		}
 	}
 });
-return Section;
+return Session;
 };
