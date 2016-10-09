@@ -45050,8 +45050,9 @@
 										{ className: "modal-header" },
 										_react2.default.createElement(
 											"button",
-											{ type: "button", className: "close", onClick: closeModal, "data-dismiss": "modal", "aria-label": "Close" },
-											"X"
+											{ className: "modalHeaderWidth", type: "button", onClick: closeModal, "data-dismiss": "modal", "aria-label": "Close" },
+											_react2.default.createElement("img", { id: "close", src: "assets/images/close_button.png" }),
+											_react2.default.createElement("img", { id: "logoImg", src: "/assets/images/logo2.png" })
 										)
 									),
 									_react2.default.createElement(_NavBar2.default, null)
@@ -45064,7 +45065,7 @@
 							_react2.default.createElement(
 								_reactBootstrap.Button,
 								{ className: "hideBtn", onClick: openModal },
-								"="
+								_react2.default.createElement("img", { id: "hamburger", src: "assets/images/hamburger.png" })
 							),
 							_react2.default.createElement("img", { id: "logoImg", src: "/assets/images/logo2.png" })
 						),
