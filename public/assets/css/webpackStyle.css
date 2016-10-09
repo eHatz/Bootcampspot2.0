@@ -1,6 +1,6 @@
 #navBarDiv {
    background-color: black;
-   height: 80vh;
+   height: 85vh;
    padding-top: 44px;
    border-bottom-style: solid;
 }
@@ -83,21 +83,33 @@ a:visited{
 
 }
 #logoutBar_textDiv{
-	float: right;	
+	float: right;
+	margin-top: 31px;	
 }
 #logoImg {
 	text-align: center;
 	max-width: 100%;
     max-height: 100%;
     margin-top: 22px;
-	
+}
+
+#logoImg1{
+	margin-top: 25px;
+	max-width: 95%;
 }
 #logoutBar_username, #logoutBar_logout {
 	font-family: 'Roboto Condensed', sans-serif;	
 	color: #fcfbfb;
 	display: inline-block;
-	padding: 20px;
+	padding-left: 13px;
+	padding-right: 13px;
 }
+#logoutBar_logout {
+	border-left: 3px solid #343333;
+    padding-right: 12px;
+   
+}
+
 
 #logoutBar{
 	background-color: #de0303;
@@ -118,6 +130,8 @@ a:visited{
 	
 	#logoImg {
 		background-color: #3a3939;
+		margin-top: 14%;
+    	margin-left: 10%
 
 	}
 
@@ -140,15 +154,21 @@ a:visited{
 	}
 	#logoutBar_username, #logoutBar_logout {
 		padding: 0px 20px;
-		float: right;
+		
+
 	}
 }
 
+@media screen and (max-width: 353px){
+  
+  
+  
+}
 
 
 #navBarDiv {
    background-color: black;
-   height: 80vh;
+   height: 85vh;
    padding-top: 44px;
    border-bottom-style: solid;
 }
@@ -166,6 +186,8 @@ a:visited{
 	}
 	.hideBtn {
 		display: table;
+		border: none;
+		background-color: transparent;
 	}
 
 
@@ -235,10 +257,12 @@ a:visited{
 	background-color: #3a3939;;
 	padding: 0px;
 	margin: 0px;
-	height: 23vh;
+	height: 16vh;
 }
 .modalHeaderWidth{
 	width: 100%;
+	background-color: #3a3939;
+	border: none;
 }
 
 #close {

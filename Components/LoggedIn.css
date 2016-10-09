@@ -9,6 +9,8 @@
 	}
 	.hideBtn {
 		display: table;
+		border: none;
+		background-color: transparent;
 	}
 
 
@@ -78,10 +80,12 @@
 	background-color: #3a3939;;
 	padding: 0px;
 	margin: 0px;
-	height: 23vh;
+	height: 16vh;
 }
 .modalHeaderWidth{
 	width: 100%;
+	background-color: #3a3939;
+	border: none;
 }
 
 #close {
