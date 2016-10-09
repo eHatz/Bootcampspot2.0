@@ -1,14 +1,14 @@
 
 /*SUBJECT*/
 .syllabusPageCol1 {
-	width: 55%;
+	width: 30%;
 	font-size: 150%;
 
 }
 
 /*LESSON*/
 .syllabusPageCol2 {
-	width: 15%;
+	width: 23%;
 	font-size: 150%;
 }
 
@@ -20,7 +20,7 @@
 
 /*RECORDING*/
 .syllabusPageCol4 {
-	width: 15%;
+	width: 22%;
 	font-size: 150%;
 
 }
@@ -28,7 +28,7 @@
 	color: #343333;
 	margin: 5%;
 	font-size: 22px;
-	background:rgba(171,171,171,0.5);
+	background:rgba(246,246,246,0.5);
 	padding: 4%;
 	margin:0;
 }
