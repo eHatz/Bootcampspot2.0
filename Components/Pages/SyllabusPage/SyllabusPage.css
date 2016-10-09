@@ -1,18 +1,45 @@
+
+/*SUBJECT*/
 .syllabusPageCol1 {
-	width: 55%;
+	width: 30%;
+	font-size: 150%;
+
 }
 
+/*LESSON*/
 .syllabusPageCol2 {
-	width: 15%;
+	width: 23%;
+	font-size: 150%;
 }
 
+/*DATE*/
 .syllabusPageCol3{
 	width: 15%;
+	font-size: 150%;
 }
 
+/*RECORDING*/
 .syllabusPageCol4 {
-	width: 15%;
+	width: 22%;
+	font-size: 150%;
+
 }
 #syllabus {
-	color: black;
+	color: #343333;
+	margin: 5%;
+	font-size: 22px;
+	background:rgba(246,246,246,0.5);
+	padding: 4%;
+	margin:0;
+}
+.syllabusBackground{
+	background-image: url('/assets/images/syllabus_watermark.png');
+	height: 80vh;
+	background-size: 100% auto;
+	background-size: cover;
+    background-position: 50% 50%;
+
+}
+.syllabusPageCol1.tableData{
+	color:#d30000;
 }

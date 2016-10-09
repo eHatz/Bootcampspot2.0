@@ -45663,9 +45663,9 @@
 							"div",
 							{ className: pageName + 'Col4 tableData' },
 							_react2.default.createElement(
-								"button",
-								{ id: "hwButton", className: "btn btn-primary" },
-								"Submit"
+								"a",
+								{ href: "#" },
+								_react2.default.createElement("span", { className: "glyphicon glyphicon-expand" })
 							)
 						)
 					)
@@ -45872,12 +45872,12 @@
 
 				return _react2.default.createElement(
 					"div",
-					null,
+					{ className: "syllabusBackground" },
 					_react2.default.createElement(
 						"div",
 						{ id: "syllabus" },
 						_react2.default.createElement(
-							"h6",
+							"h3",
 							null,
 							"HOMEWORK"
 						),
@@ -45896,7 +45896,7 @@
 							)
 						),
 						_react2.default.createElement(
-							"h6",
+							"h3",
 							null,
 							"ATTENDANCE"
 						),
@@ -45915,7 +45915,7 @@
 							)
 						),
 						_react2.default.createElement(
-							"h6",
+							"h3",
 							null,
 							"PROJECTS"
 						),
