@@ -25528,13 +25528,44 @@
 	var Application = function (_Component) {
 		_inherits(Application, _Component);
 
-		function Application() {
+		function Application(props, context) {
 			_classCallCheck(this, Application);
 
-			return _possibleConstructorReturn(this, (Application.__proto__ || Object.getPrototypeOf(Application)).apply(this, arguments));
+			// set initial state
+			var _this = _possibleConstructorReturn(this, (Application.__proto__ || Object.getPrototypeOf(Application)).call(this, props, context));
+			// whenever you overwrite React Component's constructor method, you must
+			// call super() so it will instantiate the Component class it inherits
+			// from
+
+
+			_this.state = {
+				LoggedIn: false,
+				UserInfo: []
+			};
+			return _this;
 		}
 
 		_createClass(Application, [{
+			key: "componentWillMount",
+			value: function componentWillMount() {
+				console.log('RUNNNNNNNNNNIIIIIIIIIIINNNNNNNNNNNNNGGGGGGGGGGG');
+
+				fetch('/login').then(function (response) {
+					if (response.status !== 200) {
+						console.log(response.status);
+						return;
+					};
+					console.log(response.json);
+					response.json().then(function (data) {
+						// this.setState({ 
+						// 	LoggedIn: true,
+						// 	UserInfo: [data]
+						//  }); 
+						console.log(data);
+					});
+				});
+			}
+		}, {
 			key: "render",
 			value: function render() {
 
@@ -44715,7 +44746,7 @@
 				null,
 				_react2.default.createElement(
 					"div",
-					{ id: "navBar" },
+					{ id: "navBarDiv" },
 					_react2.default.createElement(
 						"ul",
 						null,
@@ -44756,35 +44787,6 @@
 	});
 
 	exports.default = Navbar;
-
-	// <div className = "row">
-	// 					<div className = "col-md-3">
-	// 						<div className = {styles.Navbar_title}>
-	// 							<h4 className = {styles.Navbar_h4}>RUTGERS UNIVERSITY</h4>
-	// 							<h1 className = {styles.Navbar_h1red}>BOOTCAMP</h1>
-	// 							<h1 className = {styles.Navbar_h1white}>SPOT</h1>
-	// 							<h1 className = {styles.Navbar_h1red}>2.0</h1>
-	// 						</div>
-	// 					</div>
-	// 					<div className = "col-md-9">
-	// 						<div className = {styles.Navbar_redPanel}>
-	// 							<p>Hi Jennine</p>
-	// 							<p>Logout</p>
-	// 						</div>
-	// 					</div>
-	// 				</div>
-	// 				<div className = "row">
-	// 					<div className = "col-md-3">
-	// 						<div className = {styles.Navbar_blackpanel}>
-	// 							<p>Attendence</p>
-	// 							<p>Homework</p>
-	// 							<p>Syllabus</p>
-	// 							<p>Projects</p>
-	// 							<p>Feedback</p>
-	// 							<p>Career</p>
-	// 						</div>
-	// 					</div>
-	// 				</div>
 
 /***/ },
 /* 477 */
@@ -45136,7 +45138,7 @@
 				null,
 				_react2.default.createElement(
 					"div",
-					{ id: "navBar" },
+					{ id: "navBarDiv" },
 					_react2.default.createElement(
 						"ul",
 						null,
@@ -45177,35 +45179,6 @@
 	});
 
 	exports.default = Navbar;
-
-	// <div className = "row">
-	// 					<div className = "col-md-3">
-	// 						<div className = {styles.Navbar_title}>
-	// 							<h4 className = {styles.Navbar_h4}>RUTGERS UNIVERSITY</h4>
-	// 							<h1 className = {styles.Navbar_h1red}>BOOTCAMP</h1>
-	// 							<h1 className = {styles.Navbar_h1white}>SPOT</h1>
-	// 							<h1 className = {styles.Navbar_h1red}>2.0</h1>
-	// 						</div>
-	// 					</div>
-	// 					<div className = "col-md-9">
-	// 						<div className = {styles.Navbar_redPanel}>
-	// 							<p>Hi Jennine</p>
-	// 							<p>Logout</p>
-	// 						</div>
-	// 					</div>
-	// 				</div>
-	// 				<div className = "row">
-	// 					<div className = "col-md-3">
-	// 						<div className = {styles.Navbar_blackpanel}>
-	// 							<p>Attendence</p>
-	// 							<p>Homework</p>
-	// 							<p>Syllabus</p>
-	// 							<p>Projects</p>
-	// 							<p>Feedback</p>
-	// 							<p>Career</p>
-	// 						</div>
-	// 					</div>
-	// 				</div>
 
 /***/ },
 /* 491 */
