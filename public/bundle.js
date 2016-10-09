@@ -45903,7 +45903,7 @@
 						"div",
 						{ id: "syllabus" },
 						_react2.default.createElement(
-							"h6",
+							"h3",
 							null,
 							"HOMEWORK"
 						),
@@ -45922,7 +45922,7 @@
 							)
 						),
 						_react2.default.createElement(
-							"h6",
+							"h3",
 							null,
 							"ATTENDANCE"
 						),
@@ -45941,7 +45941,7 @@
 							)
 						),
 						_react2.default.createElement(
-							"h6",
+							"h3",
 							null,
 							"PROJECTS"
 						),

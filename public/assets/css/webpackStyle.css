@@ -20,7 +20,7 @@
     padding-left: 27%;
     padding-top: 4%;
     width: 100%;
-    border-bottom: 1px solid #2d2d2d;
+   
     padding-bottom: 4%;
 }
 
@@ -378,12 +378,9 @@ a:visited{
 	width: 20%;
 }
 
-
-
 .attendanceBackground{
 	background-image: url('/assets/images/attendance_watermark.png');
 	height: 80vh;
-
 }
 
 .tableHeader {
@@ -448,8 +445,14 @@ a:visited{
 	width: 15%;
 }
 #syllabus {
-	color: black;
-}.projectsPageCol1 {
+	color: #343333;
+	margin: 5%;
+	font-size: 22px;
+	background-color:#D2D5D6;
+	padding: 4%;
+	margin:0;
+}
+.projectsPageCol1 {
 	width: 10%;
 }
 .projectsPageCol2 {
