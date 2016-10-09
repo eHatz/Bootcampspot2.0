@@ -1,12 +1,14 @@
 .tableHeader {
 	display: inline-block;
     text-align: center;
-    color: #b30303;
+    color: #d30000;
     padding: 10px 0px;
     margin-top: 5px;
     margin-bottom: 0px;
     overflow: hidden;
     font-weight: bolder;
     border-bottom: 1px solid #2d2d2d;
+    font-weight: bolder;
+
   
 }
