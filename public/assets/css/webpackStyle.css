@@ -20,7 +20,6 @@
     padding-left: 27%;
     padding-top: 4%;
     width: 100%;
-     border-bottom: 1px solid #2d2d2d;
     padding-bottom: 4%;
 }
 
@@ -392,25 +391,22 @@ a:visited{
 .attendanceBackground{
 	background-image: url('/assets/images/attendance_watermark.png');
 	height: 80vh;
-<<<<<<< HEAD
-=======
 	background-size: 100% auto;
 	background-size: cover;
     background-position: 50% 50%;
-
->>>>>>> f56c71cf72b55bf9563601bc25b0403cf8fe01ee
 }
 
 .tableHeader {
 	display: inline-block;
     text-align: center;
-    color: #b30303;
+    color: #d30000;
     padding: 10px 0px;
     margin-top: 5px;
     margin-bottom: 0px;
     overflow: hidden;
     font-weight: bolder;
     border-bottom: 1px solid #2d2d2d;
+    font-weight: bolder;
   
 }
 .tableData {
@@ -434,6 +430,10 @@ a:visited{
     padding-top: 1px;
     padding-bottom: 3px;
 }
+.glyphicon{
+    color:#d30000;
+    font-size:200%;
+}
 .homeworkPageCol1 {
 	width: 10%;
 }
@@ -447,20 +447,31 @@ a:visited{
 	width: 25%;
 }
 
+
+/*SUBJECT*/
 .syllabusPageCol1 {
 	width: 55%;
+	font-size: 150%;
+
 }
 
+/*LESSON*/
 .syllabusPageCol2 {
 	width: 15%;
+	font-size: 150%;
 }
 
+/*DATE*/
 .syllabusPageCol3{
 	width: 15%;
+	font-size: 150%;
 }
 
+/*RECORDING*/
 .syllabusPageCol4 {
 	width: 15%;
+	font-size: 150%;
+
 }
 #syllabus {
 	color: #343333;
@@ -469,6 +480,17 @@ a:visited{
 	background:rgba(171,171,171,0.5);
 	padding: 4%;
 	margin:0;
+}
+.syllabusBackground{
+	background-image: url('/assets/images/syllabus_watermark.png');
+	height: 80vh;
+	background-size: 100% auto;
+	background-size: cover;
+    background-position: 50% 50%;
+
+}
+.syllabusPageCol1.tableData{
+	color:#d30000;
 }
 .projectsPageCol1 {
 	width: 10%;

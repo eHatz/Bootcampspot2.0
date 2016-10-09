@@ -45663,9 +45663,9 @@
 							"div",
 							{ className: pageName + 'Col4 tableData' },
 							_react2.default.createElement(
-								"button",
-								{ id: "hwButton", className: "btn btn-primary" },
-								"Submit"
+								"a",
+								{ href: "#" },
+								_react2.default.createElement("span", { className: "glyphicon glyphicon-expand" })
 							)
 						)
 					)
