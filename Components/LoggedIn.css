@@ -11,6 +11,7 @@
 		display: table;
 	}
 
+
 }
 /*******************************
 * MODAL AS LEFT/RIGHT SIDEBAR
@@ -74,14 +75,18 @@
 
 .modal-header {
 	border-bottom-color: #EEEEEE;
-	background-color: #FAFAFA;
+	background-color: #3a3939;;
 	padding: 0px;
 	margin: 0px;
-	height: 20vh;
+	height: 23vh;
 }
-.close {
-	padding: 5px;
-	background-color: white;
-	color: white;
-	opacity: 1;
+.modalHeaderWidth{
+	width: 100%;
 }
+
+#close {
+	float: right
+}
+	
+	
+
