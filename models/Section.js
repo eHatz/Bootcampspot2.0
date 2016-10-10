@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
 				Section.hasMany(models.Session)
 				Section.hasMany(models.Assignment)
 				Section.hasMany(models.Announcement)
-				Section.belongsToMany(models.User, {as: "Class", through: "UserSection"});
+				Section.belongsToMany(models.User, { through: "UserSection"});
 
 			}
 		}
