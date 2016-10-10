@@ -51,13 +51,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get('/login', function(req, res){
-		res.setHeader('Content-Type', 'application/json');
-    console.log(req.session.userInfo)
-    console.log(req.user)
-    var jsonObj = {
-		something: 'somethingelse',
-		username:req.session.userInfo,
-	};
+	res.setHeader('Content-Type', 'application/json');
     res.json(req.session.userInfo);
 });
 
