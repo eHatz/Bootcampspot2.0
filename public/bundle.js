@@ -44989,7 +44989,9 @@
 
 	function pretendRequest(email, pass, cb) {
 	  setTimeout(function () {
+
 	    if (email === 'jennine@optonline.net' && pass === 'password1') {
+
 	      cb({
 	        authenticated: true,
 	        token: Math.random().toString(36).substring(7)
