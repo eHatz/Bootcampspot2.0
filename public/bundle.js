@@ -46104,6 +46104,10 @@
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
+	var _Navbar = __webpack_require__(476);
+
+	var _Navbar2 = _interopRequireDefault(_Navbar);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -46125,7 +46129,11 @@
 			key: "render",
 			value: function render() {
 
-				return _react2.default.createElement("div", null);
+				return _react2.default.createElement(
+					"div",
+					{ className: "feedbackBackground" },
+					_react2.default.createElement("img", { src: "assets/images/threeBalls.png" })
+				);
 			}
 		}]);
 
