@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
 			// associations can be defined here
 
 			Assignment.belongsTo(Section)
-			Assignment.belongsToMany(Users, {through: "Submission"});
+			Assignment.belongsToMany(Users, {through: "UserAssignment"});
 			
 		}
 	}
