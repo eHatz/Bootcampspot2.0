@@ -60,13 +60,17 @@
 
 	var _routes2 = _interopRequireDefault(_routes);
 
+	var _auth = __webpack_require__(525);
+
+	var _auth2 = _interopRequireDefault(_auth);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	_reactDom2.default.render(_react2.default.createElement(
 	  _reactRouter.Router,
 	  { history: _reactRouter.hashHistory },
 	  _routes2.default
-	), document.getElementById('app'));
+	), document.getElementById('example'));
 
 /***/ },
 /* 1 */
@@ -25493,7 +25497,7 @@
 /* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -25504,6 +25508,10 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(158);
+
+	var _reactRouter = __webpack_require__(159);
 
 	var _reactBootstrap = __webpack_require__(224);
 
@@ -25516,6 +25524,10 @@
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 
 	__webpack_require__(484);
+
+	var _auth = __webpack_require__(525);
+
+	var _auth2 = _interopRequireDefault(_auth);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25539,43 +25551,38 @@
 
 
 			_this.state = {
-				LoggedIn: false,
+				loggedIn: _auth2.default.loggedIn(),
 				UserInfo: []
 			};
 			return _this;
 		}
 
 		_createClass(Application, [{
-			key: "componentWillMount",
-			value: function componentWillMount() {
-				console.log('RUNNNNNNNNNNIIIIIIIIIIINNNNNNNNNNNNNGGGGGGGGGGG');
-
-				fetch('/login').then(function (response) {
-					if (response.status !== 200) {
-						console.log(response.status);
-						return;
-					};
-					console.log(response.json);
-					response.json().then(function (data) {
-						// this.setState({ 
-						// 	LoggedIn: true,
-						// 	UserInfo: [data]
-						//  }); 
-						console.log(data);
-					});
+			key: 'updateAuth',
+			value: function updateAuth(loggedIn) {
+				this.setState({
+					loggedIn: loggedIn
 				});
 			}
 		}, {
-			key: "render",
+			key: 'componentWillMount',
+			value: function componentWillMount() {
+				_auth2.default.onChange = this.updateAuth.bind(this);
+				_auth2.default.login();
+			}
+		}, {
+			key: 'render',
 			value: function render() {
 
 				return _react2.default.createElement(
-					"div",
-					{ id: "width", className: "container" },
+					'div',
+					{ id: 'width', className: 'container' },
 					_react2.default.createElement(
-						"div",
-						{ id: "Application", className: "Application_main" },
-						(0, _react.cloneElement)(this.props.children, {})
+						'div',
+						{ id: 'Application', className: 'Application_main' },
+						(0, _react.cloneElement)(this.props.children, {
+							loggedIn: this.state.loggedIn
+						})
 					)
 				);
 			}
@@ -25585,6 +25592,29 @@
 	}(_react.Component);
 
 	exports.default = Application;
+
+	// const App = React.createClass({
+
+
+	//   render() {
+	//     return (
+	//       <div>
+	//         <ul>
+	//           <li>
+	//             {this.state.loggedIn ? (
+	//               <Link to="/logout">Log out</Link>
+	//             ) : (
+	//               <Link to="/login">Sign in</Link>
+	//             )}
+	//           </li>
+	//           <li><Link to="/about">About</Link></li>
+	//           <li><Link to="/dashboard">Dashboard</Link> (authenticated)</li>
+	//         </ul>
+	//         {this.props.children || <p>You are {!this.state.loggedIn && 'not'} logged in.</p>}
+	//       </div>
+	//     )
+	//   }
+	// })
 
 /***/ },
 /* 224 */
@@ -45242,6 +45272,8 @@
 		_createClass(HomePage, [{
 			key: "render",
 			value: function render() {
+				var loggedIn = this.props.loggedIn;
+
 
 				return _react2.default.createElement(
 					"div",
@@ -45260,9 +45292,13 @@
 							_react2.default.createElement(
 								"div",
 								null,
-								_react2.default.createElement(
+								loggedIn ? _react2.default.createElement(
 									"a",
-									{ href: "/#github" },
+									{ href: "/#logout" },
+									_react2.default.createElement("img", { id: "HomePage_login", src: "/assets/images/logos.png", alt: "githubLogo" })
+								) : _react2.default.createElement(
+									"a",
+									{ href: "/login/github" },
 									_react2.default.createElement("img", { id: "HomePage_login", src: "/assets/images/github.png", alt: "githubLogo" })
 								)
 							)
@@ -46009,6 +46045,7 @@
 				return _react2.default.createElement(
 					"div",
 					{ className: "feedbackBackground" },
+					_react2.default.createElement("img", { className: "threeOrbs", src: "assets/images/threeBalls.png" }),
 					_react2.default.createElement("img", { src: "assets/images/threeBalls.png" })
 				);
 			}
@@ -46099,6 +46136,61 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 524 */,
+/* 525 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	module.exports = {
+	  login: function login(email, pass, cb) {
+	    var _this = this;
+
+	    cb = arguments[arguments.length - 1];
+	    if (localStorage.token) {
+	      if (cb) cb(true);
+	      this.onChange(true);
+	      return;
+	    }
+	    pretendRequest(email, pass, function (res) {
+	      if (res.authenticated) {
+	        localStorage.token = res.token;
+	        if (cb) cb(true);
+	        _this.onChange(true);
+	      } else {
+	        if (cb) cb(false);
+	        _this.onChange(false);
+	      }
+	    });
+	  },
+	  getToken: function getToken() {
+	    return localStorage.token;
+	  },
+	  logout: function logout(cb) {
+	    delete localStorage.token;
+	    if (cb) cb();
+	    this.onChange(false);
+	  },
+	  loggedIn: function loggedIn() {
+	    return !!localStorage.token;
+	  },
+	  onChange: function onChange() {}
+	};
+
+	function pretendRequest(email, pass, cb) {
+	  setTimeout(function () {
+	    if (email === 'ehatz01@gmail.com' && pass === 'password1') {
+	      cb({
+	        authenticated: true,
+	        token: Math.random().toString(36).substring(7)
+	      });
+	    } else {
+	      cb({ authenticated: false });
+	    }
+	  }, 0);
+	}
 
 /***/ }
 /******/ ]);

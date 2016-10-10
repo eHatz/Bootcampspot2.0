@@ -501,6 +501,7 @@ body{
     color:#d30000;
     font-size:200%;
 }
+
 .careerBackground{
 	background-image: url('/assets/images/career_watermark.png');
 	height: 80vh;
@@ -518,6 +519,14 @@ body{
 }
 .homeworkPageCol4 {
 	width: 25%;
+}
+.homeworkPageBackground{
+	background-image: url('/assets/images/homework_watermark.png');
+	height: 80vh;
+	background-size: 100% auto;
+	background-size: cover;
+    background-position: 50% 50%;
+
 }
 
 .homeworkBackground{
@@ -646,7 +655,10 @@ h3{
 	background-size: 100% auto;
 	background-size: cover;
     background-position: 50% 50%;
+}
 
+.threeOrbs{
+	margin-left: 20%;
 
 }.projectsPageCol1 {
 	width: 10%;
@@ -660,6 +672,7 @@ h3{
 .projectsPageCol4 {
 	width: 25%;
 }
+
 
 .projectsBackground{
 	background-image: url('/assets/images/projects_watermark.png');
