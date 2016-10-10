@@ -25470,11 +25470,11 @@
 
 	var _ProjectsPage2 = _interopRequireDefault(_ProjectsPage);
 
-	var _login = __webpack_require__(528);
+	var _login = __webpack_require__(526);
 
 	var _login2 = _interopRequireDefault(_login);
 
-	var _logout = __webpack_require__(529);
+	var _logout = __webpack_require__(527);
 
 	var _logout2 = _interopRequireDefault(_logout);
 
@@ -45173,8 +45173,9 @@
 										{ className: "modal-header" },
 										_react2.default.createElement(
 											"button",
-											{ type: "button", className: "close", onClick: closeModal, "data-dismiss": "modal", "aria-label": "Close" },
-											"X"
+											{ className: "modalHeaderWidth", type: "button", onClick: closeModal, "data-dismiss": "modal", "aria-label": "Close" },
+											_react2.default.createElement("img", { id: "close", src: "assets/images/close_button.png" }),
+											_react2.default.createElement("img", { id: "logoImg", src: "/assets/images/logo2.png" })
 										)
 									),
 									_react2.default.createElement(_NavBar2.default, null)
@@ -45187,9 +45188,9 @@
 							_react2.default.createElement(
 								_reactBootstrap.Button,
 								{ className: "hideBtn", onClick: openModal },
-								"="
+								_react2.default.createElement("img", { id: "hamburger", src: "assets/images/hamburger.png" })
 							),
-							_react2.default.createElement("img", { id: "logoImg", src: "/assets/images/logo2.png" })
+							_react2.default.createElement("img", { id: "logoImg1", src: "/assets/images/logo2.png" })
 						),
 						_react2.default.createElement(
 							"div",
@@ -45201,7 +45202,7 @@
 									"h4",
 									{ id: "logoutBar_username" },
 									UserName,
-									" "
+									"Hi Jennine"
 								),
 								_react2.default.createElement(
 									"h4",
@@ -45789,9 +45790,9 @@
 							"div",
 							{ className: pageName + 'Col4 tableData' },
 							_react2.default.createElement(
-								"button",
-								{ id: "hwButton", className: "btn btn-primary" },
-								"Submit"
+								"a",
+								{ href: "#" },
+								_react2.default.createElement("span", { className: "glyphicon glyphicon-expand" })
 							)
 						)
 					)
@@ -45998,12 +45999,12 @@
 
 				return _react2.default.createElement(
 					"div",
-					null,
+					{ className: "syllabusBackground" },
 					_react2.default.createElement(
 						"div",
 						{ id: "syllabus" },
 						_react2.default.createElement(
-							"h6",
+							"h3",
 							null,
 							"HOMEWORK"
 						),
@@ -46022,7 +46023,7 @@
 							)
 						),
 						_react2.default.createElement(
-							"h6",
+							"h3",
 							null,
 							"ATTENDANCE"
 						),
@@ -46041,7 +46042,7 @@
 							)
 						),
 						_react2.default.createElement(
-							"h6",
+							"h3",
 							null,
 							"PROJECTS"
 						),
@@ -46216,9 +46217,7 @@
 
 /***/ },
 /* 525 */,
-/* 526 */,
-/* 527 */,
-/* 528 */
+/* 526 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46276,7 +46275,7 @@
 	exports.default = Login;
 
 /***/ },
-/* 529 */
+/* 527 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

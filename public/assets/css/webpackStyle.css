@@ -1,6 +1,6 @@
 #navBarDiv {
    background-color: black;
-   height: 80vh;
+   height: 85vh;
    padding-top: 44px;
    border-bottom-style: solid;
 }
@@ -83,20 +83,33 @@ a:visited{
 
 }
 #logoutBar_textDiv{
-	float: right;	
+	float: right;
+	margin-top: 31px;	
 }
 #logoImg {
 	text-align: center;
-	max-width: 81%;
-	max-height: 100%;
-	
+	max-width: 100%;
+    max-height: 100%;
+    margin-top: 22px;
+}
+
+#logoImg1{
+	margin-top: 25px;
+	max-width: 95%;
 }
 #logoutBar_username, #logoutBar_logout {
 	font-family: 'Roboto Condensed', sans-serif;	
 	color: #fcfbfb;
 	display: inline-block;
-	padding: 20px;
+	padding-left: 13px;
+	padding-right: 13px;
 }
+#logoutBar_logout {
+	border-left: 3px solid #343333;
+    padding-right: 12px;
+   
+}
+
 
 #logoutBar{
 	background-color: #de0303;
@@ -107,28 +120,32 @@ a:visited{
 }
 
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 768px){
 
 	.LogoutBar_button{
 		display: inline;
 
 	}
-
+	
+	
 	#logoImg {
-		display: none;
+		background-color: #3a3939;
+		margin-top: 14%;
+    	margin-left: 10%
+
 	}
 
 
 	#logoutBar_logo{ 
 		max-height: 70%;
-		max-width: 70%;
 		border-bottom: none;
+
 
 	}
 
 	#logoutBar{
 		background-color: #343333;
-		height: 15vh;
+		height: 22vh;
 	}
 
 	#logoutBar_textDiv {
@@ -137,14 +154,21 @@ a:visited{
 	}
 	#logoutBar_username, #logoutBar_logout {
 		padding: 0px 20px;
+		
+
 	}
 }
 
+@media screen and (max-width: 353px){
+  
+  
+  
+}
 
 
 #navBarDiv {
    background-color: black;
-   height: 80vh;
+   height: 85vh;
    padding-top: 44px;
    border-bottom-style: solid;
 }
@@ -162,7 +186,10 @@ a:visited{
 	}
 	.hideBtn {
 		display: table;
+		border: none;
+		background-color: transparent;
 	}
+
 
 }
 /*******************************
@@ -227,17 +254,24 @@ a:visited{
 
 .modal-header {
 	border-bottom-color: #EEEEEE;
-	background-color: #FAFAFA;
+	background-color: #3a3939;;
 	padding: 0px;
 	margin: 0px;
-	height: 20vh;
+	height: 16vh;
 }
-.close {
-	padding: 5px;
-	background-color: white;
-	color: white;
-	opacity: 1;
-}.Panel_panelDiv{
+.modalHeaderWidth{
+	width: 100%;
+	background-color: #3a3939;
+	border: none;
+}
+
+#close {
+	float: right
+}
+	
+	
+
+.Panel_panelDiv{
 	height: 100vh;
   width: 100%;
 }
@@ -310,7 +344,7 @@ a:visited{
 #HomePage_logo{
 	z-index: 1; 
 	position: absolute; 
-	padding-top: 4%;
+	padding-top: 6%;
     padding-right: 4%;
     padding-left: 4%;
 	
@@ -378,25 +412,26 @@ a:visited{
 	width: 20%;
 }
 
-
-
 .attendanceBackground{
 	background-image: url('/assets/images/attendance_watermark.png');
 	height: 80vh;
 	background-size: 100% auto;
-
+	background-size: cover;
+    background-position: 50% 50%;
 }
 
 .tableHeader {
 	display: inline-block;
     text-align: center;
-    color: #b30303;
+    color: #d30000;
     padding: 10px 0px;
     margin-top: 5px;
     margin-bottom: 0px;
     overflow: hidden;
     font-weight: bolder;
     border-bottom: 1px solid #2d2d2d;
+    font-weight: bolder;
+
   
 }
 .tableData {
@@ -420,6 +455,10 @@ a:visited{
     padding-top: 1px;
     padding-bottom: 3px;
 }
+.glyphicon{
+    color:#d30000;
+    font-size:200%;
+}
 .homeworkPageCol1 {
 	width: 10%;
 }
@@ -433,24 +472,52 @@ a:visited{
 	width: 25%;
 }
 
+
+/*SUBJECT*/
 .syllabusPageCol1 {
-	width: 55%;
+	width: 30%;
+	font-size: 150%;
+
 }
 
+/*LESSON*/
 .syllabusPageCol2 {
-	width: 15%;
+	width: 23%;
+	font-size: 150%;
 }
 
+/*DATE*/
 .syllabusPageCol3{
 	width: 15%;
+	font-size: 150%;
 }
 
+/*RECORDING*/
 .syllabusPageCol4 {
-	width: 15%;
+	width: 22%;
+	font-size: 150%;
+
 }
 #syllabus {
-	color: black;
-}.projectsPageCol1 {
+	color: #343333;
+	margin: 5%;
+	font-size: 22px;
+	background:rgba(246,246,246,0.5);
+	padding: 4%;
+	margin:0;
+}
+.syllabusBackground{
+	background-image: url('/assets/images/syllabus_watermark.png');
+	height: 80vh;
+	background-size: 100% auto;
+	background-size: cover;
+    background-position: 50% 50%;
+
+}
+.syllabusPageCol1.tableData{
+	color:#d30000;
+}
+.projectsPageCol1 {
 	width: 10%;
 }
 .projectsPageCol2 {

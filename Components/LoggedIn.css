@@ -9,7 +9,10 @@
 	}
 	.hideBtn {
 		display: table;
+		border: none;
+		background-color: transparent;
 	}
+
 
 }
 /*******************************
@@ -74,14 +77,20 @@
 
 .modal-header {
 	border-bottom-color: #EEEEEE;
-	background-color: #FAFAFA;
+	background-color: #3a3939;;
 	padding: 0px;
 	margin: 0px;
-	height: 20vh;
+	height: 16vh;
 }
-.close {
-	padding: 5px;
-	background-color: white;
-	color: white;
-	opacity: 1;
+.modalHeaderWidth{
+	width: 100%;
+	background-color: #3a3939;
+	border: none;
 }
+
+#close {
+	float: right
+}
+	
+	
+
