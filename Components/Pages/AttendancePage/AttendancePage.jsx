@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./AttendancePage.css";
 import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
 import Table from "../../Table/Table.jsx";
-import "./AttendancePage.css";
+
 
 class AttendancePage extends Component {
 

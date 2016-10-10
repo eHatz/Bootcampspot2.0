@@ -1,6 +1,6 @@
 #navBarDiv {
    background-color: black;
-   height: 80vh;
+   height: 85vh;
    padding-top: 44px;
    border-bottom-style: solid;
 }
@@ -83,21 +83,33 @@ a:visited{
 
 }
 #logoutBar_textDiv{
-	float: right;	
+	float: right;
+	margin-top: 31px;	
 }
 #logoImg {
 	text-align: center;
 	max-width: 100%;
     max-height: 100%;
     margin-top: 22px;
-	
+}
+
+#logoImg1{
+	margin-top: 25px;
+	max-width: 95%;
 }
 #logoutBar_username, #logoutBar_logout {
 	font-family: 'Roboto Condensed', sans-serif;	
 	color: #fcfbfb;
 	display: inline-block;
-	padding: 20px;
+	padding-left: 13px;
+	padding-right: 13px;
 }
+#logoutBar_logout {
+	border-left: 3px solid #343333;
+    padding-right: 12px;
+   
+}
+
 
 #logoutBar{
 	background-color: #de0303;
@@ -118,6 +130,8 @@ a:visited{
 	
 	#logoImg {
 		background-color: #3a3939;
+		margin-top: 14%;
+    	margin-left: 10%
 
 	}
 
@@ -140,15 +154,21 @@ a:visited{
 	}
 	#logoutBar_username, #logoutBar_logout {
 		padding: 0px 20px;
-		float: right;
+		
+
 	}
 }
 
+@media screen and (max-width: 353px){
+  
+  
+  
+}
 
 
 #navBarDiv {
    background-color: black;
-   height: 80vh;
+   height: 85vh;
    padding-top: 44px;
    border-bottom-style: solid;
 }
@@ -166,6 +186,8 @@ a:visited{
 	}
 	.hideBtn {
 		display: table;
+		border: none;
+		background-color: transparent;
 	}
 
 
@@ -235,10 +257,12 @@ a:visited{
 	background-color: #3a3939;;
 	padding: 0px;
 	margin: 0px;
-	height: 23vh;
+	height: 16vh;
 }
 .modalHeaderWidth{
 	width: 100%;
+	background-color: #3a3939;
+	border: none;
 }
 
 #close {
@@ -388,27 +412,30 @@ a:visited{
 	width: 20%;
 }
 
-
-
 .attendanceBackground{
 	background-image: url('/assets/images/attendance_watermark.png');
 	height: 80vh;
 	background-size: 100% auto;
 	background-size: cover;
     background-position: 50% 50%;
-
 }
+/*.attendancePageCol4.tableData{
+	
+	
+}*/
 
 .tableHeader {
 	display: inline-block;
     text-align: center;
-    color: #b30303;
+    color: #d30000;
     padding: 10px 0px;
     margin-top: 5px;
     margin-bottom: 0px;
     overflow: hidden;
     font-weight: bolder;
     border-bottom: 1px solid #2d2d2d;
+    font-weight: bolder;
+
   
 }
 .tableData {
@@ -432,7 +459,17 @@ a:visited{
     padding-top: 1px;
     padding-bottom: 3px;
 }
-.homeworkPageCol1 {
+.glyphicon{
+    color:#d30000;
+    font-size:200%;
+}
+.careerPageBackground{
+	background-image: url('/assets/images/career_watermark.png');
+	height: 80vh;
+	background-size: 100% auto;
+	background-size: cover;
+    background-position: 50% 50%;
+}.homeworkPageCol1 {
 	width: 10%;
 }
 .homeworkPageCol2 {
@@ -444,24 +481,71 @@ a:visited{
 .homeworkPageCol4 {
 	width: 25%;
 }
+.homeworkPageBackground{
+	background-image: url('/assets/images/homework_watermark.png');
+	height: 80vh;
+	background-size: 100% auto;
+	background-size: cover;
+    background-position: 50% 50%;
 
+}
+
+
+/*SUBJECT*/
 .syllabusPageCol1 {
-	width: 55%;
+	width: 30%;
+	font-size: 150%;
+
 }
 
+/*LESSON*/
 .syllabusPageCol2 {
-	width: 15%;
+	width: 23%;
+	font-size: 150%;
 }
 
+/*DATE*/
 .syllabusPageCol3{
 	width: 15%;
+	font-size: 150%;
 }
 
+/*RECORDING*/
 .syllabusPageCol4 {
-	width: 15%;
+	width: 22%;
+	font-size: 150%;
+
 }
 #syllabus {
-	color: black;
+	color: #343333;
+	margin: 5%;
+	font-size: 22px;
+	background:rgba(246,246,246,0.5);
+	padding: 4%;
+	margin:0;
+}
+.syllabusBackground{
+	background-image: url('/assets/images/syllabus_watermark.png');
+	height: 80vh;
+	background-size: 100% auto;
+	background-size: cover;
+    background-position: 50% 50%;
+
+}
+.syllabusPageCol1.tableData{
+	color:#d30000;
+}
+.feedbackBackground{
+	background-image: url('/assets/images/feedback_watermark.png');
+	height: 80vh;
+	background-size: 100% auto;
+	background-size: cover;
+    background-position: 50% 50%;
+}
+
+.threeOrbs{
+	margin-left: 20%;
+
 }.projectsPageCol1 {
 	width: 10%;
 }
@@ -473,5 +557,13 @@ a:visited{
 }
 .projectsPageCol4 {
 	width: 25%;
+}
+.projectPageBackground{
+	background-image: url('/assets/images/projects_watermark.png');
+	height: 80vh;
+	background-size: 100% auto;
+	background-size: cover;
+    background-position: 50% 50%;
+
 }
 /*# sourceMappingURL=webpackStyle.css.map*/

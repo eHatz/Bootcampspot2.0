@@ -54,15 +54,18 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
+
 //Routes
 app.get('/login', function(req, res){
 	console.log('=============================LOGIN GET=============================================');
     //res.setHeader('Content-Type', 'application/json');
+
+app.get('/#/login', function(req, res){
+    res.setHeader('Content-Type', 'application/json');
     res.json((req.user));
 });
 
 app.get('/', (req, res) => {
-	console.log('HELOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
 	res.sendFile(path.join(__dirname, './index.html'));
 });
 
@@ -71,14 +74,12 @@ app.get('/login/github', passport.authenticate('github'));
 app.get('/login/github/return', 
     passport.authenticate('github', { failureRedirect: '/' }),
     function(req, res) {
-        res.redirect('/');
+        res.redirect('/#/login');
 });
 
 app.get('/loggedin',
     ensureLogin.ensureLoggedIn(),
     function(req, res){
-    	console.log('==========================================================================');
-    	console.log(req.user);
         res.setHeader('Content-Type', 'application/json');
         res.send(JSON.stringify(req.user));
 });
@@ -99,7 +100,6 @@ app.post('/slack', (req, res) => {
 			'icon_emoji': ':ghost:'
 		})
 	}, function(error, response, body){
-		console.log(body);
 	});
 })
 

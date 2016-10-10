@@ -1,0 +1,7 @@
+.careerPageBackground{
+	background-image: url('/assets/images/career_watermark.png');
+	height: 80vh;
+	background-size: 100% auto;
+	background-size: cover;
+    background-position: 50% 50%;
+}

@@ -1,0 +1,12 @@
+.feedbackBackground{
+	background-image: url('/assets/images/feedback_watermark.png');
+	height: 80vh;
+	background-size: 100% auto;
+	background-size: cover;
+    background-position: 50% 50%;
+}
+
+.threeOrbs{
+	margin-left: 20%;
+
+}
