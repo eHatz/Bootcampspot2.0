@@ -18,6 +18,7 @@ class FeedbackPage extends Component {
 				<img src="assets/images/threeBalls.png"/>
 
 
+
 			</div>
 			
 		);

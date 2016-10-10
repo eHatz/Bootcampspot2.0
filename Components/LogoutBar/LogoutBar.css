@@ -65,13 +65,21 @@
 
 	}
 
+	#logoImg1 {
+		text-align: center;
+
+	}
+
 
 	#logoutBar_logo{ 
 		max-height: 70%;
 		border-bottom: none;
-
-
 	}
+
+	#logoutBar_logout{
+	    border-left: 3px solid #ea1616;
+	}
+	
 
 	#logoutBar{
 		background-color: #343333;
@@ -81,6 +89,7 @@
 	#logoutBar_textDiv {
 	    max-height: 30%;
 	    padding: 0px;
+	    margin-top: 0px;
 	}
 	#logoutBar_username, #logoutBar_logout {
 		padding: 0px 20px;
@@ -88,11 +97,4 @@
 
 	}
 }
-
-@media screen and (max-width: 353px){
-  
-  
-  
-}
-
 

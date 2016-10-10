@@ -4,16 +4,33 @@
 
 
 @media screen and (max-width: 768px){
+	
+	#pageContent{
+		width: 100%;
+	}
+
 	.hideBar{
 		display: none;
 	}
-	.hideBtn {
+	.hideBtn{
 		display: table;
 		border: none;
 		background-color: transparent;
 	}
+	.hideBtn:focus {
+    	
+    	background-color: #333;
+    	border-color: red;
+    	outline: transparent;
+    }
 
-
+    .hideBtn:hover{
+    	/*background-color: red;*/
+    }
+   .hideBtn:active {
+    	color: red;
+    }
+   
 }
 /*******************************
 * MODAL AS LEFT/RIGHT SIDEBAR
@@ -80,7 +97,7 @@
 	background-color: #3a3939;;
 	padding: 0px;
 	margin: 0px;
-	height: 16vh;
+	height: 20vh;
 }
 .modalHeaderWidth{
 	width: 100%;

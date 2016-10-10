@@ -60,7 +60,7 @@
 
 	var _routes2 = _interopRequireDefault(_routes);
 
-	var _auth = __webpack_require__(486);
+	var _auth = __webpack_require__(525);
 
 	var _auth2 = _interopRequireDefault(_auth);
 
@@ -25425,7 +25425,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-			value: true
+		value: true
 	});
 
 	var _react = __webpack_require__(1);
@@ -25438,95 +25438,60 @@
 
 	var _Application2 = _interopRequireDefault(_Application);
 
-	var _LoggedIn = __webpack_require__(487);
+	var _LoggedIn = __webpack_require__(486);
 
 	var _LoggedIn2 = _interopRequireDefault(_LoggedIn);
 
-	var _HomePage = __webpack_require__(496);
+	var _HomePage = __webpack_require__(495);
 
 	var _HomePage2 = _interopRequireDefault(_HomePage);
 
-	var _AttendancePage = __webpack_require__(502);
+	var _AttendancePage = __webpack_require__(501);
 
 	var _AttendancePage2 = _interopRequireDefault(_AttendancePage);
 
-	var _CareerPage = __webpack_require__(511);
+	var _CareerPage = __webpack_require__(510);
 
 	var _CareerPage2 = _interopRequireDefault(_CareerPage);
 
-	var _HomeworkPage = __webpack_require__(514);
+	var _HomeworkPage = __webpack_require__(513);
 
 	var _HomeworkPage2 = _interopRequireDefault(_HomeworkPage);
 
-	var _SyllabusPage = __webpack_require__(517);
+	var _SyllabusPage = __webpack_require__(516);
 
 	var _SyllabusPage2 = _interopRequireDefault(_SyllabusPage);
 
-	var _FeedbackPage = __webpack_require__(520);
+	var _FeedbackPage = __webpack_require__(519);
 
 	var _FeedbackPage2 = _interopRequireDefault(_FeedbackPage);
 
-	var _ProjectsPage = __webpack_require__(523);
+	var _ProjectsPage = __webpack_require__(522);
 
 	var _ProjectsPage2 = _interopRequireDefault(_ProjectsPage);
 
-	var _login = __webpack_require__(526);
-
-	var _login2 = _interopRequireDefault(_login);
-
-	var _logout = __webpack_require__(529);
-
-	var _logout2 = _interopRequireDefault(_logout);
-
-	var _auth = __webpack_require__(486);
-
-	var _auth2 = _interopRequireDefault(_auth);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createElement(
+		_reactRouter.Route,
+		{ component: _Application2.default },
+		_react2.default.createElement(_reactRouter.Route, { path: '/', component: _HomePage2.default }),
+		_react2.default.createElement(
+			_reactRouter.Route,
+			{ component: _LoggedIn2.default },
+			_react2.default.createElement(_reactRouter.Route, { path: '/attendance', component: _AttendancePage2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: '/career', component: _CareerPage2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: '/homework', component: _HomeworkPage2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: '/syllabus', component: _SyllabusPage2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: '/feedback', component: _FeedbackPage2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: '/projects', component: _ProjectsPage2.default })
+		)
+	);
 
 	//===Import Components===
 
 	//Base component, including nav bar
 	//===React Dependencies===
-	function requireAuth(nextState, replace) {
-			if (!_auth2.default.loggedIn()) {
-					replace({
-							pathname: '/',
-							state: { nextPathname: nextState.location.pathname }
-					});
-			}
-	}
-
-	exports.default = _react2.default.createElement(
-			_reactRouter.Route,
-			{ component: _Application2.default },
-			_react2.default.createElement(_reactRouter.Route, { path: '/', component: _HomePage2.default }),
-			_react2.default.createElement(_reactRouter.Route, { path: 'login', component: _login2.default }),
-			_react2.default.createElement(_reactRouter.Route, { path: 'logout', component: _logout2.default }),
-			_react2.default.createElement(
-					_reactRouter.Route,
-					{ component: _LoggedIn2.default },
-					_react2.default.createElement(_reactRouter.Route, { path: '/attendance', component: _AttendancePage2.default, onEnter: requireAuth }),
-					_react2.default.createElement(_reactRouter.Route, { path: '/career', component: _CareerPage2.default, onEnter: requireAuth }),
-					_react2.default.createElement(_reactRouter.Route, { path: '/homework', component: _HomeworkPage2.default, onEnter: requireAuth }),
-					_react2.default.createElement(_reactRouter.Route, { path: '/syllabus', component: _SyllabusPage2.default, onEnter: requireAuth }),
-					_react2.default.createElement(_reactRouter.Route, { path: '/feedback', component: _FeedbackPage2.default, onEnter: requireAuth }),
-					_react2.default.createElement(_reactRouter.Route, { path: '/projects', component: _ProjectsPage2.default, onEnter: requireAuth })
-			)
-	);
-
-	//    <Route component={Application}>
-	// 	<Route path="/" component={HomePage} />
-
-	// 	<Route component={LoggedIn}>
-	// 		<Route path="/attendance" component={AttendancePage} />
-	// 		<Route path="/career" component={CareerPage} />
-	// 		<Route path="/homework" component={HomeworkPage} />
-	// 		<Route path="/syllabus" component={SyllabusPage} />
-	// 		<Route path="/feedback" component={FeedbackPage} />
-	// 		<Route path="/projects" component={ProjectsPage} />
-	// 	</Route>
-	// </Route>
 
 /***/ },
 /* 223 */
@@ -25560,7 +25525,7 @@
 
 	__webpack_require__(484);
 
-	var _auth = __webpack_require__(486);
+	var _auth = __webpack_require__(525);
 
 	var _auth2 = _interopRequireDefault(_auth);
 
@@ -28430,7 +28395,7 @@
 	      _react2['default'].createElement(
 	        'span',
 	        null,
-	        '\xD7'
+	        '×'
 	      )
 	    );
 	  };
@@ -31132,11 +31097,12 @@
 	  Collapse.prototype.handleExit = function handleExit(elem) {
 	    var dimension = this._dimension();
 	    elem.style[dimension] = this.props.getDimensionValue(dimension, elem) + 'px';
-	    triggerBrowserReflow(elem);
 	  };
 
 	  Collapse.prototype.handleExiting = function handleExiting(elem) {
 	    var dimension = this._dimension();
+
+	    triggerBrowserReflow(elem);
 	    elem.style[dimension] = '0';
 	  };
 
@@ -33002,27 +32968,30 @@
 
 	    var classes = (0, _extends4['default'])({}, (0, _bootstrapUtils.getClassSet)(bsProps), (_extends2 = {}, _extends2[(0, _bootstrapUtils.prefix)(bsProps, 'right')] = pullRight, _extends2));
 
-	    return _react2['default'].createElement(
-	      _RootCloseWrapper2['default'],
-	      {
-	        disabled: !open,
-	        onRootClose: onClose
-	      },
-	      _react2['default'].createElement(
-	        'ul',
-	        (0, _extends4['default'])({}, elementProps, {
-	          role: 'menu',
-	          className: (0, _classnames2['default'])(className, classes),
-	          'aria-labelledby': labelledBy
-	        }),
-	        _ValidComponentChildren2['default'].map(children, function (child) {
-	          return _react2['default'].cloneElement(child, {
-	            onKeyDown: (0, _createChainedFunction2['default'])(child.props.onKeyDown, _this2.handleKeyDown),
-	            onSelect: (0, _createChainedFunction2['default'])(child.props.onSelect, onSelect)
-	          });
-	        })
-	      )
+	    var list = _react2['default'].createElement(
+	      'ul',
+	      (0, _extends4['default'])({}, elementProps, {
+	        role: 'menu',
+	        className: (0, _classnames2['default'])(className, classes),
+	        'aria-labelledby': labelledBy
+	      }),
+	      _ValidComponentChildren2['default'].map(children, function (child) {
+	        return _react2['default'].cloneElement(child, {
+	          onKeyDown: (0, _createChainedFunction2['default'])(child.props.onKeyDown, _this2.handleKeyDown),
+	          onSelect: (0, _createChainedFunction2['default'])(child.props.onSelect, onSelect)
+	        });
+	      })
 	    );
+
+	    if (open) {
+	      return _react2['default'].createElement(
+	        _RootCloseWrapper2['default'],
+	        { noWrap: true, onRootClose: onClose },
+	        list
+	      );
+	    }
+
+	    return list;
 	  };
 
 	  return DropdownMenu;
@@ -33252,28 +33221,13 @@
 	var RootCloseWrapper = function (_React$Component) {
 	  _inherits(RootCloseWrapper, _React$Component);
 
-	  function RootCloseWrapper(props, context) {
+	  function RootCloseWrapper(props) {
 	    _classCallCheck(this, RootCloseWrapper);
 
-	    var _this = _possibleConstructorReturn(this, (RootCloseWrapper.__proto__ || Object.getPrototypeOf(RootCloseWrapper)).call(this, props, context));
+	    var _this = _possibleConstructorReturn(this, (RootCloseWrapper.__proto__ || Object.getPrototypeOf(RootCloseWrapper)).call(this, props));
 
-	    _this.handleMouseCapture = function (e) {
-	      _this.preventMouseRootClose = isModifiedEvent(e) || !isLeftClickEvent(e) || (0, _contains2.default)(_reactDom2.default.findDOMNode(_this), e.target);
-	    };
-
-	    _this.handleMouse = function () {
-	      if (!_this.preventMouseRootClose && _this.props.onRootClose) {
-	        _this.props.onRootClose();
-	      }
-	    };
-
-	    _this.handleKeyUp = function (e) {
-	      if (e.keyCode === 27 && _this.props.onRootClose) {
-	        _this.props.onRootClose();
-	      }
-	    };
-
-	    _this.preventMouseRootClose = false;
+	    _this.handleDocumentMouse = _this.handleDocumentMouse.bind(_this);
+	    _this.handleDocumentKeyUp = _this.handleDocumentKeyUp.bind(_this);
 	    return _this;
 	  }
 
@@ -33281,54 +33235,64 @@
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      if (!this.props.disabled) {
-	        this.addEventListeners();
+	        this.bindRootCloseHandlers();
 	      }
 	    }
 	  }, {
 	    key: 'componentDidUpdate',
 	    value: function componentDidUpdate(prevProps) {
 	      if (!this.props.disabled && prevProps.disabled) {
-	        this.addEventListeners();
+	        this.bindRootCloseHandlers();
 	      } else if (this.props.disabled && !prevProps.disabled) {
-	        this.removeEventListeners();
+	        this.unbindRootCloseHandlers();
 	      }
 	    }
 	  }, {
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {
 	      if (!this.props.disabled) {
-	        this.removeEventListeners();
+	        this.unbindRootCloseHandlers();
 	      }
 	    }
 	  }, {
-	    key: 'addEventListeners',
-	    value: function addEventListeners() {
-	      var event = this.props.event;
-
+	    key: 'bindRootCloseHandlers',
+	    value: function bindRootCloseHandlers() {
 	      var doc = (0, _ownerDocument2.default)(this);
 
 	      // Use capture for this listener so it fires before React's listener, to
 	      // avoid false positives in the contains() check below if the target DOM
 	      // element is removed in the React mouse callback.
-	      this.documentMouseCaptureListener = (0, _addEventListener2.default)(doc, event, this.handleMouseCapture, true);
+	      this._onDocumentMouseListener = (0, _addEventListener2.default)(doc, this.props.event, this.handleDocumentMouse, true);
 
-	      this.documentMouseListener = (0, _addEventListener2.default)(doc, event, this.handleMouse);
-
-	      this.documentKeyupListener = (0, _addEventListener2.default)(doc, 'keyup', this.handleKeyUp);
+	      this._onDocumentKeyupListener = (0, _addEventListener2.default)(doc, 'keyup', this.handleDocumentKeyUp);
 	    }
 	  }, {
-	    key: 'removeEventListeners',
-	    value: function removeEventListeners() {
-	      if (this.documentMouseCaptureListener) {
-	        this.documentMouseCaptureListener.remove();
+	    key: 'unbindRootCloseHandlers',
+	    value: function unbindRootCloseHandlers() {
+	      if (this._onDocumentMouseListener) {
+	        this._onDocumentMouseListener.remove();
 	      }
 
-	      if (this.documentMouseListener) {
-	        this.documentMouseListener.remove();
+	      if (this._onDocumentKeyupListener) {
+	        this._onDocumentKeyupListener.remove();
+	      }
+	    }
+	  }, {
+	    key: 'handleDocumentMouse',
+	    value: function handleDocumentMouse(e) {
+	      if (this.props.disabled || isModifiedEvent(e) || !isLeftClickEvent(e) || (0, _contains2.default)(_reactDom2.default.findDOMNode(this), e.target)) {
+	        return;
 	      }
 
-	      if (this.documentKeyupListener) {
-	        this.documentKeyupListener.remove();
+	      if (this.props.onRootClose) {
+	        this.props.onRootClose();
+	      }
+	    }
+	  }, {
+	    key: 'handleDocumentKeyUp',
+	    value: function handleDocumentKeyUp(e) {
+	      if (e.keyCode === 27 && this.props.onRootClose) {
+	        this.props.onRootClose();
 	      }
 	    }
 	  }, {
@@ -33378,7 +33342,6 @@
 
 	exports.default = function (node, event, handler, capture) {
 	  (0, _on2.default)(node, event, handler, capture);
-
 	  return {
 	    remove: function remove() {
 	      (0, _off2.default)(node, event, handler, capture);
@@ -38174,7 +38137,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-hidden': 'true' },
-	          '\xD7'
+	          '×'
 	        )
 	      ),
 	      children
@@ -39390,10 +39353,10 @@
 	      return true;
 	    }
 
-	    if (_ValidComponentChildren2['default'].some(props.children, function (child) {
-	      return _this2.isActive(child, activeKey, activeHref);
-	    })) {
-	      return true;
+	    if (props.children) {
+	      return _ValidComponentChildren2['default'].some(props.children, function (child) {
+	        return _this2.isActive(child, activeKey, activeHref);
+	      });
 	    }
 
 	    return props.active;
@@ -41388,8 +41351,8 @@
 
 	    if (maxButtons) {
 	      var hiddenPagesBefore = activePage - parseInt(maxButtons / 2, 10);
-	      startPage = hiddenPagesBefore > 2 ? hiddenPagesBefore : 1;
-	      hasHiddenPagesAfter = startPage + maxButtons < items;
+	      startPage = hiddenPagesBefore > 1 ? hiddenPagesBefore : 1;
+	      hasHiddenPagesAfter = startPage + maxButtons <= items;
 
 	      if (!hasHiddenPagesAfter) {
 	        endPage = items;
@@ -41428,7 +41391,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'More' },
-	          ellipsis === true ? '\u2026' : ellipsis
+	          ellipsis === true ? '…' : ellipsis
 	        )
 	      ));
 
@@ -41454,7 +41417,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'More' },
-	          ellipsis === true ? '\u2026' : ellipsis
+	          ellipsis === true ? '…' : ellipsis
 	        )
 	      ));
 
@@ -41517,7 +41480,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'First' },
-	          first === true ? '\xAB' : first
+	          first === true ? '«' : first
 	        )
 	      ),
 	      prev && _react2['default'].createElement(
@@ -41529,7 +41492,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'Previous' },
-	          prev === true ? '\u2039' : prev
+	          prev === true ? '‹' : prev
 	        )
 	      ),
 	      this.renderPageButtons(activePage, items, maxButtons, boundaryLinks, ellipsis, buttonProps),
@@ -41542,7 +41505,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'Next' },
-	          next === true ? '\u203A' : next
+	          next === true ? '›' : next
 	        )
 	      ),
 	      last && _react2['default'].createElement(
@@ -41554,7 +41517,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'Last' },
-	          last === true ? '\xBB' : last
+	          last === true ? '»' : last
 	        )
 	      )
 	    );
@@ -44950,60 +44913,6 @@
 /***/ },
 /* 485 */,
 /* 486 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	module.exports = {
-	  login: function login(email, pass, cb) {
-	    var _this = this;
-
-	    cb = arguments[arguments.length - 1];
-	    if (localStorage.token) {
-	      if (cb) cb(true);
-	      this.onChange(true);
-	      return;
-	    }
-	    pretendRequest(email, pass, function (res) {
-	      if (res.authenticated) {
-	        localStorage.token = res.token;
-	        if (cb) cb(true);
-	        _this.onChange(true);
-	      } else {
-	        if (cb) cb(false);
-	        _this.onChange(false);
-	      }
-	    });
-	  },
-	  getToken: function getToken() {
-	    return localStorage.token;
-	  },
-	  logout: function logout(cb) {
-	    delete localStorage.token;
-	    if (cb) cb();
-	    this.onChange(false);
-	  },
-	  loggedIn: function loggedIn() {
-	    return !!localStorage.token;
-	  },
-	  onChange: function onChange() {}
-	};
-
-	function pretendRequest(email, pass, cb) {
-	  setTimeout(function () {
-	    if (email === 'ehatz01@gmail.com' && pass === 'password1') {
-	      cb({
-	        authenticated: true,
-	        token: Math.random().toString(36).substring(7)
-	      });
-	    } else {
-	      cb({ authenticated: false });
-	    }
-	  }, 0);
-	}
-
-/***/ },
-/* 487 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45024,11 +44933,11 @@
 
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 
-	var _LogoutBar = __webpack_require__(488);
+	var _LogoutBar = __webpack_require__(487);
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	__webpack_require__(494);
+	__webpack_require__(493);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45085,7 +44994,7 @@
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "col-sm-9 remove-all-margin-padding" },
+							{ id: "pageContent", className: "col-sm-9 remove-all-margin-padding" },
 							(0, _react.cloneElement)(this.props.children, {
 								showModal: this.state.showModal,
 								openModal: this.open.bind(this),
@@ -45103,7 +45012,7 @@
 	exports.default = LoggedIn;
 
 /***/ },
-/* 488 */
+/* 487 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45120,9 +45029,9 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	__webpack_require__(489);
+	__webpack_require__(488);
 
-	var _NavBar = __webpack_require__(491);
+	var _NavBar = __webpack_require__(490);
 
 	var _NavBar2 = _interopRequireDefault(_NavBar);
 
@@ -45175,7 +45084,11 @@
 											"button",
 											{ className: "modalHeaderWidth", type: "button", onClick: closeModal, "data-dismiss": "modal", "aria-label": "Close" },
 											_react2.default.createElement("img", { id: "close", src: "assets/images/close_button.png" }),
-											_react2.default.createElement("img", { id: "logoImg", src: "/assets/images/logo2.png" })
+											_react2.default.createElement(
+												"a",
+												{ href: "/#" },
+												_react2.default.createElement("img", { id: "logoImg", src: "/assets/images/logo2.png" })
+											)
 										)
 									),
 									_react2.default.createElement(_NavBar2.default, null)
@@ -45185,11 +45098,6 @@
 						_react2.default.createElement(
 							"div",
 							{ id: "logoutBar_logo", className: "col-sm-3" },
-							_react2.default.createElement(
-								_reactBootstrap.Button,
-								{ className: "hideBtn", onClick: openModal },
-								_react2.default.createElement("img", { id: "hamburger", src: "assets/images/hamburger.png" })
-							),
 							_react2.default.createElement("img", { id: "logoImg1", src: "/assets/images/logo2.png" })
 						),
 						_react2.default.createElement(
@@ -45209,6 +45117,11 @@
 									{ id: "logoutBar_logout" },
 									"Log Out"
 								)
+							),
+							_react2.default.createElement(
+								_reactBootstrap.Button,
+								{ className: "hideBtn", onClick: openModal },
+								_react2.default.createElement("img", { id: "hamburger", src: "assets/images/hamburger.png" })
 							)
 						)
 					)
@@ -45222,14 +45135,14 @@
 	exports.default = LogoutBar;
 
 /***/ },
-/* 489 */
+/* 488 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 490 */,
-/* 491 */
+/* 489 */,
+/* 490 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45242,7 +45155,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(492);
+	__webpack_require__(491);
 
 	var _NavBarLink = __webpack_require__(481);
 
@@ -45302,21 +45215,21 @@
 	exports.default = Navbar;
 
 /***/ },
-/* 492 */
+/* 491 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 493 */,
-/* 494 */
+/* 492 */,
+/* 493 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 495 */,
-/* 496 */
+/* 494 */,
+/* 495 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45333,11 +45246,11 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	var _Panel = __webpack_require__(497);
+	var _Panel = __webpack_require__(496);
 
 	var _Panel2 = _interopRequireDefault(_Panel);
 
-	__webpack_require__(500);
+	__webpack_require__(499);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45432,7 +45345,7 @@
 	*/
 
 /***/ },
-/* 497 */
+/* 496 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45449,7 +45362,7 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	__webpack_require__(498);
+	__webpack_require__(497);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45509,21 +45422,21 @@
 	exports.default = Panel;
 
 /***/ },
-/* 498 */
+/* 497 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 499 */,
-/* 500 */
+/* 498 */,
+/* 499 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 501 */,
-/* 502 */
+/* 500 */,
+/* 501 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45538,13 +45451,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(503);
+	__webpack_require__(502);
 
-	var _LogoutBar = __webpack_require__(488);
+	var _LogoutBar = __webpack_require__(487);
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	var _Table = __webpack_require__(505);
+	var _Table = __webpack_require__(504);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -45593,14 +45506,14 @@
 	exports.default = AttendancePage;
 
 /***/ },
-/* 503 */
+/* 502 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 504 */,
-/* 505 */
+/* 503 */,
+/* 504 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45615,9 +45528,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(506);
+	__webpack_require__(505);
 
-	var _TableRow = __webpack_require__(508);
+	var _TableRow = __webpack_require__(507);
 
 	var _TableRow2 = _interopRequireDefault(_TableRow);
 
@@ -45713,14 +45626,14 @@
 	exports.default = Table;
 
 /***/ },
-/* 506 */
+/* 505 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 507 */,
-/* 508 */
+/* 506 */,
+/* 507 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45735,7 +45648,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(509);
+	__webpack_require__(508);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45806,14 +45719,14 @@
 	exports.default = TableRow;
 
 /***/ },
-/* 509 */
+/* 508 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 510 */,
-/* 511 */
+/* 509 */,
+/* 510 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45828,9 +45741,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(512);
+	__webpack_require__(511);
 
-	var _LogoutBar = __webpack_require__(488);
+	var _LogoutBar = __webpack_require__(487);
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
@@ -45855,7 +45768,7 @@
 			key: "render",
 			value: function render() {
 
-				return _react2.default.createElement("div", { className: "careerPageBackground" });
+				return _react2.default.createElement("div", { className: "careerBackground" });
 			}
 		}]);
 
@@ -45865,14 +45778,14 @@
 	exports.default = CareerPage;
 
 /***/ },
-/* 512 */
+/* 511 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 513 */,
-/* 514 */
+/* 512 */,
+/* 513 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45887,17 +45800,17 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(515);
+	__webpack_require__(514);
 
 	var _Navbar = __webpack_require__(476);
 
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 
-	var _LogoutBar = __webpack_require__(488);
+	var _LogoutBar = __webpack_require__(487);
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	var _Table = __webpack_require__(505);
+	var _Table = __webpack_require__(504);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -45923,7 +45836,7 @@
 			value: function render() {
 				return _react2.default.createElement(
 					"div",
-					{ className: "homeworkPageBackground" },
+					{ className: "homeworkBackground" },
 					_react2.default.createElement(_Table2.default, { pageName: "homeworkPage",
 						header1: "WEEK",
 						header2: "HOMEWORK",
@@ -45940,14 +45853,14 @@
 	exports.default = HomeworkPage;
 
 /***/ },
-/* 515 */
+/* 514 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 516 */,
-/* 517 */
+/* 515 */,
+/* 516 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45962,13 +45875,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(518);
+	__webpack_require__(517);
 
-	var _LogoutBar = __webpack_require__(488);
+	var _LogoutBar = __webpack_require__(487);
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	var _Table = __webpack_require__(505);
+	var _Table = __webpack_require__(504);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -46013,12 +45926,12 @@
 							null,
 							_react2.default.createElement(
 								"li",
-								null,
+								{ className: "syllabusText" },
 								"You must complete 90% of the homework assignments. (You can miss no more than 2 assignments)"
 							),
 							_react2.default.createElement(
 								"li",
-								null,
+								{ className: "syllabusText" },
 								"Homework submissions must be on time AS IS. Late submissions will not be counted."
 							)
 						),
@@ -46032,12 +45945,12 @@
 							null,
 							_react2.default.createElement(
 								"li",
-								null,
+								{ className: "syllabusText" },
 								"Attendance must be maintained at a 95% rate. (You can miss no more than a total of 4 classes)"
 							),
 							_react2.default.createElement(
 								"li",
-								null,
+								{ className: "syllabusText" },
 								"Written permission must be obtained to miss class or it's considered one of your 4 absences."
 							)
 						),
@@ -46051,7 +45964,7 @@
 							null,
 							_react2.default.createElement(
 								"li",
-								null,
+								{ className: "syllabusText" },
 								"You must give a full effort on every group and individual project."
 							)
 						)
@@ -46076,14 +45989,14 @@
 	exports.default = SyllabusPage;
 
 /***/ },
-/* 518 */
+/* 517 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 519 */,
-/* 520 */
+/* 518 */,
+/* 519 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -46098,9 +46011,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(521);
+	__webpack_require__(520);
 
-	var _LogoutBar = __webpack_require__(488);
+	var _LogoutBar = __webpack_require__(487);
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
@@ -46144,14 +46057,14 @@
 	exports.default = FeedbackPage;
 
 /***/ },
-/* 521 */
+/* 520 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 522 */,
-/* 523 */
+/* 521 */,
+/* 522 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -46166,17 +46079,17 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(524);
+	__webpack_require__(523);
 
 	var _Navbar = __webpack_require__(476);
 
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 
-	var _LogoutBar = __webpack_require__(488);
+	var _LogoutBar = __webpack_require__(487);
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	var _Table = __webpack_require__(505);
+	var _Table = __webpack_require__(504);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -46202,7 +46115,7 @@
 			value: function render() {
 				return _react2.default.createElement(
 					"div",
-					{ className: "projectPageBackground" },
+					{ className: "projectsBackground" },
 					_react2.default.createElement(_Table2.default, { pageName: "projectsPage",
 						header1: "WEEK",
 						header2: "PROJECT",
@@ -46219,147 +46132,65 @@
 	exports.default = ProjectsPage;
 
 /***/ },
-/* 524 */
+/* 523 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 525 */,
-/* 526 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRouter = __webpack_require__(159);
-
-	var _auth = __webpack_require__(486);
-
-	var _auth2 = _interopRequireDefault(_auth);
-
-	var _HomePage = __webpack_require__(496);
-
-	var _HomePage2 = _interopRequireDefault(_HomePage);
-
-	__webpack_require__(527);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Login = (0, _reactRouter.withRouter)(_react2.default.createClass({
-		displayName: 'Login',
-		getInitialState: function getInitialState() {
-			return {
-				error: false
-			};
-		},
-		componentWillMount: function componentWillMount() {
-			var _this = this;
-
-			fetch('/login', { credentials: 'include' }).then(function (response) {
-				return response.json();
-			}).then(function (json) {
-				console.log(json.emails[0].value);
-				var email = json.emails[0].value;
-				var pass = 'password1';
-
-				_auth2.default.login(email, pass, function (loggedIn) {
-					if (!loggedIn) return _this.setState({ error: true });
-
-					var location = _this.props.location;
-
-
-					if (location.state && location.state.nextPathname) {
-						_this.props.router.replace(location.state.nextPathname);
-					} else {
-						_this.props.router.replace('/');
-					}
-				});
-			});
-		},
-		render: function render() {
-			return _react2.default.createElement(
-				'div',
-				null,
-				_react2.default.createElement(
-					'h1',
-					{ id: 'loginText' },
-					'Invalid Github Account'
-				),
-				_react2.default.createElement(_HomePage2.default, null)
-			);
-		}
-	}));
-	exports.default = Login;
-
-/***/ },
-/* 527 */
+/* 524 */,
+/* 525 */
 /***/ function(module, exports) {
 
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 528 */,
-/* 529 */
-/***/ function(module, exports, __webpack_require__) {
-
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
+	module.exports = {
+	  login: function login(email, pass, cb) {
+	    var _this = this;
 
-	var _react = __webpack_require__(1);
+	    cb = arguments[arguments.length - 1];
+	    if (localStorage.token) {
+	      if (cb) cb(true);
+	      this.onChange(true);
+	      return;
+	    }
+	    pretendRequest(email, pass, function (res) {
+	      if (res.authenticated) {
+	        localStorage.token = res.token;
+	        if (cb) cb(true);
+	        _this.onChange(true);
+	      } else {
+	        if (cb) cb(false);
+	        _this.onChange(false);
+	      }
+	    });
+	  },
+	  getToken: function getToken() {
+	    return localStorage.token;
+	  },
+	  logout: function logout(cb) {
+	    delete localStorage.token;
+	    if (cb) cb();
+	    this.onChange(false);
+	  },
+	  loggedIn: function loggedIn() {
+	    return !!localStorage.token;
+	  },
+	  onChange: function onChange() {}
+	};
 
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRouter = __webpack_require__(159);
-
-	var _auth = __webpack_require__(486);
-
-	var _auth2 = _interopRequireDefault(_auth);
-
-	var _HomePage = __webpack_require__(496);
-
-	var _HomePage2 = _interopRequireDefault(_HomePage);
-
-	__webpack_require__(527);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Logout = (0, _reactRouter.withRouter)(_react2.default.createClass({
-		displayName: 'Logout',
-		componentDidMount: function componentDidMount() {
-			_auth2.default.logout();
-			// const { location } = this.props
-
-			//       if (location.state && location.state.nextPathname) {
-			//         this.props.router.replace(location.state.nextPathname)
-			//       } else {
-			//         this.props.router.replace('/')
-			//       }
-		},
-		render: function render() {
-			return _react2.default.createElement(
-				'div',
-				null,
-				_react2.default.createElement(
-					'h1',
-					{ id: 'loginText' },
-					'Logged Out'
-				),
-				_react2.default.createElement(_HomePage2.default, null)
-			);
-		}
-	}));
-	exports.default = Logout;
+	function pretendRequest(email, pass, cb) {
+	  setTimeout(function () {
+	    if (email === 'ehatz01@gmail.com' && pass === 'password1') {
+	      cb({
+	        authenticated: true,
+	        token: Math.random().toString(36).substring(7)
+	      });
+	    } else {
+	      cb({ authenticated: false });
+	    }
+	  }, 0);
+	}
 
 /***/ }
 /******/ ]);
