@@ -3,37 +3,44 @@ import React, { Component } from "react";
 import { browserHistory, Router, Route, Link, withRouter } from 'react-router';
 import auth from '../../auth'
 const Login = withRouter(
-  React.createClass({
+	React.createClass({
 
-    getInitialState() {
-      return {
-        error: false
-      }
-    },
+		getInitialState() {
+			return {
+				error: false
+			}
+		},
 
-    componentWillMount() {
-      const email = 'joe@example.com'
-      const pass = 'password1'
+		componentWillMount() {
 
-      auth.login(email, pass, (loggedIn) => {
-        if (!loggedIn)
-          return this.setState({ error: true })
+			// fetch('/#/login')
+			// .then((response) => response.json())
+			// .then((json) => {
+			// 	console.log(json);
+			// })
 
-        const { location } = this.props
+			const email = 'joe@example.com'
+			const pass = 'password1'
 
-        if (location.state && location.state.nextPathname) {
-          this.props.router.replace(location.state.nextPathname)
-        } else {
-          this.props.router.replace('/')
-        }
-      })
-    },
+			auth.login(email, pass, (loggedIn) => {
+				if (!loggedIn)
+				return this.setState({ error: true })
 
-    render() {
-      return (
-        <p>logging in</p>
-      )
-    }
-  })
+				const { location } = this.props
+
+				if (location.state && location.state.nextPathname) {
+					this.props.router.replace(location.state.nextPathname)
+				} else {
+					this.props.router.replace('/')
+				}
+			})
+		},
+
+		render() {
+			return (
+				<p>logging in</p>
+			)
+		}
+	})
 )
 export default Login;

@@ -45385,7 +45385,7 @@
 									_react2.default.createElement("img", { id: "HomePage_login", src: "/assets/images/logos.png", alt: "githubLogo" })
 								) : _react2.default.createElement(
 									"a",
-									{ href: "/#login" },
+									{ href: "/login/github" },
 									_react2.default.createElement("img", { id: "HomePage_login", src: "/assets/images/github.png", alt: "githubLogo" })
 								)
 							)
@@ -46223,7 +46223,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+		value: true
 	});
 
 	var _react = __webpack_require__(1);
@@ -46239,38 +46239,44 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Login = (0, _reactRouter.withRouter)(_react2.default.createClass({
-	  displayName: 'Login',
-	  getInitialState: function getInitialState() {
-	    return {
-	      error: false
-	    };
-	  },
-	  componentWillMount: function componentWillMount() {
-	    var _this = this;
+		displayName: 'Login',
+		getInitialState: function getInitialState() {
+			return {
+				error: false
+			};
+		},
+		componentWillMount: function componentWillMount() {
+			var _this = this;
 
-	    var email = 'joe@example.com';
-	    var pass = 'password1';
+			// fetch('/#/login')
+			// .then((response) => response.json())
+			// .then((json) => {
+			// 	console.log(json);
+			// })
 
-	    _auth2.default.login(email, pass, function (loggedIn) {
-	      if (!loggedIn) return _this.setState({ error: true });
+			var email = 'joe@example.com';
+			var pass = 'password1';
 
-	      var location = _this.props.location;
+			_auth2.default.login(email, pass, function (loggedIn) {
+				if (!loggedIn) return _this.setState({ error: true });
+
+				var location = _this.props.location;
 
 
-	      if (location.state && location.state.nextPathname) {
-	        _this.props.router.replace(location.state.nextPathname);
-	      } else {
-	        _this.props.router.replace('/');
-	      }
-	    });
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'p',
-	      null,
-	      'logging in'
-	    );
-	  }
+				if (location.state && location.state.nextPathname) {
+					_this.props.router.replace(location.state.nextPathname);
+				} else {
+					_this.props.router.replace('/');
+				}
+			});
+		},
+		render: function render() {
+			return _react2.default.createElement(
+				'p',
+				null,
+				'logging in'
+			);
+		}
 	}));
 	exports.default = Login;
 
