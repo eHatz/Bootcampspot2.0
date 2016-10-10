@@ -60,7 +60,7 @@
 
 	var _routes2 = _interopRequireDefault(_routes);
 
-	var _auth = __webpack_require__(525);
+	var _auth = __webpack_require__(486);
 
 	var _auth2 = _interopRequireDefault(_auth);
 
@@ -25438,35 +25438,35 @@
 
 	var _Application2 = _interopRequireDefault(_Application);
 
-	var _LoggedIn = __webpack_require__(486);
+	var _LoggedIn = __webpack_require__(487);
 
 	var _LoggedIn2 = _interopRequireDefault(_LoggedIn);
 
-	var _HomePage = __webpack_require__(495);
+	var _HomePage = __webpack_require__(496);
 
 	var _HomePage2 = _interopRequireDefault(_HomePage);
 
-	var _AttendancePage = __webpack_require__(501);
+	var _AttendancePage = __webpack_require__(502);
 
 	var _AttendancePage2 = _interopRequireDefault(_AttendancePage);
 
-	var _CareerPage = __webpack_require__(510);
+	var _CareerPage = __webpack_require__(511);
 
 	var _CareerPage2 = _interopRequireDefault(_CareerPage);
 
-	var _HomeworkPage = __webpack_require__(513);
+	var _HomeworkPage = __webpack_require__(514);
 
 	var _HomeworkPage2 = _interopRequireDefault(_HomeworkPage);
 
-	var _SyllabusPage = __webpack_require__(516);
+	var _SyllabusPage = __webpack_require__(517);
 
 	var _SyllabusPage2 = _interopRequireDefault(_SyllabusPage);
 
-	var _FeedbackPage = __webpack_require__(519);
+	var _FeedbackPage = __webpack_require__(520);
 
 	var _FeedbackPage2 = _interopRequireDefault(_FeedbackPage);
 
-	var _ProjectsPage = __webpack_require__(522);
+	var _ProjectsPage = __webpack_require__(523);
 
 	var _ProjectsPage2 = _interopRequireDefault(_ProjectsPage);
 
@@ -25478,7 +25478,7 @@
 
 	var _logout2 = _interopRequireDefault(_logout);
 
-	var _auth = __webpack_require__(525);
+	var _auth = __webpack_require__(486);
 
 	var _auth2 = _interopRequireDefault(_auth);
 
@@ -25560,7 +25560,7 @@
 
 	__webpack_require__(484);
 
-	var _auth = __webpack_require__(525);
+	var _auth = __webpack_require__(486);
 
 	var _auth2 = _interopRequireDefault(_auth);
 
@@ -44948,6 +44948,60 @@
 /***/ },
 /* 485 */,
 /* 486 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	module.exports = {
+	  login: function login(email, pass, cb) {
+	    var _this = this;
+
+	    cb = arguments[arguments.length - 1];
+	    if (localStorage.token) {
+	      if (cb) cb(true);
+	      this.onChange(true);
+	      return;
+	    }
+	    pretendRequest(email, pass, function (res) {
+	      if (res.authenticated) {
+	        localStorage.token = res.token;
+	        if (cb) cb(true);
+	        _this.onChange(true);
+	      } else {
+	        if (cb) cb(false);
+	        _this.onChange(false);
+	      }
+	    });
+	  },
+	  getToken: function getToken() {
+	    return localStorage.token;
+	  },
+	  logout: function logout(cb) {
+	    delete localStorage.token;
+	    if (cb) cb();
+	    this.onChange(false);
+	  },
+	  loggedIn: function loggedIn() {
+	    return !!localStorage.token;
+	  },
+	  onChange: function onChange() {}
+	};
+
+	function pretendRequest(email, pass, cb) {
+	  setTimeout(function () {
+	    if (email === 'joe@example.com' && pass === 'password1') {
+	      cb({
+	        authenticated: true,
+	        token: Math.random().toString(36).substring(7)
+	      });
+	    } else {
+	      cb({ authenticated: false });
+	    }
+	  }, 0);
+	}
+
+/***/ },
+/* 487 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -44968,11 +45022,11 @@
 
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 
-	var _LogoutBar = __webpack_require__(487);
+	var _LogoutBar = __webpack_require__(488);
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	__webpack_require__(493);
+	__webpack_require__(494);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45047,7 +45101,7 @@
 	exports.default = LoggedIn;
 
 /***/ },
-/* 487 */
+/* 488 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45064,9 +45118,9 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	__webpack_require__(488);
+	__webpack_require__(489);
 
-	var _NavBar = __webpack_require__(490);
+	var _NavBar = __webpack_require__(491);
 
 	var _NavBar2 = _interopRequireDefault(_NavBar);
 
@@ -45166,14 +45220,14 @@
 	exports.default = LogoutBar;
 
 /***/ },
-/* 488 */
+/* 489 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 489 */,
-/* 490 */
+/* 490 */,
+/* 491 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45186,7 +45240,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(491);
+	__webpack_require__(492);
 
 	var _NavBarLink = __webpack_require__(481);
 
@@ -45246,21 +45300,21 @@
 	exports.default = Navbar;
 
 /***/ },
-/* 491 */
+/* 492 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 492 */,
-/* 493 */
+/* 493 */,
+/* 494 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 494 */,
-/* 495 */
+/* 495 */,
+/* 496 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45277,11 +45331,11 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	var _Panel = __webpack_require__(496);
+	var _Panel = __webpack_require__(497);
 
 	var _Panel2 = _interopRequireDefault(_Panel);
 
-	__webpack_require__(499);
+	__webpack_require__(500);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45376,7 +45430,7 @@
 	*/
 
 /***/ },
-/* 496 */
+/* 497 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45393,7 +45447,7 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	__webpack_require__(497);
+	__webpack_require__(498);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45453,21 +45507,21 @@
 	exports.default = Panel;
 
 /***/ },
-/* 497 */
+/* 498 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 498 */,
-/* 499 */
+/* 499 */,
+/* 500 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 500 */,
-/* 501 */
+/* 501 */,
+/* 502 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45482,13 +45536,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(502);
+	__webpack_require__(503);
 
-	var _LogoutBar = __webpack_require__(487);
+	var _LogoutBar = __webpack_require__(488);
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	var _Table = __webpack_require__(504);
+	var _Table = __webpack_require__(505);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -45537,14 +45591,14 @@
 	exports.default = AttendancePage;
 
 /***/ },
-/* 502 */
+/* 503 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 503 */,
-/* 504 */
+/* 504 */,
+/* 505 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45559,9 +45613,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(505);
+	__webpack_require__(506);
 
-	var _TableRow = __webpack_require__(507);
+	var _TableRow = __webpack_require__(508);
 
 	var _TableRow2 = _interopRequireDefault(_TableRow);
 
@@ -45657,14 +45711,14 @@
 	exports.default = Table;
 
 /***/ },
-/* 505 */
+/* 506 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 506 */,
-/* 507 */
+/* 507 */,
+/* 508 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45679,7 +45733,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(508);
+	__webpack_require__(509);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45750,14 +45804,14 @@
 	exports.default = TableRow;
 
 /***/ },
-/* 508 */
+/* 509 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 509 */,
-/* 510 */
+/* 510 */,
+/* 511 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45772,9 +45826,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(511);
+	__webpack_require__(512);
 
-	var _LogoutBar = __webpack_require__(487);
+	var _LogoutBar = __webpack_require__(488);
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
@@ -45809,14 +45863,14 @@
 	exports.default = CareerPage;
 
 /***/ },
-/* 511 */
+/* 512 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 512 */,
-/* 513 */
+/* 513 */,
+/* 514 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45831,17 +45885,17 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(514);
+	__webpack_require__(515);
 
 	var _Navbar = __webpack_require__(476);
 
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 
-	var _LogoutBar = __webpack_require__(487);
+	var _LogoutBar = __webpack_require__(488);
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	var _Table = __webpack_require__(504);
+	var _Table = __webpack_require__(505);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -45884,14 +45938,14 @@
 	exports.default = HomeworkPage;
 
 /***/ },
-/* 514 */
+/* 515 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 515 */,
-/* 516 */
+/* 516 */,
+/* 517 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45906,13 +45960,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(517);
+	__webpack_require__(518);
 
-	var _LogoutBar = __webpack_require__(487);
+	var _LogoutBar = __webpack_require__(488);
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	var _Table = __webpack_require__(504);
+	var _Table = __webpack_require__(505);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -46020,14 +46074,14 @@
 	exports.default = SyllabusPage;
 
 /***/ },
-/* 517 */
+/* 518 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 518 */,
-/* 519 */
+/* 519 */,
+/* 520 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -46042,9 +46096,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(520);
+	__webpack_require__(521);
 
-	var _LogoutBar = __webpack_require__(487);
+	var _LogoutBar = __webpack_require__(488);
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
@@ -46088,14 +46142,14 @@
 	exports.default = FeedbackPage;
 
 /***/ },
-/* 520 */
+/* 521 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 521 */,
-/* 522 */
+/* 522 */,
+/* 523 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -46110,17 +46164,17 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(523);
+	__webpack_require__(524);
 
 	var _Navbar = __webpack_require__(476);
 
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 
-	var _LogoutBar = __webpack_require__(487);
+	var _LogoutBar = __webpack_require__(488);
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
-	var _Table = __webpack_require__(504);
+	var _Table = __webpack_require__(505);
 
 	var _Table2 = _interopRequireDefault(_Table);
 
@@ -46163,67 +46217,13 @@
 	exports.default = ProjectsPage;
 
 /***/ },
-/* 523 */
+/* 524 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 524 */,
-/* 525 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	module.exports = {
-	  login: function login(email, pass, cb) {
-	    var _this = this;
-
-	    cb = arguments[arguments.length - 1];
-	    if (localStorage.token) {
-	      if (cb) cb(true);
-	      this.onChange(true);
-	      return;
-	    }
-	    pretendRequest(email, pass, function (res) {
-	      if (res.authenticated) {
-	        localStorage.token = res.token;
-	        if (cb) cb(true);
-	        _this.onChange(true);
-	      } else {
-	        if (cb) cb(false);
-	        _this.onChange(false);
-	      }
-	    });
-	  },
-	  getToken: function getToken() {
-	    return localStorage.token;
-	  },
-	  logout: function logout(cb) {
-	    delete localStorage.token;
-	    if (cb) cb();
-	    this.onChange(false);
-	  },
-	  loggedIn: function loggedIn() {
-	    return !!localStorage.token;
-	  },
-	  onChange: function onChange() {}
-	};
-
-	function pretendRequest(email, pass, cb) {
-	  setTimeout(function () {
-	    if (email === 'joe@example.com' && pass === 'password1') {
-	      cb({
-	        authenticated: true,
-	        token: Math.random().toString(36).substring(7)
-	      });
-	    } else {
-	      cb({ authenticated: false });
-	    }
-	  }, 0);
-	}
-
-/***/ },
+/* 525 */,
 /* 526 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -46239,7 +46239,7 @@
 
 	var _reactRouter = __webpack_require__(159);
 
-	var _auth = __webpack_require__(525);
+	var _auth = __webpack_require__(486);
 
 	var _auth2 = _interopRequireDefault(_auth);
 
@@ -46255,10 +46255,20 @@
 		componentWillMount: function componentWillMount() {
 			var _this = this;
 
-			// fetch('/#/login')
+			fetch('/login').then(function (response) {
+				var contentType = response.headers.get("content-type");
+				if (contentType && contentType.indexOf("application/json") !== -1) {
+					return response.json().then(function (json) {
+						console.log(json);
+					});
+				} else {
+					console.log("Oops, we haven't got JSON!");
+				}
+			});
+			// fetch('/loggedin')
 			// .then((response) => response.json())
 			// .then((json) => {
-			// 	console.log(json);
+			// 	console.log(json)
 			// })
 
 			var email = 'joe@example.com';
@@ -46303,7 +46313,7 @@
 
 	var _reactRouter = __webpack_require__(159);
 
-	var _auth = __webpack_require__(525);
+	var _auth = __webpack_require__(486);
 
 	var _auth2 = _interopRequireDefault(_auth);
 

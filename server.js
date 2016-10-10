@@ -59,10 +59,22 @@ app.use(passport.session());
 app.get('/login', function(req, res){
 	console.log('=============================LOGIN GET=============================================');
     //res.setHeader('Content-Type', 'application/json');
+});
 
 app.get('/#/login', function(req, res){
     res.setHeader('Content-Type', 'application/json');
     res.json((req.user));
+});
+
+app.get('/login', function(req, res){
+		res.setHeader('Content-Type', 'application/json');
+    console.log(req.session.userInfo)
+    console.log(req.user)
+    var jsonObj = {
+		something: 'somethingelse',
+		username:req.session.userInfo,
+	};
+    res.json(jsonObj);
 });
 
 app.get('/', (req, res) => {
@@ -74,14 +86,18 @@ app.get('/login/github', passport.authenticate('github'));
 app.get('/login/github/return', 
     passport.authenticate('github', { failureRedirect: '/' }),
     function(req, res) {
+    	req.session.userInfo = req.user;
         res.redirect('/#/login');
 });
 
-app.get('/loggedin',
-    ensureLogin.ensureLoggedIn(),
-    function(req, res){
-        res.setHeader('Content-Type', 'application/json');
-        res.send(JSON.stringify(req.user));
+app.get('/loggedin', function(req, res){
+    //res.setHeader('Content-Type', 'application/json');
+    console.log(req.session.userInfo)
+    var jsonObj = {
+		something: 'somethingelse',
+		username:req.session.userInfo,
+	};
+    res.json(jsonObj);
 });
 
 
