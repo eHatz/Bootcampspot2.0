@@ -565,5 +565,8 @@ a:visited{
 	background-size: cover;
     background-position: 50% 50%;
 
+}#loginText {
+	text-align: center;
+	color: black;
 }
 /*# sourceMappingURL=webpackStyle.css.map*/

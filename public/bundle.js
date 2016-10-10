@@ -25474,7 +25474,7 @@
 
 	var _login2 = _interopRequireDefault(_login);
 
-	var _logout = __webpack_require__(527);
+	var _logout = __webpack_require__(529);
 
 	var _logout2 = _interopRequireDefault(_logout);
 
@@ -44991,7 +44991,7 @@
 
 	function pretendRequest(email, pass, cb) {
 	  setTimeout(function () {
-	    if (email === 'joe@example.com' && pass === 'password1') {
+	    if (email === 'ehatz01@gmail.com' && pass === 'password1') {
 	      cb({
 	        authenticated: true,
 	        token: Math.random().toString(36).substring(7)
@@ -46245,6 +46245,12 @@
 
 	var _auth2 = _interopRequireDefault(_auth);
 
+	var _HomePage = __webpack_require__(496);
+
+	var _HomePage2 = _interopRequireDefault(_HomePage);
+
+	__webpack_require__(527);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Login = (0, _reactRouter.withRouter)(_react2.default.createClass({
@@ -46257,43 +46263,37 @@
 		componentWillMount: function componentWillMount() {
 			var _this = this;
 
-			fetch('/login').then(function (response) {
-				var contentType = response.headers.get("content-type");
-				if (contentType && contentType.indexOf("application/json") !== -1) {
-					return response.json().then(function (json) {
-						console.log(json);
-					});
-				} else {
-					console.log("Oops, we haven't got JSON!");
-				}
-			});
-			// fetch('/loggedin')
-			// .then((response) => response.json())
-			// .then((json) => {
-			// 	console.log(json)
-			// })
+			fetch('/login', { credentials: 'include' }).then(function (response) {
+				return response.json();
+			}).then(function (json) {
+				console.log(json.emails[0].value);
+				var email = json.emails[0].value;
+				var pass = 'password1';
 
-			var email = 'joe@example.com';
-			var pass = 'password1';
+				_auth2.default.login(email, pass, function (loggedIn) {
+					if (!loggedIn) return _this.setState({ error: true });
 
-			_auth2.default.login(email, pass, function (loggedIn) {
-				if (!loggedIn) return _this.setState({ error: true });
-
-				var location = _this.props.location;
+					var location = _this.props.location;
 
 
-				if (location.state && location.state.nextPathname) {
-					_this.props.router.replace(location.state.nextPathname);
-				} else {
-					_this.props.router.replace('/');
-				}
+					if (location.state && location.state.nextPathname) {
+						_this.props.router.replace(location.state.nextPathname);
+					} else {
+						_this.props.router.replace('/');
+					}
+				});
 			});
 		},
 		render: function render() {
 			return _react2.default.createElement(
-				'p',
+				'div',
 				null,
-				'logging in'
+				_react2.default.createElement(
+					'h1',
+					{ id: 'loginText' },
+					'Invalid Github Account'
+				),
+				_react2.default.createElement(_HomePage2.default, null)
 			);
 		}
 	}));
@@ -46301,6 +46301,13 @@
 
 /***/ },
 /* 527 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 528 */,
+/* 529 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46319,26 +46326,36 @@
 
 	var _auth2 = _interopRequireDefault(_auth);
 
+	var _HomePage = __webpack_require__(496);
+
+	var _HomePage2 = _interopRequireDefault(_HomePage);
+
+	__webpack_require__(527);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Logout = (0, _reactRouter.withRouter)(_react2.default.createClass({
 		displayName: 'Logout',
 		componentDidMount: function componentDidMount() {
 			_auth2.default.logout();
-			var location = this.props.location;
+			// const { location } = this.props
 
-
-			if (location.state && location.state.nextPathname) {
-				this.props.router.replace(location.state.nextPathname);
-			} else {
-				this.props.router.replace('/');
-			}
+			//       if (location.state && location.state.nextPathname) {
+			//         this.props.router.replace(location.state.nextPathname)
+			//       } else {
+			//         this.props.router.replace('/')
+			//       }
 		},
 		render: function render() {
 			return _react2.default.createElement(
-				'p',
+				'div',
 				null,
-				'You are now logged out'
+				_react2.default.createElement(
+					'h1',
+					{ id: 'loginText' },
+					'Logged Out'
+				),
+				_react2.default.createElement(_HomePage2.default, null)
 			);
 		}
 	}));

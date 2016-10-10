@@ -58,7 +58,7 @@ app.get('/login', function(req, res){
 		something: 'somethingelse',
 		username:req.session.userInfo,
 	};
-    res.json(jsonObj);
+    res.json(req.session.userInfo);
 });
 
 app.get('/', (req, res) => {
@@ -73,17 +73,6 @@ app.get('/login/github/return',
     	req.session.userInfo = req.user;
         res.redirect('/#/login');
 });
-
-app.get('/loggedin', function(req, res){
-    //res.setHeader('Content-Type', 'application/json');
-    console.log(req.session.userInfo)
-    var jsonObj = {
-		something: 'somethingelse',
-		username:req.session.userInfo,
-	};
-    res.json(jsonObj);
-});
-
 
 app.get("/slack", (req, res) => {
 	res.sendFile(path.join(__dirname, './slack.html'));
