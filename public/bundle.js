@@ -45768,7 +45768,14 @@
 			key: "render",
 			value: function render() {
 
-				return _react2.default.createElement("div", { className: "careerBackground" });
+				return _react2.default.createElement(
+					"div",
+					{ className: "careerBackground" },
+					_react2.default.createElement("div", { id: "div1" }),
+					_react2.default.createElement("div", { id: "div2" }),
+					_react2.default.createElement("div", { id: "div3" }),
+					_react2.default.createElement("div", { id: "div4" })
+				);
 			}
 		}]);
 
@@ -46045,8 +46052,7 @@
 				return _react2.default.createElement(
 					"div",
 					{ className: "feedbackBackground" },
-					_react2.default.createElement("img", { className: "threeOrbs", src: "assets/images/threeBalls.png" }),
-					_react2.default.createElement("img", { src: "assets/images/threeBalls.png" })
+					_react2.default.createElement("img", { className: "threeOrbs", src: "assets/images/threeBalls.png" })
 				);
 			}
 		}]);
