@@ -8,18 +8,17 @@ module.exports = function(sequelize, DataTypes) {
 		StartDate: DataTypes.DATEONLY,
 		EndDate: DataTypes.DATEONLY
 	}, {
-	classMethods: {
-		associate: function(models) {
-			// associations can be defined here
+		classMethods: {
+			associate: function(models) {
 
-			Section.hasMany(Session)
-			Section.hasMany(Assignment)
-			Section.hasMany(Announcement)
-			Section.belongsToMany(User, {as: "Class", through: "UserSection"};
+				Section.hasMany(Session)
+				Section.hasMany(Assignment)
+				Section.hasMany(Announcement)
+				Section.belongsToMany(User, {as: "Class", through: "UserSection"});
 
-
+			}
 		}
-	}
-});
+	});
+
 return Section;
 };
