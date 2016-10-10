@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
 		associate: function(models) {
 			// associations can be defined here
 			Session.belongsTo(models.Section)
-			Session.belongsToMany(models.Users, {as: "ClassSession", through: "Attendance"});
+			Session.belongsToMany(models.User, {as: "ClassSession", through: "Attendance"});
 			
 		}
 	}
