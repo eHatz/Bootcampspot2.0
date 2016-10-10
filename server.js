@@ -1,3 +1,4 @@
+//External dependencies
 const bodyParser = require('body-parser');
 const path = require('path');
 const express = require('express');
@@ -9,9 +10,10 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const express_session = require('express-session');
 const ensureLogin = require('connect-ensure-login');
-
 require('dotenv').config();
 
+
+//Express setup
 const PORT = process.env.PORT || 4000;
 
 app.connect({
@@ -25,6 +27,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+
+//Passport setup
 passport.use(new GitHubStrategy({
 	clientID: process.env.GITHUB_CLIENT_ID,
 	clientSecret: process.env.GITHUB_CLIENT_SECRET,
@@ -46,9 +50,21 @@ app.use(morgan('combined'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express_session({ secret: 'jennanda', resave: true, saveUninitialized: true }));
-
 app.use(passport.initialize());
 app.use(passport.session());
+
+
+
+//Routes
+app.get('/login', function(req, res){
+	console.log('=============================LOGIN GET=============================================');
+    //res.setHeader('Content-Type', 'application/json');
+});
+
+app.get('/#/login', function(req, res){
+    res.setHeader('Content-Type', 'application/json');
+    res.json((req.user));
+});
 
 app.get('/login', function(req, res){
 		res.setHeader('Content-Type', 'application/json');
@@ -103,7 +119,7 @@ app.post('/slack', (req, res) => {
 	});
 })
 
-
+//Listener
 app.listen(PORT, () => {
 	console.log(`Server is now listening on ${PORT}`);
 });
