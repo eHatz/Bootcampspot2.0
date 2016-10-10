@@ -15,18 +15,14 @@ require('dotenv').config();
 
 //Express setup
 const PORT = process.env.PORT || 4000;
-
 app.connect({
 	host: process.env.SLACK_WEBHOOK,
 });
-
 app.use(express.static(__dirname + '/public'));
-
 app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(bodyParser.json());
-
 
 //Passport setup
 passport.use(new GitHubStrategy({
@@ -52,7 +48,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express_session({ secret: 'jennanda', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
-
 
 
 //Routes
@@ -103,7 +98,7 @@ app.get('/loggedin', function(req, res){
 
 app.get("/slack", (req, res) => {
 	res.sendFile(path.join(__dirname, './slack.html'));
-})
+});
 
 app.post('/slack', (req, res) => {
 	request.post({
@@ -117,7 +112,11 @@ app.post('/slack', (req, res) => {
 		})
 	}, function(error, response, body){
 	});
-})
+});
+
+//Sequelize
+const models = require('./models');
+models.sequelize.sync()
 
 //Listener
 app.listen(PORT, () => {

@@ -23,11 +23,11 @@ fetch('/login').then(function(response) {
     console.log("Oops, we haven't got JSON!");
   }
 });
-			// fetch('/loggedin')
-			// .then((response) => response.json())
-			// .then((json) => {
-			// 	console.log(json)
-			// })
+			fetch('/loggedin')
+			.then((response) => response.json())
+			.then((json) => {
+				console.log(json)
+			})
 
 			const email = 'joe@example.com'
 			const pass = 'password1'

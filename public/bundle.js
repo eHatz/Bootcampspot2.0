@@ -46265,11 +46265,11 @@
 					console.log("Oops, we haven't got JSON!");
 				}
 			});
-			// fetch('/loggedin')
-			// .then((response) => response.json())
-			// .then((json) => {
-			// 	console.log(json)
-			// })
+			fetch('/loggedin').then(function (response) {
+				return response.json();
+			}).then(function (json) {
+				console.log(json);
+			});
 
 			var email = 'joe@example.com';
 			var pass = 'password1';
