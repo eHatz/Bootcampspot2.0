@@ -46073,7 +46073,12 @@
 			key: "render",
 			value: function render() {
 
-				return _react2.default.createElement("div", { className: "feedbackBackground" });
+				return _react2.default.createElement(
+					"div",
+					{ className: "feedbackBackground" },
+					_react2.default.createElement("img", { className: "threeOrbs", src: "assets/images/threeBalls.png" }),
+					_react2.default.createElement("img", { src: "assets/images/threeBalls.png" })
+				);
 			}
 		}]);
 

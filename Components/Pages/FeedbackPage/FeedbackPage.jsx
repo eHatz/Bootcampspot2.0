@@ -11,6 +11,13 @@ class FeedbackPage extends Component {
 
 			<div className="feedbackBackground">
 
+
+				<img className="threeOrbs" src="assets/images/threeBalls.png"/>
+
+
+				<img src="assets/images/threeBalls.png"/>
+
+
 			</div>
 			
 		);
