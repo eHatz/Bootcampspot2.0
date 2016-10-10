@@ -45855,7 +45855,7 @@
 			key: "render",
 			value: function render() {
 
-				return _react2.default.createElement("div", null);
+				return _react2.default.createElement("div", { className: "careerPageBackground" });
 			}
 		}]);
 
@@ -45923,7 +45923,7 @@
 			value: function render() {
 				return _react2.default.createElement(
 					"div",
-					null,
+					{ className: "homeworkPageBackground" },
 					_react2.default.createElement(_Table2.default, { pageName: "homeworkPage",
 						header1: "WEEK",
 						header2: "HOMEWORK",
@@ -46132,6 +46132,7 @@
 				return _react2.default.createElement(
 					"div",
 					{ className: "feedbackBackground" },
+					_react2.default.createElement("img", { className: "threeOrbs", src: "assets/images/threeBalls.png" }),
 					_react2.default.createElement("img", { src: "assets/images/threeBalls.png" })
 				);
 			}
@@ -46201,7 +46202,7 @@
 			value: function render() {
 				return _react2.default.createElement(
 					"div",
-					null,
+					{ className: "projectPageBackground" },
 					_react2.default.createElement(_Table2.default, { pageName: "projectsPage",
 						header1: "WEEK",
 						header2: "PROJECT",

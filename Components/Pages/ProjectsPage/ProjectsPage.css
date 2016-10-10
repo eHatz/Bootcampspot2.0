@@ -10,3 +10,11 @@
 .projectsPageCol4 {
 	width: 25%;
 }
+.projectPageBackground{
+	background-image: url('/assets/images/projects_watermark.png');
+	height: 80vh;
+	background-size: 100% auto;
+	background-size: cover;
+    background-position: 50% 50%;
+
+}

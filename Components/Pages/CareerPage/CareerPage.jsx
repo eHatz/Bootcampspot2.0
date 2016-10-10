@@ -7,7 +7,7 @@ class CareerPage extends Component {
 
 		return (
 
-			<div>
+			<div className="careerPageBackground">
 			</div>
 		);
 	}
