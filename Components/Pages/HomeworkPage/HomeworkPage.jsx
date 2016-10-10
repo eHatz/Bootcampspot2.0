@@ -9,7 +9,7 @@ class HomeworkPage extends Component {
 	render() {
 		return (
 
-			<div>
+			<div className="homeworkPageBackground">
 					<Table pageName='homeworkPage'
 						header1='WEEK' 
 						header2 = 'HOMEWORK' 

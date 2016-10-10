@@ -9,7 +9,7 @@ class ProjectsPage extends Component {
 	render() {
 		return (
 
-			<div>
+			<div className="projectPageBackground">
 					<Table pageName='projectsPage'
 						header1='WEEK' 
 						header2 = 'PROJECT' 
