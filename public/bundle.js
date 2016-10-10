@@ -25462,7 +25462,7 @@
 
 	var _FeedbackPage2 = _interopRequireDefault(_FeedbackPage);
 
-	var _ProjectsPage = __webpack_require__(522);
+	var _ProjectsPage = __webpack_require__(520);
 
 	var _ProjectsPage2 = _interopRequireDefault(_ProjectsPage);
 
@@ -45069,7 +45069,7 @@
 								{ className: "hideBtn", onClick: openModal },
 								_react2.default.createElement("img", { id: "hamburger", src: "assets/images/hamburger.png" })
 							),
-							_react2.default.createElement("img", { id: "logoImg", src: "/assets/images/logo2.png" })
+							_react2.default.createElement("img", { id: "logoImg1", src: "/assets/images/logo2.png" })
 						),
 						_react2.default.createElement(
 							"div",
@@ -45081,7 +45081,7 @@
 									"h4",
 									{ id: "logoutBar_username" },
 									UserName,
-									" "
+									"Hi Jennine"
 								),
 								_react2.default.createElement(
 									"h4",
@@ -45957,9 +45957,7 @@
 /***/ },
 /* 518 */,
 /* 519 */,
-/* 520 */,
-/* 521 */,
-/* 522 */
+/* 520 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -45974,7 +45972,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(523);
+	__webpack_require__(521);
 
 	var _Navbar = __webpack_require__(476);
 
@@ -46027,7 +46025,7 @@
 	exports.default = ProjectsPage;
 
 /***/ },
-/* 523 */
+/* 521 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
