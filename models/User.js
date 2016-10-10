@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
 	classMethods: {
 		associate: function(models) {
 			// associations can be defined here
-			User.belongsToMany(models.Section, {as: "Member", through: "UserSection"});
+			User.belongsToMany(models.Section, {through: "UserSection"});
 			User.belongsToMany(models.Session, {as: "Attendee", through: "Attendance"});
 			User.belongsToMany(models.Assignment, {as: "SubmittingStudent", through: "UserAssignment"})
 			User.hasOne(models.Career);
