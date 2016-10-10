@@ -6,6 +6,7 @@ import "./HomePage.css";
 class HomePage extends Component {
 
 	render() {
+		const { loggedIn } = this.props;
 
 		return (
 
@@ -16,10 +17,15 @@ class HomePage extends Component {
 							<img id="HomePage_logo" src="/assets/images/logo1.png" alt="logo"/>
 						</a>
 						<div>
-							<a href="/#github">
-								<img id="HomePage_login" src="/assets/images/github.png" alt="githubLogo"/>
-								{/*<h4 id="login">LOGIN WITH GITHUB</h4>*/}
-							</a>
+							{loggedIn ? (
+								<a href="/#logout">
+									<img id="HomePage_login" src="/assets/images/logos.png" alt="githubLogo"/>
+								</a>
+							) : (
+								<a href="/login/github">
+									<img id="HomePage_login" src="/assets/images/github.png" alt="githubLogo"/>
+								</a>
+							)}
 						</div>
 					</div>
 				</div>
