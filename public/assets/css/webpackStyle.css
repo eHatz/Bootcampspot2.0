@@ -476,7 +476,9 @@ body{
 
   
 }
-.tableData {
+/*#wholeTable{
+    min-width: 350px;
+}*/.tableData {
 	 display: inline-block;
     text-align: center;
     color: black;
@@ -486,6 +488,7 @@ body{
     font-size: 15px;
     line-height: 53px;
     border-bottom: 1px solid #d2cfcf;
+    
 
 }
 
@@ -508,6 +511,35 @@ body{
 	background-size: 100% auto;
 	background-size: cover;
     background-position: 50% 50%;
+}
+
+
+#div1 { 
+	background: #DDD; 
+	width: 50%;
+	height: 50%;
+	float: left;
+}
+#div2 {
+	background: #8b8b8b; 
+	width: 50%;
+	height: 50%;
+	float: left;
+}
+#div3 {
+	background: #343333; 
+	width: 50%;
+	height: 50%;
+	float: left;
+}
+#div4 {
+	background: #DDD; 
+	width: 50%;
+	height: 50%;
+	float: left;
+}
+body{
+	background-color: transparent;
 }.homeworkPageCol1 {
 	width: 10%;
 }
@@ -649,6 +681,14 @@ h3{
 }
 
 
+
+.remove-all-margin-padding {
+    padding: 0 !important;
+    margin: 0;
+    /*overflow: auto;*/
+}
+
+
 .feedbackBackground{
 	background-image: url('/assets/images/feedback_watermark.png');
 	height: 80vh;
@@ -658,9 +698,13 @@ h3{
 }
 
 .threeOrbs{
-	margin-left: 20%;
+	margin-left: 17%;
+    max-width: 64%;
+}
 
-}.projectsPageCol1 {
+
+
+.projectsPageCol1 {
 	width: 10%;
 }
 .projectsPageCol2 {

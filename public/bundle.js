@@ -44991,7 +44991,9 @@
 
 	function pretendRequest(email, pass, cb) {
 	  setTimeout(function () {
-	    if (email === 'ehatz01@gmail.com' && pass === 'password1') {
+
+	    if (email === 'jennine@optonline.net' && pass === 'password1') {
+
 	      cb({
 	        authenticated: true,
 	        token: Math.random().toString(36).substring(7)
@@ -45188,12 +45190,12 @@
 						),
 						_react2.default.createElement(
 							"div",
-							{ id: "logoutBar_logo", className: "col-sm-3" },
+							{ id: "logoutBar_logo", className: "col-md-3" },
 							_react2.default.createElement("img", { id: "logoImg1", src: "/assets/images/logo2.png" })
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "col-sm-9" },
+							{ className: "col-md-9" },
 							_react2.default.createElement(
 								"div",
 								{ id: "logoutBar_textDiv" },
@@ -45672,7 +45674,7 @@
 				{/*styling for width of each column shouldgo on the page css under the class pagenameCol1, 2, 3 ex: homePageCol1*/}
 				return _react2.default.createElement(
 					"div",
-					null,
+					{ id: "wholeTable" },
 					_react2.default.createElement(
 						"div",
 						{ id: "headRow", className: "row remove-all-margin-padding" },
@@ -45859,7 +45861,14 @@
 			key: "render",
 			value: function render() {
 
-				return _react2.default.createElement("div", { className: "careerBackground" });
+				return _react2.default.createElement(
+					"div",
+					{ className: "careerBackground" },
+					_react2.default.createElement("div", { id: "div1" }),
+					_react2.default.createElement("div", { id: "div2" }),
+					_react2.default.createElement("div", { id: "div3" }),
+					_react2.default.createElement("div", { id: "div4" })
+				);
 			}
 		}]);
 
@@ -46136,8 +46145,7 @@
 				return _react2.default.createElement(
 					"div",
 					{ className: "feedbackBackground" },
-					_react2.default.createElement("img", { className: "threeOrbs", src: "assets/images/threeBalls.png" }),
-					_react2.default.createElement("img", { src: "assets/images/threeBalls.png" })
+					_react2.default.createElement("img", { className: "threeOrbs", src: "assets/images/threeBalls.png" })
 				);
 			}
 		}]);

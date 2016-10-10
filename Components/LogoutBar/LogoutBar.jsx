@@ -27,12 +27,12 @@ class LogoutBar extends Component {
 							</div>
 						</div>
 					</Modal>
-					<div id='logoutBar_logo' className='col-sm-3'>
+					<div id='logoutBar_logo' className='col-md-3'>
 						
 						<img id='logoImg1' src='/assets/images/logo2.png'/>
 					</div>
  
-					<div className='col-sm-9'>
+					<div className='col-md-9'>
 						<div id='logoutBar_textDiv'>
 							<h4 id='logoutBar_username'>{UserName}Hi Jennine</h4>
 							<h4 id='logoutBar_logout'>Log Out</h4>
