@@ -13,10 +13,20 @@ const Login = withRouter(
 
 		componentWillMount() {
 
-			// fetch('/#/login')
+fetch('/login').then(function(response) {
+  var contentType = response.headers.get("content-type");
+  if(contentType && contentType.indexOf("application/json") !== -1) {
+    return response.json().then(function(json) {
+      console.log(json)
+    });
+  } else {
+    console.log("Oops, we haven't got JSON!");
+  }
+});
+			// fetch('/loggedin')
 			// .then((response) => response.json())
 			// .then((json) => {
-			// 	console.log(json);
+			// 	console.log(json)
 			// })
 
 			const email = 'joe@example.com'
