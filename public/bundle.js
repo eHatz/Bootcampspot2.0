@@ -44964,7 +44964,7 @@
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "col-sm-9 remove-all-margin-padding" },
+							{ id: "pageContent", className: "col-sm-9 remove-all-margin-padding" },
 							(0, _react.cloneElement)(this.props.children, {
 								showModal: this.state.showModal,
 								openModal: this.open.bind(this),
@@ -45064,11 +45064,6 @@
 						_react2.default.createElement(
 							"div",
 							{ id: "logoutBar_logo", className: "col-sm-3" },
-							_react2.default.createElement(
-								_reactBootstrap.Button,
-								{ className: "hideBtn", onClick: openModal },
-								_react2.default.createElement("img", { id: "hamburger", src: "assets/images/hamburger.png" })
-							),
 							_react2.default.createElement("img", { id: "logoImg1", src: "/assets/images/logo2.png" })
 						),
 						_react2.default.createElement(
@@ -45088,6 +45083,11 @@
 									{ id: "logoutBar_logout" },
 									"Log Out"
 								)
+							),
+							_react2.default.createElement(
+								_reactBootstrap.Button,
+								{ className: "hideBtn", onClick: openModal },
+								_react2.default.createElement("img", { id: "hamburger", src: "assets/images/hamburger.png" })
 							)
 						)
 					)
@@ -45886,12 +45886,12 @@
 							null,
 							_react2.default.createElement(
 								"li",
-								null,
+								{ className: "syllabusText" },
 								"You must complete 90% of the homework assignments. (You can miss no more than 2 assignments)"
 							),
 							_react2.default.createElement(
 								"li",
-								null,
+								{ className: "syllabusText" },
 								"Homework submissions must be on time AS IS. Late submissions will not be counted."
 							)
 						),
@@ -45905,12 +45905,12 @@
 							null,
 							_react2.default.createElement(
 								"li",
-								null,
+								{ className: "syllabusText" },
 								"Attendance must be maintained at a 95% rate. (You can miss no more than a total of 4 classes)"
 							),
 							_react2.default.createElement(
 								"li",
-								null,
+								{ className: "syllabusText" },
 								"Written permission must be obtained to miss class or it's considered one of your 4 absences."
 							)
 						),
@@ -45924,7 +45924,7 @@
 							null,
 							_react2.default.createElement(
 								"li",
-								null,
+								{ className: "syllabusText" },
 								"You must give a full effort on every group and individual project."
 							)
 						)

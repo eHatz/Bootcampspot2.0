@@ -4,15 +4,24 @@
 
 
 @media screen and (max-width: 768px){
+	
+	#pageContent{
+		width: 100%;
+	}
+
 	.hideBar{
 		display: none;
 	}
-	.hideBtn {
+	.hideBtn{
 		display: table;
 		border: none;
 		background-color: transparent;
 	}
-
+	.hideBtn:focus {
+    	color: #333;
+    	background-color: #e6e6e6;
+    	border-color: #8c8c8c;
+    }
 
 }
 /*******************************
