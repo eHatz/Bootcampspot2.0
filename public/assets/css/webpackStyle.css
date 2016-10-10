@@ -476,7 +476,9 @@ body{
 
   
 }
-.tableData {
+/*#wholeTable{
+    min-width: 350px;
+}*/.tableData {
 	 display: inline-block;
     text-align: center;
     color: black;

@@ -28,7 +28,7 @@ class Table extends Component {
 		const { header1, header2, header3, header4, pageName } = this.props;
 {/*styling for width of each column shouldgo on the page css under the class pagenameCol1, 2, 3 ex: homePageCol1*/}
 		return (
-			<div>
+			<div id="wholeTable">
 				<div id='headRow' className='row remove-all-margin-padding'>
 			 		<p className={pageName +'Col1 tableHeader'}>{header1}</p>
 					<p className={pageName +'Col2 tableHeader'}>{header2}</p>
