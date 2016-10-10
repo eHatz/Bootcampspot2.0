@@ -521,7 +521,15 @@ a:visited{
 .syllabusPageCol1.tableData{
 	color:#d30000;
 }
-.projectsPageCol1 {
+.feedbackBackground{
+	background-image: url('/assets/images/feedback_watermark.png');
+	height: 80vh;
+	background-size: 100% auto;
+	background-size: cover;
+    background-position: 50% 50%;
+
+
+}.projectsPageCol1 {
 	width: 10%;
 }
 .projectsPageCol2 {
