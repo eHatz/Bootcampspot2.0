@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
 	classMethods: {
 		associate: function(models) {
 
-			Career.belongsTo(User);
+			Career.belongsTo(models.User);
 
 		}
 	}

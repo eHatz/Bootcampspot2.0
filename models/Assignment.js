@@ -9,8 +9,8 @@ module.exports = function(sequelize, DataTypes) {
 	classMethods: {
 		associate: function(models) {
 
-			Assignment.belongsTo(Section)
-			Assignment.belongsToMany(Users, {through: "UserAssignment"});
+			Assignment.belongsTo(models.Section)
+			Assignment.belongsToMany(models.Users, {through: "UserAssignment"});
 			
 		}
 	}

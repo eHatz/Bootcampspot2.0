@@ -89,7 +89,7 @@ app.post('/slack', (req, res) => {
 
 //Sequelize
 const models = require("./models");
-models.sequelize.sync()
+models.sequelize.sync();
 
 
 app.listen(PORT, () => {

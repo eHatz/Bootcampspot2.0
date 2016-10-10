@@ -11,10 +11,10 @@ module.exports = function(sequelize, DataTypes) {
 		classMethods: {
 			associate: function(models) {
 
-				Section.hasMany(Session)
-				Section.hasMany(Assignment)
-				Section.hasMany(Announcement)
-				Section.belongsToMany(User, {as: "Class", through: "UserSection"});
+				Section.hasMany(models.Session)
+				Section.hasMany(models.Assignment)
+				Section.hasMany(models.Announcement)
+				Section.belongsToMany(models.User, {as: "Class", through: "UserSection"});
 
 			}
 		}
