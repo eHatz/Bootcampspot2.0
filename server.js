@@ -1,4 +1,3 @@
-//External dependencies
 const bodyParser = require('body-parser');
 const path = require('path');
 const express = require('express');
@@ -13,8 +12,7 @@ const ensureLogin = require('connect-ensure-login');
 const sequelize = require('sequelize');
 require('dotenv').config();
 
-
-//Express setup
+//Express Setup
 const PORT = process.env.PORT || 4000;
 app.connect({
 	host: process.env.SLACK_WEBHOOK,
@@ -24,6 +22,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(bodyParser.json());
+
 
 //Passport setup
 passport.use(new GitHubStrategy({
@@ -47,30 +46,14 @@ app.use(morgan('combined'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express_session({ secret: 'jennanda', resave: true, saveUninitialized: true }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 //Routes
 app.get('/login', function(req, res){
-	console.log('=============================LOGIN GET=============================================');
-    //res.setHeader('Content-Type', 'application/json');
-});
-
-app.get('/#/login', function(req, res){
-    res.setHeader('Content-Type', 'application/json');
-    res.json((req.user));
-});
-
-app.get('/login', function(req, res){
-		res.setHeader('Content-Type', 'application/json');
-    console.log(req.session.userInfo)
-    console.log(req.user)
-    var jsonObj = {
-		something: 'somethingelse',
-		username:req.session.userInfo,
-	};
-    res.json(jsonObj);
+	res.setHeader('Content-Type', 'application/json');
+    res.json(req.session.userInfo);
 });
 
 app.get('/', (req, res) => {
@@ -85,17 +68,6 @@ app.get('/login/github/return',
     	req.session.userInfo = req.user;
         res.redirect('/#/login');
 });
-
-app.get('/loggedin', function(req, res){
-    //res.setHeader('Content-Type', 'application/json');
-    console.log(req.session.userInfo)
-    var jsonObj = {
-		something: 'somethingelse',
-		username:req.session.userInfo,
-	};
-    res.json(jsonObj);
-});
-
 
 app.get("/slack", (req, res) => {
 	res.sendFile(path.join(__dirname, './slack.html'));
@@ -119,7 +91,7 @@ app.post('/slack', (req, res) => {
 const models = require("./models");
 models.sequelize.sync()
 
-//Listener
+
 app.listen(PORT, () => {
 	console.log(`Server is now listening on ${PORT}`);
 });
