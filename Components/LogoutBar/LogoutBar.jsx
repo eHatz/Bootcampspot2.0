@@ -18,7 +18,8 @@ class LogoutBar extends Component {
 									
 									<button className="modalHeaderWidth" type="button" onClick={closeModal} data-dismiss="modal" aria-label="Close">
 										<img id="close" src="assets/images/close_button.png"/>
-										<img id='logoImg' src='/assets/images/logo2.png'/>
+										<a href="/#">
+										<img id='logoImg' src='/assets/images/logo2.png'/></a>
 									</button>
 								</div>
 								<NavBar/>

@@ -18,11 +18,19 @@
 		background-color: transparent;
 	}
 	.hideBtn:focus {
-    	color: #333;
-    	background-color: #e6e6e6;
-    	border-color: #8c8c8c;
+    	
+    	background-color: #333;
+    	border-color: red;
+    	outline: transparent;
     }
 
+    .hideBtn:hover{
+    	/*background-color: red;*/
+    }
+   .hideBtn:active {
+    	color: red;
+    }
+   
 }
 /*******************************
 * MODAL AS LEFT/RIGHT SIDEBAR
@@ -89,7 +97,7 @@
 	background-color: #3a3939;;
 	padding: 0px;
 	margin: 0px;
-	height: 16vh;
+	height: 20vh;
 }
 .modalHeaderWidth{
 	width: 100%;

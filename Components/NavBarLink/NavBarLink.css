@@ -14,7 +14,7 @@
     padding-bottom: 4%;
 }
 
-.NavBarLink_imageDiv:focus{
+.NavBarLink_imageDiv:active{
 	background-color: red;
 }
 

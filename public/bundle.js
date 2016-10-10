@@ -45054,7 +45054,11 @@
 											"button",
 											{ className: "modalHeaderWidth", type: "button", onClick: closeModal, "data-dismiss": "modal", "aria-label": "Close" },
 											_react2.default.createElement("img", { id: "close", src: "assets/images/close_button.png" }),
-											_react2.default.createElement("img", { id: "logoImg", src: "/assets/images/logo2.png" })
+											_react2.default.createElement(
+												"a",
+												{ href: "/#" },
+												_react2.default.createElement("img", { id: "logoImg", src: "/assets/images/logo2.png" })
+											)
 										)
 									),
 									_react2.default.createElement(_NavBar2.default, null)
@@ -45728,7 +45732,7 @@
 			key: "render",
 			value: function render() {
 
-				return _react2.default.createElement("div", null);
+				return _react2.default.createElement("div", { className: "careerBackground" });
 			}
 		}]);
 
@@ -45796,7 +45800,7 @@
 			value: function render() {
 				return _react2.default.createElement(
 					"div",
-					null,
+					{ className: "homeworkBackground" },
 					_react2.default.createElement(_Table2.default, { pageName: "homeworkPage",
 						header1: "WEEK",
 						header2: "HOMEWORK",
@@ -45977,6 +45981,10 @@
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
 
+	var _Navbar = __webpack_require__(476);
+
+	var _Navbar2 = _interopRequireDefault(_Navbar);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -45998,7 +46006,11 @@
 			key: "render",
 			value: function render() {
 
-				return _react2.default.createElement("div", null);
+				return _react2.default.createElement(
+					"div",
+					{ className: "feedbackBackground" },
+					_react2.default.createElement("img", { src: "assets/images/threeBalls.png" })
+				);
 			}
 		}]);
 
@@ -46066,7 +46078,7 @@
 			value: function render() {
 				return _react2.default.createElement(
 					"div",
-					null,
+					{ className: "projectsBackground" },
 					_react2.default.createElement(_Table2.default, { pageName: "projectsPage",
 						header1: "WEEK",
 						header2: "PROJECT",

@@ -10,3 +10,34 @@
 .projectsPageCol4 {
 	width: 25%;
 }
+
+.projectsBackground{
+	background-image: url('/assets/images/projects_watermark.png');
+	height: 80vh;
+	background-size: 100% auto;
+	background-size: cover;
+    background-position: 50% 50%;
+}
+
+@media screen and (max-width: 768px){
+
+	.remove-all-margin-padding {
+    margin-top: 0px;
+    margin-right: -1px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+	}
+	.projectsPageCol1 {
+	width: 24%;
+	}
+	.projectsPageCol2 {
+		width: 17%;
+	}
+	.projectsPageCol3 {
+		width: 35%;
+	}
+	.projectsPageCol4 {
+		width: 19%;
+	}
+
+}

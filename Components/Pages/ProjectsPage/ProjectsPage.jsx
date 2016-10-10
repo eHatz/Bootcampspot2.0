@@ -9,13 +9,13 @@ class ProjectsPage extends Component {
 	render() {
 		return (
 
-			<div>
-					<Table pageName='projectsPage'
-						header1='WEEK' 
-						header2 = 'PROJECT' 
-						header3='DUE DATE' 
-						header4='SUBMISSION'
-					/>
+			<div className="projectsBackground">
+				<Table pageName='projectsPage'
+					header1='WEEK' 
+					header2 = 'PROJECT' 
+					header3='DUE DATE' 
+					header4='SUBMISSION'
+				/>
 			</div>
 
 		);
