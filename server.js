@@ -10,6 +10,7 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const express_session = require('express-session');
 const ensureLogin = require('connect-ensure-login');
+const sequelize = require('sequelize');
 require('dotenv').config();
 
 
@@ -115,7 +116,7 @@ app.post('/slack', (req, res) => {
 });
 
 //Sequelize
-const models = require('./models');
+const models = require("./models");
 models.sequelize.sync()
 
 //Listener
