@@ -8,7 +8,14 @@ class CareerPage extends Component {
 		return (
 
 			<div className="careerBackground">
-
+				<div id="div1">
+				</div>
+				<div id="div2">
+				</div>
+				<div id="div3">
+				</div>
+				<div id="div4">
+				</div>
 			</div>
 		);
 	}

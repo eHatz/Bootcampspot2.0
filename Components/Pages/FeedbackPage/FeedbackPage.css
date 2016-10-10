@@ -1,3 +1,11 @@
+
+.remove-all-margin-padding {
+    padding: 0 !important;
+    margin: 0;
+    /*overflow: auto;*/
+}
+
+
 .feedbackBackground{
 	background-image: url('/assets/images/feedback_watermark.png');
 	height: 80vh;
@@ -7,6 +15,9 @@
 }
 
 .threeOrbs{
-	margin-left: 20%;
-
+	margin-left: 17%;
+    max-width: 64%;
 }
+
+
+
