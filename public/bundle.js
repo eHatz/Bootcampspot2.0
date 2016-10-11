@@ -45404,12 +45404,12 @@
 					_react2.default.createElement(
 						"div",
 						{ className: "row" },
-						_react2.default.createElement(_Panel2.default, { background: "#181818", name: "ATTENDANCE", panelId: "attendance", img: "/assets/images/attendance_icon.png" }),
-						_react2.default.createElement(_Panel2.default, { background: "#302e2e", name: "HOMEWORK", panelId: "homework", img: "/assets/images/homework_icon.png" }),
-						_react2.default.createElement(_Panel2.default, { background: "#8a8a8a", name: "SYLLABUS", panelId: "syllabus", img: "/assets/images/syllabus_icon.png" }),
-						_react2.default.createElement(_Panel2.default, { background: "#cdcbcb", name: "PROJECTS", panelId: "projects", img: "/assets/images/projects_icon.png" }),
-						_react2.default.createElement(_Panel2.default, { background: "#cc0000", name: "FEEDBACK", panelId: "feedback", img: "/assets/images/feedback_icon.png" }),
-						_react2.default.createElement(_Panel2.default, { background: "#990000", name: "CAREER", panelId: "career", img: "/assets/images/career_icon.png" })
+						_react2.default.createElement(_Panel2.default, { background: "#181818", name: "ATTENDANCE", panelId: "attendancePanel", pageLink: "attendance", img: "/assets/images/attendance_icon.png" }),
+						_react2.default.createElement(_Panel2.default, { background: "#302e2e", name: "HOMEWORK", panelId: "homeworkPanel", pageLink: "homework", img: "/assets/images/homework_icon.png" }),
+						_react2.default.createElement(_Panel2.default, { background: "#8a8a8a", name: "SYLLABUS", panelId: "syllabusPanel", pageLink: "syllabus", img: "/assets/images/syllabus_icon.png" }),
+						_react2.default.createElement(_Panel2.default, { background: "#cdcbcb", name: "PROJECTS", panelId: "projectsPanel", pageLink: "projects", img: "/assets/images/projects_icon.png" }),
+						_react2.default.createElement(_Panel2.default, { background: "#cc0000", name: "FEEDBACK", panelId: "feedbackPanel", pageLink: "feedback", img: "/assets/images/feedback_icon.png" }),
+						_react2.default.createElement(_Panel2.default, { background: "#990000", name: "CAREER", panelId: "careerPanel", pageLink: "career", img: "/assets/images/career_icon.png" })
 					)
 				);
 			}
@@ -45486,11 +45486,12 @@
 				var img = _props.img;
 				var name = _props.name;
 				var background = _props.background;
+				var pageLink = _props.pageLink;
 
 
 				return _react2.default.createElement(
 					"a",
-					{ href: '#' + panelId },
+					{ href: '#' + pageLink },
 					_react2.default.createElement(
 						_reactBootstrap.Col,
 						{ sm: 2, className: "remove-all-margin-padding" },
@@ -45874,7 +45875,15 @@
 						_react2.default.createElement(
 							"div",
 							{ className: "col-md-12" },
-							_react2.default.createElement("div", { id: "div1" })
+							_react2.default.createElement(
+								"div",
+								{ id: "div1" },
+								_react2.default.createElement(
+									"h1",
+									null,
+									"see it works"
+								)
+							)
 						)
 					),
 					_react2.default.createElement(
@@ -45883,12 +45892,28 @@
 						_react2.default.createElement(
 							"div",
 							{ className: "col-md-6" },
-							_react2.default.createElement("div", { id: "div2" })
+							_react2.default.createElement(
+								"div",
+								{ id: "div2" },
+								_react2.default.createElement(
+									"h1",
+									null,
+									"see it works"
+								)
+							)
 						),
 						_react2.default.createElement(
 							"div",
 							{ className: "col-md-6" },
-							_react2.default.createElement("div", { id: "div3" })
+							_react2.default.createElement(
+								"div",
+								{ id: "div3" },
+								_react2.default.createElement(
+									"h1",
+									null,
+									"see it works"
+								)
+							)
 						)
 					)
 				);

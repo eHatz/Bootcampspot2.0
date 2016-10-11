@@ -359,7 +359,7 @@ body{
 
   .caption{
     font-size: 21px;
-    line-height: 161px; 
+   
   }
 
 }
@@ -367,7 +367,7 @@ body{
 @media screen and (max-width: 353px){
   .caption{
     font-size: 20px;
-    line-height: 7;
+    
   }
   
 }
