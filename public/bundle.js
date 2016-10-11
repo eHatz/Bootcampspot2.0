@@ -46149,21 +46149,33 @@
 					{ className: "feedbackBackground" },
 					_react2.default.createElement(
 						"div",
-						{ "class": "btn-group", role: "group", "aria-label": "..." },
+						{ className: "btn-group", role: "group", "aria-label": "..." },
 						_react2.default.createElement(
-							"button",
-							{ type: "button", className: "btn btn-default" },
-							"Student Feedback"
+							"div",
+							{ className: "row" },
+							_react2.default.createElement(
+								"div",
+								null,
+								_react2.default.createElement(
+									"button",
+									{ type: "button", className: "btn btn-default", id: "studentFeedback" },
+									"Student Feedback"
+								)
+							)
 						),
 						_react2.default.createElement(
-							"button",
-							{ type: "button", className: "btn btn-default" },
-							"Absence Form"
-						),
-						_react2.default.createElement(
-							"button",
-							{ type: "button", className: "btn btn-default" },
-							"Tutor Session"
+							"div",
+							{ className: "row" },
+							_react2.default.createElement(
+								"button",
+								{ type: "button", className: "btn btn-default", id: "absenceForm" },
+								"Absence Form"
+							),
+							_react2.default.createElement(
+								"button",
+								{ type: "button", className: "btn btn-default", id: "tutorSession" },
+								"Tutor Session"
+							)
 						)
 					)
 				);
