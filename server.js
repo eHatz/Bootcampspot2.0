@@ -10,6 +10,7 @@ const cookieParser = require('cookie-parser');
 const express_session = require('express-session');
 const ensureLogin = require('connect-ensure-login');
 const sequelize = require('sequelize');
+const models = require("./models");
 require('dotenv').config();
 
 //Express Setup
@@ -52,12 +53,18 @@ app.use(passport.session());
 
 //Routes
 app.get('/login', function(req, res){
-	res.setHeader('Content-Type', 'application/json');
-    res.json(req.session.userInfo);
-});
+	var User = models.User;
 
-app.get('/', (req, res) => {
-	res.sendFile(path.join(__dirname, './index.html'));
+	User.findOne({where: {Email: req.session.userInfo.emails[0].value}}).then(function(user){
+		if (!user){
+			res.setHeader('Content-Type', 'application/json');
+	    	res.json({access: false});
+		}else if (user){		
+			res.setHeader('Content-Type', 'application/json');
+	    	res.json({access: 'jennanda'});
+		}
+	});
+
 });
 
 app.get('/login/github', passport.authenticate('github'));
@@ -67,6 +74,10 @@ app.get('/login/github/return',
     function(req, res) {
     	req.session.userInfo = req.user;
         res.redirect('/#/login');
+});
+
+app.get('/', (req, res) => {
+	res.sendFile(path.join(__dirname, './index.html'));
 });
 
 app.get("/slack", (req, res) => {
@@ -88,7 +99,6 @@ app.post('/slack', (req, res) => {
 });
 
 //Sequelize
-const models = require("./models");
 models.sequelize.sync();
 
 

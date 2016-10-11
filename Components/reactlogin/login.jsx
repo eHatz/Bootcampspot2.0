@@ -18,11 +18,7 @@ const Login = withRouter(
 			fetch('/login', {credentials: 'include'})
 			.then((response) => response.json())
 			.then((json) => {
-				console.log(json)
-				const email = json.emails[0].value
-				const pass = 'password1'
 
-				auth.login(email, pass, (loggedIn) => {
 					if (!loggedIn)
 					return this.setState({ error: true })
 
