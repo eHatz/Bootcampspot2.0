@@ -1,4 +1,5 @@
 #HomePage_logo{
+	z-index: 1; 
 	position: absolute; 
 	padding-top: 6%;
     padding-right: 4%;
