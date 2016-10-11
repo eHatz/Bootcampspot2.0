@@ -18,18 +18,21 @@ const Login = withRouter(
 			fetch('/login', {credentials: 'include'})
 			.then((response) => response.json())
 			.then((json) => {
+				const access = json.access;
+				auth.login(access, (loggedIn) => {
+					if (!loggedIn)
+					return this.setState({ error: true })
 
-				if (!loggedIn)
-				return this.setState({ error: true })
+					const { location } = this.props
 
-				const { location } = this.props
-
-				if (location.state && location.state.nextPathname) {
-					this.props.router.replace(location.state.nextPathname)
-				} else {
-					this.props.router.replace('/')
-				}
+					if (location.state && location.state.nextPathname) {
+						this.props.router.replace(location.state.nextPathname)
+					} else {
+						this.props.router.replace('/')
+					}
+				})
 			})
+
 		},
 
 		render() {
