@@ -14,7 +14,8 @@
 }
 #logoutBar_textDiv{
 	float: right;
-	margin-top: 31px;	
+	margin-top: 37px;
+    margin-right: 4%;
 }
 #logoImg {
 	text-align: center;
@@ -60,7 +61,7 @@
 	
 	#logoImg {
 		background-color: #3a3939;
-		margin-top: 14%;
+		margin-top: 21%;
     	margin-left: 10%
 
 	}
@@ -73,7 +74,12 @@
 
 	#logoutBar_logo{ 
 		max-height: 70%;
+		width: 100%;
 		border-bottom: none;
+	}
+
+	#logoutBar_content {
+		width: 100%;
 	}
 
 	#logoutBar_logout{

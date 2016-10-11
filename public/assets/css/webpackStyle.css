@@ -90,7 +90,8 @@ body{
 }
 #logoutBar_textDiv{
 	float: right;
-	margin-top: 31px;	
+	margin-top: 37px;
+    margin-right: 4%;
 }
 #logoImg {
 	text-align: center;
@@ -136,7 +137,7 @@ body{
 	
 	#logoImg {
 		background-color: #3a3939;
-		margin-top: 14%;
+		margin-top: 21%;
     	margin-left: 10%
 
 	}
@@ -149,7 +150,12 @@ body{
 
 	#logoutBar_logo{ 
 		max-height: 70%;
+		width: 100%;
 		border-bottom: none;
+	}
+
+	#logoutBar_content {
+		width: 100%;
 	}
 
 	#logoutBar_logout{
@@ -279,14 +285,14 @@ body{
 
 .modal-header {
 	border-bottom-color: #EEEEEE;
-	background-color: #3a3939;;
+	background-color: #343333;
 	padding: 0px;
 	margin: 0px;
 	height: 20vh;
 }
 .modalHeaderWidth{
 	width: 100%;
-	background-color: #3a3939;
+	background-color: #343333;
 	border: none;
 }
 
@@ -386,7 +392,6 @@ body{
 
 @media screen and (max-width: 767px){
 	#HomePage_logo{
-		z-index: 1; 
 		position: static; 
 		top: 0px; 
 		left: 0px;
@@ -516,8 +521,6 @@ body{
 
 #div1 { 
 	background: #DDD; 
-	width: 50%;
-	height: 50%;
 	float: left;
 }
 #div2 {
@@ -531,12 +534,7 @@ body{
 	width: 50%;
 	height: 50%;
 	float: left;
-}
-#div4 {
-	background: #DDD; 
-	width: 50%;
-	height: 50%;
-	float: left;
+
 }
 body{
 	background-color: transparent;
@@ -652,6 +650,7 @@ h3{
 }
 
 
+
 @media screen and (max-width: 768px){
 	.syllabusBackground{
 		height: 80vh;
@@ -679,6 +678,27 @@ h3{
 	font-size: 110%;
 	}
 }
+
+@media screen and (max-width: 350px){
+	
+	.syllabusPageCol3{
+	width: 25%;
+	font-size: 86%;
+	}
+	.syllabusPageCol1 {
+	width: 27%;
+	font-size: 86%;
+	}	
+	.syllabusPageCol2 {
+	width: 20%;
+	font-size: 86%;
+	}
+	.syllabusPageCol4 {
+	width: 20%;
+	font-size: 86%;
+	}
+}
+
 
 
 
