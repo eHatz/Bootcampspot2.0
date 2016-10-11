@@ -7,10 +7,10 @@ import "./Panel.css";
 class Panel extends Component {
 
 	render() {
-		const { panelId, img, name, background } = this.props;
+		const { panelId, img, name, background, pageLink } = this.props;
 	
 		return (
-			<a href={'#' + panelId}>
+			<a href={'#' + pageLink}>
 				<Col sm={2} className="remove-all-margin-padding">
 
 					<div id={panelId} className="Panel_panelDiv" style={{backgroundColor: background}}>

@@ -11,6 +11,7 @@ class CareerPage extends Component {
 				<div className="row">
 					<div className="col-md-12">
 						<div id="div1">
+							<h1>see it works</h1>
 						</div>
 					</div>
 				</div>
@@ -18,10 +19,12 @@ class CareerPage extends Component {
 				<div className="row">
 					<div className="col-md-6">		
 						<div id="div2">
+							<h1>see it works</h1>
 						</div>
 					</div>
 					<div className="col-md-6">
 						<div id="div3">
+							<h1>see it works</h1>
 						</div>
 					</div>	
 				</div>
