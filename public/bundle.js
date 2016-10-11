@@ -25482,12 +25482,12 @@
 
 	var _auth2 = _interopRequireDefault(_auth);
 
+	var _StudentFeedback = __webpack_require__(530);
+
+	var _StudentFeedback2 = _interopRequireDefault(_StudentFeedback);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	//===Import Components===
-
-	//Base component, including nav bar
-	//===React Dependencies===
 	function requireAuth(nextState, replace) {
 			if (!_auth2.default.loggedIn()) {
 					replace({
@@ -25497,6 +25497,10 @@
 			}
 	}
 
+	//===Import Components===
+
+	//Base component, including nav bar
+	//===React Dependencies===
 	exports.default = _react2.default.createElement(
 			_reactRouter.Route,
 			{ component: _Application2.default },
@@ -45002,6 +45006,24 @@
 	  onChange: function onChange() {}
 	};
 
+<<<<<<< HEAD
+	function pretendRequest(email, pass, cb) {
+	  setTimeout(function () {
+
+	    if (email === 'ciganaromungra@gmail.com' && pass === 'password1') {
+
+	      cb({
+	        authenticated: true,
+	        token: Math.random().toString(36).substring(7)
+	      });
+	    } else {
+	      cb({ authenticated: false });
+	    }
+	  }, 0);
+	}
+
+=======
+>>>>>>> df8240d7abb6edd6b5781bd964b048f4696d6eb8
 /***/ },
 /* 487 */
 /***/ function(module, exports, __webpack_require__) {
@@ -46143,7 +46165,37 @@
 				return _react2.default.createElement(
 					"div",
 					{ className: "feedbackBackground" },
-					_react2.default.createElement("img", { className: "threeOrbs", src: "assets/images/threeBalls.png" })
+					_react2.default.createElement(
+						"div",
+						{ className: "btn-group", role: "group", "aria-label": "..." },
+						_react2.default.createElement(
+							"div",
+							{ className: "row" },
+							_react2.default.createElement(
+								"div",
+								null,
+								_react2.default.createElement(
+									"button",
+									{ type: "button", className: "btn btn-default", id: "studentFeedback" },
+									"Student Feedback"
+								)
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "row" },
+							_react2.default.createElement(
+								"button",
+								{ type: "button", className: "btn btn-default", id: "absenceForm" },
+								"Absence Form"
+							),
+							_react2.default.createElement(
+								"button",
+								{ type: "button", className: "btn btn-default", id: "tutorSession" },
+								"Tutor Session"
+							)
+						)
+					)
 				);
 			}
 		}]);
@@ -46276,8 +46328,16 @@
 			fetch('/login', { credentials: 'include' }).then(function (response) {
 				return response.json();
 			}).then(function (json) {
+<<<<<<< HEAD
+				console.log(json);
+				var email = json.emails[0].value;
+				var pass = 'password1';
+
+				_auth2.default.login(email, pass, function (loggedIn) {
+=======
 				var access = json.access;
 				_auth2.default.login(access, function (loggedIn) {
+>>>>>>> df8240d7abb6edd6b5781bd964b048f4696d6eb8
 					if (!loggedIn) return _this.setState({ error: true });
 
 					var location = _this.props.location;
@@ -46367,6 +46427,34 @@
 		}
 	}));
 	exports.default = Logout;
+
+/***/ },
+/* 530 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(531);
+
+	var _Navbar = __webpack_require__(476);
+
+	var _Navbar2 = _interopRequireDefault(_Navbar);
+
+	var _LogoutBar = __webpack_require__(488);
+
+	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 531 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);

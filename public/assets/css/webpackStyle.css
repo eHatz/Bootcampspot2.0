@@ -690,17 +690,51 @@ h3{
 
 
 .feedbackBackground{
-	background-image: url('/assets/images/feedback_watermark.png');
+	background-image: url('/assets/images/feedback.png');
 	height: 80vh;
 	background-size: 100% auto;
 	background-size: cover;
     background-position: 50% 50%;
 }
+button.btn.btn-default{
+	color:black;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 25px;
+	background-color: white;
+	border-width: 0px;
 
-.threeOrbs{
-	margin-left: 17%;
-    max-width: 64%;
 }
+#studentFeedback{
+	border-radius: 100%;
+	margin-left: 170%;
+	margin-top: 60%;
+	display: inline-block;
+
+}
+#absenceForm{
+	border-radius: 100%;
+	margin-left: 130%;
+	margin-top: 70%;
+}
+#tutorSession{
+	border-radius: 100%;
+	margin-left: 220%;
+	margin-top: -20%;
+}
+
+
+
+@media screen and (max-width: 640px){
+	#studentFeedback{
+		margin-right: 20%;
+
+	}
+	#absenceForm{
+		margin-right: 20%;
+	}
+
+}
+
 
 
 
