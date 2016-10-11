@@ -10,6 +10,7 @@ const cookieParser = require('cookie-parser');
 const express_session = require('express-session');
 const ensureLogin = require('connect-ensure-login');
 const sequelize = require('sequelize');
+const models = require("./models");
 require('dotenv').config();
 
 //Express Setup
@@ -28,11 +29,16 @@ app.use(bodyParser.json());
 passport.use(new GitHubStrategy({
 	clientID: process.env.GITHUB_CLIENT_ID,
 	clientSecret: process.env.GITHUB_CLIENT_SECRET,
-	callbackURL: "http://localhost:4000/login/github/return"
+	callbackURL: process.env.CALLBACK_URL
 }, function(accessToken, refreshToken, profile, cb) {
 	return cb(null, profile);
 }
 ));
+
+/*
+local: http://localhost:4000/login/github/return
+prodution: http://bootcampspot2.herokuapp.com/login/github/return
+*/
 
 passport.serializeUser(function(user, cb) {
 	cb(null, user);
@@ -52,12 +58,18 @@ app.use(passport.session());
 
 //Routes
 app.get('/login', function(req, res){
-	res.setHeader('Content-Type', 'application/json');
-    res.json(req.session.userInfo);
-});
+	var User = models.User;
 
-app.get('/', (req, res) => {
-	res.sendFile(path.join(__dirname, './index.html'));
+	User.findOne({where: {Email: req.session.userInfo.emails[0].value}}).then(function(user){
+		if (!user){
+			res.setHeader('Content-Type', 'application/json');
+	    	res.json({access: false});
+		}else if (user){		
+			res.setHeader('Content-Type', 'application/json');
+	    	res.json({access: 'jennanda'});
+		}
+	});
+
 });
 
 app.get('/login/github', passport.authenticate('github'));
@@ -67,6 +79,10 @@ app.get('/login/github/return',
     function(req, res) {
     	req.session.userInfo = req.user;
         res.redirect('/#/login');
+});
+
+app.get('/', (req, res) => {
+	res.sendFile(path.join(__dirname, './index.html'));
 });
 
 app.get("/slack", (req, res) => {
@@ -88,7 +104,6 @@ app.post('/slack', (req, res) => {
 });
 
 //Sequelize
-const models = require("./models");
 models.sequelize.sync();
 
 

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./HomeworkPage.css";
-import Navbar from "../../Navbar/Navbar.jsx"
+import Navbar from "../../Navbar/Navbar.jsx";
 import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
 import Table from "../../Table/Table.jsx";
 
