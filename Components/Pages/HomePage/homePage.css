@@ -18,7 +18,6 @@
 
 @media screen and (max-width: 767px){
 	#HomePage_logo{
-		z-index: 1; 
 		position: static; 
 		top: 0px; 
 		left: 0px;

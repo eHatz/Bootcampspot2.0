@@ -3,6 +3,7 @@ import "./FeedbackPage.css";
 import { form, label, select, input } from "react-bootstrap";
 import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
 import Navbar from "../../Navbar/Navbar.jsx";
+import FeedbackRadialQuest from "../../FeedbackRadialQuest/FeedbackRadialQuest.jsx"
 
 class FeedbackPage extends Component {
 
@@ -41,25 +42,7 @@ class FeedbackPage extends Component {
 								  </div>
 			 				</form>
 			 			</div>
-			 				<div className= "row">
-			 					<h3> How was class this week?</h3>
-			 				</div>
-			 				<div className="row">
-			 					<div className ="col-md-4">
-			 						<h3>Not so Great</h3>
-			 					</div>
-			 					<div className ="col-md-4">
-						 			<label className="radio-inline"><input type="radio" name="optradio"/>Option 1</label>
-						 			<label className="radio-inline"><input type="radio" name="optradio"/>Option 2</label>
-						 			<label className="radio-inline"><input type="radio" name="optradio"/>Option 3</label>
-						 			<label className="radio-inline"><input type="radio" name="optradio"/>Option 4</label>
-						 			<label className="radio-inline"><input type="radio" name="optradio"/>Option 5</label>
-						 		</div>
-						 		<div className = "col-md-4">
-					 				<h3>Excellent!</h3>
-					 			</div>
-					 		</div>
-
+			 			<FeedbackRadialQuest/>
 			 		</div>				
 			</div>
 			
