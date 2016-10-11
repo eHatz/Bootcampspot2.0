@@ -35,6 +35,11 @@ passport.use(new GitHubStrategy({
 }
 ));
 
+/*
+local: http://localhost:4000/login/github/return
+prodution: http://bootcampspot2.herokuapp.com/login/github/return
+*/
+
 passport.serializeUser(function(user, cb) {
 	cb(null, user);
 });
