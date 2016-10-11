@@ -28430,7 +28430,7 @@
 	      _react2['default'].createElement(
 	        'span',
 	        null,
-	        '×'
+	        '\xD7'
 	      )
 	    );
 	  };
@@ -31132,12 +31132,11 @@
 	  Collapse.prototype.handleExit = function handleExit(elem) {
 	    var dimension = this._dimension();
 	    elem.style[dimension] = this.props.getDimensionValue(dimension, elem) + 'px';
+	    triggerBrowserReflow(elem);
 	  };
 
 	  Collapse.prototype.handleExiting = function handleExiting(elem) {
 	    var dimension = this._dimension();
-
-	    triggerBrowserReflow(elem);
 	    elem.style[dimension] = '0';
 	  };
 
@@ -33003,30 +33002,27 @@
 
 	    var classes = (0, _extends4['default'])({}, (0, _bootstrapUtils.getClassSet)(bsProps), (_extends2 = {}, _extends2[(0, _bootstrapUtils.prefix)(bsProps, 'right')] = pullRight, _extends2));
 
-	    var list = _react2['default'].createElement(
-	      'ul',
-	      (0, _extends4['default'])({}, elementProps, {
-	        role: 'menu',
-	        className: (0, _classnames2['default'])(className, classes),
-	        'aria-labelledby': labelledBy
-	      }),
-	      _ValidComponentChildren2['default'].map(children, function (child) {
-	        return _react2['default'].cloneElement(child, {
-	          onKeyDown: (0, _createChainedFunction2['default'])(child.props.onKeyDown, _this2.handleKeyDown),
-	          onSelect: (0, _createChainedFunction2['default'])(child.props.onSelect, onSelect)
-	        });
-	      })
+	    return _react2['default'].createElement(
+	      _RootCloseWrapper2['default'],
+	      {
+	        disabled: !open,
+	        onRootClose: onClose
+	      },
+	      _react2['default'].createElement(
+	        'ul',
+	        (0, _extends4['default'])({}, elementProps, {
+	          role: 'menu',
+	          className: (0, _classnames2['default'])(className, classes),
+	          'aria-labelledby': labelledBy
+	        }),
+	        _ValidComponentChildren2['default'].map(children, function (child) {
+	          return _react2['default'].cloneElement(child, {
+	            onKeyDown: (0, _createChainedFunction2['default'])(child.props.onKeyDown, _this2.handleKeyDown),
+	            onSelect: (0, _createChainedFunction2['default'])(child.props.onSelect, onSelect)
+	          });
+	        })
+	      )
 	    );
-
-	    if (open) {
-	      return _react2['default'].createElement(
-	        _RootCloseWrapper2['default'],
-	        { noWrap: true, onRootClose: onClose },
-	        list
-	      );
-	    }
-
-	    return list;
 	  };
 
 	  return DropdownMenu;
@@ -33256,13 +33252,28 @@
 	var RootCloseWrapper = function (_React$Component) {
 	  _inherits(RootCloseWrapper, _React$Component);
 
-	  function RootCloseWrapper(props) {
+	  function RootCloseWrapper(props, context) {
 	    _classCallCheck(this, RootCloseWrapper);
 
-	    var _this = _possibleConstructorReturn(this, (RootCloseWrapper.__proto__ || Object.getPrototypeOf(RootCloseWrapper)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (RootCloseWrapper.__proto__ || Object.getPrototypeOf(RootCloseWrapper)).call(this, props, context));
 
-	    _this.handleDocumentMouse = _this.handleDocumentMouse.bind(_this);
-	    _this.handleDocumentKeyUp = _this.handleDocumentKeyUp.bind(_this);
+	    _this.handleMouseCapture = function (e) {
+	      _this.preventMouseRootClose = isModifiedEvent(e) || !isLeftClickEvent(e) || (0, _contains2.default)(_reactDom2.default.findDOMNode(_this), e.target);
+	    };
+
+	    _this.handleMouse = function () {
+	      if (!_this.preventMouseRootClose && _this.props.onRootClose) {
+	        _this.props.onRootClose();
+	      }
+	    };
+
+	    _this.handleKeyUp = function (e) {
+	      if (e.keyCode === 27 && _this.props.onRootClose) {
+	        _this.props.onRootClose();
+	      }
+	    };
+
+	    _this.preventMouseRootClose = false;
 	    return _this;
 	  }
 
@@ -33270,64 +33281,54 @@
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      if (!this.props.disabled) {
-	        this.bindRootCloseHandlers();
+	        this.addEventListeners();
 	      }
 	    }
 	  }, {
 	    key: 'componentDidUpdate',
 	    value: function componentDidUpdate(prevProps) {
 	      if (!this.props.disabled && prevProps.disabled) {
-	        this.bindRootCloseHandlers();
+	        this.addEventListeners();
 	      } else if (this.props.disabled && !prevProps.disabled) {
-	        this.unbindRootCloseHandlers();
+	        this.removeEventListeners();
 	      }
 	    }
 	  }, {
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {
 	      if (!this.props.disabled) {
-	        this.unbindRootCloseHandlers();
+	        this.removeEventListeners();
 	      }
 	    }
 	  }, {
-	    key: 'bindRootCloseHandlers',
-	    value: function bindRootCloseHandlers() {
+	    key: 'addEventListeners',
+	    value: function addEventListeners() {
+	      var event = this.props.event;
+
 	      var doc = (0, _ownerDocument2.default)(this);
 
 	      // Use capture for this listener so it fires before React's listener, to
 	      // avoid false positives in the contains() check below if the target DOM
 	      // element is removed in the React mouse callback.
-	      this._onDocumentMouseListener = (0, _addEventListener2.default)(doc, this.props.event, this.handleDocumentMouse, true);
+	      this.documentMouseCaptureListener = (0, _addEventListener2.default)(doc, event, this.handleMouseCapture, true);
 
-	      this._onDocumentKeyupListener = (0, _addEventListener2.default)(doc, 'keyup', this.handleDocumentKeyUp);
+	      this.documentMouseListener = (0, _addEventListener2.default)(doc, event, this.handleMouse);
+
+	      this.documentKeyupListener = (0, _addEventListener2.default)(doc, 'keyup', this.handleKeyUp);
 	    }
 	  }, {
-	    key: 'unbindRootCloseHandlers',
-	    value: function unbindRootCloseHandlers() {
-	      if (this._onDocumentMouseListener) {
-	        this._onDocumentMouseListener.remove();
+	    key: 'removeEventListeners',
+	    value: function removeEventListeners() {
+	      if (this.documentMouseCaptureListener) {
+	        this.documentMouseCaptureListener.remove();
 	      }
 
-	      if (this._onDocumentKeyupListener) {
-	        this._onDocumentKeyupListener.remove();
-	      }
-	    }
-	  }, {
-	    key: 'handleDocumentMouse',
-	    value: function handleDocumentMouse(e) {
-	      if (this.props.disabled || isModifiedEvent(e) || !isLeftClickEvent(e) || (0, _contains2.default)(_reactDom2.default.findDOMNode(this), e.target)) {
-	        return;
+	      if (this.documentMouseListener) {
+	        this.documentMouseListener.remove();
 	      }
 
-	      if (this.props.onRootClose) {
-	        this.props.onRootClose();
-	      }
-	    }
-	  }, {
-	    key: 'handleDocumentKeyUp',
-	    value: function handleDocumentKeyUp(e) {
-	      if (e.keyCode === 27 && this.props.onRootClose) {
-	        this.props.onRootClose();
+	      if (this.documentKeyupListener) {
+	        this.documentKeyupListener.remove();
 	      }
 	    }
 	  }, {
@@ -33377,6 +33378,7 @@
 
 	exports.default = function (node, event, handler, capture) {
 	  (0, _on2.default)(node, event, handler, capture);
+
 	  return {
 	    remove: function remove() {
 	      (0, _off2.default)(node, event, handler, capture);
@@ -38172,7 +38174,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-hidden': 'true' },
-	          '×'
+	          '\xD7'
 	        )
 	      ),
 	      children
@@ -39388,10 +39390,10 @@
 	      return true;
 	    }
 
-	    if (props.children) {
-	      return _ValidComponentChildren2['default'].some(props.children, function (child) {
-	        return _this2.isActive(child, activeKey, activeHref);
-	      });
+	    if (_ValidComponentChildren2['default'].some(props.children, function (child) {
+	      return _this2.isActive(child, activeKey, activeHref);
+	    })) {
+	      return true;
 	    }
 
 	    return props.active;
@@ -41386,8 +41388,8 @@
 
 	    if (maxButtons) {
 	      var hiddenPagesBefore = activePage - parseInt(maxButtons / 2, 10);
-	      startPage = hiddenPagesBefore > 1 ? hiddenPagesBefore : 1;
-	      hasHiddenPagesAfter = startPage + maxButtons <= items;
+	      startPage = hiddenPagesBefore > 2 ? hiddenPagesBefore : 1;
+	      hasHiddenPagesAfter = startPage + maxButtons < items;
 
 	      if (!hasHiddenPagesAfter) {
 	        endPage = items;
@@ -41426,7 +41428,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'More' },
-	          ellipsis === true ? '…' : ellipsis
+	          ellipsis === true ? '\u2026' : ellipsis
 	        )
 	      ));
 
@@ -41452,7 +41454,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'More' },
-	          ellipsis === true ? '…' : ellipsis
+	          ellipsis === true ? '\u2026' : ellipsis
 	        )
 	      ));
 
@@ -41515,7 +41517,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'First' },
-	          first === true ? '«' : first
+	          first === true ? '\xAB' : first
 	        )
 	      ),
 	      prev && _react2['default'].createElement(
@@ -41527,7 +41529,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'Previous' },
-	          prev === true ? '‹' : prev
+	          prev === true ? '\u2039' : prev
 	        )
 	      ),
 	      this.renderPageButtons(activePage, items, maxButtons, boundaryLinks, ellipsis, buttonProps),
@@ -41540,7 +41542,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'Next' },
-	          next === true ? '›' : next
+	          next === true ? '\u203A' : next
 	        )
 	      ),
 	      last && _react2['default'].createElement(
@@ -41552,7 +41554,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'Last' },
-	          last === true ? '»' : last
+	          last === true ? '\xBB' : last
 	        )
 	      )
 	    );
@@ -44952,8 +44954,21 @@
 
 	'use strict';
 
+	function pretendRequest(access, cb) {
+	  setTimeout(function () {
+	    if (access === 'jennanda') {
+	      cb({
+	        authenticated: true,
+	        token: Math.random().toString(36).substring(7)
+	      });
+	    } else {
+	      cb({ authenticated: false });
+	    }
+	  }, 0);
+	}
+
 	module.exports = {
-	  login: function login(email, pass, cb) {
+	  login: function login(access, cb) {
 	    var _this = this;
 
 	    cb = arguments[arguments.length - 1];
@@ -44962,7 +44977,7 @@
 	      this.onChange(true);
 	      return;
 	    }
-	    pretendRequest(email, pass, function (res) {
+	    pretendRequest(access, function (res) {
 	      if (res.authenticated) {
 	        localStorage.token = res.token;
 	        if (cb) cb(true);
@@ -44986,21 +45001,6 @@
 	  },
 	  onChange: function onChange() {}
 	};
-
-	function pretendRequest(email, pass, cb) {
-	  setTimeout(function () {
-
-	    if (email === 'jennine@optonline.net' && pass === 'password1') {
-
-	      cb({
-	        authenticated: true,
-	        token: Math.random().toString(36).substring(7)
-	      });
-	    } else {
-	      cb({ authenticated: false });
-	    }
-	  }, 0);
-	}
 
 /***/ },
 /* 487 */
@@ -46276,11 +46276,8 @@
 			fetch('/login', { credentials: 'include' }).then(function (response) {
 				return response.json();
 			}).then(function (json) {
-				console.log(json.emails[0].value);
-				var email = json.emails[0].value;
-				var pass = 'password1';
-
-				_auth2.default.login(email, pass, function (loggedIn) {
+				var access = json.access;
+				_auth2.default.login(access, function (loggedIn) {
 					if (!loggedIn) return _this.setState({ error: true });
 
 					var location = _this.props.location;
