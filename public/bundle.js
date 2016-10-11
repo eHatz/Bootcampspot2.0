@@ -44954,8 +44954,21 @@
 
 	'use strict';
 
+	function pretendRequest(access, cb) {
+	  setTimeout(function () {
+	    if (access === 'jennanda') {
+	      cb({
+	        authenticated: true,
+	        token: Math.random().toString(36).substring(7)
+	      });
+	    } else {
+	      cb({ authenticated: false });
+	    }
+	  }, 0);
+	}
+
 	module.exports = {
-	  login: function login(email, pass, cb) {
+	  login: function login(access, cb) {
 	    var _this = this;
 
 	    cb = arguments[arguments.length - 1];
@@ -44964,7 +44977,7 @@
 	      this.onChange(true);
 	      return;
 	    }
-	    pretendRequest(email, pass, function (res) {
+	    pretendRequest(access, function (res) {
 	      if (res.authenticated) {
 	        localStorage.token = res.token;
 	        if (cb) cb(true);
@@ -44988,21 +45001,6 @@
 	  },
 	  onChange: function onChange() {}
 	};
-
-	function pretendRequest(email, pass, cb) {
-	  setTimeout(function () {
-
-	    if (email === 'jennine@optonline.net' && pass === 'password1') {
-
-	      cb({
-	        authenticated: true,
-	        token: Math.random().toString(36).substring(7)
-	      });
-	    } else {
-	      cb({ authenticated: false });
-	    }
-	  }, 0);
-	}
 
 /***/ },
 /* 487 */
@@ -46278,11 +46276,8 @@
 			fetch('/login', { credentials: 'include' }).then(function (response) {
 				return response.json();
 			}).then(function (json) {
-				console.log(json.emails[0].value);
-				var email = json.emails[0].value;
-				var pass = 'password1';
-
-				_auth2.default.login(email, pass, function (loggedIn) {
+				var access = json.access;
+				_auth2.default.login(access, function (loggedIn) {
 					if (!loggedIn) return _this.setState({ error: true });
 
 					var location = _this.props.location;
