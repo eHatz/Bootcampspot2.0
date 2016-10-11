@@ -1,35 +1,39 @@
 
+
 /*SUBJECT*/
 .syllabusPageCol1 {
 	width: 30%;
-	font-size: 150%;
+	font-size: 120%;
 
 }
 
 /*LESSON*/
 .syllabusPageCol2 {
 	width: 23%;
-	font-size: 150%;
+	font-size: 120%;
 }
 
 /*DATE*/
 .syllabusPageCol3{
 	width: 15%;
-	font-size: 150%;
+	font-size: 120%;
 }
 
 /*RECORDING*/
 .syllabusPageCol4 {
 	width: 22%;
-	font-size: 150%;
+	font-size: 120%;
 
 }
 #syllabus {
 	color: #343333;
 	margin: 5%;
 	font-size: 22px;
-	background:rgba(246,246,246,0.5);
-	padding: 4%;
+	/*background:rgba(246,246,246,0.5);*/
+	padding-top: 4%;
+    padding-right: 4%;
+    padding-bottom: 4%;
+    padding-left: 10%;
 	margin:0;
 }
 .syllabusBackground{
@@ -43,3 +47,44 @@
 .syllabusPageCol1.tableData{
 	color:#d30000;
 }
+.syllabusText{
+	font-size: 16px;
+	color: dimgrey;
+}
+
+h3{
+	font-size: 17px;
+	font-weight: bold;
+	color: #424141;
+}
+
+
+@media screen and (max-width: 768px){
+	.syllabusBackground{
+		height: 80vh;
+	}
+	.glyphicon {
+    color: #d30000;
+    font-size: 146%;
+    line-height: inherit;
+	}
+
+	.syllabusPageCol3{
+	width: 25%;
+	font-size: 110%;
+	}
+	.syllabusPageCol1 {
+	width: 27%;
+	font-size: 110%;
+	}	
+	.syllabusPageCol2 {
+	width: 20%;
+	font-size: 110%;
+	}
+	.syllabusPageCol4 {
+	width: 20%;
+	font-size: 110%;
+	}
+}
+
+

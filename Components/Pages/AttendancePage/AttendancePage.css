@@ -23,3 +23,17 @@
 	
 }*/
 
+@media screen and (max-width: 768px){
+	
+	
+	
+	.attendancePageCol1 {
+	width: 27%;
+	}	
+	.attendancePageCol2 {
+	width: 18%%;
+	}
+	.attendancePageCol3 {
+	width: 26%;
+	}
+}

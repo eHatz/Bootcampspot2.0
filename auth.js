@@ -1,3 +1,4 @@
+
 module.exports = {
   login(email, pass, cb) {
     cb = arguments[arguments.length - 1]
@@ -37,7 +38,10 @@ module.exports = {
 
 function pretendRequest(email, pass, cb) {
   setTimeout(() => {
-    if (email === 'joe@example.com' && pass === 'password1') {
+
+    if (email === 'jennine@optonline.net' && pass === 'password1') {
+
+
       cb({
         authenticated: true,
         token: Math.random().toString(36).substring(7)

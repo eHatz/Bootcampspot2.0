@@ -9,22 +9,22 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const express_session = require('express-session');
 const ensureLogin = require('connect-ensure-login');
-
+const sequelize = require('sequelize');
 require('dotenv').config();
 
+//Express Setup
 const PORT = process.env.PORT || 4000;
-
 app.connect({
 	host: process.env.SLACK_WEBHOOK,
 });
-
 app.use(express.static(__dirname + '/public'));
-
 app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(bodyParser.json());
 
+
+//Passport setup
 passport.use(new GitHubStrategy({
 	clientID: process.env.GITHUB_CLIENT_ID,
 	clientSecret: process.env.GITHUB_CLIENT_SECRET,
@@ -50,9 +50,10 @@ app.use(express_session({ secret: 'jennanda', resave: true, saveUninitialized: t
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/#/login', function(req, res){
-    res.setHeader('Content-Type', 'application/json');
-    res.json((req.user));
+//Routes
+app.get('/login', function(req, res){
+	res.setHeader('Content-Type', 'application/json');
+    res.json(req.session.userInfo);
 });
 
 app.get('/', (req, res) => {
@@ -64,20 +65,13 @@ app.get('/login/github', passport.authenticate('github'));
 app.get('/login/github/return', 
     passport.authenticate('github', { failureRedirect: '/' }),
     function(req, res) {
+    	req.session.userInfo = req.user;
         res.redirect('/#/login');
 });
 
-app.get('/loggedin',
-    ensureLogin.ensureLoggedIn(),
-    function(req, res){
-        res.setHeader('Content-Type', 'application/json');
-        res.send(JSON.stringify(req.user));
-});
-
-
 app.get("/slack", (req, res) => {
 	res.sendFile(path.join(__dirname, './slack.html'));
-})
+});
 
 app.post('/slack', (req, res) => {
 	request.post({
@@ -91,7 +85,11 @@ app.post('/slack', (req, res) => {
 		})
 	}, function(error, response, body){
 	});
-})
+});
+
+//Sequelize
+const models = require("./models");
+models.sequelize.sync();
 
 
 app.listen(PORT, () => {

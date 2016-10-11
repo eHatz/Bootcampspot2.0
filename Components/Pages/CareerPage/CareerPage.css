@@ -1,7 +1,37 @@
-.careerPageBackground{
+
+.careerBackground{
 	background-image: url('/assets/images/career_watermark.png');
 	height: 80vh;
 	background-size: 100% auto;
 	background-size: cover;
     background-position: 50% 50%;
+}
+
+
+#div1 { 
+	background: #DDD; 
+	width: 50%;
+	height: 50%;
+	float: left;
+}
+#div2 {
+	background: #8b8b8b; 
+	width: 50%;
+	height: 50%;
+	float: left;
+}
+#div3 {
+	background: #343333; 
+	width: 50%;
+	height: 50%;
+	float: left;
+}
+#div4 {
+	background: #DDD; 
+	width: 50%;
+	height: 50%;
+	float: left;
+}
+body{
+	background-color: transparent;
 }

@@ -14,10 +14,6 @@ class FeedbackPage extends Component {
 
 				<img className="threeOrbs" src="assets/images/threeBalls.png"/>
 
-
-				<img src="assets/images/threeBalls.png"/>
-
-
 			</div>
 			
 		);

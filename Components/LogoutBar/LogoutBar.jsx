@@ -18,7 +18,8 @@ class LogoutBar extends Component {
 									
 									<button className="modalHeaderWidth" type="button" onClick={closeModal} data-dismiss="modal" aria-label="Close">
 										<img id="close" src="assets/images/close_button.png"/>
-										<img id='logoImg' src='/assets/images/logo2.png'/>
+										<a href="/#">
+										<img id='logoImg' src='/assets/images/logo2.png'/></a>
 									</button>
 								</div>
 								<NavBar/>
@@ -26,18 +27,19 @@ class LogoutBar extends Component {
 							</div>
 						</div>
 					</Modal>
-					<div id='logoutBar_logo' className='col-sm-3'>
-						<Button className='hideBtn' onClick={openModal}>
-							<img id="hamburger" src="assets/images/hamburger.png"/>
-						</Button>
+					<div id='logoutBar_logo' className='col-md-3'>
+						
 						<img id='logoImg1' src='/assets/images/logo2.png'/>
 					</div>
  
-					<div className='col-sm-9'>
+					<div className='col-md-9'>
 						<div id='logoutBar_textDiv'>
 							<h4 id='logoutBar_username'>{UserName}Hi Jennine</h4>
 							<h4 id='logoutBar_logout'>Log Out</h4>
 						</div>
+						<Button className='hideBtn' onClick={openModal}>
+							<img id="hamburger" src="assets/images/hamburger.png"/>
+						</Button>
 					</div>
 				</div>
 			</div>
