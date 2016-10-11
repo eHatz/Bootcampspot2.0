@@ -19,19 +19,17 @@ const Login = withRouter(
 			.then((response) => response.json())
 			.then((json) => {
 
-					if (!loggedIn)
-					return this.setState({ error: true })
+				if (!loggedIn)
+				return this.setState({ error: true })
 
-					const { location } = this.props
+				const { location } = this.props
 
-					if (location.state && location.state.nextPathname) {
-						this.props.router.replace(location.state.nextPathname)
-					} else {
-						this.props.router.replace('/')
-					}
-				})
+				if (location.state && location.state.nextPathname) {
+					this.props.router.replace(location.state.nextPathname)
+				} else {
+					this.props.router.replace('/')
+				}
 			})
-
 		},
 
 		render() {

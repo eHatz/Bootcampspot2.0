@@ -25470,11 +25470,11 @@
 
 	var _ProjectsPage2 = _interopRequireDefault(_ProjectsPage);
 
-	var _login = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./Components/reactlogin/login\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _login = __webpack_require__(526);
 
 	var _login2 = _interopRequireDefault(_login);
 
-	var _logout = __webpack_require__(529);
+	var _logout = __webpack_require__(527);
 
 	var _logout2 = _interopRequireDefault(_logout);
 
@@ -46268,15 +46268,7 @@
 
 /***/ },
 /* 525 */,
-/* 526 */,
-/* 527 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 528 */,
-/* 529 */
+/* 526 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46299,7 +46291,76 @@
 
 	var _HomePage2 = _interopRequireDefault(_HomePage);
 
-	__webpack_require__(527);
+	__webpack_require__(528);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Login = (0, _reactRouter.withRouter)(_react2.default.createClass({
+		displayName: 'Login',
+		getInitialState: function getInitialState() {
+			return {
+				error: false
+			};
+		},
+		componentWillMount: function componentWillMount() {
+			var _this = this;
+
+			fetch('/login', { credentials: 'include' }).then(function (response) {
+				return response.json();
+			}).then(function (json) {
+
+				if (!loggedIn) return _this.setState({ error: true });
+
+				var location = _this.props.location;
+
+
+				if (location.state && location.state.nextPathname) {
+					_this.props.router.replace(location.state.nextPathname);
+				} else {
+					_this.props.router.replace('/');
+				}
+			});
+		},
+		render: function render() {
+			return _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(
+					'h1',
+					{ id: 'loginText' },
+					'Invalid Github Account'
+				),
+				_react2.default.createElement(_HomePage2.default, null)
+			);
+		}
+	}));
+	exports.default = Login;
+
+/***/ },
+/* 527 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(159);
+
+	var _auth = __webpack_require__(486);
+
+	var _auth2 = _interopRequireDefault(_auth);
+
+	var _HomePage = __webpack_require__(496);
+
+	var _HomePage2 = _interopRequireDefault(_HomePage);
+
+	__webpack_require__(528);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46331,6 +46392,13 @@
 	exports.default = Logout;
 
 /***/ },
+/* 528 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 529 */,
 /* 530 */
 /***/ function(module, exports, __webpack_require__) {
 

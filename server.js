@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 passport.use(new GitHubStrategy({
 	clientID: process.env.GITHUB_CLIENT_ID,
 	clientSecret: process.env.GITHUB_CLIENT_SECRET,
-	callbackURL: "http://localhost:4000/login/github/return"
+	callbackURL: process.env.CALLBACK_URL
 }, function(accessToken, refreshToken, profile, cb) {
 	return cb(null, profile);
 }
