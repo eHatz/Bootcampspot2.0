@@ -10,8 +10,6 @@
 
 #div1 { 
 	background: #DDD; 
-	width: 50%;
-	height: 50%;
 	float: left;
 }
 #div2 {
@@ -25,12 +23,7 @@
 	width: 50%;
 	height: 50%;
 	float: left;
-}
-#div4 {
-	background: #DDD; 
-	width: 50%;
-	height: 50%;
-	float: left;
+
 }
 body{
 	background-color: transparent;

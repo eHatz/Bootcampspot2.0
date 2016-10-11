@@ -1,5 +1,4 @@
 #HomePage_logo{
-	z-index: 1; 
 	position: absolute; 
 	padding-top: 6%;
     padding-right: 4%;
@@ -18,7 +17,6 @@
 
 @media screen and (max-width: 767px){
 	#HomePage_logo{
-		z-index: 1; 
 		position: static; 
 		top: 0px; 
 		left: 0px;

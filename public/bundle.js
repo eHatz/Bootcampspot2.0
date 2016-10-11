@@ -45188,12 +45188,16 @@
 						),
 						_react2.default.createElement(
 							"div",
-							{ id: "logoutBar_logo", className: "col-md-3" },
-							_react2.default.createElement("img", { id: "logoImg1", src: "/assets/images/logo2.png" })
+							{ id: "logoutBar_logo", className: "col-sm-3" },
+							_react2.default.createElement(
+								"a",
+								{ href: "/#" },
+								_react2.default.createElement("img", { id: "logoImg1", src: "/assets/images/logo1.png" })
+							)
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "col-md-9" },
+							{ id: "logoutBar_content", className: "col-sm-9" },
 							_react2.default.createElement(
 								"div",
 								{ id: "logoutBar_textDiv" },
@@ -45862,10 +45866,29 @@
 				return _react2.default.createElement(
 					"div",
 					{ className: "careerBackground" },
-					_react2.default.createElement("div", { id: "div1" }),
-					_react2.default.createElement("div", { id: "div2" }),
-					_react2.default.createElement("div", { id: "div3" }),
-					_react2.default.createElement("div", { id: "div4" })
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-12" },
+							_react2.default.createElement("div", { id: "div1" })
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-6" },
+							_react2.default.createElement("div", { id: "div2" })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-6" },
+							_react2.default.createElement("div", { id: "div3" })
+						)
+					)
 				);
 			}
 		}]);

@@ -94,14 +94,14 @@
 
 .modal-header {
 	border-bottom-color: #EEEEEE;
-	background-color: #3a3939;;
+	background-color: #343333;
 	padding: 0px;
 	margin: 0px;
 	height: 20vh;
 }
 .modalHeaderWidth{
 	width: 100%;
-	background-color: #3a3939;
+	background-color: #343333;
 	border: none;
 }
 
