@@ -10,10 +10,11 @@ class FeedbackPage extends Component {
 		return (
 
 			<div className="feedbackBackground">
-
-
-				<img className="threeOrbs" src="assets/images/threeBalls.png"/>
-
+				<div class="btn-group" role="group" aria-label="...">
+				  <button type="button" className="btn btn-default">Student Feedback</button>
+				  <button type="button" className="btn btn-default">Absence Form</button>
+				  <button type="button" className="btn btn-default">Tutor Session</button>
+				</div>
 			</div>
 			
 		);

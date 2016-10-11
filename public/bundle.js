@@ -25482,12 +25482,12 @@
 
 	var _auth2 = _interopRequireDefault(_auth);
 
+	var _StudentFeedback = __webpack_require__(530);
+
+	var _StudentFeedback2 = _interopRequireDefault(_StudentFeedback);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	//===Import Components===
-
-	//Base component, including nav bar
-	//===React Dependencies===
 	function requireAuth(nextState, replace) {
 			if (!_auth2.default.loggedIn()) {
 					replace({
@@ -25497,6 +25497,10 @@
 			}
 	}
 
+	//===Import Components===
+
+	//Base component, including nav bar
+	//===React Dependencies===
 	exports.default = _react2.default.createElement(
 			_reactRouter.Route,
 			{ component: _Application2.default },
@@ -44990,7 +44994,7 @@
 	function pretendRequest(email, pass, cb) {
 	  setTimeout(function () {
 
-	    if (email === 'jennine@optonline.net' && pass === 'password1') {
+	    if (email === 'ciganaromungra@gmail.com' && pass === 'password1') {
 
 	      cb({
 	        authenticated: true,
@@ -46143,7 +46147,25 @@
 				return _react2.default.createElement(
 					"div",
 					{ className: "feedbackBackground" },
-					_react2.default.createElement("img", { className: "threeOrbs", src: "assets/images/threeBalls.png" })
+					_react2.default.createElement(
+						"div",
+						{ "class": "btn-group", role: "group", "aria-label": "..." },
+						_react2.default.createElement(
+							"button",
+							{ type: "button", className: "btn btn-default" },
+							"Student Feedback"
+						),
+						_react2.default.createElement(
+							"button",
+							{ type: "button", className: "btn btn-default" },
+							"Absence Form"
+						),
+						_react2.default.createElement(
+							"button",
+							{ type: "button", className: "btn btn-default" },
+							"Tutor Session"
+						)
+					)
 				);
 			}
 		}]);
@@ -46276,7 +46298,7 @@
 			fetch('/login', { credentials: 'include' }).then(function (response) {
 				return response.json();
 			}).then(function (json) {
-				console.log(json.emails[0].value);
+				console.log(json);
 				var email = json.emails[0].value;
 				var pass = 'password1';
 
@@ -46370,6 +46392,34 @@
 		}
 	}));
 	exports.default = Logout;
+
+/***/ },
+/* 530 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(531);
+
+	var _Navbar = __webpack_require__(476);
+
+	var _Navbar2 = _interopRequireDefault(_Navbar);
+
+	var _LogoutBar = __webpack_require__(488);
+
+	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 531 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);

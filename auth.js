@@ -39,7 +39,7 @@ module.exports = {
 function pretendRequest(email, pass, cb) {
   setTimeout(() => {
 
-    if (email === 'jennine@optonline.net' && pass === 'password1') {
+    if (email === 'ciganaromungra@gmail.com' && pass === 'password1') {
 
 
       cb({

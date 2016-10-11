@@ -18,7 +18,7 @@ const Login = withRouter(
 			fetch('/login', {credentials: 'include'})
 			.then((response) => response.json())
 			.then((json) => {
-				console.log(json.emails[0].value)
+				console.log(json)
 				const email = json.emails[0].value
 				const pass = 'password1'
 

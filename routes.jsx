@@ -25,8 +25,12 @@ import FeedbackPage from "./Components/Pages/FeedbackPage/FeedbackPage.jsx";
 import ProjectsPage from "./Components/Pages/ProjectsPage/ProjectsPage.jsx";
 
 import Login from "./Components/reactlogin/login";
+
 import Logout from "./Components/reactlogin/logout";
+
 import auth from './auth';
+
+import StudentFeedback from "./Components/Pages/StudentFeedback/StudentFeedback.jsx";
 
 function requireAuth(nextState, replace) {
   if (!auth.loggedIn()) {
