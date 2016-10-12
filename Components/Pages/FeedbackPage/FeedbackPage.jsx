@@ -3,7 +3,24 @@ import "./FeedbackPage.css";
 import { form, label, select, input } from "react-bootstrap";
 import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
 import Navbar from "../../Navbar/Navbar.jsx";
-import FeedbackRadialQuest from "../../FeedbackRadialQuest/FeedbackRadialQuest.jsx"
+import FeedbackRadialQuest from "../../FeedbackRadialQuest/FeedbackRadialQuest.jsx";
+
+const formData=[
+	{
+		question: "How was class this week?",
+		leftEnd: "Not so great",
+		rightEnd: "Excellent!"
+
+	},
+	{
+		question: "How would you rate the pace of the class this week?",
+		leftEnd: "Too Slow",
+		rightEnd: "Too Fast"
+	}
+];
+
+
+
 
 class FeedbackPage extends Component {
 
@@ -42,7 +59,15 @@ class FeedbackPage extends Component {
 								  </div>
 			 				</form>
 			 			</div>
-			 			<FeedbackRadialQuest/>
+			 			{formData.map((item, index) =>{
+				 			console.log(item);
+				 			return 	(<FeedbackRadialQuest 
+					 			question= { item.question } 
+					 			leftEnd = { item.leftEnd }
+					 			rightEnd = { item.rightEnd }
+					 			key = { index }
+				 			/>)
+				 		})}
 			 		</div>				
 			</div>
 			
