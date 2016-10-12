@@ -7,7 +7,7 @@
 
 
 .feedbackBackground{
-	background-image: url('/assets/images/feedback.png');
+	background-color:#d0cece;
 	height: 80vh;
 	background-size: 100% auto;
 	background-size: cover;
@@ -30,15 +30,27 @@
 	margin-left: 220%;
 	margin-top: -20%;
 }
+#exampleSelect1{
+	width:60%;
+	margin-left: 20%;
+}
+#exampleSelect2{
+	width:60%;
+	margin-left: 20%;
+}
+label{
+	font-size: 100%;
 
-
+}
 
 @media screen and (max-width: 640px){
 	#studentFeedback{
+		height:50%;
 		margin-right: 20%;
 
 	}
 	#absenceForm{
+		height:50%;
 		margin-right: 20%;
 	}
 

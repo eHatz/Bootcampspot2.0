@@ -25466,15 +25466,15 @@
 
 	var _FeedbackPage2 = _interopRequireDefault(_FeedbackPage);
 
-	var _ProjectsPage = __webpack_require__(523);
+	var _ProjectsPage = __webpack_require__(524);
 
 	var _ProjectsPage2 = _interopRequireDefault(_ProjectsPage);
 
-	var _login = __webpack_require__(526);
+	var _login = __webpack_require__(527);
 
 	var _login2 = _interopRequireDefault(_login);
 
-	var _logout = __webpack_require__(529);
+	var _logout = __webpack_require__(530);
 
 	var _logout2 = _interopRequireDefault(_logout);
 
@@ -25482,7 +25482,7 @@
 
 	var _auth2 = _interopRequireDefault(_auth);
 
-	var _StudentFeedback = __webpack_require__(530);
+	var _StudentFeedback = __webpack_require__(531);
 
 	var _StudentFeedback2 = _interopRequireDefault(_StudentFeedback);
 
@@ -46175,6 +46175,8 @@
 
 	__webpack_require__(521);
 
+	var _reactBootstrap = __webpack_require__(224);
+
 	var _LogoutBar = __webpack_require__(488);
 
 	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
@@ -46183,6 +46185,10 @@
 
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 
+	var _FeedbackRadialQuest = __webpack_require__(523);
+
+	var _FeedbackRadialQuest2 = _interopRequireDefault(_FeedbackRadialQuest);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -46190,6 +46196,17 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var formData = [{
+		question: "How was class this week?",
+		leftEnd: "Not so great",
+		rightEnd: "Excellent!"
+
+	}, {
+		question: "How would you rate the pace of the class this week?",
+		leftEnd: "Too Slow",
+		rightEnd: "Too Fast"
+	}];
 
 	var FeedbackPage = function (_Component) {
 		_inherits(FeedbackPage, _Component);
@@ -46207,7 +46224,116 @@
 				return _react2.default.createElement(
 					"div",
 					{ className: "feedbackBackground" },
-					_react2.default.createElement("div", { className: "row" })
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(
+							"h1",
+							null,
+							"Student Feedback"
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-6" },
+							_react2.default.createElement(
+								"form",
+								null,
+								_react2.default.createElement(
+									"div",
+									{ className: "form-group" },
+									_react2.default.createElement(
+										"label",
+										{ "for": "exampleSelect1" },
+										"Class"
+									),
+									_react2.default.createElement(
+										"select",
+										{ className: "form-control", id: "exampleSelect1" },
+										_react2.default.createElement(
+											"option",
+											null,
+											"1"
+										),
+										_react2.default.createElement(
+											"option",
+											null,
+											"2"
+										),
+										_react2.default.createElement(
+											"option",
+											null,
+											"3"
+										),
+										_react2.default.createElement(
+											"option",
+											null,
+											"4"
+										),
+										_react2.default.createElement(
+											"option",
+											null,
+											"5"
+										)
+									)
+								)
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-6" },
+							_react2.default.createElement(
+								"form",
+								null,
+								_react2.default.createElement(
+									"div",
+									{ className: "form-group" },
+									_react2.default.createElement(
+										"label",
+										{ "for": "exampleSelect2" },
+										"Class Week"
+									),
+									_react2.default.createElement(
+										"select",
+										{ className: "form-control", id: "exampleSelect2" },
+										_react2.default.createElement(
+											"option",
+											null,
+											"1"
+										),
+										_react2.default.createElement(
+											"option",
+											null,
+											"2"
+										),
+										_react2.default.createElement(
+											"option",
+											null,
+											"3"
+										),
+										_react2.default.createElement(
+											"option",
+											null,
+											"4"
+										),
+										_react2.default.createElement(
+											"option",
+											null,
+											"5"
+										)
+									)
+								)
+							)
+						),
+						formData.map(function (item, index) {
+							console.log(item);
+							return _react2.default.createElement(_FeedbackRadialQuest2.default, {
+								question: item.question,
+								leftEnd: item.leftEnd,
+								rightEnd: item.rightEnd,
+								key: index
+							});
+						})
+					)
 				);
 			}
 		}]);
@@ -46240,7 +46366,117 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(524);
+	var _reactBootstrap = __webpack_require__(224);
+
+	__webpack_require__(534);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var FeedbackRadialQuest = function (_Component) {
+		_inherits(FeedbackRadialQuest, _Component);
+
+		function FeedbackRadialQuest() {
+			_classCallCheck(this, FeedbackRadialQuest);
+
+			return _possibleConstructorReturn(this, (FeedbackRadialQuest.__proto__ || Object.getPrototypeOf(FeedbackRadialQuest)).apply(this, arguments));
+		}
+
+		_createClass(FeedbackRadialQuest, [{
+			key: "render",
+			value: function render() {
+				console.log(this.props.question);
+				return _react2.default.createElement(
+					"div",
+					{ className: "row" },
+					_react2.default.createElement(
+						"h1",
+						null,
+						this.props.question
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "col-md-4" },
+						_react2.default.createElement(
+							"h3",
+							null,
+							this.props.leftEnd
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "col-md-4" },
+						_react2.default.createElement(
+							"label",
+							{ className: "radio-inline" },
+							_react2.default.createElement("input", { type: "radio", name: "optradio" }),
+							"Option 1"
+						),
+						_react2.default.createElement(
+							"label",
+							{ className: "radio-inline" },
+							_react2.default.createElement("input", { type: "radio", name: "optradio" }),
+							"Option 2"
+						),
+						_react2.default.createElement(
+							"label",
+							{ className: "radio-inline" },
+							_react2.default.createElement("input", { type: "radio", name: "optradio" }),
+							"Option 3"
+						),
+						_react2.default.createElement(
+							"label",
+							{ className: "radio-inline" },
+							_react2.default.createElement("input", { type: "radio", name: "optradio" }),
+							"Option 4"
+						),
+						_react2.default.createElement(
+							"label",
+							{ className: "radio-inline" },
+							_react2.default.createElement("input", { type: "radio", name: "optradio" }),
+							"Option 5"
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "col-md-4" },
+						_react2.default.createElement(
+							"h3",
+							null,
+							this.props.rightEnd
+						)
+					)
+				);
+			}
+		}]);
+
+		return FeedbackRadialQuest;
+	}(_react.Component);
+
+	exports.default = FeedbackRadialQuest;
+
+/***/ },
+/* 524 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(525);
 
 	var _Navbar = __webpack_require__(476);
 
@@ -46293,14 +46529,14 @@
 	exports.default = ProjectsPage;
 
 /***/ },
-/* 524 */
+/* 525 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 525 */,
-/* 526 */
+/* 526 */,
+/* 527 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46323,7 +46559,7 @@
 
 	var _HomePage2 = _interopRequireDefault(_HomePage);
 
-	__webpack_require__(527);
+	__webpack_require__(528);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46371,14 +46607,14 @@
 	exports.default = Login;
 
 /***/ },
-/* 527 */
+/* 528 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 528 */,
-/* 529 */
+/* 529 */,
+/* 530 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46401,7 +46637,7 @@
 
 	var _HomePage2 = _interopRequireDefault(_HomePage);
 
-	__webpack_require__(527);
+	__webpack_require__(528);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46428,7 +46664,7 @@
 	exports.default = Logout;
 
 /***/ },
-/* 530 */
+/* 531 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -46437,7 +46673,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(531);
+	__webpack_require__(532);
 
 	var _Navbar = __webpack_require__(476);
 
@@ -46450,7 +46686,14 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 531 */
+/* 532 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 533 */,
+/* 534 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
