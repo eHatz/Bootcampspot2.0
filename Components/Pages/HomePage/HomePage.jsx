@@ -22,7 +22,8 @@ class HomePage extends Component {
 									<div id='HomePage_login'>
 										<h4 id='logoutBar_username'>Hi {UserInfo.FirstName}</h4>
 										<h4 id='logoutBar_logout'>Log Out</h4>
-									</div>								</a>
+									</div>
+								</a>
 							) : (
 								<a href="/login/github">
 									<img id="HomePage_login" src="/assets/images/github.png" alt="githubLogo"/>
