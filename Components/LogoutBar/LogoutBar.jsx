@@ -6,7 +6,7 @@ import NavBar from "../NavBar/NavBar.jsx";
 class LogoutBar extends Component {
 
 	render() {
-		const { UserName, showModal, openModal, closeModal } = this.props;	//Add toogleSidebar to destructured props 
+		const { UserInfo, showModal, openModal, closeModal } = this.props;	//Add toogleSidebar to destructured props 
 
 		return (
 			<div id="attendanceBackground" className="row">
@@ -35,10 +35,12 @@ class LogoutBar extends Component {
 					</div>
  
 					<div id ='logoutBar_content' className='col-sm-9'>
-						<div id='logoutBar_textDiv'>
-							<h4 id='logoutBar_username'>{UserName}Hi Jennine</h4>
-							<h4 id='logoutBar_logout'>Log Out</h4>
-						</div>
+						<a href="/#logout">	
+							<div id='logoutBar_textDiv'>
+								<h4 id='logoutBar_username'>Hi {UserInfo.FirstName}</h4>
+								<h4 id='logoutBar_logout'>Log Out</h4>
+							</div>
+						</a>
 						<Button className='hideBtn' onClick={openModal}>
 							<img id="hamburger" src="assets/images/hamburger.png"/>
 						</Button>

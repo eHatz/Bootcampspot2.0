@@ -30,16 +30,6 @@ class Application extends Component {
 
 	}
 	
-	updateUser(user) {
-		this.setState({
-			UserInfo: user
-		})
-	}
-	componentDidUpdate() {
-		console.log('componentDidUpdate',this.state.loggedIn)
-		console.log('componentDidUpdate',this.state.UserInfo)
-	
-	}
 	componentWillMount() {
 		auth.onChange = this.updateAuth.bind(this);
 		auth.login();
@@ -60,8 +50,7 @@ class Application extends Component {
 					{
 						cloneElement(this.props.children,{
 							loggedIn: this.state.loggedIn,
-							UserInfo: this.state.UserInfo,
-							updateUser: this.updateUser.bind(this)
+							UserInfo: this.state.UserInfo
 						})
 					}
 

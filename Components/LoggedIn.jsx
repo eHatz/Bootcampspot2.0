@@ -25,6 +25,7 @@ class LoggedIn extends Component {
 		this.setState({ showModal: true });
 	}
 	render() {
+		const { loggedIn, UserInfo } = this.props;
 
 		return (
 
@@ -33,6 +34,7 @@ class LoggedIn extends Component {
 					showModal= {this.state.showModal}
 					openModal= {this.open.bind(this)} 
 					closeModal= {this.close.bind(this)}
+					UserInfo= {UserInfo}
 				/>
 				<div className='row'>
 					<div className= "col-sm-3 remove-all-margin-padding hideBar">
@@ -43,7 +45,8 @@ class LoggedIn extends Component {
 							cloneElement(this.props.children, {
 								showModal: this.state.showModal,
 								openModal: this.open.bind(this),
-								closeModal: this.close.bind(this)
+								closeModal: this.close.bind(this),
+
 							})
 						}
 
