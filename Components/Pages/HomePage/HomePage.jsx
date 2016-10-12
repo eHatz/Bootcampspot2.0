@@ -4,6 +4,9 @@ import Panel from "../../Panel/Panel.jsx";
 import "./HomePage.css";
 
 class HomePage extends Component {
+	componentWillReceiveProps(nextProps) {
+		this.props
+	}
 
 	render() {
 		const { loggedIn, UserInfo } = this.props;
@@ -39,7 +42,12 @@ class HomePage extends Component {
 					<Panel background="#8a8a8a" name="SYLLABUS" panelId="syllabusPanel" pageLink="syllabus" img="/assets/images/syllabus_icon.png"/>
 					<Panel background="#cdcbcb" name="PROJECTS" panelId="projectsPanel" pageLink="projects" img="/assets/images/projects_icon.png"/>
 					<Panel background="#cc0000" name="FEEDBACK" panelId="feedbackPanel" pageLink="feedback" img="/assets/images/feedback_icon.png"/>
-					<Panel background="#990000" name="CAREER" panelId="careerPanel" pageLink="career" img="/assets/images/career_icon.png"/>
+					{!UserInfo  ? (
+						<Panel background="#cc0000" name="FEEDBACK" panelId="feedbackPanel" pageLink="feedback" img="/assets/images/feedback_icon.png"/>
+					) : (
+						<Panel background="#990000" name="CAREER" panelId="careerPanel" pageLink="career" img="/assets/images/career_icon.png"/>
+					)}
+
 
 				</div>	
 			</div>
