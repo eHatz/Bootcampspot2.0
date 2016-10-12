@@ -63,10 +63,16 @@ app.get('/login', function(req, res){
 	User.findOne({where: {Email: req.session.userInfo.emails[0].value}}).then(function(user){
 		if (!user){
 			res.setHeader('Content-Type', 'application/json');
-	    	res.json({access: false});
+	    	res.json({
+	    		access: false,
+	    		userData: false
+	    	});
 		}else if (user){		
 			res.setHeader('Content-Type', 'application/json');
-	    	res.json({access: 'jennanda'});
+	    	res.json({
+	    		access: 'jennanda',
+	    		userData: user
+	    	});
 		}
 	});
 

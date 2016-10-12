@@ -6,8 +6,8 @@ import "./HomePage.css";
 class HomePage extends Component {
 
 	render() {
-		const { loggedIn } = this.props;
-
+		const { loggedIn, UserInfo } = this.props;
+		console.log('home page', loggedIn, UserInfo)
 		return (
 
 			<div>
@@ -36,7 +36,11 @@ class HomePage extends Component {
 					<Panel background="#8a8a8a" name="SYLLABUS" panelId="syllabus" img="/assets/images/syllabus_icon.png"/>
 					<Panel background="#cdcbcb" name="PROJECTS" panelId="projects" img="/assets/images/projects_icon.png"/>
 					<Panel background="#cc0000" name="FEEDBACK" panelId="feedback" img="/assets/images/feedback_icon.png"/>
-					<Panel background="#990000" name="CAREER" panelId="career" img="/assets/images/career_icon.png"/>
+					{!UserInfo  ? (
+						<Panel background="#990000" name="CAREER" panelId="career" img="/assets/images/career_icon.png"/>
+					) : (
+						<Panel background="#cc0000" name="FEEDBACK" panelId="feedback" img="/assets/images/feedback_icon.png"/>
+					)}
 				</div>	
 			</div>
 			
