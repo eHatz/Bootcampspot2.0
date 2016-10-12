@@ -19,7 +19,7 @@ class Application extends Component {
 		// set initial state
 		this.state = {
 			loggedIn: auth.loggedIn(),
-			UserInfo: []
+			UserInfo: {}
 		};
 	}
 
@@ -27,11 +27,27 @@ class Application extends Component {
 		this.setState({
 			loggedIn
 		})
+
 	}
 	
+	updateUser(user) {
+		this.setState({
+			UserInfo: user
+		})
+	}
+	componentDidUpdate() {
+		console.log('componentDidUpdate',this.state.loggedIn)
+		console.log('componentDidUpdate',this.state.UserInfo)
+	
+	}
 	componentWillMount() {
 		auth.onChange = this.updateAuth.bind(this);
 		auth.login();
+		fetch('/login', {credentials: 'include'})
+		.then((response) => response.json())
+		.then((json) => {
+			this.setState({ UserInfo: json.userData })
+		})
 	}
 
 	render() {
@@ -43,7 +59,9 @@ class Application extends Component {
 				<div id="Application" className="Application_main">
 					{
 						cloneElement(this.props.children,{
-							loggedIn: this.state.loggedIn
+							loggedIn: this.state.loggedIn,
+							UserInfo: this.state.UserInfo,
+							updateUser: this.updateUser.bind(this)
 						})
 					}
 
@@ -55,27 +73,4 @@ class Application extends Component {
 
 export default Application;
 
-
-// const App = React.createClass({
-  
-
-//   render() {
-//     return (
-//       <div>
-//         <ul>
-//           <li>
-//             {this.state.loggedIn ? (
-//               <Link to="/logout">Log out</Link>
-//             ) : (
-//               <Link to="/login">Sign in</Link>
-//             )}
-//           </li>
-//           <li><Link to="/about">About</Link></li>
-//           <li><Link to="/dashboard">Dashboard</Link> (authenticated)</li>
-//         </ul>
-//         {this.props.children || <p>You are {!this.state.loggedIn && 'not'} logged in.</p>}
-//       </div>
-//     )
-//   }
-// })
 

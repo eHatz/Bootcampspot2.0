@@ -25466,15 +25466,15 @@
 
 	var _FeedbackPage2 = _interopRequireDefault(_FeedbackPage);
 
-	var _ProjectsPage = __webpack_require__(524);
+	var _ProjectsPage = __webpack_require__(526);
 
 	var _ProjectsPage2 = _interopRequireDefault(_ProjectsPage);
 
-	var _login = __webpack_require__(527);
+	var _login = __webpack_require__(529);
 
 	var _login2 = _interopRequireDefault(_login);
 
-	var _logout = __webpack_require__(530);
+	var _logout = __webpack_require__(532);
 
 	var _logout2 = _interopRequireDefault(_logout);
 
@@ -25482,7 +25482,7 @@
 
 	var _auth2 = _interopRequireDefault(_auth);
 
-	var _StudentFeedback = __webpack_require__(531);
+	var _StudentFeedback = __webpack_require__(533);
 
 	var _StudentFeedback2 = _interopRequireDefault(_StudentFeedback);
 
@@ -25591,7 +25591,7 @@
 
 			_this.state = {
 				loggedIn: _auth2.default.loggedIn(),
-				UserInfo: []
+				UserInfo: {}
 			};
 			return _this;
 		}
@@ -25604,10 +25604,30 @@
 				});
 			}
 		}, {
+			key: 'updateUser',
+			value: function updateUser(user) {
+				this.setState({
+					UserInfo: user
+				});
+			}
+		}, {
+			key: 'componentDidUpdate',
+			value: function componentDidUpdate() {
+				console.log('componentDidUpdate', this.state.loggedIn);
+				console.log('componentDidUpdate', this.state.UserInfo);
+			}
+		}, {
 			key: 'componentWillMount',
 			value: function componentWillMount() {
+				var _this2 = this;
+
 				_auth2.default.onChange = this.updateAuth.bind(this);
 				_auth2.default.login();
+				fetch('/login', { credentials: 'include' }).then(function (response) {
+					return response.json();
+				}).then(function (json) {
+					_this2.setState({ UserInfo: json.userData });
+				});
 			}
 		}, {
 			key: 'render',
@@ -25620,7 +25640,9 @@
 						'div',
 						{ id: 'Application', className: 'Application_main' },
 						(0, _react.cloneElement)(this.props.children, {
-							loggedIn: this.state.loggedIn
+							loggedIn: this.state.loggedIn,
+							UserInfo: this.state.UserInfo,
+							updateUser: this.updateUser.bind(this)
 						})
 					)
 				);
@@ -25631,29 +25653,6 @@
 	}(_react.Component);
 
 	exports.default = Application;
-
-	// const App = React.createClass({
-
-
-	//   render() {
-	//     return (
-	//       <div>
-	//         <ul>
-	//           <li>
-	//             {this.state.loggedIn ? (
-	//               <Link to="/logout">Log out</Link>
-	//             ) : (
-	//               <Link to="/login">Sign in</Link>
-	//             )}
-	//           </li>
-	//           <li><Link to="/about">About</Link></li>
-	//           <li><Link to="/dashboard">Dashboard</Link> (authenticated)</li>
-	//         </ul>
-	//         {this.props.children || <p>You are {!this.state.loggedIn && 'not'} logged in.</p>}
-	//       </div>
-	//     )
-	//   }
-	// })
 
 /***/ },
 /* 224 */
@@ -28434,7 +28433,7 @@
 	      _react2['default'].createElement(
 	        'span',
 	        null,
-	        '×'
+	        '\xD7'
 	      )
 	    );
 	  };
@@ -31136,12 +31135,11 @@
 	  Collapse.prototype.handleExit = function handleExit(elem) {
 	    var dimension = this._dimension();
 	    elem.style[dimension] = this.props.getDimensionValue(dimension, elem) + 'px';
+	    triggerBrowserReflow(elem);
 	  };
 
 	  Collapse.prototype.handleExiting = function handleExiting(elem) {
 	    var dimension = this._dimension();
-
-	    triggerBrowserReflow(elem);
 	    elem.style[dimension] = '0';
 	  };
 
@@ -33007,30 +33005,27 @@
 
 	    var classes = (0, _extends4['default'])({}, (0, _bootstrapUtils.getClassSet)(bsProps), (_extends2 = {}, _extends2[(0, _bootstrapUtils.prefix)(bsProps, 'right')] = pullRight, _extends2));
 
-	    var list = _react2['default'].createElement(
-	      'ul',
-	      (0, _extends4['default'])({}, elementProps, {
-	        role: 'menu',
-	        className: (0, _classnames2['default'])(className, classes),
-	        'aria-labelledby': labelledBy
-	      }),
-	      _ValidComponentChildren2['default'].map(children, function (child) {
-	        return _react2['default'].cloneElement(child, {
-	          onKeyDown: (0, _createChainedFunction2['default'])(child.props.onKeyDown, _this2.handleKeyDown),
-	          onSelect: (0, _createChainedFunction2['default'])(child.props.onSelect, onSelect)
-	        });
-	      })
+	    return _react2['default'].createElement(
+	      _RootCloseWrapper2['default'],
+	      {
+	        disabled: !open,
+	        onRootClose: onClose
+	      },
+	      _react2['default'].createElement(
+	        'ul',
+	        (0, _extends4['default'])({}, elementProps, {
+	          role: 'menu',
+	          className: (0, _classnames2['default'])(className, classes),
+	          'aria-labelledby': labelledBy
+	        }),
+	        _ValidComponentChildren2['default'].map(children, function (child) {
+	          return _react2['default'].cloneElement(child, {
+	            onKeyDown: (0, _createChainedFunction2['default'])(child.props.onKeyDown, _this2.handleKeyDown),
+	            onSelect: (0, _createChainedFunction2['default'])(child.props.onSelect, onSelect)
+	          });
+	        })
+	      )
 	    );
-
-	    if (open) {
-	      return _react2['default'].createElement(
-	        _RootCloseWrapper2['default'],
-	        { noWrap: true, onRootClose: onClose },
-	        list
-	      );
-	    }
-
-	    return list;
 	  };
 
 	  return DropdownMenu;
@@ -33260,13 +33255,28 @@
 	var RootCloseWrapper = function (_React$Component) {
 	  _inherits(RootCloseWrapper, _React$Component);
 
-	  function RootCloseWrapper(props) {
+	  function RootCloseWrapper(props, context) {
 	    _classCallCheck(this, RootCloseWrapper);
 
-	    var _this = _possibleConstructorReturn(this, (RootCloseWrapper.__proto__ || Object.getPrototypeOf(RootCloseWrapper)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (RootCloseWrapper.__proto__ || Object.getPrototypeOf(RootCloseWrapper)).call(this, props, context));
 
-	    _this.handleDocumentMouse = _this.handleDocumentMouse.bind(_this);
-	    _this.handleDocumentKeyUp = _this.handleDocumentKeyUp.bind(_this);
+	    _this.handleMouseCapture = function (e) {
+	      _this.preventMouseRootClose = isModifiedEvent(e) || !isLeftClickEvent(e) || (0, _contains2.default)(_reactDom2.default.findDOMNode(_this), e.target);
+	    };
+
+	    _this.handleMouse = function () {
+	      if (!_this.preventMouseRootClose && _this.props.onRootClose) {
+	        _this.props.onRootClose();
+	      }
+	    };
+
+	    _this.handleKeyUp = function (e) {
+	      if (e.keyCode === 27 && _this.props.onRootClose) {
+	        _this.props.onRootClose();
+	      }
+	    };
+
+	    _this.preventMouseRootClose = false;
 	    return _this;
 	  }
 
@@ -33274,64 +33284,54 @@
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      if (!this.props.disabled) {
-	        this.bindRootCloseHandlers();
+	        this.addEventListeners();
 	      }
 	    }
 	  }, {
 	    key: 'componentDidUpdate',
 	    value: function componentDidUpdate(prevProps) {
 	      if (!this.props.disabled && prevProps.disabled) {
-	        this.bindRootCloseHandlers();
+	        this.addEventListeners();
 	      } else if (this.props.disabled && !prevProps.disabled) {
-	        this.unbindRootCloseHandlers();
+	        this.removeEventListeners();
 	      }
 	    }
 	  }, {
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {
 	      if (!this.props.disabled) {
-	        this.unbindRootCloseHandlers();
+	        this.removeEventListeners();
 	      }
 	    }
 	  }, {
-	    key: 'bindRootCloseHandlers',
-	    value: function bindRootCloseHandlers() {
+	    key: 'addEventListeners',
+	    value: function addEventListeners() {
+	      var event = this.props.event;
+
 	      var doc = (0, _ownerDocument2.default)(this);
 
 	      // Use capture for this listener so it fires before React's listener, to
 	      // avoid false positives in the contains() check below if the target DOM
 	      // element is removed in the React mouse callback.
-	      this._onDocumentMouseListener = (0, _addEventListener2.default)(doc, this.props.event, this.handleDocumentMouse, true);
+	      this.documentMouseCaptureListener = (0, _addEventListener2.default)(doc, event, this.handleMouseCapture, true);
 
-	      this._onDocumentKeyupListener = (0, _addEventListener2.default)(doc, 'keyup', this.handleDocumentKeyUp);
+	      this.documentMouseListener = (0, _addEventListener2.default)(doc, event, this.handleMouse);
+
+	      this.documentKeyupListener = (0, _addEventListener2.default)(doc, 'keyup', this.handleKeyUp);
 	    }
 	  }, {
-	    key: 'unbindRootCloseHandlers',
-	    value: function unbindRootCloseHandlers() {
-	      if (this._onDocumentMouseListener) {
-	        this._onDocumentMouseListener.remove();
+	    key: 'removeEventListeners',
+	    value: function removeEventListeners() {
+	      if (this.documentMouseCaptureListener) {
+	        this.documentMouseCaptureListener.remove();
 	      }
 
-	      if (this._onDocumentKeyupListener) {
-	        this._onDocumentKeyupListener.remove();
-	      }
-	    }
-	  }, {
-	    key: 'handleDocumentMouse',
-	    value: function handleDocumentMouse(e) {
-	      if (this.props.disabled || isModifiedEvent(e) || !isLeftClickEvent(e) || (0, _contains2.default)(_reactDom2.default.findDOMNode(this), e.target)) {
-	        return;
+	      if (this.documentMouseListener) {
+	        this.documentMouseListener.remove();
 	      }
 
-	      if (this.props.onRootClose) {
-	        this.props.onRootClose();
-	      }
-	    }
-	  }, {
-	    key: 'handleDocumentKeyUp',
-	    value: function handleDocumentKeyUp(e) {
-	      if (e.keyCode === 27 && this.props.onRootClose) {
-	        this.props.onRootClose();
+	      if (this.documentKeyupListener) {
+	        this.documentKeyupListener.remove();
 	      }
 	    }
 	  }, {
@@ -33381,6 +33381,7 @@
 
 	exports.default = function (node, event, handler, capture) {
 	  (0, _on2.default)(node, event, handler, capture);
+
 	  return {
 	    remove: function remove() {
 	      (0, _off2.default)(node, event, handler, capture);
@@ -38176,7 +38177,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-hidden': 'true' },
-	          '×'
+	          '\xD7'
 	        )
 	      ),
 	      children
@@ -39392,10 +39393,10 @@
 	      return true;
 	    }
 
-	    if (props.children) {
-	      return _ValidComponentChildren2['default'].some(props.children, function (child) {
-	        return _this2.isActive(child, activeKey, activeHref);
-	      });
+	    if (_ValidComponentChildren2['default'].some(props.children, function (child) {
+	      return _this2.isActive(child, activeKey, activeHref);
+	    })) {
+	      return true;
 	    }
 
 	    return props.active;
@@ -41390,8 +41391,8 @@
 
 	    if (maxButtons) {
 	      var hiddenPagesBefore = activePage - parseInt(maxButtons / 2, 10);
-	      startPage = hiddenPagesBefore > 1 ? hiddenPagesBefore : 1;
-	      hasHiddenPagesAfter = startPage + maxButtons <= items;
+	      startPage = hiddenPagesBefore > 2 ? hiddenPagesBefore : 1;
+	      hasHiddenPagesAfter = startPage + maxButtons < items;
 
 	      if (!hasHiddenPagesAfter) {
 	        endPage = items;
@@ -41430,7 +41431,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'More' },
-	          ellipsis === true ? '…' : ellipsis
+	          ellipsis === true ? '\u2026' : ellipsis
 	        )
 	      ));
 
@@ -41456,7 +41457,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'More' },
-	          ellipsis === true ? '…' : ellipsis
+	          ellipsis === true ? '\u2026' : ellipsis
 	        )
 	      ));
 
@@ -41519,7 +41520,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'First' },
-	          first === true ? '«' : first
+	          first === true ? '\xAB' : first
 	        )
 	      ),
 	      prev && _react2['default'].createElement(
@@ -41531,7 +41532,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'Previous' },
-	          prev === true ? '‹' : prev
+	          prev === true ? '\u2039' : prev
 	        )
 	      ),
 	      this.renderPageButtons(activePage, items, maxButtons, boundaryLinks, ellipsis, buttonProps),
@@ -41544,7 +41545,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'Next' },
-	          next === true ? '›' : next
+	          next === true ? '\u203A' : next
 	        )
 	      ),
 	      last && _react2['default'].createElement(
@@ -41556,7 +41557,7 @@
 	        _react2['default'].createElement(
 	          'span',
 	          { 'aria-label': 'Last' },
-	          last === true ? '»' : last
+	          last === true ? '\xBB' : last
 	        )
 	      )
 	    );
@@ -45369,9 +45370,11 @@
 		_createClass(HomePage, [{
 			key: "render",
 			value: function render() {
-				var loggedIn = this.props.loggedIn;
+				var _props = this.props;
+				var loggedIn = _props.loggedIn;
+				var UserInfo = _props.UserInfo;
 
-
+				console.log('home page', loggedIn, UserInfo);
 				return _react2.default.createElement(
 					"div",
 					null,
@@ -45418,12 +45421,12 @@
 					_react2.default.createElement(
 						"div",
 						{ className: "row" },
-						_react2.default.createElement(_Panel2.default, { background: "#181818", name: "ATTENDANCE", panelId: "attendancePanel", pageLink: "attendance", img: "/assets/images/attendance_icon.png" }),
-						_react2.default.createElement(_Panel2.default, { background: "#302e2e", name: "HOMEWORK", panelId: "homeworkPanel", pageLink: "homework", img: "/assets/images/homework_icon.png" }),
-						_react2.default.createElement(_Panel2.default, { background: "#8a8a8a", name: "SYLLABUS", panelId: "syllabusPanel", pageLink: "syllabus", img: "/assets/images/syllabus_icon.png" }),
-						_react2.default.createElement(_Panel2.default, { background: "#cdcbcb", name: "PROJECTS", panelId: "projectsPanel", pageLink: "projects", img: "/assets/images/projects_icon.png" }),
-						_react2.default.createElement(_Panel2.default, { background: "#cc0000", name: "FEEDBACK", panelId: "feedbackPanel", pageLink: "feedback", img: "/assets/images/feedback_icon.png" }),
-						_react2.default.createElement(_Panel2.default, { background: "#990000", name: "CAREER", panelId: "careerPanel", pageLink: "career", img: "/assets/images/career_icon.png" })
+						_react2.default.createElement(_Panel2.default, { background: "#181818", name: "ATTENDANCE", panelId: "attendance", img: "/assets/images/attendance_icon.png" }),
+						_react2.default.createElement(_Panel2.default, { background: "#302e2e", name: "HOMEWORK", panelId: "homework", img: "/assets/images/homework_icon.png" }),
+						_react2.default.createElement(_Panel2.default, { background: "#8a8a8a", name: "SYLLABUS", panelId: "syllabus", img: "/assets/images/syllabus_icon.png" }),
+						_react2.default.createElement(_Panel2.default, { background: "#cdcbcb", name: "PROJECTS", panelId: "projects", img: "/assets/images/projects_icon.png" }),
+						_react2.default.createElement(_Panel2.default, { background: "#cc0000", name: "FEEDBACK", panelId: "feedback", img: "/assets/images/feedback_icon.png" }),
+						!UserInfo ? _react2.default.createElement(_Panel2.default, { background: "#990000", name: "CAREER", panelId: "career", img: "/assets/images/career_icon.png" }) : _react2.default.createElement(_Panel2.default, { background: "#cc0000", name: "FEEDBACK", panelId: "feedback", img: "/assets/images/feedback_icon.png" })
 					)
 				);
 			}
@@ -46368,7 +46371,7 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	__webpack_require__(534);
+	__webpack_require__(524);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46462,6 +46465,13 @@
 
 /***/ },
 /* 524 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 525 */,
+/* 526 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -46476,7 +46486,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(525);
+	__webpack_require__(527);
 
 	var _Navbar = __webpack_require__(476);
 
@@ -46529,14 +46539,14 @@
 	exports.default = ProjectsPage;
 
 /***/ },
-/* 525 */
+/* 527 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 526 */,
-/* 527 */
+/* 528 */,
+/* 529 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46559,7 +46569,7 @@
 
 	var _HomePage2 = _interopRequireDefault(_HomePage);
 
-	__webpack_require__(528);
+	__webpack_require__(530);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46586,7 +46596,7 @@
 					if (location.state && location.state.nextPathname) {
 						_this.props.router.replace(location.state.nextPathname);
 					} else {
-						_this.props.router.replace('/');
+						_this.props.router.replace('/#');
 					}
 				});
 			});
@@ -46607,14 +46617,14 @@
 	exports.default = Login;
 
 /***/ },
-/* 528 */
+/* 530 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 529 */,
-/* 530 */
+/* 531 */,
+/* 532 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46637,7 +46647,7 @@
 
 	var _HomePage2 = _interopRequireDefault(_HomePage);
 
-	__webpack_require__(528);
+	__webpack_require__(530);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46664,7 +46674,7 @@
 	exports.default = Logout;
 
 /***/ },
-/* 531 */
+/* 533 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -46673,7 +46683,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(532);
+	__webpack_require__(534);
 
 	var _Navbar = __webpack_require__(476);
 
@@ -46686,13 +46696,6 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 532 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 533 */,
 /* 534 */
 /***/ function(module, exports) {
 
