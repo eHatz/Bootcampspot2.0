@@ -45166,7 +45166,7 @@
 							{ className: "modal left fade", id: "myModal", show: showModal, onHide: closeModal },
 							_react2.default.createElement(
 								"div",
-								{ className: "modal-dialog", role: "document" },
+								{ role: "document" },
 								_react2.default.createElement(
 									"div",
 									{ className: "modal-content" },
@@ -45392,7 +45392,21 @@
 								loggedIn ? _react2.default.createElement(
 									"a",
 									{ href: "/#logout" },
-									_react2.default.createElement("img", { id: "HomePage_login", src: "/assets/images/logos.png", alt: "githubLogo" })
+									_react2.default.createElement(
+										"div",
+										{ id: "HomePage_login" },
+										_react2.default.createElement(
+											"h4",
+											{ id: "logoutBar_username" },
+											"Hi Jennine"
+										),
+										_react2.default.createElement(
+											"h4",
+											{ id: "logoutBar_logout" },
+											"Log Out"
+										)
+									),
+									"        "
 								) : _react2.default.createElement(
 									"a",
 									{ href: "/login/github" },
@@ -46193,37 +46207,7 @@
 				return _react2.default.createElement(
 					"div",
 					{ className: "feedbackBackground" },
-					_react2.default.createElement(
-						"div",
-						{ className: "btn-group", role: "group", "aria-label": "..." },
-						_react2.default.createElement(
-							"div",
-							{ className: "row" },
-							_react2.default.createElement(
-								"div",
-								null,
-								_react2.default.createElement(
-									"button",
-									{ type: "button", className: "btn btn-default", id: "studentFeedback" },
-									"Student Feedback"
-								)
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "row" },
-							_react2.default.createElement(
-								"button",
-								{ type: "button", className: "btn btn-default", id: "absenceForm" },
-								"Absence Form"
-							),
-							_react2.default.createElement(
-								"button",
-								{ type: "button", className: "btn btn-default", id: "tutorSession" },
-								"Tutor Session"
-							)
-						)
-					)
+					_react2.default.createElement("div", { className: "row" })
 				);
 			}
 		}]);
@@ -46437,11 +46421,6 @@
 			return _react2.default.createElement(
 				'div',
 				null,
-				_react2.default.createElement(
-					'h1',
-					{ id: 'loginText' },
-					'Logged Out'
-				),
 				_react2.default.createElement(_HomePage2.default, null)
 			);
 		}

@@ -12,7 +12,7 @@ class LogoutBar extends Component {
 			<div id="attendanceBackground" className="row">
 				<div id='logoutBar' className='col-md-12'> 
 					<Modal className="modal left fade" id="myModal" show={showModal} onHide={closeModal}>
-						<div className="modal-dialog" role="document">
+						<div  role="document">
 							<div className="modal-content">
 								<div className="modal-header">
 									
