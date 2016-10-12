@@ -12,14 +12,15 @@ class LogoutBar extends Component {
 			<div id="attendanceBackground" className="row">
 				<div id='logoutBar' className='col-md-12'> 
 					<Modal className="modal left fade" id="myModal" show={showModal} onHide={closeModal}>
-						<div className="modal-dialog" role="document">
+						<div  role="document">
 							<div className="modal-content">
 								<div className="modal-header">
 									
 									<button className="modalHeaderWidth" type="button" onClick={closeModal} data-dismiss="modal" aria-label="Close">
 										<img id="close" src="assets/images/close_button.png"/>
 										<a href="/#">
-										<img id='logoImg' src='/assets/images/logo2.png'/></a>
+											<img id='logoImg' src='/assets/images/logo2.png'/>
+										</a>
 									</button>
 								</div>
 								<NavBar/>
@@ -27,12 +28,13 @@ class LogoutBar extends Component {
 							</div>
 						</div>
 					</Modal>
-					<div id='logoutBar_logo' className='col-md-3'>
-						
-						<img id='logoImg1' src='/assets/images/logo2.png'/>
+					<div id='logoutBar_logo' className='col-sm-3'>
+						<a href="/#">
+							<img id='logoImg1' src='/assets/images/logo1.png'/>
+						</a>
 					</div>
  
-					<div className='col-md-9'>
+					<div id ='logoutBar_content' className='col-sm-9'>
 						<div id='logoutBar_textDiv'>
 							<h4 id='logoutBar_username'>{UserName}Hi Jennine</h4>
 							<h4 id='logoutBar_logout'>Log Out</h4>

@@ -19,8 +19,10 @@ class HomePage extends Component {
 						<div>
 							{loggedIn ? (
 								<a href="/#logout">
-									<img id="HomePage_login" src="/assets/images/logos.png" alt="githubLogo"/>
-								</a>
+									<div id='HomePage_login'>
+										<h4 id='logoutBar_username'>Hi Jennine</h4>
+										<h4 id='logoutBar_logout'>Log Out</h4>
+									</div>								</a>
 							) : (
 								<a href="/login/github">
 									<img id="HomePage_login" src="/assets/images/github.png" alt="githubLogo"/>
@@ -41,6 +43,7 @@ class HomePage extends Component {
 					) : (
 						<Panel background="#cc0000" name="FEEDBACK" panelId="feedback" img="/assets/images/feedback_icon.png"/>
 					)}
+
 				</div>	
 			</div>
 			
