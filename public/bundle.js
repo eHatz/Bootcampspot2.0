@@ -46421,11 +46421,6 @@
 			return _react2.default.createElement(
 				'div',
 				null,
-				_react2.default.createElement(
-					'h1',
-					{ id: 'loginText' },
-					'Logged Out'
-				),
 				_react2.default.createElement(_HomePage2.default, null)
 			);
 		}

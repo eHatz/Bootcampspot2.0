@@ -21,7 +21,6 @@ const Logout = withRouter(
 		render() {
 			return (
 				<div>
-					<h1 id='loginText'>Logged Out</h1>
 					<HomePage/>
 				</div>
 			)
