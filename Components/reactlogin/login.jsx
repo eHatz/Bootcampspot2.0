@@ -38,8 +38,6 @@ const Login = withRouter(
 		render() {
 			return (
 				<div>
-					<h1 id='loginText'>Invalid Github Account</h1>
-					<HomePage/>
 				</div>
 
 			)

@@ -40,13 +40,13 @@ class Application extends Component {
 		console.log('componentDidUpdate',this.state.UserInfo)
 	
 	}
-	componentWillReceiveProps() {
+	componentWillMount() {
 		auth.onChange = this.updateAuth.bind(this);
 		auth.login();
 		fetch('/login', {credentials: 'include'})
 		.then((response) => response.json())
 		.then((json) => {
-			//this.setState({ UserInfo: json.userData })
+			this.setState({ UserInfo: json.userData })
 		})
 	}
 
