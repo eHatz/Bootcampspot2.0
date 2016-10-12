@@ -25466,15 +25466,15 @@
 
 	var _FeedbackPage2 = _interopRequireDefault(_FeedbackPage);
 
-	var _ProjectsPage = __webpack_require__(526);
+	var _ProjectsPage = __webpack_require__(524);
 
 	var _ProjectsPage2 = _interopRequireDefault(_ProjectsPage);
 
-	var _login = __webpack_require__(529);
+	var _login = __webpack_require__(527);
 
 	var _login2 = _interopRequireDefault(_login);
 
-	var _logout = __webpack_require__(532);
+	var _logout = __webpack_require__(530);
 
 	var _logout2 = _interopRequireDefault(_logout);
 
@@ -25482,7 +25482,7 @@
 
 	var _auth2 = _interopRequireDefault(_auth);
 
-	var _StudentFeedback = __webpack_require__(533);
+	var _StudentFeedback = __webpack_require__(531);
 
 	var _StudentFeedback2 = _interopRequireDefault(_StudentFeedback);
 
@@ -45166,7 +45166,7 @@
 							{ className: "modal left fade", id: "myModal", show: showModal, onHide: closeModal },
 							_react2.default.createElement(
 								"div",
-								{ className: "modal-dialog", role: "document" },
+								{ role: "document" },
 								_react2.default.createElement(
 									"div",
 									{ className: "modal-content" },
@@ -45392,7 +45392,21 @@
 								loggedIn ? _react2.default.createElement(
 									"a",
 									{ href: "/#logout" },
-									_react2.default.createElement("img", { id: "HomePage_login", src: "/assets/images/logos.png", alt: "githubLogo" })
+									_react2.default.createElement(
+										"div",
+										{ id: "HomePage_login" },
+										_react2.default.createElement(
+											"h4",
+											{ id: "logoutBar_username" },
+											"Hi Jennine"
+										),
+										_react2.default.createElement(
+											"h4",
+											{ id: "logoutBar_logout" },
+											"Log Out"
+										)
+									),
+									"        "
 								) : _react2.default.createElement(
 									"a",
 									{ href: "/login/github" },
@@ -46354,7 +46368,7 @@
 
 	var _reactBootstrap = __webpack_require__(224);
 
-	__webpack_require__(524);
+	__webpack_require__(534);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46448,13 +46462,6 @@
 
 /***/ },
 /* 524 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 525 */,
-/* 526 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -46469,7 +46476,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(527);
+	__webpack_require__(525);
 
 	var _Navbar = __webpack_require__(476);
 
@@ -46522,14 +46529,14 @@
 	exports.default = ProjectsPage;
 
 /***/ },
-/* 527 */
+/* 525 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 528 */,
-/* 529 */
+/* 526 */,
+/* 527 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46552,7 +46559,7 @@
 
 	var _HomePage2 = _interopRequireDefault(_HomePage);
 
-	__webpack_require__(530);
+	__webpack_require__(528);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46600,14 +46607,14 @@
 	exports.default = Login;
 
 /***/ },
-/* 530 */
+/* 528 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 531 */,
-/* 532 */
+/* 529 */,
+/* 530 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46630,7 +46637,7 @@
 
 	var _HomePage2 = _interopRequireDefault(_HomePage);
 
-	__webpack_require__(530);
+	__webpack_require__(528);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46650,11 +46657,6 @@
 			return _react2.default.createElement(
 				'div',
 				null,
-				_react2.default.createElement(
-					'h1',
-					{ id: 'loginText' },
-					'Logged Out'
-				),
 				_react2.default.createElement(_HomePage2.default, null)
 			);
 		}
@@ -46662,7 +46664,7 @@
 	exports.default = Logout;
 
 /***/ },
-/* 533 */
+/* 531 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -46671,7 +46673,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(534);
+	__webpack_require__(532);
 
 	var _Navbar = __webpack_require__(476);
 
@@ -46684,6 +46686,13 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
+/* 532 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 533 */,
 /* 534 */
 /***/ function(module, exports) {
 
