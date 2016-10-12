@@ -25466,15 +25466,15 @@
 
 	var _FeedbackPage2 = _interopRequireDefault(_FeedbackPage);
 
-	var _ProjectsPage = __webpack_require__(523);
+	var _ProjectsPage = __webpack_require__(526);
 
 	var _ProjectsPage2 = _interopRequireDefault(_ProjectsPage);
 
-	var _login = __webpack_require__(526);
+	var _login = __webpack_require__(529);
 
 	var _login2 = _interopRequireDefault(_login);
 
-	var _logout = __webpack_require__(529);
+	var _logout = __webpack_require__(532);
 
 	var _logout2 = _interopRequireDefault(_logout);
 
@@ -25482,7 +25482,7 @@
 
 	var _auth2 = _interopRequireDefault(_auth);
 
-	var _StudentFeedback = __webpack_require__(530);
+	var _StudentFeedback = __webpack_require__(533);
 
 	var _StudentFeedback2 = _interopRequireDefault(_StudentFeedback);
 
@@ -46171,7 +46171,7 @@
 
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 
-	var _FeedbackRadialQuest = __webpack_require__(533);
+	var _FeedbackRadialQuest = __webpack_require__(523);
 
 	var _FeedbackRadialQuest2 = _interopRequireDefault(_FeedbackRadialQuest);
 
@@ -46352,246 +46352,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(524);
-
-	var _Navbar = __webpack_require__(476);
-
-	var _Navbar2 = _interopRequireDefault(_Navbar);
-
-	var _LogoutBar = __webpack_require__(488);
-
-	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
-
-	var _Table = __webpack_require__(505);
-
-	var _Table2 = _interopRequireDefault(_Table);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var ProjectsPage = function (_Component) {
-		_inherits(ProjectsPage, _Component);
-
-		function ProjectsPage() {
-			_classCallCheck(this, ProjectsPage);
-
-			return _possibleConstructorReturn(this, (ProjectsPage.__proto__ || Object.getPrototypeOf(ProjectsPage)).apply(this, arguments));
-		}
-
-		_createClass(ProjectsPage, [{
-			key: "render",
-			value: function render() {
-				return _react2.default.createElement(
-					"div",
-					{ className: "projectsBackground" },
-					_react2.default.createElement(_Table2.default, { pageName: "projectsPage",
-						header1: "WEEK",
-						header2: "PROJECT",
-						header3: "DUE DATE",
-						header4: "SUBMISSION"
-					})
-				);
-			}
-		}]);
-
-		return ProjectsPage;
-	}(_react.Component);
-
-	exports.default = ProjectsPage;
-
-/***/ },
-/* 524 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 525 */,
-/* 526 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRouter = __webpack_require__(159);
-
-	var _auth = __webpack_require__(486);
-
-	var _auth2 = _interopRequireDefault(_auth);
-
-	var _HomePage = __webpack_require__(496);
-
-	var _HomePage2 = _interopRequireDefault(_HomePage);
-
-	__webpack_require__(527);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Login = (0, _reactRouter.withRouter)(_react2.default.createClass({
-		displayName: 'Login',
-		getInitialState: function getInitialState() {
-			return {
-				error: false
-			};
-		},
-		componentWillMount: function componentWillMount() {
-			var _this = this;
-
-			fetch('/login', { credentials: 'include' }).then(function (response) {
-				return response.json();
-			}).then(function (json) {
-				var access = json.access;
-				_auth2.default.login(access, function (loggedIn) {
-					if (!loggedIn) return _this.setState({ error: true });
-
-					var location = _this.props.location;
-
-
-					if (location.state && location.state.nextPathname) {
-						_this.props.router.replace(location.state.nextPathname);
-					} else {
-						_this.props.router.replace('/');
-					}
-				});
-			});
-		},
-		render: function render() {
-			return _react2.default.createElement(
-				'div',
-				null,
-				_react2.default.createElement(
-					'h1',
-					{ id: 'loginText' },
-					'Invalid Github Account'
-				),
-				_react2.default.createElement(_HomePage2.default, null)
-			);
-		}
-	}));
-	exports.default = Login;
-
-/***/ },
-/* 527 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 528 */,
-/* 529 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRouter = __webpack_require__(159);
-
-	var _auth = __webpack_require__(486);
-
-	var _auth2 = _interopRequireDefault(_auth);
-
-	var _HomePage = __webpack_require__(496);
-
-	var _HomePage2 = _interopRequireDefault(_HomePage);
-
-	__webpack_require__(527);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Logout = (0, _reactRouter.withRouter)(_react2.default.createClass({
-		displayName: 'Logout',
-		componentDidMount: function componentDidMount() {
-			_auth2.default.logout();
-			// const { location } = this.props
-
-			//       if (location.state && location.state.nextPathname) {
-			//         this.props.router.replace(location.state.nextPathname)
-			//       } else {
-			//         this.props.router.replace('/')
-			//       }
-		},
-		render: function render() {
-			return _react2.default.createElement(
-				'div',
-				null,
-				_react2.default.createElement(
-					'h1',
-					{ id: 'loginText' },
-					'Logged Out'
-				),
-				_react2.default.createElement(_HomePage2.default, null)
-			);
-		}
-	}));
-	exports.default = Logout;
-
-/***/ },
-/* 530 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	__webpack_require__(531);
-
-	var _Navbar = __webpack_require__(476);
-
-	var _Navbar2 = _interopRequireDefault(_Navbar);
-
-	var _LogoutBar = __webpack_require__(488);
-
-	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ },
-/* 531 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 532 */,
-/* 533 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
 	var _reactBootstrap = __webpack_require__(224);
 
-	__webpack_require__(534);
+	__webpack_require__(524);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46682,6 +46445,243 @@
 	}(_react.Component);
 
 	exports.default = FeedbackRadialQuest;
+
+/***/ },
+/* 524 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 525 */,
+/* 526 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(527);
+
+	var _Navbar = __webpack_require__(476);
+
+	var _Navbar2 = _interopRequireDefault(_Navbar);
+
+	var _LogoutBar = __webpack_require__(488);
+
+	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
+
+	var _Table = __webpack_require__(505);
+
+	var _Table2 = _interopRequireDefault(_Table);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ProjectsPage = function (_Component) {
+		_inherits(ProjectsPage, _Component);
+
+		function ProjectsPage() {
+			_classCallCheck(this, ProjectsPage);
+
+			return _possibleConstructorReturn(this, (ProjectsPage.__proto__ || Object.getPrototypeOf(ProjectsPage)).apply(this, arguments));
+		}
+
+		_createClass(ProjectsPage, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					{ className: "projectsBackground" },
+					_react2.default.createElement(_Table2.default, { pageName: "projectsPage",
+						header1: "WEEK",
+						header2: "PROJECT",
+						header3: "DUE DATE",
+						header4: "SUBMISSION"
+					})
+				);
+			}
+		}]);
+
+		return ProjectsPage;
+	}(_react.Component);
+
+	exports.default = ProjectsPage;
+
+/***/ },
+/* 527 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 528 */,
+/* 529 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(159);
+
+	var _auth = __webpack_require__(486);
+
+	var _auth2 = _interopRequireDefault(_auth);
+
+	var _HomePage = __webpack_require__(496);
+
+	var _HomePage2 = _interopRequireDefault(_HomePage);
+
+	__webpack_require__(530);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Login = (0, _reactRouter.withRouter)(_react2.default.createClass({
+		displayName: 'Login',
+		getInitialState: function getInitialState() {
+			return {
+				error: false
+			};
+		},
+		componentWillMount: function componentWillMount() {
+			var _this = this;
+
+			fetch('/login', { credentials: 'include' }).then(function (response) {
+				return response.json();
+			}).then(function (json) {
+				var access = json.access;
+				_auth2.default.login(access, function (loggedIn) {
+					if (!loggedIn) return _this.setState({ error: true });
+
+					var location = _this.props.location;
+
+
+					if (location.state && location.state.nextPathname) {
+						_this.props.router.replace(location.state.nextPathname);
+					} else {
+						_this.props.router.replace('/');
+					}
+				});
+			});
+		},
+		render: function render() {
+			return _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(
+					'h1',
+					{ id: 'loginText' },
+					'Invalid Github Account'
+				),
+				_react2.default.createElement(_HomePage2.default, null)
+			);
+		}
+	}));
+	exports.default = Login;
+
+/***/ },
+/* 530 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 531 */,
+/* 532 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(159);
+
+	var _auth = __webpack_require__(486);
+
+	var _auth2 = _interopRequireDefault(_auth);
+
+	var _HomePage = __webpack_require__(496);
+
+	var _HomePage2 = _interopRequireDefault(_HomePage);
+
+	__webpack_require__(530);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Logout = (0, _reactRouter.withRouter)(_react2.default.createClass({
+		displayName: 'Logout',
+		componentDidMount: function componentDidMount() {
+			_auth2.default.logout();
+			// const { location } = this.props
+
+			//       if (location.state && location.state.nextPathname) {
+			//         this.props.router.replace(location.state.nextPathname)
+			//       } else {
+			//         this.props.router.replace('/')
+			//       }
+		},
+		render: function render() {
+			return _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(
+					'h1',
+					{ id: 'loginText' },
+					'Logged Out'
+				),
+				_react2.default.createElement(_HomePage2.default, null)
+			);
+		}
+	}));
+	exports.default = Logout;
+
+/***/ },
+/* 533 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(534);
+
+	var _Navbar = __webpack_require__(476);
+
+	var _Navbar2 = _interopRequireDefault(_Navbar);
+
+	var _LogoutBar = __webpack_require__(488);
+
+	var _LogoutBar2 = _interopRequireDefault(_LogoutBar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
 /* 534 */
