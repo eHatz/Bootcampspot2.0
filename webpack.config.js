@@ -5,8 +5,8 @@ module.exports = {
   entry: "./index.jsx",
 
   output: {
-    filename: "./public/bundle.js",
-    "publicPath": "/"
+    filename: "./bundle.js",
+    "path": "./public"
   },
 
   devtool: 'cheap-source-map',
