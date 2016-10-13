@@ -7,21 +7,23 @@ class FeedbackRadialQuest extends Component{
 		console.log(this.props.question)
 		return(
 			<div className="row">
-				<h1>{ this.props.question }</h1>
-				<div className ="col-md-4">
+				<h2>{ this.props.question }</h2>
+				<div className ="col-md-3">
 					<h3>{ this.props.leftEnd }</h3>
 				</div>
-				<div className ="col-md-4">
-		 			<label className="radio-inline"><input type="radio" name="optradio"/>Option 1</label>
-		 			<label className="radio-inline"><input type="radio" name="optradio"/>Option 2</label>
-		 			<label className="radio-inline"><input type="radio" name="optradio"/>Option 3</label>
-		 			<label className="radio-inline"><input type="radio" name="optradio"/>Option 4</label>
-		 			<label className="radio-inline"><input type="radio" name="optradio"/>Option 5</label>
+				<div className ="col-md-6">
+		 			<label className="radio-inline"><input type="radio" name="optradio"/>1</label>
+		 			<label className="radio-inline"><input type="radio" name="optradio"/>2</label>
+		 			<label className="radio-inline"><input type="radio" name="optradio"/>3</label>
+		 			<label className="radio-inline"><input type="radio" name="optradio"/>4</label>
+		 			<label className="radio-inline"><input type="radio" name="optradio"/>5</label>
 		 		</div>
-	 			<div className = "col-md-4">
+	 			<div className = "col-md-3">
 					<h3>{ this.props.rightEnd }</h3>
 				</div>
+				
 			</div>
+
 
 			)
 	}
