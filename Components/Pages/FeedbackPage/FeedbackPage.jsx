@@ -16,7 +16,38 @@ const formData=[
 		question: "How would you rate the pace of the class this week?",
 		leftEnd: "Too Slow",
 		rightEnd: "Too Fast"
+	},
+	{
+		question:"Do you feel that you have enough academic support?",
+		leftEnd: "Not Enough",
+		rightEnd: "Definitely Enough"
+	},
+	{
+		question: "How would you rate the pace of class this week?",
+		leftEnd:"Too fast",
+		rightEnd:"Too slow"
+	},
+	{
+		question:"How much new learning did you acheive this weel?",
+		leftEnd:"Not much",
+		rightEnd: "A lot"
+	},
+	{
+		question: "How well do you feel you have mastered the concepts covered in class this week?",
+		leftEnd: "Not Well",
+		rightEnd: "Great"
+	},
+	{
+		question: "How engaging was the teacher in his/her instruction?",
+		leftEnd: "I had a tough time paying attention",
+		rightEnd: "I felt thoroughly connected to my instructor"
+	},
+	{
+		question: "How knowledgable did your instructor seem in the subject area?",
+		leftEnd: "Not knowledgable",
+		rightEnd: "Very knowledgable"
 	}
+
 ];
 
 
