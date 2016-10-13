@@ -59,23 +59,29 @@ app.use(passport.session());
 //Routes
 app.get('/login', function(req, res){
 	var User = models.User;
-
-	User.findOne({where: {Email: req.session.userInfo.emails[0].value}}).then(function(user){
-		if (!user){
-			res.setHeader('Content-Type', 'application/json');
-	    	res.json({
-	    		access: false,
-	    		userData: false
-	    	});
-		}else if (user){		
-			res.setHeader('Content-Type', 'application/json');
-	    	res.json({
-	    		access: 'jennanda',
-	    		userData: user
-	    	});
-		}
-	});
-
+	if (req.session.userInfo) {
+		User.findOne({where: {Email: req.session.userInfo.emails[0].value}}).then(function(user){
+			if (!user){
+				res.setHeader('Content-Type', 'application/json');
+		    	res.json({
+		    		access: false,
+		    		userData: false
+		    	});
+			}else if (user){		
+				res.setHeader('Content-Type', 'application/json');
+		    	res.json({
+		    		access: 'jennanda',
+		    		userData: user
+		    	});
+			}
+		});
+	} else {
+		res.setHeader('Content-Type', 'application/json');
+    	res.json({
+    		access: false,
+    		userData: false
+    	});
+	}
 });
 
 app.get('/login/github', passport.authenticate('github'));
