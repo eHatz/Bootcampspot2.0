@@ -30,7 +30,7 @@ import Logout from "./Components/reactlogin/logout";
 
 import auth from './auth';
 
-import StudentFeedback from "./Components/Pages/StudentFeedback/StudentFeedback.jsx";
+
 
 function requireAuth(nextState, replace) {
   if (!auth.loggedIn()) {
