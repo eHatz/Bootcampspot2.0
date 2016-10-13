@@ -4,6 +4,7 @@
 	padding-left: 23px;
 	text-decoration: none;
 	display:block;
+
 }
 
 .NavBarLink_imageDiv{
@@ -12,6 +13,7 @@
 	padding-top: 4%;
 	width: 100%;
 	padding-bottom: 4%;
+	background-color: black;
 }
 
 .activePage {

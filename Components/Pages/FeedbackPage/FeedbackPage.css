@@ -31,17 +31,44 @@
 	margin-top: -20%;
 }
 #exampleSelect1{
-	width:60%;
+	width:70%;
 	margin-left: 20%;
 }
 #exampleSelect2{
-	width:60%;
+	width:70%;
 	margin-left: 20%;
 }
 label{
-	font-size: 100%;
+	font-size: 150%;
 
 }
+h1{
+	color:black;
+	margin-left: 10%;
+
+}
+h2{
+	color:#343333;
+	margin-left: 3%;
+}
+h3{
+	margin-left: 6%;
+}
+  input[type=radio] {
+    border: 0px;
+    width: 75%;
+    height: 1.5em;
+}
+#feedbackInputQuestion{
+	color: black;
+	font-size: 210%;
+	margin-left: 3%;
+
+}
+#usr{
+	width:80%;
+}
+
 
 @media screen and (max-width: 640px){
 	#studentFeedback{

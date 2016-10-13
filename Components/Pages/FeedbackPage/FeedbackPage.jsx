@@ -4,6 +4,7 @@ import { form, label, select, input } from "react-bootstrap";
 import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
 import Navbar from "../../Navbar/Navbar.jsx";
 import FeedbackRadialQuest from "../../FeedbackRadialQuest/FeedbackRadialQuest.jsx";
+import FeedbackInputQuest from "../../FeedbackInputQuest/FeedbackInputQuest.jsx";
 
 const formData=[
 	{
@@ -28,7 +29,7 @@ const formData=[
 		rightEnd:"Too slow"
 	},
 	{
-		question:"How much new learning did you acheive this weel?",
+		question:"How much new learning did you acheive this week?",
 		leftEnd:"Not much",
 		rightEnd: "A lot"
 	},
@@ -50,7 +51,24 @@ const formData=[
 
 ];
 
+const formInputData = [
+	{
+		inputquestion: "How many hours did you spend outside of class last week on homework, code review, etc?"
+	},
+	{
+		inputquestion: "What did you spend most of that time on?"
+	},
+	{
+		inputquestion: "Any additional comments about the pace of the class?"
+	},
+	{
+		inputquestion: "Any additional comments about the Academic support?"
+	},
+	{
+		inputquestion: "Any additional comments about your instructor?"
+	},
 
+]
 
 
 class FeedbackPage extends Component {
@@ -61,7 +79,7 @@ class FeedbackPage extends Component {
 
 			<div className="feedbackBackground">
 			 		<div className="row">
-			 			<h1>Student Feedback</h1>
+			 			<h1 className= "studentFeedback">Student Feedback</h1>
 				 			<div className="col-md-6">
 				 				<form>
 				 					  <div className="form-group">
@@ -98,6 +116,13 @@ class FeedbackPage extends Component {
 					 			rightEnd = { item.rightEnd }
 					 			key = { index }
 				 			/>)
+				 		})}
+
+				 		{formInputData.map((item, index) =>{
+				 			return (<FeedbackInputQuest
+				 				inputquestion= { item.inputquestion }
+				 				key = { index }
+				 				/>)
 				 		})}
 			 		</div>				
 			</div>

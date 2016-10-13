@@ -4,6 +4,10 @@
    padding-top: 44px;
    border-bottom-style: solid;
 }
+.btn.btn-primary.dropdown-toggle{
+	background-color: black;
+	border-color: black;
+}
 
 
 
