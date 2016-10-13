@@ -8,50 +8,33 @@
 
 .NavBarLink_imageDiv{
 	display: inline-flex;
-    padding-left: 27%;
-    padding-top: 4%;
-    width: 100%;
-    padding-bottom: 4%;
+	padding-left: 27%;
+	padding-top: 4%;
+	width: 100%;
+	padding-bottom: 4%;
 }
 
-.NavBarLink_imageDiv:active{
-	background-color: red;
-}
-
-.NavBarLink_linkDiv:hover  {
-	background-color: black;
-
+.activePage {
+	background-color: #343333;
 }
 
 #hover{
 	display: inherit;
+	text-decoration: none;
 	
-}
-a:hover { 
-    background-color: #343333;
-    width: 212PX;
-   
 }
 
 .NavBarLink_imageDiv:hover { 
 	background-color: #343333;
-    width: 100%;
-}
-
-
-
-a:visited{
-	color: red;
+	width: 100%;
 }
 
 
 @media screen and (max-width: 768px){
 	.NavBarLink_imageDiv:hover { 
 	background-color: #343333;
-    width: 100%;
+	width: 100%;
 	}
-	
-
 }
 
 

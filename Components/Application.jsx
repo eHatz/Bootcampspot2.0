@@ -27,9 +27,12 @@ class Application extends Component {
 		this.setState({
 			loggedIn
 		})
-
 	}
-	
+
+	logout() {
+		auth.logout()
+	}
+
 	componentWillMount() {
 		auth.onChange = this.updateAuth.bind(this);
 		auth.login();
@@ -37,6 +40,10 @@ class Application extends Component {
 		.then((response) => response.json())
 		.then((json) => {
 			this.setState({ UserInfo: json.userData })
+			//prevents user from accessing the website if their user info/session has expired
+			if (!json.userData) {
+				this.logout();
+			}
 		})
 	}
 
