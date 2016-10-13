@@ -7,19 +7,22 @@ class NavBarLink extends Component {
 
 	render() {
 
-		const { name, img, navLink } = this.props;
-		// here we are assigning prop names this.props.name etc, which will be called at a future point
-
+		const { name, img, navLink, currentLoc } = this.props;
+		var pageStatus;
+		if (currentLoc === navLink) {
+			var pageStatus = 'activePage'
+		} else {
+			var pageStatus = 'inactivePage'
+		}
 		return (
-				<div className="NavBarLink_linkDiv">
+			<a id='hover' href={'#' + navLink}>
+				<div className={"NavBarLink_linkDiv " + pageStatus}>
 					<div className="NavBarLink_imageDiv">
-						<a id="hover" href={navLink}>
-							<img src={img} alt="icon" className="img-responsive"/>
-							<h3 className="NavBarLink_linkText">{name}</h3>
-						</a>
+						<img src={img} alt="icon" className="img-responsive"/>
+						<h3 className="NavBarLink_linkText">{name}</h3>
 					</div>
 				</div>
-
+			</a>
 		)
 	}
 }

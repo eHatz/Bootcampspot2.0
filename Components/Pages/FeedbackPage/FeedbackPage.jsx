@@ -65,7 +65,7 @@ class FeedbackPage extends Component {
 				 			<div className="col-md-6">
 				 				<form>
 				 					  <div className="form-group">
-									    <label for="exampleSelect1">Class</label>
+									    <label htmlFor="exampleSelect1">Class</label>
 									    <select className="form-control" id="exampleSelect1">
 									      <option>1</option>
 									      <option>2</option>
@@ -79,7 +79,7 @@ class FeedbackPage extends Component {
 			 			<div className="col-md-6">
 			 					<form>
 			 					  <div className="form-group">
-								    <label for="exampleSelect2">Class Week</label>
+								    <label htmlFor="exampleSelect2">Class Week</label>
 								    <select className="form-control" id="exampleSelect2">
 								      <option>1</option>
 								      <option>2</option>

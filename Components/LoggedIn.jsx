@@ -25,8 +25,8 @@ class LoggedIn extends Component {
 		this.setState({ showModal: true });
 	}
 	render() {
-		const { loggedIn, UserInfo } = this.props;
-
+		const { loggedIn, UserInfo, location } = this.props;
+		console.log('location information', location)
 		return (
 
 			<div id="width" className="container remove-all-margin-padding">
@@ -35,10 +35,13 @@ class LoggedIn extends Component {
 					openModal= {this.open.bind(this)} 
 					closeModal= {this.close.bind(this)}
 					UserInfo= {UserInfo}
+					location = {location}
 				/>
 				<div className='row'>
 					<div className= "col-sm-3 remove-all-margin-padding hideBar">
-						<Navbar/>
+						<Navbar
+							location = {location}
+						/>
 					</div>
 					<div id="pageContent" className= "col-sm-9 remove-all-margin-padding">
 						{
