@@ -6,7 +6,7 @@ import NavBar from "../NavBar/NavBar.jsx";
 class LogoutBar extends Component {
 
 	render() {
-		const { UserInfo, showModal, openModal, closeModal } = this.props;	//Add toogleSidebar to destructured props 
+		const { UserInfo, showModal, openModal, closeModal, location } = this.props;	//Add toogleSidebar to destructured props 
 
 		return (
 			<div id="attendanceBackground" className="row">
@@ -23,7 +23,9 @@ class LogoutBar extends Component {
 										</a>
 									</button>
 								</div>
-								<NavBar/>
+								<NavBar
+									location = {location}
+								/>
 	
 							</div>
 						</div>
