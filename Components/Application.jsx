@@ -27,12 +27,10 @@ class Application extends Component {
 		this.setState({
 			loggedIn
 		})
-
 	}
 
 	logout() {
 		auth.logout()
-
 	}
 
 	componentWillMount() {
