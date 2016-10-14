@@ -24,6 +24,7 @@ class LoggedIn extends Component {
 	open(){
 		this.setState({ showModal: true });
 	}
+	
 	render() {
 		const { loggedIn, UserInfo, location } = this.props;
 		return (
