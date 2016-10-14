@@ -19,7 +19,7 @@
 	position: relative;
 	font-size: initial;
   color: white;
-  line-height: 5;
+  
 }
 
 
@@ -56,6 +56,7 @@
 
   .caption{
     font-size: 21px;
+    padding-top: 3%;
    
   }
 
