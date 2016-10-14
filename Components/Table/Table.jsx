@@ -25,7 +25,7 @@ import TableRow from './TableRow/TableRow.jsx'
 class Table extends Component {
 
 	render() {
-		const { header1, header2, header3, header4, pageName } = this.props;
+		const { header1, header2, header3, header4, pageName, tableButtonRoute } = this.props;
 {/*styling for width of each column shouldgo on the page css under the class pagenameCol1, 2, 3 ex: homePageCol1*/}
 		return (
 			<div id="wholeTable">
@@ -45,6 +45,7 @@ class Table extends Component {
 							col4={item.submission}
 							pageName = {pageName}
 							key= {index}
+							tableButton = {tableButtonRoute}
 						/>
 					)
 				}

@@ -4,6 +4,7 @@ import Table from "../../Table/Table.jsx";
 
 
 class AttendancePage extends Component {
+
 	componentWillMount() {
 		const { UserInfo } = this.props;
 		console.log('attendancePage page', UserInfo);
@@ -21,6 +22,7 @@ class AttendancePage extends Component {
 					header2 = 'TIME' 
 					header3='DATE' 
 					header4='ATTENDANCE'
+					tableButtonRoute={/*Add route here to register attendance*/}
 				/>
 			</div>
 
