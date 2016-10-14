@@ -14,7 +14,6 @@ var Navbar = React.createClass ({
 						<li><NavBarLink name="Homework" currentLoc={location.pathname} img="assets/images/homework_nav.png" navLink="/homework"/></li> 
 						<li><NavBarLink name="Syllabus" currentLoc={location.pathname} img="/assets/images/syllabus_nav.png" navLink="/syllabus"/></li> 
 						<li><NavBarLink name="Projects" currentLoc={location.pathname} img="assets/images/projects_nav.png" navLink="/projects"/></li>
-
 						<li>
 							<div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 						  	<div className="panel panel-default">
@@ -34,11 +33,6 @@ var Navbar = React.createClass ({
 						    </ul>
 						  </div>
 						</div></li>
-
-						
-
-
-
 					
 					</ul>
 				</div>

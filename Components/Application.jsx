@@ -40,6 +40,7 @@ class Application extends Component {
 		.then((response) => response.json())
 		.then((json) => {
 			this.setState({ UserInfo: json.userData })
+			console.log('application page', this.state.UserInfo)
 			//prevents user from accessing the website if their user info/session has expired
 			if (!json.userData) {
 				this.logout();
