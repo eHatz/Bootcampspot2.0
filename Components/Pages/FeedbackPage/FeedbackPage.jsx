@@ -3,8 +3,8 @@ import "./FeedbackPage.css";
 import { form, label, select, input } from "react-bootstrap";
 import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
 import Navbar from "../../Navbar/Navbar.jsx";
-import FeedbackRadialQuest from "../../FeedbackRadialQuest/FeedbackRadialQuest.jsx";
-import FeedbackInputQuest from "../../FeedbackInputQuest/FeedbackInputQuest.jsx";
+// import FeedbackRadialQuest from "../../FeedbackRadialQuest/FeedbackRadialQuest.jsx";
+// import FeedbackInputQuest from "../../FeedbackInputQuest/FeedbackInputQuest.jsx";
 
 const formData=[
 	{
