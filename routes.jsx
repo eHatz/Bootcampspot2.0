@@ -24,6 +24,8 @@ import FeedbackPage from "./Components/Pages/FeedbackPage/FeedbackPage.jsx";
 
 import ProjectsPage from "./Components/Pages/ProjectsPage/ProjectsPage.jsx";
 
+import AdminPage from './Components/Pages/AdminPage/AdminPage.jsx';
+
 import Login from "./Components/reactlogin/login";
 
 import Logout from "./Components/reactlogin/logout";
@@ -55,6 +57,7 @@ export default (
 			<Route path="/syllabus" component={SyllabusPage} onEnter={requireAuth}/>
 			<Route path="/feedback" component={FeedbackPage} onEnter={requireAuth}/>
 			<Route path="/projects" component={ProjectsPage} onEnter={requireAuth}/>
+			<Route path="/admin" component={AdminPage} onEnter={requireAuth}/>
 		</Route>
     </Route>
 	

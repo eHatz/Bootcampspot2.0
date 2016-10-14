@@ -16,7 +16,7 @@ var Navbar = React.createClass ({
 						<li><NavBarLink name="Projects" currentLoc={location.pathname} img="assets/images/projects_nav.png" navLink="/projects"/></li>
 
 					
-						<div class="dropdown">
+						<div className="dropdown">
 						  <button className="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">	<li><NavBarLink name="Feedback" currentLoc={location.pathname} img="/assets/images/feedback_nav.png" navLink="/feedback"/></li> 
 						  <span className="caret"></span></button>
 						  <ul className="dropdown-menu">
