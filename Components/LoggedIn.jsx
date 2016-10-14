@@ -26,7 +26,6 @@ class LoggedIn extends Component {
 	}
 	render() {
 		const { loggedIn, UserInfo, location } = this.props;
-		console.log('location information', location)
 		return (
 
 			<div id="width" className="container remove-all-margin-padding">
@@ -49,7 +48,7 @@ class LoggedIn extends Component {
 								showModal: this.state.showModal,
 								openModal: this.open.bind(this),
 								closeModal: this.close.bind(this),
-
+								UserInfo: {UserInfo}
 							})
 						}
 

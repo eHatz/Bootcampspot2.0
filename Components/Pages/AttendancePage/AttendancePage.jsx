@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import "./AttendancePage.css";
-import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
 import Table from "../../Table/Table.jsx";
 
 
 class AttendancePage extends Component {
+	componentWillMount() {
+		const { UserInfo } = this.props;
+		console.log('attendancePage page', UserInfo);
 
+	}
 	render() {
 
 		const { openModal, closeModal, showModal } = this.props;
