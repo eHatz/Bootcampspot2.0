@@ -78,7 +78,7 @@ class FeedbackPage extends Component {
 		return (
 
 			<div className="feedbackBackground">
-			 		<div className="row">
+			 		<div id= "bigFeedbackDiv"className="row">
 			 			<h1 className= "studentFeedback">Student Feedback</h1>
 				 			<div className="col-md-6">
 				 				<form>
