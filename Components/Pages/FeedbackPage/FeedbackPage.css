@@ -2,12 +2,14 @@
 .remove-all-margin-padding {
     padding: 0 !important;
     margin: 0;
-    /*overflow: auto;*/
+    
+}
+#bigFeedbackDiv{
+	overflow-y:auto;
 }
 
-
 .feedbackBackground{
-	background-color:#d0cece;
+	background-image: url('/assets/images/feedback_watermark.png');
 	height: 80vh;
 	background-size: 100% auto;
 	background-size: cover;
@@ -67,6 +69,14 @@ h3{
 }
 #usr{
 	width:80%;
+}
+.radio-inline{
+	color:black;
+
+}
+#inputQuesText{
+	color:black;
+	margin-left: 5%;
 }
 
 
