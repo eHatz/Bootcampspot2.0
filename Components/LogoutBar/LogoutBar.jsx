@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Modal, Button } from "react-bootstrap"; //Add to new LogoutBar
 import "./LogoutBar.css";
-import NavBar from "../NavBar/NavBar.jsx";
+import NavBar from "../Navbar/Navbar.jsx";
 
 class LogoutBar extends Component {
 

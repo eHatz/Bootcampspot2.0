@@ -5,14 +5,19 @@ module.exports = {
   entry: "./index.jsx",
 
   output: {
-    filename: "./public/bundle.js",
-    "publicPath": "/"
+    filename: "bundle.js",
+    "path": "./dist",
+    "publicPath": "/static"
   },
 
   devtool: 'cheap-source-map',
 
   module: {
     loaders: [
+      {
+        test:/\.json$/,
+        loader: "json"
+      },
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
@@ -36,11 +41,11 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin("public/assets/css/webpackStyle.css")
+    new ExtractTextPlugin("webpackStyle.css")
   ],
 
   resolve: {
-    extensions: ['', '.jsx', '.js']
+    extensions: ['', '.jsx', '.js', ".json"]
   }
 
 }
