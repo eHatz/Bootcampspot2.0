@@ -19,6 +19,7 @@ app.connect({
 	host: process.env.SLACK_WEBHOOK,
 });
 app.use(express.static(__dirname + '/public'));
+app.use("/static", express.static(__dirname + '/dist'));
 app.use(bodyParser.urlencoded({
     extended: false
 }));

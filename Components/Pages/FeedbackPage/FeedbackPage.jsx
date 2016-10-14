@@ -3,8 +3,8 @@ import "./FeedbackPage.css";
 import { form, label, select, input } from "react-bootstrap";
 import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
 import Navbar from "../../Navbar/Navbar.jsx";
-import FeedbackRadialQuest from "../../FeedbackRadialQuest/FeedbackRadialQuest.jsx";
-import FeedbackInputQuest from "../../FeedbackInputQuest/FeedbackInputQuest.jsx";
+// import FeedbackRadialQuest from "../../FeedbackRadialQuest/FeedbackRadialQuest.jsx";
+// import FeedbackInputQuest from "../../FeedbackInputQuest/FeedbackInputQuest.jsx";
 
 const formData=[
 	{
@@ -78,7 +78,7 @@ class FeedbackPage extends Component {
 		return (
 
 			<div className="feedbackBackground">
-			 		<div className="row">
+			 		<div id= "bigFeedbackDiv"className="row">
 			 			<h1 className= "studentFeedback">Student Feedback</h1>
 				 			<div className="col-md-6">
 				 				<form>
