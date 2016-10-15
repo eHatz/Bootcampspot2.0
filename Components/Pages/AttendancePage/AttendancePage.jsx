@@ -6,7 +6,7 @@ import Table from "../../Table/Table.jsx";
 class AttendancePage extends Component {
 	componentWillMount() {
 		const { UserInfo } = this.props;
-		console.log('attendancePage page', UserInfo);
+		console.log('attendancePage', UserInfo);
 
 	}
 	render() {

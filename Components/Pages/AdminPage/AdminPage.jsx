@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { browserHistory, Router, Route, Link, withRouter } from 'react-router';
 import { FormGroup, FormControl, ControlLabel, Button } from "react-bootstrap";
 import "./AdminPage.css";
-
+import createUserForm from './createUserForm/createUserForm.jsx'
+import table from '../../Table/Table.jsx'
 const AdminPage = withRouter(
 	React.createClass({
 
@@ -29,46 +30,19 @@ const AdminPage = withRouter(
 			
 		},
 
-		handleForm(event) {
-			event.preventDefault();
-		},
-
 		render() {
 			return (
 				<div className="AdminBackground">
 			 		<div className="row">
-			 			<div className="col-md-6">
-							<form onSubmit={this.handleForm}>
-								<FormGroup controlId="formBasicText">
-
-									<ControlLabel>Email</ControlLabel>
-				      				<FormControl 
-				      					componentClass="textarea" 
-				      					placeholder="Message" 
-				      				/>
-
-				      				<ControlLabel>First Name</ControlLabel>
-									<FormControl
-										type="text"
-										placeholder=""
-										
-									/>
-
-									<ControlLabel>Last Name</ControlLabel>
-									<FormControl
-										type="text"
-										placeholder=""
-										
-									/>
-
-								    <Button type="submit">
-								      Submit
-								    </Button>
-
-								</FormGroup>
-							</form>
-			 				
-			 			</div>
+			 		<h1>why the fuck isnt this running</h1>
+			 			<createUserForm/>
+			 			<table
+					 		pageName='attendancePage'
+							header1='NOTES' 
+							header2 = 'TIME' 
+							header3='DATE' 
+							header4='ATTENDANCE'
+			 			/>
 			 		</div>				
 				</div>
 
