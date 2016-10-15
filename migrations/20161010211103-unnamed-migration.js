@@ -2,13 +2,14 @@
 
 module.exports = {
   up: function (queryInterface, Sequelize) {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.createTable('users', { id: Sequelize.INTEGER });
-    */
+    queryInterface.bulkInsert('Users', [
+      {
+        FirstName: "J",
+        LastName: "Dogg",
+        Email: DataTypes.STRING,
+        Role: DataTypes.STRING
+      },
+    ]
   },
 
   down: function (queryInterface, Sequelize) {
@@ -21,3 +22,13 @@ module.exports = {
     */
   }
 };
+
+
+/*
+var User = sequelize.define("User", {
+    FirstName: DataTypes.STRING,
+    LastName: DataTypes.STRING,
+    UserName: DataTypes.STRING,
+    Email: DataTypes.STRING,
+    Role: DataTypes.STRING,
+*/
