@@ -33,9 +33,11 @@ class CareerPage extends Component {
 							<div id="bioDiv">
 	  							<h2 id="bioTitle">Bio:</h2>
 						  		<form>
-							    	<div class="form-group">
-							      		<textarea className="form-control" rows="7" id="bioForm"></textarea>
-							      		<button className="bioButton">save</button>
+							    	<div className="form-group">
+							      		<textarea className="form-control" rows="15" id="bioForm"></textarea>
+							      		<div className="buttonDiv">
+							      			<button className="bioButton">Save</button>
+						      			</div>
 							    	</div>
 							 	</form>
 							</div>

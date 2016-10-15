@@ -32,9 +32,10 @@ body{
     padding: 10px;
     /* margin: 50px; */
     color: white;
-    margin-left:0;
-    margin-top: 0px; 
-    margin-bottom: 0px; 
+    margin-left: 31px;
+    margin-top: 31px;
+    margin-bottom: 0px;
+    margin-right: 31px;
 
 }
 #careerAquirements{
@@ -55,6 +56,9 @@ body{
 }
 #bioForm{
 	width: 100%;
+	margin-left: 31px;
+    margin-bottom: 0px;
+    margin-right: 31px;
 }
 .bioButton{
 	background-color: red;
