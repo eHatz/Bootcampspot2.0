@@ -44,8 +44,8 @@ const formData=[
 	},
 	{
 		question: "How engaging was the teacher in his/her instruction?",
-		leftEnd: "I had a tough time paying attention",
-		rightEnd: "I felt thoroughly connected to my instructor"
+		leftEnd: "Not engaged",
+		rightEnd: "Very Connected"
 	},
 	{
 		question: "How knowledgable did your instructor seem in the subject area?",
