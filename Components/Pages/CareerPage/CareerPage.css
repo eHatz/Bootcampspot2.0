@@ -8,23 +8,93 @@
 }
 
 
-#div1 { 
-	background: #DDD; 
-	float: left;
+#bioDiv{ 
+	padding-top: 20px;
+    padding-right: 44px;
+    padding-bottom: 20px;
+    padding-left: 20px;
 }
+
 #div2 {
 	background: #8b8b8b; 
-	width: 50%;
-	height: 50%;
-	float: left;
+	
 }
 #div3 {
 	background: #343333; 
-	width: 50%;
-	height: 50%;
-	float: left;
+	
 
 }
 body{
 	background-color: transparent;
 }
+#bioTitle{
+	background-color: red;
+    z-index: 1;
+    margin: 0;
+    padding: 10px;
+    color: white;
+}
+#careerAquirements{
+
+}
+.careerBullets{
+	color: grey;
+    margin-left: 40px;
+    font-size: 16px;
+    font-family: helvetica;
+    margin-right: 40px;
+}
+
+#aquirementsTitle{
+	 margin-left: 40px;
+    font-family: helvetica;
+
+}
+#bioForm{
+	width: 100%;
+    margin-bottom: 0px;
+    background-color: #e2e2e2;
+    border: 1px solid #080808;
+    border-radius: 1px;
+
+}
+.bioButton{
+	background-color: red;
+    font-size: 21px;
+    font-family: helvetica;
+    padding: 10px;
+    padding-top: 10px;
+    padding-right: 12px;
+    padding-bottom: 10px;
+    padding-left: 12px;
+}
+.left-inner-addon {
+    position: relative;
+}
+.left-inner-addon input {
+    padding-left: 56px;   
+}
+.left-inner-addon i {
+    position: absolute;
+    padding: 10px 12px;
+    pointer-events: none;
+}
+
+.buttonDiv{
+	    background-color: #414142;
+	    text-align: right;
+}
+#linkedin{
+	background: url(/assets/images/linkedin.png) no-repeat 8px 8px;
+    height: 54px;
+    font-family: helvetica;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+

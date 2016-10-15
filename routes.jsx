@@ -57,15 +57,17 @@ export default (
 
 
 		<Route component={LoggedIn}>
-			<Route path="/attendance" component={AttendancePage} onEnter={requireAuth}/>
-			<Route path="/career" component={CareerPage} onEnter={requireAuth}/>
-			<Route path="/homework" component={HomeworkPage} onEnter={requireAuth}/>
-			<Route path="/syllabus" component={SyllabusPage} onEnter={requireAuth}/>
-			<Route path="/feedback" component={FeedbackPage} onEnter={requireAuth}/>
-			<Route path="/projects" component={ProjectsPage} onEnter={requireAuth}/>
-			<Route path="/admin" component={AdminPage} onEnter={requireAuth}/>
-			<Route path="/absenceRequest" component={AbsenceRequest} onEnter={requireAuth}/>
-			<Route path="/tutorRequest" component={TutorRequest} onEnter={requireAuth}/>
+
+			<Route path="/attendance" component={AttendancePage}/>
+			<Route path="/career" component={CareerPage}/>
+			<Route path="/homework" component={HomeworkPage}/>
+			<Route path="/syllabus" component={SyllabusPage}/>
+			<Route path="/feedback" component={FeedbackPage}/>
+			<Route path="/projects" component={ProjectsPage}/>
+			<Route path="/admin" component={AdminPage}/>
+			<Route path="/absenceRequest" component={AbsenceRequest}/>
+			<Route path="/tutorRequest" component={TutorRequest}/>
+			{/*onEnter={requireAuth}*/}
 		</Route>
     </Route>
 	
