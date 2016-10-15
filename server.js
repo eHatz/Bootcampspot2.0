@@ -56,10 +56,10 @@ app.use(express_session({ secret: 'jennanda', resave: true, saveUninitialized: t
 
 app.use(passport.initialize());
 app.use(passport.session());
-
+const User = models.User;
 //Routes
 app.get('/login', function(req, res){
-	var User = models.User;
+	
 	if (req.session.userInfo) {
 		User.findOne({where: {Email: req.session.userInfo.emails[0].value}}).then(function(user){
 			if (!user){
@@ -97,6 +97,16 @@ app.get('/login/github/return',
 app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, './index.html'));
 });
+
+app.post('/admin', function(req, res) {
+	User.create({
+		FirstName: req.body.firstName,
+		LastName: req.body.lastName,
+		UserName: req.body.firstName,
+		Email: req.body.email,
+		Role: req.body.role
+	})
+})
 
 app.get("/slack", (req, res) => {
 	res.sendFile(path.join(__dirname, './slack.html'));

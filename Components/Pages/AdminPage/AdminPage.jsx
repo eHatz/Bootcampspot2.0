@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { browserHistory, Router, Route, Link, withRouter } from 'react-router';
 import { FormGroup, FormControl, ControlLabel, Button } from "react-bootstrap";
 import "./AdminPage.css";
-import createUserForm from './createUserForm/createUserForm.jsx'
-import table from '../../Table/Table.jsx'
+import CreateUserForm from './createUserForm/createUserForm.jsx'
+
 const AdminPage = withRouter(
-	React.createClass({
+	class AdminPage extends Component {
 
 		componentWillMount() {
 			const { UserInfo, location } = this.props;
@@ -28,27 +28,17 @@ const AdminPage = withRouter(
 				}
 			}
 			
-		},
+		}
 
 		render() {
 			return (
 				<div className="AdminBackground">
-			 		<div className="row">
-			 		<h1>why the fuck isnt this running</h1>
-			 			<createUserForm/>
-			 			<table
-					 		pageName='attendancePage'
-							header1='NOTES' 
-							header2 = 'TIME' 
-							header3='DATE' 
-							header4='ATTENDANCE'
-			 			/>
-			 		</div>				
+			 		<CreateUserForm/>			
 				</div>
 
 			)
 		}
-	})
+	}
 )
 
 export default AdminPage;

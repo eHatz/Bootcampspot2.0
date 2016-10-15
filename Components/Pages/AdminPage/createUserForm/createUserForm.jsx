@@ -47,40 +47,52 @@ class createUserForm extends Component {
 		});
 	}
 
-	messageSubmit(){
+	messageSubmit(event){
+		fetch('/admin', {
+			credentials: 'include',
+			method: 'POST',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+	        	email: this.state.email,
+				firstName: this.state.firstName,
+				lastName: this.state.lastName,
+				role: this.state.role
+	        })
+		})
+
 		// $.ajax({
-	 //        url: "/admin/createUser",
-	 //        type: "POST",
-	 //        data:{
-	 //        	email: this.state.email,
+		//     url: "/admin/createUser",
+		//     type: "POST",
+		//     data:{
+		//     	email: this.state.email,
 		// 		firstName: this.state.firstName,
 		// 		lastName: this.state.lastName,
 		// 		role: this.state.role
-	 //        }
-	 //    }).done(function(response){
-	 //        console.log("response: " + response);
-	 //    });
+		//     }
+		// }).done(function(response){
+		//     console.log("response: " + response);
+		// });
 	    
 	    this.clearInput();
-	    return false;
+	    event.preventDefault();
 	}
 	handleForm(event) {
-		event.preventDefault();
+		
 	}
-	componentWillMount() {
-		console.log('running form')
-	}
+
 	render() {
 
 		return (
 			<div id='userFormDiv'>
-			<h1>why the fuck isnt this running</h1>
 				<form onSubmit={this.messageSubmit}>
 					<FormGroup controlId="formBasicText">
 
 						<ControlLabel>Email</ControlLabel>
 						<FormControl
-	      					componentClass="text" 
+	      					type="text" 
 	      					value={this.state.email}
 	      					placeholder="Email" 
 	      					onChange={this.handleEmailChange}
@@ -88,25 +100,25 @@ class createUserForm extends Component {
 
 						<ControlLabel>First Name</ControlLabel>
 						<FormControl
-	      					componentClass="text" 
+	      					type="text" 
 	      					value={this.state.firstName}
-	      					placeholder="Email" 
+	      					placeholder="First Name" 
 	      					onChange={this.firstNameChange}
 	      				/>
 
 						<ControlLabel>Last Name</ControlLabel>
 						<FormControl
-	      					componentClass="text" 
+	      					type="text" 
 	      					value={this.state.lastName}
-	      					placeholder="Email" 
+	      					placeholder="Last Name" 
 	      					onChange={this.lastNameChange}
 	      				/>
 
 	      				<ControlLabel>Role</ControlLabel>
 						<FormControl
-	      					componentClass="text" 
+	      					type="text" 
 	      					value={this.state.role}
-	      					placeholder="Email" 
+	      					placeholder="Role" 
 	      					onChange={this.roleChange}
 	      				/>
 					    <Button type="submit">Submit</Button>
