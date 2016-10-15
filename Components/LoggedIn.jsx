@@ -30,7 +30,7 @@ class LoggedIn extends Component {
 		return (
 
 			<div id="width" className="container remove-all-margin-padding">
-				<LogoutBar 
+				<LogoutBar
 					showModal= {this.state.showModal}
 					openModal= {this.open.bind(this)} 
 					closeModal= {this.close.bind(this)}
