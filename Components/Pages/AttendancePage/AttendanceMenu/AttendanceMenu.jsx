@@ -14,6 +14,7 @@ class AttendanceMenu extends Component {
 	}
 
 	componentWillMount() {
+		console.log("AttendanceMenu");
 		//Request class list from server
 
 	}

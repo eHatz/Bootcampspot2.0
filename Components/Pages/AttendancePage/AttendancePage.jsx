@@ -9,8 +9,9 @@ class AttendancePage extends Component {
 	componentWillMount() {
 		const { UserInfo } = this.props;
 		console.log('attendancePage page', UserInfo);
-
+		console.log("role: ", UserInfo.UserInfo.Role);
 	}
+
 	render() {
 
 		const { openModal, closeModal, showModal } = this.props;
@@ -20,8 +21,8 @@ class AttendancePage extends Component {
 			<div className="attendanceBackground">
 
 				<div id="AttendancePage_menuDiv">
-					{UserInfo.Role === "Teacher" || "Admin" ? 
-						( <AttendanceMenu sections={UserInfo.sections}/>  )
+					{this.props.UserInfo.UserInfo.Role === "Teacher" || "Admin" ? 
+						( <AttendanceMenu />  )
 						:
 						( null )
 					}
@@ -40,3 +41,7 @@ class AttendancePage extends Component {
 	}
 }
 export default AttendancePage;
+
+/*
+sections={UserInfo.UserInfo.sections}			
+*/
