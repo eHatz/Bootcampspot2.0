@@ -5,7 +5,9 @@ import {Grid, Row, Col} from "react-bootstrap";
 import Sidebar from "react-sidebar";
 import Navbar from "./Navbar/Navbar.jsx";
 import "./Application.css";
-import auth from '../auth'
+import auth from '../auth';
+
+
 
 
 class Application extends Component {

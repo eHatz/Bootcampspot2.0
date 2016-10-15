@@ -5,6 +5,9 @@ import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
 import Navbar from "../../Navbar/Navbar.jsx";
 import FeedbackRadialQuest from "../../FeedbackRadialQuest/FeedbackRadialQuest.jsx";
 import FeedbackInputQuest from "../../FeedbackInputQuest/FeedbackInputQuest.jsx";
+import MenuButtons from "../../MenuButtons/MenuButtons.jsx";
+
+
 
 const formData=[
 	{
@@ -78,12 +81,14 @@ class FeedbackPage extends Component {
 		return (
 
 			<div className="feedbackBackground">
-			 		<div id= "bigFeedbackDiv"className="row">
+			 		<div className="row">
 			 			<h1 className= "studentFeedback">Student Feedback</h1>
+			 		</div>
+			 		<div className="row">
 				 			<div className="col-md-6">
 				 				<form>
 				 					  <div className="form-group">
-									    <label htmlFor="exampleSelect1">Class</label>
+									    <label id = "exampleSelectText1" htmlFor="exampleSelect1">Class</label>
 									    <select className="form-control" id="exampleSelect1">
 									      <option>1</option>
 									      <option>2</option>
@@ -97,7 +102,7 @@ class FeedbackPage extends Component {
 			 			<div className="col-md-6">
 			 					<form>
 			 					  <div className="form-group">
-								    <label htmlFor="exampleSelect2">Class Week</label>
+								    <label id= "exampleSelectText2" htmlFor="exampleSelect2">Class Week</label>
 								    <select className="form-control" id="exampleSelect2">
 								      <option>1</option>
 								      <option>2</option>
@@ -108,6 +113,8 @@ class FeedbackPage extends Component {
 								  </div>
 			 				</form>
 			 			</div>
+			 		</div>
+			 		<div className ="row">
 			 			{formData.map((item, index) =>{
 				 			console.log(item);
 				 			return 	(<FeedbackRadialQuest 
