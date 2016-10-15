@@ -82,7 +82,12 @@ class FeedbackPage extends Component {
 
 			<div className="feedbackBackground">
 			 		<div className="row">
-			 			<h1 className= "studentFeedback">Student Feedback</h1>
+			 		<MenuButtons 
+					feedback = "active"
+					tutor = "inactive"
+					absence = "inactive"
+					/>
+			 			
 			 		</div>
 			 		<div className="row">
 				 			<div className="col-md-6">

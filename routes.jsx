@@ -34,6 +34,10 @@ import auth from './auth';
  
 import MenuButtons from "./Components/MenuButtons/MenuButtons.jsx";
 
+import AbsenceRequest from "./Components/Pages/AbsenceRequest/AbsenceRequest.jsx";
+
+import TutorRequest from "./Components/Pages/TutorRequest/TutorRequest.jsx";
+
 
 
 function requireAuth(nextState, replace) {
@@ -60,6 +64,8 @@ export default (
 			<Route path="/feedback" component={FeedbackPage} onEnter={requireAuth}/>
 			<Route path="/projects" component={ProjectsPage} onEnter={requireAuth}/>
 			<Route path="/admin" component={AdminPage} onEnter={requireAuth}/>
+			<Route path="/absenceRequest" component={AbsenceRequest} onEnter={requireAuth}/>
+			<Route path="/tutorRequest" component={TutorRequest} onEnter={requireAuth}/>
 		</Route>
     </Route>
 	
