@@ -9,7 +9,7 @@ class AttendanceMenu extends Component {
 	constructor(...args){
 		super(...args);
 		this.state = {
-			
+			sections: []
 		}
 	}
 
@@ -24,7 +24,11 @@ class AttendanceMenu extends Component {
 
 			<ButtonToolbar>
 				<DropdownButton title="Section" id="dropdown-size-medium">
-					
+					<MenuItem eventKey="1">Action</MenuItem>
+				</DropdownButton>
+
+				<DropdownButton title="Section" id="dropdown-size-medium">
+					<MenuItem eventKey="1">Action</MenuItem>
 				</DropdownButton>
 
 				<DropdownButton title="Student" id="dropdown-size-medium">
