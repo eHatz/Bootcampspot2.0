@@ -62,27 +62,11 @@ class createUserForm extends Component {
 				role: this.state.role
 	        })
 		})
-
-		// $.ajax({
-		//     url: "/admin/createUser",
-		//     type: "POST",
-		//     data:{
-		//     	email: this.state.email,
-		// 		firstName: this.state.firstName,
-		// 		lastName: this.state.lastName,
-		// 		role: this.state.role
-		//     }
-		// }).done(function(response){
-		//     console.log("response: " + response);
-		// });
 	    
 	    this.clearInput();
 	    event.preventDefault();
 	}
-	handleForm(event) {
-		
-	}
-
+	
 	render() {
 
 		return (

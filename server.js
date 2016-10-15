@@ -102,7 +102,6 @@ app.post('/admin', function(req, res) {
 	User.create({
 		FirstName: req.body.firstName,
 		LastName: req.body.lastName,
-		UserName: req.body.firstName,
 		Email: req.body.email,
 		Role: req.body.role
 	})
