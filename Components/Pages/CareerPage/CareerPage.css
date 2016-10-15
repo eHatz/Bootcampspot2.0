@@ -33,6 +33,7 @@ body{
     margin: 0;
     padding: 10px;
     color: white;
+    font-size: 20px;
 }
 #careerAquirements{
 
@@ -46,7 +47,7 @@ body{
 }
 
 #aquirementsTitle{
-	 margin-left: 40px;
+	margin-left: 40px;
     font-family: helvetica;
 
 }
@@ -60,36 +61,50 @@ body{
 }
 .bioButton{
 	background-color: red;
-    font-size: 21px;
+    font-size: 17px;
     font-family: helvetica;
-    padding: 10px;
     padding-top: 10px;
     padding-right: 12px;
     padding-bottom: 10px;
     padding-left: 12px;
 }
-.left-inner-addon {
+.careerUrlField {
     position: relative;
-}
-.left-inner-addon input {
-    padding-left: 56px;   
-}
-.left-inner-addon i {
-    position: absolute;
-    padding: 10px 12px;
-    pointer-events: none;
+    display: inline-flex; 
+    
 }
 
+
 .buttonDiv{
-	    background-color: #414142;
-	    text-align: right;
+    background-color: #414142;
+    text-align: right;
 }
 #linkedin{
 	background: url(/assets/images/linkedin.png) no-repeat 8px 8px;
-    height: 54px;
+    height: 59px;
     font-family: helvetica;
     font-size: 16px;
+    background-color: #414142;
+    padding-left: 55px;
+    color: white;
+    width: 340px;
 }
+.careerUrlDiv{
+	text-align: center;
+	padding-top: 20px;
+}
+
+
+.careerUrlButton{
+	background-color: red;
+    font-size: 17px;
+    font-family: helvetica;
+    padding-top: 10px;
+    padding-right: 12px;
+    padding-bottom: 10px;
+    padding-left: 12px;
+}	
+
 
 
 

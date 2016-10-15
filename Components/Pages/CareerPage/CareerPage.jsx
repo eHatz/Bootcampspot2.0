@@ -22,9 +22,26 @@ class CareerPage extends Component {
 				</div>
 				
 				<div className="row">
-					<div className="col-md-6">		
-					    <div className="left-inner-addon">
+					<div className="col-md-6 careerUrlDiv">		
+					    <div className="careerUrlField">
 					        <input type="text" className="form-control" id="linkedin" placeholder="Linkedin URL" />
+					        <button className="careerUrlButton">Save</button>
+					    </div>
+					    <div className="careerUrlField">
+					        <input type="text" className="form-control" id="linkedin" placeholder="Linkedin URL" />
+					        <button className="careerUrlButton">Save</button>
+					    </div>
+					    <div className="careerUrlField">
+					        <input type="text" className="form-control" id="linkedin" placeholder="Linkedin URL" />
+					        <button className="careerUrlButton">Save</button>
+					    </div>
+					    <div className="careerUrlField">
+					        <input type="text" className="form-control" id="linkedin" placeholder="Linkedin URL" />
+					        <button className="careerUrlButton">Save</button>
+					    </div>
+					    <div className="careerUrlField">
+					        <input type="text" className="form-control" id="linkedin" placeholder="Linkedin URL" />
+					        <button className="careerUrlButton">Save</button>
 					    </div>
 					</div>
 					
