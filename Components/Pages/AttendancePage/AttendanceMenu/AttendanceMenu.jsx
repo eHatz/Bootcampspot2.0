@@ -24,6 +24,7 @@ class AttendanceMenu extends Component {
 		return (
 
 			<ButtonToolbar>
+			
 				<DropdownButton title="Section" id="dropdown-size-medium">
 					<MenuItem eventKey="1">Action</MenuItem>
 				</DropdownButton>
@@ -35,6 +36,7 @@ class AttendanceMenu extends Component {
 				<DropdownButton title="Student" id="dropdown-size-medium">
 					<MenuItem eventKey="1">Action</MenuItem>
 				</DropdownButton>
+				
 			</ButtonToolbar>
 
 		);
