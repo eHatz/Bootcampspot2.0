@@ -72,7 +72,7 @@ body{
     position: relative;
 }
 .left-inner-addon input {
-    padding-left: 41px;   
+    padding-left: 56px;   
 }
 .left-inner-addon i {
     position: absolute;
@@ -85,8 +85,10 @@ body{
 	    text-align: right;
 }
 #linkedin{
-	background: url(/assets/images/linkedin.png) no-repeat;
-	height: 54px;
+	background: url(/assets/images/linkedin.png) no-repeat 8px 8px;
+    height: 54px;
+    font-family: helvetica;
+    font-size: 16px;
 }
 
 
