@@ -47,7 +47,7 @@
 	/*What element does this style? -nlp*/
 	.remove-all-margin-padding { 
     margin-top: -6px;
-    margin-right: -1px;
+    margin-right: 0px;
     margin-bottom: 0px;
     margin-left: 0px;
 	}

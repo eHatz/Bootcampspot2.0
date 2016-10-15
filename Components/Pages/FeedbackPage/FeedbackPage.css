@@ -16,11 +16,13 @@
     background-position: 50% 50%;
 }
 
-#studentFeedback{
+.studentFeedback{
 	border-radius: 100%;
-	margin-left: 170%;
-	margin-top: 60%;
+	text-align: center;
+	font-family: 'Roboto Condensed', sans-serif;
 	display: inline-block;
+
+
 }
 #absenceForm{
 	border-radius: 100%;
@@ -37,11 +39,13 @@
 	margin-left: 20%;
 }
 #exampleSelect2{
-	width:70%;
+	width:0%;
 	margin-left: 20%;
 }
 label{
 	font-size: 150%;
+	color:black;
+	margin-left: 10%;
 
 }
 h1{
@@ -60,6 +64,7 @@ h3{
     border: 0px;
     width: 75%;
     height: 1.5em;
+
 }
 #feedbackInputQuestion{
 	color: black;
@@ -73,26 +78,55 @@ h3{
 .radio-inline{
 	color:black;
 
+
+
 }
 #inputQuesText{
 	color:black;
 	margin-left: 5%;
+	font-family: 'Roboto Condensed', sans-serif;
 }
+
 
 
 @media screen and (max-width: 640px){
-	#studentFeedback{
+	.studentFeedback{
 		height:50%;
-		margin-right: 20%;
+		margin-left: 25%;
+		font-size: 26px;
 
 	}
-	#absenceForm{
-		height:50%;
-		margin-right: 20%;
+	#exampleSelect1{
+		width:90%;
+		margin-left: 4%;
+	}
+	#exampleSelectText1{
+		margin-left: 3%;
+	}
+	#exampleSelect2{
+		width:90%;
+		margin-left: 4%;
+	}
+	#exampleSelectText2{
+		margin-left: 3%;
+	}
+	.questionTextRad{
+		font-size: 20px;
+		margin-left: 8%;
+		margin-right: 6%;
+
+	}
+	.radio-inline{
+		padding-left: 15px;
+	}
+	.rightSide{
+		margin-left: 65%;
+		
 	}
 
+	
+	
 }
-
 
 
 
