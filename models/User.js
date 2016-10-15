@@ -4,7 +4,10 @@ module.exports = function(sequelize, DataTypes) {
 		FirstName: DataTypes.STRING,
 		LastName: DataTypes.STRING,
 		Email: DataTypes.STRING,
-		Role: DataTypes.STRING,//Can be "Admin", "Teacher", or "Student"
+		Role: DataTypes.STRING//Can be "Admin", "Teacher", or "Student"
+		// createdAt:{
+		// 	defaultValue: Date.now
+		// }
 	}, {
 	classMethods: {
 		associate: function(models) {
