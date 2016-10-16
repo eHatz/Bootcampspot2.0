@@ -1,11 +1,11 @@
 {
   "development": {
+    "seederStorage": "sequelize",
     "username": "root",
     "password": null,
     "database": "bootDB",
     "host": "127.0.0.1",
-    "dialect": "mysql", 
-    "seederStorage": "sequelize"
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
