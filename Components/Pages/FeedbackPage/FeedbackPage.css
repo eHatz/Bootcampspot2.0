@@ -83,14 +83,16 @@ input[type=radio] {
 	color:black;
 	padding-left: 5%;
 }
+#resetButt{
+	width:20%;
+	background-color: gray;
 
-
-
+}
 
 .btn.btn-default{
-	width:10%;
-	background-color: red;
-	margin-left: 40%;
+	width:20%;
+	background-color: #FF0000;
+	
 }
 
 @media screen and (max-width: 640px){
@@ -114,14 +116,7 @@ input[type=radio] {
 	#exampleSelectText2{
 		margin-left: 3%;
 	}
-	.questionTextRad{
-		
-		
-		margin-right: 6%;
-		
-		padding-top: 2%;
-
-	}
+	
 	.radio-inline{
 		padding-left: 25px;
 	}
@@ -153,20 +148,25 @@ input[type=radio] {
 	}
 	.commentText{
 		margin-left: 4%;
-		font-size: 30px;
+		font-size: 22px;
 	}
 	#questionTextRad{
 	color:black;
-	margin-left: 5%;
+	margin-left: 8%;
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 10px;
 }
 	#inputQuesText {
 	color:black;
-	margin-left: 5%;
+	margin-left: 3%;
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 30px;
+	margin-right: 5%;
 }
+	.btn.btn-default{
+		margin-left: 20%;
+	}
+
 }
 
 @media screen and (max-width: 960px){
@@ -179,16 +179,11 @@ input[type=radio] {
 		width:80%;
 		margin-left: 10%;
 		margin-top: 2%;
-
 	}
-	.questionTextRad{
-		color:black;
-		margin-left: 5%;
-	}
+	
 	.leftSide{
 		margin-left: 10%;
 		margin-top: -2%;
-
 	}
 	.multRads{
 		margin-left: 20%;
@@ -196,21 +191,20 @@ input[type=radio] {
 	.radio-inline{
 	color:black;
 	padding-left: 4%;
-}
+	}
 
-#usr{
-	width:90%;
-}
+	#usr{
+		width:90%;
+	}
+	.questionTextRad{
+		color:black;
+		margin-left: 5%;
+		font-size: 22px;
+	}
+	#inputQuesText{
+		font-size: 22px;
 
-
-
-
-
-
-
-
-
-
+	}
 
 }
 

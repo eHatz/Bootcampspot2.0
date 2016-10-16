@@ -138,15 +138,15 @@ class FeedbackPage extends Component {
 					 				key = { index }
 					 				/>)
 					 		})}
-				 		</div>
-				 		
-					 		<div className="form-group">
-							  <label className="commentText" for="comment">Additional Comments:</label>
-							  <textarea className="form-control" rows="5" id="comment"></textarea>
-							</div>
-						
-				 			<button type="submit" className="btn btn-default">Submit</button>
-				 		
+				 	</div>
+				 
+				 		<div className="form-group">
+						  <label className="commentText" for="comment">Additional Comments:</label>
+						  <textarea className="form-control" rows="5" id="comment"></textarea>
+						</div>
+							<input id="resetButt" className="btn btn-default" type="reset" value="Reset"/>
+											
+				 			<button type="submit" className="btn btn-default">Submit</button>			 			 		
 			</div>
 			
 		);
