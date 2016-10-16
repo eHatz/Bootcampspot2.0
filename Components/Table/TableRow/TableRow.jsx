@@ -6,7 +6,7 @@ import "./TableRow.css";
 class TableRow extends Component {
 
 	render() {
-		const { col1, col2, col3, col4, pageName } = this.props;
+		const { col1, col2, col3, col4, pageName, tableButtonRoute } = this.props;
 	
 		return (
 			<div className= "remove-all-margin-padding">
@@ -15,7 +15,7 @@ class TableRow extends Component {
 					<p className={pageName +'Col2 tableData'}>{col2}</p>
 					<p className={pageName +'Col3 tableData'}>{col3}</p>
 					<div className={pageName +'Col4 tableData'}>
-					  <a href="#"><span className="glyphicon glyphicon-expand"></span></a>
+					  <a href={ tableButtonRoute }><span className="glyphicon glyphicon-expand"></span></a>
 					</div>
 				</div>
 			</div>

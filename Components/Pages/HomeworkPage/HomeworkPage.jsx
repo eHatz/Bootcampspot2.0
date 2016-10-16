@@ -5,6 +5,12 @@ import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
 import Table from "../../Table/Table.jsx";
 
 class HomeworkPage extends Component {
+
+	componentWillMount() {
+		const { UserInfo } = this.props;
+		console.log('Homework: ', UserInfo);
+	}
+
 	
 	render() {
 		return (

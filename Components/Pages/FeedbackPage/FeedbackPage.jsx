@@ -7,9 +7,6 @@ import FeedbackRadialQuest from "../../FeedbackRadialQuest/FeedbackRadialQuest.j
 import FeedbackInputQuest from "../../FeedbackInputQuest/FeedbackInputQuest.jsx";
 import MenuButtons from "../../MenuButtons/MenuButtons.jsx";
 
-
-
-
 const formData=[
 	{
 		question: "1. How was class this week?",
