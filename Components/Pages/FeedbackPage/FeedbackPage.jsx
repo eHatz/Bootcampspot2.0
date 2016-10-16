@@ -12,43 +12,43 @@ import MenuButtons from "../../MenuButtons/MenuButtons.jsx";
 
 const formData=[
 	{
-		question: "How was class this week?",
+		question: "1. How was class this week?",
 		leftEnd: "Not so great",
 		rightEnd: "Excellent!"
 
 	},
 	{
-		question: "How would you rate the pace of the class this week?",
+		question: "2. How would you rate the pace of the class this week?",
 		leftEnd: "Too Slow",
 		rightEnd: "Too Fast"
 	},
 	{
-		question:"Do you feel that you have enough academic support?",
+		question:"3. Do you feel that you have enough academic support?",
 		leftEnd: "Not Enough",
 		rightEnd: "Definitely Enough"
 	},
 	{
-		question: "How would you rate the pace of class this week?",
+		question: "4. How would you rate the pace of class this week?",
 		leftEnd:"Too fast",
 		rightEnd:"Too slow"
 	},
 	{
-		question:"How much new learning did you acheive this week?",
+		question:"5. How much new learning did you acheive this week?",
 		leftEnd:"Not much",
 		rightEnd: "A lot"
 	},
 	{
-		question: "How well do you feel you have mastered the concepts covered in class this week?",
+		question: "6. How well do you feel you have mastered the concepts covered in class this week?",
 		leftEnd: "Not Well",
 		rightEnd: "Great"
 	},
 	{
-		question: "How engaging was the teacher in his/her instruction?",
+		question: "7. How engaging was the teacher in his/her instruction?",
 		leftEnd: "Not engaged",
 		rightEnd: "Very Connected"
 	},
 	{
-		question: "How knowledgable did your instructor seem in the subject area?",
+		question: "8. How knowledgable did your instructor seem in the subject area?",
 		leftEnd: "Not knowledgable",
 		rightEnd: "Very knowledgable"
 	}
@@ -57,19 +57,19 @@ const formData=[
 
 const formInputData = [
 	{
-		inputquestion: "How many hours did you spend outside of class last week on homework, code review, etc?"
+		inputquestion: "9. How many hours did you spend outside of class last week on homework, code review, etc?"
 	},
 	{
-		inputquestion: "What did you spend most of that time on?"
+		inputquestion: "10. What did you spend most of that time on?"
 	},
 	{
-		inputquestion: "Any additional comments about the pace of the class?"
+		inputquestion: "11. Any additional comments about the pace of the class?"
 	},
 	{
-		inputquestion: "Any additional comments about the Academic support?"
+		inputquestion: "12. Any additional comments about the Academic support?"
 	},
 	{
-		inputquestion: "Any additional comments about your instructor?"
+		inputquestion: "13. Any additional comments about your instructor?"
 	},
 
 ]
@@ -121,23 +121,32 @@ class FeedbackPage extends Component {
 			 			</div>
 			 		</div>
 			 		<div className ="row">
-			 			{formData.map((item, index) =>{
-				 			console.log(item);
-				 			return 	(<FeedbackRadialQuest 
-					 			question= { item.question } 
-					 			leftEnd = { item.leftEnd }
-					 			rightEnd = { item.rightEnd }
-					 			key = { index }
-				 			/>)
-				 		})}
+			 			
+				 			{formData.map((item, index) =>{
+					 			console.log(item);
+					 			return 	(<FeedbackRadialQuest 
+						 			question= { item.question } 
+						 			leftEnd = { item.leftEnd }
+						 			rightEnd = { item.rightEnd }
+						 			key = { index }
+					 			/>)
+					 		})}
 
-				 		{formInputData.map((item, index) =>{
-				 			return (<FeedbackInputQuest
-				 				inputquestion= { item.inputquestion }
-				 				key = { index }
-				 				/>)
-				 		})}
-			 		</div>				
+					 		{formInputData.map((item, index) =>{
+					 			return (<FeedbackInputQuest
+					 				inputquestion= { item.inputquestion }
+					 				key = { index }
+					 				/>)
+					 		})}
+				 		</div>
+				 		
+					 		<div className="form-group">
+							  <label className="commentText" for="comment">Additional Comments:</label>
+							  <textarea className="form-control" rows="5" id="comment"></textarea>
+							</div>
+						
+				 			<button type="submit" className="btn btn-default">Submit</button>
+				 		
 			</div>
 			
 		);

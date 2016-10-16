@@ -62,10 +62,12 @@ label{
 .leftSide{
 
 }
-.radioButt[type=radio] {
+input[type=radio] {
     border: 0px;
-    width: 75%;
+    width: 60%;
     height: 1.5em;
+    border-color: black;
+    border-width: 2px;
 
 }
 #feedbackInputQuestion{
@@ -79,17 +81,17 @@ label{
 }
 .radio-inline{
 	color:black;
-
-
-
-}
-#inputQuesText{
-	color:black;
-	margin-left: 5%;
-	font-family: 'Roboto Condensed', sans-serif;
+	padding-left: 5%;
 }
 
 
+
+
+.btn.btn-default{
+	width:10%;
+	background-color: red;
+	margin-left: 40%;
+}
 
 @media screen and (max-width: 640px){
 	.studentFeedback{
@@ -113,31 +115,105 @@ label{
 		margin-left: 3%;
 	}
 	.questionTextRad{
-		font-size: 20px;
-		margin-left: 8%;
+		
+		
 		margin-right: 6%;
-		color:black;
+		
+		padding-top: 2%;
 
 	}
 	.radio-inline{
-		padding-left: 15px;
+		padding-left: 25px;
 	}
 	.rightSide{
 		margin-left: 70%;
-		margin-bottom: -3%;	
+		margin-bottom: -6%;	
+
 	}
 	.leftSide{
 		margin-left: 10%;
-		margin-top: -4%;
+		margin-top: -8%;
 	}
 
 	.multRads{
 	margin-left: 25%;
+	}
+	#usr{
+		margin-left: 5%;
+		width: 90%;
+	}
+	
+	#exampleSelectText1, #exampleSelectText2{
+		margin-left: 10%;
+	}
+	#comment{
+		margin-left: 3%;
+		margin-right: 7%;
+	
+	}
+	.commentText{
+		margin-left: 4%;
+		font-size: 30px;
+	}
+	#questionTextRad{
+	color:black;
+	margin-left: 5%;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 10px;
+}
+	#inputQuesText {
+	color:black;
+	margin-left: 5%;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 30px;
+}
 }
 
-	
-	
+@media screen and (max-width: 960px){
+	.rightSide{
+		float:right;
+		margin-right: 15%;
+		margin-top: 1%;
+	}
+	#exampleSelect1, #exampleSelect2{
+		width:80%;
+		margin-left: 10%;
+		margin-top: 2%;
+
+	}
+	.questionTextRad{
+		color:black;
+		margin-left: 5%;
+	}
+	.leftSide{
+		margin-left: 10%;
+		margin-top: -2%;
+
+	}
+	.multRads{
+		margin-left: 20%;
+	}
+	.radio-inline{
+	color:black;
+	padding-left: 4%;
 }
+
+#usr{
+	width:90%;
+}
+
+
+
+
+
+
+
+
+
+
+
+}
+
 
 
 
