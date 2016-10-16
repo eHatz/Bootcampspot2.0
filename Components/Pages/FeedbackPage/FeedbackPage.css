@@ -38,12 +38,14 @@
 	margin-top: -20%;
 }
 #exampleSelect1{
-	width:70%;
-	margin-left: 20%;
+	width:90%;
+	margin-left: 10%;
+	
 }
 #exampleSelect2{
-	width:0%;
-	margin-left: 20%;
+	width:90%;
+
+	
 }
 label{
 	font-size: 150%;
@@ -52,24 +54,27 @@ label{
 
 }
 
-.questionText{
-	color:#343333;
-	margin-left: 3%;
-}
 .rightSide{
-	margin-left: 6%;
+	margin-right: 6%;
+	font-size: 20px;
+	text-align: right;
+	
 }
 .leftSide{
+	font-size: 20px;
+	float:left;
+	margin-top: 1%;
+	margin-left: 6%;
+
 
 }
 input[type=radio] {
     border: 0px;
-    width: 60%;
-    height: 1.5em;
-    border-color: black;
-    border-width: 2px;
-
+    width: 50%;
+    height: 1.3em;
+    margin-right: 20px;
 }
+
 #feedbackInputQuestion{
 	color: black;
 	font-size: 210%;
@@ -77,7 +82,8 @@ input[type=radio] {
 
 }
 #usr{
-	width:80%;
+	width:90%;
+	margin-left: -3%;
 }
 .radio-inline{
 	color:black;
@@ -94,6 +100,34 @@ input[type=radio] {
 	background-color: #FF0000;
 	
 }
+.questionTextRad{
+		margin-left: 3%;
+	}
+
+#inputQuesText{
+	font-size: 28px;
+	margin-left: -5%;
+	margin-top: 2%;
+	margin-bottom: 1%;
+}
+.multRads{
+	margin-left: 18%;
+	margin-top: 1%;
+
+}
+.commentText{
+	font-size: 28px;
+	margin-left: 4%;
+}
+#comment{
+	margin-left: 3%;
+	margin-right: 15%;
+}
+
+
+
+/*======================iPhone*/
+
 
 @media screen and (max-width: 640px){
 	.studentFeedback{
@@ -121,8 +155,9 @@ input[type=radio] {
 		padding-left: 25px;
 	}
 	.rightSide{
-		margin-left: 70%;
-		margin-bottom: -6%;	
+		float:right;
+		text-align: right;
+		margin-top: -4%;
 
 	}
 	.leftSide{
@@ -133,6 +168,7 @@ input[type=radio] {
 	.multRads{
 	margin-left: 25%;
 	}
+
 	#usr{
 		margin-left: 5%;
 		width: 90%;
@@ -168,11 +204,17 @@ input[type=radio] {
 	}
 
 }
+/*================================iPad*/
 
 @media screen and (max-width: 960px){
 	.rightSide{
 		float:right;
 		margin-right: 15%;
+		margin-top: -3%;
+		text-align: right;
+	}
+	.leftSide{
+		float:left;
 		margin-top: 1%;
 	}
 	#exampleSelect1, #exampleSelect2{
@@ -181,10 +223,7 @@ input[type=radio] {
 		margin-top: 2%;
 	}
 	
-	.leftSide{
-		margin-left: 10%;
-		margin-top: -2%;
-	}
+	
 	.multRads{
 		margin-left: 20%;
 	}
@@ -195,18 +234,27 @@ input[type=radio] {
 
 	#usr{
 		width:90%;
+		margin-left: 3%;
 	}
 	.questionTextRad{
 		color:black;
 		margin-left: 5%;
 		font-size: 22px;
+		margin-right: 5%;
 	}
 	#inputQuesText{
 		font-size: 22px;
-
+		margin-left: 2%;
+	}
+	#commentText{
+		margin-left: 2%;
 	}
 
 }
+
+
+
+
 
 
 
