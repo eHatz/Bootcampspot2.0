@@ -72,16 +72,3 @@ export default (
     </Route>
 	
 );
-
- //    <Route component={Application}>
-	// 	<Route path="/" component={HomePage} />
-		
-	// 	<Route component={LoggedIn}>
-	// 		<Route path="/attendance" component={AttendancePage} />
-	// 		<Route path="/career" component={CareerPage} />
-	// 		<Route path="/homework" component={HomeworkPage} />
-	// 		<Route path="/syllabus" component={SyllabusPage} />
-	// 		<Route path="/feedback" component={FeedbackPage} />
-	// 		<Route path="/projects" component={ProjectsPage} />
-	// 	</Route>
-	// </Route>
