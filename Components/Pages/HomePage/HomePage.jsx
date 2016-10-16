@@ -40,11 +40,11 @@ class HomePage extends Component {
 					<Panel background="#8a8a8a" name="SYLLABUS" panelId="syllabusPanel" pageLink="syllabus" img="/assets/images/syllabus_icon.png"/>
 					<Panel background="#cdcbcb" name="PROJECTS" panelId="projectsPanel" pageLink="projects" img="/assets/images/projects_icon.png"/>
 					<Panel background="#cc0000" name="FEEDBACK" panelId="feedbackPanel" pageLink="feedback" img="/assets/images/feedback_icon.png"/>
-					<Panel background="#990000" name="ADMIN" panelId="adminPanel" pageLink="admin" img="/assets/images/admin_icon.png"/>
-					{!UserInfo.Role === 'Admin'  ? (
-						<Panel background="#cc0000" name="FEEDBACK" panelId="feedbackPanel" pageLink="feedback" img="/assets/images/feedback_icon.png"/>
+
+					{UserInfo.Role === 'Admin'  ? (
+						 <Panel background="#990000" name="ADMIN" panelId="adminPanel" pageLink="admin" img="/assets/images/admin_icon.png"/>
 					) : (
-						<Panel background="#990000" name="CAREER" panelId="careerPanel" pageLink="career" img="/assets/images/career_icon.png"/>
+						 <Panel background="#990000" name="CAREER" panelId="careerPanel" pageLink="career" img="/assets/images/career_icon.png"/>
 					)}
 
 
@@ -56,24 +56,3 @@ class HomePage extends Component {
 }
 
 export default HomePage;
-
-/*
-#attendance {
-	background-color: #181818;
-}
-#homework {
-	background-color: #302e2e;
-}
-#syllabus{
-	background-color: #8a8a8a;	
-}
-#projects{
-	background-color: #cdcbcb;	
-}
-#feedback{
-	background-color: #cc0000;	
-}
-#career{
-	background-color: #990000;	
-}
-*/

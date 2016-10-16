@@ -34,6 +34,7 @@ class createUserForm extends Component {
 	}
 
 	roleChange(event) {
+		console.log('running role change', event.target.value);
 		this.setState({ role: event.target.value });
 	}
 
@@ -48,7 +49,7 @@ class createUserForm extends Component {
 	}
 
 	messageSubmit(event){
-		fetch('/admin', {
+		fetch('/admin/createUser', {
 			credentials: 'include',
 			method: 'POST',
 			headers: {
@@ -97,14 +98,18 @@ class createUserForm extends Component {
 	      					placeholder="Last Name" 
 	      					onChange={this.lastNameChange}
 	      				/>
-
-	      				<ControlLabel>Role</ControlLabel>
+						<ControlLabel>Role</ControlLabel>
 						<FormControl
-	      					type="text" 
-	      					value={this.state.role}
-	      					placeholder="Role" 
-	      					onChange={this.roleChange}
-	      				/>
+							componentClass="select"
+							onChange={this.roleChange}
+							placeholder="select"
+						>
+							<option value="">select</option>
+							<option value='Student'>Student</option>
+							<option value='Teacher'>Teacher</option>
+							<option value='Admin'>Administrator</option>
+						</FormControl>
+
 					    <Button type="submit">Submit</Button>
 					</FormGroup>
 				</form>

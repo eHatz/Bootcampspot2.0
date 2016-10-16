@@ -9,10 +9,12 @@
 
 
 #bioDiv{ 
-	width: 100%;
-	background: #DDD; 
-	float: left;
+	padding-top: 20px;
+    padding-right: 44px;
+    padding-bottom: 20px;
+    padding-left: 20px;
 }
+
 #div2 {
 	background: #8b8b8b; 
 	
@@ -28,15 +30,10 @@ body{
 #bioTitle{
 	background-color: red;
     z-index: 1;
-    /* width: 100%; */
+    margin: 0;
     padding: 10px;
-    /* margin: 50px; */
     color: white;
-    margin-left: 31px;
-    margin-top: 31px;
-    margin-bottom: 0px;
-    margin-right: 31px;
-
+    font-size: 20px;
 }
 #careerAquirements{
 
@@ -50,28 +47,65 @@ body{
 }
 
 #aquirementsTitle{
-	 margin-left: 40px;
+	margin-left: 40px;
     font-family: helvetica;
 
 }
 #bioForm{
 	width: 100%;
-	margin-left: 31px;
     margin-bottom: 0px;
-    margin-right: 31px;
+    background-color: #e2e2e2;
+    border: 1px solid #080808;
+    border-radius: 1px;
+
 }
 .bioButton{
 	background-color: red;
-    font-size: 21px;
+    font-size: 17px;
     font-family: helvetica;
-    padding: 10px;
     padding-top: 10px;
     padding-right: 12px;
     padding-bottom: 10px;
     padding-left: 12px;
-    float: right;
-
 }
+.careerUrlField {
+    position: relative;
+    display: inline-flex; 
+    
+}
+
+
+.buttonDiv{
+    background-color: #414142;
+    text-align: right;
+}
+#linkedin{
+	background: url(/assets/images/linkedin.png) no-repeat 8px 8px;
+    height: 59px;
+    font-family: helvetica;
+    font-size: 16px;
+    background-color: #414142;
+    padding-left: 55px;
+    color: white;
+    width: 340px;
+}
+.careerUrlDiv{
+	text-align: center;
+	padding-top: 20px;
+}
+
+
+.careerUrlButton{
+	background-color: red;
+    font-size: 17px;
+    font-family: helvetica;
+    padding-top: 10px;
+    padding-right: 12px;
+    padding-bottom: 10px;
+    padding-left: 12px;
+}	
+
+
 
 
 

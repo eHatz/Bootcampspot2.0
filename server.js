@@ -98,13 +98,16 @@ app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, './index.html'));
 });
 
-app.post('/admin', function(req, res) {
-	User.create({
-		FirstName: req.body.firstName,
-		LastName: req.body.lastName,
-		Email: req.body.email,
-		Role: req.body.role
-	})
+app.post('/admin/:option', function(req, res) {
+	console.log(req.session.userInfo);
+	if (req.params.option === 'createUser') {
+		User.create({
+			FirstName: req.body.firstName,
+			LastName: req.body.lastName,
+			Email: req.body.email,
+			Role: req.body.role
+		})
+	};
 })
 
 app.get("/slack", (req, res) => {

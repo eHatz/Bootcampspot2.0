@@ -22,25 +22,44 @@ class CareerPage extends Component {
 				</div>
 				
 				<div className="row">
-					<div className="col-md-6">		
-						<div id="div2">
-							<h1>see it works</h1>
-						</div>
+					<div className="col-md-6 careerUrlDiv">		
+					    <div className="careerUrlField">
+					        <input type="text" className="form-control" id="linkedin" placeholder="Linkedin URL" />
+					        <button className="careerUrlButton">Save</button>
+					    </div>
+					    <div className="careerUrlField">
+					        <input type="text" className="form-control" id="linkedin" placeholder="Linkedin URL" />
+					        <button className="careerUrlButton">Save</button>
+					    </div>
+					    <div className="careerUrlField">
+					        <input type="text" className="form-control" id="linkedin" placeholder="Linkedin URL" />
+					        <button className="careerUrlButton">Save</button>
+					    </div>
+					    <div className="careerUrlField">
+					        <input type="text" className="form-control" id="linkedin" placeholder="Linkedin URL" />
+					        <button className="careerUrlButton">Save</button>
+					    </div>
+					    <div className="careerUrlField">
+					        <input type="text" className="form-control" id="linkedin" placeholder="Linkedin URL" />
+					        <button className="careerUrlButton">Save</button>
+					    </div>
 					</div>
 					
 					<div className="col-md-6">
-						<div id="div3">
-							<div id="bioDiv">
-	  							<h2 id="bioTitle">Bio:</h2>
-						  		<form>
-							    	<div className="form-group">
-							      		<textarea className="form-control" rows="15" id="bioForm"></textarea>
-							      		<div className="buttonDiv">
-							      			<button className="bioButton">Save</button>
-						      			</div>
-							    	</div>
-							 	</form>
-							</div>
+						<div id="bioDiv">
+
+  							<h2 id="bioTitle">
+	  							<img id="bioPencil" src="/assets/images/pencil.png" alt="pencil"/>
+	  							Bio:
+  							</h2>
+					  		<form>
+						    	<div className="form-group">
+						      		<textarea className="form-control" rows="12" id="bioForm"></textarea>
+						      		<div className="buttonDiv">
+						      			<button className="bioButton">Save</button>
+					      			</div>
+						    	</div>
+						 	</form>
 						</div>
 					</div>	
 				</div>
