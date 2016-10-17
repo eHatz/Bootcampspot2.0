@@ -1,0 +1,50 @@
+h1{
+	color: black;
+}
+.instructor{
+	color: black;
+}
+
+.radio-inline{
+	padding-left:5%;
+	margin-right: 5%;
+}
+#resetButtAbs{
+	background-color: gray;
+	font-size: 18px;
+}
+#submitAbs{
+	font-size: 18px;
+}
+
+
+
+@media screen and (max-width: 640px){
+
+	.sel1{
+	margin-left: 7%;
+	}
+	
+}
+
+
+@media screen and (max-width: 960px){
+	.sel1{
+		margin-left: 7%;
+	}
+	#resetButtAbs{
+		margin-left: 5%;
+		font-size: 22px;
+	}
+	#submitAbs{
+		font-size: 22px;
+	}
+
+	
+
+
+
+
+
+
+}
