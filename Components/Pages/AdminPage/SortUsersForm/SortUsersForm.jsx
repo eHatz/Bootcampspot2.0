@@ -1,112 +1,59 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel, Checkbox, Button } from "react-bootstrap";
-import "./createUserForm.css";
+import "./SortUsersForm.css";
 
-class createUserForm extends Component {
+class SortUsersForm extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			email: "",
-			firstName:"",
-			lastName:"",
-			role:""
+			sectionList: [],
+			sortBy: 'nameAsc',
+			sortSection: 'all'
 		};
 
-		this.handleEmailChange = this.handleEmailChange.bind(this);
-		this.firstNameChange = this.firstNameChange.bind(this);
-		this.lastNameChange = this.lastNameChange.bind(this);
-		this.roleChange = this.roleChange.bind(this);
-		this.clearInput = this.clearInput.bind(this);
-		this.userCreate = this.userCreate.bind(this);
+		this.sortBy = this.sortBy.bind(this);
+		this.sortSection = this.sortSection.bind(this);
 	}
 
-	handleEmailChange(event) {
-		this.setState({ email: event.target.value });
+	sortBy(event) {
+		this.setState({ sortBy : event.target.value });
+		this.props.getUsers(event.target.value, this.state.sortSection);
 	}
-
-	firstNameChange(event) {
-		this.setState({ firstName: event.target.value });
-	}
-
-	lastNameChange(event) {
-		this.setState({ lastName: event.target.value });
-	}
-
-	roleChange(event) {
-		console.log('running role change', event.target.value);
-		this.setState({ role: event.target.value });
-	}
-
-
-	clearInput(){
-		this.setState({
-			email: "",
-			firstName: "",
-			lastName: "",
-			role: ""
-		});
-	}
-
-	userCreate(event){
-		fetch('/admin/createUser', {
-			credentials: 'include',
-			method: 'POST',
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-	        	email: this.state.email,
-				firstName: this.state.firstName,
-				lastName: this.state.lastName,
-				role: this.state.role
-	        })
-		})
-	    this.clearInput();
-	    event.preventDefault();
+	sortSection(event) {
+		this.setState({ sortSection : event.target.value });
+		this.props.getUsers(this.state.sortBy, this.state.sortSection);
 	}
 	
 	render() {
-
+		const { sectionList } = this.props;
 		return (
 			<div id='userFormDiv'>
 				<form onSubmit={this.userCreate}>
 					<FormGroup controlId="formBasicText">
-
-						<ControlLabel>Email</ControlLabel>
-						<FormControl
-	      					type="text" 
-	      					value={this.state.email}
-	      					placeholder="Email" 
-	      					onChange={this.handleEmailChange}
-	      				/>
-
-						<ControlLabel>First Name</ControlLabel>
-						<FormControl
-	      					type="text" 
-	      					value={this.state.firstName}
-	      					placeholder="First Name" 
-	      					onChange={this.firstNameChange}
-	      				/>
-
-						<ControlLabel>Last Name</ControlLabel>
-						<FormControl
-	      					type="text" 
-	      					value={this.state.lastName}
-	      					placeholder="Last Name" 
-	      					onChange={this.lastNameChange}
-	      				/>
-						<ControlLabel>Role</ControlLabel>
+						<ControlLabel>Sort By:</ControlLabel>
 						<FormControl
 							componentClass="select"
-							onChange={this.roleChange}
+							onChange={this.sortBy}
 							placeholder="select"
 						>
-							<option value="">select</option>
-							<option value='Student'>Student</option>
-							<option value='Teacher'>Teacher</option>
-							<option value='Admin'>Administrator</option>
+							<option value="nameAsc">NAME ASCENDING</option>
+							<option value='nameDesc'>NAME DESCENDING</option>
+							<option value='roleAsc'>ROLE ASCENDING</option>
+							<option value='roleDesc'>ROLE DESCENDING</option>
+						</FormControl>
+
+						<ControlLabel>Section:</ControlLabel>
+						<FormControl
+							componentClass="select"
+							onChange={this.sortSection}
+							placeholder="select"
+						>
+							<option value="all">ALL</option>
+							{sectionList.map((item, index) =>
+								<option key= {index} value={item.Title}>{item.Title}</option>
+
+							)}
 						</FormControl>
 
 					    <Button type="submit">Submit</Button>
@@ -116,4 +63,4 @@ class createUserForm extends Component {
 		);
 	}
 }
-export default createUserForm;
+export default SortUsersForm;

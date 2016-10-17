@@ -63,7 +63,7 @@ class createUserForm extends Component {
 				role: this.state.role
 	        })
 		})
-		this.props.getUsers();
+		this.props.getUsers('nameAsc', 'all');
 	    this.clearInput();
 	    event.preventDefault();
 	}
