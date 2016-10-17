@@ -1,0 +1,64 @@
+.ptag{
+	color:gray;
+	font-family: 'Roboto Condensed', sans-serif; 
+	font-size: 18px;
+	padding-top: 5%;
+}
+.quesTut{
+	color: black;
+	font-family: 'Roboto Condensed', sans-serif; 
+}
+#resetButtTut{
+	background-color: gray;
+	font-size: 18px;
+}
+#submitTut{
+	font-size: 18px;
+
+}
+
+
+/*======================iPhone*/
+
+
+@media screen and (max-width: 640px){
+	.tutorInput{
+		width:90%;
+		margin-left: 4%;	
+	}
+	.tutTxt{
+		margin-left: 5%;
+	}
+	#cohDropdown{
+		margin-left: 7%;
+		width: 85%;
+	}
+	.cohortSel{
+		margin-left: 7%;
+	}
+	#weekDropdown{
+		margin-left: 7%;
+		width:85%;
+	}
+	.weekSel{
+		margin-left: 7%;
+	
+	}
+	.quesTut{
+		font-size:22px;
+		margin-left: 7%;
+	}
+	.leftSideTut{
+		font-size: 17px;
+		float:left;
+	}
+	.rightSideTut{
+		font-size:17px;
+		float:right;
+	}
+
+}
+
+
+
+

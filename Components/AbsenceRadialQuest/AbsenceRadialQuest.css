@@ -3,6 +3,25 @@
 	h4{
 		color:black;
 	}
+	.multRads2{
+		margin-bottom: 3%
+
+	}
+
+	.absRadQ{
+		font-size: 22px; 
+		margin-left:12%;
+		margin-right: 5%;
+	}
+	.multRads2{
+		margin-left: 10%;
+	}
+	.radio-inline.yesNo{
+		color:black;
+		margin-right:22px;
+		padding-left: 12px;
+		
+	}
 
 
 @media screen and (max-width: 640px){
@@ -17,12 +36,13 @@
 		margin-bottom: 3%;
 	}
 
+
 }
 
 @media screen and (max-width: 960px){
 	.absRadQ{
 		font-size: 22px;
-		margin-left: 7%;
+		margin-left: 8%;
 		margin-right: 3%;
 
 	}

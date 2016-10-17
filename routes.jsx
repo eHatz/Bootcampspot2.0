@@ -36,7 +36,7 @@ import MenuButtons from "./Components/MenuButtons/MenuButtons.jsx";
 
 import AbsenceRequest from "./Components/Pages/AbsenceRequestPage/AbsenceRequestPage.jsx";
 
-import TutorRequest from "./Components/Pages/TutorRequest/TutorRequest.jsx";
+import TutorRequest from "./Components/Pages/TutorRequestPage/TutorRequestPage.jsx";
 
 import AbsenceInputQuest from "./Components/AbsenceInputQuest/AbsenceInputQuest.jsx";
 
