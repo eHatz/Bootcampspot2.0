@@ -34,9 +34,13 @@ import auth from './auth';
  
 import MenuButtons from "./Components/MenuButtons/MenuButtons.jsx";
 
-import AbsenceRequest from "./Components/Pages/AbsenceRequest/AbsenceRequest.jsx";
+import AbsenceRequest from "./Components/Pages/AbsenceRequestPage/AbsenceRequestPage.jsx";
 
 import TutorRequest from "./Components/Pages/TutorRequest/TutorRequest.jsx";
+
+import AbsenceInputQuest from "./Components/AbsenceInputQuest/AbsenceInputQuest.jsx";
+
+import AbsenceRadialQuest from "./Components/AbsenceRadialQuest/AbsenceRadialQuest.jsx";
 
 
 
