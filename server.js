@@ -68,12 +68,14 @@ app.get('/login', function(req, res){
 		    		access: false,
 		    		userData: false
 		    	});
+		    	req.session.userInfo = null;
 			}else if (user){		
 				res.setHeader('Content-Type', 'application/json');
 		    	res.json({
 		    		access: 'jennanda',
 		    		userData: user
 		    	});
+		    	req.session.userInfo = user;
 			}
 		});
 	} else {
@@ -85,6 +87,13 @@ app.get('/login', function(req, res){
 	}
 });
 
+app.get('/logout', function(req, res){
+	req.session.userInfo = null;
+	res.json({
+		access: false,
+	    userData: false
+    });
+});
 app.get('/login/github', passport.authenticate('github'));
 
 app.get('/login/github/return', 
@@ -99,7 +108,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/admin/:option', function(req, res) {
-	console.log(req.session.userInfo);
+
 	if (req.params.option === 'createUser') {
 		User.create({
 			FirstName: req.body.firstName,
@@ -108,7 +117,13 @@ app.post('/admin/:option', function(req, res) {
 			Role: req.body.role
 		})
 	};
+	if (req.params.option === 'getUsers') {
+		User.findAll().then(function(user){
+			res.json(user);
+		})
+	};
 })
+
 
 app.get("/slack", (req, res) => {
 	res.sendFile(path.join(__dirname, './slack.html'));

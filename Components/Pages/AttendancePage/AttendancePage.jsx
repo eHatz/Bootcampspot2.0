@@ -1,7 +1,27 @@
 import React, { Component } from "react";
 import "./AttendancePage.css";
-import Table from "../../Table/Table.jsx";
+import TableRow from "../../Table/TableRow/TableRow.jsx";
 
+var dummyData= [
+	{
+		week: 1,
+		homework: 'Homework1',
+		dueDate: '1/2/2016',
+		submission: '1/1/2016'
+	},
+	{
+		week: 2,
+		homework: 'Homework2',
+		dueDate: '1/2/2016',
+		submission: '1/1/2016'
+	},
+	{
+		week: 3,
+		homework: 'Homework3',
+		dueDate: '1/2/2016',
+		submission: '1/1/2016'
+	}
+];
 
 class AttendancePage extends Component {
 	componentWillMount() {
@@ -16,12 +36,30 @@ class AttendancePage extends Component {
 		return (
 
 			<div className="attendanceBackground">
-				<Table pageName='attendancePage'
-					header1='NOTES' 
-					header2 = 'TIME' 
-					header3='DATE' 
-					header4='ATTENDANCE'
-				/>
+				<div className='wholeTable'>
+					<TableRow 
+						columnCount ={[
+							{type: 'Header', value: 'TIME'},
+							{type: 'Header', value: 'DATE'},
+							{type: 'Header', value: 'ATTENDANCE'},
+							{type: 'Header', value: 'NOTES'}
+						]}
+						pageName = 'attendancePage'
+					/>
+
+					{dummyData.map((item, index) =>
+						<TableRow
+							columnCount ={[
+								{type: 'Data', value: item.week},
+								{type: 'Data', value: item.homework},
+								{type: 'Data', value: item.dueDate},
+								{type: 'Button', value: item.submission},
+							]}
+							pageName = 'attendancePage'
+							key= {index}
+						/>
+					)}
+				</div>
 			</div>
 
 		);
