@@ -102,10 +102,11 @@ input[type=radio] {
 }
 .questionTextRad{
 		margin-left: 3%;
+		font-size: 22px;
 	}
 
 #inputQuesText{
-	font-size: 28px;
+	font-size: 21px;
 	margin-left: -5%;
 	margin-top: 2%;
 	margin-bottom: 1%;
@@ -116,8 +117,8 @@ input[type=radio] {
 
 }
 .commentText{
-	font-size: 28px;
-	margin-left: 4%;
+	font-size: 21px;
+	margin-left: 3%;
 }
 #comment{
 	margin-left: 3%;

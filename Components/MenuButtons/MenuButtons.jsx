@@ -19,15 +19,15 @@ class MenuButtons extends Component{
 				<div className="tab-content">
 				  <div id="home" className="tab-pane fade in active">
 				
-				    <p>Some content.</p>
+				
 				  </div>
 				  <div id="menu1" className="tab-pane fade">
 				  
-				    <p>Some content in menu 1.</p>
+				 
 				  </div>
 				  <div id="menu2" className="tab-pane fade">
 				 
-				    <p>Some content in menu 2.</p>
+				  
 				  </div>
 				</div>
 			</div>
