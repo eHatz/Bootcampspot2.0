@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "./HomeworkPage.css";
 import Navbar from "../../Navbar/Navbar.jsx";
 import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
-import Table from "../../Table/Table.jsx";
+import TableRow from "../../Table/TableRow/TableRow.jsx";
+
 
 class HomeworkPage extends Component {
 
@@ -16,12 +17,7 @@ class HomeworkPage extends Component {
 		return (
 
 			<div className="homeworkBackground">
-				<Table pageName='homeworkPage'
-					header1='WEEK' 
-					header2 = 'HOMEWORK' 
-					header3='DUE DATE' 
-					header4='SUBMISSION'
-				/>
+				
 			</div>
 		);
 	}

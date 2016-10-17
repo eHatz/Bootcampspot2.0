@@ -1,22 +1,26 @@
 import React, { Component } from "react";
 import "./TableRow.css";
-
+import TableColumn from '../TableColumn/TableColumn.jsx';
 
 
 class TableRow extends Component {
 
 	render() {
-		const { col1, col2, col3, col4, pageName, tableButtonRoute } = this.props;
-	
+		const { columnCount, pageName } = this.props;
 		return (
 			<div className= "remove-all-margin-padding">
-				<div id='dataRow' className='row remove-all-margin-padding'>
-					<p className={pageName +'Col1 tableData'}>{col1}</p>
-					<p className={pageName +'Col2 tableData'}>{col2}</p>
-					<p className={pageName +'Col3 tableData'}>{col3}</p>
-					<div className={pageName +'Col4 tableData'}>
-					  <a href={ tableButtonRoute }><span className="glyphicon glyphicon-expand"></span></a>
-					</div>
+				<div className='row remove-all-margin-padding'>
+					{
+						columnCount.map((item, index) =>
+							<TableColumn
+								pageName = {pageName}
+								colNum = {index + 1}
+								colData = {item.value}
+								colType = {item.type}
+								key= {index}
+							/>
+						)
+					}
 				</div>
 			</div>
 		)
