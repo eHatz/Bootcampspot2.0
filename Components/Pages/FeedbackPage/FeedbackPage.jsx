@@ -143,7 +143,7 @@ class FeedbackPage extends Component {
 						</div>
 							<input id="resetButt" className="btn btn-default" type="reset" value="Reset"/>
 											
-				 			<button type="submit" className="btn btn-default">Submit</button>			 			 		
+				 			<button id="submitButt" type="submit" className="btn btn-default">Submit</button>			 			 		
 			</div>
 			
 		);

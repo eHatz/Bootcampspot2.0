@@ -9,10 +9,10 @@ class AbsenceRadialQuest extends Component{
 		return(
 			<div>
 				<div className="row">
-					<h4>{ this.props.question }</h4>
+					<h4 className="absRadQ">{ this.props.question }</h4>
 				</div>
 				<div className="row">		
-					<div className ="col-md-6 multRads">
+					<div className ="col-md-6 multRads2">
 			 			<label className="radio-inline yesNo"><input type="radio" name="optradio"/> Yes</label>
 			 			<label className="radio-inline yesNo"><input type="radio" name="optradio"/> No</label>
 			 		</div>

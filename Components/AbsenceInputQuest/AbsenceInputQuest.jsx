@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./AbsenceInputQuest.css";
 
 
 
@@ -9,7 +10,7 @@ class AbsenceInputQuest extends Component{
 				<div className = "container">
 					<div className =" form-group">
 					  <label id="AbsQuest" htmlFor="usr"> { this.props.question } </label>
-					  <input type="text" className="form-control" id=""/>
+					  <input type="text" className="form-control absenceInput" id=""/>
 					</div>
 				</div>
 			</div>

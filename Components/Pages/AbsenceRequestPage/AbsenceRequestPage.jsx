@@ -52,7 +52,7 @@ class AbsenceRequest extends Component {
 					 		})}
 				<div className="row">		
 				<div className="form-group">
-				  <label for="sel1">Select list:</label>
+				  <label className="sel1" for="sel1">Who is your instructor?</label>
 				  <select className="form-control" id="sel1">
 				    <option>Choose</option>
 				    <option>Peleg Rosenthal</option>

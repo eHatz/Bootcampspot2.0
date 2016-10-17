@@ -1,3 +1,43 @@
-h4{
-	color:black;
+
+
+	h4{
+		color:black;
+	}
+
+
+@media screen and (max-width: 640px){
+
+	.absRadQ{
+		margin-left: 8%;
+		font-size: 22px;
+		margin-right: 2%;
+
+	}
+	.multRads2{
+		margin-bottom: 3%;
+	}
+
+}
+
+@media screen and (max-width: 960px){
+	.absRadQ{
+		font-size: 22px;
+		margin-left: 7%;
+		margin-right: 3%;
+
+	}
+	#resetButt{
+		background-color: gray;
+		font-size: 22px;
+		margin-left: 4%
+	}
+	#submitButt{
+		font-size: 22px;
+
+	}
+	.multRads2{
+		margin-bottom: 3%;
+	}
+
+
 }
