@@ -41,7 +41,7 @@ class AttendancePage extends Component {
 			<div className="attendanceBackground">
 				<div id="AttendancePage_menuDiv">
 					{this.props.UserInfo.UserInfo.Role === "Teacher" || "Admin" ? 
-						( <AttendanceMenu />  )
+						( <AttendanceMenu role={this.props.UserInfo.UserInfo.Role} />  )
 						:
 						( null )
 					}

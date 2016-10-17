@@ -6,12 +6,6 @@ import "./AttendanceMenu.css";
 
 class AttendanceMenu extends Component {
 
-	constructor(...args){
-		super(...args);
-		this.state = {
-			sections: []
-		}
-	}
 
 	componentWillMount() {
 		console.log("AttendanceMenu");
@@ -29,7 +23,7 @@ class AttendanceMenu extends Component {
 					<MenuItem eventKey="1">Action</MenuItem>
 				</DropdownButton>
 
-				<DropdownButton title="Section" id="dropdown-size-medium">
+				<DropdownButton title="Class Session" id="dropdown-size-medium">
 					<MenuItem eventKey="1">Action</MenuItem>
 				</DropdownButton>
 
