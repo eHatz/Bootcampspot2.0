@@ -18,7 +18,7 @@ class createUserForm extends Component {
 		this.lastNameChange = this.lastNameChange.bind(this);
 		this.roleChange = this.roleChange.bind(this);
 		this.clearInput = this.clearInput.bind(this);
-		this.messageSubmit = this.messageSubmit.bind(this);
+		this.userCreate = this.userCreate.bind(this);
 	}
 
 	handleEmailChange(event) {
@@ -48,7 +48,7 @@ class createUserForm extends Component {
 		});
 	}
 
-	messageSubmit(event){
+	userCreate(event){
 		fetch('/admin/createUser', {
 			credentials: 'include',
 			method: 'POST',
@@ -63,7 +63,7 @@ class createUserForm extends Component {
 				role: this.state.role
 	        })
 		})
-	    
+		this.props.getUsers('nameAsc', 'all');
 	    this.clearInput();
 	    event.preventDefault();
 	}
@@ -72,7 +72,7 @@ class createUserForm extends Component {
 
 		return (
 			<div id='userFormDiv'>
-				<form onSubmit={this.messageSubmit}>
+				<form onSubmit={this.userCreate}>
 					<FormGroup controlId="formBasicText">
 
 						<ControlLabel>Email</ControlLabel>

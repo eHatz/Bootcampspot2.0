@@ -9,7 +9,7 @@ class MenuButtons extends Component{
 		const { feedback, absence, tutor } = this.props;
 		return(
 
-			<div>
+			<div className="container">
 				<ul className="nav nav-pills">
 				  <li className={feedback}><a data-toggle="pill" href="#/feedback">Feedback Form</a></li>
 				  <li className={absence}><a data-toggle="pill" href="#/absenceRequest">Absence Request</a></li>

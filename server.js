@@ -57,6 +57,7 @@ app.use(express_session({ secret: 'jennanda', resave: true, saveUninitialized: t
 app.use(passport.initialize());
 app.use(passport.session());
 const User = models.User;
+const Section = models.Section;
 //Routes
 app.get('/login', function(req, res){
 	
@@ -68,12 +69,14 @@ app.get('/login', function(req, res){
 		    		access: false,
 		    		userData: false
 		    	});
+		    	req.session.userInfo = null;
 			}else if (user){		
 				res.setHeader('Content-Type', 'application/json');
 		    	res.json({
 		    		access: 'jennanda',
 		    		userData: user
 		    	});
+		    	req.session.userInfo = user;
 			}
 		});
 	} else {
@@ -85,6 +88,13 @@ app.get('/login', function(req, res){
 	}
 });
 
+app.get('/logout', function(req, res){
+	req.session.userInfo = null;
+	res.json({
+		access: false,
+	    userData: false
+    });
+});
 app.get('/login/github', passport.authenticate('github'));
 
 app.get('/login/github/return', 
@@ -98,17 +108,61 @@ app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, './index.html'));
 });
 
-app.post('/admin/:option', function(req, res) {
-	console.log(req.session.userInfo);
-	if (req.params.option === 'createUser') {
-		User.create({
-			FirstName: req.body.firstName,
-			LastName: req.body.lastName,
-			Email: req.body.email,
-			Role: req.body.role
+app.post('/admin/getUsers', function(req, res) {
+	console.log('getusers', req.body);
+	//sorting options
+	if (req.body.sort === 'nameAsc') {
+		User.findAll({order: [['FirstName']]}).then(function(user){
+			res.json(user);
 		})
-	};
+	} else if (req.body.sort === 'nameDesc') {
+		User.findAll({order: [['FirstName', 'DESC']]}).then(function(user){
+			res.json(user);
+		})
+	} else if(req.body.sort === 'roleAsc') {
+		User.findAll({order: [['Role']]}).then(function(user){
+			res.json(user);
+		})
+	} else if (req.body.sort === 'roleDesc') {
+		User.findAll({order: [['Role', 'DESC']]}).then(function(user){
+			res.json(user);
+		})
+	} else {
+		User.findAll({order: [['FirstName']]}).then(function(user){
+			res.json(user);
+		})
+	}
+
 })
+
+app.post('/admin/createUser', function(req, res) {
+
+	User.create({
+		FirstName: req.body.firstName,
+		LastName: req.body.lastName,
+		Email: req.body.email,
+		Role: req.body.role
+	})
+})
+
+app.post('/admin/getSections', function(req, res) {
+	Section.findAll().then(function(section){
+		res.json(section);
+	})
+})
+
+app.post('/admin/createSection', function(req, res) {
+
+	Section.create({
+		Title: req.body.Title,
+		Location: req.body.Location,
+		Slack: req.body.Slack,
+		StartDate: req.body.StartDate,
+		EndDate: req.body.EndDate,
+	})
+})
+
+
 
 app.get("/slack", (req, res) => {
 	res.sendFile(path.join(__dirname, './slack.html'));
