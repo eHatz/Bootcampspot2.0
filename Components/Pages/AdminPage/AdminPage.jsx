@@ -40,9 +40,9 @@ const AdminPage = withRouter(
 					router.replace('/#');
 				};
 			};
+			//WARNINGS COMING FROM THESE 2 LINES OF CODE!!!!!
 			this.getUsers('nameAsc', 'all');
 			this.getSections();
-			
 		}
 		//lists all users
 		getUsers(sort, section) {
