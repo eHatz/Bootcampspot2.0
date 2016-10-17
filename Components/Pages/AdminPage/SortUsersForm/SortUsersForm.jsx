@@ -16,21 +16,6 @@ class SortUsersForm extends Component {
 		this.sortSection = this.sortSection.bind(this);
 	}
 
-	componentWillMount() {
-		// fetch('/admin/getSections', {
-		// 	credentials: 'include',
-		// 	method: 'POST',
-		// 	headers: {
-		// 		'Accept': 'application/json',
-		// 		'Content-Type': 'application/json'
-		// 	}
-		// })
-		// .then((response) => response.json())
-		// .then((json) => {
-		// 	this.setState({userList: json});
-		// });
-	}
-
 	sortBy(event) {
 		this.setState({ sortBy : event.target.value });
 		this.props.getUsers(event.target.value, this.state.sortSection);
