@@ -118,7 +118,7 @@ app.post('/admin/:option', function(req, res) {
 		})
 	};
 	if (req.params.option === 'getUsers') {
-		User.findAll().then(function(user){
+		User.findAll({order: [['FirstName']]}).then(function(user){
 			res.json(user);
 		})
 	};
