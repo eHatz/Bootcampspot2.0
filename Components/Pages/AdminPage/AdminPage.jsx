@@ -5,27 +5,6 @@ import "./AdminPage.css";
 import CreateUserForm from './createUserForm/createUserForm.jsx';
 import TableRow from "../../Table/TableRow/TableRow.jsx";
 
-var dummyData= [
-	{
-		week: 1,
-		homework: 'Homework1',
-		dueDate: '1/2/2016',
-		submission: '1/1/2016'
-	},
-	{
-		week: 2,
-		homework: 'Homework2',
-		dueDate: '1/2/2016',
-		submission: '1/1/2016'
-	},
-	{
-		week: 3,
-		homework: 'Homework3',
-		dueDate: '1/2/2016',
-		submission: '1/1/2016'
-	}
-];
-
 
 const AdminPage = withRouter(
 	class AdminPage extends Component {
@@ -38,28 +17,31 @@ const AdminPage = withRouter(
 				sectionTab: 'inactive',
 				userList: []
 			};
-			this.studentTabClick = this.studentTabClick.bind(this);
+			this.userTabClick = this.userTabClick.bind(this);
 			this.sectionTabClick = this.sectionTabClick.bind(this);
+			this.getUsers = this.getUsers.bind(this);
 		}
 		componentWillMount() {
-			const { UserInfo, location } = this.props;
-			//child components apparently render before application components do on refresh,
-			//this if statement feteches the information need for admin to stay on the page
-			//RESEARCH LOAD ORDER FOR COMPONENTS/ ASK PELEG
+			const { UserInfo, location, router } = this.props;
+
 			if (UserInfo.UserInfo.Role === undefined) {
 				fetch('/login', {credentials: 'include'})
 				.then((response) => response.json())
 				.then((json) => {
 					if (json.userData.Role !== 'Admin') {
-						this.props.router.replace('/#')
-					}
+						router.replace('/#');
+					};
 				})
 			} else {
 				if (UserInfo.UserInfo.Role !== 'Admin') {
-					this.props.router.replace('/#')
-				}
+					router.replace('/#');
+				};
 			};
-
+			this.getUsers();
+			
+		}
+		//lists all users
+		getUsers() {
 			fetch('/admin/getUsers', {
 				credentials: 'include',
 				method: 'POST',
@@ -70,16 +52,17 @@ const AdminPage = withRouter(
 			})
 			.then((response) => response.json())
 			.then((json) => {
-				this.setState({userList: json})
+				this.setState({userList: json});
 			});
-			
 		}
-		studentTabClick(event) {
+		//activates/shows user tab
+		userTabClick(event) {
 			this.setState({ 
 				studentTab: 'active',
 				sectionTab:'inactive'
 			});
 		}
+		//activates/shows section tab
 		sectionTabClick(event) {
 			this.setState({ 
 				studentTab: 'inactive',
@@ -92,13 +75,15 @@ const AdminPage = withRouter(
 				<div className="AdminBackground">
 					<div>
 						<ul className="nav nav-pills">
-							<li onClick={this.studentTabClick} className={this.state.studentTab}><a data-toggle="pill" href="#/admin">Add User</a></li>
+							<li onClick={this.userTabClick} className={this.state.studentTab}><a data-toggle="pill" href="#/admin">Add User</a></li>
 							<li onClick={this.sectionTabClick} className={this.state.sectionTab}><a data-toggle="pill" href="#/admin">Add Class Section</a></li>
 						</ul>
 
 						<div className="tab-content">
 							<div id="addStudentTab" className={"tab-pane fade in " + this.state.studentTab}>
-								<CreateUserForm/>
+								<CreateUserForm
+									getUsers = {this.getUsers}
+								/>
 								<div className='wholeTable'>
 									<TableRow 
 										columnCount ={[
@@ -106,7 +91,8 @@ const AdminPage = withRouter(
 											{type: 'Header', value: 'SECTION'},
 											{type: 'Header', value: 'EMAIL'},
 											{type: 'Header', value: 'ROLE'},
-											{type: 'Header', value: 'EDIT/DELETE'}
+											{type: 'Header', value: 'EDIT'},
+											{type: 'Header', value: 'DELETE'}
 										]}
 										pageName = 'adminPage'
 									/>
@@ -119,6 +105,7 @@ const AdminPage = withRouter(
 												{type: 'Data', value: item.Email},
 												{type: 'Data', value: item.Role},
 												{type: 'Button', value: ''},
+												{type: 'Button', value: ''}
 											]}
 											pageName = 'adminPage'
 											key= {index}
