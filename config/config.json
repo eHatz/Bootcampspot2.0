@@ -1,5 +1,6 @@
 {
   "development": {
+    "seederStorage": "sequelize",
     "username": "root",
     "password": null,
     "database": "bootDB",

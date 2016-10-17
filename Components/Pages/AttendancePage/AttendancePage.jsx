@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./AttendancePage.css";
+
 import TableRow from "../../Table/TableRow/TableRow.jsx";
 
 var dummyData= [
@@ -24,11 +25,13 @@ var dummyData= [
 ];
 
 class AttendancePage extends Component {
+
 	componentWillMount() {
 		const { UserInfo } = this.props;
-		console.log('attendancePage', UserInfo);
-
+		console.log('attendancePage page', UserInfo);
+		console.log("role: ", UserInfo.UserInfo.Role);
 	}
+
 	render() {
 
 		const { openModal, closeModal, showModal } = this.props;
@@ -36,6 +39,13 @@ class AttendancePage extends Component {
 		return (
 
 			<div className="attendanceBackground">
+				<div id="AttendancePage_menuDiv">
+					{this.props.UserInfo.UserInfo.Role === "Teacher" || "Admin" ? 
+						( <AttendanceMenu />  )
+						:
+						( null )
+					}
+				</div>
 				<div className='wholeTable'>
 					<TableRow 
 						columnCount ={[
@@ -66,3 +76,7 @@ class AttendancePage extends Component {
 	}
 }
 export default AttendancePage;
+
+/*
+sections={UserInfo.UserInfo.sections}			
+*/

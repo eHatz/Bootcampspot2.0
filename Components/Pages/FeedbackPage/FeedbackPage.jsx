@@ -7,13 +7,10 @@ import FeedbackRadialQuest from "../../FeedbackRadialQuest/FeedbackRadialQuest.j
 import FeedbackInputQuest from "../../FeedbackInputQuest/FeedbackInputQuest.jsx";
 import MenuButtons from "../../MenuButtons/MenuButtons.jsx";
 
-
-
-
 const formData=[
 	{
 		question: "1. How was class this week?",
-		leftEnd: "Not so great",
+		leftEnd: "Not So Great",
 		rightEnd: "Excellent!"
 
 	},
@@ -29,12 +26,12 @@ const formData=[
 	},
 	{
 		question: "4. How would you rate the pace of class this week?",
-		leftEnd:"Too fast",
-		rightEnd:"Too slow"
+		leftEnd:"Too Fast",
+		rightEnd:"Too Slow"
 	},
 	{
 		question:"5. How much new learning did you acheive this week?",
-		leftEnd:"Not much",
+		leftEnd:"Not Much",
 		rightEnd: "A lot"
 	},
 	{
@@ -44,13 +41,13 @@ const formData=[
 	},
 	{
 		question: "7. How engaging was the teacher in his/her instruction?",
-		leftEnd: "Not engaged",
+		leftEnd: "Not Engaged",
 		rightEnd: "Very Connected"
 	},
 	{
 		question: "8. How knowledgable did your instructor seem in the subject area?",
-		leftEnd: "Not knowledgable",
-		rightEnd: "Very knowledgable"
+		leftEnd: "Not Knowledgable",
+		rightEnd: "Very Knowledgable"
 	}
 
 ];
@@ -138,15 +135,15 @@ class FeedbackPage extends Component {
 					 				key = { index }
 					 				/>)
 					 		})}
-				 		</div>
-				 		
-					 		<div className="form-group">
-							  <label className="commentText" for="comment">Additional Comments:</label>
-							  <textarea className="form-control" rows="5" id="comment"></textarea>
-							</div>
-						
-				 			<button type="submit" className="btn btn-default">Submit</button>
-				 		
+				 	</div>
+				 
+				 		<div className="form-group">
+						  <label className="commentText" for="comment">Additional Comments:</label>
+						  <textarea className="form-control" rows="5" id="comment"></textarea>
+						</div>
+							<input id="resetButt" className="btn btn-default" type="reset" value="Reset"/>
+											
+				 			<button type="submit" className="btn btn-default">Submit</button>			 			 		
 			</div>
 			
 		);

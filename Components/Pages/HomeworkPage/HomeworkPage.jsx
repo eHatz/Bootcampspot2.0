@@ -6,6 +6,12 @@ import TableRow from "../../Table/TableRow/TableRow.jsx";
 
 
 class HomeworkPage extends Component {
+
+	componentWillMount() {
+		const { UserInfo } = this.props;
+		console.log('Homework: ', UserInfo);
+	}
+
 	
 	render() {
 		return (

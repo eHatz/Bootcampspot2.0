@@ -143,6 +143,9 @@ app.post('/slack', (req, res) => {
 	});
 });
 
+//Teacher attendance route
+
+
 //Sequelize
 models.sequelize.sync();
 
