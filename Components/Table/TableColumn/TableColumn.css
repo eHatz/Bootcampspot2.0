@@ -1,0 +1,38 @@
+.tableData, .tableButton{
+	 display: inline-block;
+    text-align: center;
+    color: black;
+    margin: 0px;
+    overflow: hidden;
+    height: 52px;
+    font-size: 15px;
+    line-height: 53px;
+    border-bottom: 1px solid #d2cfcf;
+}
+
+.tableHeader {
+    display: inline-block;
+    text-align: center;
+    color: #d30000;
+    padding: 10px 0px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    font-weight: bolder;
+    border-bottom: 1px solid #2d2d2d;
+    font-weight: bolder;
+
+}
+
+#hwButton{
+	color: #fff;
+    background-color: #de0303;
+    border-color: #868585;
+    font-size: small;
+    padding-top: 1px;
+    padding-bottom: 3px;
+}
+.glyphicon{
+    color:#d30000;
+    font-size:200%;
+}

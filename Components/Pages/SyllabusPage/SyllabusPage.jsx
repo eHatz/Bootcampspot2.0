@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./SyllabusPage.css";
 import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
-import Table from "../../Table/Table.jsx";
+import TableRow from "../../Table/TableRow/TableRow.jsx";
 import Navbar from "../../Navbar/Navbar.jsx";
 
 class SyllabusPage extends Component {
@@ -30,12 +30,6 @@ class SyllabusPage extends Component {
 					
 						
 				<div className='row remove-all-margin-padding'>
-					<Table pageName='syllabusPage'
-						header1='SUBJECT' 
-						header2 = 'LESSON #' 
-						header3='DATE' 
-						header4='RECORDINGS'
-					/>
 				</div>
 			</div>
 		);

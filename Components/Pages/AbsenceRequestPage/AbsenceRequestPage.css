@@ -17,20 +17,27 @@ h1{
 	font-size: 18px;
 }
 
+#sel1{
+	width:87%;
+	margin-left: 7%;
+}
+
 
 
 @media screen and (max-width: 640px){
 
-	.sel1{
+	#sel1{
 	margin-left: 7%;
+	width: 90%;
 	}
 	
 }
 
 
 @media screen and (max-width: 960px){
-	.sel1{
+	#sel1{
 		margin-left: 7%;
+		width:80%;
 	}
 	#resetButtAbs{
 		margin-left: 5%;

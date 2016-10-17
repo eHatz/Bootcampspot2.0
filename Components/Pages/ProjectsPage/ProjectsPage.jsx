@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./ProjectsPage.css";
 import Navbar from "../../Navbar/Navbar.jsx"
 import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
-import Table from "../../Table/Table.jsx";
+import TableRow from "../../Table/TableRow/TableRow.jsx";
 
 class ProjectsPage extends Component {
 
@@ -10,12 +10,7 @@ class ProjectsPage extends Component {
 		return (
 
 			<div className="projectsBackground">
-				<Table pageName='projectsPage'
-					header1='WEEK' 
-					header2 = 'PROJECT' 
-					header3='DUE DATE' 
-					header4='SUBMISSION'
-				/>
+
 			</div>
 
 		);
