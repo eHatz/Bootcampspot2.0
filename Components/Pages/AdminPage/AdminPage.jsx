@@ -177,7 +177,6 @@ const AdminPage = withRouter(
 						</div>
 					</div>		
 				</div>
-
 			)
 		}
 	}

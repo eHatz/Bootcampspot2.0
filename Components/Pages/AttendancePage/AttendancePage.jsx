@@ -1,47 +1,48 @@
 import React, { Component } from "react";
+import { browserHistory, Router, Route, Link, withRouter } from 'react-router';
 import "./AttendancePage.css";
 import TableRow from "../../Table/TableRow/TableRow.jsx";
 import AttendanceMenu from "./AttendanceMenu/AttendanceMenu.jsx";
 
-var dummyData= [
-	{
-		week: 1,
-		homework: 'Homework1',
-		dueDate: '1/2/2016',
-		submission: '1/1/2016'
-	},
-	{
-		week: 2,
-		homework: 'Homework2',
-		dueDate: '1/2/2016',
-		submission: '1/1/2016'
-	},
-	{
-		week: 3,
-		homework: 'Homework3',
-		dueDate: '1/2/2016',
-		submission: '1/1/2016'
-	}
-];
+const { UserInfo, location, router, openModal, closeModal, showModal } = this.props;
+const Role = UserInfo.UserInfo.Role;
 
 class AttendancePage extends Component {
 
 	componentWillMount() {
-		const { UserInfo } = this.props;
-		console.log('attendancePage page', UserInfo);
-		console.log("role: ", UserInfo.UserInfo.Role);
+
+		if (Role === "Admin"){
+			this.adminView();
+		} else if (Role === "Teacher"){
+
+		} else if (Role === "Student"){
+
+		} else {
+			router.replace('/#');
+		}
+
+	}
+
+	adminView(){
+
+	}
+
+	teacherView(){
+
+	}
+
+	studentView(){
+
 	}
 
 	render() {
-
-		const { openModal, closeModal, showModal } = this.props;
 
 		return (
 
 			<div className="attendanceBackground">
 				<div id="AttendancePage_menuDiv">
 					{this.props.UserInfo.UserInfo.Role === "Teacher" || "Admin" ? 
-						( <AttendanceMenu role={this.props.UserInfo.UserInfo.Role} />  )
+						( <AttendanceMenu  />  )
 						:
 						( null )
 					}
