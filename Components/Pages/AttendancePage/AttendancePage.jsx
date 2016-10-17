@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./AttendancePage.css";
-
 import TableRow from "../../Table/TableRow/TableRow.jsx";
+import AttendanceMenu from "./AttendanceMenu/AttendanceMenu.jsx";
 
 var dummyData= [
 	{

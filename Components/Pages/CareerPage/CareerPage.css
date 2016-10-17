@@ -10,9 +10,6 @@
 
 #bioDiv{ 
 	padding-top: 20px;
-    padding-right: 44px;
-    padding-bottom: 20px;
-    padding-left: 20px;
 }
 
 #div2 {
@@ -34,6 +31,7 @@ body{
     padding: 10px;
     color: white;
     font-size: 20px;
+    font-family: helvetica;
 }
 #careerAquirements{
 
@@ -69,8 +67,8 @@ body{
     padding-left: 12px;
 }
 .careerUrlField {
-    position: relative;
     display: inline-flex; 
+    margin-bottom: 11px;
     
 }
 
@@ -79,21 +77,24 @@ body{
     background-color: #414142;
     text-align: right;
 }
-#linkedin{
-	background: url(/assets/images/linkedin.png) no-repeat 8px 8px;
-    height: 59px;
+
+
+#github{
+	background: url(/assets/images/githubCareer.png) no-repeat 8px 8px;
+    height: 50px;
     font-family: helvetica;
     font-size: 16px;
     background-color: #414142;
     padding-left: 55px;
     color: white;
-    width: 340px;
+    width: 100%;
 }
+
+
 .careerUrlDiv{
 	text-align: center;
 	padding-top: 20px;
 }
-
 
 .careerUrlButton{
 	background-color: red;
@@ -104,6 +105,12 @@ body{
     padding-bottom: 10px;
     padding-left: 12px;
 }	
+
+.careerUrlCaption{
+	color: grey;
+	
+}
+
 
 
 

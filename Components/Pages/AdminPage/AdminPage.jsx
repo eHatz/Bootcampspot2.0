@@ -4,28 +4,8 @@ import { FormGroup, FormControl, ControlLabel, Button } from "react-bootstrap";
 import "./AdminPage.css";
 import CreateUserForm from './createUserForm/createUserForm.jsx';
 import TableRow from "../../Table/TableRow/TableRow.jsx";
-
-var dummyData= [
-	{
-		week: 1,
-		homework: 'Homework1',
-		dueDate: '1/2/2016',
-		submission: '1/1/2016'
-	},
-	{
-		week: 2,
-		homework: 'Homework2',
-		dueDate: '1/2/2016',
-		submission: '1/1/2016'
-	},
-	{
-		week: 3,
-		homework: 'Homework3',
-		dueDate: '1/2/2016',
-		submission: '1/1/2016'
-	}
-];
-
+import SortUsersForm from './SortUsersForm/SortUsersForm.jsx';
+import CreateSectionForm from './CreateSectionForm/CreateSectionForm.jsx';
 
 const AdminPage = withRouter(
 	class AdminPage extends Component {
@@ -36,50 +16,76 @@ const AdminPage = withRouter(
 
 				studentTab: 'active',
 				sectionTab: 'inactive',
-				userList: []
+				userList: [],
+				sectionList: []
 			};
-			this.studentTabClick = this.studentTabClick.bind(this);
+			this.userTabClick = this.userTabClick.bind(this);
 			this.sectionTabClick = this.sectionTabClick.bind(this);
+			this.getUsers = this.getUsers.bind(this);
+			this.getSections = this.getSections.bind(this);
 		}
 		componentWillMount() {
-			const { UserInfo, location } = this.props;
-			//child components apparently render before application components do on refresh,
-			//this if statement feteches the information need for admin to stay on the page
-			//RESEARCH LOAD ORDER FOR COMPONENTS/ ASK PELEG
+			const { UserInfo, location, router } = this.props;
+
 			if (UserInfo.UserInfo.Role === undefined) {
 				fetch('/login', {credentials: 'include'})
 				.then((response) => response.json())
 				.then((json) => {
 					if (json.userData.Role !== 'Admin') {
-						this.props.router.replace('/#')
-					}
+						router.replace('/#');
+					};
 				})
 			} else {
 				if (UserInfo.UserInfo.Role !== 'Admin') {
-					this.props.router.replace('/#')
-				}
+					router.replace('/#');
+				};
 			};
-
+			//WARNINGS COMING FROM THESE 2 LINES OF CODE!!!!!
+			this.getUsers('nameAsc', 'all');
+			this.getSections();
+		}
+		//lists all users
+		getUsers(sort, section) {
 			fetch('/admin/getUsers', {
 				credentials: 'include',
 				method: 'POST',
 				headers: {
-					'Accept': 'application/json',
-					'Content-Type': 'application/json'
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+		        	sort: sort,
+					section: section
+		        })
+			})
+			.then((response) => response.json())
+			.then((json) => {
+				this.setState({userList: json});
+			});
+		}
+
+		getSections() {
+			fetch('/admin/getSections', {
+				credentials: 'include',
+				method: 'POST',
+				headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
 				}
 			})
 			.then((response) => response.json())
 			.then((json) => {
-				this.setState({userList: json})
+				this.setState({sectionList: json});
 			});
-			
 		}
-		studentTabClick(event) {
+		//activates/shows user tab
+		userTabClick(event) {
 			this.setState({ 
 				studentTab: 'active',
 				sectionTab:'inactive'
 			});
 		}
+		//activates/shows section tab
 		sectionTabClick(event) {
 			this.setState({ 
 				studentTab: 'inactive',
@@ -92,13 +98,20 @@ const AdminPage = withRouter(
 				<div className="AdminBackground">
 					<div>
 						<ul className="nav nav-pills">
-							<li onClick={this.studentTabClick} className={this.state.studentTab}><a data-toggle="pill" href="#/admin">Add User</a></li>
+							<li onClick={this.userTabClick} className={this.state.studentTab}><a data-toggle="pill" href="#/admin">Add User</a></li>
 							<li onClick={this.sectionTabClick} className={this.state.sectionTab}><a data-toggle="pill" href="#/admin">Add Class Section</a></li>
 						</ul>
 
 						<div className="tab-content">
 							<div id="addStudentTab" className={"tab-pane fade in " + this.state.studentTab}>
-								<CreateUserForm/>
+								<CreateUserForm
+									getUsers = {this.getUsers}
+									sectionList = {this.state.sectionList}
+								/>
+								<SortUsersForm
+									getUsers = {this.getUsers}
+									sectionList = {this.state.sectionList}
+								/>
 								<div className='wholeTable'>
 									<TableRow 
 										columnCount ={[
@@ -106,9 +119,10 @@ const AdminPage = withRouter(
 											{type: 'Header', value: 'SECTION'},
 											{type: 'Header', value: 'EMAIL'},
 											{type: 'Header', value: 'ROLE'},
-											{type: 'Header', value: 'EDIT/DELETE'}
+											{type: 'Header', value: 'EDIT'},
+											{type: 'Header', value: 'DELETE'}
 										]}
-										pageName = 'adminPage'
+										pageName = 'adminUserPage'
 									/>
 
 									{this.state.userList.map((item, index) =>
@@ -119,15 +133,46 @@ const AdminPage = withRouter(
 												{type: 'Data', value: item.Email},
 												{type: 'Data', value: item.Role},
 												{type: 'Button', value: ''},
+												{type: 'Button', value: ''}
 											]}
-											pageName = 'adminPage'
+											pageName = 'adminUserPage'
 											key= {index}
 										/>
 									)}
 								</div>
 							</div>
 							<div id="addSectionTab" className={"tab-pane fade in " + this.state.sectionTab}>
-								<p>Some content in section tab.</p>
+								<CreateSectionForm
+									getSections = {this.getSections}
+								/>
+								<div className='wholeTable'>
+									<TableRow 
+										columnCount ={[
+											{type: 'Header', value: 'TITLE'},
+											{type: 'Header', value: 'LOCATION'},
+											{type: 'Header', value: 'SLACK KEYS'},
+											{type: 'Header', value: 'START DATE-END DATE'},
+											{type: 'Header', value: 'EDIT'},
+											{type: 'Header', value: 'DELETE'}
+										]}
+										pageName = 'adminSectionPage'
+									/>
+
+									{this.state.sectionList.map((item, index) =>
+										<TableRow
+											columnCount ={[
+												{type: 'Data', value: item.Title},
+												{type: 'Data', value: item.Location},
+												{type: 'Data', value: item.Slack},
+												{type: 'Data', value: item.StartDate + ' - ' + item.EndDate},
+												{type: 'Button', value: ''},
+												{type: 'Button', value: ''}
+											]}
+											pageName = 'adminSectionPage'
+											key= {index}
+										/>
+									)}
+								</div>
 							</div>
 						</div>
 					</div>		

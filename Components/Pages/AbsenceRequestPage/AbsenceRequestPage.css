@@ -1,0 +1,58 @@
+h1{
+	color: black;
+}
+.instructor{
+	color: black;
+}
+
+
+#resetButtAbs{
+	background-color: gray;
+	font-size: 18px;
+	margin-left: 11%;
+	font-size: 22px;
+}
+#submitAbs{
+	font-size: 22px;
+
+}
+#sel1{
+	margin-left: 12%;
+	width:76%;
+}
+.sel1{
+	margin-left: 12%;
+}
+
+@media screen and (max-width: 640px){
+	#sel1{
+		margin-left: 1%;
+		width:90%;
+	}
+	.sel1{
+		margin-left: 7%;
+	}
+
+	
+}
+
+
+@media screen and (max-width: 960px){
+	
+	#resetButtAbs{
+		margin-left: 5%;
+		font-size: 22px;
+	}
+	#submitAbs{
+		font-size: 22px;
+	}
+	#sel1{
+		margin-left: 8%;
+		width:84%;
+	}
+	.sel1{
+		margin-left: 8%;
+	}
+
+	
+}

@@ -57,6 +57,7 @@ app.use(express_session({ secret: 'jennanda', resave: true, saveUninitialized: t
 app.use(passport.initialize());
 app.use(passport.session());
 const User = models.User;
+const Section = models.Section;
 //Routes
 app.get('/login', function(req, res){
 	
@@ -107,22 +108,70 @@ app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, './index.html'));
 });
 
-app.post('/admin/:option', function(req, res) {
-
-	if (req.params.option === 'createUser') {
-		User.create({
-			FirstName: req.body.firstName,
-			LastName: req.body.lastName,
-			Email: req.body.email,
-			Role: req.body.role
-		})
-	};
-	if (req.params.option === 'getUsers') {
-		User.findAll().then(function(user){
+app.post('/admin/getUsers', function(req, res) {
+	console.log('getusers', req.body);
+	//sorting options
+	if (req.body.sort === 'nameAsc') {
+		User.findAll({order: [['FirstName']]}).then(function(user){
 			res.json(user);
 		})
-	};
+	} else if (req.body.sort === 'nameDesc') {
+		User.findAll({order: [['FirstName', 'DESC']]}).then(function(user){
+			res.json(user);
+		})
+	} else if(req.body.sort === 'roleAsc') {
+		User.findAll({order: [['Role']]}).then(function(user){
+			res.json(user);
+		})
+	} else if (req.body.sort === 'roleDesc') {
+		User.findAll({order: [['Role', 'DESC']]}).then(function(user){
+			res.json(user);
+		})
+	} else {
+		User.findAll({order: [['FirstName']]}).then(function(user){
+			res.json(user);
+		})
+	}
+
 })
+
+app.post('/admin/createUser', function(req, res) {
+
+	User.create({
+		FirstName: req.body.firstName,
+		LastName: req.body.lastName,
+		Email: req.body.email,
+		Role: req.body.role
+	}).then(function(newUser) {
+		if (req.body.role !=='Admin') {
+			console.log('REQ.BODY.SECTION', req.body.sectionTitle)
+			Section.findOne({where: {Title: req.body.sectionTitle} })
+			.then(function(section) {
+				console.log('THIS SECTION', section);
+				newUser.addSection(section);
+			})
+			
+		};
+	});
+})
+
+app.post('/admin/getSections', function(req, res) {
+	Section.findAll().then(function(section){
+		res.json(section);
+	})
+})
+
+app.post('/admin/createSection', function(req, res) {
+
+	Section.create({
+		Title: req.body.Title,
+		Location: req.body.Location,
+		Slack: req.body.Slack,
+		StartDate: req.body.StartDate,
+		EndDate: req.body.EndDate,
+	})
+})
+
 
 
 app.get("/slack", (req, res) => {

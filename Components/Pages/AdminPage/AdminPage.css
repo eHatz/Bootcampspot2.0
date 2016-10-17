@@ -1,22 +1,50 @@
 #userFormDiv {
 	color: black;
 }
-.adminPageCol1{
+.adminUserPageCol1{
 	width:20%;
 }
 
-.adminPageCol2{
+.adminUserPageCol2{
 	width:20%;
 }
 
-.adminPageCol3{
+.adminUserPageCol3{
 	width:20%;
 }
 
-.adminPageCol4{
+.adminUserPageCol4{
 	width:20%;
 }
 
-.adminPageCol5{
+.adminUserPageCol5{
+	width:10%;
+}
+
+.adminUserPageCol6{
+	width:10%;
+}
+
+.adminSectionPageCol1{
 	width:20%;
+}
+
+.adminSectionPageCol2{
+	width:20%;
+}
+
+.adminSectionPageCol3{
+	width:20%;
+}
+
+.adminSectionPageCol4{
+	width:20%;
+}
+
+.adminSectionPageCol5{
+	width:10%;
+}
+
+.adminSectionPageCol6{
+	width:10%;
 }
