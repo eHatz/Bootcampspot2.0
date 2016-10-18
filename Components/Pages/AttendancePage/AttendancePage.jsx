@@ -9,30 +9,40 @@ const Role = UserInfo.UserInfo.Role;
 
 class AttendancePage extends Component {
 
+	constructor(...args){
+		super(args);
+
+		this.state = {
+			view: "bySection",
+			displaySection: ""
+		}
+	}
+
 	componentWillMount() {
 
-		if (Role === "Admin"){
-			this.adminView();
-		} else if (Role === "Teacher"){
-
-		} else if (Role === "Student"){
-
-		} else {
-			router.replace('/#');
-		}
-
+		Role === "Admin" || Role === "Teacher" ?
+			this.adminTeacherView()
+			:
+			this.studentView()
 	}
 
-	adminView(){
 
-	}
 
-	teacherView(){
+	adminTeacherView(){
 
 	}
 
 	studentView(){
+		this.setState({view: false});
 
+	}
+
+	switchView(event){
+		this.setState({view: event.target.value});
+	}
+
+	sectionSort(event){
+		this.setState({displaySection: event.target.value});
 	}
 
 	render() {

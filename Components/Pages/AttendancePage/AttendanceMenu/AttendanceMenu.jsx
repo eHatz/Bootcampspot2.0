@@ -1,11 +1,19 @@
 import React, { Component } from "react";
-import { ButtonToolbar, DropdownButton, MenuItem } from "react-bootstrap";
+import { ButtonToolbar, DropdownButton, MenuItem, Form } from "react-bootstrap";
 import "./AttendanceMenu.css";
 
 
+const { sections } = this.props;
 
 class AttendanceMenu extends Component {
 
+	constructor(...args){
+		super(args);
+
+		this.state ={
+			previous: "#"
+		}
+	}
 
 	componentWillMount() {
 		console.log("AttendanceMenu");
@@ -17,21 +25,41 @@ class AttendanceMenu extends Component {
 
 		return (
 
-			<ButtonToolbar>
+			<Form>
+				<Button href={this.state.previous}>
+			     	back
+			    </Button>
+
+				<FormGroup controlId="formInlineView" onChange={this.props.switchView}>
+
+					<Radio inline value="bySection">
+						View by Section
+					</Radio>
+					{' '}
+					<Radio inline value="byStudent">
+						View by Student
+					</Radio>
 			
-				<DropdownButton title="Section" id="dropdown-size-medium">
-					<MenuItem eventKey="1">Action</MenuItem>
-				</DropdownButton>
+				</FormGroup>
 
-				<DropdownButton title="Class Session" id="dropdown-size-medium">
-					<MenuItem eventKey="1">Action</MenuItem>
-				</DropdownButton>
+				<FormGroup>
 
-				<DropdownButton title="Student" id="dropdown-size-medium">
-					<MenuItem eventKey="1">Action</MenuItem>
-				</DropdownButton>
-				
-			</ButtonToolbar>
+					<FormControl 
+						componentClass="select" 
+						placeholder="select"
+						onChange={this.props.sectionSort}
+						controlId="formInlineSection"
+					>
+						<option value="all">All Sections</option>
+						{sections.map(section, index) => 
+							<option key={index} value={section.title}>{section.Title}</option>
+						}
+
+					</FormControl>
+
+				</FormGroup>
+
+			</Form>
 
 		);
 	}
