@@ -53,6 +53,7 @@ body{
     background-color: white;
     font-family: helvetica;
     font-size: 20px;
+    padding-left: 46px;
 
 }
 .bioButton{
@@ -81,6 +82,9 @@ body{
 	background-color:  #bfbebe;
 	width: initial;
     margin-top: 35px;
+    padding-top: 13px;
+    padding-right: 13px;
+    padding-left: 13px;
 }
 
 
@@ -125,6 +129,7 @@ body{
 .radioButtons{
     margin-bottom: 46px;
     margin-top: 20px;
+    color: grey;
 }
 
 
