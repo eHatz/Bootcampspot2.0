@@ -151,27 +151,6 @@ app.post('/admin/getUsers', function(req, res) {
 	sortingAsc('sort-roleAsc', 'Role');
 	sortingDesc('sort-roleDesc', 'Role');
 	sortingDesc('sort-nameDesc', 'FirstName');
-	// if (req.body.sort === 'nameAsc') {
-	// 	User.findAll({order: [['FirstName']]}).then(function(user){
-	// 		res.json(user);
-	// 	})
-	// } else if (req.body.sort === 'nameDesc') {
-	// 	User.findAll({order: [['FirstName', 'DESC']]}).then(function(user){
-	// 		res.json(user);
-	// 	})
-	// } else if(req.body.sort === 'roleAsc') {
-	// 	User.findAll({order: [['Role']]}).then(function(user){
-	// 		res.json(user);
-	// 	})
-	// } else if (req.body.sort === 'roleDesc') {
-	// 	User.findAll({order: [['Role', 'DESC']]}).then(function(user){
-	// 		res.json(user);
-	// 	})
-	// } else {
-	// 	User.findAll({order: [['FirstName']]}).then(function(user){
-	// 		res.json(user);
-	// 	})
-	// }
 
 })
 
