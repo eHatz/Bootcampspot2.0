@@ -8,6 +8,10 @@ var models = require ("../models");
 
 // let { User, Section } = models;
 
+//================
+// Assign users to section 1
+
+
 var firstSection;
 var firstSectionUsers = [];
 
@@ -19,7 +23,8 @@ models.Section.findOne({
 	firstSection = section;
 });
 
-for (var i = 51;  i <= 58; i++){
+//Set i limits to reflect user IDs in current DB
+for (var i = 5;  i <= 13; i++){
 
 	models.User.findOne({
 		where:{
@@ -36,6 +41,7 @@ console.log("firstSectionUsers: ", firstSectionUsers);
 firstSection.setUsers(firstSectionUsers).then(function(){console.log("done!")})
 
 //=====================
+// Assign users to section 2
 
 var secondSection;
 var secondSectionUsers = [];
@@ -48,8 +54,8 @@ models.Section.findOne({
 	secondSection = section;
 });
 
-
-for (var i = 59;  i <= 67; i++){
+//Set i limits to reflect user IDs in current DB
+for (var i = 14;  i <= 22; i++){
 
 	models.User.findOne({
 		where:{
@@ -62,10 +68,59 @@ for (var i = 59;  i <= 67; i++){
 
 secondSection.setUsers(secondSectionUsers).then(function(){console.log("done!")})
 
+//================
+//Assign user to sessions for attendance - first section
+
+var firstSectionSessions = []
+
+models.Session.findAll({
+	where: {
+		SectionId: 1
+	}
+}).then(function(results){
+	firstSectionSessions = results;
+})
+
+for (var i = 0; i < firstSectionSessions.length; i++){
+	firstSectionSessions[i].setUsers(firstSectionUsers)
+	.then(function(results){
+		console.log("set!");
+	})
+}
+
+//================
+//Assign user to sessions for attendance - second section
+
+var secondSectionSessions = []
+
+models.Session.findAll({
+	where: {
+		SectionId: 2
+	}
+}).then(function(results){
+	secondSectionSessions = results;
+})
+
+for (var i = 0; i < secondSectionSessions.length; i++){
+	secondSectionSessions[i].setUsers(secondSectionUsers)
+	.then(function(results){
+		console.log("set!");
+	})
+}
+	
 
 
 
 /*
+
+
+results.setUsers(firstSectionUsers)
+}).then(function(a){
+		console.log("done!");
+})
+
+
+
 models.User.findAll({
 	where:{
 		id: {
