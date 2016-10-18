@@ -12,8 +12,7 @@ class LoggedIn extends Component {
 
 		super(props, context);
 		this.state = {
-
-			showModal: false,
+			showModal: false
 		};
 	}
 
@@ -26,7 +25,7 @@ class LoggedIn extends Component {
 	}
 	
 	render() {
-		const { loggedIn, UserInfo, location } = this.props;
+		const { loggedIn, UserInfo, location, UserSection } = this.props;
 		return (
 
 			<div id="width" className="container remove-all-margin-padding">
@@ -49,7 +48,8 @@ class LoggedIn extends Component {
 								showModal: this.state.showModal,
 								openModal: this.open.bind(this),
 								closeModal: this.close.bind(this),
-								UserInfo: {UserInfo}
+								UserInfo: {UserInfo},
+								UserSection: {UserSection}
 							})
 						}
 

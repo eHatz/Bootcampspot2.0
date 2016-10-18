@@ -1,25 +1,22 @@
 import React, { Component } from "react";
 import "./HomeworkPage.css";
-import Navbar from "../../Navbar/Navbar.jsx";
-import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
+import CreateAssignment from "./CreateAssignment/CreateAssignment.jsx";
+import CreateAssignmentTeacher from "./CreateAssignmentTeacher/CreateAssignmentTeacher.jsx";
 import TableRow from "../../Table/TableRow/TableRow.jsx";
-
-
 class HomeworkPage extends Component {
 		constructor(props, context) {
 
 			super(props, context);
 			this.state = {
-				homeworkList: [],
-				userRole: 'Student'
+				assignmentList: [],
+				userRole: 'Student',
+				sectionList: []
 			};
-			this.userTabClick = this.userTabClick.bind(this);
-			this.sectionTabClick = this.sectionTabClick.bind(this);
-			this.getUsers = this.getUsers.bind(this);
+			this.getAssignments = this.getAssignments.bind(this);
 			this.getSections = this.getSections.bind(this);
 		}
 		componentWillMount() {
-			const { UserInfo, location, router } = this.props;
+			const { UserInfo, UserSection} = this.props;
 			this.setState({userRole: UserInfo.UserInfo.Role})
 			if (UserInfo.UserInfo.Role === undefined) {
 				fetch('/login', {credentials: 'include'})
@@ -27,50 +24,92 @@ class HomeworkPage extends Component {
 				.then((json) => {
 					this.setState({userRole: json.userData.Role})
 				})
-			} else {
-				if (UserInfo.UserInfo.Role !== 'Admin') {
-					router.replace('/#');
-				};
 			};
 			//WARNINGS COMING FROM THESE 2 LINES OF CODE!!!!!
-			this.getUsers('sort-nameAsc', 'all');
+			this.getAssignments('The Illest Section');
 			this.getSections();
 		}
-	componentWillMount() {
-		const { UserInfo } = this.props;
-		console.log('Homework: ', UserInfo);
-	}
 
-	
+		getAssignments(sectionTitle) {
+			const { UserInfo } = this.props;
+			//if (UserInfo.UserInfo.Role !== 'Admin') {
+				fetch('/getAssignments', {
+					credentials: 'include',
+					method: 'POST',
+					headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						sectionTitle: sectionTitle
+			        })
+				})
+				.then((response) => response.json())
+				.then((json) => {
+					this.setState({assignmentList: json});
+				});
+			//};
+		}
+		
+		getSections() {
+			fetch('/admin/getSections', {
+				credentials: 'include',
+				method: 'POST',
+				headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+				}
+			})
+			.then((response) => response.json())
+			.then((json) => {
+				this.setState({sectionList: json});
+			});
+		}
+
 	render() {
+		const { UserInfo, UserSection } = this.props;
 		return (
 
 			<div className="homeworkBackground">
+				{UserInfo.UserInfo.Role === 'Admin' ? (
+					<CreateAssignment
+						UserInfo={UserInfo}
+						UserSection={UserSection}
+						sectionList= {this.state.sectionList}
+					/>
+				) : (
+					null
+				)}
+
+				{UserInfo.UserInfo.Role === 'Teacher' ? (
+					<CreateAssignmentTeacher
+						UserInfo={UserInfo}
+						UserSection={UserSection}
+						sectionList= {this.state.sectionList}
+					/>
+				) : (
+					null
+				)}
+				
 				<div className='wholeTable'>
 					<TableRow 
 						columnCount ={[
-							Instructions:
-							Due:
-							SubmitStatus:
-							Type:
-							Resources:
 							{type: 'Header', value: 'TITLE'},
 							{type: 'Header', value: 'DUE DATE'},
-							{type: 'Header', value: 'STATUS'},
 							{type: 'Header', value: 'TYPE'},
+							{type: 'Header', value: 'STATUS'},
+							
 						]}
 						pageName = 'homeworkPage'
 					/>
 
-					{this.state.sectionList.map((item, index) =>
+					{this.state.assignmentList.map((item, index) =>
 						<TableRow
 							columnCount ={[
 								{type: 'Data', value: item.Title},
-								{type: 'Data', value: item.Location},
-								{type: 'Data', value: item.Slack},
-								{type: 'Data', value: item.StartDate + ' - ' + item.EndDate},
+								{type: 'Data', value: item.Due},
+								{type: 'Data', value: ''},
 								{type: 'Button', value: ''},
-								{type: 'Button', value: ''}
 							]}
 							pageName = 'homeworkPage'
 							key= {index}
