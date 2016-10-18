@@ -3,6 +3,11 @@ import { browserHistory, Router, Route, Link, withRouter } from 'react-router';
 import "./AttendancePage.css";
 import TableRow from "../../Table/TableRow/TableRow.jsx";
 import AttendanceMenu from "./AttendanceMenu/AttendanceMenu.jsx";
+import AttendanceButton from "./AttendanceButton/AttendanceButton.jsx";
+import AttendanceSessionsView from "./AttendanceSessionsView/AttendanceSessionsView.jsx";
+import AttendanceStudentsView from "./AttendanceStudentsView/AttendanceStudentsView.jsx";
+import AttendanceStudentView from "./AttendanceStudentView/AttendanceStudentView.jsx";
+
 
 const { UserInfo, location, router, openModal, closeModal, showModal } = this.props;
 const Role = UserInfo.UserInfo.Role;
@@ -13,9 +18,8 @@ class AttendancePage extends Component {
 		super(args);
 
 		this.state = {
-			view: "bySession",
-			sections:[],
-			sessions: []
+			view: "", //allSessions, or singleSession, or singleStudent
+			isStudent: false
 		}
 	}
 
@@ -54,7 +58,10 @@ class AttendancePage extends Component {
 	}
 
 	studentView(){
-		this.setState({view: false});
+		this.setState({
+			isStudent: true,
+			view: singleStudent
+		});
 
 		fetch("/attendance/student", {
 			credentials: 'include',
@@ -68,7 +75,7 @@ class AttendancePage extends Component {
 		)
 	}
 
-	
+
 	
 
 	switchView(event){
@@ -84,39 +91,24 @@ class AttendancePage extends Component {
 		return (
 
 			<div className="attendanceBackground">
-				{this.state.view ? 
+
+				{this.state.isStudent ? 
+					<AttendanceButton handleClick={attendanceButtonOnClick} />
+					:
 					<div id="AttendancePage_menuDiv">
 						<AttendanceMenu
 
 						/>
 					</div>
-					:
-					null
 				}
 
 				<div className='wholeTable'>
-					<TableRow 
-						columnCount ={[
-							{type: 'Header', value: 'TIME'},
-							{type: 'Header', value: 'DATE'},
-							{type: 'Header', value: 'ATTENDANCE'},
-							{type: 'Header', value: 'NOTES'}
-						]}
-						pageName = 'attendancePage'
-					/>
 
-					{dummyData.map((item, index) =>
-						<TableRow
-							columnCount ={[
-								{type: 'Data', value: item.week},
-								{type: 'Data', value: item.homework},
-								{type: 'Data', value: item.dueDate},
-								{type: 'Button', value: item.submission},
-							]}
-							pageName = 'attendancePage'
-							key= {index}
-						/>
-					)}
+					{this.state.view = allSessions ? 
+						<
+
+					}
+					
 				</div>
 			</div>
 

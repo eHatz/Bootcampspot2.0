@@ -39,7 +39,7 @@ class AttendanceMenu extends Component {
 					>
 						<option value="all">All Sections</option>
 						{sections.map(section, index) => 
-							<option key={index} value={section.title}>{section.Title}</option>
+							<option key={index} value={section.Title}>{section.Title}</option>
 						}
 
 					</FormControl>
@@ -48,11 +48,15 @@ class AttendanceMenu extends Component {
 
 				<FormGroup onChange={this.props.switchView}>
 
-					<Radio inline value="bySection">
+					<Radio inline value="allSessions">
 						View by Session
 					</Radio>
 					{' '}
-					<Radio inline value="byStudent">
+					<Radio inline value="singleSession">
+						View by Session
+					</Radio>
+					{' '}
+					<Radio inline value="singleStudent">
 						View by Student
 					</Radio>
 			
