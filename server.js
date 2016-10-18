@@ -111,27 +111,46 @@ app.get('/', (req, res) => {
 app.post('/admin/getUsers', function(req, res) {
 	console.log('getusers', req.body);
 	//sorting options
-	if (req.body.sort === 'nameAsc') {
-		User.findAll({order: [['FirstName']]}).then(function(user){
-			res.json(user);
-		})
-	} else if (req.body.sort === 'nameDesc') {
-		User.findAll({order: [['FirstName', 'DESC']]}).then(function(user){
-			res.json(user);
-		})
-	} else if(req.body.sort === 'roleAsc') {
-		User.findAll({order: [['Role']]}).then(function(user){
-			res.json(user);
-		})
-	} else if (req.body.sort === 'roleDesc') {
-		User.findAll({order: [['Role', 'DESC']]}).then(function(user){
-			res.json(user);
-		})
-	} else {
-		User.findAll({order: [['FirstName']]}).then(function(user){
-			res.json(user);
-		})
+	function sortingAsc(sort, column) {
+		if (req.body.sort === sort) {
+			if (req.body.section !== 'all') {
+				Section.findOne({where: {Title: req.body.section} })
+				.then(function(dbSection) {
+					dbSection.getUsers({order: [[column]]}).then(function(users) {
+						console.log('SECTION USERS===========', users);
+						res.json(users);
+					})
+				})
+			} else {
+				User.findAll({order: [[column]]}).then(function(users){
+					res.json(users);
+				})
+			}
+		}
 	}
+
+	function sortingDesc(sort, column) {
+		if (req.body.sort === sort) {
+			if (req.body.section !== 'all') {
+				Section.findOne({where: {Title: req.body.section} })
+				.then(function(dbSection) {
+					dbSection.getUsers({order: [[column, 'DESC']]}).then(function(users) {
+						console.log('SECTION USERS===========', users);
+						res.json(users);
+					})
+				})
+			} else {
+				User.findAll({order: [[column, 'DESC']]}).then(function(users){
+					res.json(users);
+				})
+			}
+		}
+	}
+	sortingAsc('all', 'FirstName');
+	sortingAsc('sort-nameAsc', 'FirstName');
+	sortingAsc('sort-roleAsc', 'Role');
+	sortingDesc('sort-roleDesc', 'Role');
+	sortingDesc('sort-nameDesc', 'FirstName');
 
 })
 

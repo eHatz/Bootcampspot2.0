@@ -41,7 +41,7 @@ const AdminPage = withRouter(
 				};
 			};
 			//WARNINGS COMING FROM THESE 2 LINES OF CODE!!!!!
-			this.getUsers('nameAsc', 'all');
+			this.getUsers('sort-nameAsc', 'all');
 			this.getSections();
 		}
 		//lists all users
@@ -116,7 +116,6 @@ const AdminPage = withRouter(
 									<TableRow 
 										columnCount ={[
 											{type: 'Header', value: 'NAME'},
-											{type: 'Header', value: 'SECTION'},
 											{type: 'Header', value: 'EMAIL'},
 											{type: 'Header', value: 'ROLE'},
 											{type: 'Header', value: 'EDIT'},
@@ -129,7 +128,6 @@ const AdminPage = withRouter(
 										<TableRow
 											columnCount ={[
 												{type: 'Data', value: item.FirstName + ' ' + item.LastName},
-												{type: 'Data', value: ''},
 												{type: 'Data', value: item.Email},
 												{type: 'Data', value: item.Role},
 												{type: 'Button', value: ''},
