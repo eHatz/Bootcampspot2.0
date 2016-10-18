@@ -142,7 +142,17 @@ app.post('/admin/createUser', function(req, res) {
 		LastName: req.body.lastName,
 		Email: req.body.email,
 		Role: req.body.role
-	})
+	}).then(function(newUser) {
+		if (req.body.role !=='Admin') {
+			console.log('REQ.BODY.SECTION', req.body.sectionTitle)
+			Section.findOne({where: {Title: req.body.sectionTitle} })
+			.then(function(section) {
+				console.log('THIS SECTION', section);
+				newUser.addSection(section);
+			})
+			
+		};
+	});
 })
 
 app.post('/admin/getSections', function(req, res) {

@@ -106,6 +106,7 @@ const AdminPage = withRouter(
 							<div id="addStudentTab" className={"tab-pane fade in " + this.state.studentTab}>
 								<CreateUserForm
 									getUsers = {this.getUsers}
+									sectionList = {this.state.sectionList}
 								/>
 								<SortUsersForm
 									getUsers = {this.getUsers}
