@@ -21,7 +21,8 @@ class Application extends Component {
 		// set initial state
 		this.state = {
 			loggedIn: auth.loggedIn(),
-			UserInfo: {}
+			UserInfo: {},
+			UserSection: null
 		};
 	}
 
@@ -41,7 +42,7 @@ class Application extends Component {
 		fetch('/login', {credentials: 'include'})
 		.then((response) => response.json())
 		.then((json) => {
-			this.setState({ UserInfo: json.userData })
+			this.setState({ UserInfo: json.userData, UserSection: json.userSection })
 			console.log('application page', this.state.UserInfo)
 			//prevents user from accessing the website if their user info/session has expired
 			if (!json.userData) {
@@ -51,7 +52,6 @@ class Application extends Component {
 	}
 
 	render() {
-
 		return (
 
 			<div id="width" className="container">
@@ -60,7 +60,8 @@ class Application extends Component {
 					{
 						cloneElement(this.props.children,{
 							loggedIn: this.state.loggedIn,
-							UserInfo: this.state.UserInfo
+							UserInfo: this.state.UserInfo,
+							UserSection: this.state.UserSection
 						})
 					}
 
