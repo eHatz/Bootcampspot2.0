@@ -71,7 +71,7 @@ class TutorRequest extends Component {
 				<div className="row">
 					<h2 className="quesTut">How comfortable are you with the material covered in class so far?</h2>
 					<h3 className="leftSideTut">Very Shaky</h3>
-					<div className ="col-md-6 multRads">
+					<div className ="col-md-6 multRads3">
 			 			<label className="radio-inline radioButtTut"><input type="radio" name="optradio"/> 1</label>
 			 			<label className="radio-inline radioButtTut"><input type="radio" name="optradio"/> 2</label>
 			 			<label className="radio-inline radioButtTut"><input type="radio" name="optradio"/> 3</label>
@@ -82,7 +82,7 @@ class TutorRequest extends Component {
 				</div>
 				<div className="row">
 					<h2 className="quesTut">Which are the best times for you to meet with a tutor?</h2>
-					<div className ="col-md-6 multRads">
+					<div className ="col-md-6 multRads4">
 			 			<label className="radio radioButtTut2"><input type="radio" name="optradio"/> Weekday (daytime)</label>
 			 			<label className="radio radioButtTut2"><input type="radio" name="optradio"/> Weekday (evening)</label>
 			 			<label className="radio radioButtTut2"><input type="radio" name="optradio"/> Weekend (daytime)</label>
@@ -91,7 +91,7 @@ class TutorRequest extends Component {
 				</div>
 				<div className="row">
 					<h2 className="quesTut">Which topics are you looking to cover?</h2>
-					<div className ="col-md-6 multRads">
+					<div className ="col-md-6 multRads5">
 			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> Pep-talk/Advice</label>
 			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> HTML Layouts (HTML,CSS)</label>
 			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> Bootstrap Layouts</label>
@@ -109,7 +109,9 @@ class TutorRequest extends Component {
 			 		</div>
 				</div>
 
-					<h4 className="lastQ">"Anything else you'd like to mention in your help request?</h4>
+					<h4 className="lastQ">Anything else you'd like to mention in your help request?</h4>
+					<input type="text" className="form-control lastQInput" />
+
 					<input id="resetButtTut" className="btn btn-default" type="reset" value="Reset"/>						
 					<button id="submitTut" type="submit" className="btn btn-default">Submit</button>
 			</div>

@@ -1,8 +1,10 @@
 .ptag{
-	color:gray;
+	color:#343333;
 	font-family: 'Roboto Condensed', sans-serif; 
 	font-size: 18px;
 	padding-top: 5%;
+	margin-left: 2%;
+	margin-bottom: 5%;
 }
 .quesTut{
 	color: black;
@@ -15,6 +17,9 @@
 #submitTut{
 	font-size: 18px;
 
+}
+.radioButtTut{
+	color: black;
 }
 
 
@@ -51,10 +56,33 @@
 	.leftSideTut{
 		font-size: 17px;
 		float:left;
+		margin-left: 7%;
+		margin-top: 1%;
 	}
 	.rightSideTut{
 		font-size:17px;
 		float:right;
+		margin-right: 15%;
+		margin-top: -4%;
+		width: 35px;
+	}
+	.radioButtTut2{
+		width: 35px;
+		color:black;
+
+	}
+	.radioButtTut3{
+		width:35px;
+	}
+	.lastQ{
+		font-size: 22px;
+		margin-left: 7%;
+		padding-bottom: 3%;
+	}
+	.lastQInput{
+		margin-left: 7%;
+		width:85%;
+		margin-bottom: 5%;
 	}
 
 }
