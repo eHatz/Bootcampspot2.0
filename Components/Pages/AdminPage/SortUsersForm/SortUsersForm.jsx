@@ -5,26 +5,21 @@ import "./SortUsersForm.css";
 class SortUsersForm extends Component {
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			sectionList: [],
-			sortBy: 'nameAsc',
-			sortSection: 'all'
-		};
-
 		this.sortBy = this.sortBy.bind(this);
-		this.sortSection = this.sortSection.bind(this);
+
 	}
 
 	sortBy(event) {
-		this.setState({ sortBy : event.target.value });
-		this.props.getUsers(event.target.value, this.state.sortSection);
+		var sort= 'sort-nameAsc';
+		var section = 'all';
+		if (event.target.value.indexOf('sort-') !== -1) {
+			sort = event.target.value;
+		} else {
+			section = event.target.value;
+		};
+		this.props.getUsers(sort, section);
 	}
-	sortSection(event) {
-		this.setState({ sortSection : event.target.value });
-		this.props.getUsers(this.state.sortBy, this.state.sortSection);
-	}
-	
+
 	render() {
 		const { sectionList } = this.props;
 		return (
@@ -37,16 +32,16 @@ class SortUsersForm extends Component {
 							onChange={this.sortBy}
 							placeholder="select"
 						>
-							<option value="nameAsc">NAME ASCENDING</option>
-							<option value='nameDesc'>NAME DESCENDING</option>
-							<option value='roleAsc'>ROLE ASCENDING</option>
-							<option value='roleDesc'>ROLE DESCENDING</option>
+							<option value="sort-nameAsc">NAME ASCENDING</option>
+							<option value='sort-nameDesc'>NAME DESCENDING</option>
+							<option value='sort-roleAsc'>ROLE ASCENDING</option>
+							<option value='sort-roleDesc'>ROLE DESCENDING</option>
 						</FormControl>
 
 						<ControlLabel>Section:</ControlLabel>
 						<FormControl
 							componentClass="select"
-							onChange={this.sortSection}
+							onChange={this.sortBy}
 							placeholder="select"
 						>
 							<option value="all">ALL</option>
