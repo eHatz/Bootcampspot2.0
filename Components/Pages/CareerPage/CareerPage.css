@@ -52,9 +52,14 @@ body{
 #bioForm{
 	width: 100%;
     margin-bottom: 0px;
-    background-color: #e2e2e2;
     border: 1px solid #080808;
     border-radius: 1px;
+    height: 30vh;
+    margin-top: 10px;
+    background: url(/assets/images/pencil.png) no-repeat 10px 10px;
+    background-color: white;
+    font-family: helvetica;
+    font-size: 20px;
 
 }
 .bioButton{
@@ -76,24 +81,22 @@ body{
 .buttonDiv{
     background-color: #414142;
     text-align: right;
+
+}
+
+#bioContainer{
+	background-color:  #bfbebe;
 }
 
 
 #github{
-	background: url(/assets/images/githubCareer.png) no-repeat 8px 8px;
-    height: 50px;
-    font-family: helvetica;
-    font-size: 16px;
-    background-color: #414142;
-    padding-left: 55px;
-    color: white;
-    width: 100%;
+	
 }
 
 
 .careerUrlDiv{
-	text-align: center;
-	padding-top: 20px;
+	display: inline-flex;
+    padding-top: 23%;
 }
 
 .careerUrlButton{
@@ -108,12 +111,33 @@ body{
 
 .careerUrlCaption{
 	color: grey;
-	
+	text-align: center;
+
+
 }
 
+#profilePic{
+	text-align: center;
+	background-color: #e6e5e5;
+	border: 1px solid #fff;
+    border-radius: 1px;
 
-
-
+}
+#careerUrlDiv{
+	display: inline-flex;
+	padding-top: 7%;
+    padding-right: 10%;
+    padding-bottom: 10%;
+    padding-left: 10%;
+}
+.thumbnailDiv{
+	background-color: transparent;
+    border: none;
+}
+#aquirementsDiv{
+	padding: 20px;
+	text-align: left;
+}
 
 
 
