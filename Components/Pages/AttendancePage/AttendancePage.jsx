@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { browserHistory, Router, Route, Link, withRouter } from 'react-router';
+import $ from "jquery";
 import "./AttendancePage.css";
 import TableRow from "../../Table/TableRow/TableRow.jsx";
 import AttendanceMenu from "./AttendanceMenu/AttendanceMenu.jsx";
@@ -18,7 +19,8 @@ class AttendancePage extends Component {
 		super(args);
 
 		this.state = {
-			view: "", //allSessions, or singleSession, or singleStudent
+			sections: [],
+			view: singleStudent, //allSessions, or singleSession, or singleStudent
 			isStudent: false
 		}
 	}
@@ -75,16 +77,26 @@ class AttendancePage extends Component {
 		)
 	}
 
-
-	
-
 	switchView(event){
 		this.setState({view: event.target.value});
 	}
 
-	// sectionSort(event){
-	// 	this.setState({displaySection: event.target.value});
-	// }
+	selectSection(event){
+		this.setState({view: allSessions});
+		fetch(, {
+			credentials 
+		})
+
+		$.ajax({
+	        url: "attendance/getAllSesions",
+	        type: "POST",
+	        data:{
+	        	section: event.target.value
+	        }
+	    }).done(function(response){
+	        console.log(response);
+	    });
+	}
 
 	render() {
 
@@ -93,20 +105,30 @@ class AttendancePage extends Component {
 			<div className="attendanceBackground">
 
 				{this.state.isStudent ? 
-					<AttendanceButton handleClick={attendanceButtonOnClick} />
+					<AttendanceButton handleClick={this.attendanceButtonOnClick.bind(this)} />
 					:
 					<div id="AttendancePage_menuDiv">
 						<AttendanceMenu
-
+							selectSection={this.selectSection.bind(this)}
 						/>
 					</div>
 				}
 
 				<div className='wholeTable'>
 
-					{this.state.view = allSessions ? 
-						<
+					{this.state.view === allSessions ? 
+						<AttendanceSessionsView
 
+						/>
+						: 
+						this.state.view == singleSession ?
+							<AttendanceStudentsView
+
+							/>
+							:						
+							<AttendanceStudentView
+
+							/>
 					}
 					
 				</div>
@@ -115,6 +137,7 @@ class AttendancePage extends Component {
 		);
 	}
 }
+
 export default AttendancePage;
 
 /*

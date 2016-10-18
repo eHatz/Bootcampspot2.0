@@ -7,13 +7,13 @@ const { sections } = this.props;
 
 class AttendanceMenu extends Component {
 
-	constructor(...args){
-		super(args);
+	// constructor(...args){
+	// 	super(args);
 
-		this.state ={
-			previous: "#"
-		}
-	}
+	// 	this.state ={
+	// 		previous: "#"
+	// 	}
+	// }
 
 	componentWillMount() {
 		console.log("AttendanceMenu");
@@ -35,11 +35,11 @@ class AttendanceMenu extends Component {
 					<FormControl 
 						componentClass="select" 
 						placeholder="select"
-						onChange={this.props.sectionSort}
+						onChange={this.props.selectSection}
 					>
 						<option value="all">All Sections</option>
 						{sections.map(section, index) => 
-							<option key={index} value={section.Title}>{section.Title}</option>
+							<option key={index} value={section.id}>{section.title}</option>
 						}
 
 					</FormControl>
