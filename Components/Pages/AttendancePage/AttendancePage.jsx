@@ -13,50 +13,87 @@ class AttendancePage extends Component {
 		super(args);
 
 		this.state = {
-			view: "bySection",
-			displaySection: ""
+			view: "bySession",
+			sections:[],
+			sessions: []
 		}
 	}
 
 	componentWillMount() {
-
-		Role === "Admin" || Role === "Teacher" ?
-			this.adminTeacherView()
-			:
-			this.studentView()
+		if (Role === "Admin"){
+			this.adminView();
+		} else if (Role === "Teacher"){
+			this.teacherView();
+		} else(this.studentView())
 	}
 
-
-
-	adminTeacherView(){
-
+	adminView(){
+		fetch("/admin/getSections", {
+			credentials: 'include',
+			method: 'POST',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			}
+		}).then((response) => response.json())
+		.then((json) =>  this.setState({sections: json});
+		)
+	}
+		
+	teacherView(){
+		fetch("/attendance/teacher", {
+			credentials: 'include',
+			method: 'POST',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			}
+		}).then((response) => response.json())
+		.then((json) =>  this.setState({sections: json});
+		)
 	}
 
 	studentView(){
 		this.setState({view: false});
 
+		fetch("/attendance/student", {
+			credentials: 'include',
+			method: 'POST',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			}
+		}).then((response) => response.json())
+		.then((json) =>  this.setState({sessions: json});
+		)
 	}
+
+	
+	
 
 	switchView(event){
 		this.setState({view: event.target.value});
 	}
 
-	sectionSort(event){
-		this.setState({displaySection: event.target.value});
-	}
+	// sectionSort(event){
+	// 	this.setState({displaySection: event.target.value});
+	// }
 
 	render() {
 
 		return (
 
 			<div className="attendanceBackground">
-				<div id="AttendancePage_menuDiv">
-					{this.props.UserInfo.UserInfo.Role === "Teacher" || "Admin" ? 
-						( <AttendanceMenu  />  )
-						:
-						( null )
-					}
-				</div>
+				{this.state.view ? 
+					<div id="AttendancePage_menuDiv">
+						<AttendanceMenu
+
+						/>
+					</div>
+					:
+					null
+				}
+
 				<div className='wholeTable'>
 					<TableRow 
 						columnCount ={[
@@ -89,5 +126,12 @@ class AttendancePage extends Component {
 export default AttendancePage;
 
 /*
-sections={UserInfo.UserInfo.sections}			
+sections={UserInfo.UserInfo.sections}		
+
+
+
+		Role === "Admin" || Role === "Teacher" ?
+			this.adminTeacherView()
+			:
+			this.studentView()	
 */

@@ -30,25 +30,12 @@ class AttendanceMenu extends Component {
 			     	back
 			    </Button>
 
-				<FormGroup controlId="formInlineView" onChange={this.props.switchView}>
-
-					<Radio inline value="bySection">
-						View by Section
-					</Radio>
-					{' '}
-					<Radio inline value="byStudent">
-						View by Student
-					</Radio>
-			
-				</FormGroup>
-
 				<FormGroup>
 
 					<FormControl 
 						componentClass="select" 
 						placeholder="select"
 						onChange={this.props.sectionSort}
-						controlId="formInlineSection"
 					>
 						<option value="all">All Sections</option>
 						{sections.map(section, index) => 
@@ -57,6 +44,18 @@ class AttendanceMenu extends Component {
 
 					</FormControl>
 
+				</FormGroup>
+
+				<FormGroup onChange={this.props.switchView}>
+
+					<Radio inline value="bySection">
+						View by Session
+					</Radio>
+					{' '}
+					<Radio inline value="byStudent">
+						View by Student
+					</Radio>
+			
 				</FormGroup>
 
 			</Form>

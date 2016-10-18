@@ -20,6 +20,7 @@ class SortUsersForm extends Component {
 		this.setState({ sortBy : event.target.value });
 		this.props.getUsers(event.target.value, this.state.sortSection);
 	}
+	
 	sortSection(event) {
 		this.setState({ sortSection : event.target.value });
 		this.props.getUsers(this.state.sortBy, this.state.sortSection);

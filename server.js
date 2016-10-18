@@ -172,7 +172,18 @@ app.post('/admin/createSection', function(req, res) {
 	})
 })
 
-
+app.post("/attendance/teacher", function(req, res){
+		//??
+	Section.findAll({
+		include: [{
+			model: User,
+			where: {id: req.id}
+		}]
+	}).then(function(sections){
+		console.log("(server.js 183) techerSections route: ", sections);
+		res.json(sections);
+	})
+})
 
 app.get("/slack", (req, res) => {
 	res.sendFile(path.join(__dirname, './slack.html'));
