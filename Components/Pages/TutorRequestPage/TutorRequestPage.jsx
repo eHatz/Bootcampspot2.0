@@ -91,7 +91,7 @@ class TutorRequest extends Component {
 				</div>
 				<div className="row">
 					<h2 className="quesTut">Which topics are you looking to cover?</h2>
-					<div className ="col-md-6 multRads5">
+					<div className ="col-md-12 multRads5">
 			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> Pep-talk/Advice</label>
 			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> HTML Layouts (HTML,CSS)</label>
 			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> Bootstrap Layouts</label>
@@ -108,10 +108,12 @@ class TutorRequest extends Component {
 			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> All of the Above</label>
 			 		</div>
 				</div>
-
-					<h4 className="lastQ">Anything else you'd like to mention in your help request?</h4>
-					<input type="text" className="form-control lastQInput" />
-
+				<div className="container">
+					<div className="form-group">
+					  <label className="tutComment" for="comment">Additional Comments</label>
+					  <textarea className="form-control" rows="5" id="commentSpace"></textarea>
+					</div>
+				</div>
 					<input id="resetButtTut" className="btn btn-default" type="reset" value="Reset"/>						
 					<button id="submitTut" type="submit" className="btn btn-default">Submit</button>
 			</div>

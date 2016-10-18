@@ -35,18 +35,18 @@
 		margin-left: 5%;
 	}
 	#cohDropdown{
-		margin-left: 7%;
-		width: 85%;
+		margin-left: 6%;
+		width: 86%;
 	}
 	.cohortSel{
-		margin-left: 7%;
+		margin-left: 6%;
 	}
 	#weekDropdown{
-		margin-left: 7%;
-		width:85%;
+		margin-left: 6%;
+		width:86%;
 	}
 	.weekSel{
-		margin-left: 7%;
+		margin-left: 6%;
 	
 	}
 	.quesTut{
@@ -69,11 +69,15 @@
 	.radioButtTut2{
 		width: 35px;
 		color:black;
+		display: inline-block;
+		margin-left: 12%;
 
 	}
 	.radioButtTut3{
 		width:35px;
+
 	}
+
 	.lastQ{
 		font-size: 22px;
 		margin-left: 7%;
@@ -84,6 +88,52 @@
 		width:85%;
 		margin-bottom: 5%;
 	}
+	.tutComment{
+		margin-left: 4%;
+	}
+	#commentSpace{
+		margin-left: 4%;
+		width:93%;
+	}
+
+}
+
+/*================================iPad*/
+
+@media screen and (max-width: 960px){
+	.tutorInput{
+		margin-left: 5%;
+		width:85%;
+	}
+	#cohDropdown{
+		margin-left: 7%;
+		width:82%;
+
+	}
+	.cohortSel{
+		margin-left: 7%;
+
+	}
+	#weekDropdown{
+		margin-left: 7%;
+		width: 82%;
+	}
+	.tutText{
+
+	}
+	.weekSel{
+		margin-left: 
+	}
+
+
+
+
+
+
+
+
+
+
 
 }
 

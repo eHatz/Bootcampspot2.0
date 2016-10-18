@@ -95,7 +95,7 @@ input[type=radio] {
 
 }
 
-.btn.btn-default{
+#submitButt{
 	width:20%;
 	background-color: #FF0000;
 	
