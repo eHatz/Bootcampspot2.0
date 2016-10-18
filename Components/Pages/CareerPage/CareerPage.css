@@ -12,15 +12,6 @@
 	padding-top: 20px;
 }
 
-#div2 {
-	background: #8b8b8b; 
-	
-}
-#div3 {
-	background: #343333; 
-	
-
-}
 body{
 	background-color: transparent;
 }
@@ -42,11 +33,13 @@ body{
     font-size: 16px;
     font-family: helvetica;
     margin-right: 40px;
+    line-height: 29px
 }
 
 #aquirementsTitle{
 	margin-left: 40px;
     font-family: helvetica;
+    margin-top: 40px;
 
 }
 #bioForm{
@@ -86,18 +79,10 @@ body{
 
 #bioContainer{
 	background-color:  #bfbebe;
+	width: initial;
+    margin-top: 35px;
 }
 
-
-#github{
-	
-}
-
-
-.careerUrlDiv{
-	display: inline-flex;
-    padding-top: 23%;
-}
 
 .careerUrlButton{
 	background-color: red;
@@ -124,11 +109,9 @@ body{
 
 }
 #careerUrlDiv{
-	display: inline-flex;
-	padding-top: 7%;
-    padding-right: 10%;
-    padding-bottom: 10%;
-    padding-left: 10%;
+    display: inline-flex;
+    
+    
 }
 .thumbnailDiv{
 	background-color: transparent;
@@ -138,6 +121,13 @@ body{
 	padding: 20px;
 	text-align: left;
 }
+
+.radioButtons{
+    margin-bottom: 46px;
+    margin-top: 20px;
+}
+
+
 
 
 
