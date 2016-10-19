@@ -15,10 +15,11 @@ class AttendancePage extends Component {
 		super(props);
 
 		this.state = {
-			sections: [],
-			view: "", //allSessions, or singleSession, or singleStudent
-			isStudent: false,
-			displayData: []
+			sections: [], //Holds all the sections that the current user is authorized to see
+			currentSection: "",
+			view: "", //Determines which view component gets redered.  Must be allSessions, singleSession, or singleStudent
+			isStudent: false, //turns the Admin/Teacher control panel into an attendance button if true
+			displayData: [] //Holds the actual data displayed by the current view component
 		}
 
 		this.getAdminViewData = this.getAdminViewData.bind(this);
@@ -109,8 +110,10 @@ class AttendancePage extends Component {
 	    }).done(function(response){
 	    	//Save the sessions to state and render them to the page
 	    	console.log("displayData selectSection: ", response);
-	    	this.setState({view: "allSessions"});
-	    	this.setState({displayData: response});
+	    	this.setState({
+	    		view: "allSessions",
+	    		displayData: response
+	    	});
 	    }.bind(this));
 	}
 
