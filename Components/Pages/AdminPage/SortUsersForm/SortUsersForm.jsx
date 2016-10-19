@@ -31,35 +31,34 @@ class SortUsersForm extends Component {
 	render() {
 		const { sectionList } = this.props;
 		return (
-			<div id='userFormDiv'>
+			<div className="row remove-all-margin-padding">
 				<form onSubmit={this.userCreate}>
 					<FormGroup controlId="formBasicText">
-						<ControlLabel>Sort By:</ControlLabel>
-						<FormControl
-							componentClass="select"
-							onChange={this.sortBy}
-							placeholder="select"
-						>
-							<option value="sort-nameAsc">NAME ASCENDING</option>
-							<option value='sort-nameDesc'>NAME DESCENDING</option>
-							<option value='sort-roleAsc'>ROLE ASCENDING</option>
-							<option value='sort-roleDesc'>ROLE DESCENDING</option>
-						</FormControl>
+						<div className="col-md-6">
+							<FormControl
+								componentClass="select"
+								onChange={this.sortBy}
+								placeholder="select"
+							>
+								<option value="sort-nameAsc">Name Ascending</option>
+								<option value='sort-nameDesc'>Name Descending</option>
+								<option value='sort-roleAsc'>Role Ascending</option>
+								<option value='sort-roleDesc'>Role Descending</option>
+							</FormControl>
+						</div>
+						<div className="col-md-6">
+							<FormControl
+								componentClass="select"
+								onChange={this.sortBy}
+								placeholder="select"
+							>
+								<option value="all">All Sections</option>
+								{sectionList.map((item, index) =>
+									<option key= {index} value={item.Title}>{item.Title}</option>
 
-						<ControlLabel>Section:</ControlLabel>
-						<FormControl
-							componentClass="select"
-							onChange={this.sortBy}
-							placeholder="select"
-						>
-							<option value="all">ALL</option>
-							{sectionList.map((item, index) =>
-								<option key= {index} value={item.Title}>{item.Title}</option>
-
-							)}
-						</FormControl>
-
-					    <Button type="submit">Submit</Button>
+								)}
+							</FormControl>
+						</div>
 					</FormGroup>
 				</form>
 			</div>

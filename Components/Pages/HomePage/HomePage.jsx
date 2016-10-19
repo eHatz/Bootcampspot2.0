@@ -26,7 +26,7 @@ class HomePage extends Component {
 								</a>
 							) : (
 								<a href="/login/github">
-									<img id="HomePage_login" src="/assets/images/github.png" alt="githubLogo"/>
+									<img id="HomePage_login" src="/assets/images/githubLogin.png" alt="githubLogo"/>
 								</a>
 							)}
 						</div>

@@ -70,14 +70,19 @@ app.get('/login', function(req, res){
 		    		access: false,
 		    		userData: false
 		    	});
-		    	req.session.userInfo = null;
-			}else if (user){		
-				res.setHeader('Content-Type', 'application/json');
-		    	res.json({
-		    		access: 'jennanda',
-		    		userData: user
-		    	});
-		    	req.session.userInfo = user;
+			}else if (user){
+				user.getSections().then(function(section) {
+					var userSection = section;
+					if (user.Role === 'Admin') {
+						userSection = 'Admin';
+					};
+					res.setHeader('Content-Type', 'application/json');
+			    	res.json({
+			    		access: 'jennanda',
+			    		userData: user,
+			    		userSection: userSection
+			    	});
+				})
 			}
 		});
 	} else {
@@ -152,8 +157,7 @@ app.post('/admin/getUsers', function(req, res) {
 	sortingAsc('sort-roleAsc', 'Role');
 	sortingDesc('sort-roleDesc', 'Role');
 	sortingDesc('sort-nameDesc', 'FirstName');
-
-})
+});
 
 app.post('/admin/createUser', function(req, res) {
 
@@ -173,13 +177,13 @@ app.post('/admin/createUser', function(req, res) {
 			
 		};
 	});
-})
+});
 
 app.post('/admin/getSections', function(req, res) {
 	Section.findAll().then(function(section){
 		res.json(section);
-	})
-})
+	});
+});
 
 //====Attendance routes====
 
@@ -192,7 +196,7 @@ app.post('/admin/createSection', function(req, res) {
 		StartDate: req.body.StartDate,
 		EndDate: req.body.EndDate,
 	})
-})
+});
 
 app.post("/attendance/getAllSessions", function(req, res){
 	Session.findAll({
@@ -205,6 +209,27 @@ app.post("/attendance/getAllSessions", function(req, res){
 	})
 })
 
+app.post('/getAssignments', function(req, res) {
+	console.log('OUTSIDE SECTION!!!!!!!!!!!!!!!!!!', req.body.sectionTitle);
+	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
+		section.getAssignments().then(function(assignments) {
+			console.log('INSIDE SECTION!!!!!!!!!!!!!!!!!!', assignments);
+
+			res.json(assignments);
+		});
+	});
+});
+
+app.post('/createAssignment', function(req, res) {
+	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
+		section.createAssignment({
+			Title: req.body.Title, 
+			Instructions: req.body.Instructions,
+			Due: req.body.Due, 
+			Resources:req.body.Instructions
+		})
+	})
+});
 
 
 app.post("/attendance/teacher", function(req, res){

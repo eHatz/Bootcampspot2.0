@@ -13,14 +13,13 @@ const AdminPage = withRouter(
 
 			super(props, context);
 			this.state = {
-
-				studentTab: 'active',
-				sectionTab: 'inactive',
+				AdminUserTab: 'active',
+				AdminSectionTab: 'inactive',
 				userList: [],
 				sectionList: []
 			};
 			this.userTabClick = this.userTabClick.bind(this);
-			this.sectionTabClick = this.sectionTabClick.bind(this);
+			this.AdminSectionTabClick = this.AdminSectionTabClick.bind(this);
 			this.getUsers = this.getUsers.bind(this);
 			this.getSections = this.getSections.bind(this);
 		}
@@ -81,15 +80,15 @@ const AdminPage = withRouter(
 		//activates/shows user tab
 		userTabClick(event) {
 			this.setState({ 
-				studentTab: 'active',
-				sectionTab:'inactive'
+				AdminUserTab: 'active',
+				AdminSectionTab:'inactive'
 			});
 		}
 		//activates/shows section tab
-		sectionTabClick(event) {
+		AdminSectionTabClick(event) {
 			this.setState({ 
-				studentTab: 'inactive',
-				sectionTab:'active'
+				AdminUserTab: 'inactive',
+				AdminSectionTab:'active'
 			});
 		}
 
@@ -98,12 +97,12 @@ const AdminPage = withRouter(
 				<div className="AdminBackground">
 					<div>
 						<ul className="nav nav-pills">
-							<li onClick={this.userTabClick} className={this.state.studentTab}><a data-toggle="pill" href="#/admin">Add User</a></li>
-							<li onClick={this.sectionTabClick} className={this.state.sectionTab}><a data-toggle="pill" href="#/admin">Add Class Section</a></li>
+							<li onClick={this.userTabClick} className={this.state.AdminUserTab}><a data-toggle="pill" href="#/admin">Add User</a></li>
+							<li onClick={this.AdminSectionTabClick} className={this.state.AdminSectionTab}><a data-toggle="pill" href="#/admin">Add Class Section</a></li>
 						</ul>
 
 						<div className="tab-content">
-							<div id="addStudentTab" className={"tab-pane fade in " + this.state.studentTab}>
+							<div id="addAdminUserTab" className={"tab-pane fade in " + this.state.AdminUserTab}>
 								<CreateUserForm
 									getUsers = {this.getUsers}
 									sectionList = {this.state.sectionList}
@@ -139,7 +138,7 @@ const AdminPage = withRouter(
 									)}
 								</div>
 							</div>
-							<div id="addSectionTab" className={"tab-pane fade in " + this.state.sectionTab}>
+							<div id="addAdminSectionTab" className={"tab-pane fade in " + this.state.AdminSectionTab}>
 								<CreateSectionForm
 									getSections = {this.getSections}
 								/>

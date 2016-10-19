@@ -10,17 +10,10 @@
 
 #bioDiv{ 
 	padding-top: 20px;
-}
-
-#div2 {
-	background: #8b8b8b; 
-	
-}
-#div3 {
-	background: #343333; 
-	
+    width: 100%;
 
 }
+
 body{
 	background-color: transparent;
 }
@@ -42,11 +35,13 @@ body{
     font-size: 16px;
     font-family: helvetica;
     margin-right: 40px;
+    line-height: 29px
 }
 
 #aquirementsTitle{
 	margin-left: 40px;
     font-family: helvetica;
+    margin-top: 40px;
 
 }
 #bioForm{
@@ -60,6 +55,7 @@ body{
     background-color: white;
     font-family: helvetica;
     font-size: 20px;
+    padding-left: 46px;
 
 }
 .bioButton{
@@ -85,19 +81,17 @@ body{
 }
 
 #bioContainer{
-	background-color:  #bfbebe;
+
+    margin-top: 35px;
+    padding-top: 17px;
+    padding-right: 4%;
+    padding-left: 4%;
+    padding-bottom: 1%;
+    width: 80%;
+    margin-left: 10%;
+    background-color:  #bfbebe;
 }
 
-
-#github{
-	
-}
-
-
-.careerUrlDiv{
-	display: inline-flex;
-    padding-top: 23%;
-}
 
 .careerUrlButton{
 	background-color: red;
@@ -122,13 +116,12 @@ body{
 	border: 1px solid #fff;
     border-radius: 1px;
 
+
 }
 #careerUrlDiv{
-	display: inline-flex;
-	padding-top: 7%;
-    padding-right: 10%;
-    padding-bottom: 10%;
-    padding-left: 10%;
+    display: inline-flex;
+    
+    
 }
 .thumbnailDiv{
 	background-color: transparent;
@@ -138,6 +131,17 @@ body{
 	padding: 20px;
 	text-align: left;
 }
+
+.radioButtons{
+    margin-bottom: 46px;
+    margin-top: 20px;
+    color: grey;
+}
+#profileImage{
+    width: 100%;
+}
+
+
 
 
 
