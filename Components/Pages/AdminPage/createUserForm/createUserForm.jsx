@@ -77,12 +77,12 @@ class createUserForm extends Component {
 
 		return (
 			
-			<div className="row remove-all-margin-padding">
+			<div className="row remove-all-margin-padding createUser">
 				<h4 className="formTitle">Create New User</h4>
 				<form onSubmit={this.userCreate}>
 					<FormGroup controlId="formBasicText">
 						
-						<div className="col-md-2"> 
+						<div className="col-md-2 colorBlock"> 
 							<FormControl
 		      					type="text" 
 		      					value={this.state.email}
@@ -90,7 +90,7 @@ class createUserForm extends Component {
 		      					onChange={this.handleEmailChange}
 		      				/>
 						</div>
-						<div className="col-md-2"> 
+						<div className="col-md-2 colorBlock"> 
 							<FormControl
 		      					type="text" 
 		      					value={this.state.firstName}
@@ -98,7 +98,7 @@ class createUserForm extends Component {
 		      					onChange={this.firstNameChange}
 		      				/>
 	      				</div>
-						<div className="col-md-2"> 
+						<div className="col-md-2 colorBlock"> 
 							<FormControl
 		      					type="text" 
 		      					value={this.state.lastName}
@@ -106,7 +106,7 @@ class createUserForm extends Component {
 		      					onChange={this.lastNameChange}
 		      				/>
 						</div>
-						<div className="col-md-2"> 
+						<div className="col-md-2 colorBlock"> 
 							<FormControl
 								componentClass="select"
 								onChange={this.roleChange}
@@ -118,7 +118,7 @@ class createUserForm extends Component {
 								<option value='Admin'>Administrator</option>
 							</FormControl>
 						</div>
-						<div className="col-md-2"> 
+						<div className="col-md-2 colorBlock"> 
 							<FormControl
 								componentClass="select"
 								onChange={this.sectionChange}

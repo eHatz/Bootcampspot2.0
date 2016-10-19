@@ -37,14 +37,14 @@
 	}
 
 	#HomePage_login {
-    z-index: 1;
+   z-index: 1;
     position: static;
-    padding-top: 1%; 
+    padding-top: 1%;
     padding-right: 3%;
     padding-bottom: 12%;
-    padding-left: 3%;
+    padding-left: 1%;
     left: 0px;
-    max-width: 54%; 
+    max-width: 57%;
 	}
 
 	/*What element does this style? -nlp*/

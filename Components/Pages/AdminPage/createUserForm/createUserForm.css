@@ -3,6 +3,18 @@
 }
 
 .formTitle{
-	color: grey;
+	color: #de0303;
     margin-left: 2%;
+    font-size: 17px;
+    margin-bottom: -7px;
+    margin-top: inherit;
+}
+
+.createUser{
+	background-color: #e4e3e3;
+    margin-top: 20px;
+    margin-bottom: 4px;
+}
+.colorBlock{
+	margin-bottom: 42px;
 }
