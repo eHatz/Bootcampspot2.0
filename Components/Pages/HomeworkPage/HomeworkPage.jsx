@@ -25,13 +25,13 @@ class HomeworkPage extends Component {
 					this.setState({userRole: json.userData.Role})
 				})
 			};
-			//WARNINGS COMING FROM THESE 2 LINES OF CODE!!!!!
 			this.getAssignments('The Illest Section');
 			this.getSections();
 		}
 
 		getAssignments(sectionTitle) {
 			const { UserInfo } = this.props;
+
 			//if (UserInfo.UserInfo.Role !== 'Admin') {
 				fetch('/getAssignments', {
 					credentials: 'include',

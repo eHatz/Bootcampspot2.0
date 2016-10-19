@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
 		associate: function(models) {
 
 			Assignment.belongsTo(models.Section)
-			Assignment.belongsToMany(models.User, {as: "AssignmentId", through: "UserAssignment"});
+			Assignment.belongsToMany(models.User, {through: "UserAssignment"});
 			
 		}
 	}
