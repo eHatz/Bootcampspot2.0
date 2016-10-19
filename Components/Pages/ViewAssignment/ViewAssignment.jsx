@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./ViewAssignment.css";
+import ViewMySubmission from './ViewMySubmission/ViewMySubmission.jsx'
 class ViewAssignment extends Component {
 		constructor(props, context) {
 
@@ -53,13 +54,13 @@ class ViewAssignment extends Component {
 
 			<div className="homeworkBackground">
 				{UserInfo.UserInfo.Role === 'Admin' || UserInfo.UserInfo.Role === 'Teacher'  ? (
-					<h1>Hello {params.id}</h1>
+					<ViewMySubmission/>
 				) : (
 					null
 				)}
 
 				{UserInfo.UserInfo.Role === 'Student' ? (
-					null
+					<ViewMySubmission/>
 				) : (
 					null
 				)}
