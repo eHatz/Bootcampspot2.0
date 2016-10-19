@@ -22,9 +22,10 @@ class AttendancePage extends Component {
 			displayData: [] //Holds the actual data displayed by the current view component
 		}
 
-		this.getAdminViewData = this.getAdminViewData.bind(this);
-		this.getTeacherViewData = this.getTeacherViewData.bind(this);
-		this.getStudentViewData = this.getStudentViewData.bind(this);
+		this.getSections = this.getSections.bind(this);
+		this.userIsAdmin = this.userIsAdmin.bind(this);
+		this.userIsTeacher = this.userIsTeacher.bind(this);
+		this.userIsStudent = this.userIsStudent.bind(this);
 		this.switchDisplay = this.switchDisplay.bind(this);
 		this.selectSection = this.selectSection.bind(this);
 		this.attendanceButtonOnClick = this.attendanceButtonOnClick.bind(this);
@@ -36,33 +37,27 @@ class AttendancePage extends Component {
 	const Role = UserInfo.UserInfo.Role;
 
 		if (Role === "Admin"){
-			this.getAdminViewData();
+			this.userIsAdmin();
 		} else if (Role === "Teacher"){
-			this.getTeacherViewData();
-		} else (this.getStudentViewData())
+			this.userIsTeacher();
+		} else (this.userIsStudent())
 	}
 
-	sectionFetch(){
-
+	getSections(route, data){
+		$.ajax({
+			url: route,
+			type: "POST",
+			data: data
+		}).done(function(response){
+			this.setState({sections: response});
+		}.bind(this))
 	}
 
-	getAdminViewData(){
-		fetch("/admin/getSections", {
-			credentials: 'include',
-			method: 'POST',
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			}
-		}).then((response) => response.json())
-		.then((json) => { 
-			this.setState({sections: json})
-			console.log("adminView sections: ", this.state.sections);
-			}
-		)
+	userIsAdmin(){
+		this.getSections("/admin/getSections");
 	}
 		
-	getTeacherViewData(){
+	userIsTeacher(){
 		// fetch("/attendance/teacher", {
 		// 	credentials: 'include',
 		// 	method: 'POST',
@@ -75,7 +70,7 @@ class AttendancePage extends Component {
 		// )
 	}
 
-	getStudentViewData(){
+	userIsStudent(){
 		// this.setState({
 		// 	isStudent: true,
 		// 	view: singleStudent

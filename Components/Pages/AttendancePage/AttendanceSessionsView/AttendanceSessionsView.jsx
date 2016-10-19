@@ -34,7 +34,6 @@ class AttendanceSessionsView extends Component {
 						]}
 						pageName = 'AttendancePage_AttendanceSessionView'
 						key= {index}
-						rowLink = "/attendance/students/" + {item.id}
 					/>
 				)}
 
