@@ -77,7 +77,7 @@ class createUserForm extends Component {
 
 		return (
 			
-			<div className="row remove-all-margin-padding createUser">
+			<div className="row createUser">
 				<h4 className="formTitle">Create New User</h4>
 				<form onSubmit={this.userCreate}>
 					<FormGroup controlId="formBasicText">
