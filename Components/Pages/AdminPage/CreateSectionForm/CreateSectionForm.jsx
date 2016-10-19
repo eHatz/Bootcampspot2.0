@@ -81,50 +81,55 @@ class CreateSectionForm extends Component {
 	render() {
 
 		return (
-			<div id='userFormDiv'>
+			<div className="row sectionDiv">
 				<form onSubmit={this.sectionCreate}>
 					<FormGroup controlId="formBasicText">
-						<ControlLabel>Title</ControlLabel>
+						<div className="col-md-2 sectionField">
 						<FormControl
 	      					type="text" 
 	      					value={this.state.Title}
 	      					placeholder="Section Title" 
 	      					onChange={this.handleTitleChange}
 	      				/>
+	      				</div>
 
-						<ControlLabel>Location</ControlLabel>
+						<div className="col-md-2 sectionField">
 						<FormControl
 	      					type="text" 
 	      					value={this.state.Location}
-	      					placeholder="First Name" 
+	      					placeholder="Location" 
 	      					onChange={this.LocationChange}
 	      				/>
+	      				</div>
 
-						<ControlLabel>Slack Key</ControlLabel>
+						<div className="col-md-2 sectionField">
 						<FormControl
 	      					type="text" 
 	      					value={this.state.Slack}
-	      					placeholder="Last Name" 
+	      					placeholder="Slack Key" 
 	      					onChange={this.SlackChange}
 	      				/>
+	      				</div>
 						
-						<ControlLabel>Start Date</ControlLabel>
+						<div className="col-md-2 sectionField">
 						<FormControl
 	      					type="text" 
 	      					value={this.state.StartDate}
-	      					placeholder="Last Name" 
+	      					placeholder="Start Date" 
 	      					onChange={this.StartDateChange}
 	      				/>
+	      				</div>
 
-	      				<ControlLabel>End Date</ControlLabel>
+	      				<div className="col-md-2 sectionField">
 						<FormControl
 	      					type="text" 
 	      					value={this.state.EndDate}
-	      					placeholder="Last Name" 
+	      					placeholder="End Date" 
 	      					onChange={this.EndDateChange}
 	      				/>
+	      				</div>
 
-						<ControlLabel>Meeting Days</ControlLabel>
+						<div className="col-md-2 sectionField">
 						<FormControl
 							componentClass="select"
 							onChange={this.DaysChange}
@@ -138,9 +143,12 @@ class CreateSectionForm extends Component {
 							<option value='Friday'>Friday</option>
 							<option value='Saturday'>Saturday</option>
 						</FormControl>
-
-					    <Button type="submit">Submit</Button>
+						</div>
+						<div className="col-md-1 sectionField">
+					    <Button id="sectionButton" type="submit">Submit</Button>
+					    </div>
 					</FormGroup>
+
 				</form>
 			</div>
 		);
