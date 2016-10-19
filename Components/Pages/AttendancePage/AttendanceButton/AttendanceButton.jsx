@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "react-bootstrap";
 
-const { handleClick } = this.props;
-
 class AttendanceButton extends Component {
 
 	
@@ -13,6 +11,8 @@ class AttendanceButton extends Component {
 	}
 
 	render() {
+		
+		const { handleClick } = this.props;
 
 		return (
 			<div className="well" style={wellStyles}>

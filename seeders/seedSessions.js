@@ -65,6 +65,8 @@ module.exports = [
     }
 ]
 
+//add session number manually in sequel pro 
+
 /*
   Subject: DataTypes.STRING,
     LessonNumber: DataTypes.DECIMAL,

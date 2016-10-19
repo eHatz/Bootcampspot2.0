@@ -58,6 +58,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 const User = models.User;
 const Section = models.Section;
+const Session = models.Session;
 //Routes
 app.get('/login', function(req, res){
 	
@@ -180,6 +181,8 @@ app.post('/admin/getSections', function(req, res) {
 	})
 })
 
+//====Attendance routes====
+
 app.post('/admin/createSection', function(req, res) {
 
 	Section.create({
@@ -190,6 +193,19 @@ app.post('/admin/createSection', function(req, res) {
 		EndDate: req.body.EndDate,
 	})
 })
+
+app.post("/attendance/getAllSessions", function(req, res){
+	Session.findAll({
+		where:{
+			SectionId: req.body.section
+		}
+	}).then(function(sessions){
+		console.log("/attendance/getAllSessions: ", sessions);
+		res.json(sessions);
+	})
+})
+
+
 
 app.post("/attendance/teacher", function(req, res){
 		//??
@@ -203,6 +219,10 @@ app.post("/attendance/teacher", function(req, res){
 		res.json(sections);
 	})
 })
+
+
+
+//====Slack Routes====
 
 app.get("/slack", (req, res) => {
 	res.sendFile(path.join(__dirname, './slack.html'));
@@ -221,9 +241,6 @@ app.post('/slack', (req, res) => {
 	}, function(error, response, body){
 	});
 });
-
-//Teacher attendance route
-
 
 //Sequelize
 models.sequelize.sync();

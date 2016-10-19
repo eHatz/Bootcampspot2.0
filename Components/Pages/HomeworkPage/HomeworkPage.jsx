@@ -44,12 +44,12 @@ class HomeworkPage extends Component {
 	
 	render() {
 		return (
-
+			{/*
 			<div className="homeworkBackground">
 				<div className='wholeTable'>
 					<TableRow 
 						columnCount ={[
-							Instructions:
+							Instructions: 
 							Due:
 							SubmitStatus:
 							Type:
@@ -78,6 +78,7 @@ class HomeworkPage extends Component {
 					)}
 				</div>
 			</div>
+		*/}
 		);
 	}
 }

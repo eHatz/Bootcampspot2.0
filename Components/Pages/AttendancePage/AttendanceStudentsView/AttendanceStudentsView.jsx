@@ -4,13 +4,13 @@ import TableRow from "../../../Table/TableRow/TableRow.jsx";
 const data = [];
 
 
-class AttendanceStudentView extends Component {
+class AttendanceStudentsView extends Component {
 
-
+//just a placeholder
 	render(){
 		return (
-			<div>
 
+			<div>
 			<TableRow 
 				columnCount ={[
 					{type: 'Header', value: 'DATE'},
@@ -31,13 +31,15 @@ class AttendanceStudentView extends Component {
 					key= {index}
 				/>
 			)}
+
 			</div>
+
 		)
 	}
 
 }
 
-export default AttendanceStudentView;
+export default AttendanceStudentsView
 
 
 

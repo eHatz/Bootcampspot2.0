@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { ButtonToolbar, DropdownButton, MenuItem, Form } from "react-bootstrap";
+import { Form, FormGroup, FormControl, ButtonGroup, Button } from "react-bootstrap";
 import "./AttendanceMenu.css";
 
 
-const { sections } = this.props;
 
 class AttendanceMenu extends Component {
 
@@ -22,47 +21,45 @@ class AttendanceMenu extends Component {
 	}
 
 	render() {
-
+		const { sections, selectSection, switchDisplay } = this.props;
 		return (
 
-			<Form>
-				<Button href={this.state.previous}>
-			     	back
-			    </Button>
+			<form>
 
 				<FormGroup>
 
 					<FormControl 
 						componentClass="select" 
 						placeholder="select"
-						onChange={this.props.selectSection}
+						onChange={selectSection}
 					>
 						<option value="all">All Sections</option>
-						{sections.map(section, index) => 
-							<option key={index} value={section.id}>{section.title}</option>
-						}
+
+						{sections.map((section, index) => 
+
+							<option key={index} value={section.id}>{section.Title}</option>
+						)}
 
 					</FormControl>
 
 				</FormGroup>
 
-				<FormGroup onChange={this.props.switchView}>
+				<ButtonGroup justified>
 
-					<Radio inline value="allSessions">
-						View by Session
-					</Radio>
-					{' '}
-					<Radio inline value="singleSession">
-						View by Session
-					</Radio>
-					{' '}
-					<Radio inline value="singleStudent">
-						View by Student
-					</Radio>
-			
-				</FormGroup>
+					<ButtonGroup>
+						<Button onClick={switchDisplay} value="allSessions">All Class Sessions</Button>
+					</ButtonGroup>
+					<ButtonGroup>
+						<Button onClick={switchDisplay} value="singleSession">Single Class Session</Button>
+					</ButtonGroup>
+					<ButtonGroup>
+						<Button onClick={switchDisplay} value="singleStudent">Individual Student</Button>
+					</ButtonGroup>
 
-			</Form>
+				</ButtonGroup>
+				
+
+			</form>
 
 		);
 	}
@@ -70,3 +67,37 @@ class AttendanceMenu extends Component {
 
 
 export default AttendanceMenu;
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+onClick={switchView("allSessions")}
+onClick={switchView("singleSession")}
+onClick={switchView("singleStudent")}
+
+
+
+
+<FormGroup onChange={switchView}>
+
+					<Radio inline value="allSessions" bsClass="radio">
+						View by Session
+					</Radio>
+					<Radio inline value="singleSession" bsClass="radio">
+						View by Session
+					</Radio>
+					<Radio inline value="singleStudent" bsClass="radio">
+						View by Student
+					</Radio>
+			
+				</FormGroup>
+*/
