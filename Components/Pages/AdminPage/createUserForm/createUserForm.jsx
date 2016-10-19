@@ -76,59 +76,64 @@ class createUserForm extends Component {
 	render() {
 
 		return (
-			<div id='userFormDiv'>
+			
+			<div className="row remove-all-margin-padding">
+				<h4 className="formTitle">Create New User</h4>
 				<form onSubmit={this.userCreate}>
 					<FormGroup controlId="formBasicText">
+						
+						<div className="col-md-2"> 
+							<FormControl
+		      					type="text" 
+		      					value={this.state.email}
+		      					placeholder="Email" 
+		      					onChange={this.handleEmailChange}
+		      				/>
+						</div>
+						<div className="col-md-2"> 
+							<FormControl
+		      					type="text" 
+		      					value={this.state.firstName}
+		      					placeholder="First Name" 
+		      					onChange={this.firstNameChange}
+		      				/>
+	      				</div>
+						<div className="col-md-2"> 
+							<FormControl
+		      					type="text" 
+		      					value={this.state.lastName}
+		      					placeholder="Last Name" 
+		      					onChange={this.lastNameChange}
+		      				/>
+						</div>
+						<div className="col-md-2"> 
+							<FormControl
+								componentClass="select"
+								onChange={this.roleChange}
+								placeholder="select"
+							>
+								<option value="">Select Role</option>
+								<option value='Student'>Student</option>
+								<option value='Teacher'>Teacher</option>
+								<option value='Admin'>Administrator</option>
+							</FormControl>
+						</div>
+						<div className="col-md-2"> 
+							<FormControl
+								componentClass="select"
+								onChange={this.sectionChange}
+								placeholder="select"
+							>
+								<option value="">Select Section</option>
+								{this.props.sectionList.map((item, index) =>
+									<option key= {index} value={item.Title}>{item.Title}</option>
 
-						<ControlLabel>Email</ControlLabel>
-						<FormControl
-	      					type="text" 
-	      					value={this.state.email}
-	      					placeholder="Email" 
-	      					onChange={this.handleEmailChange}
-	      				/>
-
-						<ControlLabel>First Name</ControlLabel>
-						<FormControl
-	      					type="text" 
-	      					value={this.state.firstName}
-	      					placeholder="First Name" 
-	      					onChange={this.firstNameChange}
-	      				/>
-
-						<ControlLabel>Last Name</ControlLabel>
-						<FormControl
-	      					type="text" 
-	      					value={this.state.lastName}
-	      					placeholder="Last Name" 
-	      					onChange={this.lastNameChange}
-	      				/>
-						<ControlLabel>Role</ControlLabel>
-						<FormControl
-							componentClass="select"
-							onChange={this.roleChange}
-							placeholder="select"
-						>
-							<option value="">select</option>
-							<option value='Student'>Student</option>
-							<option value='Teacher'>Teacher</option>
-							<option value='Admin'>Administrator</option>
-						</FormControl>
-
-						<ControlLabel>Section:</ControlLabel>
-						<FormControl
-							componentClass="select"
-							onChange={this.sectionChange}
-							placeholder="select"
-						>
-							<option value="">Select Section</option>
-							{this.props.sectionList.map((item, index) =>
-								<option key= {index} value={item.Title}>{item.Title}</option>
-
-							)}
-						</FormControl>
-
-					    <Button type="submit">Submit</Button>
+								)}
+							</FormControl>
+						</div>
+					    <div className="col-md-2"> 
+					    	<Button id="adminButton" type="submit">Submit</Button>
+					    </div>
 					</FormGroup>
 				</form>
 			</div>
