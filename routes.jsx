@@ -65,6 +65,7 @@ export default (
 			<Route path="/attendance" component={AttendancePage}/>
 			<Route path="/career" component={CareerPage}/>
 			<Route path="/homework" component={HomeworkPage}/>
+			<Route path="/homework/:id" component={HomeworkPage}/>
 			<Route path="/syllabus" component={SyllabusPage}/>
 			<Route path="/feedback" component={FeedbackPage}/>
 			<Route path="/projects" component={ProjectsPage}/>
