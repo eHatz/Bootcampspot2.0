@@ -3,7 +3,10 @@
 }
 
 .sectionDiv{
-	padding: 27px;
+	padding: 58px;
+    background-color: #e4e3e3;
+    margin-top: 29px;
+    margin-bottom: 28px;
 }
 
 #sectionButton{
