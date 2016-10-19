@@ -72,11 +72,11 @@ class TutorRequest extends Component {
 					<h2 className="quesTut">How comfortable are you with the material covered in class so far?</h2>
 					<h3 className="leftSideTut">Very Shaky</h3>
 					<div className ="col-md-6 multRads3">
-			 			<label className="radio-inline radioButtTut"><input type="radio" name="optradio"/> 1</label>
-			 			<label className="radio-inline radioButtTut"><input type="radio" name="optradio"/> 2</label>
-			 			<label className="radio-inline radioButtTut"><input type="radio" name="optradio"/> 3</label>
-			 			<label className="radio-inline radioButtTut"><input type="radio" name="optradio"/> 4</label>
-			 			<label className="radio-inline radioButtTut"><input type="radio" name="optradio"/> 5</label>
+			 			<label className="radio-inline radioButtTut"><input id="bubble" type="radio" name="optradio"/> 1</label>
+			 			<label className="radio-inline radioButtTut"><input id="bubble" type="radio" name="optradio"/> 2</label>
+			 			<label className="radio-inline radioButtTut"><input id="bubble" type="radio" name="optradio"/> 3</label>
+			 			<label className="radio-inline radioButtTut"><input id="bubble" type="radio" name="optradio"/> 4</label>
+			 			<label className="radio-inline radioButtTut"><input id="bubble" type="radio" name="optradio"/> 5</label>
 			 		</div>
 					<h3 className="rightSideTut">Very Confident</h3>
 				</div>
