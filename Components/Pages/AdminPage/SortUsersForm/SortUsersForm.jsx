@@ -30,7 +30,7 @@ class SortUsersForm extends Component {
 	render() {
 		const { sectionList } = this.props;
 		return (
-			<div className="row remove-all-margin-padding">
+			<div className="row remove-all-margin-padding sortingDiv">
 				<form onSubmit={this.userCreate}>
 					<FormGroup controlId="formBasicText">
 						<div className="col-md-6">
