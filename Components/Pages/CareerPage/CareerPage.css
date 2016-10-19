@@ -10,6 +10,8 @@
 
 #bioDiv{ 
 	padding-top: 20px;
+    width: 100%;
+
 }
 
 body{
@@ -79,12 +81,15 @@ body{
 }
 
 #bioContainer{
-	background-color:  #bfbebe;
-	width: initial;
+
     margin-top: 35px;
-    padding-top: 13px;
-    padding-right: 13px;
-    padding-left: 13px;
+    padding-top: 17px;
+    padding-right: 4%;
+    padding-left: 4%;
+    padding-bottom: 1%;
+    width: 80%;
+    margin-left: 10%;
+    background-color:  #bfbebe;
 }
 
 
@@ -111,6 +116,7 @@ body{
 	border: 1px solid #fff;
     border-radius: 1px;
 
+
 }
 #careerUrlDiv{
     display: inline-flex;
@@ -130,6 +136,9 @@ body{
     margin-bottom: 46px;
     margin-top: 20px;
     color: grey;
+}
+#profileImage{
+    width: 100%;
 }
 
 

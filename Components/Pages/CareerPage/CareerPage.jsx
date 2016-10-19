@@ -9,7 +9,7 @@ class CareerPage extends Component {
 		
 			<div className="careerBackground">
 				<div className="row remove-all-margin-padding">
-					<div className="col-md-7 text-center remove-all-margin-padding">
+					<div className="col-lg-7 text-center remove-all-margin-padding">
 						<div id="aquirementsDiv" className="row remove-all-margin-padding">
 							<h3 id="aquirementsTitle">I HAVE AQUIRED ONE OF THESE:</h3>
 							<ul>
@@ -62,21 +62,22 @@ class CareerPage extends Component {
 						</div>
 					</div>
 
-					
-					<div id="bioContainer" className="col-md-5">
-						<div id="BioDiv">
-							<div id="profilePic">
-	  							<img id="profileImage" src="/assets/images/profilePic.png" alt="profilePic"/>
+					<div className="col-lg-5">
+						<div id="bioContainer">
+							<div id="BioDiv">
+								<div id="profilePic">
+		  							<img id="profileImage" src="/assets/images/profilePic.png" alt="profilePic"/>
+								</div>
+						  		
+						  		<form>
+							    	<div className="form-group">
+							      		<textarea className="form-control" rows="10" id="bioForm" placeholder="Bio"></textarea>
+							      		<div className="buttonDiv">
+							      			<button className="bioButton">Save</button>
+						      			</div>
+							    	</div>
+							 	</form>
 							</div>
-					  		
-					  		<form>
-						    	<div className="form-group">
-						      		<textarea className="form-control" rows="10" id="bioForm" placeholder="Bio"></textarea>
-						      		<div className="buttonDiv">
-						      			<button className="bioButton">Save</button>
-					      			</div>
-						    	</div>
-						 	</form>
 						</div>
 					</div>
 				</div>
