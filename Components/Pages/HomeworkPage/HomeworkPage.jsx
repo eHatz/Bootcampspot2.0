@@ -119,6 +119,7 @@ class HomeworkPage extends Component {
 								{type: 'Button', value: ''},
 							]}
 							pageName = 'homeworkPage'
+							rowLink = {'homework/' + item.id}
 							key= {index}
 						/>
 					)}

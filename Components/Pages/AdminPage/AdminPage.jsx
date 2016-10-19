@@ -133,6 +133,7 @@ const AdminPage = withRouter(
 												{type: 'Button', value: ''}
 											]}
 											pageName = 'adminUserPage'
+											rowLink = {'User/' + item.id}
 											key= {index}
 										/>
 									)}
