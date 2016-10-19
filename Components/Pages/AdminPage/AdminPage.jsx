@@ -61,6 +61,7 @@ const AdminPage = withRouter(
 			.then((json) => {
 				this.setState({userList: json});
 			});
+			console.log('RUNNING GET USERS');
 		}
 
 		getSections() {
