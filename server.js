@@ -59,6 +59,7 @@ app.use(passport.session());
 const User = models.User;
 const Section = models.Section;
 const Session = models.Session;
+const Assignment = models.Assignment;
 //Routes
 app.get('/login', function(req, res){
 	
@@ -185,8 +186,6 @@ app.post('/admin/getSections', function(req, res) {
 	});
 });
 
-//====Attendance routes====
-
 app.post('/admin/createSection', function(req, res) {
 
 	Section.create({
@@ -198,6 +197,7 @@ app.post('/admin/createSection', function(req, res) {
 	})
 });
 
+//====Attendance routes====
 app.post("/attendance/getAllSessions", function(req, res){
 	Session.findAll({
 		where:{
@@ -209,12 +209,24 @@ app.post("/attendance/getAllSessions", function(req, res){
 	})
 })
 
+app.post("/attendance/teacher", function(req, res){
+		//??
+	Section.findAll({
+		include: [{
+			model: User,
+			where: {id: req.id}
+		}]
+	}).then(function(sections){
+		console.log("(server.js 183) techerSections route: ", sections);
+		res.json(sections);
+	})
+})
+
+
+//====Assignment Routes ==================
 app.post('/getAssignments', function(req, res) {
-	console.log('OUTSIDE SECTION!!!!!!!!!!!!!!!!!!', req.body.sectionTitle);
 	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
 		section.getAssignments().then(function(assignments) {
-			console.log('INSIDE SECTION!!!!!!!!!!!!!!!!!!', assignments);
-
 			res.json(assignments);
 		});
 	});
@@ -231,20 +243,15 @@ app.post('/createAssignment', function(req, res) {
 	})
 });
 
-
-app.post("/attendance/teacher", function(req, res){
-		//??
-	Section.findAll({
-		include: [{
-			model: User,
-			where: {id: req.id}
-		}]
-	}).then(function(sections){
-		console.log("(server.js 183) techerSections route: ", sections);
-		res.json(sections);
-	})
-})
-
+app.post('/viewAssignment', function(req, res) {
+	Assignment.findOne({where: {id: req.body.assignmentId} })
+	.then(function(assignment) {
+		assignment.getUsers({where: {Email: req.session.userInfo.Email}})
+		.then(function(submission) {
+			res.json({studentSubmission: submission});
+		});
+	});
+});
 
 
 //====Slack Routes====
