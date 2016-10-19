@@ -69,7 +69,7 @@ class HomeworkPage extends Component {
 	render() {
 		const { UserInfo, UserSection } = this.props;
 		return (
-
+			{/*
 			<div className="homeworkBackground">
 				{UserInfo.UserInfo.Role === 'Admin' ? (
 					<CreateAssignment
@@ -94,6 +94,13 @@ class HomeworkPage extends Component {
 				<div className='wholeTable'>
 					<TableRow 
 						columnCount ={[
+
+							Instructions: 
+							Due:
+							SubmitStatus:
+							Type:
+							Resources:
+
 							{type: 'Header', value: 'TITLE'},
 							{type: 'Header', value: 'DUE DATE'},
 							{type: 'Header', value: 'TYPE'},
@@ -118,6 +125,7 @@ class HomeworkPage extends Component {
 					)}
 				</div>
 			</div>
+		*/}
 		);
 	}
 }

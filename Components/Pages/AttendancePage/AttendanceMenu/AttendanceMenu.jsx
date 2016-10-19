@@ -1,17 +1,18 @@
 import React, { Component } from "react";
-import { ButtonToolbar, DropdownButton, MenuItem } from "react-bootstrap";
+import { Form, FormGroup, FormControl, ButtonGroup, Button } from "react-bootstrap";
 import "./AttendanceMenu.css";
 
 
 
 class AttendanceMenu extends Component {
 
-	constructor(...args){
-		super(...args);
-		this.state = {
-			sections: []
-		}
-	}
+	// constructor(...args){
+	// 	super(args);
+
+	// 	this.state ={
+	// 		previous: "#"
+	// 	}
+	// }
 
 	componentWillMount() {
 		console.log("AttendanceMenu");
@@ -20,24 +21,45 @@ class AttendanceMenu extends Component {
 	}
 
 	render() {
-
+		const { sections, selectSection, switchDisplay } = this.props;
 		return (
 
-			<ButtonToolbar>
-			
-				<DropdownButton title="Section" id="dropdown-size-medium">
-					<MenuItem eventKey="1">Action</MenuItem>
-				</DropdownButton>
+			<form>
 
-				<DropdownButton title="Section" id="dropdown-size-medium">
-					<MenuItem eventKey="1">Action</MenuItem>
-				</DropdownButton>
+				<FormGroup>
 
-				<DropdownButton title="Student" id="dropdown-size-medium">
-					<MenuItem eventKey="1">Action</MenuItem>
-				</DropdownButton>
+					<FormControl 
+						componentClass="select" 
+						placeholder="select"
+						onChange={selectSection}
+					>
+						<option value="all">All Sections</option>
+
+						{sections.map((section, index) => 
+
+							<option key={index} value={section.id}>{section.Title}</option>
+						)}
+
+					</FormControl>
+
+				</FormGroup>
+
+				<ButtonGroup justified>
+
+					<ButtonGroup>
+						<Button onClick={switchDisplay} value="allSessions">All Class Sessions</Button>
+					</ButtonGroup>
+					<ButtonGroup>
+						<Button onClick={switchDisplay} value="singleSession">Single Class Session</Button>
+					</ButtonGroup>
+					<ButtonGroup>
+						<Button onClick={switchDisplay} value="singleStudent">Individual Student</Button>
+					</ButtonGroup>
+
+				</ButtonGroup>
 				
-			</ButtonToolbar>
+
+			</form>
 
 		);
 	}
@@ -45,3 +67,37 @@ class AttendanceMenu extends Component {
 
 
 export default AttendanceMenu;
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+onClick={switchView("allSessions")}
+onClick={switchView("singleSession")}
+onClick={switchView("singleStudent")}
+
+
+
+
+<FormGroup onChange={switchView}>
+
+					<Radio inline value="allSessions" bsClass="radio">
+						View by Session
+					</Radio>
+					<Radio inline value="singleSession" bsClass="radio">
+						View by Session
+					</Radio>
+					<Radio inline value="singleStudent" bsClass="radio">
+						View by Student
+					</Radio>
+			
+				</FormGroup>
+*/
