@@ -13,7 +13,7 @@ class TableColumn extends Component {
 			<div className={pageName + 'Col' + colNum + ' table' + colType}>
 				{colType === 'Button' ? (
 					<div>
-						<a href="#"><span className="glyphicon glyphicon-expand"></span></a>
+						
 					</div>
 				) : (
 					<p>{colData}</p>
