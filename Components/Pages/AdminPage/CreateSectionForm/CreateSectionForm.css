@@ -11,3 +11,14 @@
     color: white;
     padding-right: 53px;
 }
+
+@media screen and (max-width: 1200px){
+	.sectionField{
+		margin-right: 0;
+	}
+
+	#formBasicText{
+		margin-bottom: 30px;
+	}	
+
+}

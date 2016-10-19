@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { browserHistory, Router, Route, Link, withRouter } from 'react-router';
-// import $ from "jquery";
+import $ from "jquery";
 import "./AttendancePage.css";
 import AttendanceMenu from "./AttendanceMenu/AttendanceMenu.jsx";
 import AttendanceButton from "./AttendanceButton/AttendanceButton.jsx";

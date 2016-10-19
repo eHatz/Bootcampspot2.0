@@ -1,12 +1,12 @@
 #adminButton{
 	width: 100%;
+	color: white;
 }
 
 .formTitle{
 	color: #de0303;
     margin-left: 2%;
     font-size: 17px;
-    margin-bottom: -7px;
     margin-top: inherit;
 }
 
@@ -14,6 +14,10 @@
 	background-color: #e4e3e3;
     margin-top: 20px;
     margin-bottom: 4px;
+    padding-top: 20px;
+    padding-right: 52px;
+    padding-bottom: 20px;
+    padding-left: 52px;
 }
 .colorBlock{
 	margin-bottom: 42px;
