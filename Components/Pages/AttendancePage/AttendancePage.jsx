@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { browserHistory, Router, Route, Link, withRouter } from 'react-router';
-// import $ from "jquery";
+import $ from "jquery";
 import "./AttendancePage.css";
 import AttendanceMenu from "./AttendanceMenu/AttendanceMenu.jsx";
 import AttendanceButton from "./AttendanceButton/AttendanceButton.jsx";
@@ -16,7 +16,7 @@ class AttendancePage extends Component {
 
 		this.state = {
 			sections: [],
-			view: "singleStudent", //allSessions, or singleSession, or singleStudent
+			view: "", //allSessions, or singleSession, or singleStudent
 			isStudent: false,
 			displayData: []
 		}
@@ -97,7 +97,6 @@ class AttendancePage extends Component {
 	selectSection(event){
 
 		//Switches table view to show all sessions for the selected section
-		this.setState({view: "allSessions"});
 		console.log("selectSection event.target.value: ", event.target.value);
 
 		//Grab the sessions from the DB
@@ -109,8 +108,10 @@ class AttendancePage extends Component {
 	        }
 	    }).done(function(response){
 	    	//Save the sessions to state and render them to the page
-	    	this.setState({displayData: response})
-	    });
+	    	console.log("displayData selectSection: ", response);
+	    	this.setState({view: "allSessions"});
+	    	this.setState({displayData: response});
+	    }.bind(this));
 	}
 
 	attendanceButtonOnClick(){

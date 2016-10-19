@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TableRow from "../../../Table/TableRow/TableRow.jsx";
+import "./AttendanceSessionsView.css";
 
 class AttendanceSessionsView extends Component {
 
@@ -18,7 +19,7 @@ class AttendanceSessionsView extends Component {
 					{type: 'Header', value: 'Lesson Number'},
 					{type: 'Header', value: 'Subject'},
 				]}
-				pageName = 'AttendancePage'
+				pageName = 'AttendancePage_AttendanceSessionView'
 			/>
 
 			{
@@ -29,7 +30,7 @@ class AttendanceSessionsView extends Component {
 						{type: 'Data', value: item.LessonNumber},
 						{type: 'Data', value: item.Subject},
 					]}
-					pageName = 'AttendancePage'
+					pageName = 'AttendancePage_AttendanceSessionView'
 					key= {index}
 				/>
 			)}

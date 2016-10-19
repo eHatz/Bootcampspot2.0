@@ -1,15 +1,4 @@
-.attendancePageCol1 {
-	width: 40%;
-}
-.attendancePageCol2 {
-	width: 20%;
-}
-.attendancePageCol3 {
-	width: 20%;
-}
-.attendancePageCol4 {
-	width: 20%;
-}
+
 
 .attendanceBackground{
 	background-image: url('/assets/images/attendance_watermark.png');
@@ -23,17 +12,3 @@
 	
 }*/
 
-@media screen and (max-width: 768px){
-	
-	
-	
-	.attendancePageCol1 {
-	width: 27%;
-	}	
-	.attendancePageCol2 {
-	width: 18%%;
-	}
-	.attendancePageCol3 {
-	width: 26%;
-	}
-}
