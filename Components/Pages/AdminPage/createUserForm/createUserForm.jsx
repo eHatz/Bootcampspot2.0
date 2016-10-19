@@ -67,8 +67,8 @@ class createUserForm extends Component {
 				role: this.state.role,
 				sectionTitle: this.state.sectionTitle
 	        })
-		})
-		this.props.getUsers('nameAsc', 'all');
+		});
+		this.props.getUsers('sort-nameAsc', 'all')
 	    this.clearInput();
 	    event.preventDefault();
 	}

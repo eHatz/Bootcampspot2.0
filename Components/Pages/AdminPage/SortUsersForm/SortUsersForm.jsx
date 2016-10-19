@@ -6,26 +6,25 @@ class SortUsersForm extends Component {
 	constructor(props) {
 		super(props);
 		this.sortBy = this.sortBy.bind(this);
-
-	}
-
-	sortBy(event) {
-		this.setState({ sortBy : event.target.value });
-		this.props.getUsers(event.target.value, this.state.sortSection);
-	}
-	
-	sortSection(event) {
-		this.setState({ sortSection : event.target.value });
-		this.props.getUsers(this.state.sortBy, this.state.sortSection);
-
-		var sort= 'sort-nameAsc';
-		var section = 'all';
-		if (event.target.value.indexOf('sort-') !== -1) {
-			sort = event.target.value;
-		} else {
-			section = event.target.value;
+		this.state = {
+			sortSection: 'all',
+			sortBy: 'sort-nameAsc'
 		};
-		this.props.getUsers(sort, section);
+	}
+
+	
+	sortBy(event) {
+
+		if (event.target.value.indexOf('sort-') !== -1) {
+			const sort = event.target.value;
+			this.setState({sortBy: sort});
+			this.props.getUsers(sort, this.state.sortSection);
+		} else {
+			const section = event.target.value;
+			this.setState({sortSection: section});
+			this.props.getUsers(this.state.sortBy, section);
+		};
+		
 	}
 
 	render() {
