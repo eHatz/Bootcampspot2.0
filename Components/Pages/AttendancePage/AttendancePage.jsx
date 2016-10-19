@@ -42,6 +42,10 @@ class AttendancePage extends Component {
 		} else (this.getStudentViewData())
 	}
 
+	sectionFetch(){
+
+	}
+
 	getAdminViewData(){
 		fetch("/admin/getSections", {
 			credentials: 'include',
