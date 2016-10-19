@@ -3,11 +3,25 @@
 }
 
 .sectionDiv{
-	padding: 27px;
+	padding: 58px;
+    background-color: #e4e3e3;
+    margin-top: 29px;
+    margin-bottom: 28px;
 }
 
 #sectionButton{
 	width: 100%;
     color: white;
     padding-right: 53px;
+}
+
+@media screen and (max-width: 1200px){
+	.sectionField{
+		margin-right: 0;
+	}
+
+	#formBasicText{
+		margin-bottom: 30px;
+	}	
+
 }

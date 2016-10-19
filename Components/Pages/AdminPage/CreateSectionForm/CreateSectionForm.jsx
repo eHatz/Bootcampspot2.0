@@ -85,67 +85,67 @@ class CreateSectionForm extends Component {
 				<form onSubmit={this.sectionCreate}>
 					<FormGroup controlId="formBasicText">
 						<div className="col-md-2 sectionField">
-						<FormControl
-	      					type="text" 
-	      					value={this.state.Title}
-	      					placeholder="Section Title" 
-	      					onChange={this.handleTitleChange}
-	      				/>
+							<FormControl
+		      					type="text" 
+		      					value={this.state.Title}
+		      					placeholder="Section Title" 
+		      					onChange={this.handleTitleChange}
+		      				/>
 	      				</div>
 
 						<div className="col-md-2 sectionField">
-						<FormControl
-	      					type="text" 
-	      					value={this.state.Location}
-	      					placeholder="Location" 
-	      					onChange={this.LocationChange}
-	      				/>
+							<FormControl
+		      					type="text" 
+		      					value={this.state.Location}
+		      					placeholder="Location" 
+		      					onChange={this.LocationChange}
+		      				/>
 	      				</div>
 
 						<div className="col-md-2 sectionField">
-						<FormControl
-	      					type="text" 
-	      					value={this.state.Slack}
-	      					placeholder="Slack Key" 
-	      					onChange={this.SlackChange}
-	      				/>
+							<FormControl
+		      					type="text" 
+		      					value={this.state.Slack}
+		      					placeholder="Slack Key" 
+		      					onChange={this.SlackChange}
+		      				/>
 	      				</div>
 						
 						<div className="col-md-2 sectionField">
-						<FormControl
-	      					type="text" 
-	      					value={this.state.StartDate}
-	      					placeholder="Start Date" 
-	      					onChange={this.StartDateChange}
-	      				/>
+							<FormControl
+		      					type="text" 
+		      					value={this.state.StartDate}
+		      					placeholder="Start Date" 
+		      					onChange={this.StartDateChange}
+		      				/>
 	      				</div>
 
 	      				<div className="col-md-2 sectionField">
-						<FormControl
-	      					type="text" 
-	      					value={this.state.EndDate}
-	      					placeholder="End Date" 
-	      					onChange={this.EndDateChange}
-	      				/>
+							<FormControl
+		      					type="text" 
+		      					value={this.state.EndDate}
+		      					placeholder="End Date" 
+		      					onChange={this.EndDateChange}
+		      				/>
 	      				</div>
 
 						<div className="col-md-2 sectionField">
-						<FormControl
-							componentClass="select"
-							onChange={this.DaysChange}
-							placeholder="select"
-						>
-							<option value="Sunday">Sunday</option>
-							<option value="Monday">Monday</option>
-							<option value="Tuesday">Tuesday</option>
-							<option value="Wednesday">Wednesday</option>
-							<option value='Thursday'>Thursday</option>
-							<option value='Friday'>Friday</option>
-							<option value='Saturday'>Saturday</option>
-						</FormControl>
+							<FormControl
+								componentClass="select"
+								onChange={this.DaysChange}
+								placeholder="select"
+							>
+								<option value="Sunday">Sunday</option>
+								<option value="Monday">Monday</option>
+								<option value="Tuesday">Tuesday</option>
+								<option value="Wednesday">Wednesday</option>
+								<option value='Thursday'>Thursday</option>
+								<option value='Friday'>Friday</option>
+								<option value='Saturday'>Saturday</option>
+							</FormControl>
 						</div>
 						<div className="col-md-1 sectionField">
-					    <Button id="sectionButton" type="submit">Submit</Button>
+					    	<Button id="sectionButton" type="submit">Submit</Button>
 					    </div>
 					</FormGroup>
 
