@@ -60,6 +60,7 @@ const User = models.User;
 const Section = models.Section;
 const Session = models.Session;
 const Assignment = models.Assignment;
+
 //Routes
 app.get('/login', function(req, res){
 	
@@ -206,6 +207,63 @@ app.post("/attendance/getAllSessions", function(req, res){
 	})
 })
 
+app.post("/attendance/singleSession", function(req, res){
+	const sessionId = req.body.sessionId;
+	console.log("sessionId: ", sessionId)
+	var sectionId;
+	var thisSession;
+	var responseArray = [];
+
+	Session.findOne({where:{id: sessionId}})
+		.then((session) => {
+			console.log("server 221: ", session);
+			//Find the session and its associated section Id in the DB, and hold them in variables
+			thisSession = session;
+			sectionId = session.SectionId;
+			return sectionId;
+		}).then((sectionId) =>
+			//Grab the associated section from the DB;
+			Section.findOne({where:{id: sectionId}})
+		).then((section) =>
+			//Get all students for this section... 
+			section.getUsers({where:{Role: "Student"}})
+		).then((users) =>
+			//...and save them to our response array
+			users.forEach((user) =>
+				responseArray.push({
+					UserId: user.id,
+					Name: user.FirstName + " " + user.LastName,
+					Date: thisSession.Date,
+					Time: "---",
+					Status: "Absent"
+				})
+			)
+		).then(() =>
+			//Get all students who have registered their attendance for the session 
+			thisSession.getUsers()
+		).then((sessionAttendance) => {
+			//Compare to the students in our responseArray
+				sessionAttendance.forEach(function(attendanceInstance){
+					responseArray.forEach(function(responseUser){
+						//Once we match an attendance instance with the corresponding student...
+						if(attendanceInstance.UserId === responseUser.id){
+							//...if the the student created this attendanceInstance before the start of class...
+							if(attendanceInstance.createdAt <= thisSession.Date){
+								//Mark this student as early
+								return responseUser.Status = "Early";
+							} else {
+								//Otherwise, the student was late
+								return responseUser.Status = "Late";
+							}			
+						}
+						//Unmatched students never registered their attendance, and therefore remain "Absent"
+					})
+				})
+				console.log("/attendance/singleSession: ", responseArray);
+				return responseArray;
+		}).then((responseArray) => res.send(responseArray))
+})
+
 app.post("/attendance/teacher", function(req, res){
 		//??
 	Section.findAll({
@@ -218,7 +276,6 @@ app.post("/attendance/teacher", function(req, res){
 		res.json(sections);
 	})
 })
-
 
 //====Assignment Routes ==================
 app.post('/getAssignments', function(req, res) {
@@ -241,7 +298,8 @@ app.post('/createAssignment', function(req, res) {
 });
 
 app.post('/viewSubmission', function(req, res) {
-	const { UserInfo, assignmentId } = req.body;
+	const UserInfo = req.body.UserInfo;
+	const assignmentId = req.body.assignmentId;
 	Assignment.findOne({where: {id: assignmentId} })
 	.then(function(assignment) {
 		assignment.getUsers({where: {Email: UserInfo.UserInfo.Email}})
@@ -252,7 +310,8 @@ app.post('/viewSubmission', function(req, res) {
 });
 
 app.post('/viewAllSubmissions', function(req, res) {
-	const { UserInfo, assignmentId } = req.body;
+	const UserInfo = req.body.UserInfo;
+	const assignmentId = req.body.assignmentId;
 	Assignment.findOne({where: {id: assignmentId} })
 	.then(function(assignment) {
 		assignment.getUsers()
@@ -263,7 +322,9 @@ app.post('/viewAllSubmissions', function(req, res) {
 });
 
 app.post('/submitAssignment', function(req, res) {
-	const { assignmentLinks, userInfo, assignmentId } = req.body;
+	const assignmentLinks = req.body.assignmentLinks;
+	const UserInfo = req.body.UserInfo;
+	const assignmentId = req.body.assignmentId;
 	Assignment.findOne({where: {id: assignmentId} })
 	.then(function(assignment) {
 		User.findOne({where: {Email: userInfo.UserInfo.Email}}).then(function(user) {
