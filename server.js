@@ -60,6 +60,7 @@ const User = models.User;
 const Section = models.Section;
 const Session = models.Session;
 const Assignment = models.Assignment;
+
 //Routes
 app.get('/login', function(req, res){
 	
@@ -208,6 +209,47 @@ app.post("/attendance/getAllSessions", function(req, res){
 		res.json(sessions);
 	})
 })
+
+app.post("/attendance/singleSession", function(req, res){
+	const sessionId = req.data;
+	let sectionId;
+	let thisSession;
+	let response = [];
+
+	Session.findOne({where:{id: sessionId}})
+		.then((session) => 
+			//Find the session and its associated section Id in the DB, and hold them in variables
+			thisSession = session;
+			sectionId = session.SectionId;
+			return sectionId;
+		).then((sectionId) =>
+			//Grab the associated section from the DB;
+			Section.findOne(where:{id: sectionId})
+		).then((section)=>
+			//Get all students for this section... 
+			section.getUsers()
+		).then((users) =>
+			//...and save them to our response array
+			users.forEach(user){
+				response.push({
+					Name: user.FirstName + " " + user.LastName,
+					Date: thisSession.Date,
+					Time: "---",
+					Status: "Absent"
+				})
+			}
+		).then()
+
+	console.log("/attendance/singleSession: ", )
+
+})
+
+/*
+Name:
+date:
+time: 
+status:
+*/
 
 app.post("/attendance/teacher", function(req, res){
 		//??

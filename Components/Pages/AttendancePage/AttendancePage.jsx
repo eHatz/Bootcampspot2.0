@@ -139,13 +139,16 @@ goAjax(route, data, stateProperty){
 		// )
 	}
 
-	switchDisplay(event){
-		this.setState({view: event.target.value});
-		// console.log("switchView: ", this.state.view);
+	viewSingleSession(event){
+		let sessionId = event.target.value;
+		this.goAjax("/attendance/singleSession", sessionId, displayData)
+			.then()
+		//goAjax(route, data, stateProperty){}
+
 	}
 
-	//This method fires when an admin or teacher selects a section to view
 
+	//This method fires when an admin or teacher selects a section to view
 	selectSection(event){
 
 		let index = event.target.value;

@@ -8,7 +8,7 @@ class AttendanceSessionsView extends Component {
 //just a placeholder
 	render(){
 
-		const { displayData } = this.props;
+		const { displayData, viewSingleSession } = this.props;
 		console.log("displayData: ", displayData);
 
 		return (
@@ -34,6 +34,8 @@ class AttendanceSessionsView extends Component {
 						]}
 						pageName = 'AttendancePage_AttendanceSessionView'
 						key= {index}
+						value={item.id}
+						onClick={viewSingleSession}
 					/>
 				)}
 
