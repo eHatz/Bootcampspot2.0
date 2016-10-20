@@ -25,7 +25,10 @@ class AttendanceSessionsView extends Component {
 
 				{
 					displayData.map((item, index) =>
-						<div onClick={viewSingleSession}>
+						<div 
+							onClick={viewSingleSession}
+							value={item.id}
+						>
 
 							<TableRow
 								columnCount ={[

@@ -93,8 +93,11 @@ goAjax(route, data, stateProperty){
 	}
 
 	viewSingleSession(event){
-		let sessionId = event.target.value;
-		this.goAjax("/attendance/singleSession", sessionId, displayData)
+		const sessionId = event.currentTarget.getAttribute('value');
+		const ajaxData = {sessionId: sessionId};
+		console.log("sessionId: ", sessionId);
+		// console.log("event: ", event.target);
+		this.goAjax("/attendance/singleSession", ajaxData, "displayData")
 			.then(function(response){
 				this.setState({
 					view: "singleSession"
@@ -177,22 +180,6 @@ goAjax(route, data, stateProperty){
 		
 	}
 
-	/*
-$.ajax({
-	        url: "attendance/getAllSessions",
-	        type: "POST",
-	        data:{
-	        	section: event.target.value
-	        }
-	    }).done(function(response){
-	    	//Save the sessions to state and render them to the page
-	    	// console.log("displayData selectSection: ", response);
-	    	this.setState({
-	    		view: "allSessions",
-	    		displayData: response
-	    	});
-	    }.bind(this));
-	*/
 
 	attendanceButtonOnClick(){
 

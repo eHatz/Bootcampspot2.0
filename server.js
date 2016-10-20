@@ -211,13 +211,15 @@ app.post("/attendance/getAllSessions", function(req, res){
 })
 
 app.post("/attendance/singleSession", function(req, res){
-	const sessionId = req.data;
+	const sessionId = req.body.sessionId;
+	console.log("sessionId: ", sessionId)
 	let sectionId;
 	let thisSession;
 	let responseArray = [];
 
 	Session.findOne({where:{id: sessionId}})
 		.then((session) => {
+			console.log("server 221: ", session);
 			//Find the session and its associated section Id in the DB, and hold them in variables
 			thisSession = session;
 			sectionId = session.SectionId;
@@ -227,7 +229,7 @@ app.post("/attendance/singleSession", function(req, res){
 			Section.findOne({where:{id: sectionId}})
 		).then((section) =>
 			//Get all students for this section... 
-			section.getUsers()
+			section.getUsers({where:{Role: "Student"}})
 		).then((users) =>
 			//...and save them to our response array
 			users.forEach((user) =>
@@ -249,7 +251,7 @@ app.post("/attendance/singleSession", function(req, res){
 						//Once we match an attendance instance with the corresponding student...
 						if(attendanceInstance.UserId === responseUser.id){
 							//...if the the student created this attendanceInstance before the start of class...
-							if(attendanceInstance.createdAt <= session.Date){
+							if(attendanceInstance.createdAt <= thisSession.Date){
 								//Mark this student as early
 								return responseUser.Status = "Early";
 							} else {
@@ -260,9 +262,9 @@ app.post("/attendance/singleSession", function(req, res){
 						//Unmatched students never registered their attendance, and therefore remain "Absent"
 					})
 				})
+				console.log("/attendance/singleSession: ", responseArray);
 				return responseArray;
 		}).then((responseArray) => res.send(responseArray))
-	console.log("/attendance/singleSession: ", responseArray);
 })
 
 app.post("/attendance/teacher", function(req, res){

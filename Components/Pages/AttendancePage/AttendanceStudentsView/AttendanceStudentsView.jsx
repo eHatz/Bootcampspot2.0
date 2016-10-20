@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import TableRow from "../../../Table/TableRow/TableRow.jsx";
-
+import "./AttendanceStudentsView.css";
 
 class AttendanceStudentsView extends Component {
 
 	render(){
+
+		const { displayData } = this.props
+
 		return (
 
 			<div>
@@ -18,7 +21,7 @@ class AttendanceStudentsView extends Component {
 					pageName = 'AttendancePage_AttendanceStudentsView'
 				/>
 
-				{data.map((item, index) =>
+				{displayData.map((item, index) =>
 					<TableRow
 						columnCount ={[
 							{type: 'Data', value: item.Name},
