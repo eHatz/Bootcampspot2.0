@@ -1,12 +1,16 @@
 .ptag{
-	color:gray;
+	color:#343333;
 	font-family: 'Roboto Condensed', sans-serif; 
 	font-size: 18px;
 	padding-top: 5%;
+	margin-left: 0;
+	margin-bottom: 7%;
 }
 .quesTut{
 	color: black;
 	font-family: 'Roboto Condensed', sans-serif; 
+	font-size: 24px;
+	margin-left: 6%;
 }
 #resetButtTut{
 	background-color: gray;
@@ -16,8 +20,154 @@
 	font-size: 18px;
 
 }
+.radioButtTut{
+	color: black;
+	font-size: 20px;
+}
+.tutTxt{
+	margin-left: 0;
+}
+.cohortSel{
+	color: black;
+	font-size: 22px;
+	margin-left: 6%;
+}
+.weekSel{
+	color:black;
+	font-size: 22px;
+	margin-left: 6%;
+}
+#weekDropdown{
+	margin-left: 6%;
+}
+#cohDropdown{
+	margin-left: 6%;
+}
+.rightSideTut{
+	float:right;
+	margin-right: 4%;
+	margin-top: -3%;
+}
+.leftSideTut{
+	float:left;
+	margin-left: 6%;
+	margin-top: 3%;
+}
+.tutComment{
+	color:black;
+	font-size: 22px;
+}
+.chkbx{
+	margin-left: 71px;
+	color:black;
+	font-size: 18px;
+}
+.multRads3{
+	margin-left: 27%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+.radioButtTut2{
+	color:black;
+	display: inline-block;
+	font-size: 20px;
+	margin-left: 15%;
+}
+
+input[type=radio]{
+
+}
+#bubble{
+	width: 100%;
+	margin-left: 39%;
+}
+#bubble2{
+	width:15%;
+}
+#submitTut{
+	background-color: red;
+}
+/*================================iPad*/
+
+@media screen and (max-width: 960px){
+	.ptag{
+		margin-right: 9%;
+	}
+
+	.tutorInput{
+		margin-left: 5%;
+		width:85%;
+	}
+	#cohDropdown{
+		margin-left: 7%;
+		width:82%;
+
+	}
+	.cohortSel{
+		margin-left: 7%;
+
+	}
+	#weekDropdown{
+		margin-left: 7%;
+		width: 82%;
+	}
+	.tutTxt{
+		margin-left: 5%;
+	}
+	.weekSel{
+		margin-left: 
+	}
+	.quesTut{
+		font-size: 22px;
+		margin-left: 7%;
+	}
+	.radioButtTut2{
+		color: black;
+		font-size: 18px;
+		display: inline-block;
+		margin-left: 37px;
+	}
+	.multRads3{
+		margin-left: 30%;
+		margin-top: 3%;
+	}
+	.leftSideTut{
+		margin-left: 7%;
+		float: left;
+		margin-top: 2%;
+
+	}
+	.rightSideTut{
+		float: right;
+		margin-right: 7%;
+		margin-top: -17px;
+	}
+	#submitTut{
+		background-color: red;
+
+	}
+	.tutComment{
+		color: black;
+		font-size: 22px;
+		margin-top: 4%;
+	}
+	input[type=radio]{
+		width:20px;
+		margin-left: -24px;
+	}
+	.cohortSel{
+		color: black;
+		font-size: 22px
+	}
+	.weekSel{
+		color: black;
+		margin-left: 7%;
+		font-size: 22px
+	}
 
 
+
+}
 /*======================iPhone*/
 
 
@@ -30,34 +180,107 @@
 		margin-left: 5%;
 	}
 	#cohDropdown{
-		margin-left: 7%;
-		width: 85%;
+		margin-left: 6%;
+		width: 86%;
 	}
 	.cohortSel{
-		margin-left: 7%;
+		margin-left: 6%;
 	}
 	#weekDropdown{
-		margin-left: 7%;
-		width:85%;
+		margin-left: 6%;
+		width:86%;
 	}
 	.weekSel{
-		margin-left: 7%;
+		margin-left: 6%;
 	
 	}
 	.quesTut{
 		font-size:22px;
 		margin-left: 7%;
+		color: black;
 	}
 	.leftSideTut{
 		font-size: 17px;
 		float:left;
+		margin-left: 7%;
+		margin-top: 1%;
 	}
 	.rightSideTut{
 		font-size:17px;
 		float:right;
+		margin-right: 15%;
+		margin-top: -4%;
+		width: 35px;
+	}
+	.radioButtTut2{
+		width: 35px;
+		color:black;
+		display: inline-block;
+		margin-left: 12%;
+
+	}
+	.radioButtTut3{
+		margin-left: 11%;
+		color:black;
+		font-size: 20px;
+
 	}
 
+	.lastQ{
+		font-size: 22px;
+		margin-left: 7%;
+		padding-bottom: 3%;
+	}
+	.lastQInput{
+		margin-left: 7%;
+		width:85%;
+		margin-bottom: 5%;
+	}
+	.tutComment{
+		margin-left: 4%;
+		color: black;
+		font-size: 22px;
+		margin-top: 5%;
+	}
+	#commentSpace{
+		margin-left: 4%;
+		width:93%;
+	}
+	input[type=radio] {
+		width:20px;
+		margin-left: -24px;
+	}
+	#submitTut{
+		background-color: red;
+	}
+	
+	.radioButtTut2{
+		
+		font-size: 19px;
+	}
+	.radioButtTut{
+		width:3.3em;
+	}
+	
+	.multRads3{
+		margin-left: 26%;
+	}
+	#resetButtTut{
+		margin-left: 7%;
+	}
+
+
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
