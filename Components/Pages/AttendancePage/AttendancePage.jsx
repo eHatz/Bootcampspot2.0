@@ -29,6 +29,7 @@ class AttendancePage extends Component {
 		this.userIsTeacher = this.userIsTeacher.bind(this);
 		this.userIsStudent = this.userIsStudent.bind(this);
 		this.viewSingleSession = this.viewSingleSession.bind(this);
+		this.selectStudentHandler = this.selectStudentHandler.bind(this);
 		this.viewSingleStudent = this.viewSingleStudent.bind(this);
 		this.selectSection = this.selectSection.bind(this);
 		this.attendanceButtonOnClick = this.attendanceButtonOnClick.bind(this);
