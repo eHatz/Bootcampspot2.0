@@ -6,6 +6,7 @@ import CreateUserForm from './createUserForm/createUserForm.jsx';
 import TableRow from "../../Table/TableRow/TableRow.jsx";
 import SortUsersForm from './SortUsersForm/SortUsersForm.jsx';
 import CreateSectionForm from './CreateSectionForm/CreateSectionForm.jsx';
+import $ from "jquery";
 
 const AdminPage = withRouter(
 	class AdminPage extends Component {
@@ -27,10 +28,13 @@ const AdminPage = withRouter(
 			const { UserInfo, location, router } = this.props;
 
 			if (UserInfo.UserInfo.Role === undefined) {
-				fetch('/login', {credentials: 'include'})
-				.then((response) => response.json())
-				.then((json) => {
-					if (json.userData.Role !== 'Admin') {
+
+				$.ajax({
+					url: '/login',
+					type: "GET"
+				})
+				.then((response) => {
+					if (response.userData.Role !== 'Admin') {
 						router.replace('/#');
 					};
 				})
@@ -45,39 +49,27 @@ const AdminPage = withRouter(
 		}
 		//lists all users
 		getUsers(sort, section) {
-			fetch('/admin/getUsers', {
-				credentials: 'include',
-				method: 'POST',
-				headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({
+			$.ajax({
+				url: '/admin/getUsers',
+				type: "POST",
+				data: {
 		        	sort: sort,
 					section: section
-		        })
-			})
-			.then((response) => response.json())
-			.then((json) => {
-				this.setState({userList: json});
+		        }
+			}).then((response) => {
+				this.setState({userList: response.users});
 			});
-			console.log('RUNNING GET USERS');
 		}
 
 		getSections() {
-			fetch('/admin/getSections', {
-				credentials: 'include',
-				method: 'POST',
-				headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-				}
-			})
-			.then((response) => response.json())
-			.then((json) => {
-				this.setState({sectionList: json});
+			$.ajax({
+				url: '/admin/getSections',
+				type: "POST"
+			}).then((response) => {
+				this.setState({sectionList: response.section});
 			});
 		}
+
 		//activates/shows user tab
 		userTabClick(event) {
 			this.setState({ 

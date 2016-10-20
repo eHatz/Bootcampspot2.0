@@ -6,6 +6,7 @@ import Sidebar from "react-sidebar";
 import Navbar from "./Navbar/Navbar.jsx";
 import "./Application.css";
 import auth from '../auth';
+import $ from "jquery";
 
 
 
@@ -39,17 +40,19 @@ class Application extends Component {
 	componentWillMount() {
 		auth.onChange = this.updateAuth.bind(this);
 		auth.login();
-		fetch('/login', {credentials: 'include'})
-		.then((response) => response.json())
-		.then((json) => {
-			this.setState({ UserInfo: json.userData, UserSection: json.userSection })
+		$.ajax({
+			url: '/login',
+			type: "GET"
+		})
+		.then((response) => {
+			this.setState({ UserInfo: response.userData, UserSection: response.userSection })
 			console.log('application page', this.state.UserInfo)
 			//prevents user from accessing the website if their user info/session has expired
-			if (!json.userData) {
+			if (!response.userData) {
 				this.logout();
-			}
-		})
-	}
+			};
+		});
+	};
 
 	render() {
 		return (

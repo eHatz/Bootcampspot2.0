@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel, Checkbox, Button } from "react-bootstrap";
 import "./CreateSectionForm.css";
+import $ from "jquery";
 
 class CreateSectionForm extends Component {
 	constructor(props) {
@@ -58,22 +59,20 @@ class CreateSectionForm extends Component {
 	}
 
 	sectionCreate(event){
-		fetch('/admin/createSection', {
-			credentials: 'include',
-			method: 'POST',
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
+		$.ajax({
+			url: '/admin/createSection',
+			type: "POST",
+			data: {
 				Title: this.state.Title,
 				Location: this.state.Location,
 				Slack: this.state.Slack,
 				StartDate: this.state.StartDate,
 				EndDate: this.state.EndDate
-	        })
-		})
-		this.props.getSections();
+	        }
+		}).then((response) => {
+			this.props.getSections();
+		});
+
 	    this.clearInput();
 	    event.preventDefault();
 	}

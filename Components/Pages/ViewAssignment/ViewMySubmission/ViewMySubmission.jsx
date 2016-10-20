@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./ViewMySubmission.css";
 import { FormGroup, FormControl, ControlLabel, Button } from "react-bootstrap";
+import $ from "jquery";
+
 class ViewMySubmission extends Component {
 	constructor(props) {
 		super(props);
@@ -18,20 +20,18 @@ class ViewMySubmission extends Component {
 	}
 
 	submitAssignment(event){
-
-		fetch('/submitAssignment', {
-			credentials: 'include',
-			method: 'POST',
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
+		$.ajax({
+			url: '/submitAssignment',
+			type: "POST",
+			data: {
 	        	assignmentLinks: this.state.assignmentLinks,
 	        	userInfo: this.props.UserInfo,
 	        	assignmentId: this.props.assignmentId
-	        })
+	        }
+		}).then((response) => {
+			
 		});
+
 	    event.preventDefault();
 	}
 		

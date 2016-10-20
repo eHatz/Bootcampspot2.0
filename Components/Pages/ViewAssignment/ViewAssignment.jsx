@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "./ViewAssignment.css";
 import ViewMySubmission from './ViewMySubmission/ViewMySubmission.jsx';
 import TableRow from '../../Table/TableRow/TableRow.jsx'
-
+import $ from "jquery";
+		
 class ViewAssignment extends Component {
 		constructor(props, context) {
 
@@ -20,11 +21,12 @@ class ViewAssignment extends Component {
 			const { UserInfo, UserSection} = this.props;
 			this.setState({userRole: UserInfo.UserInfo.Role})
 			if (UserInfo.UserInfo.Role === undefined) {
-				fetch('/login', {credentials: 'include'})
-				.then((response) => response.json())
-				.then((json) => {
-					this.setState({userRole: json.userData.Role})
-				})
+				$.ajax({
+					url: '/login',
+					type: "GET"
+				}).then((response) => {
+					this.setState({userRole: response.userData.Role})
+				});
 			};
 			this.getHwSubmission(this.props.params.id);
 			this.getAllSubmissions(this.props.params.id);
@@ -35,21 +37,15 @@ class ViewAssignment extends Component {
 			const { UserInfo } = this.props;
 			
 			if (UserInfo.UserInfo.Role === 'Student') {
-				fetch('/viewSubmission', {
-					credentials: 'include',
-					method: 'POST',
-					headers: {
-					'Accept': 'application/json',
-					'Content-Type': 'application/json'
-					},
-					body: JSON.stringify({
+				$.ajax({
+					url: '/viewSubmission',
+					type: "POST",
+					data: {
 						assignmentId: assignmentId,
 						UserInfo: UserInfo
-			        })
-				})
-				.then((response) => response.json())
-				.then((json) => {
-					this.setState({submission: json.studentSubmission, assignment: json.assignment});
+			        }
+				}).then((response) => {
+					this.setState({submission: response.studentSubmission, assignment: response.assignment});
 				});
 			};
 		}
@@ -58,22 +54,16 @@ class ViewAssignment extends Component {
 			const { UserInfo } = this.props;
 			
 			if (UserInfo.UserInfo.Role === 'Admin' || UserInfo.UserInfo.Role === 'Teacher') {
-				fetch('/viewAllSubmissions', {
-					credentials: 'include',
-					method: 'POST',
-					headers: {
-					'Accept': 'application/json',
-					'Content-Type': 'application/json'
-					},
-					body: JSON.stringify({
+
+				$.ajax({
+					url: '/viewAllSubmissions',
+					type: "POST",
+					data: {
 						assignmentId: assignmentId,
 						UserInfo: UserInfo
-			        })
-				})
-				.then((response) => response.json())
-				.then((json) => {
-					console.log(json.studentSubmission)
-					this.setState({allSubmissions: json.studentSubmission, assignment: json.assignment});
+			        }
+				}).then((response) => {
+					this.setState({allSubmissions: response.studentSubmission, assignment: response.assignment});
 				});
 			};
 		}
