@@ -36,7 +36,7 @@ class AttendanceMenu extends Component {
 
 						{sections.map((section, index) => 
 
-							<option key={index} value={section.id}>{section.Title}</option>
+							<option key={index} value={index}>{section.Title}</option>
 						)}
 
 					</FormControl>
