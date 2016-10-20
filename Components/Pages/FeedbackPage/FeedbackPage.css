@@ -97,12 +97,9 @@ input[type=radio] {
 
 }
 
+
 #submitButt{
-	width:20%;
-	background-color: #FF0000;
-	
-}
-.questionTextRad{
+
 		margin-left: 3%;
 		font-size: 22px;
 	}

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./HomeworkPage.css";
 import CreateAssignment from "./CreateAssignment/CreateAssignment.jsx";
+import SortAssignments from "./SortAssignments/SortAssignments.jsx";
 import CreateAssignmentTeacher from "./CreateAssignmentTeacher/CreateAssignmentTeacher.jsx";
 import TableRow from "../../Table/TableRow/TableRow.jsx";
 class HomeworkPage extends Component {
@@ -18,21 +19,26 @@ class HomeworkPage extends Component {
 		componentWillMount() {
 			const { UserInfo, UserSection} = this.props;
 			this.setState({userRole: UserInfo.UserInfo.Role})
+			//prevents errors from occuring if page is reloaded and state is lost
 			if (UserInfo.UserInfo.Role === undefined) {
 				fetch('/login', {credentials: 'include'})
 				.then((response) => response.json())
 				.then((json) => {
 					this.setState({userRole: json.userData.Role})
+					if (json.userData.Role !== 'Admin') {
+						this.getAssignments(json.userSection.Title);
+					};
 				})
 			};
-			this.getAssignments('The Illest Section');
+			// && UserSection.UserSection prevents error on reload of page
+			if (UserInfo.UserInfo.Role !== 'Admin' && UserSection.UserSection) {
+				this.getAssignments(UserSection.UserSection.Title);
+			}
 			this.getSections();
 		}
 
 		getAssignments(sectionTitle) {
 			const { UserInfo } = this.props;
-
-			//if (UserInfo.UserInfo.Role !== 'Admin') {
 				fetch('/getAssignments', {
 					credentials: 'include',
 					method: 'POST',
@@ -48,7 +54,6 @@ class HomeworkPage extends Component {
 				.then((json) => {
 					this.setState({assignmentList: json});
 				});
-			//};
 		}
 		
 		getSections() {
@@ -72,11 +77,18 @@ class HomeworkPage extends Component {
 
 			<div className="homeworkBackground">
 				{UserInfo.UserInfo.Role === 'Admin' ? (
-					<CreateAssignment
-						UserInfo={UserInfo}
-						UserSection={UserSection}
-						sectionList= {this.state.sectionList}
-					/>
+					<div>
+						<CreateAssignment
+							UserInfo={UserInfo}
+							UserSection={UserSection}
+							sectionList= {this.state.sectionList}
+							getAssignments = {this.getAssignments}
+						/>
+						<SortAssignments
+							sectionList= {this.state.sectionList}
+							getAssignments = {this.getAssignments}
+						/>
+					</div>
 				) : (
 					null
 				)}
@@ -86,6 +98,7 @@ class HomeworkPage extends Component {
 						UserInfo={UserInfo}
 						UserSection={UserSection}
 						sectionList= {this.state.sectionList}
+						getAssignments = {this.getAssignments}
 					/>
 				) : (
 					null
