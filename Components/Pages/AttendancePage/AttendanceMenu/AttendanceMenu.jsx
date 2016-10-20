@@ -33,11 +33,10 @@ class AttendanceMenu extends Component {
 						placeholder="select"
 						onChange={selectSection}
 					>
-						<option value="all">All Sections</option>
 
 						{sections.map((section, index) => 
 
-							<option key={index} value={section.id}>{section.Title}</option>
+							<option key={index} value={index}>{section.Title}</option>
 						)}
 
 					</FormControl>

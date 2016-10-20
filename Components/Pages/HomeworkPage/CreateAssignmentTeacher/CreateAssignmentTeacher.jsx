@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel, Checkbox, Button } from "react-bootstrap";
-import "./createAssignmentTeacher.css";
+import "./CreateAssignmentTeacher.css";
 
 class createAssignmentTeacher extends Component {
 	constructor(props) {
