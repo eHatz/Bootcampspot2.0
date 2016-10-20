@@ -28,7 +28,7 @@ class AttendancePage extends Component {
 		this.userIsAdmin = this.userIsAdmin.bind(this);
 		this.userIsTeacher = this.userIsTeacher.bind(this);
 		this.userIsStudent = this.userIsStudent.bind(this);
-		this.switchDisplay = this.switchDisplay.bind(this);
+		this.viewSingleSession = this.viewSingleSession.bind(this);
 		this.selectSection = this.selectSection.bind(this);
 		this.attendanceButtonOnClick = this.attendanceButtonOnClick.bind(this);
 	}
@@ -92,6 +92,18 @@ goAjax(route, data, stateProperty){
 
 	}
 
+	viewSingleSession(event){
+		let sessionId = event.target.value;
+		this.goAjax("/attendance/singleSession", sessionId, displayData)
+			.then(function(response){
+				this.setState({
+					view: "singleSession"
+				})
+				console.log("viewSingleSession: ", response)
+			}.bind(this))
+		//goAjax(route, data, stateProperty){}
+	}
+
 	userIsAdmin(){
 		//Retrieve all sections
 		this.goAjax("/admin/getSections", null, "sections")
@@ -105,7 +117,6 @@ goAjax(route, data, stateProperty){
 		    		displayData: this.state.sessions
 	    		});
 			}.bind(this))
-
 	}
 		
 	userIsTeacher(){
@@ -137,14 +148,6 @@ goAjax(route, data, stateProperty){
 		// }).then((response) => response.json())
 		// .then((json) =>  this.setState({sessions: json});
 		// )
-	}
-
-	viewSingleSession(event){
-		let sessionId = event.target.value;
-		this.goAjax("/attendance/singleSession", sessionId, displayData)
-			.then()
-		//goAjax(route, data, stateProperty){}
-
 	}
 
 
@@ -208,7 +211,6 @@ $.ajax({
 						):(
 						<AttendanceMenu
 							selectSection={this.selectSection}
-							switchDisplay={this.switchDisplay}
 							sections={this.state.sections}
 						/>)
 					}
@@ -220,11 +222,12 @@ $.ajax({
 					{this.state.view === "allSessions" ? 
 						<AttendanceSessionsView
 							displayData={this.state.displayData}
+							viewSingleSession={this.viewSingleSession}
 						/>
 						: 
 						this.state.view === "singleSession" ?
 							<AttendanceStudentsView
-
+								displayData={this.state.displayData}
 							/>
 							:						
 							<AttendanceStudentView

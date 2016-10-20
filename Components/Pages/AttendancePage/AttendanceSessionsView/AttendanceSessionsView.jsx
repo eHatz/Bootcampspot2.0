@@ -25,19 +25,21 @@ class AttendanceSessionsView extends Component {
 
 				{
 					displayData.map((item, index) =>
+						<div onClick={viewSingleSession}>
 
-					<TableRow
-						columnCount ={[
-							{type: 'Data', value: item.Date},
-							{type: 'Data', value: item.LessonNumber},
-							{type: 'Data', value: item.Subject},
-						]}
-						pageName = 'AttendancePage_AttendanceSessionView'
-						key= {index}
-						value={item.id}
-						onClick={viewSingleSession}
-					/>
-				)}
+							<TableRow
+								columnCount ={[
+									{type: 'Data', value: item.Date},
+									{type: 'Data', value: item.LessonNumber},
+									{type: 'Data', value: item.Subject},
+								]}
+								pageName = 'AttendancePage_AttendanceSessionView'
+								key= {index}
+								value={item.id}
+							/>
+						</div>
+					)
+				}
 
 			</div>
 

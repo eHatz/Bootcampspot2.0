@@ -232,7 +232,7 @@ app.post("/attendance/singleSession", function(req, res){
 			//...and save them to our response array
 			users.forEach((user) =>
 				responseArray.push({
-					UserId: user.id
+					UserId: user.id,
 					Name: user.FirstName + " " + user.LastName,
 					Date: thisSession.Date,
 					Time: "---",
@@ -242,37 +242,28 @@ app.post("/attendance/singleSession", function(req, res){
 		).then(() =>
 			//Get all students who have registered their attendance for the session 
 			thisSession.getUsers()
-		).then((sessionAttendance) => 
+		).then((sessionAttendance) => {
 			//Compare to the students in our responseArray
-			sessionAttendance.forEach((attendanceInstance) =>
-				responseArray.forEach((responseUser) =>
-					//Once we match an attendance instance with the corresponding student...
-					if(attendanceInstance.UserId === responseUser.id){
-						//...if the the student created this attendanceInstance before the start of class...
-						if (attendanceInstance.createdAt <= session.Date){
-							//Mark this student as early
-							return responseUser.Status = "Early";
-						} else {
-							//Otherwise, the student was late
-							return responseUser.Status = "Late";
-						}			
-					}
-					//Unmatched students never registered their attendance, and therefore remain "Absent"
-				)
-			)
-			return responseArray;
-		).then((responseArray) => 
-			res.send(responseArray);
-		)
+				sessionAttendance.forEach(function(attendanceInstance){
+					responseArray.forEach(function(responseUser){
+						//Once we match an attendance instance with the corresponding student...
+						if(attendanceInstance.UserId === responseUser.id){
+							//...if the the student created this attendanceInstance before the start of class...
+							if(attendanceInstance.createdAt <= session.Date){
+								//Mark this student as early
+								return responseUser.Status = "Early";
+							} else {
+								//Otherwise, the student was late
+								return responseUser.Status = "Late";
+							}			
+						}
+						//Unmatched students never registered their attendance, and therefore remain "Absent"
+					})
+				})
+				return responseArray;
+		}).then((responseArray) => res.send(responseArray))
 	console.log("/attendance/singleSession: ", responseArray);
 })
-
-/*
-Name:
-date:
-time: 
-status:
-*/
 
 app.post("/attendance/teacher", function(req, res){
 		//??
@@ -286,7 +277,6 @@ app.post("/attendance/teacher", function(req, res){
 		res.json(sections);
 	})
 })
-
 
 //====Assignment Routes ==================
 app.post('/getAssignments', function(req, res) {

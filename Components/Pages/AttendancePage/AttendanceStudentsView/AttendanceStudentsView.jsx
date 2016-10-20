@@ -1,36 +1,35 @@
 import React, { Component } from "react";
 import TableRow from "../../../Table/TableRow/TableRow.jsx";
 
-const data = [];
-
 
 class AttendanceStudentsView extends Component {
 
-//just a placeholder
 	render(){
 		return (
 
 			<div>
-			<TableRow 
-				columnCount ={[
-					{type: 'Header', value: 'DATE'},
-					{type: 'Header', value: 'TIME'},
-					{type: 'Header', value: 'ATTENDANCE'},
-				]}
-				pageName = 'attendancePage'
-			/>
-
-			{data.map((item, index) =>
-				<TableRow
+				<TableRow 
 					columnCount ={[
-						{type: 'Data', value: item.date},
-						{type: 'Data', value: item.time},
-						{type: 'Data', value: item.attendance},
+						{type: 'Header', value: 'Name'},
+						{type: 'Header', value: 'Date'},
+						{type: 'Header', value: 'Time'},
+						{type: 'Header', value: 'Status'},
 					]}
-					pageName = 'attendancePage'
-					key= {index}
+					pageName = 'AttendancePage_AttendanceStudentsView'
 				/>
-			)}
+
+				{data.map((item, index) =>
+					<TableRow
+						columnCount ={[
+							{type: 'Data', value: item.Name},
+							{type: 'Data', value: item.Date},
+							{type: 'Data', value: item.Time},
+							{type: 'Data', value: item.Status},
+						]}
+						pageName = 'AttendancePage_AttendanceStudentsView'
+						key= {index}
+					/>
+				)}
 
 			</div>
 
@@ -38,6 +37,16 @@ class AttendanceStudentsView extends Component {
 	}
 
 }
+
+/*
+Name:
+date:
+time: 
+status:
+
+			
+
+*/
 
 export default AttendanceStudentsView
 
