@@ -244,7 +244,8 @@ app.post('/createAssignment', function(req, res) {
 });
 
 app.post('/viewSubmission', function(req, res) {
-	const { UserInfo, assignmentId } = req.body;
+	const UserInfo = req.body.UserInfo;
+	const assignmentId = req.body.assignmentId;
 	Assignment.findOne({where: {id: assignmentId} })
 	.then(function(assignment) {
 		assignment.getUsers({where: {Email: UserInfo.UserInfo.Email}})
@@ -255,7 +256,8 @@ app.post('/viewSubmission', function(req, res) {
 });
 
 app.post('/viewAllSubmissions', function(req, res) {
-	const { UserInfo, assignmentId } = req.body;
+	const UserInfo = req.body.UserInfo;
+	const assignmentId = req.body.assignmentId;
 	Assignment.findOne({where: {id: assignmentId} })
 	.then(function(assignment) {
 		assignment.getUsers()
@@ -266,7 +268,9 @@ app.post('/viewAllSubmissions', function(req, res) {
 });
 
 app.post('/submitAssignment', function(req, res) {
-	const { assignmentLinks, userInfo, assignmentId } = req.body;
+	const assignmentLinks = req.body.assignmentLinks;
+	const UserInfo = req.body.UserInfo;
+	const assignmentId = req.body.assignmentId;
 	Assignment.findOne({where: {id: assignmentId} })
 	.then(function(assignment) {
 		User.findOne({where: {Email: userInfo.UserInfo.Email}}).then(function(user) {
