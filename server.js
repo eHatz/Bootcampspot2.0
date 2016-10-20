@@ -143,7 +143,6 @@ app.post('/admin/getUsers', function(req, res) {
 				Section.findOne({where: {Title: req.body.section} })
 				.then(function(dbSection) {
 					dbSection.getUsers({order: [[column, 'DESC']]}).then(function(users) {
-						console.log('SECTION USERS===========', users);
 						res.json(users);
 					})
 				})
@@ -170,10 +169,8 @@ app.post('/admin/createUser', function(req, res) {
 		Role: req.body.role
 	}).then(function(newUser) {
 		if (req.body.role !=='Admin') {
-			console.log('REQ.BODY.SECTION', req.body.sectionTitle)
 			Section.findOne({where: {Title: req.body.sectionTitle} })
 			.then(function(section) {
-				console.log('THIS SECTION', section);
 				newUser.addSection(section);
 			})
 			

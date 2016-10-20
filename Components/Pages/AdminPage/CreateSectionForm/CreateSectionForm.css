@@ -1,5 +1,5 @@
 .sectionField{
-	margin-right: -19px;
+	margin-right: -11px;
 }
 
 .sectionDiv{
@@ -13,6 +13,7 @@
 	width: 100%;
     color: white;
     padding-right: 53px;
+    background-color: red;
 }
 
 @media screen and (max-width: 1200px){

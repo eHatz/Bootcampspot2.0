@@ -31,7 +31,7 @@ class SortUsersForm extends Component {
 		const { sectionList } = this.props;
 		return (
 			<div className="row sortingDiv">
-				<form onSubmit={this.userCreate}>
+				<form>
 					<FormGroup controlId="formBasicText">
 						<div className="col-md-6">
 							<FormControl

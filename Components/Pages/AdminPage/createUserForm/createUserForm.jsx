@@ -77,65 +77,67 @@ class createUserForm extends Component {
 
 		return (
 			
-			<div className="row createUser">
-				<h4 className="formTitle">Create New User</h4>
-				<form onSubmit={this.userCreate}>
-					<FormGroup controlId="formBasicText">
-						
-						<div className="col-md-2 colorBlock"> 
-							<FormControl
-		      					type="text" 
-		      					value={this.state.email}
-		      					placeholder="Email" 
-		      					onChange={this.handleEmailChange}
-		      				/>
-						</div>
-						<div className="col-md-2 colorBlock"> 
-							<FormControl
-		      					type="text" 
-		      					value={this.state.firstName}
-		      					placeholder="First Name" 
-		      					onChange={this.firstNameChange}
-		      				/>
-	      				</div>
-						<div className="col-md-2 colorBlock"> 
-							<FormControl
-		      					type="text" 
-		      					value={this.state.lastName}
-		      					placeholder="Last Name" 
-		      					onChange={this.lastNameChange}
-		      				/>
-						</div>
-						<div className="col-md-2 colorBlock"> 
-							<FormControl
-								componentClass="select"
-								onChange={this.roleChange}
-								placeholder="select"
-							>
-								<option value="">Select Role</option>
-								<option value='Student'>Student</option>
-								<option value='Teacher'>Teacher</option>
-								<option value='Admin'>Administrator</option>
-							</FormControl>
-						</div>
-						<div className="col-md-2 colorBlock"> 
-							<FormControl
-								componentClass="select"
-								onChange={this.sectionChange}
-								placeholder="select"
-							>
-								<option value="">Select Section</option>
-								{this.props.sectionList.map((item, index) =>
-									<option key= {index} value={item.Title}>{item.Title}</option>
+			<div className="row remove-all-margin-padding">
+				<div className="createUser">
+					<h4 className="formTitle">Create New User</h4>
+					<form onSubmit={this.userCreate}>
+						<FormGroup controlId="formBasicText">
+							
+							<div className="col-md-2 colorBlock"> 
+								<FormControl
+			      					type="text" 
+			      					value={this.state.email}
+			      					placeholder="Email" 
+			      					onChange={this.handleEmailChange}
+			      				/>
+							</div>
+							<div className="col-md-2 colorBlock"> 
+								<FormControl
+			      					type="text" 
+			      					value={this.state.firstName}
+			      					placeholder="First Name" 
+			      					onChange={this.firstNameChange}
+			      				/>
+		      				</div>
+							<div className="col-md-2 colorBlock"> 
+								<FormControl
+			      					type="text" 
+			      					value={this.state.lastName}
+			      					placeholder="Last Name" 
+			      					onChange={this.lastNameChange}
+			      				/>
+							</div>
+							<div className="col-md-2 colorBlock"> 
+								<FormControl
+									componentClass="select"
+									onChange={this.roleChange}
+									placeholder="select"
+								>
+									<option value="">Select Role</option>
+									<option value='Student'>Student</option>
+									<option value='Teacher'>Teacher</option>
+									<option value='Admin'>Administrator</option>
+								</FormControl>
+							</div>
+							<div className="col-md-2 colorBlock"> 
+								<FormControl
+									componentClass="select"
+									onChange={this.sectionChange}
+									placeholder="select"
+								>
+									<option value="">Select Section</option>
+									{this.props.sectionList.map((item, index) =>
+										<option key= {index} value={item.Title}>{item.Title}</option>
 
-								)}
-							</FormControl>
-						</div>
-					    <div className="col-md-2"> 
-					    	<Button id="adminButton" type="submit">Submit</Button>
-					    </div>
-					</FormGroup>
-				</form>
+									)}
+								</FormControl>
+							</div>
+						    <div className="col-md-2"> 
+						    	<Button id="adminButton" type="submit">Submit</Button>
+						    </div>
+						</FormGroup>
+					</form>
+				</div>
 			</div>
 		);
 	}
