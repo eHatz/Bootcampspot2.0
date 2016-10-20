@@ -8,6 +8,9 @@
 	background-color: black;
 	border-color: black;
 }
+.removeBullets{
+	list-style: none;
+}
 
 
 
