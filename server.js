@@ -264,6 +264,16 @@ app.post("/attendance/singleSession", function(req, res){
 		}).then((responseArray) => res.send(responseArray))
 })
 
+
+app.post("attendance/singleStudent", function(req, res){
+	const studentId = req.body.studentId;
+	var responseArray = [];
+	User.findOne({where:{id:studentId}})
+		.then(function(student){
+			return 
+		})
+})
+
 app.post("/attendance/teacher", function(req, res){
 		//??
 	Section.findAll({
