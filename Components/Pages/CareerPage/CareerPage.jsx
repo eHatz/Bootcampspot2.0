@@ -8,9 +8,9 @@ class CareerPage extends Component {
 		return (
 		
 			<div className="careerBackground">
-				<div className="row">
-					<div className="col-md-7 text-center">
-						<div id="aquirementsDiv" className="row">
+				<div className="row remove-all-margin-padding">
+					<div className="col-lg-7 text-center remove-all-margin-padding">
+						<div id="aquirementsDiv" className="row remove-all-margin-padding">
 							<h3 id="aquirementsTitle">I HAVE AQUIRED ONE OF THESE:</h3>
 							<ul>
 								<li className="careerBullets">Full-time paid position with a new employer</li>
@@ -20,8 +20,11 @@ class CareerPage extends Component {
 								<li className="careerBullets">Paid internships or apprenticeships that either offer full-time work or the opportunity for full-time positions at the conclusion of the internship/ apprenticeship period</li>
 							</ul>
 						</div>
-						
-						<div id="careerUrlDiv" className="row">
+						<div className="radioButtons">
+							<label className="radio-inline yesNo"><input type="radio" name="optradio"/> Yes</label>
+				 			<label className="radio-inline yesNo"><input type="radio" name="optradio"/> No</label>
+						</div>
+						<div id="careerUrlDiv" className="row remove-all-margin-padding">
 							<div className="thumbnail thumbnailDiv">
 							    <img id="linkedin" src="/assets/images/linkedin.png" alt="linkedin"/>
 							    <div className="caption">
@@ -44,9 +47,9 @@ class CareerPage extends Component {
 					    	</div>
 
 					    	<div className="thumbnail thumbnailDiv">
-							    <img id="github" src="/assets/images/github.png" alt="github"/>
+							    <img id="resume" src="/assets/images/resume.png" alt="resume"/>
 							    <div className="caption">
-							    	<h4 className="careerUrlCaption">Github</h4>
+							    	<h4 className="careerUrlCaption">Resume</h4>
 						      	</div>
 					    	</div>
 
@@ -59,21 +62,22 @@ class CareerPage extends Component {
 						</div>
 					</div>
 
-					
-					<div id="bioContainer" className="col-md-5">
-						<div id="BioDiv">
-							<div id="profilePic">
-	  							<img id="profileImage" src="/assets/images/profilePic.png" alt="profilePic"/>
+					<div className="col-lg-5">
+						<div id="bioContainer">
+							<div id="BioDiv">
+								<div id="profilePic">
+		  							<img id="profileImage" src="/assets/images/profilePic.png" alt="profilePic"/>
+								</div>
+						  		
+						  		<form>
+							    	<div className="form-group">
+							      		<textarea className="form-control" rows="10" id="bioForm" placeholder="Bio"></textarea>
+							      		<div className="buttonDiv">
+							      			<button className="bioButton">Save</button>
+						      			</div>
+							    	</div>
+							 	</form>
 							</div>
-					  		
-					  		<form>
-						    	<div className="form-group">
-						      		<textarea className="form-control" rows="10" id="bioForm" placeholder="Bio"></textarea>
-						      		<div className="buttonDiv">
-						      			<button className="bioButton">Save</button>
-					      			</div>
-						    	</div>
-						 	</form>
 						</div>
 					</div>
 				</div>

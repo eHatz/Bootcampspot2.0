@@ -3,6 +3,7 @@ import { Modal, Button } from "react-bootstrap";
 import "./FeedbackRadialQuest.css";
 
 class FeedbackRadialQuest extends Component{
+
 	render(){
 		console.log(this.props.question)
 		return(
@@ -25,8 +26,7 @@ class FeedbackRadialQuest extends Component{
 	
 				</div>
 			</div>
-
-			)
+		)
 	}
 
 }

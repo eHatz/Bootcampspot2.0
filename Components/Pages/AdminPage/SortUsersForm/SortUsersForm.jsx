@@ -6,52 +6,58 @@ class SortUsersForm extends Component {
 	constructor(props) {
 		super(props);
 		this.sortBy = this.sortBy.bind(this);
-
+		this.state = {
+			sortSection: 'all',
+			sortBy: 'sort-nameAsc'
+		};
 	}
 
+	
 	sortBy(event) {
-		var sort= 'sort-nameAsc';
-		var section = 'all';
+
 		if (event.target.value.indexOf('sort-') !== -1) {
-			sort = event.target.value;
+			const sort = event.target.value;
+			this.setState({sortBy: sort});
+			this.props.getUsers(sort, this.state.sortSection);
 		} else {
-			section = event.target.value;
+			const section = event.target.value;
+			this.setState({sortSection: section});
+			this.props.getUsers(this.state.sortBy, section);
 		};
-		this.props.getUsers(sort, section);
+		
 	}
 
 	render() {
 		const { sectionList } = this.props;
 		return (
-			<div id='userFormDiv'>
+			<div className="row sortingDiv">
 				<form onSubmit={this.userCreate}>
 					<FormGroup controlId="formBasicText">
-						<ControlLabel>Sort By:</ControlLabel>
-						<FormControl
-							componentClass="select"
-							onChange={this.sortBy}
-							placeholder="select"
-						>
-							<option value="sort-nameAsc">NAME ASCENDING</option>
-							<option value='sort-nameDesc'>NAME DESCENDING</option>
-							<option value='sort-roleAsc'>ROLE ASCENDING</option>
-							<option value='sort-roleDesc'>ROLE DESCENDING</option>
-						</FormControl>
+						<div className="col-md-6">
+							<FormControl
+								componentClass="select"
+								onChange={this.sortBy}
+								placeholder="select"
+							>
+								<option value="sort-nameAsc">Name Ascending</option>
+								<option value='sort-nameDesc'>Name Descending</option>
+								<option value='sort-roleAsc'>Role Ascending</option>
+								<option value='sort-roleDesc'>Role Descending</option>
+							</FormControl>
+						</div>
+						<div className="col-md-6">
+							<FormControl
+								componentClass="select"
+								onChange={this.sortBy}
+								placeholder="select"
+							>
+								<option value="all">All Sections</option>
+								{sectionList.map((item, index) =>
+									<option key= {index} value={item.Title}>{item.Title}</option>
 
-						<ControlLabel>Section:</ControlLabel>
-						<FormControl
-							componentClass="select"
-							onChange={this.sortBy}
-							placeholder="select"
-						>
-							<option value="all">ALL</option>
-							{sectionList.map((item, index) =>
-								<option key= {index} value={item.Title}>{item.Title}</option>
-
-							)}
-						</FormControl>
-
-					    <Button type="submit">Submit</Button>
+								)}
+							</FormControl>
+						</div>
 					</FormGroup>
 				</form>
 			</div>

@@ -74,7 +74,7 @@ input[type=radio] {
     border: 0px;
     width: 50%;
     height: 1.3em;
-   /* margin-right: 20px;*/
+ 
 }
 
 #feedbackInputQuestion{
@@ -283,6 +283,11 @@ input[type=radio] {
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 21px;
 	margin-right: 5%;
+
+}
+	#submitButt{
+		margin-left: 20%;
+
 	}
 
 

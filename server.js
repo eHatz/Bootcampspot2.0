@@ -58,6 +58,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 const User = models.User;
 const Section = models.Section;
+const Session = models.Session;
+const Assignment = models.Assignment;
 //Routes
 app.get('/login', function(req, res){
 	
@@ -69,14 +71,19 @@ app.get('/login', function(req, res){
 		    		access: false,
 		    		userData: false
 		    	});
-		    	req.session.userInfo = null;
-			}else if (user){		
-				res.setHeader('Content-Type', 'application/json');
-		    	res.json({
-		    		access: 'jennanda',
-		    		userData: user
-		    	});
-		    	req.session.userInfo = user;
+			}else if (user){
+				user.getSections().then(function(section) {
+					var userSection = section;
+					if (user.Role === 'Admin') {
+						userSection = 'Admin';
+					};
+					res.setHeader('Content-Type', 'application/json');
+			    	res.json({
+			    		access: 'jennanda',
+			    		userData: user,
+			    		userSection: userSection
+			    	});
+				})
 			}
 		});
 	} else {
@@ -151,8 +158,7 @@ app.post('/admin/getUsers', function(req, res) {
 	sortingAsc('sort-roleAsc', 'Role');
 	sortingDesc('sort-roleDesc', 'Role');
 	sortingDesc('sort-nameDesc', 'FirstName');
-
-})
+});
 
 app.post('/admin/createUser', function(req, res) {
 
@@ -172,13 +178,13 @@ app.post('/admin/createUser', function(req, res) {
 			
 		};
 	});
-})
+});
 
 app.post('/admin/getSections', function(req, res) {
 	Section.findAll().then(function(section){
 		res.json(section);
-	})
-})
+	});
+});
 
 app.post('/admin/createSection', function(req, res) {
 
@@ -189,9 +195,89 @@ app.post('/admin/createSection', function(req, res) {
 		StartDate: req.body.StartDate,
 		EndDate: req.body.EndDate,
 	})
+});
+
+//====Attendance routes====
+app.post("/attendance/getAllSessions", function(req, res){
+	Session.findAll({
+		where:{
+			SectionId: req.body.section
+		}
+	}).then(function(sessions){
+		console.log("/attendance/getAllSessions: ", sessions);
+		res.json(sessions);
+	})
+})
+
+app.post("/attendance/teacher", function(req, res){
+		//??
+	Section.findAll({
+		include: [{
+			model: User,
+			where: {id: req.id}
+		}]
+	}).then(function(sections){
+		console.log("(server.js 183) techerSections route: ", sections);
+		res.json(sections);
+	})
 })
 
 
+//====Assignment Routes ==================
+app.post('/getAssignments', function(req, res) {
+	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
+		section.getAssignments().then(function(assignments) {
+			res.json(assignments);
+		});
+	});
+});
+
+app.post('/createAssignment', function(req, res) {
+	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
+		section.createAssignment({
+			Title: req.body.Title, 
+			Instructions: req.body.Instructions,
+			Due: req.body.Due, 
+			Resources:req.body.Instructions
+		})
+	})
+});
+
+app.post('/viewSubmission', function(req, res) {
+	const { UserInfo, assignmentId } = req.body;
+	Assignment.findOne({where: {id: assignmentId} })
+	.then(function(assignment) {
+		assignment.getUsers({where: {Email: UserInfo.UserInfo.Email}})
+		.then(function(submission) {
+			res.json({studentSubmission: submission, assignment: assignment});
+		});
+	});
+});
+
+app.post('/viewAllSubmissions', function(req, res) {
+	const { UserInfo, assignmentId } = req.body;
+	Assignment.findOne({where: {id: assignmentId} })
+	.then(function(assignment) {
+		assignment.getUsers()
+		.then(function(submission) {
+			res.json({studentSubmission: submission, assignment: assignment});
+		});
+	});
+});
+
+app.post('/submitAssignment', function(req, res) {
+	const { assignmentLinks, userInfo, assignmentId } = req.body;
+	Assignment.findOne({where: {id: assignmentId} })
+	.then(function(assignment) {
+		User.findOne({where: {Email: userInfo.UserInfo.Email}}).then(function(user) {
+			assignment.addUser(user, {Submission: assignmentLinks});
+		});
+	});
+});
+
+
+
+//====Slack Routes====
 
 app.get("/slack", (req, res) => {
 	res.sendFile(path.join(__dirname, './slack.html'));
@@ -210,9 +296,6 @@ app.post('/slack', (req, res) => {
 	}, function(error, response, body){
 	});
 });
-
-//Teacher attendance route
-
 
 //Sequelize
 models.sequelize.sync();

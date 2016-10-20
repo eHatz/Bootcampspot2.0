@@ -4,15 +4,17 @@
 	padding-top: 6%;
     padding-right: 4%;
     padding-left: 4%;
+    
 	
 }
 #HomePage_login{
 	z-index: 1; 
 	position: absolute; 
-	padding-top: 7%;
+	padding-top: 6%;
     padding-right:5%;
     padding-left: 7%;
 	right: 0px;
+	max-width: 100%;
 
 }
 
@@ -35,18 +37,19 @@
 	}
 
 	#HomePage_login {
-    z-index: 1;
+   z-index: 1;
     position: static;
-    padding-top: 1%; 
+    padding-top: 1%;
     padding-right: 3%;
     padding-bottom: 12%;
-    padding-left: 3%;
-    left: 0px; 
+    padding-left: 1%;
+    left: 0px;
+    max-width: 57%;
 	}
 
 	/*What element does this style? -nlp*/
 	.remove-all-margin-padding { 
-    margin-top: -6px;
+    margin-top: 0px;
     margin-right: 0px;
     margin-bottom: 0px;
     margin-left: 0px;

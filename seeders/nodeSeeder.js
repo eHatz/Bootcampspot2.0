@@ -5,6 +5,9 @@ const sequelize = require ("sequelize");
 //Add sources of seeder data here
 const seedSection = require ("./seedSection");
 const seedUser = require ("./seedUser");
+const seedSessions = require ("./seedSessions");
+// const seedAttendance = require ("./seedSessions")
+
 
 
 function seedIt(modelName, seeder){
@@ -17,3 +20,4 @@ function seedIt(modelName, seeder){
 //Call seeders here using this format: seedIt("ModelName", seedData);
 seedIt("Section", seedSection);
 seedIt("User", seedUser);
+seedIt("Session", seedSessions);
