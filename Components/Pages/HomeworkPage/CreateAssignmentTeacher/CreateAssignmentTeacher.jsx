@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel, Checkbox, Button } from "react-bootstrap";
 import "./CreateAssignmentTeacher.css";
-
+import $ from "jquery";
+		
 class createAssignmentTeacher extends Component {
 	constructor(props) {
 		super(props);
@@ -49,22 +50,20 @@ class createAssignmentTeacher extends Component {
 	}
 
 	assignmentCreate(event){
-		fetch('/createAssignment', {
-			credentials: 'include',
-			method: 'POST',
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
+		$.ajax({
+			url: '/createAssignment',
+			type: "POST",
+			data: {
 	        	Title: this.state.Title,
 				Instructions: this.state.Instructions,
 				Due: this.state.Due,
 				Resources: this.state.Resources,
 				sectionTitle: this.state.sectionTitle
-	        })
-		})
-		this.props.getAssignments(this.state.sectionTitle);
+	        }
+		}).then((response) => {
+			this.props.getAssignments(this.state.sectionTitle);
+		});
+
 	    this.clearInput();
 	    event.preventDefault();
 	}
