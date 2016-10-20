@@ -16,13 +16,15 @@ class AttendancePage extends Component {
 
 		this.state = {
 			sections: [], //Holds all the sections that the current user is authorized to see
-			currentSection: "",
+			currentSectionIndex: 0,
+			sessions: [],
 			view: "", //Determines which view component gets redered.  Must be allSessions, singleSession, or singleStudent
 			isStudent: false, //turns the Admin/Teacher control panel into an attendance button if true
 			displayData: [] //Holds the actual data displayed by the current view component
 		}
 
-		this.getSections = this.getSections.bind(this);
+		this.goAjax = this.goAjax.bind(this);
+		this.getSessions = this.getSessions.bind(this);
 		this.userIsAdmin = this.userIsAdmin.bind(this);
 		this.userIsTeacher = this.userIsTeacher.bind(this);
 		this.userIsStudent = this.userIsStudent.bind(this);
@@ -33,28 +35,60 @@ class AttendancePage extends Component {
 
 	componentWillMount() {
 
-	const { UserInfo } = this.props;
-	const Role = UserInfo.UserInfo.Role;
+		const { UserInfo } = this.props;
+		const Role = UserInfo.UserInfo.Role;
 
 		if (Role === "Admin"){
 			this.userIsAdmin();
 		} else if (Role === "Teacher"){
 			this.userIsTeacher();
 		} else (this.userIsStudent())
+
 	}
 
-	getSections(route, data){
-		$.ajax({
-			url: route,
-			type: "POST",
-			data: data
-		}).done(function(response){
-			this.setState({sections: response});
-		}.bind(this))
+	goAjax(route, data, stateProperty){
+		let p = new Promise(
+			$.ajax({
+				url: route,
+				type: "POST",
+				data: data
+			}).done(function(response){
+				this.setState({
+					[stateProperty]: response
+				});
+				console.log("ajax response: ", response)
+			}.bind(this))
+		)
+
+		return p;
+	}
+
+	getSessions(){
+		//These four constants just load the id for the current section into our AJAX call
+		const sections = this.state.sections;
+		const index = this.state.currentSectionIndex;
+
+		console.log(sections);
+
+		// const sectionId = sections[index].id;
+		// const dataObj = {section: sectionId}
+
+		// goAjax("attendance/getAllSessions", dataObj, "sessions");
+
+		// console.log("getSessions");
+
 	}
 
 	userIsAdmin(){
-		this.getSections("/admin/getSections");
+		//Retrieve all sections
+		this.goAjax("/admin/getSections", null, "sections")
+		.then(this.getSessions())
+		
+		// this.setState({
+  //   		view: "allSessions",
+  //   		displayData: this.state.sessions
+  //   	});
+
 	}
 		
 	userIsTeacher(){
@@ -90,14 +124,14 @@ class AttendancePage extends Component {
 
 	switchDisplay(event){
 		this.setState({view: event.target.value});
-		console.log("switchView: ", this.state.view);
+		// console.log("switchView: ", this.state.view);
 	}
 
 	//This method fires when an admin or teacher selects a section to view
 	selectSection(event){
 
 		//Switches table view to show all sessions for the selected section
-		console.log("selectSection event.target.value: ", event.target.value);
+		// console.log("selectSection event.target.value: ", event.target.value);
 
 		//Grab the sessions from the DB
 		$.ajax({
@@ -108,7 +142,7 @@ class AttendancePage extends Component {
 	        }
 	    }).done(function(response){
 	    	//Save the sessions to state and render them to the page
-	    	console.log("displayData selectSection: ", response);
+	    	// console.log("displayData selectSection: ", response);
 	    	this.setState({
 	    		view: "allSessions",
 	    		displayData: response
