@@ -210,9 +210,9 @@ app.post("/attendance/getAllSessions", function(req, res){
 app.post("/attendance/singleSession", function(req, res){
 	const sessionId = req.body.sessionId;
 	console.log("sessionId: ", sessionId)
-	let sectionId;
-	let thisSession;
-	let responseArray = [];
+	var sectionId;
+	var thisSession;
+	var responseArray = [];
 
 	Session.findOne({where:{id: sessionId}})
 		.then((session) => {
