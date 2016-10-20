@@ -59,6 +59,7 @@ app.use(passport.session());
 const User = models.User;
 const Section = models.Section;
 const Session = models.Session;
+const Assignment = models.Assignment;
 //Routes
 app.get('/login', function(req, res){
 	
@@ -141,7 +142,6 @@ app.post('/admin/getUsers', function(req, res) {
 				Section.findOne({where: {Title: req.body.section} })
 				.then(function(dbSection) {
 					dbSection.getUsers({order: [[column, 'DESC']]}).then(function(users) {
-						console.log('SECTION USERS===========', users);
 						res.json(users);
 					})
 				})
@@ -168,10 +168,8 @@ app.post('/admin/createUser', function(req, res) {
 		Role: req.body.role
 	}).then(function(newUser) {
 		if (req.body.role !=='Admin') {
-			console.log('REQ.BODY.SECTION', req.body.sectionTitle)
 			Section.findOne({where: {Title: req.body.sectionTitle} })
 			.then(function(section) {
-				console.log('THIS SECTION', section);
 				newUser.addSection(section);
 			})
 			
@@ -185,8 +183,6 @@ app.post('/admin/getSections', function(req, res) {
 	});
 });
 
-//====Attendance routes====
-
 app.post('/admin/createSection', function(req, res) {
 
 	Section.create({
@@ -198,6 +194,7 @@ app.post('/admin/createSection', function(req, res) {
 	})
 });
 
+//====Attendance routes====
 app.post("/attendance/getAllSessions", function(req, res){
 	Session.findAll({
 		where:{
@@ -209,12 +206,24 @@ app.post("/attendance/getAllSessions", function(req, res){
 	})
 })
 
+app.post("/attendance/teacher", function(req, res){
+		//??
+	Section.findAll({
+		include: [{
+			model: User,
+			where: {id: req.id}
+		}]
+	}).then(function(sections){
+		console.log("(server.js 183) techerSections route: ", sections);
+		res.json(sections);
+	})
+})
+
+
+//====Assignment Routes ==================
 app.post('/getAssignments', function(req, res) {
-	console.log('OUTSIDE SECTION!!!!!!!!!!!!!!!!!!', req.body.sectionTitle);
 	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
 		section.getAssignments().then(function(assignments) {
-			console.log('INSIDE SECTION!!!!!!!!!!!!!!!!!!', assignments);
-
 			res.json(assignments);
 		});
 	});
@@ -231,19 +240,37 @@ app.post('/createAssignment', function(req, res) {
 	})
 });
 
+app.post('/viewSubmission', function(req, res) {
+	const { UserInfo, assignmentId } = req.body;
+	Assignment.findOne({where: {id: assignmentId} })
+	.then(function(assignment) {
+		assignment.getUsers({where: {Email: UserInfo.UserInfo.Email}})
+		.then(function(submission) {
+			res.json({studentSubmission: submission, assignment: assignment});
+		});
+	});
+});
 
-app.post("/attendance/teacher", function(req, res){
-		//??
-	Section.findAll({
-		include: [{
-			model: User,
-			where: {id: req.id}
-		}]
-	}).then(function(sections){
-		console.log("(server.js 183) techerSections route: ", sections);
-		res.json(sections);
-	})
-})
+app.post('/viewAllSubmissions', function(req, res) {
+	const { UserInfo, assignmentId } = req.body;
+	Assignment.findOne({where: {id: assignmentId} })
+	.then(function(assignment) {
+		assignment.getUsers()
+		.then(function(submission) {
+			res.json({studentSubmission: submission, assignment: assignment});
+		});
+	});
+});
+
+app.post('/submitAssignment', function(req, res) {
+	const { assignmentLinks, userInfo, assignmentId } = req.body;
+	Assignment.findOne({where: {id: assignmentId} })
+	.then(function(assignment) {
+		User.findOne({where: {Email: userInfo.UserInfo.Email}}).then(function(user) {
+			assignment.addUser(user, {Submission: assignmentLinks});
+		});
+	});
+});
 
 
 

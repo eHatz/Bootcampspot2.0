@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel, Checkbox, Button } from "react-bootstrap";
-import "./createAssignment.css";
+import "./CreateAssignment.css";
 
 class createAssignment extends Component {
 	constructor(props) {
@@ -68,72 +68,74 @@ class createAssignment extends Component {
 				sectionTitle: this.state.sectionTitle
 	        })
 		})
-		// this.props.getAssignments('nameAsc', 'all');
+		this.props.getAssignments(this.state.sectionTitle);
 	    this.clearInput();
 	    event.preventDefault();
 	}
 	
 	render() {
 		return (
-			<div className="row homeworkAssignDiv">
-				<form onSubmit={this.assignmentCreate}>
-					<FormGroup controlId="formBasicText">
+			<div className="row remove-all-margin-padding">
+				<div className="homeworkAssignDiv">
+					<form onSubmit={this.assignmentCreate}>
+						<FormGroup controlId="formBasicText">
 
-						<div className="col-md-2">
-							<FormControl
-		      					type="text" 
-		      					value={this.state.Title}
-		      					placeholder="Title" 
-		      					onChange={this.handleTitleChange}
-		      				/>
-	      				</div>
+							<div className="col-md-2">
+								<FormControl
+			      					type="text" 
+			      					value={this.state.Title}
+			      					placeholder="Title" 
+			      					onChange={this.handleTitleChange}
+			      				/>
+		      				</div>
 
-						<div className="col-md-2">
-							<FormControl
-		      					type="text" 
-		      					value={this.state.Instructions}
-		      					placeholder="Instructions" 
-		      					onChange={this.InstructionsChange}
-		      				/>
-	      				</div>
+							<div className="col-md-2">
+								<FormControl
+			      					type="text" 
+			      					value={this.state.Instructions}
+			      					placeholder="Instructions" 
+			      					onChange={this.InstructionsChange}
+			      				/>
+		      				</div>
 
-						<div className="col-md-2">
-							<FormControl
-		      					type="text" 
-		      					value={this.state.Due}
-		      					placeholder="Due Date" 
-		      					onChange={this.DueChange}
-		      				/>
-	      				</div>
+							<div className="col-md-2">
+								<FormControl
+			      					type="text" 
+			      					value={this.state.Due}
+			      					placeholder="Due Date" 
+			      					onChange={this.DueChange}
+			      				/>
+		      				</div>
 
-						<div className="col-md-2">
-							<FormControl
-								type="text" 
-		      					value={this.state.Resources}
-		      					placeholder="Resources" 
-		      					onChange={this.ResourcesChange}
-							/>
-						</div>
+							<div className="col-md-2">
+								<FormControl
+									type="text" 
+			      					value={this.state.Resources}
+			      					placeholder="Resources" 
+			      					onChange={this.ResourcesChange}
+								/>
+							</div>
 
-						<div className="col-md-2">
-							<FormControl
-								componentClass="select"
-								onChange={this.sectionChange}
-								placeholder="select"
-							>
-								<option value="">Select Section</option>
-								{this.props.sectionList.map((item, index) =>
-									<option key= {index} value={item.Title}>{item.Title}</option>
+							<div className="col-md-2">
+								<FormControl
+									componentClass="select"
+									onChange={this.sectionChange}
+									placeholder="select"
+								>
+									<option value="">Select Section</option>
+									{this.props.sectionList.map((item, index) =>
+										<option key= {index} value={item.Title}>{item.Title}</option>
 
-								)}
-							</FormControl>
-						</div>
-						
-						<div className="col-md-2">
-					    	<Button id="homeworkButton"type="submit">Submit</Button>
-					    </div>
-					</FormGroup>
-				</form>
+									)}
+								</FormControl>
+							</div>
+							
+							<div className="col-md-2">
+						    	<Button id="homeworkButton"type="submit">Submit</Button>
+						    </div>
+						</FormGroup>
+					</form>
+				</div>
 			</div>
 		);
 	}

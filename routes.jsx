@@ -14,9 +14,15 @@ import HomePage from "./Components/Pages/HomePage/HomePage.jsx";
 
 import AttendancePage from './Components/Pages/AttendancePage/AttendancePage.jsx';
 
+// import AttendanceStudentsView from './Components/Pages/AttendancePage/AttendanceStudentsView/AttendanceStudentsView.jsx';
+
+// import AttendanceStudentView from './Components/Pages/AttendancePage/AttendanceStudentView/AttendanceStudentView.jsx';
+
 import CareerPage from "./Components/Pages/CareerPage/CareerPage.jsx";
 
 import HomeworkPage from "./Components/Pages/HomeworkPage/HomeworkPage.jsx";
+
+import ViewAssignment from "./Components/Pages/ViewAssignment/ViewAssignment.jsx";
 
 import SyllabusPage from "./Components/Pages/SyllabusPage/SyllabusPage.jsx";
 
@@ -59,13 +65,13 @@ export default (
 		<Route path="login" component={Login} />
 		<Route path="logout" component={Logout} />
 
-
 		<Route component={LoggedIn}>
-
 			<Route path="/attendance" component={AttendancePage}/>
+			{/*<Route path="/attendance/students/:id" component={AttendanceStudentsView}/>
+			<Route path="/attendance/student/:id" component={AttendanceStudentView}/>*/}
 			<Route path="/career" component={CareerPage}/>
 			<Route path="/homework" component={HomeworkPage}/>
-			<Route path="/homework/:id" component={HomeworkPage}/>
+			<Route path="/homework/:id" component={ViewAssignment}/>
 			<Route path="/syllabus" component={SyllabusPage}/>
 			<Route path="/feedback" component={FeedbackPage}/>
 			<Route path="/projects" component={ProjectsPage}/>
