@@ -214,34 +214,57 @@ app.post("/attendance/singleSession", function(req, res){
 	const sessionId = req.data;
 	let sectionId;
 	let thisSession;
-	let response = [];
+	let responseArray = [];
 
 	Session.findOne({where:{id: sessionId}})
-		.then((session) => 
+		.then((session) => {
 			//Find the session and its associated section Id in the DB, and hold them in variables
 			thisSession = session;
 			sectionId = session.SectionId;
 			return sectionId;
-		).then((sectionId) =>
+		}).then((sectionId) =>
 			//Grab the associated section from the DB;
-			Section.findOne(where:{id: sectionId})
-		).then((section)=>
+			Section.findOne({where:{id: sectionId}})
+		).then((section) =>
 			//Get all students for this section... 
 			section.getUsers()
 		).then((users) =>
 			//...and save them to our response array
-			users.forEach(user){
-				response.push({
+			users.forEach((user) =>
+				responseArray.push({
+					UserId: user.id
 					Name: user.FirstName + " " + user.LastName,
 					Date: thisSession.Date,
 					Time: "---",
 					Status: "Absent"
 				})
-			}
-		).then()
-
-	console.log("/attendance/singleSession: ", )
-
+			)
+		).then(() =>
+			//Get all students who have registered their attendance for the session 
+			thisSession.getUsers()
+		).then((sessionAttendance) => 
+			//Compare to the students in our responseArray
+			sessionAttendance.forEach((attendanceInstance) =>
+				responseArray.forEach((responseUser) =>
+					//Once we match an attendance instance with the corresponding student...
+					if(attendanceInstance.UserId === responseUser.id){
+						//...if the the student created this attendanceInstance before the start of class...
+						if (attendanceInstance.createdAt <= session.Date){
+							//Mark this student as early
+							return responseUser.Status = "Early";
+						} else {
+							//Otherwise, the student was late
+							return responseUser.Status = "Late";
+						}			
+					}
+					//Unmatched students never registered their attendance, and therefore remain "Absent"
+				)
+			)
+			return responseArray;
+		).then((responseArray) => 
+			res.send(responseArray);
+		)
+	console.log("/attendance/singleSession: ", responseArray);
 })
 
 /*
