@@ -64,7 +64,7 @@ class createAssignmentTeacher extends Component {
 				sectionTitle: this.state.sectionTitle
 	        })
 		})
-		// this.props.getAssignments('nameAsc', 'all');
+		this.props.getAssignments(this.state.sectionTitle);
 	    this.clearInput();
 	    event.preventDefault();
 	}
@@ -72,44 +72,46 @@ class createAssignmentTeacher extends Component {
 	render() {
 
 		return (
-			<div id='userFormDiv'>
-				<form onSubmit={this.assignmentCreate}>
-					<FormGroup controlId="formBasicText">
+			<div className="row">
+				<div id='assignmentTeacherDiv'>
+					<form onSubmit={this.assignmentCreate}>
+						<FormGroup controlId="formBasicText">
 
-						<ControlLabel>Title</ControlLabel>
-						<FormControl
-	      					type="text" 
-	      					value={this.state.Title}
-	      					placeholder="Title" 
-	      					onChange={this.handleTitleChange}
-	      				/>
+							<ControlLabel>Title</ControlLabel>
+							<FormControl
+		      					type="text" 
+		      					value={this.state.Title}
+		      					placeholder="Title" 
+		      					onChange={this.handleTitleChange}
+		      				/>
 
-						<ControlLabel>Instructions:</ControlLabel>
-						<FormControl
-	      					type="text" 
-	      					value={this.state.Instructions}
-	      					placeholder="Instructions" 
-	      					onChange={this.InstructionsChange}
-	      				/>
+							<ControlLabel>Instructions:</ControlLabel>
+							<FormControl
+		      					type="text" 
+		      					value={this.state.Instructions}
+		      					placeholder="Instructions" 
+		      					onChange={this.InstructionsChange}
+		      				/>
 
-						<ControlLabel>Due Date</ControlLabel>
-						<FormControl
-	      					type="text" 
-	      					value={this.state.Due}
-	      					placeholder="Due Date" 
-	      					onChange={this.DueChange}
-	      				/>
-						<ControlLabel>Resources</ControlLabel>
-						<FormControl
-							type="text" 
-	      					value={this.state.Resources}
-	      					placeholder="Resources" 
-	      					onChange={this.ResourcesChange}
-						/>
+							<ControlLabel>Due Date</ControlLabel>
+							<FormControl
+		      					type="text" 
+		      					value={this.state.Due}
+		      					placeholder="Due Date" 
+		      					onChange={this.DueChange}
+		      				/>
+							<ControlLabel>Resources</ControlLabel>
+							<FormControl
+								type="text" 
+		      					value={this.state.Resources}
+		      					placeholder="Resources" 
+		      					onChange={this.ResourcesChange}
+							/>
 
-					    <Button type="submit">Submit</Button>
-					</FormGroup>
-				</form>
+						    <Button type="submit">Submit</Button>
+						</FormGroup>
+					</form>
+				</div>
 			</div>
 		);
 	}
