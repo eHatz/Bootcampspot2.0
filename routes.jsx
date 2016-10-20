@@ -65,9 +65,7 @@ export default (
 		<Route path="login" component={Login} />
 		<Route path="logout" component={Logout} />
 
-
 		<Route component={LoggedIn}>
-
 			<Route path="/attendance" component={AttendancePage}/>
 			{/*<Route path="/attendance/students/:id" component={AttendanceStudentsView}/>
 			<Route path="/attendance/student/:id" component={AttendanceStudentView}/>*/}
