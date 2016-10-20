@@ -243,15 +243,38 @@ app.post('/createAssignment', function(req, res) {
 	})
 });
 
-app.post('/viewAssignment', function(req, res) {
-	Assignment.findOne({where: {id: req.body.assignmentId} })
+app.post('/viewSubmission', function(req, res) {
+	const { UserInfo, assignmentId } = req.body;
+	Assignment.findOne({where: {id: assignmentId} })
 	.then(function(assignment) {
-		assignment.getUsers({where: {Email: req.session.userInfo.Email}})
+		assignment.getUsers({where: {Email: UserInfo.UserInfo.Email}})
 		.then(function(submission) {
-			res.json({studentSubmission: submission});
+			res.json({studentSubmission: submission, assignment: assignment});
 		});
 	});
 });
+
+app.post('/viewAllSubmissions', function(req, res) {
+	const { UserInfo, assignmentId } = req.body;
+	Assignment.findOne({where: {id: assignmentId} })
+	.then(function(assignment) {
+		assignment.getUsers()
+		.then(function(submission) {
+			res.json({studentSubmission: submission, assignment: assignment});
+		});
+	});
+});
+
+app.post('/submitAssignment', function(req, res) {
+	const { assignmentLinks, userInfo, assignmentId } = req.body;
+	Assignment.findOne({where: {id: assignmentId} })
+	.then(function(assignment) {
+		User.findOne({where: {Email: userInfo.UserInfo.Email}}).then(function(user) {
+			assignment.addUser(user, {Submission: assignmentLinks});
+		});
+	});
+});
+
 
 
 //====Slack Routes====
