@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MenuButtons from "../../MenuButtons/MenuButtons.jsx";
 import "./TutorRequestPage.css";
+import TutorCheckboxes from "../../TutorCheckboxes/TutorCheckboxes.jsx";
 
 
 class TutorRequest extends Component {
@@ -57,14 +58,32 @@ class TutorRequest extends Component {
 					  <label className="weekSel" for="sel1">Which week of the program are you in?</label>
 					  <select className="form-control" id="weekDropdown">
 					    <option>Choose</option>
-					    <option>Peleg Rosenthal</option>
-					    <option>Ahmed Haque</option>
-					    <option>John Doughtery</option>
-					    <option>Michael Stearne</option>
-					    <option>Pavan Katepalli</option>
-					    <option>Jesse Willard</option>
-					    <option>Matt Kim</option>
-					    <option>Dan Vassallo</option>
+					    <option>1</option>
+					    <option>2</option>
+					    <option>3</option>
+					    <option>4</option>
+					    <option>5</option>
+					    <option>6</option>
+					    <option>7</option>
+					    <option>8</option>
+					    <option>9</option>
+					    <option>10</option>
+					    <option>11</option>
+					    <option>12</option>
+					    <option>13</option>
+					    <option>14</option>
+					    <option>15</option>
+					    <option>16</option>
+					    <option>17</option>
+					    <option>18</option>
+					    <option>19</option>
+					    <option>20</option>
+					    <option>21</option>
+					    <option>22</option>
+					    <option>23</option>
+					    <option>24</option>
+					    <option>25</option>
+					    <option>26</option>
 					  </select>
 					</div>
 				</div>
@@ -83,29 +102,18 @@ class TutorRequest extends Component {
 				<div className="row">
 					<h2 className="quesTut">Which are the best times for you to meet with a tutor?</h2>
 					<div className ="col-md-6 multRads4">
-			 			<label className="radio radioButtTut2"><input type="radio" name="optradio"/> Weekday (daytime)</label>
-			 			<label className="radio radioButtTut2"><input type="radio" name="optradio"/> Weekday (evening)</label>
-			 			<label className="radio radioButtTut2"><input type="radio" name="optradio"/> Weekend (daytime)</label>
-			 			<label className="radio radioButtTut2"><input type="radio" name="optradio"/> Weekend (evening)</label>
+			 			<label className="radio radioButtTut2"><input  id ="bubble2" type="radio" name="selectOpt2"/> Weekday (daytime)</label>
+			 			<label className="radio radioButtTut2"><input  id ="bubble2" type="radio" name="selectOpt2"/> Weekday (evening)</label>
+			 			<label className="radio radioButtTut2"><input  id ="bubble2" type="radio" name="selectOpt2"/> Weekend (daytime)</label>
+			 			<label className="radio radioButtTut2"><input  id ="bubble2" type="radio" name="selectOpt2"/> Weekend (evening)</label>
 			 		</div>
 				</div>
 				<div className="row">
 					<h2 className="quesTut">Which topics are you looking to cover?</h2>
 					<div className ="col-md-12 multRads5">
-			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> Pep-talk/Advice</label>
-			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> HTML Layouts (HTML,CSS)</label>
-			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> Bootstrap Layouts</label>
-			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> Javascript Fundamentals</label>
-			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> HTML Layouts (HTML,CSS)</label>
-			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> Bootstrap Layouts</label>
-			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> Javascript Fundamentals</label>
-				 		<label className="radio radioButtTut3"><input type="radio" name="optradio"/> jQuery, HTML Manipulation</label>
-			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> Javascript Activities</label>
-			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> AJAX</label>
-			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> Firebase</label>
-			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> MySQL</label>
-			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> Node</label>
-			 			<label className="radio radioButtTut3"><input type="radio" name="optradio"/> All of the Above</label>
+
+					<TutorCheckboxes/>
+			 			
 			 		</div>
 				</div>
 				<div className="container">
@@ -122,3 +130,5 @@ class TutorRequest extends Component {
 }
 
 export default TutorRequest;
+
+
