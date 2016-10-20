@@ -30,36 +30,38 @@ class SortUsersForm extends Component {
 	render() {
 		const { sectionList } = this.props;
 		return (
-			<div className="row sortingDiv">
-				<form>
-					<FormGroup controlId="formBasicText">
-						<div className="col-md-6">
-							<FormControl
-								componentClass="select"
-								onChange={this.sortBy}
-								placeholder="select"
-							>
-								<option value="sort-nameAsc">Name Ascending</option>
-								<option value='sort-nameDesc'>Name Descending</option>
-								<option value='sort-roleAsc'>Role Ascending</option>
-								<option value='sort-roleDesc'>Role Descending</option>
-							</FormControl>
-						</div>
-						<div className="col-md-6">
-							<FormControl
-								componentClass="select"
-								onChange={this.sortBy}
-								placeholder="select"
-							>
-								<option value="all">All Sections</option>
-								{sectionList.map((item, index) =>
-									<option key= {index} value={item.Title}>{item.Title}</option>
+			<div className="row remove-all-margin-padding">
+				<div className="sortingDiv">
+					<form>
+						<FormGroup controlId="formBasicText">
+							<div className="col-md-6">
+								<FormControl
+									componentClass="select"
+									onChange={this.sortBy}
+									placeholder="select"
+								>
+									<option value="sort-nameAsc">Name Ascending</option>
+									<option value='sort-nameDesc'>Name Descending</option>
+									<option value='sort-roleAsc'>Role Ascending</option>
+									<option value='sort-roleDesc'>Role Descending</option>
+								</FormControl>
+							</div>
+							<div className="col-md-6">
+								<FormControl
+									componentClass="select"
+									onChange={this.sortBy}
+									placeholder="select"
+								>
+									<option value="all">All Sections</option>
+									{sectionList.map((item, index) =>
+										<option key= {index} value={item.Title}>{item.Title}</option>
 
-								)}
-							</FormControl>
-						</div>
-					</FormGroup>
-				</form>
+									)}
+								</FormControl>
+							</div>
+						</FormGroup>
+					</form>
+				</div>
 			</div>
 		);
 	}

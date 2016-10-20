@@ -3,7 +3,10 @@
 }
 
 .sectionDiv{
-	padding: 58px;
+	padding-top: 58px;
+    padding-right: 58px;
+    padding-bottom: 93px;
+    padding-left: 58px;
     background-color: #e4e3e3;
     margin-top: 29px;
     margin-bottom: 28px;
@@ -17,10 +20,10 @@
 }
 
 @media screen and (max-width: 1200px){
-	.sectionField{
+	/*.sectionField{
 		margin-right: 0;
 	}
-
+*/
 	#formBasicText{
 		margin-bottom: 30px;
 	}	
