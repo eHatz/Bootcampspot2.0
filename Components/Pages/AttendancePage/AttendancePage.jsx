@@ -16,7 +16,7 @@ class AttendancePage extends Component {
 
 		this.state = {
 			sections: [], //Holds all the sections that the current user is authorized to see - should not change after component mounts
-			currentSectionIndex: 0,
+			// currentSectionIndex: 0,
 			sessions: [], //Hold all the class sessions for the section currently being views
 			view: "", //Determines which view component gets redered.  Must be allSessions, singleSession, or singleStudent
 			isStudent: false, //turns the Admin/Teacher control panel into an attendance button if true
@@ -83,7 +83,7 @@ goAjax(route, data, stateProperty){
 
 	getSessions(sections, index){
 		//These four constants just load the id for the current section into our AJAX call
-		const index = this.state.currentSectionIndex;
+		// const index = this.state.currentSectionIndex;
 		const sectionId = sections[index].id;
 		const dataObj = {section: sectionId}
 
@@ -97,7 +97,7 @@ goAjax(route, data, stateProperty){
 		this.goAjax("/admin/getSections", null, "sections")
 			.then(function(response){
 				//Retrieve the related sections
-				return this.getSessions(response)}.bind(this))
+				return this.getSessions(response, 0)}.bind(this))
 			.then(function(){
 				//Switch state to "allSessionsView", and pass displayData to AttendanceSessionsView	
 				this.setState({
@@ -148,12 +148,19 @@ goAjax(route, data, stateProperty){
 
 	selectSection(event){
 
-		let id = event.target.value;
-		console.log("selectSection id: ", id);
+		let index = event.target.value;
+		// console.log("selectSection index: ", index);
 		
-		this.setState({currentSectionIndex: id});
+		this.getSessions(this.state.sections, index)
+			.then(function(){
+				//Switch state to "allSessionsView", and pass displayData to AttendanceSessionsView	
+				this.setState({
+		    		view: "allSessions",
+		    		displayData: this.state.sessions
+	    		});
+			}.bind(this))
 
-		this.getSessions(this.state.sections);
+		// console.log(this.state.displayData);
 
   
 
