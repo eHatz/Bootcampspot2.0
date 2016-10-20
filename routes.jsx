@@ -26,7 +26,7 @@ import ViewAssignment from "./Components/Pages/ViewAssignment/ViewAssignment.jsx
 
 import SyllabusPage from "./Components/Pages/SyllabusPage/SyllabusPage.jsx";
 
-import FeedbackPage from "./Components/Pages/FeedbackPage/FeedbackPage.jsx";
+// import FeedbackPage from "./Components/Pages/FeedbackPage/FeedbackPage.jsx";
 
 import ProjectsPage from "./Components/Pages/ProjectsPage/ProjectsPage.jsx";
 
@@ -75,7 +75,7 @@ export default (
 			<Route path="/homework" component={HomeworkPage}/>
 			<Route path="/homework/:id" component={ViewAssignment}/>
 			<Route path="/syllabus" component={SyllabusPage}/>
-			<Route path="/feedback" component={FeedbackPage}/>
+			{/*<Route path="/feedback" component={FeedbackPage}/>*/}
 			<Route path="/projects" component={ProjectsPage}/>
 			<Route path="/admin" component={AdminPage}/>
 			<Route path="/absenceRequest" component={AbsenceRequest}/>
