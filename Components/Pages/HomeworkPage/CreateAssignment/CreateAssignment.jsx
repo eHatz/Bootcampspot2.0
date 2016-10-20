@@ -75,55 +75,63 @@ class createAssignment extends Component {
 	
 	render() {
 		return (
-			<div id='userFormDiv'>
+			<div className="row homeworkAssignDiv">
 				<form onSubmit={this.assignmentCreate}>
 					<FormGroup controlId="formBasicText">
 
-						<ControlLabel>Title</ControlLabel>
-						<FormControl
-	      					type="text" 
-	      					value={this.state.Title}
-	      					placeholder="Title" 
-	      					onChange={this.handleTitleChange}
-	      				/>
+						<div className="col-md-2">
+							<FormControl
+		      					type="text" 
+		      					value={this.state.Title}
+		      					placeholder="Title" 
+		      					onChange={this.handleTitleChange}
+		      				/>
+	      				</div>
 
-						<ControlLabel>Instructions:</ControlLabel>
-						<FormControl
-	      					type="text" 
-	      					value={this.state.Instructions}
-	      					placeholder="Instructions" 
-	      					onChange={this.InstructionsChange}
-	      				/>
+						<div className="col-md-2">
+							<FormControl
+		      					type="text" 
+		      					value={this.state.Instructions}
+		      					placeholder="Instructions" 
+		      					onChange={this.InstructionsChange}
+		      				/>
+	      				</div>
 
-						<ControlLabel>Due Date</ControlLabel>
-						<FormControl
-	      					type="text" 
-	      					value={this.state.Due}
-	      					placeholder="Due Date" 
-	      					onChange={this.DueChange}
-	      				/>
-						<ControlLabel>Resources</ControlLabel>
-						<FormControl
-							type="text" 
-	      					value={this.state.Resources}
-	      					placeholder="Resources" 
-	      					onChange={this.ResourcesChange}
-						/>
+						<div className="col-md-2">
+							<FormControl
+		      					type="text" 
+		      					value={this.state.Due}
+		      					placeholder="Due Date" 
+		      					onChange={this.DueChange}
+		      				/>
+	      				</div>
 
-						<ControlLabel>Section:</ControlLabel>
-						<FormControl
-							componentClass="select"
-							onChange={this.sectionChange}
-							placeholder="select"
-						>
-							<option value="">Select Section</option>
-							{this.props.sectionList.map((item, index) =>
-								<option key= {index} value={item.Title}>{item.Title}</option>
+						<div className="col-md-2">
+							<FormControl
+								type="text" 
+		      					value={this.state.Resources}
+		      					placeholder="Resources" 
+		      					onChange={this.ResourcesChange}
+							/>
+						</div>
 
-							)}
-						</FormControl>
+						<div className="col-md-2">
+							<FormControl
+								componentClass="select"
+								onChange={this.sectionChange}
+								placeholder="select"
+							>
+								<option value="">Select Section</option>
+								{this.props.sectionList.map((item, index) =>
+									<option key= {index} value={item.Title}>{item.Title}</option>
 
-					    <Button type="submit">Submit</Button>
+								)}
+							</FormControl>
+						</div>
+						
+						<div className="col-md-2">
+					    	<Button id="homeworkButton"type="submit">Submit</Button>
+					    </div>
 					</FormGroup>
 				</form>
 			</div>

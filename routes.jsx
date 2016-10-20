@@ -22,6 +22,8 @@ import CareerPage from "./Components/Pages/CareerPage/CareerPage.jsx";
 
 import HomeworkPage from "./Components/Pages/HomeworkPage/HomeworkPage.jsx";
 
+import ViewAssignment from "./Components/Pages/ViewAssignment/ViewAssignment.jsx";
+
 import SyllabusPage from "./Components/Pages/SyllabusPage/SyllabusPage.jsx";
 
 import FeedbackPage from "./Components/Pages/FeedbackPage/FeedbackPage.jsx";
@@ -71,7 +73,7 @@ export default (
 			<Route path="/attendance/student/:id" component={AttendanceStudentView}/>*/}
 			<Route path="/career" component={CareerPage}/>
 			<Route path="/homework" component={HomeworkPage}/>
-			<Route path="/homework/:id" component={HomeworkPage}/>
+			<Route path="/homework/:id" component={ViewAssignment}/>
 			<Route path="/syllabus" component={SyllabusPage}/>
 			<Route path="/feedback" component={FeedbackPage}/>
 			<Route path="/projects" component={ProjectsPage}/>
