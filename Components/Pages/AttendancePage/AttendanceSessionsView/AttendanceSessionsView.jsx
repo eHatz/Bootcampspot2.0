@@ -5,7 +5,6 @@ import "./AttendanceSessionsView.css";
 class AttendanceSessionsView extends Component {
 
 
-//just a placeholder
 	render(){
 
 		const { displayData, viewSingleSession } = this.props;

@@ -6,7 +6,7 @@ class AttendanceStudentsView extends Component {
 
 	render(){
 
-		const { displayData } = this.props
+		const { displayData, selectStudentHandler } = this.props
 
 		return (
 
@@ -22,16 +22,21 @@ class AttendanceStudentsView extends Component {
 				/>
 
 				{displayData.map((item, index) =>
-					<TableRow
-						columnCount ={[
-							{type: 'Data', value: item.Name},
-							{type: 'Data', value: item.Date},
-							{type: 'Data', value: item.Time},
-							{type: 'Data', value: item.Status},
-						]}
-						pageName = 'AttendancePage_AttendanceStudentsView'
-						key= {index}
-					/>
+					<div 
+					value={item.UserId}
+					onClick={selectStudentHandler}
+					>
+						<TableRow
+							columnCount ={[
+								{type: 'Data', value: item.Name},
+								{type: 'Data', value: item.Date},
+								{type: 'Data', value: item.Time},
+								{type: 'Data', value: item.Status},
+							]}
+							pageName = 'AttendancePage_AttendanceStudentsView'
+							key= {index}
+						/>
+					</div>
 				)}
 
 			</div>

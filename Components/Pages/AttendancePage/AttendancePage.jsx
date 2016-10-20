@@ -29,6 +29,7 @@ class AttendancePage extends Component {
 		this.userIsTeacher = this.userIsTeacher.bind(this);
 		this.userIsStudent = this.userIsStudent.bind(this);
 		this.viewSingleSession = this.viewSingleSession.bind(this);
+		this.viewSingleStudent = this.viewSingleStudent.bind(this);
 		this.selectSection = this.selectSection.bind(this);
 		this.attendanceButtonOnClick = this.attendanceButtonOnClick.bind(this);
 	}
@@ -105,6 +106,21 @@ goAjax(route, data, stateProperty){
 				console.log("viewSingleSession: ", response)
 			}.bind(this))
 		//goAjax(route, data, stateProperty){}
+	}
+
+	selectStudentHandler(event){
+		const studentId = event.currentTarget.getAttribute('value');
+		viewSingleStudent(studentId);
+	}
+
+	viewSingleStudent(studentId){
+		const ajaxData = {studentId: studentId}
+		this.goAjax("attendance/singleStudent", ajaxData, "displayData")
+			.then(function(response){
+				this.setState({
+					view: "singleStudent"
+				})
+			}.bind(this))
 	}
 
 	userIsAdmin(){
@@ -215,6 +231,7 @@ goAjax(route, data, stateProperty){
 						this.state.view === "singleSession" ?
 							<AttendanceStudentsView
 								displayData={this.state.displayData}
+								selectStudentHandler={this.selectStudentHandler}
 							/>
 							:						
 							<AttendanceStudentView
