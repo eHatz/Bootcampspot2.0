@@ -138,7 +138,7 @@ class FeedbackPage extends Component {
 				 	</div>
 				 
 				 		<div className="form-group">
-						  <label className="commentText" for="comment">Additional Comments:</label>
+						  <label className="commentText" htmlFor="comment">Additional Comments:</label>
 						  <textarea className="form-control" rows="5" id="comment"></textarea>
 						</div>
 							<input id="resetButt" className="btn btn-default" type="reset" value="Reset"/>

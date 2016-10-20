@@ -37,9 +37,6 @@ class ViewMySubmission extends Component {
 		
 	render() {
 		const { assignment, submission, UserInfo, UserSection } = this.props;
-		//console.log(assignment.Due, submission[0]);
-		//console.log(assignment.Due - submission[0].UserAssignment);
-
 		return (
 
 			<div>
