@@ -106,6 +106,20 @@ class HomeworkPage extends Component {
 				
 				<div className='wholeTable'>
 					<TableRow 
+
+						// columnCount ={[
+						// 	Instructions:
+						// 	Due:
+						// 	SubmitStatus:
+						// 	Type:
+						// 	Resources:
+						// 	{type: 'Header', value: 'TITLE'},
+						// 	{type: 'Header', value: 'DUE DATE'},
+						// 	{type: 'Header', value: 'STATUS'},
+						// 	{type: 'Header', value: 'TYPE'},
+						// ]}
+						// pageName = 'homeworkPage'
+
 						columnCount ={[
 							{type: 'Header', value: 'TITLE'},
 							{type: 'Header', value: 'DUE DATE'},
@@ -114,6 +128,7 @@ class HomeworkPage extends Component {
 							
 						]}
 						pageName = 'homeworkPage'
+
 					/>
 
 					{this.state.assignmentList.map((item, index) =>

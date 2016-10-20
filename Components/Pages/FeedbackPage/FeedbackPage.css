@@ -39,15 +39,17 @@
 }
 #exampleSelect1{
 	width:90%;
+	color:black;
 	margin-left: 10%;
 	
 }
 #exampleSelect2{
 	width:90%;
+	color:black;
 
 	
 }
-label{
+.tutTxt{
 	font-size: 150%;
 	color:black;
 	margin-left: 10%;
@@ -72,7 +74,7 @@ input[type=radio] {
     border: 0px;
     width: 50%;
     height: 1.3em;
-   /* margin-right: 20px;*/
+ 
 }
 
 #feedbackInputQuestion{
@@ -95,12 +97,9 @@ input[type=radio] {
 
 }
 
-/*.btn.btn-default{
-	width:20%;
-	background-color: #FF0000;
-	
-}*/
-.questionTextRad{
+
+#submitButt{
+
 		margin-left: 3%;
 		font-size: 22px;
 	}
@@ -110,6 +109,7 @@ input[type=radio] {
 	margin-left: -5%;
 	margin-top: 2%;
 	margin-bottom: 1%;
+	color: black;
 }
 .multRads{
 	margin-left: 18%;
@@ -119,6 +119,7 @@ input[type=radio] {
 .commentText{
 	font-size: 21px;
 	margin-left: 3%;
+	color:black;
 }
 #comment{
 	margin-left: 3%;
@@ -132,13 +133,86 @@ input[type=radio] {
 #submitButt{
 	font-size: 18px;
 }
+#exampleSelectText1{
+	color:black;
+	font-size:22px; 
+	margin-left: 10%; 
+}
+#exampleSelectText2{
+	color:black;
+	font-size:22px; 
 
+}
+
+
+/*================================iPad*/
+
+@media screen and (max-width: 960px){
+	.rightSide{
+		float:right;
+		margin-right: 15%;
+		margin-top: -3%;
+		text-align: right;
+	}
+	.leftSide{
+		float:left;
+		margin-top: 1%;
+	}
+	#exampleSelect1, #exampleSelect2{
+		width:80%;
+		margin-left: 10%;
+		margin-top: 2%;
+
+		
+	}
+	#exampleSelectText1, #exampleSelectText2{
+		color:black;
+		font-size: 20px;
+		margin-left: 10%;
+
+	}
+
+	.multRads{
+		margin-left: 29%;
+	}
+	.radio-inline{
+	color:black;
+	padding-left: 4%;
+	}
+
+	#usr{
+		width:90%;
+		margin-left: 3%;
+	}
+	.questionTextRad{
+		color:black;
+		margin-left: 5%;
+		font-size: 22px;
+		margin-right: 5%;
+	}
+	#inputQuesText{
+		font-size: 22px;
+		margin-left: 2%;
+		color:black;
+	}
+	.commentText{
+		margin-left: 2%;
+		font-size: 22px;
+		color:black;
+	}
+	#comment{
+		width:90%;
+	}
+}
 
 
 /*======================iPhone*/
 
 
 @media screen and (max-width: 640px){
+	.tutTxt{
+		color:black;
+	}
 	.studentFeedback{
 		height:50%;
 		margin-left: 25%;
@@ -164,12 +238,14 @@ input[type=radio] {
 	.rightSide{
 		float:right;
 		text-align: right;
-		margin-top: -8%;
+		margin-top: -4%;
+		font-size: 17px;
 
 	}
 	.leftSide{
 		float:left;
-		margin-top: -10%;
+		margin-top: 1%;
+		font-size: 17px;
 	}
 
 	
@@ -181,83 +257,40 @@ input[type=radio] {
 	
 	#exampleSelectText1, #exampleSelectText2{
 		margin-left: 10%;
+		font-size: 20px;
 	}
 	#comment{
-		margin-left: 3%;
-		margin-right: 7%;
+		margin-left: 2%;
+		width: 93%;
 	
 	}
 	.commentText{
 		margin-left: 4%;
 		font-size: 22px;
 	}
-	#questionTextRad{
+	.questionTextRad{
 	color:black;
-	margin-left: 8%;
+	margin-left: 7%;
 	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 10px;
-}
+	font-size: 23px;
+	}
 	#inputQuesText {
 	color:black;
-	margin-left: 3%;
+	margin-left: 5%;
 	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 30px;
+	font-size: 21px;
 	margin-right: 5%;
+
 }
 	#submitButt{
 		margin-left: 20%;
+
 	}
+
+
+	
 
 }
-/*================================iPad*/
-
-@media screen and (max-width: 960px){
-	.rightSide{
-		float:right;
-		margin-right: 15%;
-		margin-top: -3%;
-		text-align: right;
-	}
-	.leftSide{
-		float:left;
-		margin-top: 1%;
-	}
-	#exampleSelect1, #exampleSelect2{
-		width:80%;
-		margin-left: 10%;
-		margin-top: 2%;
-	}
-	
-	
-	.multRads{
-		margin-left: 20%;
-	}
-	.radio-inline{
-	color:black;
-	padding-left: 4%;
-	}
-
-	#usr{
-		width:90%;
-		margin-left: 3%;
-	}
-	.questionTextRad{
-		color:black;
-		margin-left: 5%;
-		font-size: 22px;
-		margin-right: 5%;
-	}
-	#inputQuesText{
-		font-size: 22px;
-		margin-left: 2%;
-	}
-	.commentText{
-		margin-left: 2%;
-		font-size: 22px;
-	}
-
-}
-
 
 
 

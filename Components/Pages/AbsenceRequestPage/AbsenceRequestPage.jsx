@@ -77,7 +77,7 @@ class AbsenceRequest extends Component {
 
 				<input id="resetButtAbs" className="btn btn-default" type="reset" value="Reset"/>
 											
-				 <button id="submitAbs" type="submit" className="btn btn-default">Submit</button>
+				<button id="submitAbs" type="submit" className="btn btn-default">Submit</button>
 			</div>
 		)
 	}
