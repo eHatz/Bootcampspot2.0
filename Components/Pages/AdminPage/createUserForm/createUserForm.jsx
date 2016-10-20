@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel, Checkbox, Button } from "react-bootstrap";
 import "./createUserForm.css";
+import $ from "jquery";
 
 class createUserForm extends Component {
 	constructor(props) {
@@ -48,27 +49,25 @@ class createUserForm extends Component {
 			email: "",
 			firstName: "",
 			lastName: "",
-			role: ""
 		});
 	}
 
 	userCreate(event){
-		fetch('/admin/createUser', {
-			credentials: 'include',
-			method: 'POST',
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
+		$.ajax({
+			url: '/admin/createUser',
+			type: "POST",
+			data: {
 	        	email: this.state.email,
 				firstName: this.state.firstName,
 				lastName: this.state.lastName,
 				role: this.state.role,
 				sectionTitle: this.state.sectionTitle
-	        })
+	        }
+		}).then((response) =>{
+			console.log(response.status);
+			this.props.getUsers('sort-nameAsc', 'all');
 		});
-		this.props.getUsers('sort-nameAsc', 'all')
+
 	    this.clearInput();
 	    event.preventDefault();
 	}
