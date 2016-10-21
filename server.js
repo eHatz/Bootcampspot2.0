@@ -265,7 +265,7 @@ app.post("/attendance/singleSession", function(req, res){
 })
 
 
-app.post("attendance/singleStudent", function(req, res){
+app.post("/attendance/singleStudent", function(req, res){
 	console.log("attendance/singleStudent route: ", req.body);
 	const studentId = req.body.studentId;
 	var responseArray = [];
@@ -276,11 +276,12 @@ app.post("attendance/singleStudent", function(req, res){
 		.then(function(student){
 			//Find the student's associated section
 			thisStudent = student;
-			return thisStudent.getSection()
+			return thisStudent.getSections()
 		})
 		.then(function(section){
 			//Find all the sessions in the student's section
-			return section.getSessions()
+			const SectionId = section.id;
+			return Session.findAll({where:{SectionId: SectionId}})
 		}).then(function(sessions){
 			//Make an attendance entry withing our response array for every class session
 			sessions.forEach(function(session){

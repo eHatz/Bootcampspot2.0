@@ -113,8 +113,8 @@ goAjax(route, data, stateProperty){
 	//Shows all attendance for one student
 	viewSingleStudent(studentId){
 		const ajaxData = {studentId: studentId}
-		// console.log("viewSingleStudent-- ", ajaxData);
-		this.goAjax("attendance/singleStudent", ajaxData, "displayData")
+		console.log("viewSingleStudent-- ", ajaxData);
+		this.goAjax("/attendance/singleStudent", ajaxData, "displayData")
 			.then(function(response){
 				this.setState({
 					view: "singleStudent"
