@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { browserHistory, Router, Route, Link, withRouter } from 'react-router';
-// import $ from "jquery";
+import $ from "jquery";
 import "./AttendancePage.css";
 import AttendanceMenu from "./AttendanceMenu/AttendanceMenu.jsx";
 import AttendanceButton from "./AttendanceButton/AttendanceButton.jsx";
@@ -94,6 +94,7 @@ goAjax(route, data, stateProperty){
 
 	}
 
+	//Show attendance for every student in a selected class session
 	viewSingleSession(event){
 		const sessionId = event.currentTarget.getAttribute('value');
 		const ajaxData = {sessionId: sessionId};
@@ -109,19 +110,22 @@ goAjax(route, data, stateProperty){
 		//goAjax(route, data, stateProperty){}
 	}
 
-	selectStudentHandler(event){
-		const studentId = event.currentTarget.getAttribute('value');
-		viewSingleStudent(studentId);
-	}
-
+	//Shows all attendance for one student
 	viewSingleStudent(studentId){
 		const ajaxData = {studentId: studentId}
-		this.goAjax("attendance/singleStudent", ajaxData, "displayData")
-			.then(function(response){
-				this.setState({
-					view: "singleStudent"
-				})
-			}.bind(this))
+		console.log("viewSingleStudent-- ", ajaxData);
+		// this.goAjax("attendance/singleStudent", ajaxData, "displayData")
+		// 	.then(function(response){
+		// 		this.setState({
+		// 			view: "singleStudent"
+		// 		})
+		// 	}.bind(this))
+	}
+
+	//Click handler to select one student from the singleSession view
+	selectStudentHandler(event){
+		const studentId = event.currentTarget.getAttribute('value');
+		this.viewSingleStudent(studentId);
 	}
 
 	userIsAdmin(){
