@@ -266,6 +266,7 @@ app.post("/attendance/singleSession", function(req, res){
 
 
 app.post("attendance/singleStudent", function(req, res){
+	console.log("attendance/singleStudent route: ", req.body);
 	const studentId = req.body.studentId;
 	var responseArray = [];
 	var thisStudent;
