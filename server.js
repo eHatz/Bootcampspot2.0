@@ -297,15 +297,17 @@ app.post('/getAssignments', function(req, res) {
 app.post('/createAssignment', function(req, res) {
 	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
 		section.getUsers().then(function(users) {
-			console.log('CREATE ASSIGNMENT', users);
-		});
-		section.createAssignment({
-			Title: req.body.Title, 
-			Instructions: req.body.Instructions,
-			Due: req.body.Due, 
-			Resources:req.body.Instructions
-		}).then(function(assignment) {
-			res.json({assignment: assignment});
+			section.createAssignment({
+				Title: req.body.Title, 
+				Instructions: req.body.Instructions,
+				Due: req.body.Due, 
+				Resources:req.body.Instructions,
+				Type:req.body.Type
+			})
+			.then(function(assignment) {
+				assignment.addUsers(users);
+				res.json({assignment: assignment});
+			});
 		});
 	});
 });
