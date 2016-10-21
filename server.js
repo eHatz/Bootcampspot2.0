@@ -266,7 +266,7 @@ app.post("/attendance/singleSession", function(req, res){
 
 
 app.post("/attendance/singleStudent", function(req, res){
-	console.log("attendance/singleStudent route: ", req.body);
+	// console.log("attendance/singleStudent route: ", req.body);
 	const studentId = req.body.studentId;
 	var responseArray = [];
 	var thisStudent;
@@ -280,13 +280,13 @@ app.post("/attendance/singleStudent", function(req, res){
 		})
 		.then(function(section){
 			//Find all the sessions in the student's section
-			const SectionId = section.id;
+			const SectionId = section[0].id;
 			return Session.findAll({where:{SectionId: SectionId}})
 		}).then(function(sessions){
 			//Make an attendance entry withing our response array for every class session
 			sessions.forEach(function(session){
 				responseArray.push({
-					id: session.id,
+					SessionId: session.id,
 					Class: session.Subject,
 					Date: session.Date,
 					Time: "",
@@ -302,7 +302,7 @@ app.post("/attendance/singleStudent", function(req, res){
 			sessions.forEach(function(attendanceInstance){
 				responseArray.forEach(function(responseSession){
 					//If an attendance instance matches a session in responseArray...
-					if (attendanceInstance.sessionId === responseSession.id){
+					if (attendanceInstance.id === responseSession.SessionId){
 						//... mark the student early if the datetime for the Attendance instance is earlier than the datetime currently held in response array (which is the start time for that particular session)
 						if (attendanceInstance.Date <= responseSession.Date){
 							responseSession.Date = attendanceInstance.Date;

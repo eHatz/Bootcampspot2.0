@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TableRow from "../../../Table/TableRow/TableRow.jsx";
-import "./AttendanceStudentView";
+import "./AttendanceStudentView.css";
 
 
 
