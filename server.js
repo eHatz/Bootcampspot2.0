@@ -272,6 +272,62 @@ app.post("/attendance/singleSession", function(req, res){
 		}).then((responseArray) => res.send(responseArray))
 })
 
+
+app.post("attendance/singleStudent", function(req, res){
+	const studentId = req.body.studentId;
+	var responseArray = [];
+	var thisStudent;
+
+	//Find the current student in the DB
+	User.findOne({where:{id:studentId}})
+		.then(function(student){
+			//Find the student's associated section
+			thisStudent = student;
+			return thisStudent.getSection()
+		})
+		.then(function(section){
+			//Find all the sessions in the student's section
+			return section.getSessions()
+		}).then(function(sessions){
+			//Make an attendance entry withing our response array for every class session
+			sessions.forEach(function(session){
+				responseArray.push({
+					id: session.id,
+					Class: session.Subject,
+					Date: session.Date,
+					Time: "",
+					Status: "Absent"
+				})
+			})
+			return responseArray;
+		}).then(function(){
+			//Find all sessions for which student registered attendance (in the Attendance Table)
+			return thisStudent.getSessions()
+		}).then(function(sessions){
+			//If the student registered attendance, switch that session's status from "absent" to "early" or "late"
+			sessions.forEach(function(attendanceInstance){
+				responseArray.forEach(function(responseSession){
+					//If an attendance instance matches a session in responseArray...
+					if (attendanceInstance.sessionId === responseSession.id){
+						//... mark the student early if the datetime for the Attendance instance is earlier than the datetime currently held in response array (which is the start time for that particular session)
+						if (attendanceInstance.Date <= responseSession.Date){
+							responseSession.Date = attendanceInstance.Date;
+							responseSession.Status = "Early";
+						} else{
+							responseSession.Date = attendanceInstance.Date;
+							responseSession.Status = "Late";
+						}
+					}
+				})
+			})
+			return responseArray;
+		}).then(function(responseArray){
+			res.send(responseArray)
+		})
+})
+
+
+
 app.post("/attendance/teacher", function(req, res){
 		//??
 	Section.findAll({
