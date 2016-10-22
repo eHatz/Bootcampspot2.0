@@ -5,9 +5,6 @@ module.exports = function(sequelize, DataTypes) {
 		LastName: DataTypes.STRING,
 		Email: DataTypes.STRING,
 		Role: DataTypes.STRING//Can be "Admin", "Teacher", or "Student"
-		// createdAt:{
-		// 	defaultValue: Date.now
-		// }
 	}, {
 	classMethods: {
 		associate: function(models) {
