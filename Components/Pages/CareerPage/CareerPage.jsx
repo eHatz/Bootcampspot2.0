@@ -1,10 +1,57 @@
 import React, { Component } from "react";
 import "./CareerPage.css";
 import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
+import InputBox from '../../SocialLink/InputBox.jsx';
+import SocialLink from '../../SocialLink/SocialLink.jsx';
+
 class CareerPage extends Component {
 
-	render() {
+	constructor(props){
+		super(props);
+// state holds boolean for showing text box and current link.
+		this.state= {
+			showInputBox: false,
+			currentLink: "",
+			textBoxValue: ""
+		}
+		// ensures proper context of this when fucntion is called in child componenent
+		this.setCurrent= this.setCurrent.bind(this);
+		this.settextBoxValue = this.settextBoxValue.bind(this);
 
+	}
+
+	setCurrent(value){
+		this.setState(
+			{
+				currentLink: value,
+				showInputBox: !this.state.showInputBox
+			}
+		)
+	}
+	settextBoxValue(event) {
+		let newValue = event.target.value;
+		this.setState({
+			textBoxValue: newValue
+		})
+	}
+	
+	render() {
+		let showInput;
+		const { urlName } = this.props;
+		const linksArray = [
+			{value: 'linkedin', img: '/assets/images/linkedin.png'},
+			{value: 'github', img: '/assets/images/github.png'},
+		 	{value: 'stack overflow', img: '/assets/images/stackoverflow.png'},
+		 	{value: 'resume', img: '/assets/images/resume.png'},
+		 	{value: 'portfolio', img: '/assets/images/portfolio.png'}
+		 	]
+		const links = linksArray.map( (link) => {
+			return <SocialLink value={link.value} img={link.img} linkClick={()=> this.setCurrent(link.value)} />
+		})
+		if (this.state.showInputBox) {
+			showInput = <InputBox value={this.state.currentLink} currentText={this.state.textBoxValue} updateText={this.settextBoxValue}/>;
+		}
+		
 		return (
 		
 			<div className="careerBackground">
@@ -25,41 +72,11 @@ class CareerPage extends Component {
 				 			<label className="radio-inline yesNo"><input type="radio" name="optradio"/> No</label>
 						</div>
 						<div id="careerUrlDiv" className="row remove-all-margin-padding">
-							<div className="thumbnail thumbnailDiv">
-							    <img id="linkedin" src="/assets/images/linkedin.png" alt="linkedin"/>
-							    <div className="caption">
-							    	<h4 className="careerUrlCaption">Linkedin</h4>
-						      	</div>
-					    	</div>
 
-					    	<div className="thumbnail thumbnailDiv">
-							    <img id="github" src="/assets/images/github.png" alt="github"/>
-							    <div className="caption">
-							    	<h4 className="careerUrlCaption">Github</h4>
-						      	</div>
-					    	</div>
-
-					    	<div className="thumbnail thumbnailDiv">
-							    <img id="stackOverflow" src="/assets/images/stackoverflow.png" alt="stackOverflow"/>
-							    <div className="caption">
-							    	<h4 className="careerUrlCaption">Stack Overflow</h4>
-						      	</div>
-					    	</div>
-
-					    	<div className="thumbnail thumbnailDiv">
-							    <img id="resume" src="/assets/images/resume.png" alt="resume"/>
-							    <div className="caption">
-							    	<h4 className="careerUrlCaption">Resume</h4>
-						      	</div>
-					    	</div>
-
-					    	<div className="thumbnail thumbnailDiv">
-							    <img id="portfolio" src="/assets/images/portfolio.png" alt="portfolio"/>
-							    <div className="caption">
-							    	<h4 className="careerUrlCaption">Portfolio</h4>
-						      	</div>
-					    	</div>
+							{links}
+						
 						</div>
+						{showInput}
 					</div>
 
 					<div className="col-lg-5">
@@ -88,10 +105,3 @@ class CareerPage extends Component {
 }
 
 export default CareerPage;
-
-// <input type="text" className="form-control" id="linkedin" placeholder="Linkedin URL" />
-// 					        <button className="careerUrlButton">Save</button>
-// <h2 id="bioTitle">
-// 	  							<img id="bioPencil" src="/assets/images/pencil.png" alt="pencil"/>
-// 	  							
-// 							</h2>
