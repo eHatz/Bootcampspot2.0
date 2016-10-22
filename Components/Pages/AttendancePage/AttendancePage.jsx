@@ -93,7 +93,6 @@ class AttendancePage extends Component {
 		const sessionId = event.currentTarget.getAttribute('id');
 		const ajaxData = {sessionId: sessionId};
 		console.log("sessionId: ", sessionId);
-		// console.log("event: ", event.target);
 		this.goAjax("/attendance/singleSession", ajaxData, "displayData")
 			.then(function(response){
 				this.setState({
