@@ -12,7 +12,8 @@ class ViewAssignment extends Component {
 				assignment: [],
 				submission: [],
 				userRole: null,
-				allSubmissions: []
+				allSubmissions: [],
+				userSubmits: []
 			};
 			this.getHwSubmission = this.getHwSubmission.bind(this);
 			this.getAllSubmissions = this.getAllSubmissions.bind(this);
@@ -35,14 +36,13 @@ class ViewAssignment extends Component {
 
 		getHwSubmission(assignmentId) {
 			const { UserInfo } = this.props;
-			
 			if (UserInfo.UserInfo.Role === 'Student') {
 				$.ajax({
 					url: '/viewSubmission',
 					type: "POST",
 					data: {
 						assignmentId: assignmentId,
-						UserInfo: UserInfo
+						UserInfo: JSON.stringify(UserInfo.UserInfo)
 			        }
 				}).then((response) => {
 					this.setState({submission: response.studentSubmission, assignment: response.assignment});
@@ -60,17 +60,18 @@ class ViewAssignment extends Component {
 					type: "POST",
 					data: {
 						assignmentId: assignmentId,
-						UserInfo: UserInfo
+						UserInfo: JSON.stringify(UserInfo)
 			        }
 				}).then((response) => {
-					this.setState({allSubmissions: response.studentSubmission, assignment: response.assignment});
+					this.setState({allSubmissions: response.studentSubmission, userSubmits: response.userSub, assignment: response.assignment});
 				});
 			};
 		}
 		
 	render() {
 		const { UserInfo, UserSection, params } = this.props;
-		
+		console.log('ALL SUBS',this.state.allSubmissions);
+		console.log('USER SUBS',this.state.userSubmits);
 		return (
 
 			<div className="homeworkBackground">
@@ -86,18 +87,16 @@ class ViewAssignment extends Component {
 						/>
 						
 						{this.state.allSubmissions.map((item, index) =>
+
 							<TableRow
 								columnCount ={[
-									{type: 'Data', value: item.FirstName + ' ' + item.LastName},
-									this.state.assignment.Due > item.UserAssignment.updatedAt ? (
-										{type: 'Data', value: 'Early'}
-									) : (
-										{type: 'Data', value: 'Late'}
-									),
-									{type: 'Data', value: item.UserAssignment.Grade}
+									{type: 'Data', value: this.state.userSubmits[index].FirstName + ' ' 
+									+ this.state.userSubmits[index].LastName},
+									{type: 'Data', value: item.Status},
+									{type: 'Data', value: item.Grade}
 								]}
 								pageName = 'gradeAssignments'
-								rowLink = {'grading/' + item.UserAssignment.UserId + '/' + item.UserAssignment.AssignmentId}
+								rowLink = {'grading/' + item.UserId + '/' + item.AssignmentId}
 								key= {index}
 							/>
 						)}

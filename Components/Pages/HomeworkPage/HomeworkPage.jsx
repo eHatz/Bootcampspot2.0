@@ -102,24 +102,10 @@ class HomeworkPage extends Component {
 				<div className='wholeTable'>
 					<TableRow 
 
-						// columnCount ={[
-						// 	Instructions:
-						// 	Due:
-						// 	SubmitStatus:
-						// 	Type:
-						// 	Resources:
-						// 	{type: 'Header', value: 'TITLE'},
-						// 	{type: 'Header', value: 'DUE DATE'},
-						// 	{type: 'Header', value: 'STATUS'},
-						// 	{type: 'Header', value: 'TYPE'},
-						// ]}
-						// pageName = 'homeworkPage'
-
 						columnCount ={[
 							{type: 'Header', value: 'TITLE'},
 							{type: 'Header', value: 'DUE DATE'},
 							{type: 'Header', value: 'TYPE'},
-							{type: 'Header', value: 'STATUS'},
 							
 						]}
 						pageName = 'homeworkPage'
@@ -131,8 +117,7 @@ class HomeworkPage extends Component {
 							columnCount ={[
 								{type: 'Data', value: item.Title},
 								{type: 'Data', value: item.Due},
-								{type: 'Data', value: ''},
-								{type: 'Button', value: ''},
+								{type: 'Data', value: item.Type},
 							]}
 							pageName = 'homeworkPage'
 							rowLink = {'homework/' + item.id}

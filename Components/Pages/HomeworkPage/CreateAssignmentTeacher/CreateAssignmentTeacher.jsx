@@ -10,14 +10,16 @@ class createAssignmentTeacher extends Component {
 		this.state = {
 			Title: "",
 			Instructions:"",
-			Due:"",
+			DueDate:"",
+			DueTime:"",
 			Resources:"",
 			sectionTitle: this.props.UserSection.Title
 		};
 
 		this.handleTitleChange = this.handleTitleChange.bind(this);
 		this.InstructionsChange = this.InstructionsChange.bind(this);
-		this.DueChange = this.DueChange.bind(this);
+		this.DueDateChange = this.DueDateChange.bind(this);
+		this.DueTimeChange = this.DueTimeChange.bind(this);
 		this.ResourcesChange = this.ResourcesChange.bind(this);
 		this.clearInput = this.clearInput.bind(this);
 		this.assignmentCreate = this.assignmentCreate.bind(this);
@@ -31,8 +33,12 @@ class createAssignmentTeacher extends Component {
 		this.setState({ Instructions: event.target.value });
 	}
 
-	DueChange(event) {
-		this.setState({ Due: event.target.value });
+	DueDateChange(event) {
+		this.setState({ DueDate: event.target.value });
+	}
+
+	DueTimeChange(event) {
+		this.setState({ DueTime: event.target.value });
 	}
 
 	ResourcesChange(event) {
@@ -44,7 +50,8 @@ class createAssignmentTeacher extends Component {
 		this.setState({
 			Title: "",
 			Instructions: "",
-			Due: "",
+			DueDate: "",
+			DueTime: "",
 			Resources: ""
 		});
 	}
@@ -56,7 +63,8 @@ class createAssignmentTeacher extends Component {
 			data: {
 	        	Title: this.state.Title,
 				Instructions: this.state.Instructions,
-				Due: this.state.Due,
+				DueDate: this.state.DueDate,
+				DueTime: this.state.DueTime,
 				Resources: this.state.Resources,
 				sectionTitle: this.state.sectionTitle
 	        }
@@ -71,7 +79,7 @@ class createAssignmentTeacher extends Component {
 	render() {
 
 		return (
-			<div className="row">
+			<div className="row remove-all-margin-padding">
 				<div id='assignmentTeacherDiv'>
 					<form onSubmit={this.assignmentCreate}>
 						<FormGroup controlId="formBasicText">
@@ -95,9 +103,16 @@ class createAssignmentTeacher extends Component {
 							<ControlLabel>Due Date</ControlLabel>
 							<FormControl
 		      					type="text" 
-		      					value={this.state.Due}
+		      					value={this.state.DueDate}
 		      					placeholder="Due Date" 
-		      					onChange={this.DueChange}
+		      					onChange={this.DueDateChange}
+		      				/>
+		      				<ControlLabel>Due Time</ControlLabel>
+							<FormControl
+		      					type="text" 
+		      					value={this.state.DueTime}
+		      					placeholder="Due Time" 
+		      					onChange={this.DueTimeChange}
 		      				/>
 							<ControlLabel>Resources</ControlLabel>
 							<FormControl

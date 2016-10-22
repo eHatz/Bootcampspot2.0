@@ -25,7 +25,7 @@ class ViewMySubmission extends Component {
 			type: "POST",
 			data: {
 	        	assignmentLinks: this.state.assignmentLinks,
-	        	userInfo: this.props.UserInfo,
+	        	userId: this.props.UserInfo.UserInfo.id,
 	        	assignmentId: this.props.assignmentId
 	        }
 		}).then((response) => {
@@ -37,6 +37,7 @@ class ViewMySubmission extends Component {
 		
 	render() {
 		const { assignment, submission, UserInfo, UserSection } = this.props;
+		console.log('SUBMISSION', submission);
 		return (
 
 			<div>
@@ -68,14 +69,10 @@ class ViewMySubmission extends Component {
 					<div className="row remove-all-margin-padding">
 						<h1>Assignment has already been submitted.</h1>
 						<a href={assignment.Instructions}>Instructions</a>
-						{assignment.Due > submission[0].UserAssignment.updatedAt ? (
-							<h1>Early</h1>
-						) : (
-							<h1>Late</h1>
-						)}
+						<h1>{submission[0].Status}</h1>
 
-						{submission[0].UserAssignment.Grade ? (
-							<h1>Grade: {submission[0].UserAssignment.Grade}</h1>
+						{submission[0].Grade ? (
+							<h1>Grade: {submission[0].Grade}</h1>
 						) : (
 							<h1>Not Graded</h1>
 						)}

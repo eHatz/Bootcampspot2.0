@@ -1,6 +1,7 @@
-'use strict';
+"use strict";
+
 module.exports = function(sequelize, DataTypes) {
-	const UserAssignment = sequelize.define("UserAssignment", {
+	const Submission = sequelize.define('Submission', {
 		Submission: DataTypes.STRING,
 		Notes: DataTypes.TEXT,
 		Grade: DataTypes.STRING,
@@ -12,5 +13,5 @@ module.exports = function(sequelize, DataTypes) {
 		}
 	}
 });
-return UserAssignment;
+return Submission;
 };

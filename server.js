@@ -356,12 +356,12 @@ app.post('/createAssignment', function(req, res) {
 			section.createAssignment({
 				Title: req.body.Title, 
 				Instructions: req.body.Instructions,
-				Due: req.body.Due, 
+				DueDate: req.body.DueDate,
+				DueTime: req.body.DueTime, 
 				Resources:req.body.Instructions,
 				Type:req.body.Type
 			})
 			.then(function(assignment) {
-				assignment.addUsers(users);
 				res.json({assignment: assignment});
 			});
 		});
@@ -373,7 +373,7 @@ app.post('/viewSubmission', function(req, res) {
 	const assignmentId = req.body.assignmentId;
 	Assignment.findOne({where: {id: assignmentId} })
 	.then(function(assignment) {
-		assignment.getUsers({where: {Email: UserInfo.UserInfo.Email}})
+		assignment.getSubmissions({where: {UserId: UserInfo.Id}})
 		.then(function(submission) {
 			res.json({studentSubmission: submission, assignment: assignment});
 		});
@@ -385,34 +385,94 @@ app.post('/viewAllSubmissions', function(req, res) {
 	const assignmentId = req.body.assignmentId;
 	Assignment.findOne({where: {id: assignmentId} })
 	.then(function(assignment) {
-		assignment.getUsers()
+		assignment.getSubmissions()
 		.then(function(submission) {
-			res.json({studentSubmission: submission, assignment: assignment});
+			var index = 0;
+			var userArr = [];
+			function getUsers(index) {
+				User.findOne({where: {id: submission[index].UserId} }).then(function(user) {
+					userArr.push(user);
+					if (index < submission.length-1) {
+						index++;
+						return getUsers(index);
+					} else {
+						return res.json({studentSubmission: submission, userSub: userArr, assignment: assignment});
+					};
+				})
+			};
+			getUsers(index);
 		});
 	});
 });
 
 app.post('/submitAssignment', function(req, res) {
 	const assignmentLinks = req.body.assignmentLinks;
-	const UserInfo = req.body.UserInfo;
+	const userId = req.body.userId;
+	console.log('userIdOOOOOOOOOOOO', userId);
 	const assignmentId = req.body.assignmentId;
 	Assignment.findOne({where: {id: assignmentId} })
 	.then(function(assignment) {
-		User.findOne({where: {Email: userInfo.UserInfo.Email}}).then(function(user) {
-			assignment.addUser(user, {Submission: assignmentLinks}).then(function(user){
-				res.json({success: user});
+		var submitStatus;
+		if (new Date().getTime() > assignment.Due) {
+			submitStatus = 'Late';
+		} else if(new Date().getTime() < assignment.Due) {
+			submitStatus = 'Early';
+		} else {
+			submitStatus = 'On Time';
+		}
+		User.findOne({where: {id: userId}}).then(function(user) {
+			console.log('USERINFOOOOOOOOOOOOO', user);
+			assignment.createSubmission({Submission: assignmentLinks, Status: submitStatus})
+			.then(function(submit){
+				user.addSubmission(submit);
+				res.json(submit);
 			})
 		});
 	});
 });
 
+app.post('/gradeSubmitView', function(req, res) {
+	const studentId = req.body.studentId;
+	const UserInfo = req.body.UserInfo;
+	const assignmentId = req.body.assignmentId;
+	Assignment.findOne({where: {id: assignmentId} })
+	.then(function(assignment) {
+		assignment.getUsers({where: {id: UserId} })
+		.then(function(submission) {
+			res.json({studentSubmission: submission, assignment: assignment});
+		});
+	});
+});
+app.post('/gradeAssignment', function(req, res) {
+	const studentId = req.body.studentId;
+	const UserInfo = req.body.UserInfo;
+	const assignmentId = req.body.assignmentId;
+	const notes = req.body.notes;
+	const grade = req.body.grade;
+	Assignment.findOne({where: {id: assignmentId} })
+	.then(function(assignment) {
+		assignment.getUsers({where: {id: UserId} })
+		.then(function(submission) {
 
+		});
+	});
+
+})
 
 //====Slack Routes====
 
 app.get("/slack", (req, res) => {
 	res.sendFile(path.join(__dirname, './slack.html'));
 });
+
+app.get("/getSlackNames", (req, res) => {
+	request.post({
+		headers: {'content-type' : 'application/x-www-form-urlencoded'},
+		url: process.env.SLACK_GET_USERS}, 
+	function(error, response, body){
+		res.json(body);
+	});
+})
 
 app.post('/slack', (req, res) => {
 	request.post({
@@ -425,6 +485,11 @@ app.post('/slack', (req, res) => {
 			'icon_emoji': ':ghost:'
 		})
 	}, function(error, response, body){
+		if (error) {
+			res.json({slack: 'Message Failed'});
+			return;
+		};
+		res.json({slack: 'Message Sent'});
 	});
 });
 

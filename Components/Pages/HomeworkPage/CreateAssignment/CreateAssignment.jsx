@@ -9,7 +9,8 @@ class createAssignment extends Component {
 		this.state = {
 			Title: "",
 			Instructions:"",
-			Due:"",
+			DueDate:"",
+			DueTime:"",
 			Resources:"",
 			sectionTitle: "",
 			Type: ""
@@ -17,7 +18,8 @@ class createAssignment extends Component {
 
 		this.handleTitleChange = this.handleTitleChange.bind(this);
 		this.InstructionsChange = this.InstructionsChange.bind(this);
-		this.DueChange = this.DueChange.bind(this);
+		this.DueDateChange = this.DueDateChange.bind(this);
+		this.DueTimeChange = this.DueTimeChange.bind(this);
 		this.ResourcesChange = this.ResourcesChange.bind(this);
 		this.clearInput = this.clearInput.bind(this);
 		this.assignmentCreate = this.assignmentCreate.bind(this);
@@ -33,8 +35,12 @@ class createAssignment extends Component {
 		this.setState({ Instructions: event.target.value });
 	}
 
-	DueChange(event) {
-		this.setState({ Due: event.target.value });
+	DueDateChange(event) {
+		this.setState({ DueDate: event.target.value });
+	}
+
+	DueTimeChange(event) {
+		this.setState({ DueTime: event.target.value });
 	}
 
 	ResourcesChange(event) {
@@ -52,7 +58,8 @@ class createAssignment extends Component {
 		this.setState({
 			Title: "",
 			Instructions: "",
-			Due: "",
+			DueDate: "",
+			DueTime: "",
 			Resources: ""
 		});
 	}
@@ -65,7 +72,7 @@ class createAssignment extends Component {
 			data: {
 	        	Title: this.state.Title,
 				Instructions: this.state.Instructions,
-				Due: this.state.Due,
+				DueDate: this.state.DueDate,
 				Resources: this.state.Resources,
 				sectionTitle: this.state.sectionTitle,
 				Type: this.state.Type
@@ -86,7 +93,7 @@ class createAssignment extends Component {
 						<FormGroup controlId="formBasicText">
 							<div className="row"> 
 								<div className="row remove-all-margin-padding">
-									<div className="col-md-4">
+									<div className="col-md-3">
 										<FormControl
 					      					type="text" 
 					      					value={this.state.Title}
@@ -95,7 +102,7 @@ class createAssignment extends Component {
 					      				/>
 				      				</div>
 
-									<div className="col-md-4">
+									<div className="col-md-3">
 										<FormControl
 					      					type="text" 
 					      					value={this.state.Instructions}
@@ -104,17 +111,26 @@ class createAssignment extends Component {
 					      				/>
 				      				</div>
 
-									<div className="col-md-4">
+									<div className="col-md-3">
 										<FormControl
 					      					type="text" 
-					      					value={this.state.Due}
+					      					value={this.state.DueDate}
 					      					placeholder="Due Date" 
-					      					onChange={this.DueChange}
+					      					onChange={this.DueDateChange}
+					      				/>
+				      				</div>
+
+				      				<div className="col-md-3">
+										<FormControl
+					      					type="text" 
+					      					value={this.state.DueTime}
+					      					placeholder="Due Time" 
+					      					onChange={this.DueTimeChange}
 					      				/>
 				      				</div>
 				      			</div>
 				      			<div className="row remove-all-margin-padding">
-									<div className="col-md-4">
+									<div className="col-md-3">
 										<FormControl
 											type="text" 
 					      					value={this.state.Resources}
@@ -123,7 +139,7 @@ class createAssignment extends Component {
 										/>
 									</div>
 
-									<div className="col-md-4">
+									<div className="col-md-3">
 										<FormControl
 											componentClass="select"
 											onChange={this.sectionChange}
@@ -137,7 +153,7 @@ class createAssignment extends Component {
 										</FormControl>
 									</div>
 
-									<div className="col-md-4">
+									<div className="col-md-3">
 										<FormControl
 											componentClass="select"
 											onChange={this.typeChange}
@@ -149,14 +165,11 @@ class createAssignment extends Component {
 											<option value="Career">Career</option>
 										</FormControl>
 									</div>
+								
+									<div className="col-md-3">
+								    	<Button id="homeworkButton"type="submit">Submit</Button>
+								    </div>
 								</div>
-							</div>
-							<div className="row remove-all-margin-padding">
-								<div className="col-md-8">
-								</div>
-								<div className="col-md-4">
-							    	<Button id="homeworkButton"type="submit">Submit</Button>
-							    </div>
 						    </div>
 						</FormGroup>
 					</form>

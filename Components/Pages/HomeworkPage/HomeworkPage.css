@@ -1,15 +1,13 @@
 .homeworkPageCol1 {
-	width: 40%;
+	width: 33.333%;
 }
 .homeworkPageCol2 {
-	width: 10%;
+	width: 33.333%;
 }
 .homeworkPageCol3 {
-	width: 25%;
+	width: 33.333%;
 }
-.homeworkPageCol4 {
-	width: 25%;
-}
+
 .homeworkPageBackground{
 	background-image: url('/assets/images/homework_watermark.png');
 	height: 80vh;
