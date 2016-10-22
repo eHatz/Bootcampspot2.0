@@ -255,6 +255,42 @@ app.post("/attendance/singleSession", function(req, res){
 	})
 })
 
+app.post("/attendance/singleStudent", function(req, res){
+	// console.log("attendance/singleStudent route: ", req.body);
+	const studentId = req.body.studentId;
+	let responseArray = [];
+	
+	Attendance.findAll({where:{UserId:studentId}}).then(function(attendanceResults){
+
+		function recursiveEach(inputArray, i){
+			if (i === inputArray.length){
+				return res.send(responseArray);
+			} 
+
+			let thisItem = inputArray[i];
+
+			Session.findOne({where:{id:thisItem.SessionId}}).then(function(session){
+				responseArray.push({
+					id: thisItem.SessionId,
+					Class: session.Subject,
+					Date: thisItem.Date,
+					Time: thisItem.Time,
+					Status: thisItem.Status
+				})
+				return session;
+			}).then(function(){
+				i++
+				console.log("array.push")
+				recursiveEach(attendanceResults, i);
+			})
+		}
+
+		recursiveEach(attendanceResults, 0);
+	})
+})
+
+
+
 /*
 
 ============
@@ -352,7 +388,7 @@ app.post("/attendance/singleSession", function(req, res){
 			return responseArray;
 		}).then((responseArray) => res.send(responseArray))
 })
-*/
+
 
 app.post("/attendance/singleStudent", function(req, res){
 	// console.log("attendance/singleStudent route: ", req.body);
@@ -409,7 +445,7 @@ app.post("/attendance/singleStudent", function(req, res){
 			res.send(responseArray)
 		})
 })
-
+*/
 
 
 app.post("/attendance/getTeacherSections", function(req, res){
