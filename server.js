@@ -298,6 +298,7 @@ app.post("/attendance/singleStudent", function(req, res){
 			//Find all sessions for which student registered attendance (in the Attendance Table)
 			return thisStudent.getSessions()
 		}).then(function(sessions){
+			console.log("sessions: ", sessions)
 			//If the student registered attendance, switch that session's status from "absent" to "early" or "late"
 			sessions.forEach(function(attendanceInstance){
 				responseArray.forEach(function(responseSession){
