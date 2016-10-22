@@ -56,10 +56,13 @@ app.use(express_session({ secret: 'jennanda', resave: true, saveUninitialized: t
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+//Sequelize models
 const User = models.User;
 const Section = models.Section;
 const Session = models.Session;
 const Assignment = models.Assignment;
+const Attendance = models.Attendance;
 
 //Routes
 app.get('/login', function(req, res){
@@ -221,7 +224,7 @@ app.post("/attendance/singleSession", function(req, res){
 
 	//Grab all Attendance instances that match the current class session
 	Attendance.findAll({where:{SessionId:sessionId}})
-		.then((attendanceResults) =>
+		.then((attendanceResults) => {
 			//For each Attendance instance...
 			attendanceResults.forEach((attendanceInstance)=>
 				//...grab the associated user's name
@@ -239,8 +242,8 @@ app.post("/attendance/singleSession", function(req, res){
 			//end forEach		
 			)
 			return responseArray
-		).then((responseArray)=> res.send(responseArray))
-}
+		}).then((responseArray)=> res.send(responseArray))
+})
 
 /*
 app.post("/attendance/singleSession", function(req, res){

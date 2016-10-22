@@ -6,14 +6,6 @@ import "./AttendanceMenu.css";
 
 class AttendanceMenu extends Component {
 
-	// constructor(...args){
-	// 	super(args);
-
-	// 	this.state ={
-	// 		previous: "#"
-	// 	}
-	// }
-
 	componentWillMount() {
 		console.log("AttendanceMenu");
 		//Request class list from server

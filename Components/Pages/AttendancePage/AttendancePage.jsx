@@ -24,9 +24,9 @@ class AttendancePage extends Component {
 
 		this.goAjax = this.goAjax.bind(this);
 		this.getSessions = this.getSessions.bind(this);
-		this.userIsAdmin = this.userIsAdmin.bind(this);
-		this.userIsTeacher = this.userIsTeacher.bind(this);
-		this.userIsStudent = this.userIsStudent.bind(this);
+		this.userAdmin = this.userAdmin.bind(this);
+		this.userTeacher = this.userTeacher.bind(this);
+		this.userStudent = this.userStudent.bind(this);
 		this.viewSingleSession = this.viewSingleSession.bind(this);
 		this.selectStudentHandler = this.selectStudentHandler.bind(this);
 		this.viewSingleStudent = this.viewSingleStudent.bind(this);
@@ -39,13 +39,12 @@ class AttendancePage extends Component {
 		const { UserInfo } = this.props;
 		const Role = UserInfo.UserInfo.Role;
 		const userId = UserInfo.UserInfo.id
-		console.log("UserInfo: ", UserInfo.UserInfo);
 
 		if (Role === "Admin"){
-			this.userIsAdmin();
+			this.userAdmin();
 		} else if (Role === "Teacher"){
-			this.userIsTeacher(userId);
-		} else (this.userIsStudent(userId))
+			this.userTeacher(userId);
+		} else (this.userStudent(userId))
 
 	}
 
@@ -123,17 +122,25 @@ class AttendancePage extends Component {
 		this.viewSingleStudent(studentId);
 	}
 
-	userIsAdmin(){
+	userAdmin(){
 		//Retrieve all sections
-		this.goAjax("/admin/getSections", null, "sections")
+		console.log("ADMIN")
+		this.goAjax("/admin/getSections")
 			.then(function(response){
+				const sectionArray = response.section
+				this.setState({
+					sections: sectionArray
+				})
+				return sectionArray
+			}.bind(this))
+			.then(function(sectionArray){
 				//Retrieve the related sessions
-				const firstSectionId = response[0].id
+				const firstSectionId = sectionArray[0].id
 				this.getSessions(firstSectionId)
 			}.bind(this))
 	}
 		
-	userIsTeacher(userId){
+	userTeacher(userId){
 		const ajaxData = {id: userId};
 		this.goAjax("/attendance/getTeacherSections", ajaxData)
 			.then(function(response){
@@ -145,7 +152,7 @@ class AttendancePage extends Component {
 			}.bind(this))
 	}
 
-	userIsStudent(userId){
+	userStudent(userId){
 		this.setState({
 			isStudent: true
 		});
