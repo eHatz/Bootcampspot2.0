@@ -7,7 +7,7 @@ class AttendanceSessionsView extends Component {
 
 	render(){
 
-		const { displayData, viewSingleSession } = this.props;
+		let { displayData, viewSingleSession } = this.props;
 		console.log("displayData: ", displayData);
 
 		return (
@@ -26,7 +26,8 @@ class AttendanceSessionsView extends Component {
 					displayData.map((item, index) =>
 						<div 
 							onClick={viewSingleSession}
-							value={item.id}
+							key={index}
+							id={item.id}
 						>
 
 							<TableRow
@@ -37,7 +38,6 @@ class AttendanceSessionsView extends Component {
 								]}
 								pageName = 'AttendancePage_AttendanceSessionView'
 								key= {index}
-								value={item.id}
 							/>
 						</div>
 					)

@@ -17,7 +17,6 @@ class AttendancePage extends Component {
 		this.state = {
 			sections: [], //Holds all the sections that the current user is authorized to see - should not change after component mounts
 			// currentSectionIndex: 0,
-			sessions: [], //Hold all the class sessions for the section currently being views
 			view: "", //Determines which view component gets redered.  Must be allSessions, singleSession, or singleStudent
 			isStudent: false, //turns the Admin/Teacher control panel into an attendance button if true
 			displayData: [] //Holds the actual data displayed by the current view component
@@ -31,7 +30,7 @@ class AttendancePage extends Component {
 		this.viewSingleSession = this.viewSingleSession.bind(this);
 		this.selectStudentHandler = this.selectStudentHandler.bind(this);
 		this.viewSingleStudent = this.viewSingleStudent.bind(this);
-		this.selectSection = this.selectSection.bind(this);
+		this.attendanceMenuSectionHandler = this.attendanceMenuSectionHandler.bind(this);
 		this.attendanceButtonOnClick = this.attendanceButtonOnClick.bind(this);
 	}
 
@@ -39,15 +38,18 @@ class AttendancePage extends Component {
 
 		const { UserInfo } = this.props;
 		const Role = UserInfo.UserInfo.Role;
+		const userId = UserInfo.UserInfo.id
+		console.log("UserInfo: ", UserInfo.UserInfo);
 
 		if (Role === "Admin"){
 			this.userIsAdmin();
 		} else if (Role === "Teacher"){
-			this.userIsTeacher();
-		} else (this.userIsStudent())
+			this.userIsTeacher(userId);
+		} else (this.userIsStudent(userId))
 
 	}
 
+	//Mutli-use ajax post call
 	goAjax(route, data, stateProperty){
 		const that = this;
 		return $.ajax({
@@ -56,47 +58,40 @@ class AttendancePage extends Component {
 				data: data
 		}).then(
 			function(response){
-			that.setState({
-				[stateProperty]: response
-			});
-			return response;
-		})
+				if (stateProperty){
+					that.setState({
+						[stateProperty]: response
+					});
+				}
+				return response;
+			}
+		)
 	}
 
-	/*
-goAjax(route, data, stateProperty){
-		return new Promise(function(resolve, reject){
-			$.ajax({
-				url: route,
-				type: "POST",
-				data: data
-			}).done(function(response){
-				this.setState({
-					[stateProperty]: response
-				});
-				// resolve();
-			}.bind(this)).then(function(){
-				return("response");
-			})
-		}.bind(this))
+	//This method fires when an admin or teacher selects a section to view
+	attendanceMenuSectionHandler(event){
+		const index = event.target.value;
+		const selectedSection = this.state.sections[index].id;
+		
+		this.getSessions(selectedSection)
 	}
-	*/
 
-
-	getSessions(sections, index){
-		//These four constants just load the id for the current section into our AJAX call
-		// const index = this.state.currentSectionIndex;
-		const sectionId = sections[index].id;
+	//This retrieves all sessions for the current section and prints them to the screen.
+	getSessions(sectionId){
 		const dataObj = {section: sectionId}
 
-		console.log("GETSESSIONS -- ", sectionId);
-		return this.goAjax("attendance/getAllSessions", dataObj, "sessions");
-
+		this.goAjax("attendance/getAllSessions", dataObj, "displayData")
+			.then(function(){
+				//Switch state to "allSessionsView", and pass displayData to AttendanceSessionsView	
+				this.setState({
+		    		view: "allSessions"
+	    		});
+			}.bind(this))
 	}
 
 	//Show attendance for every student in a selected class session
 	viewSingleSession(event){
-		const sessionId = event.currentTarget.getAttribute('value');
+		const sessionId = event.currentTarget.getAttribute('id');
 		const ajaxData = {sessionId: sessionId};
 		console.log("sessionId: ", sessionId);
 		// console.log("event: ", event.target);
@@ -114,12 +109,12 @@ goAjax(route, data, stateProperty){
 	viewSingleStudent(studentId){
 		const ajaxData = {studentId: studentId}
 		console.log("viewSingleStudent-- ", ajaxData);
-		// this.goAjax("attendance/singleStudent", ajaxData, "displayData")
-		// 	.then(function(response){
-		// 		this.setState({
-		// 			view: "singleStudent"
-		// 		})
-		// 	}.bind(this))
+		this.goAjax("/attendance/singleStudent", ajaxData, "displayData")
+			.then(function(response){
+				this.setState({
+					view: "singleStudent"
+				})
+			}.bind(this))
 	}
 
 	//Click handler to select one student from the singleSession view
@@ -132,72 +127,33 @@ goAjax(route, data, stateProperty){
 		//Retrieve all sections
 		this.goAjax("/admin/getSections", null, "sections")
 			.then(function(response){
-				//Retrieve the related sections
-				return this.getSessions(response, 0)}.bind(this))
-			.then(function(){
-				//Switch state to "allSessionsView", and pass displayData to AttendanceSessionsView	
-				this.setState({
-		    		view: "allSessions",
-		    		displayData: this.state.sessions
-	    		});
+				//Retrieve the related sessions
+				const firstSectionId = response[0].id
+				this.getSessions(firstSectionId)
 			}.bind(this))
 	}
 		
-	userIsTeacher(){
-		// fetch("/attendance/teacher", {
-		// 	credentials: 'include',
-		// 	method: 'POST',
-		// 	headers: {
-		// 		'Accept': 'application/json',
-		// 		'Content-Type': 'application/json'
-		// 	}
-		// }).then((response) => response.json())
-		// .then((json) =>  this.setState({sections: json});
-		// )
-	}
-
-	userIsStudent(){
-		// this.setState({
-		// 	isStudent: true,
-		// 	view: singleStudent
-		// });
-
-		// fetch("/attendance/student", {
-		// 	credentials: 'include',
-		// 	method: 'POST',
-		// 	headers: {
-		// 		'Accept': 'application/json',
-		// 		'Content-Type': 'application/json'
-		// 	}
-		// }).then((response) => response.json())
-		// .then((json) =>  this.setState({sessions: json});
-		// )
-	}
-
-
-	//This method fires when an admin or teacher selects a section to view
-	selectSection(event){
-
-		let index = event.target.value;
-		// console.log("selectSection index: ", index);
-		
-		this.getSessions(this.state.sections, index)
-			.then(function(){
-				//Switch state to "allSessionsView", and pass displayData to AttendanceSessionsView	
+	userIsTeacher(userId){
+		const ajaxData = {id: userId};
+		this.goAjax("/attendance/getTeacherSections", ajaxData)
+			.then(function(response){
 				this.setState({
-		    		view: "allSessions",
-		    		displayData: this.state.sessions
-	    		});
+					sections: response.sections,
+					displayData: response.sessions, 
+					view: "allSessions"
+				})
 			}.bind(this))
+	}
 
-		// console.log(this.state.displayData);
+	userIsStudent(userId){
+		this.setState({
+			isStudent: true
+		});
+		this.viewSingleStudent(userId);
+	}
 
-  
 
-		//Switches table view to show all sessions for the selected section
-		// console.log("selectSection event.target.value: ", event.target.value);
-
-		//Grab the sessions from the DB
+	markAttendance(){
 		
 	}
 
@@ -218,7 +174,7 @@ goAjax(route, data, stateProperty){
 						<AttendanceButton handleClick={this.attendanceButtonOnClick} />
 						):(
 						<AttendanceMenu
-							selectSection={this.selectSection}
+							attendanceMenuSectionHandler={this.attendanceMenuSectionHandler}
 							sections={this.state.sections}
 						/>)
 					}
@@ -240,7 +196,7 @@ goAjax(route, data, stateProperty){
 							/>
 							:						
 							<AttendanceStudentView
-
+								displayData={this.state.displayData}
 							/>
 					}
 					
@@ -256,19 +212,5 @@ goAjax(route, data, stateProperty){
 export default AttendancePage;
 
 /*
-========
 
-
-				
-=======
-
-
-sections={UserInfo.UserInfo.sections}		
-
-
-
-		Role === "Admin" || Role === "Teacher" ?
-			this.adminTeacherView()
-			:
-			this.studentView()	
 */

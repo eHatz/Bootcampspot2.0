@@ -273,7 +273,8 @@ app.post("/attendance/singleSession", function(req, res){
 })
 
 
-app.post("attendance/singleStudent", function(req, res){
+app.post("/attendance/singleStudent", function(req, res){
+	// console.log("attendance/singleStudent route: ", req.body);
 	const studentId = req.body.studentId;
 	var responseArray = [];
 	var thisStudent;
@@ -283,16 +284,17 @@ app.post("attendance/singleStudent", function(req, res){
 		.then(function(student){
 			//Find the student's associated section
 			thisStudent = student;
-			return thisStudent.getSection()
+			return thisStudent.getSections()
 		})
 		.then(function(section){
 			//Find all the sessions in the student's section
-			return section.getSessions()
+			const SectionId = section[0].id;
+			return Session.findAll({where:{SectionId: SectionId}})
 		}).then(function(sessions){
 			//Make an attendance entry withing our response array for every class session
 			sessions.forEach(function(session){
 				responseArray.push({
-					id: session.id,
+					SessionId: session.id,
 					Class: session.Subject,
 					Date: session.Date,
 					Time: "",
@@ -304,11 +306,12 @@ app.post("attendance/singleStudent", function(req, res){
 			//Find all sessions for which student registered attendance (in the Attendance Table)
 			return thisStudent.getSessions()
 		}).then(function(sessions){
+			console.log("sessions: ", sessions)
 			//If the student registered attendance, switch that session's status from "absent" to "early" or "late"
 			sessions.forEach(function(attendanceInstance){
 				responseArray.forEach(function(responseSession){
 					//If an attendance instance matches a session in responseArray...
-					if (attendanceInstance.sessionId === responseSession.id){
+					if (attendanceInstance.id === responseSession.SessionId){
 						//... mark the student early if the datetime for the Attendance instance is earlier than the datetime currently held in response array (which is the start time for that particular session)
 						if (attendanceInstance.Date <= responseSession.Date){
 							responseSession.Date = attendanceInstance.Date;
@@ -328,17 +331,30 @@ app.post("attendance/singleStudent", function(req, res){
 
 
 
-app.post("/attendance/teacher", function(req, res){
-		//??
+app.post("/attendance/getTeacherSections", function(req, res){
+	var responseObj = {};
 	Section.findAll({
 		include: [{
 			model: User,
-			where: {id: req.id}
+			where: {id: req.body.id}
 		}]
 	}).then(function(sections){
-		console.log("(server.js 183) techerSections route: ", sections);
-		res.json(sections);
-	})
+		responseObj.sections = sections;
+		return sections
+	 }).then(function(sections){
+		return Session.findAll({
+			where:{
+				SectionId: sections[0].id
+			}
+		})
+	 }).then(function(sessions){
+	 	responseObj.sessions = sessions;
+	 	console.log("responseObj before: ", responseObj);
+	 	return responseObj;
+	 }).then(function(responseObj){
+	 	console.log("responseObj after: ", responseObj);
+	 	res.json(responseObj)
+	 })
 })
 
 //====Assignment Routes ==================

@@ -108,6 +108,25 @@ for (var i = 0; i < secondSectionSessions.length; i++){
 	})
 }
 	
+//========Change an individual user's role
+var user1;
+
+ models.User.findOne({
+ 	where:{
+ 		id:3
+ 	}
+ }).then(function(user){
+ 	user1 = user
+ })
+
+ models.Section.findOne({
+ 	where:{
+ 		id:1
+ 	}
+ }).then(function(section){
+ 	section.addUsers(user1)
+ })
+
 
 
 
