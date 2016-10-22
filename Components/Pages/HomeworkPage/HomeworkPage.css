@@ -29,22 +29,22 @@
 @media screen and (max-width: 768px){
 
 	.remove-all-margin-padding {
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-	}
+	    margin-top: 0px;
+	    margin-right: 0px;
+	    margin-bottom: 0px;
+	    margin-left: 0px;
+		}
 	.homeworkPageCol1 {
-	width: 24%;
+		width: 35%;
 	}
 	.homeworkPageCol2 {
-		width: 22%;
+		width: 20%;
 	}
 	.homeworkPageCol3 {
-		width: 26%;
+		width: 25%;
 	}
 	.homeworkPageCol4 {
-		width: 19%;
+		width: 20%;
 	}
 
 }
