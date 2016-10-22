@@ -5,6 +5,9 @@
 //==============
 
 var models = require ("../models");
+var Attendance = models.Attendance;
+var Session = models.Session
+var User = models.User
 
 // let { User, Section } = models;
 
@@ -68,7 +71,7 @@ for (var i = 14;  i <= 22; i++){
 
 secondSection.setUsers(secondSectionUsers).then(function(){console.log("done!")})
 
-//================
+/*/================
 //Assign user to sessions for attendance - first section
 
 var firstSectionSessions = []
@@ -128,8 +131,31 @@ var user1;
  })
 
 
+*///========
 
 
+
+function seedAttendance(){
+	User.findAll({where:{Role != "Admin"}})
+		.then(function(users){
+			users.forEach(function(user){
+				var userId = user.id;
+				user.getSections().then(function(section){
+					return Session.findAll({where:{SectionId: section.id}})
+					}).then(function(sessions){
+						sessions.forEach(function(session){
+							Attendance.create({
+								SessionId: session.id,
+								UserId: userId
+							})
+						})
+					})
+			})////////
+		})
+}
+
+
+//console.log("++++++SECTIONID:" section.id);
 /*
 
 

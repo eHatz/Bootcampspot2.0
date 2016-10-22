@@ -18,6 +18,6 @@ function seedIt(modelName, seeder){
 }
     
 //Call seeders here using this format: seedIt("ModelName", seedData);
-seedIt("Section", seedSection);
-seedIt("User", seedUser);
+// seedIt("Section", seedSection);
+// seedIt("User", seedUser);
 seedIt("Session", seedSessions);

@@ -11,6 +11,7 @@ const express_session = require('express-session');
 const ensureLogin = require('connect-ensure-login');
 const sequelize = require('sequelize');
 const models = require("./models");
+const async = require("async");
 require('dotenv').config();
 
 //Express Setup
@@ -56,10 +57,13 @@ app.use(express_session({ secret: 'jennanda', resave: true, saveUninitialized: t
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+//Sequelize models
 const User = models.User;
 const Section = models.Section;
 const Session = models.Session;
 const Assignment = models.Assignment;
+const Attendance = models.Attendance;
 
 //Routes
 app.get('/login', function(req, res){
@@ -217,6 +221,119 @@ app.post("/attendance/getAllSessions", function(req, res){
 
 app.post("/attendance/singleSession", function(req, res){
 	const sessionId = req.body.sessionId;
+	var responseArray = [];
+
+	//Grab all Attendance instances that match the current class session
+	Attendance.findAll({where:{SessionId:sessionId}}).then(function(attendanceResults){
+		//For each Attendance instance...
+		console.log("attendanceResults: ", attendanceResults)
+
+		function recursiveEach(inputArray, i){
+			if (i === inputArray.length){
+				return res.send(responseArray);
+			} 
+
+			let thisItem = inputArray[i];
+
+			User.findOne({where:{id:thisItem.UserId}}).then(function(user){
+				responseArray.push({
+					UserId: thisItem.UserId,
+					Name: user.FirstName + " " + user.LastName,
+					Date: thisItem.Date,
+					Time: thisItem.Time,
+					Status: thisItem.Status
+				})
+				return user;
+			}).then(function(){
+				i++
+				console.log("array.push")
+				recursiveEach(attendanceResults, i);
+			})
+		}
+
+		recursiveEach(attendanceResults, 0);
+	})
+})
+
+app.post("/attendance/singleStudent", function(req, res){
+	// console.log("attendance/singleStudent route: ", req.body);
+	const studentId = req.body.studentId;
+	let responseArray = [];
+	
+	Attendance.findAll({where:{UserId:studentId}}).then(function(attendanceResults){
+
+		function recursiveEach(inputArray, i){
+			if (i === inputArray.length){
+				return res.send(responseArray);
+			} 
+
+			let thisItem = inputArray[i];
+
+			Session.findOne({where:{id:thisItem.SessionId}}).then(function(session){
+				responseArray.push({
+					id: thisItem.SessionId,
+					Class: session.Subject,
+					Date: thisItem.Date,
+					Time: thisItem.Time,
+					Status: thisItem.Status
+				})
+				return session;
+			}).then(function(){
+				i++
+				console.log("array.push")
+				recursiveEach(attendanceResults, i);
+			})
+		}
+
+		recursiveEach(attendanceResults, 0);
+	})
+})
+
+
+
+/*
+
+============
+app.post("/attendance/singleSession", function(req, res){
+	const sessionId = req.body.sessionId;
+	var responseArray = [];
+
+	//Grab all Attendance instances that match the current class session
+	Attendance.findAll({where:{SessionId:sessionId}})
+		.then(function(attendanceResults){
+			//For each Attendance instance...
+			console.log("attendanceResults: ", attendanceResults)
+			attendanceResults.forEach(function(attendanceInstance){
+						//Package all this information in a tidy object
+				responseArray.push({
+					UserId: attendanceInstance.UserId,
+					Name: "",
+					Date: attendanceInstance.Date,
+					Time: attendanceInstance.Time,
+					Status: attendanceInstance.Status
+				})
+			})
+			return responseArray;
+		})
+		.then(function(responseArray){
+			console.log("responseArray forEach start")
+			responseArray.forEach(function(arrayItem){
+				const ID = arrayItem.UserId;
+				User.findOne({where:{id:ID}})
+					.then(function(user){
+						arrayItem.Name = user.FirstName + " " + user.LastName
+					})
+			})
+			console.log("responseArray: ", responseArray)
+			return responseArray;
+		})
+		.then((responseArray) => res.send(responseArray))
+})
+
+==============
+
+app.post("/attendance/singleSession", function(req, res){
+	const sessionId = req.body.sessionId;
 	console.log("sessionId: ", sessionId)
 	var sectionId;
 	var thisSession;
@@ -268,7 +385,7 @@ app.post("/attendance/singleSession", function(req, res){
 					})
 				})
 				console.log("/attendance/singleSession: ", responseArray);
-				return responseArray;
+			return responseArray;
 		}).then((responseArray) => res.send(responseArray))
 })
 
@@ -328,7 +445,7 @@ app.post("/attendance/singleStudent", function(req, res){
 			res.send(responseArray)
 		})
 })
-
+*/
 
 
 app.post("/attendance/getTeacherSections", function(req, res){
