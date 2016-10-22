@@ -126,12 +126,12 @@ app.post('/admin/getUsers', function(req, res) {
 				.then(function(dbSection) {
 					dbSection.getUsers({order: [[column]]}).then(function(users) {
 						console.log('SECTION USERS===========', users);
-						res.json(users);
+						res.json({users: users});
 					})
 				})
 			} else {
 				User.findAll({order: [[column]]}).then(function(users){
-					res.json(users);
+					res.json({users: users});
 				})
 			}
 		}
@@ -143,12 +143,12 @@ app.post('/admin/getUsers', function(req, res) {
 				Section.findOne({where: {Title: req.body.section} })
 				.then(function(dbSection) {
 					dbSection.getUsers({order: [[column, 'DESC']]}).then(function(users) {
-						res.json(users);
+						res.json({users: users});
 					})
 				})
 			} else {
 				User.findAll({order: [[column, 'DESC']]}).then(function(users){
-					res.json(users);
+					res.json({users: users});
 				})
 			}
 		}
@@ -171,8 +171,14 @@ app.post('/admin/createUser', function(req, res) {
 		if (req.body.role !=='Admin') {
 			Section.findOne({where: {Title: req.body.sectionTitle} })
 			.then(function(section) {
-				newUser.addSection(section);
-			})
+				if (section) {
+					newUser.addSection(section);
+					res.json({status: 'User Created Successfully'});
+				} else {
+					res.json({status: 'User Creation Failed'});
+				};
+				
+			});
 			
 		};
 	});
@@ -180,7 +186,7 @@ app.post('/admin/createUser', function(req, res) {
 
 app.post('/admin/getSections', function(req, res) {
 	Section.findAll().then(function(section){
-		res.json(section);
+		res.json({section: section});
 	});
 });
 
@@ -192,7 +198,9 @@ app.post('/admin/createSection', function(req, res) {
 		Slack: req.body.Slack,
 		StartDate: req.body.StartDate,
 		EndDate: req.body.EndDate,
-	})
+	}).then(function(section) {
+		res.json({section:section});
+	});
 });
 
 //====Attendance routes====
@@ -360,13 +368,18 @@ app.post('/getAssignments', function(req, res) {
 
 app.post('/createAssignment', function(req, res) {
 	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
+		section.getUsers().then(function(users) {
+			console.log('CREATE ASSIGNMENT', users);
+		});
 		section.createAssignment({
 			Title: req.body.Title, 
 			Instructions: req.body.Instructions,
 			Due: req.body.Due, 
 			Resources:req.body.Instructions
-		})
-	})
+		}).then(function(assignment) {
+			res.json({assignment: assignment});
+		});
+	});
 });
 
 app.post('/viewSubmission', function(req, res) {
@@ -400,7 +413,9 @@ app.post('/submitAssignment', function(req, res) {
 	Assignment.findOne({where: {id: assignmentId} })
 	.then(function(assignment) {
 		User.findOne({where: {Email: userInfo.UserInfo.Email}}).then(function(user) {
-			assignment.addUser(user, {Submission: assignmentLinks});
+			assignment.addUser(user, {Submission: assignmentLinks}).then(function(user){
+				res.json({success: user});
+			})
 		});
 	});
 });

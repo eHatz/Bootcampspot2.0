@@ -4,6 +4,8 @@ import CreateAssignment from "./CreateAssignment/CreateAssignment.jsx";
 import SortAssignments from "./SortAssignments/SortAssignments.jsx";
 import CreateAssignmentTeacher from "./CreateAssignmentTeacher/CreateAssignmentTeacher.jsx";
 import TableRow from "../../Table/TableRow/TableRow.jsx";
+import $ from "jquery";
+
 class HomeworkPage extends Component {
 		constructor(props, context) {
 
@@ -21,14 +23,17 @@ class HomeworkPage extends Component {
 			this.setState({userRole: UserInfo.UserInfo.Role})
 			//prevents errors from occuring if page is reloaded and state is lost
 			if (UserInfo.UserInfo.Role === undefined) {
-				fetch('/login', {credentials: 'include'})
-				.then((response) => response.json())
-				.then((json) => {
+
+				$.ajax({
+					url: '/login',
+					type: "POST"
+				}).then((json) => {
 					this.setState({userRole: json.userData.Role})
 					if (json.userData.Role !== 'Admin') {
 						this.getAssignments(json.userSection.Title);
 					};
-				})
+				});
+				
 			};
 			// && UserSection.UserSection prevents error on reload of page
 			if (UserInfo.UserInfo.Role !== 'Admin' && UserSection.UserSection) {
@@ -39,35 +44,25 @@ class HomeworkPage extends Component {
 
 		getAssignments(sectionTitle) {
 			const { UserInfo } = this.props;
-				fetch('/getAssignments', {
-					credentials: 'include',
-					method: 'POST',
-					headers: {
-					'Accept': 'application/json',
-					'Content-Type': 'application/json'
-					},
-					body: JSON.stringify({
+
+				$.ajax({
+					url: '/getAssignments',
+					type: "POST",
+					data: {
 						sectionTitle: sectionTitle
-			        })
-				})
-				.then((response) => response.json())
-				.then((json) => {
-					this.setState({assignmentList: json});
+			        }
+				}).then((response) => {
+					this.setState({assignmentList: response});
 				});
+
 		}
 		
 		getSections() {
-			fetch('/admin/getSections', {
-				credentials: 'include',
-				method: 'POST',
-				headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-				}
-			})
-			.then((response) => response.json())
-			.then((json) => {
-				this.setState({sectionList: json});
+			$.ajax({
+				url: '/admin/getSections',
+				type: "POST"
+			}).then((response) => {
+				this.setState({sectionList: response.section});
 			});
 		}
 

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel, Checkbox, Button } from "react-bootstrap";
 import "./CreateSectionForm.css";
+import $ from "jquery";
 
 class CreateSectionForm extends Component {
 	constructor(props) {
@@ -58,22 +59,20 @@ class CreateSectionForm extends Component {
 	}
 
 	sectionCreate(event){
-		fetch('/admin/createSection', {
-			credentials: 'include',
-			method: 'POST',
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
+		$.ajax({
+			url: '/admin/createSection',
+			type: "POST",
+			data: {
 				Title: this.state.Title,
 				Location: this.state.Location,
 				Slack: this.state.Slack,
 				StartDate: this.state.StartDate,
 				EndDate: this.state.EndDate
-	        })
-		})
-		this.props.getSections();
+	        }
+		}).then((response) => {
+			this.props.getSections();
+		});
+
 	    this.clearInput();
 	    event.preventDefault();
 	}
@@ -81,75 +80,78 @@ class CreateSectionForm extends Component {
 	render() {
 
 		return (
-			<div className="row sectionDiv">
-				<form onSubmit={this.sectionCreate}>
-					<FormGroup controlId="formBasicText">
-						<div className="col-md-2 sectionField">
-							<FormControl
-		      					type="text" 
-		      					value={this.state.Title}
-		      					placeholder="Section Title" 
-		      					onChange={this.handleTitleChange}
-		      				/>
-	      				</div>
+			<div className="row remove-all-margin-padding">
+				<div className="sectionDiv">
+					<form onSubmit={this.sectionCreate}>
+						<FormGroup controlId="formBasicText">
+							<div className="col-md-2 sectionField">
+								<FormControl
+			      					type="text" 
+			      					value={this.state.Title}
+			      					placeholder="Section Title" 
+			      					onChange={this.handleTitleChange}
+			      				/>
+		      				</div>
 
-						<div className="col-md-2 sectionField">
-							<FormControl
-		      					type="text" 
-		      					value={this.state.Location}
-		      					placeholder="Location" 
-		      					onChange={this.LocationChange}
-		      				/>
-	      				</div>
+							<div className="col-md-2 sectionField">
+								<FormControl
+			      					type="text" 
+			      					value={this.state.Location}
+			      					placeholder="Location" 
+			      					onChange={this.LocationChange}
+			      				/>
+		      				</div>
 
-						<div className="col-md-2 sectionField">
-							<FormControl
-		      					type="text" 
-		      					value={this.state.Slack}
-		      					placeholder="Slack Key" 
-		      					onChange={this.SlackChange}
-		      				/>
-	      				</div>
-						
-						<div className="col-md-2 sectionField">
-							<FormControl
-		      					type="text" 
-		      					value={this.state.StartDate}
-		      					placeholder="Start Date" 
-		      					onChange={this.StartDateChange}
-		      				/>
-	      				</div>
+							<div className="col-md-2 sectionField">
+								<FormControl
+			      					type="text" 
+			      					value={this.state.Slack}
+			      					placeholder="Slack Key" 
+			      					onChange={this.SlackChange}
+			      				/>
+		      				</div>
+							
+							<div className="col-md-2 sectionField">
+								<FormControl
+			      					type="text" 
+			      					value={this.state.StartDate}
+			      					placeholder="Start Date" 
+			      					onChange={this.StartDateChange}
+			      				/>
+		      				</div>
 
-	      				<div className="col-md-2 sectionField">
-							<FormControl
-		      					type="text" 
-		      					value={this.state.EndDate}
-		      					placeholder="End Date" 
-		      					onChange={this.EndDateChange}
-		      				/>
-	      				</div>
+		      				<div className="col-md-2 sectionField">
+								<FormControl
+			      					type="text" 
+			      					value={this.state.EndDate}
+			      					placeholder="End Date" 
+			      					onChange={this.EndDateChange}
+			      				/>
+		      				</div>
 
-						<div className="col-md-2 sectionField">
-							<FormControl
-								componentClass="select"
-								onChange={this.DaysChange}
-								placeholder="select"
-							>
-								<option value="Sunday">Sunday</option>
-								<option value="Monday">Monday</option>
-								<option value="Tuesday">Tuesday</option>
-								<option value="Wednesday">Wednesday</option>
-								<option value='Thursday'>Thursday</option>
-								<option value='Friday'>Friday</option>
-								<option value='Saturday'>Saturday</option>
-							</FormControl>
-						</div>
-						<div className="col-md-1 sectionField">
-					    	<Button id="sectionButton" type="submit">Submit</Button>
-					    </div>
-					</FormGroup>
-
-				</form>
+							{/*
+								<div className="col-md-2 sectionField">
+								<FormControl
+									componentClass="select"
+									onChange={this.DaysChange}
+									placeholder="select"
+								>
+									<option value="Sunday">Sunday</option>
+									<option value="Monday">Monday</option>
+									<option value="Tuesday">Tuesday</option>
+									<option value="Wednesday">Wednesday</option>
+									<option value='Thursday'>Thursday</option>
+									<option value='Friday'>Friday</option>
+									<option value='Saturday'>Saturday</option>
+								</FormControl>
+							</div>
+							*/}
+							<div className="col-md-2">
+						    	<Button id="sectionButton" type="submit">Submit</Button>
+						    </div>
+						</FormGroup>
+					</form>
+				</div>
 			</div>
 		);
 	}
