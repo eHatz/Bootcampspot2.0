@@ -217,6 +217,34 @@ app.post("/attendance/getAllSessions", function(req, res){
 
 app.post("/attendance/singleSession", function(req, res){
 	const sessionId = req.body.sessionId;
+	var responseArray = [];
+
+	//Grab all Attendance instances that match the current class session
+	Attendance.findAll({where:{SessionId:sessionId}})
+		.then((attendanceResults) =>
+			//For each Attendance instance...
+			attendanceResults.forEach((attendanceInstance)=>
+				//...grab the associated user's name
+				User.findOne({where:{id:attendanceInstance.UserId}})
+					.then((user)=>
+						//And package all this information in a tidy object
+						responseArray.push({
+							UserId: attendanceInstance.UserId,
+							Name: user.FirstName + " " + user.LastName,
+							Date: attendanceInstance.Date,
+							Time: attendanceInstance.Time,
+							Status: attendanceInstance.Status
+						})
+					)
+			//end forEach		
+			)
+			return responseArray
+		).then((responseArray)=> res.send(responseArray))
+}
+
+/*
+app.post("/attendance/singleSession", function(req, res){
+	const sessionId = req.body.sessionId;
 	console.log("sessionId: ", sessionId)
 	var sectionId;
 	var thisSession;
@@ -271,7 +299,7 @@ app.post("/attendance/singleSession", function(req, res){
 				return responseArray;
 		}).then((responseArray) => res.send(responseArray))
 })
-
+*/
 
 app.post("/attendance/singleStudent", function(req, res){
 	// console.log("attendance/singleStudent route: ", req.body);
