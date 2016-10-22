@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import TableRow from "../../../Table/TableRow/TableRow.jsx";
+import "./AttendanceStudentView.css";
 
-const data = [];
 
 
 class AttendanceStudentView extends Component {
 
 
 	render(){
+
+		const { displayData } = this.props;
+
 		return (
 			<div>
 
@@ -18,18 +21,19 @@ class AttendanceStudentView extends Component {
 						{type: 'Header', value: 'Time'},
 						{type: 'Header', value: 'Status'},
 					]}
-					pageName = 'AttendancePage_AttendanceStudentsView'
+					pageName = 'AttendancePage_AttendanceStudentView'
 				/>
 
 
-				{data.map((item, index) =>
+				{displayData.map((item, index) =>
 					<TableRow
 						columnCount ={[
-							{type: 'Data', value: item.date},
-							{type: 'Data', value: item.time},
-							{type: 'Data', value: item.attendance},
+							{type: 'Data', value: item.Class},
+							{type: 'Data', value: item.Date},
+							{type: 'Data', value: item.Time},
+							{type: 'Data', value: item.Status},
 						]}
-						pageName = 'attendancePage'
+					pageName = 'AttendancePage_AttendanceStudentView'
 						key= {index}
 					/>
 				)}

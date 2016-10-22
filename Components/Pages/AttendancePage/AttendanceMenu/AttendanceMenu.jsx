@@ -6,14 +6,6 @@ import "./AttendanceMenu.css";
 
 class AttendanceMenu extends Component {
 
-	// constructor(...args){
-	// 	super(args);
-
-	// 	this.state ={
-	// 		previous: "#"
-	// 	}
-	// }
-
 	componentWillMount() {
 		console.log("AttendanceMenu");
 		//Request class list from server
@@ -21,7 +13,7 @@ class AttendanceMenu extends Component {
 	}
 
 	render() {
-		const { sections, selectSection, switchDisplay } = this.props;
+		const { sections, attendanceMenuSectionHandler, switchDisplay } = this.props;
 		return (
 
 			<form>
@@ -31,7 +23,7 @@ class AttendanceMenu extends Component {
 					<FormControl 
 						componentClass="select" 
 						placeholder="select"
-						onChange={selectSection}
+						onChange={attendanceMenuSectionHandler}
 					>
 
 						{sections.map((section, index) => 
