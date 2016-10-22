@@ -322,17 +322,30 @@ app.post("/attendance/singleStudent", function(req, res){
 
 
 
-app.post("/attendance/teacher", function(req, res){
-		//??
+app.post("/attendance/getTeacherSections", function(req, res){
+	var responseObj = {};
 	Section.findAll({
 		include: [{
 			model: User,
-			where: {id: req.id}
+			where: {id: req.body.id}
 		}]
 	}).then(function(sections){
-		console.log("(server.js 183) techerSections route: ", sections);
-		res.json(sections);
-	})
+		responseObj.sections = sections;
+		return sections
+	 }).then(function(sections){
+		return Session.findAll({
+			where:{
+				SectionId: sections[0].id
+			}
+		})
+	 }).then(function(sessions){
+	 	responseObj.sessions = sessions;
+	 	console.log("responseObj before: ", responseObj);
+	 	return responseObj;
+	 }).then(function(responseObj){
+	 	console.log("responseObj after: ", responseObj);
+	 	res.json(responseObj)
+	 })
 })
 
 //====Assignment Routes ==================
