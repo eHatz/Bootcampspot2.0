@@ -9,18 +9,22 @@ class createAssignment extends Component {
 		this.state = {
 			Title: "",
 			Instructions:"",
-			Due:"",
+			DueDate:"",
+			DueTime:"",
 			Resources:"",
-			sectionTitle: ""
+			sectionTitle: "",
+			Type: ""
 		};
 
 		this.handleTitleChange = this.handleTitleChange.bind(this);
 		this.InstructionsChange = this.InstructionsChange.bind(this);
-		this.DueChange = this.DueChange.bind(this);
+		this.DueDateChange = this.DueDateChange.bind(this);
+		this.DueTimeChange = this.DueTimeChange.bind(this);
 		this.ResourcesChange = this.ResourcesChange.bind(this);
 		this.clearInput = this.clearInput.bind(this);
 		this.assignmentCreate = this.assignmentCreate.bind(this);
 		this.sectionChange = this.sectionChange.bind(this);
+		this.typeChange = this.typeChange.bind(this);
 	}
 
 	handleTitleChange(event) {
@@ -31,8 +35,12 @@ class createAssignment extends Component {
 		this.setState({ Instructions: event.target.value });
 	}
 
-	DueChange(event) {
-		this.setState({ Due: event.target.value });
+	DueDateChange(event) {
+		this.setState({ DueDate: event.target.value });
+	}
+
+	DueTimeChange(event) {
+		this.setState({ DueTime: event.target.value });
 	}
 
 	ResourcesChange(event) {
@@ -41,13 +49,17 @@ class createAssignment extends Component {
 	sectionChange(event) {
 		this.setState({ sectionTitle: event.target.value });
 	}
+	typeChange(event) {
+		this.setState({ Type: event.target.value });
+	}
 
 
 	clearInput(){
 		this.setState({
 			Title: "",
 			Instructions: "",
-			Due: "",
+			DueDate: "",
+			DueTime: "",
 			Resources: ""
 		});
 	}
@@ -60,9 +72,10 @@ class createAssignment extends Component {
 			data: {
 	        	Title: this.state.Title,
 				Instructions: this.state.Instructions,
-				Due: this.state.Due,
+				DueDate: this.state.DueDate,
 				Resources: this.state.Resources,
-				sectionTitle: this.state.sectionTitle
+				sectionTitle: this.state.sectionTitle,
+				Type: this.state.Type
 	        }
 		}).then((response) => {
 			this.props.getAssignments(this.state.sectionTitle);
@@ -78,59 +91,85 @@ class createAssignment extends Component {
 				<div className="homeworkAssignDiv">
 					<form onSubmit={this.assignmentCreate}>
 						<FormGroup controlId="formBasicText">
+							<div className="row"> 
+								<div className="row remove-all-margin-padding">
+									<div className="col-md-3">
+										<FormControl
+					      					type="text" 
+					      					value={this.state.Title}
+					      					placeholder="Title" 
+					      					onChange={this.handleTitleChange}
+					      				/>
+				      				</div>
 
-							<div className="col-md-2">
-								<FormControl
-			      					type="text" 
-			      					value={this.state.Title}
-			      					placeholder="Title" 
-			      					onChange={this.handleTitleChange}
-			      				/>
-		      				</div>
+									<div className="col-md-3">
+										<FormControl
+					      					type="text" 
+					      					value={this.state.Instructions}
+					      					placeholder="Instructions" 
+					      					onChange={this.InstructionsChange}
+					      				/>
+				      				</div>
 
-							<div className="col-md-2">
-								<FormControl
-			      					type="text" 
-			      					value={this.state.Instructions}
-			      					placeholder="Instructions" 
-			      					onChange={this.InstructionsChange}
-			      				/>
-		      				</div>
+									<div className="col-md-3">
+										<FormControl
+					      					type="text" 
+					      					value={this.state.DueDate}
+					      					placeholder="Due Date" 
+					      					onChange={this.DueDateChange}
+					      				/>
+				      				</div>
 
-							<div className="col-md-2">
-								<FormControl
-			      					type="text" 
-			      					value={this.state.Due}
-			      					placeholder="Due Date" 
-			      					onChange={this.DueChange}
-			      				/>
-		      				</div>
+				      				<div className="col-md-3">
+										<FormControl
+					      					type="text" 
+					      					value={this.state.DueTime}
+					      					placeholder="Due Time" 
+					      					onChange={this.DueTimeChange}
+					      				/>
+				      				</div>
+				      			</div>
+				      			<div className="row remove-all-margin-padding">
+									<div className="col-md-3">
+										<FormControl
+											type="text" 
+					      					value={this.state.Resources}
+					      					placeholder="Resources" 
+					      					onChange={this.ResourcesChange}
+										/>
+									</div>
 
-							<div className="col-md-2">
-								<FormControl
-									type="text" 
-			      					value={this.state.Resources}
-			      					placeholder="Resources" 
-			      					onChange={this.ResourcesChange}
-								/>
-							</div>
+									<div className="col-md-3">
+										<FormControl
+											componentClass="select"
+											onChange={this.sectionChange}
+											placeholder="select"
+										>
+											<option value="">Select Section</option>
+											{this.props.sectionList.map((item, index) =>
+												<option key= {index} value={item.Title}>{item.Title}</option>
 
-							<div className="col-md-2">
-								<FormControl
-									componentClass="select"
-									onChange={this.sectionChange}
-									placeholder="select"
-								>
-									<option value="">Select Section</option>
-									{this.props.sectionList.map((item, index) =>
-										<option key= {index} value={item.Title}>{item.Title}</option>
+											)}
+										</FormControl>
+									</div>
 
-									)}
-								</FormControl>
-							</div>
-							
-							<div className="col-md-2">
-						    	<Button id="homeworkButton"type="submit">Submit</Button>
+									<div className="col-md-3">
+										<FormControl
+											componentClass="select"
+											onChange={this.typeChange}
+											placeholder="select"
+										>
+											<option value="">Assignment Type</option>
+											<option value="Homework">Homework</option>
+											<option value="Project">Project</option>
+											<option value="Career">Career</option>
+										</FormControl>
+									</div>
+								
+									<div className="col-md-3">
+								    	<Button id="homeworkButton"type="submit">Submit</Button>
+								    </div>
+								</div>
 						    </div>
 						</FormGroup>
 					</form>
