@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "react-bootstrap";
+import "./AttendanceButton.css"
 
 class AttendanceButton extends Component {
 
@@ -12,11 +13,11 @@ class AttendanceButton extends Component {
 
 	render() {
 		
-		const { handleClick } = this.props;
+		const { attendanceButtonOnClick } = this.props;
 
 		return (
-			<div className="well" style={wellStyles}>
-				<Button onClick={handleClick} bsSize="large" block>Mark Present</Button>
+			<div className="well">
+				<Button onClick={attendanceButtonOnClick} bsSize="large" block>Mark Present</Button>
 			</div>
 		)
 	}

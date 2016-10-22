@@ -39,6 +39,7 @@ class AttendancePage extends Component {
 		const { UserInfo } = this.props;
 		const Role = UserInfo.UserInfo.Role;
 		const userId = UserInfo.UserInfo.id
+		console.log("UserInfo: ", UserInfo.UserInfo);
 
 		if (Role === "Admin"){
 			this.userIsAdmin();
@@ -148,11 +149,13 @@ class AttendancePage extends Component {
 		this.setState({
 			isStudent: true
 		});
-		viewSingleStudent(userId);
+		this.viewSingleStudent(userId);
 	}
 
 
-
+	markAttendance(){
+		
+	}
 
 
 	attendanceButtonOnClick(){
