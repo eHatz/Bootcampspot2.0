@@ -73,6 +73,7 @@ class createAssignment extends Component {
 	        	Title: this.state.Title,
 				Instructions: this.state.Instructions,
 				DueDate: this.state.DueDate,
+				DueTime: this.state.DueTime,
 				Resources: this.state.Resources,
 				sectionTitle: this.state.sectionTitle,
 				Type: this.state.Type

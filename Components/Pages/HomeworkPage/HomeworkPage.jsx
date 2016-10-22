@@ -116,7 +116,7 @@ class HomeworkPage extends Component {
 						<TableRow
 							columnCount ={[
 								{type: 'Data', value: item.Title},
-								{type: 'Data', value: item.Due},
+								{type: 'Data', value: item.DueDate.split('T')[0] + ' ' + item.DueTime},
 								{type: 'Data', value: item.Type},
 							]}
 							pageName = 'homeworkPage'
