@@ -29,7 +29,7 @@ class AttendanceStudentView extends Component {
 				{displayData.map((item, index) =>
 					<div
 						onClick={showModal}
-						value={item.AttendanceId}
+						value={item.id}
 					>
 						<TableRow
 							columnCount ={[

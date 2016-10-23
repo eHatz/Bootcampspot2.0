@@ -247,7 +247,15 @@ class AttendancePage extends Component {
 					}
 					
 				</div>
+						{/*
+								<AttendanceModal 
+									show={this.state.showModal}
+									date={this.state.modalDate}
+									student={this.state.modalStudent}
+									id={this.state.modalId}
+								/>
 
+							*/}
 
 				
 			</div>
