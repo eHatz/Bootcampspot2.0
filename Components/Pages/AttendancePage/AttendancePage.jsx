@@ -2,8 +2,11 @@ import React, { Component } from "react";
 import { browserHistory, Router, Route, Link, withRouter } from 'react-router';
 import $ from "jquery";
 import "./AttendancePage.css";
+//Control components
 import AttendanceMenu from "./AttendanceMenu/AttendanceMenu.jsx";
 import AttendanceButton from "./AttendanceButton/AttendanceButton.jsx";
+import AttendanceModal from "./AttendanceModal/AttendanceModal.jsx";
+//View components
 import AttendanceSessionsView from "./AttendanceSessionsView/AttendanceSessionsView.jsx";
 import AttendanceStudentsView from "./AttendanceStudentsView/AttendanceStudentsView.jsx";
 import AttendanceStudentView from "./AttendanceStudentView/AttendanceStudentView.jsx";
