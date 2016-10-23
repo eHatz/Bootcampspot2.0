@@ -169,8 +169,14 @@ class AttendancePage extends Component {
 	}
 
 
-	markAttendance(){
-		
+	markAttendance(id, status){
+		const ajaxData = {
+			attendanceId: id, 
+			status: status
+		}
+		this.goAjax("attendance/editAttendance", ajaxData).then(function(response){
+			console.log("update attendance response:", response)
+		})
 	}
 
 	hideModal(){}
