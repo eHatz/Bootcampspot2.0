@@ -18,9 +18,10 @@
 		display: none;
 	}
 	.hideBtn{
-		display: table;
-		border: none;
-		background-color: transparent;
+		display: table-row;
+    	border: none;
+    	background-color: transparent;
+    	margin-left: 28px;
 	}
 	.hideBtn:focus {
     	
