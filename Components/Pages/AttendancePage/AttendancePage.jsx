@@ -5,7 +5,6 @@ import "./AttendancePage.css";
 //Control components
 import AttendanceMenu from "./AttendanceMenu/AttendanceMenu.jsx";
 import AttendanceButton from "./AttendanceButton/AttendanceButton.jsx";
-import AttendanceModal from "./AttendanceModal/AttendanceModal.jsx";
 //View components
 import AttendanceSessionsView from "./AttendanceSessionsView/AttendanceSessionsView.jsx";
 import AttendanceStudentsView from "./AttendanceStudentsView/AttendanceStudentsView.jsx";
@@ -23,10 +22,6 @@ class AttendancePage extends Component {
 			view: "", //Determines which view component gets redered.  Must be allSessions, singleSession, or singleStudent
 			isStudent: false, //turns the Admin/Teacher control panel into an attendance button if true
 			displayData: [], //Holds the data displayed by the current view component
-			showModal: false,
-			modalStudent: "null", 
-			modalDate: "null",
-			modalId: "null"
 		}
 
 		this.goAjax = this.goAjax.bind(this);
@@ -248,18 +243,6 @@ class AttendancePage extends Component {
 					}
 					
 				</div>
-				{/*
-										<AttendanceModal 
-											show={false}
-											date={this.state.modalDate}
-											student={this.state.modalStudent}
-											id={this.state.modalId}
-											hideModal={this.hideModal}
-											markAttendance={this.markAttendance}
-										/>
-						*/}
-									
-
 				
 			</div>
 
