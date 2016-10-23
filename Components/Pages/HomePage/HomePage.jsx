@@ -36,9 +36,9 @@ class HomePage extends Component {
 				<div className="row">
 
 					<Panel background="#181818" name="ATTENDANCE" panelId="attendancePanel" pageLink="attendance" img="/assets/images/attendance_icon.png"/>
-					<Panel background="#302e2e" name="HOMEWORK" panelId="homeworkPanel" pageLink="homework" img="/assets/images/homework_icon.png"/>
+					<Panel background="#302e2e" name="ASSIGNMENTS" panelId="assignmentsPanel" pageLink="assignments" img="/assets/images/assigments_icon.png"/>
 					<Panel background="#8a8a8a" name="SYLLABUS" panelId="syllabusPanel" pageLink="syllabus" img="/assets/images/syllabus_icon.png"/>
-					<Panel background="#cdcbcb" name="PROJECTS" panelId="projectsPanel" pageLink="projects" img="/assets/images/projects_icon.png"/>
+					<Panel background="#cdcbcb" name="ANNOUNCEMENTS" panelId="announcementsPanel" pageLink="announcements" img="/assets/images/announcements_icon.png"/>
 					<Panel background="#cc0000" name="FEEDBACK" panelId="feedbackPanel" pageLink="feedback" img="/assets/images/feedback_icon.png"/>
 
 					{UserInfo.Role === 'Admin'  ? (

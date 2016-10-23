@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import "./HomeworkPage.css";
+import "./AssignmentsPage.css";
 import CreateAssignment from "./CreateAssignment/CreateAssignment.jsx";
 import SortAssignments from "./SortAssignments/SortAssignments.jsx";
 import CreateAssignmentTeacher from "./CreateAssignmentTeacher/CreateAssignmentTeacher.jsx";
 import TableRow from "../../Table/TableRow/TableRow.jsx";
 import $ from "jquery";
 
-class HomeworkPage extends Component {
+class AssignmentsPage extends Component {
 		constructor(props, context) {
 
 			super(props, context);
@@ -130,4 +130,4 @@ class HomeworkPage extends Component {
 	}
 }
 
-export default HomeworkPage;
+export default AssignmentsPage;
