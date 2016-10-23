@@ -7,28 +7,31 @@ class AttendanceEditForm extends Component {
 
 		const panelHeader = ( <h1>CHANGE ATTENDANCE:</h1> );
 		const { isDisplayed } = this.props
+		const display = isDisplayed ? {display: "inline-block"} : {display: "none"};
 
 		return (
-			<Panel header={panelHeader} className={isDisplayed}>
-				<Form inline>
+			<div style={display}>
+				<Panel header={panelHeader} >
+					<Form inline>
 
-					<FormControl 
-						componentClass="select" 
-						placeholder="select"
-					>
-							<option value="Early">"Early"</option>
-							<option value="Late">"Late"</option>
-							<option value="Absent">"Absent"</option>
+						<FormControl 
+							componentClass="select" 
+							placeholder="select"
+						>
+								<option value="Early">"Early"</option>
+								<option value="Late">"Late"</option>
+								<option value="Absent">"Absent"</option>
 
-					</FormControl>
+						</FormControl>
 
-					{' '}
-					<Button type="submit">
-					Submit Attendance Change
-					</Button>
+						{' '}
+						<Button type="submit">
+						Submit Attendance Change
+						</Button>
 
-				</Form>
-			</Panel>
+					</Form>
+				</Panel>
+			</div>
 		);
 	}
 

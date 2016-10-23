@@ -10,15 +10,12 @@ class AttendanceStudentView extends Component {
 	constructor(props){
 		super(props);
 
-		this.state={
-			editFormStatus: ".AttendanceEditForm_hidden"
-		}
+		this.showForm=this.showForm.bind(this);
+
 	}
 
 	showForm(){
-		this.setState({
-			editFormStatus: ".AttendanceEditForm_show"
-		})
+
 	}
 
 	render(){
@@ -54,6 +51,10 @@ class AttendanceStudentView extends Component {
 							]}
 						pageName = 'AttendancePage_AttendanceStudentView'
 						key= {index}
+						/>
+
+						<AttendanceEditForm
+							isDisplayed={false}
 						/>
 
 					</div>
