@@ -39,6 +39,9 @@ class AttendancePage extends Component {
 		this.viewSingleStudent = this.viewSingleStudent.bind(this);
 		this.attendanceMenuSectionHandler = this.attendanceMenuSectionHandler.bind(this);
 		this.attendanceButtonOnClick = this.attendanceButtonOnClick.bind(this);
+		this.hideModal = this.hideModal.bind(this);
+		this.showModal = this.showModal.bind(this);
+		this.markAttendance = this.markAttendance.bind(this);
 	}
 
 	componentWillMount() {
@@ -169,6 +172,10 @@ class AttendancePage extends Component {
 	markAttendance(){
 		
 	}
+
+	hideModal(){}
+	showModal(){}
+
 
 
 	attendanceButtonOnClick(){
