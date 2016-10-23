@@ -158,12 +158,12 @@ body{
     width: 70%;
 }
 
-/*@media screen and (max-width: 1200px){
+@media screen and (max-width: 1198px){
     #profileImage{
-        width: initial;
+        width: 75%;
 
     }
-}*/
+}
 
 
 

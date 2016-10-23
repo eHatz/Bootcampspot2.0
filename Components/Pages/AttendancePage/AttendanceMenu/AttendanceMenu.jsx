@@ -24,6 +24,7 @@ class AttendanceMenu extends Component {
 						componentClass="select" 
 						placeholder="select"
 						onChange={attendanceMenuSectionHandler}
+						required
 					>
 
 						{sections.map((section, index) => 
