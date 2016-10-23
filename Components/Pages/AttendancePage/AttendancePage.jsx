@@ -191,7 +191,7 @@ class AttendancePage extends Component {
 			that.setState({
 				showModal:true,
 				modalDate: response.Date,
-				modalStudent:response.Student,
+				modalStudent:response.Name,
 				modalId: attendanceId
 			})
 		})
