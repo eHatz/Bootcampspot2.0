@@ -5,10 +5,9 @@ import "./AttendanceSessionsView.css";
 class AttendanceSessionsView extends Component {
 
 
-//just a placeholder
 	render(){
 
-		const { displayData } = this.props;
+		const { displayData, viewSingleSession } = this.props;
 		console.log("displayData: ", displayData);
 
 		return (
@@ -25,17 +24,24 @@ class AttendanceSessionsView extends Component {
 
 				{
 					displayData.map((item, index) =>
+						<div 
+							onClick={viewSingleSession}
+							value={item.id}
+						>
 
-					<TableRow
-						columnCount ={[
-							{type: 'Data', value: item.Date},
-							{type: 'Data', value: item.LessonNumber},
-							{type: 'Data', value: item.Subject},
-						]}
-						pageName = 'AttendancePage_AttendanceSessionView'
-						key= {index}
-					/>
-				)}
+							<TableRow
+								columnCount ={[
+									{type: 'Data', value: item.Date},
+									{type: 'Data', value: item.LessonNumber},
+									{type: 'Data', value: item.Subject},
+								]}
+								pageName = 'AttendancePage_AttendanceSessionView'
+								key= {index}
+								value={item.id}
+							/>
+						</div>
+					)
+				}
 
 			</div>
 

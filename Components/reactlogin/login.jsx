@@ -3,7 +3,8 @@ import { browserHistory, Router, Route, Link, withRouter } from 'react-router';
 import auth from '../../auth';
 import HomePage from "../Pages/HomePage/HomePage.jsx";
 import "./login.css";
-
+import $ from "jquery";
+		
 const Login = withRouter(
 	React.createClass({
 
@@ -14,11 +15,11 @@ const Login = withRouter(
 		},
 
 		componentWillMount() {
-
-			fetch('/login', {credentials: 'include'})
-			.then((response) => response.json())
-			.then((json) => {
-				const access = json.access;
+			$.ajax({
+				url: '/login',
+				type: "GET"
+			}).then((response) => {
+				const access = response.access;
 				auth.login(access, (loggedIn) => {
 					if (!loggedIn)
 					return this.setState({ error: true })
@@ -32,7 +33,6 @@ const Login = withRouter(
 					}
 				})
 			})
-
 		},
 
 		render() {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { browserHistory, Router, Route, Link, withRouter } from 'react-router';
-// import $ from "jquery";
+import $ from "jquery";
 import "./AttendancePage.css";
 import AttendanceMenu from "./AttendanceMenu/AttendanceMenu.jsx";
 import AttendanceButton from "./AttendanceButton/AttendanceButton.jsx";
@@ -28,7 +28,9 @@ class AttendancePage extends Component {
 		this.userIsAdmin = this.userIsAdmin.bind(this);
 		this.userIsTeacher = this.userIsTeacher.bind(this);
 		this.userIsStudent = this.userIsStudent.bind(this);
-		this.switchDisplay = this.switchDisplay.bind(this);
+		this.viewSingleSession = this.viewSingleSession.bind(this);
+		this.selectStudentHandler = this.selectStudentHandler.bind(this);
+		this.viewSingleStudent = this.viewSingleStudent.bind(this);
 		this.selectSection = this.selectSection.bind(this);
 		this.attendanceButtonOnClick = this.attendanceButtonOnClick.bind(this);
 	}
@@ -92,6 +94,40 @@ goAjax(route, data, stateProperty){
 
 	}
 
+	//Show attendance for every student in a selected class session
+	viewSingleSession(event){
+		const sessionId = event.currentTarget.getAttribute('value');
+		const ajaxData = {sessionId: sessionId};
+		console.log("sessionId: ", sessionId);
+		// console.log("event: ", event.target);
+		this.goAjax("/attendance/singleSession", ajaxData, "displayData")
+			.then(function(response){
+				this.setState({
+					view: "singleSession"
+				})
+				console.log("viewSingleSession: ", response)
+			}.bind(this))
+		//goAjax(route, data, stateProperty){}
+	}
+
+	//Shows all attendance for one student
+	viewSingleStudent(studentId){
+		const ajaxData = {studentId: studentId}
+		console.log("viewSingleStudent-- ", ajaxData);
+		// this.goAjax("attendance/singleStudent", ajaxData, "displayData")
+		// 	.then(function(response){
+		// 		this.setState({
+		// 			view: "singleStudent"
+		// 		})
+		// 	}.bind(this))
+	}
+
+	//Click handler to select one student from the singleSession view
+	selectStudentHandler(event){
+		const studentId = event.currentTarget.getAttribute('value');
+		this.viewSingleStudent(studentId);
+	}
+
 	userIsAdmin(){
 		//Retrieve all sections
 		this.goAjax("/admin/getSections", null, "sections")
@@ -105,7 +141,6 @@ goAjax(route, data, stateProperty){
 		    		displayData: this.state.sessions
 	    		});
 			}.bind(this))
-
 	}
 		
 	userIsTeacher(){
@@ -139,13 +174,8 @@ goAjax(route, data, stateProperty){
 		// )
 	}
 
-	switchDisplay(event){
-		this.setState({view: event.target.value});
-		// console.log("switchView: ", this.state.view);
-	}
 
 	//This method fires when an admin or teacher selects a section to view
-
 	selectSection(event){
 
 		let index = event.target.value;
@@ -171,22 +201,6 @@ goAjax(route, data, stateProperty){
 		
 	}
 
-	/*
-$.ajax({
-	        url: "attendance/getAllSessions",
-	        type: "POST",
-	        data:{
-	        	section: event.target.value
-	        }
-	    }).done(function(response){
-	    	//Save the sessions to state and render them to the page
-	    	// console.log("displayData selectSection: ", response);
-	    	this.setState({
-	    		view: "allSessions",
-	    		displayData: response
-	    	});
-	    }.bind(this));
-	*/
 
 	attendanceButtonOnClick(){
 
@@ -205,7 +219,6 @@ $.ajax({
 						):(
 						<AttendanceMenu
 							selectSection={this.selectSection}
-							switchDisplay={this.switchDisplay}
 							sections={this.state.sections}
 						/>)
 					}
@@ -217,11 +230,13 @@ $.ajax({
 					{this.state.view === "allSessions" ? 
 						<AttendanceSessionsView
 							displayData={this.state.displayData}
+							viewSingleSession={this.viewSingleSession}
 						/>
 						: 
 						this.state.view === "singleSession" ?
 							<AttendanceStudentsView
-
+								displayData={this.state.displayData}
+								selectStudentHandler={this.selectStudentHandler}
 							/>
 							:						
 							<AttendanceStudentView

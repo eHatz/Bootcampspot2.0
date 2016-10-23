@@ -60,6 +60,7 @@ const User = models.User;
 const Section = models.Section;
 const Session = models.Session;
 const Assignment = models.Assignment;
+
 //Routes
 app.get('/login', function(req, res){
 	
@@ -125,12 +126,12 @@ app.post('/admin/getUsers', function(req, res) {
 				.then(function(dbSection) {
 					dbSection.getUsers({order: [[column]]}).then(function(users) {
 						console.log('SECTION USERS===========', users);
-						res.json(users);
+						res.json({users: users});
 					})
 				})
 			} else {
 				User.findAll({order: [[column]]}).then(function(users){
-					res.json(users);
+					res.json({users: users});
 				})
 			}
 		}
@@ -142,12 +143,12 @@ app.post('/admin/getUsers', function(req, res) {
 				Section.findOne({where: {Title: req.body.section} })
 				.then(function(dbSection) {
 					dbSection.getUsers({order: [[column, 'DESC']]}).then(function(users) {
-						res.json(users);
+						res.json({users: users});
 					})
 				})
 			} else {
 				User.findAll({order: [[column, 'DESC']]}).then(function(users){
-					res.json(users);
+					res.json({users: users});
 				})
 			}
 		}
@@ -170,8 +171,14 @@ app.post('/admin/createUser', function(req, res) {
 		if (req.body.role !=='Admin') {
 			Section.findOne({where: {Title: req.body.sectionTitle} })
 			.then(function(section) {
-				newUser.addSection(section);
-			})
+				if (section) {
+					newUser.addSection(section);
+					res.json({status: 'User Created Successfully'});
+				} else {
+					res.json({status: 'User Creation Failed'});
+				};
+				
+			});
 			
 		};
 	});
@@ -179,7 +186,7 @@ app.post('/admin/createUser', function(req, res) {
 
 app.post('/admin/getSections', function(req, res) {
 	Section.findAll().then(function(section){
-		res.json(section);
+		res.json({section: section});
 	});
 });
 
@@ -191,7 +198,9 @@ app.post('/admin/createSection', function(req, res) {
 		Slack: req.body.Slack,
 		StartDate: req.body.StartDate,
 		EndDate: req.body.EndDate,
-	})
+	}).then(function(section) {
+		res.json({section:section});
+	});
 });
 
 //====Attendance routes====
@@ -206,6 +215,119 @@ app.post("/attendance/getAllSessions", function(req, res){
 	})
 })
 
+app.post("/attendance/singleSession", function(req, res){
+	const sessionId = req.body.sessionId;
+	console.log("sessionId: ", sessionId)
+	var sectionId;
+	var thisSession;
+	var responseArray = [];
+
+	Session.findOne({where:{id: sessionId}})
+		.then((session) => {
+			console.log("server 221: ", session);
+			//Find the session and its associated section Id in the DB, and hold them in variables
+			thisSession = session;
+			sectionId = session.SectionId;
+			return sectionId;
+		}).then((sectionId) =>
+			//Grab the associated section from the DB;
+			Section.findOne({where:{id: sectionId}})
+		).then((section) =>
+			//Get all students for this section... 
+			section.getUsers({where:{Role: "Student"}})
+		).then((users) =>
+			//...and save them to our response array
+			users.forEach((user) =>
+				responseArray.push({
+					UserId: user.id,
+					Name: user.FirstName + " " + user.LastName,
+					Date: thisSession.Date,
+					Time: "---",
+					Status: "Absent"
+				})
+			)
+		).then(() =>
+			//Get all students who have registered their attendance for the session 
+			thisSession.getUsers()
+		).then((sessionAttendance) => {
+			//Compare to the students in our responseArray
+				sessionAttendance.forEach(function(attendanceInstance){
+					responseArray.forEach(function(responseUser){
+						//Once we match an attendance instance with the corresponding student...
+						if(attendanceInstance.UserId === responseUser.id){
+							//...if the the student created this attendanceInstance before the start of class...
+							if(attendanceInstance.createdAt <= thisSession.Date){
+								//Mark this student as early
+								return responseUser.Status = "Early";
+							} else {
+								//Otherwise, the student was late
+								return responseUser.Status = "Late";
+							}			
+						}
+						//Unmatched students never registered their attendance, and therefore remain "Absent"
+					})
+				})
+				console.log("/attendance/singleSession: ", responseArray);
+				return responseArray;
+		}).then((responseArray) => res.send(responseArray))
+})
+
+
+app.post("attendance/singleStudent", function(req, res){
+	const studentId = req.body.studentId;
+	var responseArray = [];
+	var thisStudent;
+
+	//Find the current student in the DB
+	User.findOne({where:{id:studentId}})
+		.then(function(student){
+			//Find the student's associated section
+			thisStudent = student;
+			return thisStudent.getSection()
+		})
+		.then(function(section){
+			//Find all the sessions in the student's section
+			return section.getSessions()
+		}).then(function(sessions){
+			//Make an attendance entry withing our response array for every class session
+			sessions.forEach(function(session){
+				responseArray.push({
+					id: session.id,
+					Class: session.Subject,
+					Date: session.Date,
+					Time: "",
+					Status: "Absent"
+				})
+			})
+			return responseArray;
+		}).then(function(){
+			//Find all sessions for which student registered attendance (in the Attendance Table)
+			return thisStudent.getSessions()
+		}).then(function(sessions){
+			//If the student registered attendance, switch that session's status from "absent" to "early" or "late"
+			sessions.forEach(function(attendanceInstance){
+				responseArray.forEach(function(responseSession){
+					//If an attendance instance matches a session in responseArray...
+					if (attendanceInstance.sessionId === responseSession.id){
+						//... mark the student early if the datetime for the Attendance instance is earlier than the datetime currently held in response array (which is the start time for that particular session)
+						if (attendanceInstance.Date <= responseSession.Date){
+							responseSession.Date = attendanceInstance.Date;
+							responseSession.Status = "Early";
+						} else{
+							responseSession.Date = attendanceInstance.Date;
+							responseSession.Status = "Late";
+						}
+					}
+				})
+			})
+			return responseArray;
+		}).then(function(responseArray){
+			res.send(responseArray)
+		})
+})
+
+
+
 app.post("/attendance/teacher", function(req, res){
 		//??
 	Section.findAll({
@@ -219,7 +341,6 @@ app.post("/attendance/teacher", function(req, res){
 	})
 })
 
-
 //====Assignment Routes ==================
 app.post('/getAssignments', function(req, res) {
 	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
@@ -231,17 +352,23 @@ app.post('/getAssignments', function(req, res) {
 
 app.post('/createAssignment', function(req, res) {
 	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
+		section.getUsers().then(function(users) {
+			console.log('CREATE ASSIGNMENT', users);
+		});
 		section.createAssignment({
 			Title: req.body.Title, 
 			Instructions: req.body.Instructions,
 			Due: req.body.Due, 
 			Resources:req.body.Instructions
-		})
-	})
+		}).then(function(assignment) {
+			res.json({assignment: assignment});
+		});
+	});
 });
 
 app.post('/viewSubmission', function(req, res) {
-	const { UserInfo, assignmentId } = req.body;
+	const UserInfo = req.body.UserInfo;
+	const assignmentId = req.body.assignmentId;
 	Assignment.findOne({where: {id: assignmentId} })
 	.then(function(assignment) {
 		assignment.getUsers({where: {Email: UserInfo.UserInfo.Email}})
@@ -252,7 +379,8 @@ app.post('/viewSubmission', function(req, res) {
 });
 
 app.post('/viewAllSubmissions', function(req, res) {
-	const { UserInfo, assignmentId } = req.body;
+	const UserInfo = req.body.UserInfo;
+	const assignmentId = req.body.assignmentId;
 	Assignment.findOne({where: {id: assignmentId} })
 	.then(function(assignment) {
 		assignment.getUsers()
@@ -263,11 +391,15 @@ app.post('/viewAllSubmissions', function(req, res) {
 });
 
 app.post('/submitAssignment', function(req, res) {
-	const { assignmentLinks, userInfo, assignmentId } = req.body;
+	const assignmentLinks = req.body.assignmentLinks;
+	const UserInfo = req.body.UserInfo;
+	const assignmentId = req.body.assignmentId;
 	Assignment.findOne({where: {id: assignmentId} })
 	.then(function(assignment) {
 		User.findOne({where: {Email: userInfo.UserInfo.Email}}).then(function(user) {
-			assignment.addUser(user, {Submission: assignmentLinks});
+			assignment.addUser(user, {Submission: assignmentLinks}).then(function(user){
+				res.json({success: user});
+			})
 		});
 	});
 });
