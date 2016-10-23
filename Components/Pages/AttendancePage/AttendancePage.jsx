@@ -196,7 +196,10 @@ class AttendancePage extends Component {
 		})
 	}
 
-	hideModal(){}
+	hideModal(){
+		console.log("HIDE MODAL")
+		this.setState({showModal: false})
+	}
 
 
 
