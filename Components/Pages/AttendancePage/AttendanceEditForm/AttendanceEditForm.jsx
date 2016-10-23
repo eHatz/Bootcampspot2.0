@@ -18,9 +18,9 @@ class AttendanceEditForm extends Component {
 
 
 		return (
-			<div className="AttendanceEditForm_overflow">
-				<ButtonToolbar>
-					<DropdownButton title={text} id="dropdown-size-medium">
+			<div>
+				<ButtonToolbar className="AttendanceEditForm_overflow">
+					<DropdownButton title={text} id="dropdown-size-medium" pullRight>
 
 						<MenuItem eventKey="1">Set to "Early"</MenuItem>
 						<MenuItem eventKey="2">Set to "Late"</MenuItem>

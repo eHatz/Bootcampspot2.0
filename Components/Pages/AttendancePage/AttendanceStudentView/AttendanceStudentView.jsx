@@ -29,23 +29,23 @@ class AttendanceStudentView extends Component {
 
 				{displayData.map((item, index) =>
 
-						<TableRow
-							columnCount ={[
-								{type: 'Data', value: item.Class},
-								{type: 'Data', value: item.Date},
-								{type: 'Data', value: item.Time},
-								{type: 'Button', 
-								value: item.Status, 
-								button: <AttendanceEditForm 
-									text={item.Status}
-									value={item.id}
-									/>
-								}
-							]}
+					<TableRow
+						columnCount ={[
+							{type: 'Data', value: item.Class},
+							{type: 'Data', value: item.Date},
+							{type: 'Data', value: item.Time},
+							{type: 'Button', 
+							value: item.Status, 
+							button: <AttendanceEditForm 
+								text={item.Status}
+								value={item.id}
+								/>
+							}
+						]}
 
-							pageName = 'AttendancePage_AttendanceStudentView'
-							key= {index}
-						/>
+						pageName = 'Attendance_edit AttendancePage_AttendanceStudentView'
+						key= {index}
+					/>
 
 				)}
 			</div>
