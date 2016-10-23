@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Popover, Tooltip, Button, Modal, OverlayTrigger, FormGroup, FormControl } from 'react-bootstrap';
 // import "./AttendanceModal.css";
 
-
 class AttendanceModal extends Component {
 
 	constructor(props){
@@ -13,6 +12,7 @@ class AttendanceModal extends Component {
 		}
 
 		this.handleAttendanceChange = this.handleAttendanceChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 
 	}
 
@@ -24,10 +24,9 @@ class AttendanceModal extends Component {
 		this.props.markAttendance(this.props.id, this.state.attendanceStatus)
 	}
 
-
 	render() {
 
-		const { date, student, show } = this.props;
+		const { date, student, show, hideModal } = this.props;
 
 		return (
 

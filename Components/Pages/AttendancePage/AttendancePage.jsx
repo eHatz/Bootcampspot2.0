@@ -24,9 +24,9 @@ class AttendancePage extends Component {
 			isStudent: false, //turns the Admin/Teacher control panel into an attendance button if true
 			displayData: [], //Holds the data displayed by the current view component
 			showModal: false,
-			modalStudent: "", 
-			modalDate: "",
-			modalId: ""
+			modalStudent: "null", 
+			modalDate: "null",
+			modalId: "null"
 		}
 
 		this.goAjax = this.goAjax.bind(this);
@@ -162,6 +162,7 @@ class AttendancePage extends Component {
 	}
 
 	userStudent(userId){
+		console.log("userStudent")
 		this.setState({
 			isStudent: true
 		});
@@ -201,7 +202,6 @@ class AttendancePage extends Component {
 		console.log("HIDE MODAL")
 		this.setState({showModal: false})
 	}
-
 
 
 	attendanceButtonOnClick(){
@@ -248,16 +248,17 @@ class AttendancePage extends Component {
 					}
 					
 				</div>
-						{/*
-								<AttendanceModal 
-									show={this.state.showModal}
-									date={this.state.modalDate}
-									student={this.state.modalStudent}
-									id={this.state.modalId}
-									hideModal={this.hideModal}
-								/>
-
-							*/}
+				{/*
+										<AttendanceModal 
+											show={false}
+											date={this.state.modalDate}
+											student={this.state.modalStudent}
+											id={this.state.modalId}
+											hideModal={this.hideModal}
+											markAttendance={this.markAttendance}
+										/>
+						*/}
+									
 
 				
 			</div>
