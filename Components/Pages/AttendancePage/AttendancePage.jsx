@@ -22,7 +22,11 @@ class AttendancePage extends Component {
 			// currentSectionIndex: 0,
 			view: "", //Determines which view component gets redered.  Must be allSessions, singleSession, or singleStudent
 			isStudent: false, //turns the Admin/Teacher control panel into an attendance button if true
-			displayData: [] //Holds the actual data displayed by the current view component
+			displayData: [], //Holds the data displayed by the current view component
+			showModal: false,
+			modalStudent: "", 
+			modalDate: "",
+			modalId: ""
 		}
 
 		this.goAjax = this.goAjax.bind(this);
