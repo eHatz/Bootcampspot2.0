@@ -9,7 +9,9 @@ class AttendanceStudentView extends Component {
 
 	render(){
 
-		const { displayData } = this.props;
+		const { displayData, showModal } = this.props;
+		console.log("Student View displayData: ", displayData)
+
 
 		return (
 			<div>
@@ -24,18 +26,22 @@ class AttendanceStudentView extends Component {
 					pageName = 'AttendancePage_AttendanceStudentView'
 				/>
 
-
 				{displayData.map((item, index) =>
-					<TableRow
-						columnCount ={[
-							{type: 'Data', value: item.Class},
-							{type: 'Data', value: item.Date},
-							{type: 'Data', value: item.Time},
-							{type: 'Data', value: item.Status},
-						]}
-					pageName = 'AttendancePage_AttendanceStudentView'
+					<div
+						onClick={showModal}
+						value={item.AttendanceId}
+					>
+						<TableRow
+							columnCount ={[
+								{type: 'Data', value: item.Class},
+								{type: 'Data', value: item.Date},
+								{type: 'Data', value: item.Time},
+								{type: 'Data', value: item.Status}
+							]}
+						pageName = 'AttendancePage_AttendanceStudentView'
 						key= {index}
-					/>
+						/>
+					</div>
 				)}
 			</div>
 		)
