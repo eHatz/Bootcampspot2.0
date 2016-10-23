@@ -1,1 +1,48 @@
+.chkLabel{
+	margin-left: 71px;
+	color:black;
+	font-size: 18px;
+}
+	input[type=radio].bubble2{
+		width: 15%;
+		margin-left: -24px;
+		
+}
 
+
+
+
+
+@media screen and (max-width: 768px){
+	input[type=radio].bubble2{
+		width: 15%;
+
+}
+
+
+
+@media screen and (max-width: 640px){
+
+	.chkLabel{
+	margin-left: 71px;
+	color:black;
+	font-size: 13px;
+	}
+	input[type=checkbox].box{
+		margin-left: -51px;
+	}
+	input[type=radio].bubble2{
+		width:46%;
+	}
+
+
+
+
+}
+
+
+
+
+
+
+}
