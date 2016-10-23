@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "./ProjectsPage.css";
+import "./AnnouncementsPage.css";
 import Navbar from "../../Navbar/Navbar.jsx"
 import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
 import TableRow from "../../Table/TableRow/TableRow.jsx";
 
-class ProjectsPage extends Component {
+class AnnouncementsPage extends Component {
 
 	render() {
 		return (
@@ -17,4 +17,4 @@ class ProjectsPage extends Component {
 	}
 }
 
-export default ProjectsPage;
+export default AnnouncementsPage;
