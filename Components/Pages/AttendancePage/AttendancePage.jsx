@@ -242,10 +242,13 @@ class AttendancePage extends Component {
 							:						
 							<AttendanceStudentView
 								displayData={this.state.displayData}
+								showModal={this.showModal}
 							/>
 					}
 					
 				</div>
+
+
 				
 			</div>
 
