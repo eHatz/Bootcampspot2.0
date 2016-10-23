@@ -192,8 +192,8 @@ class AttendancePage extends Component {
 				modalDate: response.Date,
 				modalStudent:response.Student,
 				modalId: attendanceId
-			})
-		})
+			}.bind(this))
+		}.bind(this))
 	}
 
 	hideModal(){
