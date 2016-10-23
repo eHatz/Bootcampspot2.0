@@ -12,16 +12,16 @@ class TutorRequest extends Component {
 
 			<div>			
 
-					<MenuButtons
-						feedback = "inactive"
-						tutor = "active"
-						absence = "inactive"
-					/>
-					<div className="container">
-						<p className="ptag">Was this week's homework super hard for you? Do you want someone to walk you through the solution and help you understand some of the basics behind the code you're seeing? <br/><br/>If so, we have a wonderful group of senior students who'd love to provide some 1:1 tutoring sessions to get you the extra help you need to be successful. 
-						Please complete the form below to tell us more about where you need help so that we can match you with the right tutor.</p>
-					</div>
-				<div className = "row">
+				<MenuButtons
+					feedback = "inactive"
+					tutor = "active"
+					absence = "inactive"
+				/>
+				<div className="container">
+					<p className="ptag">Was this week's homework super hard for you? Do you want someone to walk you through the solution and help you understand some of the basics behind the code you're seeing? <br/><br/>If so, we have a wonderful group of senior students who'd love to provide some 1:1 tutoring sessions to get you the extra help you need to be successful. 
+					Please complete the form below to tell us more about where you need help so that we can match you with the right tutor.</p>
+				</div>
+				<div className = "row remove-all-margin-padding">
 					<div className = "container">
 						<div className =" form-group">
 						  <label className= "tutTxt" htmlFor="usr">Full Name</label>
@@ -29,7 +29,7 @@ class TutorRequest extends Component {
 						</div>
 					</div>
 				</div>
-				<div className = "row">
+				<div className = "row remove-all-margin-padding">
 					<div className = "container">
 						<div className =" form-group">
 						  <label className= "tutTxt" htmlFor="usr">Email</label>
@@ -37,9 +37,9 @@ class TutorRequest extends Component {
 						</div>
 					</div>
 				</div>
-				<div className="row">		
+				<div className="row remove-all-margin-padding">		
 					<div className="form-group">
-					  <label className="cohortSel" for="sel1">Which cohort are you in?</label>
+					  <label className="cohortSel" htmlFor="sel1">Which cohort are you in?</label>
 					  <select className="form-control" id="cohDropdown">
 					    <option>Choose</option>
 					    <option>Peleg Rosenthal</option>
@@ -53,9 +53,9 @@ class TutorRequest extends Component {
 					  </select>
 					</div>
 				</div>
-				<div className="row">		
+				<div className="row remove-all-margin-padding">		
 					<div className="form-group">
-					  <label className="weekSel" for="sel1">Which week of the program are you in?</label>
+					  <label className="weekSel" htmlFor="sel1">Which week of the program are you in?</label>
 					  <select className="form-control" id="weekDropdown">
 					    <option>Choose</option>
 					    <option>1</option>
@@ -87,7 +87,7 @@ class TutorRequest extends Component {
 					  </select>
 					</div>
 				</div>
-				<div className="row">
+				<div className="row remove-all-margin-padding">
 					<h2 className="quesTut">How comfortable are you with the material covered in class so far?</h2>
 					<h3 className="leftSideTut">Very Shaky</h3>
 					<div className ="col-md-6 multRads3">
@@ -99,7 +99,7 @@ class TutorRequest extends Component {
 			 		</div>
 					<h3 className="rightSideTut">Very Confident</h3>
 				</div>
-				<div className="row">
+				<div className="row remove-all-margin-padding">
 					<h2 className="quesTut">Which are the best times for you to meet with a tutor?</h2>
 					<div className ="col-md-6 multRads4">
 			 			<label className="radio radioButtTut2"><input  className ="bubble2" type="radio" name="selectOpt2"/> Weekday (daytime)</label>
@@ -108,7 +108,7 @@ class TutorRequest extends Component {
 			 			<label className="radio radioButtTut2"><input  className ="bubble2" type="radio" name="selectOpt2"/> Weekend (evening)</label>
 			 		</div>
 				</div>
-				<div className="row">
+				<div className="row remove-all-margin-padding">
 					<h2 className="quesTut">Which topics are you looking to cover?</h2>
 					<div className ="col-md-12 multRads5">
 
@@ -118,7 +118,7 @@ class TutorRequest extends Component {
 				</div>
 				<div className="container">
 					<div className="form-group">
-					  <label className="tutComment" for="comment">Additional Comments</label>
+					  <label className="tutComment" htmlFor="comment">Additional Comments</label>
 					  <textarea className="form-control" rows="5" id="commentSpace"></textarea>
 					</div>
 				</div>

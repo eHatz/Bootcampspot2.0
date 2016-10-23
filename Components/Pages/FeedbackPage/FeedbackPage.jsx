@@ -79,72 +79,59 @@ class FeedbackPage extends Component {
 		return (
 
 			<div className="feedbackBackground">
-			 		<div className="row">
-			 		<MenuButtons 
+		 		<MenuButtons 
 					feedback = "active"
 					tutor = "inactive"
 					absence = "inactive"
-					/>
-			 			
-			 		</div>
-			 		<div className="row">
-				 			<div className="col-md-6">
-				 				<form>
-				 					  <div className="form-group">
-									    <label id = "exampleSelectText1" htmlFor="exampleSelect1">Class</label>
-									    <select className="form-control" id="exampleSelect1">
-									      <option>1</option>
-									      <option>2</option>
-									      <option>3</option>
-									      <option>4</option>
-									      <option>5</option>
-									    </select>
-									  </div>
-				 				</form>
-				 			</div>
-			 			<div className="col-md-6">
-			 					<form>
-			 					  <div className="form-group">
-								    <label id= "exampleSelectText2" htmlFor="exampleSelect2">Class Week</label>
-								    <select className="form-control" id="exampleSelect2">
-								      <option>1</option>
-								      <option>2</option>
-								      <option>3</option>
-								      <option>4</option>
-								      <option>5</option>
-								    </select>
-								  </div>
-			 				</form>
-			 			</div>
-			 		</div>
-			 		<div className ="row">
-			 			
-				 			{formData.map((item, index) =>{
-					 			console.log(item);
-					 			return 	(<FeedbackRadialQuest 
-						 			question= { item.question } 
-						 			leftEnd = { item.leftEnd }
-						 			rightEnd = { item.rightEnd }
-						 			key = { index }
-					 			/>)
-					 		})}
-
-					 		{formInputData.map((item, index) =>{
-					 			return (<FeedbackInputQuest
-					 				inputquestion= { item.inputquestion }
-					 				key = { index }
-					 				/>)
-					 		})}
-				 	</div>
-				 
-				 		<div className="form-group">
-						  <label className="commentText" htmlFor="comment">Additional Comments:</label>
-						  <textarea className="form-control" rows="5" id="comment"></textarea>
+				/>
+				<div className="row remove-all-margin-padding">
+						<div className="col-md-6">
+							<form>
+								  <div className="form-group">
+							    <label id = "exampleSelectText1" htmlFor="exampleSelect1">Class</label>
+							    <select className="form-control" id="exampleSelect1">
+							      <option>1</option>
+							      <option>2</option>
+							      <option>3</option>
+							      <option>4</option>
+							      <option>5</option>
+							    </select>
+							  </div>
+							</form>
 						</div>
-							<input id="resetButt" className="btn btn-default" type="reset" value="Reset"/>
-											
-				 			<button id="submitButt" type="submit" className="btn btn-default">Submit</button>			 			 		
-			</div>
+					<div className="col-md-6">
+							<form>
+							  <div className="form-group">
+						    <label id= "exampleSelectText2" htmlFor="exampleSelect2">Class Week</label>
+						    <select className="form-control" id="exampleSelect2">
+						      <option>1</option>
+						      <option>2</option>
+						      <option>3</option>
+						      <option>4</option>
+						      <option>5</option>
+						    </select>
+						  </div>
+						</form>
+					</div>
+				</div>
+					
+				{formData.map((item, index) =>{
+		 			console.log(item);
+		 			return 	(<FeedbackRadialQuest 
+			 			question= { item.question } 
+			 			leftEnd = { item.leftEnd }
+			 			rightEnd = { item.rightEnd }
+			 			key = { index }
+		 			/>)
+		 		})}
+
+		 		{formInputData.map((item, index) =>{
+		 			return (<FeedbackInputQuest
+		 				inputquestion= { item.inputquestion }
+		 				key = { index }
+		 				/>)
+		 		})}
+				</div>
 			
 		);
 	}
@@ -152,3 +139,14 @@ class FeedbackPage extends Component {
 
 export default FeedbackPage;
 
+
+
+	
+
+	// 	<div className="form-group">
+	//   <label className="commentText" htmlFor="comment">Additional Comments:</label>
+	//   <textarea className="form-control" rows="5" id="comment"></textarea>
+	// </div>
+	// 	<input id="resetButt" className="btn btn-default" type="reset" value="Reset"/>
+						
+	// 		<button id="submitButt" type="submit" className="btn btn-default">Submit</button>

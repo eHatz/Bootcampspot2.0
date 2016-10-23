@@ -1,19 +1,16 @@
 .nav-pills>li.active>a{
 	background-color: #DE0303;
 	pointer-events: none;
-	padding-left: -5%;
-
-
 }
-a{
+.menuButtons{
 	color:black;
 	font-size: 20px;
-	margin-left: -14px;
 }
+
 
 
 @media screen and (max-width: 768px){
-	a{
+	.menuButtons{
 		font-size: 12px;
 	}
 
@@ -21,7 +18,7 @@ a{
 
 
 @media screen and (max-width: 640px){
-	a{font-size: 12px;
+	.menuButtons{font-size: 12px;
 	}
 }
 

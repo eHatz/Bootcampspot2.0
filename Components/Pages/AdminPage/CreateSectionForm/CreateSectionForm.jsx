@@ -10,14 +10,16 @@ class CreateSectionForm extends Component {
 		this.state = {
 			Title: "",
 			Location: "",
-			Slack: "",
+			SlackWebhook: "",
+			SlackToken: "",
 			StartDate: "",
 			EndDate: ""
 		};
 
 		this.handleTitleChange = this.handleTitleChange.bind(this);
 		this.LocationChange = this.LocationChange.bind(this);
-		this.SlackChange = this.SlackChange.bind(this);
+		this.SlackWebhookChange = this.SlackWebhookChange.bind(this);
+		this.SlackTokenChange = this.SlackTokenChange.bind(this);
 		this.StartDateChange = this.StartDateChange.bind(this);
 		this.EndDateChange = this.EndDateChange.bind(this);
 		this.clearInput = this.clearInput.bind(this);
@@ -32,8 +34,12 @@ class CreateSectionForm extends Component {
 		this.setState({ Location: event.target.value });
 	}
 
-	SlackChange(event) {
-		this.setState({ Slack: event.target.value });
+	SlackWebhookChange(event) {
+		this.setState({ SlackWebhook: event.target.value });
+	}
+
+	SlackTokenChange(event) {
+		this.setState({ SlackToken: event.target.value });
 	}
 
 	StartDateChange(event) {
@@ -65,7 +71,8 @@ class CreateSectionForm extends Component {
 			data: {
 				Title: this.state.Title,
 				Location: this.state.Location,
-				Slack: this.state.Slack,
+				SlackWebhook: this.state.SlackWebhook,
+				SlackToken: this.state.SlackToken,
 				StartDate: this.state.StartDate,
 				EndDate: this.state.EndDate
 	        }
@@ -105,9 +112,18 @@ class CreateSectionForm extends Component {
 							<div className="col-md-2 sectionField">
 								<FormControl
 			      					type="text" 
-			      					value={this.state.Slack}
-			      					placeholder="Slack Key" 
-			      					onChange={this.SlackChange}
+			      					value={this.state.SlackWebhook}
+			      					placeholder="Slack Webhook" 
+			      					onChange={this.SlackWebhookChange}
+			      				/>
+		      				</div>
+
+		      				<div className="col-md-2 sectionField">
+								<FormControl
+			      					type="text" 
+			      					value={this.state.SlackToken}
+			      					placeholder="Slack Token" 
+			      					onChange={this.SlackTokenChange}
 			      				/>
 		      				</div>
 							

@@ -1,9 +1,4 @@
 
-.remove-all-margin-padding {
-    padding: 0 !important;
-    margin: 0;
-    
-}
 #bigFeedbackDiv{
 	overflow-y:auto;
 }
@@ -105,7 +100,7 @@ input[type=radio].theCircle{
 	color: black;
 }
 .multRads{
-	margin-left: 18%;
+	text-align: center;
 	margin-top: 1%;
 
 }

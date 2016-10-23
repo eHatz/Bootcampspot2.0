@@ -110,8 +110,7 @@ const AdminPage = withRouter(
 											{type: 'Header', value: 'NAME'},
 											{type: 'Header', value: 'EMAIL'},
 											{type: 'Header', value: 'ROLE'},
-											{type: 'Header', value: 'EDIT'},
-											{type: 'Header', value: 'DELETE'}
+
 										]}
 										pageName = 'adminUserPage'
 									/>
@@ -122,8 +121,6 @@ const AdminPage = withRouter(
 												{type: 'Data', value: item.FirstName + ' ' + item.LastName},
 												{type: 'Data', value: item.Email},
 												{type: 'Data', value: item.Role},
-												{type: 'Button', value: ''},
-												{type: 'Button', value: ''}
 											]}
 											pageName = 'adminUserPage'
 											rowLink = {'User/' + item.id}
@@ -141,10 +138,8 @@ const AdminPage = withRouter(
 										columnCount ={[
 											{type: 'Header', value: 'TITLE'},
 											{type: 'Header', value: 'LOCATION'},
-											{type: 'Header', value: 'SLACK KEYS'},
-											{type: 'Header', value: 'START DATE-END DATE'},
-											{type: 'Header', value: 'EDIT'},
-											{type: 'Header', value: 'DELETE'}
+											{type: 'Header', value: 'START DATE'},
+											{type: 'Header', value: 'END DATE'},
 										]}
 										pageName = 'adminSectionPage'
 									/>
@@ -154,10 +149,8 @@ const AdminPage = withRouter(
 											columnCount ={[
 												{type: 'Data', value: item.Title},
 												{type: 'Data', value: item.Location},
-												{type: 'Data', value: item.Slack},
-												{type: 'Data', value: item.StartDate + ' - ' + item.EndDate},
-												{type: 'Button', value: ''},
-												{type: 'Button', value: ''}
+												{type: 'Data', value: item.StartDate.split('T')[0]},
+												{type: 'Data', value: item.EndDate.split('T')[0]}
 											]}
 											pageName = 'adminSectionPage'
 											key= {index}
