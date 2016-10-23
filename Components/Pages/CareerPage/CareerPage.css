@@ -4,10 +4,12 @@
 
 #urlInputField{
     padding-top: 8px;
-    border: 1px solid #080808;
+    border: 1px solid #bdbdbd;;
     border-radius: 1px;
     color: grey;
-  /*  display: none;*/
+    width: 31%;
+    padding-left: 10px;
+ 
 }
 .careerBackground{
 	background-image: url('/assets/images/career_watermark.png');

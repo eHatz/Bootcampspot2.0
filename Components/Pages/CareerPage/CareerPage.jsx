@@ -19,7 +19,7 @@ class CareerPage extends Component {
 		this.settextBoxValue = this.settextBoxValue.bind(this);
 
 	}
-
+// uses an event handler. stes the current lionk value and switches the boolean.
 	setCurrent(value){
 		this.setState(
 			{
@@ -39,11 +39,11 @@ class CareerPage extends Component {
 		let showInput;
 		const { urlName } = this.props;
 		const linksArray = [
-			{value: 'linkedin', img: '/assets/images/linkedin.png'},
-			{value: 'github', img: '/assets/images/github.png'},
-		 	{value: 'stack overflow', img: '/assets/images/stackoverflow.png'},
-		 	{value: 'resume', img: '/assets/images/resume.png'},
-		 	{value: 'portfolio', img: '/assets/images/portfolio.png'}
+			{value: 'Linkedin Url', img: '/assets/images/linkedin.png'},
+			{value: 'Github Url', img: '/assets/images/github.png'},
+		 	{value: 'Stack Overflow Url' , img: '/assets/images/stackoverflow.png'},
+		 	{value: 'Resume Url', img: '/assets/images/resume.png'},
+		 	{value: 'Portfolio Url', img: '/assets/images/portfolio.png'}
 		 	]
 		const links = linksArray.map( (link) => {
 			return <SocialLink value={link.value} img={link.img} linkClick={()=> this.setCurrent(link.value)} />

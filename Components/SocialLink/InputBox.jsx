@@ -8,7 +8,6 @@ class InputBox extends Component {
 		return (
 			<div>
 		    	<form action="action_page">
-					<label>{value}</label>
 					<input id="urlInputField" type="text" placeholder={value} value={currentText} onChange={updateText}/>
 				</form>
 			</div>
