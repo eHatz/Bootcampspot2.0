@@ -17,11 +17,11 @@ class AttendanceModal extends Component {
 	}
 
 	handleAttendanceChange(event){
-		this.setState({attendaceStatus: event.target.value})
+		this.setState({attendanceStatus: event.target.value})
 	}
 
 	handleSubmit(){
-		markAttendance(this.props.id, this.state.attendanceStatus)
+		this.props.markAttendance(this.props.id, this.state.attendanceStatus)
 	}
 
 
