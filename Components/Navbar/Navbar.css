@@ -1,7 +1,7 @@
 #navBarDiv {
    background-color: black;
    height: 80vh;
-   padding-top: 44px;
+   padding-top: 20px;
    border-bottom-style: solid;
 }
 .btn.btn-primary.dropdown-toggle{

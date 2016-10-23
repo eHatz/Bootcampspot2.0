@@ -8,7 +8,7 @@ class SocialLink extends Component {
 		const { showStatus, linkClick, img, value } = this.props;
 		return (
 			<div onClick={linkClick} className="thumbnail thumbnailDiv" value={value}>
-			    <img id={`${value}_social`} src={img} alt={value}/>
+			    <img id="socialLinkImg" src={img} alt={value}/>
 			    <div className="caption">
 			    	<h4 className="careerUrlCaption">{value}</h4>
 		      	</div>
