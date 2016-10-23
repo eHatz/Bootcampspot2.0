@@ -1,36 +1,33 @@
 import React, { Component } from "react";
-import { Form, Button, Panel, FormControl } from 'react-bootstrap';
+import { ButtonToolbar, DropdownButton, MenuItem } from 'react-bootstrap';
 
 class AttendanceEditForm extends Component {
 
+
+
+	attendanceEditHandler(event){
+		event.currentTarget.getAttribute('id')
+	}
+
+
+
 	render(){
 
-		const panelHeader = ( <h1>CHANGE ATTENDANCE:</h1> );
-		const { isDisplayed } = this.props
-		const display = isDisplayed ? {display: "inline-block"} : {display: "none"};
+		const { text } = this.props;
+
+
 
 		return (
-			<div style={display}>
-				<Panel header={panelHeader} >
-					<Form inline>
+			<div className="AttendanceEditForm_overflow">
+				<ButtonToolbar>
+					<DropdownButton title={text} id="dropdown-size-medium">
 
-						<FormControl 
-							componentClass="select" 
-							placeholder="select"
-						>
-								<option value="Early">"Early"</option>
-								<option value="Late">"Late"</option>
-								<option value="Absent">"Absent"</option>
+						<MenuItem eventKey="1">Set to "Early"</MenuItem>
+						<MenuItem eventKey="2">Set to "Late"</MenuItem>
+						<MenuItem eventKey="3">Set to "Absent"</MenuItem>
 
-						</FormControl>
-
-						{' '}
-						<Button type="submit">
-						Submit Attendance Change
-						</Button>
-
-					</Form>
-				</Panel>
+					</DropdownButton>
+				</ButtonToolbar>
 			</div>
 		);
 	}

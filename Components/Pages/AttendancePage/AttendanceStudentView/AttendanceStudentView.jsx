@@ -7,16 +7,6 @@ import "./AttendanceStudentView.css";
 
 class AttendanceStudentView extends Component {
 
-	constructor(props){
-		super(props);
-
-		this.showForm=this.showForm.bind(this);
-
-	}
-
-	showForm(){
-
-	}
 
 	render(){
 
@@ -38,26 +28,25 @@ class AttendanceStudentView extends Component {
 				/>
 
 				{displayData.map((item, index) =>
-					<div
-						onClick={this.showForm}
-						value={item.id}
-					>
+
 						<TableRow
 							columnCount ={[
 								{type: 'Data', value: item.Class},
 								{type: 'Data', value: item.Date},
 								{type: 'Data', value: item.Time},
-								{type: 'Data', value: item.Status}
+								{type: 'Button', 
+								value: item.Status, 
+								button: <AttendanceEditForm 
+									text={item.Status}
+									value={item.id}
+									/>
+								}
 							]}
-						pageName = 'AttendancePage_AttendanceStudentView'
-						key= {index}
+
+							pageName = 'AttendancePage_AttendanceStudentView'
+							key= {index}
 						/>
 
-						<AttendanceEditForm
-							isDisplayed={false}
-						/>
-
-					</div>
 				)}
 			</div>
 		)

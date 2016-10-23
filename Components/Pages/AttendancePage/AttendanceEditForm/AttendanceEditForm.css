@@ -1,7 +1,3 @@
-.AttendanceEditForm_hidden{
-	display: none
-}
-
-.AttendanceEditForm_show{
-	display: inline-block;
+.AttendanceEditForm_overflow{
+	overflow: auto;
 }
