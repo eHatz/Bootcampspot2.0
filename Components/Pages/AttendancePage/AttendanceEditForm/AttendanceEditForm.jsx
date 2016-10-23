@@ -1,21 +1,20 @@
 import React, { Component } from "react";
-import { Form, FormGroup, ControlLabel, Button } from 'react-router';
+import { Form, Button, Panel, FormControl } from 'react-bootstrap';
 
 class AttendanceEditForm extends Component {
 
-
 	render(){
 
-		const panelHeader = ( <h1>CHANGE ATTENDANCE:</h1> )
+		const panelHeader = ( <h1>CHANGE ATTENDANCE:</h1> );
+		const { isDisplayed } = this.props
 
 		return (
-			<Panel header={panelHeader}>
+			<Panel header={panelHeader} className={isDisplayed}>
 				<Form inline>
 
 					<FormControl 
 						componentClass="select" 
 						placeholder="select"
-						onChange={}
 					>
 							<option value="Early">"Early"</option>
 							<option value="Late">"Late"</option>
@@ -34,3 +33,5 @@ class AttendanceEditForm extends Component {
 	}
 
 }
+
+export default AttendanceEditForm;

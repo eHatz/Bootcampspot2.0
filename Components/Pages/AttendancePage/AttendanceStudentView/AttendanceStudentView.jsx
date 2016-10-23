@@ -1,15 +1,29 @@
 import React, { Component } from "react";
 import TableRow from "../../../Table/TableRow/TableRow.jsx";
+import AttendanceEditForm from "../AttendanceEditForm/AttendanceEditForm.jsx";
 import "./AttendanceStudentView.css";
 
 
 
 class AttendanceStudentView extends Component {
 
+	constructor(props){
+		super(props);
+
+		this.state={
+			editFormStatus: ".AttendanceEditForm_hidden"
+		}
+	}
+
+	showForm(){
+		this.setState({
+			editFormStatus: ".AttendanceEditForm_show"
+		})
+	}
 
 	render(){
 
-		const { displayData, showModal } = this.props;
+		const { displayData } = this.props;
 		console.log("Student View displayData: ", displayData)
 
 
@@ -28,7 +42,7 @@ class AttendanceStudentView extends Component {
 
 				{displayData.map((item, index) =>
 					<div
-						onClick={showModal}
+						onClick={this.showForm}
 						value={item.id}
 					>
 						<TableRow
@@ -41,6 +55,11 @@ class AttendanceStudentView extends Component {
 						pageName = 'AttendancePage_AttendanceStudentView'
 						key= {index}
 						/>
+
+						<AttendanceEditForm
+							isDisplayed={this.state.editFormStatus}
+						/>
+
 					</div>
 				)}
 			</div>
