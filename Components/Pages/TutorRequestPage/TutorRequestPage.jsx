@@ -91,21 +91,21 @@ class TutorRequest extends Component {
 					<h2 className="quesTut">How comfortable are you with the material covered in class so far?</h2>
 					<h3 className="leftSideTut">Very Shaky</h3>
 					<div className ="col-md-6 multRads3">
-			 			<label className="radio-inline radioButtTut"><input id="bubble" type="radio" name="optradio"/> 1</label>
-			 			<label className="radio-inline radioButtTut"><input id="bubble" type="radio" name="optradio"/> 2</label>
-			 			<label className="radio-inline radioButtTut"><input id="bubble" type="radio" name="optradio"/> 3</label>
-			 			<label className="radio-inline radioButtTut"><input id="bubble" type="radio" name="optradio"/> 4</label>
-			 			<label className="radio-inline radioButtTut"><input id="bubble" type="radio" name="optradio"/> 5</label>
+			 			<label className="radio-inline radioButtTut"><input className="bubble" type="radio" name="optradio"/> 1</label>
+			 			<label className="radio-inline radioButtTut"><input className="bubble" type="radio" name="optradio"/> 2</label>
+			 			<label className="radio-inline radioButtTut"><input className="bubble" type="radio" name="optradio"/> 3</label>
+			 			<label className="radio-inline radioButtTut"><input className="bubble" type="radio" name="optradio"/> 4</label>
+			 			<label className="radio-inline radioButtTut"><input className="bubble" type="radio" name="optradio"/> 5</label>
 			 		</div>
 					<h3 className="rightSideTut">Very Confident</h3>
 				</div>
 				<div className="row">
 					<h2 className="quesTut">Which are the best times for you to meet with a tutor?</h2>
 					<div className ="col-md-6 multRads4">
-			 			<label className="radio radioButtTut2"><input  id ="bubble2" type="radio" name="selectOpt2"/> Weekday (daytime)</label>
-			 			<label className="radio radioButtTut2"><input  id ="bubble2" type="radio" name="selectOpt2"/> Weekday (evening)</label>
-			 			<label className="radio radioButtTut2"><input  id ="bubble2" type="radio" name="selectOpt2"/> Weekend (daytime)</label>
-			 			<label className="radio radioButtTut2"><input  id ="bubble2" type="radio" name="selectOpt2"/> Weekend (evening)</label>
+			 			<label className="radio radioButtTut2"><input  className ="bubble2" type="radio" name="selectOpt2"/> Weekday (daytime)</label>
+			 			<label className="radio radioButtTut2"><input  className ="bubble2" type="radio" name="selectOpt2"/> Weekday (evening)</label>
+			 			<label className="radio radioButtTut2"><input  className ="bubble2" type="radio" name="selectOpt2"/> Weekend (daytime)</label>
+			 			<label className="radio radioButtTut2"><input  className ="bubble2" type="radio" name="selectOpt2"/> Weekend (evening)</label>
 			 		</div>
 				</div>
 				<div className="row">

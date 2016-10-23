@@ -13,8 +13,8 @@ class AbsenceRadialQuest extends Component{
 				</div>
 				<div className="row">		
 					<div className ="col-md-6 multRads2">
-			 			<label className="radio-inline yesNo"><input type="radio" name="optradio"/> Yes</label>
-			 			<label className="radio-inline yesNo"><input type="radio" name="optradio"/> No</label>
+			 			<label className="radio-inline yesNo"><input className="absCircle" type="radio" name="optradio"/> Yes</label>
+			 			<label className="radio-inline yesNo"><input className="absCircle" type="radio" name="optradio"/> No</label>
 			 		</div>
 				</div>
 			</div>
