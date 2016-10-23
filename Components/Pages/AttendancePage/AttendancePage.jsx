@@ -34,8 +34,6 @@ class AttendancePage extends Component {
 		this.viewSingleStudent = this.viewSingleStudent.bind(this);
 		this.attendanceMenuSectionHandler = this.attendanceMenuSectionHandler.bind(this);
 		this.attendanceButtonOnClick = this.attendanceButtonOnClick.bind(this);
-		this.hideModal = this.hideModal.bind(this);
-		this.showModal = this.showModal.bind(this);
 		this.markAttendance = this.markAttendance.bind(this);
 	}
 
@@ -175,29 +173,23 @@ class AttendancePage extends Component {
 		})
 	}
 
-	showModal(event){
-		const that = this;
-		//This method is passed into AttendanceStudentView
-		console.log("SHOW MODAL ---", event.currentTarget.getAttribute('value'));
-		const attendanceId = event.currentTarget.getAttribute('value');
-		const ajaxData = {AttendanceId: attendanceId}
+	// showModal(event){
+	// 	const that = this;
+	// 	//This method is passed into AttendanceStudentView
+	// 	console.log("SHOW MODAL ---", event.currentTarget.getAttribute('value'));
+	// 	const attendanceId = event.currentTarget.getAttribute('value');
+	// 	const ajaxData = {AttendanceId: attendanceId}
 
-		that.goAjax("/attendance/modal", ajaxData).then(function(response){
-			console.log("modal respose: ", response);
-			that.setState({
-				showModal:true,
-				modalDate: response.Date,
-				modalStudent:response.Name,
-				modalId: attendanceId
-			})
-		})
-	}
-
-	hideModal(){
-		console.log("HIDE MODAL")
-		this.setState({showModal: false})
-	}
-
+	// 	that.goAjax("/attendance/modal", ajaxData).then(function(response){
+	// 		console.log("modal respose: ", response);
+	// 		that.setState({
+	// 			showModal:true,
+	// 			modalDate: response.Date,
+	// 			modalStudent:response.Name,
+	// 			modalId: attendanceId
+	// 		})
+	// 	})
+	// }
 
 	attendanceButtonOnClick(){
 
