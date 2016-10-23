@@ -90,6 +90,7 @@ class CreateSectionForm extends Component {
 			      					value={this.state.Title}
 			      					placeholder="Section Title" 
 			      					onChange={this.handleTitleChange}
+			      					required
 			      				/>
 		      				</div>
 
@@ -99,6 +100,7 @@ class CreateSectionForm extends Component {
 			      					value={this.state.Location}
 			      					placeholder="Location" 
 			      					onChange={this.LocationChange}
+			      					required
 			      				/>
 		      				</div>
 
@@ -108,6 +110,7 @@ class CreateSectionForm extends Component {
 			      					value={this.state.Slack}
 			      					placeholder="Slack Key" 
 			      					onChange={this.SlackChange}
+			      					required
 			      				/>
 		      				</div>
 							
@@ -117,6 +120,7 @@ class CreateSectionForm extends Component {
 			      					value={this.state.StartDate}
 			      					placeholder="Start Date" 
 			      					onChange={this.StartDateChange}
+			      					required
 			      				/>
 		      				</div>
 
@@ -126,6 +130,7 @@ class CreateSectionForm extends Component {
 			      					value={this.state.EndDate}
 			      					placeholder="End Date" 
 			      					onChange={this.EndDateChange}
+			      					required
 			      				/>
 		      				</div>
 

@@ -88,6 +88,7 @@ class createUserForm extends Component {
 			      					value={this.state.email}
 			      					placeholder="Email" 
 			      					onChange={this.handleEmailChange}
+			      					required
 			      				/>
 							</div>
 							<div className="col-md-2 colorBlock"> 
@@ -96,6 +97,7 @@ class createUserForm extends Component {
 			      					value={this.state.firstName}
 			      					placeholder="First Name" 
 			      					onChange={this.firstNameChange}
+			      					required
 			      				/>
 		      				</div>
 							<div className="col-md-2 colorBlock"> 
@@ -104,6 +106,7 @@ class createUserForm extends Component {
 			      					value={this.state.lastName}
 			      					placeholder="Last Name" 
 			      					onChange={this.lastNameChange}
+			      					required
 			      				/>
 							</div>
 							<div className="col-md-2 colorBlock"> 
@@ -111,6 +114,7 @@ class createUserForm extends Component {
 									componentClass="select"
 									onChange={this.roleChange}
 									placeholder="select"
+									required
 								>
 									<option value="">Select Role</option>
 									<option value='Student'>Student</option>
@@ -123,6 +127,7 @@ class createUserForm extends Component {
 									componentClass="select"
 									onChange={this.sectionChange}
 									placeholder="select"
+									required   
 								>
 									<option value="">Select Section</option>
 									{this.props.sectionList.map((item, index) =>
