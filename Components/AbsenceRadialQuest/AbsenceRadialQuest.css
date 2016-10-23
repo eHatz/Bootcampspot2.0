@@ -11,6 +11,7 @@
 	.absRadQ{
 		font-size: 22px; 
 		margin-left:8%;
+		margin-right: 8%;
 		
 	}
 	.multRads2{
@@ -20,25 +21,20 @@
 		color:black;
 		margin-right:22px;
 		padding-left: 12px;
-		
+		font-size: 18px;		
+	}
+	input[type=radio].absCircle{
+		width: 61%;
 	}
 
-@media screen and (max-width: 960px){
+@media screen and (max-width: 768px){
 	.absRadQ{
 		font-size: 22px;
 		margin-left: 8%;
 		margin-right: 3%;
 
 	}
-	#resetButt{
-		background-color: gray;
-		font-size: 22px;
-		margin-left: 4%
-	}
-	#submitButt{
-		font-size: 22px;
 
-	}
 	.multRads2{
 		margin-bottom: 3%;
 	}
@@ -58,9 +54,7 @@
 		margin-bottom: 3%;
 		margin-left: 9%;
 	}
-	#AbsQuest{
-		margin-left: 6%;
-	}
+	
 	#sel1{
 		margin-left: 9%;
 		width:82%;
@@ -71,11 +65,9 @@
 	.sel1{
 		margin-left: 9%;
 	}
-	#resetButtAbs{
+	.radio-inline.yesNo{
 		font-size: 13px;
 	}
-	#submitAbs{
-		font-size: 13px;
-	}
+
 
 }

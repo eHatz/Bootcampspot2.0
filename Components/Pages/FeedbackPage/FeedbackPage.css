@@ -90,23 +90,16 @@ input[type=radio] {
 .radio-inline.radioButt{
 	color:black;
 	margin:1%;
+	font-size: 17px;
 	}
-#resetButt{
-	width:20%;
-	background-color: gray;
 
+input[type=radio].theCircle{
+	width:81%;
 }
-
-
-#submitButt{
-
-		margin-left: 3%;
-		font-size: 22px;
-	}
 
 #inputQuesText{
 	font-size: 21px;
-	margin-left: -2%;
+	margin-left: -3%;
 	margin-top: 2%;
 	margin-bottom: 1%;
 	color: black;
@@ -125,14 +118,7 @@ input[type=radio] {
 	margin-left: 3%;
 	margin-right: 15%;
 }
-#resetButt{
-	background-color: gray;
-	font-size: 18px;
-	margin-left: 3%;
-}
-#submitButt{
-	font-size: 18px;
-}
+
 #exampleSelectText1{
 	color:black;
 	font-size:18px; 
@@ -147,14 +133,24 @@ input[type=radio] {
 	margin-left: 5%;
 	font-size: 20px;
 }
+
+#resetButt{
+	background-color: gray;
+	font-size: 15px;
+	margin-left: 3%;
+	width:10%;
+	background-color: gray;
+}
 #submitButt{
+	font-size: 15px;
 	background-color: red;
+	width:10%;
 }
 
 
 /*================================iPad*/
 
-@media screen and (max-width: 960px){
+@media screen and (max-width: 768px){
 	.rightSide{
 		float:right;
 		margin-right: 15%;
@@ -212,6 +208,14 @@ input[type=radio] {
 	}
 	#submitButt{
 		background-color: red;
+		font-size: 18px;
+
+	}
+	#resetButt{
+		font-size: 18px;
+	}
+	input[type=radio].theCircle{
+		width:67%;
 	}
 }
 
@@ -234,31 +238,31 @@ input[type=radio] {
 		margin-left: 4%;
 	}
 	#exampleSelectText1{
-		margin-left: 3%;
-		font-size: 18px;
+		margin-left: 4%;
+		font-size: 13px;
 	}
 	#exampleSelect2{
 		width:90%;
 		margin-left: 4%;
 	}
 	#exampleSelectText2{
-		margin-left: 2%;
-		font-size: 18px;
+		margin-left: 4%;
+		font-size: 13px;
 	}
 	
 	
 	.rightSide{
 		float:right;
-		margin-right: 9%;
-		margin-top: -4%;
-		font-size: 17px;
+		margin-right: 11%;
+		margin-top: -6%;
+		font-size: 13px;
 
 	}
 	.leftSide{
 		float:left;
 		margin-top: 1%;
-		font-size: 17px;
-		margin-left: 7%;
+		font-size: 13px;
+		margin-left: 10%;
 	}
 
 	
@@ -276,30 +280,41 @@ input[type=radio] {
 	}
 	.commentText{
 		margin-left: 3%;
-		font-size: 18px;
+		font-size: 13px;
 	}
 	.questionTextRad{
 	color:black;
-	margin-left: 7%;
+	margin-left: 10%;
 	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 18px;
+	font-size: 14px;
 	}
 	#inputQuesText {
 	color:black;
-	margin-left: 5%;
+	margin-left: 7%;
 	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 18px;
+	font-size: 13px;
 	margin-right: 5%;
-
-}
-	#submitButt{
-		margin-left: 20%;
-		background-color:red;
 	}
+
 	.multRads{
-		margin-left: 33%;
+		margin-left: 32%;
 	}
-
+	input[type=radio].theCircle{
+		width:15px;
+		margin-left: -14px;
+	}
+	.radio-inline.radioButt{
+	color:black;
+	margin:1%;
+	font-size: 14px;
+	}
+	#submitButt{
+		background-color:red;
+		font-size: 13px
+	}
+	#resetButt{
+		font-size: 13px;
+	}
 
 
 	
