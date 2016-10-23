@@ -179,8 +179,24 @@ class AttendancePage extends Component {
 		})
 	}
 
+	showModal(event){
+		//This method is passed into AttendanceStudentView
+		console.log("SHOW MODAL ---", event.currentTarget.getAttribute('value'));
+		const attendanceId = event.currentTarget.getAttribute('value');
+		const ajaxData = {AttendanceId: attendanceId}
+
+		this.goAjax("/attendance/modal", ajaxData).then(function(response){
+			console.log("modal respose: ", response);
+			this.setState({
+				showModal:true,
+				modalDate: response.Date,
+				modalStudent:response.Student,
+				modalId: attendanceId
+			})
+		})
+	}
+
 	hideModal(){}
-	showModal(){}
 
 
 
