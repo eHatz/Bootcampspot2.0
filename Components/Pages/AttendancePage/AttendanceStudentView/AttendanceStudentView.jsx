@@ -56,10 +56,6 @@ class AttendanceStudentView extends Component {
 						key= {index}
 						/>
 
-						<AttendanceEditForm
-							isDisplayed={this.state.editFormStatus}
-						/>
-
 					</div>
 				)}
 			</div>
