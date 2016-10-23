@@ -42,7 +42,7 @@ class ViewAssignment extends Component {
 					type: "POST",
 					data: {
 						assignmentId: assignmentId,
-						UserInfo: JSON.stringify(UserInfo.UserInfo)
+						UserId: UserInfo.UserInfo.id
 			        }
 				}).then((response) => {
 					this.setState({
@@ -121,8 +121,8 @@ class ViewAssignment extends Component {
 									{type: 'Data', value: 'Not Graded'}
 								]}
 								pageName = 'gradeAssignments'
-								rowLink = {'grading/' + item.UserId + '/' 
-									+ this.state.assignment.id}
+								// prevent assignment from being graded if it hasnt been submitted yet
+								rowLink = {'homework/'+this.props.params.id}
 								key= {index}
 							/>
 						)}

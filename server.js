@@ -200,7 +200,8 @@ app.post('/admin/createSection', function(req, res) {
 	Section.create({
 		Title: req.body.Title,
 		Location: req.body.Location,
-		Slack: req.body.Slack,
+		SlackWebhook: req.body.SlackWebhook,
+		SlackToken: req.body.SlackToken,
 		StartDate: req.body.StartDate,
 		EndDate: req.body.EndDate,
 	}).then(function(section) {
@@ -345,11 +346,11 @@ app.post('/createAssignment', function(req, res) {
 });
 
 app.post('/viewSubmission', function(req, res) {
-	const UserInfo = req.body.UserInfo;
+	const UserId = req.body.UserId;
 	const assignmentId = req.body.assignmentId;
 	Assignment.findOne({where: {id: assignmentId} })
 	.then(function(assignment) {
-		assignment.getSubmissions({where: {UserId: UserInfo.Id}})
+		assignment.getSubmissions({where: {UserId: UserId}})
 		.then(function(submission) {
 			res.json({studentSubmission: submission, assignment: assignment});
 		});
@@ -396,7 +397,6 @@ app.post('/viewAllSubmissions', function(req, res) {
 app.post('/submitAssignment', function(req, res) {
 	const assignmentLinks = req.body.assignmentLinks;
 	const userId = req.body.userId;
-	console.log('userIdOOOOOOOOOOOO', userId);
 	const assignmentId = req.body.assignmentId;
 	Assignment.findOne({where: {id: assignmentId} })
 	.then(function(assignment) {
@@ -437,6 +437,7 @@ app.post('/gradeAssignment', function(req, res) {
 	//heroku had a problem with deconstruction apparently...
 	const graderName = req.body.graderName;
 	const assignmentName = req.body.assignmentName;
+	const assignmentId = req.body.assignmentId;
 	const submissionId = req.body.submissionId;
 	const notes = req.body.notes;
 	const studentName = req.body.studentName;
@@ -445,30 +446,34 @@ app.post('/gradeAssignment', function(req, res) {
 	.then(function(submission) {
 		submission.update({Notes: notes, Grade: grade})
 		.then(function(updated) {
-			//get list of slack users
-			request.post({
-				headers: {'content-type' : 'application/x-www-form-urlencoded'},
-				url: process.env.SLACK_GET_USERS}, 
-			function(error, response, body){
-				var slackUsers = JSON.parse(body).members;
-				// if student's name is in slack channel, send them a message
-				for (var i = 0; i < slackUsers.length; i++) {
-					if (slackUsers[i].real_name.toLowerCase() === studentName.toLowerCase()) {
-						request.post({
-							headers: {'content-type' : 'application/x-www-form-urlencoded'},
-							url: process.env.SLACK_WEBHOOK,
-							body: JSON.stringify({
-								'channel': '@' + slackUsers[i].name,
-								'username': graderName, 
-								'text': 'Hey ' + studentName + ', you got a/an ' 
-									+ grade + ' on ' + assignmentName + '. ' + notes, 
-								'icon_emoji': ':ghost:'
-							})
-						});
-					}
-				}
+			Assignment.findOne({where: {id: assignmentId} }).then(function(assignment) {
+				assignment.getSection().then(function(section) {
+					//get list of slack users
+					request.post({
+						headers: {'content-type' : 'application/x-www-form-urlencoded'},
+						url: 'https://slack.com/api/users.list' + section.SlackToken}, 
+					function(error, response, body){
+						var slackUsers = JSON.parse(body).members;
+						// if student's name is in slack channel, send them a message
+						for (var i = 0; i < slackUsers.length; i++) {
+							if (slackUsers[i].real_name.toLowerCase() === studentName.toLowerCase()) {
+								request.post({
+									headers: {'content-type' : 'application/x-www-form-urlencoded'},
+									url: section.SlackWebhook,
+									body: JSON.stringify({
+										'channel': '@' + slackUsers[i].name,
+										'username': graderName, 
+										'text': 'Hey ' + studentName + ', you got a/an ' 
+											+ grade + ' on ' + assignmentName + '. ' + notes, 
+										'icon_emoji': ':ghost:'
+									})
+								});
+							}
+						}
+					});
+					res.json({updatedSub: updated});
+				});
 			});
-			res.json({updatedSub: updated});
 		});
 	});
 

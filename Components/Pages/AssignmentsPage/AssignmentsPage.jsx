@@ -26,18 +26,18 @@ class AssignmentsPage extends Component {
 
 				$.ajax({
 					url: '/login',
-					type: "POST"
+					type: "GET"
 				}).then((json) => {
 					this.setState({userRole: json.userData.Role})
 					if (json.userData.Role !== 'Admin') {
-						this.getAssignments(json.userSection.Title);
+						this.getAssignments(json.userSection[0].Title);
 					};
 				});
 				
 			};
 			// && UserSection.UserSection prevents error on reload of page
 			if (UserInfo.UserInfo.Role !== 'Admin' && UserSection.UserSection) {
-				this.getAssignments(UserSection.UserSection.Title);
+				this.getAssignments(UserSection.UserSection[0].Title);
 			}
 			this.getSections();
 		}
@@ -58,12 +58,13 @@ class AssignmentsPage extends Component {
 		}
 		
 		getSections() {
-			$.ajax({
-				url: '/admin/getSections',
-				type: "POST"
-			}).then((response) => {
-				this.setState({sectionList: response.section});
-			});
+				
+				$.ajax({
+					url: '/admin/getSections',
+					type: "POST"
+				}).then((response) => {
+					this.setState({sectionList: response.section});
+				});
 		}
 
 	render() {
