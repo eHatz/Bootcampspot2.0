@@ -47,7 +47,6 @@ class HomePage extends Component {
 						 <Panel background="#990000" name="CAREER" panelId="careerPanel" pageLink="career" img="/assets/images/career_icon.png"/>
 					)}
 
-
 				</div>	
 			</div>
 			
