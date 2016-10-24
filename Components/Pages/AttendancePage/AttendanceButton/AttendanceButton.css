@@ -1,10 +1,10 @@
-.well{
+.AttendanceButton_well{
 	max-width: 400;
 	margin: 0 auto 10px;
 	text-align: center;
 }
 
-.presentButt{
+.AttendanceButton_button{
 	background-color: red;
     color: white;
     width: 50%;

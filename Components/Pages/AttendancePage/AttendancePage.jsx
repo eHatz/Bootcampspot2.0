@@ -180,15 +180,16 @@ class AttendancePage extends Component {
 	}
 
 	attendanceButtonOnClick(event){
-		console.log("attendanceButtonOnClick")
 		const id = event.currentTarget.getAttribute("value");
 		const ajaxData = {
 			studentId: id
 		};
-		this.goAjax("/attendance/studentAttendance", ajaxData).then(function(response){
-			console.log(response);
-		})
 
+		console.log("attendanceButtonOnClick: ", ajaxData);
+
+		this.goAjax("/attendance/studentAttendance", ajaxData).then(function(response){
+			this.viewSingleStudent(id);
+		}.bind(this))
 	}
 
 	render() {
@@ -203,7 +204,7 @@ class AttendancePage extends Component {
 
 					{this.state.isStudent ? (
 						<AttendanceButton 
-							handleClick={this.attendanceButtonOnClick} 
+							attendanceButtonOnClick={this.attendanceButtonOnClick} 
 							buttonId={buttonId}
 						/>
 						):(
