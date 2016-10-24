@@ -131,45 +131,47 @@ class createAssignment extends Component {
 				      				</div>
 				      			</div>
 				      			<div className="row remove-all-margin-padding">
-									<div className="col-md-3">
-										<FormControl
-											type="text" 
-					      					value={this.state.Resources}
-					      					placeholder="Resources" 
-					      					onChange={this.ResourcesChange}
-										/>
-									</div>
+									<div id='assignmentInputs'>
+										<div className="col-md-3">
+											<FormControl
+												type="text" 
+						      					value={this.state.Resources}
+						      					placeholder="Resources" 
+						      					onChange={this.ResourcesChange}
+											/>
+										</div>
 
-									<div className="col-md-3">
-										<FormControl
-											componentClass="select"
-											onChange={this.sectionChange}
-											placeholder="select"
-										>
-											<option value="">Select Section</option>
-											{this.props.sectionList.map((item, index) =>
-												<option key= {index} value={item.Title}>{item.Title}</option>
+										<div className="col-md-3">
+											<FormControl
+												componentClass="select"
+												onChange={this.sectionChange}
+												placeholder="select"
+											>
+												<option value="">Select Section</option>
+												{this.props.sectionList.map((item, index) =>
+													<option key= {index} value={item.Title}>{item.Title}</option>
 
-											)}
-										</FormControl>
-									</div>
+												)}
+											</FormControl>
+										</div>
 
-									<div className="col-md-3">
-										<FormControl
-											componentClass="select"
-											onChange={this.typeChange}
-											placeholder="select"
-										>
-											<option value="">Assignment Type</option>
-											<option value="Homework">Homework</option>
-											<option value="Project">Project</option>
-											<option value="Career">Career</option>
-										</FormControl>
+										<div className="col-md-3">
+											<FormControl
+												componentClass="select"
+												onChange={this.typeChange}
+												placeholder="select"
+											>
+												<option value="">Assignment Type</option>
+												<option value="Homework">Homework</option>
+												<option value="Project">Project</option>
+												<option value="Career">Career</option>
+											</FormControl>
+										</div>
+									
+										<div className="col-md-3">
+									    	<Button id="homeworkButton"type="submit">Submit</Button>
+									    </div>
 									</div>
-								
-									<div className="col-md-3">
-								    	<Button id="homeworkButton"type="submit">Submit</Button>
-								    </div>
 								</div>
 						    </div>
 						</FormGroup>

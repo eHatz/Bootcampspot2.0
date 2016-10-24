@@ -1,0 +1,19 @@
+.assignGrade{
+	font-size:25px;
+	color: grey;
+	
+}
+
+#gradeAssignmentDiv{
+	margin-left: 20px;
+}
+
+#formGrade{
+	margin-bottom: 16px;
+    width: 50%;
+    }
+
+#gradeButt{
+	background-color: red;
+	color: white;
+}

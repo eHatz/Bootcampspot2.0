@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel, Checkbox, Button } from "react-bootstrap";
-import "./SortAssignments.css";
+import "./SortAnnouncements.css";
 
-class SortAssignments extends Component {
+class SortAnnouncements extends Component {
 	constructor(props) {
 		super(props);
 		this.sortBy = this.sortBy.bind(this);
@@ -15,7 +15,7 @@ class SortAssignments extends Component {
 	
 	sortBy(event) {
 		const section = event.target.value;
-		this.props.getAssignments(section)
+		this.props.getAnnouncement(section)
 	}
 
 	render() {
@@ -30,7 +30,6 @@ class SortAssignments extends Component {
 									componentClass="select"
 									onChange={this.sortBy}
 									placeholder="select"
-									required
 								>
 									<option value="all">All Sections</option>
 									{sectionList.map((item, index) =>
@@ -46,4 +45,4 @@ class SortAssignments extends Component {
 		);
 	}
 }
-export default SortAssignments;
+export default SortAnnouncements;

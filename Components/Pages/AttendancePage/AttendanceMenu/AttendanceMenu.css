@@ -1,0 +1,24 @@
+.attendButt{
+	background-color: red;
+	color: white;
+
+}
+
+.attendButtDiv{
+	padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 25px;
+    padding-left: 15px;
+}
+
+.attendField{
+	width: 50%;
+	display: initial;
+	margin-top: 28px;
+
+}
+
+.attendGroupDiv{
+	background-color: #dfe0df;
+    text-align: center;
+}
