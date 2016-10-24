@@ -1,8 +1,8 @@
 h1{
-	color: black;
+	color: grey;
 }
 .instructor{
-	color: black;
+	color: grey
 }
 
 
@@ -13,14 +13,15 @@ h1{
 	width:84%;
 }
 .sel1{
-	margin-left: 8%;
-	color: black;
-	font-size: 22px;
+	margin-left: 20%;
+	color: grey;
+	font-size: 15px;
 	
 }
 #AbsQuest{
-	color: black;
-	font-size: 22px;
+	color: grey;
+	font-size: 15px;
+	margin-left:8%;
 
 }
 #submitAbs{
@@ -79,7 +80,7 @@ h1{
 	}
 	.sel1{
 		margin-left: 7%;
-		color:black;
+		color:grey;
 		font-size:13px; 
 	}
 	#AbsQuest{

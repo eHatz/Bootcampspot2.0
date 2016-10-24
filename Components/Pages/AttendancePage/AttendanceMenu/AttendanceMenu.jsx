@@ -18,9 +18,9 @@ class AttendanceMenu extends Component {
 
 			<form>
 
-				<FormGroup>
+				<FormGroup className="attendGroupDiv">
 
-					<FormControl 
+					<FormControl className="attendField"
 						componentClass="select" 
 						placeholder="select"
 						onChange={attendanceMenuSectionHandler}
@@ -36,16 +36,16 @@ class AttendanceMenu extends Component {
 
 				</FormGroup>
 
-				<ButtonGroup justified>
+				<ButtonGroup className="attendButtDiv" justified>
 
 					<ButtonGroup>
-						<Button onClick={switchDisplay} value="allSessions">All Class Sessions</Button>
+						<Button className="attendButt" onClick={switchDisplay} value="allSessions">All Class Sessions</Button>
 					</ButtonGroup>
 					<ButtonGroup>
-						<Button onClick={switchDisplay} value="singleSession">Single Class Session</Button>
+						<Button className="attendButt" onClick={switchDisplay} value="singleSession">Single Class Session</Button>
 					</ButtonGroup>
 					<ButtonGroup>
-						<Button onClick={switchDisplay} value="singleStudent">Individual Student</Button>
+						<Button className="attendButt" onClick={switchDisplay} value="singleStudent">Individual Student</Button>
 					</ButtonGroup>
 
 				</ButtonGroup>
