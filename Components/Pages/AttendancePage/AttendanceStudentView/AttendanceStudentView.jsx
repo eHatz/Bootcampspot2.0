@@ -10,7 +10,7 @@ class AttendanceStudentView extends Component {
 
 	render(){
 
-		const { displayData } = this.props;
+		const { displayData, markAttendance } = this.props;
 		console.log("Student View displayData: ", displayData)
 
 
@@ -37,9 +37,10 @@ class AttendanceStudentView extends Component {
 							{type: 'Button', 
 							value: item.Status, 
 							button: <AttendanceEditForm 
-								text={item.Status}
-								value={item.id}
-								/>
+										text={item.Status}
+										attendanceId={item.id}
+										markAttendance={markAttendance}
+									/>
 							}
 						]}
 

@@ -173,6 +173,8 @@ class AttendancePage extends Component {
 		})
 	}
 
+	
+
 	// showModal(event){
 	// 	const that = this;
 	// 	//This method is passed into AttendanceStudentView
@@ -231,6 +233,7 @@ class AttendancePage extends Component {
 							<AttendanceStudentView
 								displayData={this.state.displayData}
 								showModal={this.showModal}
+								markAttendance={this.markAttendance}
 							/>
 					}
 					
