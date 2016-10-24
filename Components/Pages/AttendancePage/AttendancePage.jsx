@@ -164,16 +164,22 @@ class AttendancePage extends Component {
 
 
 	markAttendance(id, status){
+		//Grab the Attendance instance ID and selected attendance status from the element that called this method
 		const ajaxData = {
 			attendanceId: id, 
 			status: status
 		}
-		this.goAjax("attendance/editAttendance", ajaxData).then(function(response){
-			console.log("update attendance response:", response)
+		const that = this;
+
+		//Change the attendance status in the DB
+		that.goAjax("/attendance/editAttendance", ajaxData).then(function(response){
+			//And redner the updated status
+			const id = response.userId;
+			that.viewSingleStudent(id);
 		})
 	}
 
-	
+
 
 	// showModal(event){
 	// 	const that = this;
