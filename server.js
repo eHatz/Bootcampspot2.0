@@ -420,28 +420,6 @@ app.post('/getAnnouncements', function(req, res) {
 	});
 });
 
-// app.post("/attendance/modal", function(req, res){
-// 	const responseArray = [];
-// 	const id = req.body.AttendanceId;
-// 	Attendance.findOne({where:{id:id}}).then(function(attendance){
-// 		responseArray.push({
-// 			Date: attendance.Date,
-// 			Name: ""
-// 		})
-// 		console.log(attendance);
-// 		return attendance.UserId
-// 	}).then(function(userId){
-// 		return User.findOne({where:{id: userId}})
-// 	}).then(function(user){
-// 		return responseArray[0].Name = user.FirstName + " " + user.LastName
-// 	}).then(function(){
-// 		console.log("modal response:", responseArray)
-// 		res.send(responseArray);
-// 	})
-// })
-
-
-
 //====Assignment Routes ==================
 app.post('/getAssignments', function(req, res) {
 	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
@@ -598,6 +576,40 @@ app.post('/gradeAssignment', function(req, res) {
 		});
 	});
 
+})
+
+								// {type: 'Data', value: item.Subject},
+								// {type: 'Data', value: item.LessonNumber},
+								// {type: 'Data', value: item.Date},
+								// {type: 'Data', value: item.Recording},
+
+//======Sylabus=======
+app.post("/syllabus", function(req, res){
+	const id = req.body.id;
+	let responseArray = [];
+	console.log("syllabus: ", id);
+
+	Section.findAll({
+		include: [{
+			model: User,
+			where: {id: id}
+		}]
+	}).then(function(section){
+		return section[0].getSessions()
+	}).then(function(sessions){
+		sessions.forEach(function(session){
+			responseArray.push({
+				id: session.id,
+				Subject: session.Subject,
+				LessonNumber: session.LessonNumber,
+				Date: session.Date,
+				Recording:session.Recording
+			});
+		})
+		return responseArray;
+	}).then(function(responseArray){
+		res.send(responseArray);
+	})
 })
 
 //====Slack Routes====

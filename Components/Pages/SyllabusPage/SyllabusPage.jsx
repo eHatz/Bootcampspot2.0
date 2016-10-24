@@ -16,23 +16,24 @@ class SyllabusPage extends Component {
 	}
 
 	componentWillMount(){
-		this.getSyllabus;
+		this.getSyllabus();
 	}
 
 	getSyllabus(){
 		const UserInfo = this.props.UserInfo.UserInfo;
 		const id = UserInfo.id;
 
+		console.log("getSyllabus: ", UserInfo);
 		$.ajax({
 				url: "/syllabus",
 				type: "POST",
 				data: {id: id}
 		}).then(function(response){
+			console.log("response: ", response)
 			this.setState({
 				displayData: response
 			});
-			return response;
-		})
+		}.bind(this))
 	}
 
 	render() {
@@ -69,7 +70,7 @@ class SyllabusPage extends Component {
 						pageName = 'SyllabusPage'
 					/>
 
-					{displayData.map((item, index) =>
+					{this.state.displayData.map((item, index) =>
 						<TableRow
 							columnCount ={[
 								{type: 'Data', value: item.Subject},

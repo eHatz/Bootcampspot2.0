@@ -1,27 +1,27 @@
 
 
 /*SUBJECT*/
-.syllabusPageCol1 {
+.SyllabusPageCol1 {
 	width: 30%;
 	font-size: 120%;
 
 }
 
 /*LESSON*/
-.syllabusPageCol2 {
-	width: 23%;
+.SyllabusPageCol2 {
+	width: 10%;
 	font-size: 120%;
 }
 
 /*DATE*/
-.syllabusPageCol3{
-	width: 15%;
+.SyllabusPageCol3{
+	width: 30%;
 	font-size: 120%;
 }
 
 /*RECORDING*/
-.syllabusPageCol4 {
-	width: 22%;
+.SyllabusPageCol4 {
+	width: 30%;
 	font-size: 120%;
 
 }
