@@ -2,32 +2,23 @@
 	color: black;
 }
 .adminUserPageCol1{
-	width:30%;
+	width:33.333%;
 }
 
 .adminUserPageCol2{
-	width:30%;
+	width:33.333%;
 }
 
 .adminUserPageCol3{
-	width:20%;
+	width:33.333%;
 }
-
-.adminUserPageCol4{
-	width:10%;
-}
-
-.adminUserPageCol5{
-	width:10%;
-}
-
 
 .adminSectionPageCol1{
-	width:20%;
+	width:30%;
 }
 
 .adminSectionPageCol2{
-	width:20%;
+	width:30%;
 }
 
 .adminSectionPageCol3{
@@ -36,12 +27,4 @@
 
 .adminSectionPageCol4{
 	width:20%;
-}
-
-.adminSectionPageCol5{
-	width:10%;
-}
-
-.adminSectionPageCol6{
-	width:10%;
 }

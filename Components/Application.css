@@ -1,3 +1,7 @@
 body{
 	background-color: #ece9e9;
 }
+.remove-all-margin-padding{
+  padding: 0 !important;
+   margin: 0;
+}

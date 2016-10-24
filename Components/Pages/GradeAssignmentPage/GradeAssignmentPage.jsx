@@ -12,12 +12,15 @@ class GradeAssignmentPage extends Component {
 			assignment: null,
 			submission: null,
 			userInfo: null,
+			student: null,
 			notes: null,
 			grade: null
 		};
 		this.getHwSubmission = this.getHwSubmission.bind(this);
+		this.gradeAssignment = this.gradeAssignment.bind(this);
 		this.handleNotesChange = this.handleNotesChange.bind(this);
 		this.handleGradeChange = this.handleGradeChange.bind(this);
+		this.clearInput = this.clearInput.bind(this);
 
 	}
 	componentWillMount() {
@@ -29,70 +32,89 @@ class GradeAssignmentPage extends Component {
 				type: "GET"
 			}).then((response) => {
 				this.setState({userInfo: response.userData})
+				console.log('user data', response.userData)
+				this.getHwSubmission(response.userData);
 			});
-		};
-		this.getHwSubmission();
+		} else {
+			this.getHwSubmission(this.props.UserInfo.UserInfo);
+		}
 	}
 
 	handleNotesChange(event) {
-		this.setState({ email: event.target.value });
+		this.setState({ notes: event.target.value });
 	}
 
 	handleGradeChange(event) {
-		this.setState({ email: event.target.value });
+		this.setState({ grade: event.target.value });
 	}
 
-	getHwSubmission() {
-		const { UserInfo, params } = this.props;
-		if (UserInfo.UserInfo.Role === 'Admin' || UserInfo.UserInfo.Role === 'Teacher') {
+	getHwSubmission(UserInfo) {
+		const { params } = this.props;
+		if (UserInfo.Role === 'Admin' || UserInfo.Role === 'Teacher') {
 			$.ajax({
 				url: '/gradeSubmitView',
 				type: "POST",
 				data: {
-					UserInfo: JSON.stringify(UserInfo),
+					UserId: UserInfo.id,
 					assignmentId: params.assignId,
 					studentId: params.userId
 		        }
 			}).then((response) => {
-				this.setState({submission: response.studentSubmission[0], assignment: response.assignment});
+				this.setState({
+					submission: response.studentSubmission[0],
+					student: response.student,
+					assignment: response.assignment
+				});
 			});
 		};
 	}
 
-	gradeAssignment() {
+	clearInput(){
+		this.setState({
+			notes: ''
+		});
+	}
+
+	gradeAssignment(event) {
 		const { UserInfo, params } = this.props;
 		if (UserInfo.UserInfo.Role === 'Admin' || UserInfo.UserInfo.Role === 'Teacher') {
 			$.ajax({
 				url: '/gradeAssignment',
 				type: "POST",
 				data: {
-					UserInfo: JSON.stringify(UserInfo),
+					graderName: UserInfo.UserInfo.FirstName + ' ' + UserInfo.UserInfo.LastName,
 					grade: this.state.grade,
-					assignmentId: params.assignId,
-					studentId: params.userId,
+					assignmentName: this.state.assignment.Title,
+					assignmentId: this.state.assignment.Id,
+					studentName: this.state.student.FirstName + ' ' + this.state.student.LastName,
+					submissionId: this.state.submission.id,
 					notes: this.state.notes
 		        }
 			}).then((response) => {
-
+				this.setState({submission: response.updatedSub});
 			});
 		};
+		this.clearInput();
+	    event.preventDefault();
 	}
 		
 	render() {
 		const { UserInfo, UserSection, params } = this.props;
+		console.log('studentInfo', this.state.student);
+		console.log('submission', this.state.assignment);
 		return (
 
 			<div className="homeworkBackground">
 				{this.state.userInfo && this.state.submission ? (
 
 					<div id='gradeAssignmentDiv'>
-						<h1>{this.state.submission.FirstName + ' ' + this.state.submission.LastName}</h1>
+						<h1>{this.state.student.FirstName + ' ' + this.state.student.LastName}</h1>
 						 {this.state.submission.Grade ? (
 							<h1>Grade: {this.state.submission.Grade}</h1>
 						):(
 							<h1>Not Graded</h1>
 						)}
-						<a href={this.state.submission.UserAssignment.Submission}>View Student Submission</a>
+						<a href={this.state.submission.Submission}>View Student Submission</a>
 						<form onSubmit={this.gradeAssignment}>
 							<FormGroup controlId="formBasicText">
 
@@ -107,8 +129,9 @@ class GradeAssignmentPage extends Component {
 				      			<FormControl
 									componentClass="select"
 									onChange={this.handleGradeChange}
-									placeholder="grade"
+									placeholder="Grade"
 								>
+									<option value="">Select Grade</option>
 									<option value="A+">A+</option>
 									<option value="A">A</option>
 									<option value="A-">A-</option>

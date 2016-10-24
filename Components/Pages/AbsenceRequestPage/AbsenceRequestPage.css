@@ -6,16 +6,8 @@ h1{
 }
 
 
-#resetButtAbs{
-	background-color: gray;
-	font-size: 18px;
-	margin-left: 11%;
-	font-size: 22px;
-}
-#submitAbs{
-	font-size: 22px;
 
-}
+
 #sel1{
 	margin-left: 8%;
 	width:84%;
@@ -33,19 +25,28 @@ h1{
 }
 #submitAbs{
 		background-color: #FF0000;
-	}
+		font-size: 18px;
+}
+
+#resetButtAbs{
+	background-color: gray;
+	font-size: 18px;
+	margin-left: 7%;
+	font-size: 18px;
+}
 
 
 
-@media screen and (max-width: 960px){
+
+@media screen and (max-width: 768px){
 	
 	#resetButtAbs{
 		margin-left: 5%;
-		font-size: 22px;
+		font-size: 18px;
 	}
 
 	#submitAbs{
-		font-size: 22px;
+		font-size: 18px;
 	}
 	#sel1{
 		margin-left: 8%;
@@ -56,8 +57,8 @@ h1{
 		font-size: 20px;
 	}
 	.absenceInput{
-		margin-left: 4%;
-		width:92%;
+		margin-left: 2%;
+		width:96%;
 	}
 	#AbsQuest{
 		color: black;
@@ -83,10 +84,15 @@ h1{
 	}
 	#AbsQuest{
 		font-size: 13px;
-		margin-left: 2%;
+		margin-left: 6%;
+		margin-right:11px;
 	}
 	#submitAbs{
 		background-color:#FF0000;
+		font-size: 13px;
+	}
+	#resetButtAbs{
+		font-size: 13px;
 	}
 	.absenceInput{
 		margin-left: 5%;

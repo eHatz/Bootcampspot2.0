@@ -35,7 +35,7 @@ class AbsenceRequest extends Component {
 
 		return (
 
-			<div className="row">			
+			<div className="row remove-all-margin-padding">			
 			
 				<MenuButtons 
 					feedback = "inactive"
@@ -50,9 +50,9 @@ class AbsenceRequest extends Component {
 						 			key = { index }
 					 			/>)
 					 		})}
-				<div className="row">		
+				<div className="row remove-all-margin-padding">		
 				<div className="form-group">
-				  <label className="sel1" for="sel1">Who is your instructor?</label>
+				  <label className="sel1" htmlFor="sel1">Who is your instructor?</label>
 				  <select className="form-control" id="sel1">
 				    <option>Choose</option>
 				    <option>Peleg Rosenthal</option>

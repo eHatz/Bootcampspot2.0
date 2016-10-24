@@ -1,14 +1,18 @@
-    
+#urlLinkButton{
+    background-color: red;
+    padding: 8px;
+}
 
 
 
 #urlInputField{
     padding-top: 8px;
-    border: 1px solid #bdbdbd;;
+    border: 1px solid #bdbdbd;
     border-radius: 1px;
     color: grey;
-    width: 31%;
+    width: 37%;
     padding-left: 10px;
+    padding-bottom: 9px;
  
 }
 .careerBackground{
@@ -117,7 +121,9 @@ body{
 
 .careerUrlCaption{
 	color: grey;
-	text-align: center;
+    text-align: center;
+    font-size: 13px;
+    font-family: helvetica;
 
 
 }
@@ -136,6 +142,7 @@ body{
 .thumbnailDiv{
 	background-color: transparent;
     border: none;
+    max-width: 21%;
 }
 #aquirementsDiv{
 	padding: 20px;
@@ -143,17 +150,17 @@ body{
 }
 
 .radioButtons{
-    margin-bottom: 46px;
+    margin-bottom: 28px;
     margin-top: 20px;
     color: grey;
 }
 #profileImage{
-    width: 100%;
+    width: 70%;
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1198px){
     #profileImage{
-        width: initial;
+        width: 75%;
 
     }
 }

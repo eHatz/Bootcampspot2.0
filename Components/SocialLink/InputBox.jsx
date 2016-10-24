@@ -9,6 +9,7 @@ class InputBox extends Component {
 			<div>
 		    	<form action="action_page">
 					<input id="urlInputField" type="text" placeholder={value} value={currentText} onChange={updateText}/>
+					<button id="urlLinkButton" type="submit">Save</button>
 				</form>
 			</div>
 		)

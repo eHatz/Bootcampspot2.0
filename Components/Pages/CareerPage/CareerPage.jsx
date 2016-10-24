@@ -71,12 +71,12 @@ class CareerPage extends Component {
 							<label className="radio-inline yesNo"><input type="radio" name="optradio"/> Yes</label>
 				 			<label className="radio-inline yesNo"><input type="radio" name="optradio"/> No</label>
 						</div>
+						{showInput}
 						<div id="careerUrlDiv" className="row remove-all-margin-padding">
 
 							{links}
 						
 						</div>
-						{showInput}
 					</div>
 
 					<div className="col-lg-5">

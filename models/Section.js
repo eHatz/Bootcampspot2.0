@@ -4,7 +4,8 @@ module.exports = function(sequelize, DataTypes) {
 	const Section = sequelize.define('Section', {
 		Title: DataTypes.STRING,
 		Location: DataTypes.STRING,
-		Slack: DataTypes.STRING,
+		SlackWebhook: DataTypes.STRING,
+		SlackToken: DataTypes.STRING,
 		StartDate: DataTypes.DATEONLY,
 		EndDate: DataTypes.DATEONLY
 	}, {

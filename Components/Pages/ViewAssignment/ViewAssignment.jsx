@@ -12,8 +12,8 @@ class ViewAssignment extends Component {
 				assignment: [],
 				submission: [],
 				userRole: null,
-				allSubmissions: [],
-				userSubmits: []
+				usersSubmitted: [],
+				usersNoSubmitted: []
 			};
 			this.getHwSubmission = this.getHwSubmission.bind(this);
 			this.getAllSubmissions = this.getAllSubmissions.bind(this);
@@ -42,10 +42,13 @@ class ViewAssignment extends Component {
 					type: "POST",
 					data: {
 						assignmentId: assignmentId,
-						UserInfo: JSON.stringify(UserInfo.UserInfo)
+						UserId: UserInfo.UserInfo.id
 			        }
 				}).then((response) => {
-					this.setState({submission: response.studentSubmission, assignment: response.assignment});
+					this.setState({
+						submission: response.studentSubmission, 
+						assignment: response.assignment
+					});
 				});
 			};
 		}
@@ -63,15 +66,17 @@ class ViewAssignment extends Component {
 						UserInfo: JSON.stringify(UserInfo)
 			        }
 				}).then((response) => {
-					this.setState({allSubmissions: response.studentSubmission, userSubmits: response.userSub, assignment: response.assignment});
+					this.setState({
+						usersSubmitted: response.usersSubmitted,
+						usersNoSubmitted: response.usersNoSubmitted,
+						assignment: response.assignment
+					});
 				});
 			};
 		}
 		
 	render() {
 		const { UserInfo, UserSection, params } = this.props;
-		console.log('ALL SUBS',this.state.allSubmissions);
-		console.log('USER SUBS',this.state.userSubmits);
 		return (
 
 			<div className="homeworkBackground">
@@ -86,20 +91,42 @@ class ViewAssignment extends Component {
 							pageName = 'gradeAssignments'
 						/>
 						
-						{this.state.allSubmissions.map((item, index) =>
+						{this.state.usersSubmitted.map((item, index) =>
 
 							<TableRow
 								columnCount ={[
-									{type: 'Data', value: this.state.userSubmits[index].FirstName + ' ' 
-									+ this.state.userSubmits[index].LastName},
-									{type: 'Data', value: item.Status},
-									{type: 'Data', value: item.Grade}
+									{type: 'Data', value: item.user.FirstName + ' ' + 
+										item.user.LastName},
+									{type: 'Data', value: item.submission.Status},
+									item.submission.Grade ? (
+										{type: 'Data', value: item.submission.Grade}
+									) : (
+										{type: 'Data', value: 'Not Graded'}
+									)
 								]}
 								pageName = 'gradeAssignments'
-								rowLink = {'grading/' + item.UserId + '/' + item.AssignmentId}
+								rowLink = {'grading/' + item.submission.UserId + '/' 
+									+ item.submission.AssignmentId}
 								key= {index}
 							/>
 						)}
+
+						{this.state.usersNoSubmitted.map((item, index) =>
+
+							<TableRow
+								columnCount ={[
+									{type: 'Data', value: item.FirstName + ' ' + 
+										item.LastName},
+									{type: 'Data', value: 'Not Submitted'},
+									{type: 'Data', value: 'Not Graded'}
+								]}
+								pageName = 'gradeAssignments'
+								// prevent assignment from being graded if it hasnt been submitted yet
+								rowLink = {'homework/'+this.props.params.id}
+								key= {index}
+							/>
+						)}
+
 					</div>
 				) : (
 					null
