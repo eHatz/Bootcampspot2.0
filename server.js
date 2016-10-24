@@ -219,7 +219,7 @@ app.post("/attendance/getAllSessions", function(req, res){
 		console.log("/attendance/getAllSessions: ", sessions);
 		res.json(sessions);
 	})
-})
+});
 
 app.post("/attendance/singleSession", function(req, res){
 	const sessionId = req.body.sessionId;
@@ -255,7 +255,7 @@ app.post("/attendance/singleSession", function(req, res){
 
 		recursiveEach(attendanceResults, 0);
 	})
-})
+});
 
 app.post("/attendance/singleStudent", function(req, res){
 	// console.log("attendance/singleStudent route: ", req.body);
@@ -289,7 +289,7 @@ app.post("/attendance/singleStudent", function(req, res){
 
 		recursiveEach(attendanceResults, 0);
 	})
-})
+});
 
 
 app.post("/attendance/getTeacherSections", function(req, res){
@@ -316,6 +316,31 @@ app.post("/attendance/getTeacherSections", function(req, res){
 	 	console.log("responseObj after: ", responseObj);
 	 	res.json(responseObj)
 	 })
+});
+
+app.post("/attendance/editAttendance", function(req, res){
+	const reqID = req.body.attendanceId;
+	const reqStatus = req.body.status;
+	console.log("editAttendance reqID: ", reqID);
+	console.log("editAttendance reqStatus: ", reqStatus)
+
+	Attendance.findOne({where:{id:reqID}}).then(function(attendance){
+		attendance.update({
+			Status: reqStatus
+		})
+		return attendance.UserId
+	}).then(function(userId){
+		res.json({userId})
+	})
+});
+
+app.post("/attendance/studentAttendance", function(req, res){
+	const studentId = req.body.studentId;
+	const today = sequelize.fn("NOW");
+	console.log(today);
+	User.getSections().then(function(section){
+		return section.getSessions({where:{Date:today}})
+	}).then(function(session){res.send([session])})
 })
 
 // app.post("/attendance/modal", function(req, res){
@@ -337,22 +362,6 @@ app.post("/attendance/getTeacherSections", function(req, res){
 // 		res.send(responseArray);
 // 	})
 // })
-
-app.post("/attendance/editAttendance", function(req, res){
-	const reqID = req.body.attendanceId;
-	const reqStatus = req.body.status;
-	console.log("editAttendance reqID: ", reqID);
-	console.log("editAttendance reqStatus: ", reqStatus)
-
-	Attendance.findOne({where:{id:reqID}}).then(function(attendance){
-		attendance.update({
-			Status: reqStatus
-		})
-		return attendance.UserId
-	}).then(function(userId){
-		res.json({userId})
-	})
-})
 
 //====Assignment Routes ==================
 app.post('/getAssignments', function(req, res) {

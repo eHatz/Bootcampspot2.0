@@ -32,7 +32,7 @@ class AttendancePage extends Component {
 		this.viewSingleSession = this.viewSingleSession.bind(this);
 		this.selectStudentHandler = this.selectStudentHandler.bind(this);
 		this.viewSingleStudent = this.viewSingleStudent.bind(this);
-		this.attendanceMenuSectionHandler = this.attendanceMenuSectionHandler.bind(this);
+		this.attendanceMenuHandleDropdown = this.attendanceMenuHandleDropdown.bind(this);
 		this.attendanceButtonOnClick = this.attendanceButtonOnClick.bind(this);
 		this.markAttendance = this.markAttendance.bind(this);
 	}
@@ -71,7 +71,7 @@ class AttendancePage extends Component {
 	}
 
 	//This method fires when an admin or teacher selects a section to view
-	attendanceMenuSectionHandler(event){
+	attendanceMenuHandleDropdown(event){
 		const index = event.target.value;
 		const selectedSection = this.state.sections[index].id;
 		
@@ -162,7 +162,7 @@ class AttendancePage extends Component {
 		this.viewSingleStudent(userId);
 	}
 
-
+	//General purpose attendance marker
 	markAttendance(id, status){
 		//Grab the Attendance instance ID and selected attendance status from the element that called this method
 		const ajaxData = {
@@ -179,31 +179,21 @@ class AttendancePage extends Component {
 		})
 	}
 
-
-
-	// showModal(event){
-	// 	const that = this;
-	// 	//This method is passed into AttendanceStudentView
-	// 	console.log("SHOW MODAL ---", event.currentTarget.getAttribute('value'));
-	// 	const attendanceId = event.currentTarget.getAttribute('value');
-	// 	const ajaxData = {AttendanceId: attendanceId}
-
-	// 	that.goAjax("/attendance/modal", ajaxData).then(function(response){
-	// 		console.log("modal respose: ", response);
-	// 		that.setState({
-	// 			showModal:true,
-	// 			modalDate: response.Date,
-	// 			modalStudent:response.Name,
-	// 			modalId: attendanceId
-	// 		})
-	// 	})
-	// }
-
-	attendanceButtonOnClick(){
+	attendanceButtonOnClick(event){
+		console.log("attendanceButtonOnClick")
+		const id = event.currentTarget.getAttribute("value");
+		const ajaxData = {
+			studentId: id
+		};
+		this.goAjax("/attendance/studentAttendance", ajaxData).then(function(response){
+			console.log(response);
+		})
 
 	}
 
 	render() {
+
+		const buttonId = this.props.UserInfo.UserInfo.id;
 
 		return (
 
@@ -212,10 +202,13 @@ class AttendancePage extends Component {
 				<div id="AttendancePage_menuDiv">
 
 					{this.state.isStudent ? (
-						<AttendanceButton handleClick={this.attendanceButtonOnClick} />
+						<AttendanceButton 
+							handleClick={this.attendanceButtonOnClick} 
+							buttonId={buttonId}
+						/>
 						):(
 						<AttendanceMenu
-							attendanceMenuSectionHandler={this.attendanceMenuSectionHandler}
+							attendanceMenuHandleDropdown={this.attendanceMenuHandleDropdown}
 							sections={this.state.sections}
 						/>)
 					}
