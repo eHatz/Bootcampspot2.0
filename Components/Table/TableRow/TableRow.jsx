@@ -8,6 +8,7 @@ class TableRow extends Component {
 	render() {
 		const { columnCount, pageName, rowLink } = this.props;
 
+
 		return (
 			<div className= "remove-all-margin-padding">
 				<div className='row remove-all-margin-padding'>
@@ -19,6 +20,7 @@ class TableRow extends Component {
 								colNum = {index + 1}
 								colData = {item.value}
 								colType = {item.type}
+								colButton = {item.button ? item.button : null}
 								key= {index}
 							/>
 						)

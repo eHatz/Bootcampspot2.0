@@ -317,6 +317,7 @@ app.post("/attendance/getTeacherSections", function(req, res){
 	 	res.json(responseObj)
 	 })
 })
+
 app.post('/createAnnouncement', function(req, res) {
 	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
 		section.createAnnouncement({
@@ -347,6 +348,45 @@ app.post('/getSlackChannels', function(req, res) {
 		});
 	});
 });
+
+
+// app.post("/attendance/modal", function(req, res){
+// 	const responseArray = [];
+// 	const id = req.body.AttendanceId;
+// 	Attendance.findOne({where:{id:id}}).then(function(attendance){
+// 		responseArray.push({
+// 			Date: attendance.Date,
+// 			Name: ""
+// 		})
+// 		console.log(attendance);
+// 		return attendance.UserId
+// 	}).then(function(userId){
+// 		return User.findOne({where:{id: userId}})
+// 	}).then(function(user){
+// 		return responseArray[0].Name = user.FirstName + " " + user.LastName
+// 	}).then(function(){
+// 		console.log("modal response:", responseArray)
+// 		res.send(responseArray);
+// 	})
+// })
+
+app.post("/attendance/editAttendance", function(req, res){
+	const reqID = req.body.attendanceId;
+	const reqStatus = req.body.status;
+	console.log("editAttendance reqID: ", reqID);
+	console.log("editAttendance reqStatus: ", reqStatus)
+
+	Attendance.findOne({where:{id:reqID}}).then(function(attendance){
+		attendance.update({
+			Status: reqStatus
+		})
+		return attendance.UserId
+	}).then(function(userId){
+		res.json({userId})
+	})
+})
+
+
 //====Assignment Routes ==================
 app.post('/getAssignments', function(req, res) {
 	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
