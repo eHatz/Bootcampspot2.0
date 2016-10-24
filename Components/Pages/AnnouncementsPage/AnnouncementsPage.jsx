@@ -55,7 +55,7 @@ class AnnouncementsPage extends Component {
 				sectionTitle: sectionTitle
 	        }
 		}).then((response) => {
-			this.setState({announcementList: response});
+			this.setState({announcementList: response.announcements});
 		});
 
 	}
@@ -124,26 +124,20 @@ class AnnouncementsPage extends Component {
 					<TableRow 
 
 						columnCount ={[
-							{type: 'Header', value: 'TITLE'},
-							{type: 'Header', value: 'DUE DATE'},
-							{type: 'Header', value: 'TYPE'},
-							
+							{type: 'Header', value: 'ANNOUNCEMENTS'},
 						]}
-						pageName = 'homeworkPage'
+						pageName = 'announcementsPage'
 
 					/>
 
 					{this.state.announcementList.map((item, index) =>
-						<TableRow
-							columnCount ={[
-								{type: 'Data', value: item.Title},
-								{type: 'Data', value: item.DueDate.split('T')[0] + ' ' + item.DueTime},
-								{type: 'Data', value: item.Type},
-							]}
-							pageName = 'homeworkPage'
-							rowLink = {'homework/' + item.id}
-							key= {index}
-						/>
+						<div key= {index} className='row remove-all-margin-padding'>
+							<div className = "announcementsContent">
+								<p className='announceTitle'>{item.Title + ":"}</p>
+								<p className='announceDate'>{item.createdAt.split('T')[0]}</p>
+								<p className='announceMessage'>{item.Content}</p>
+							</div>
+						</div>
 					)}
 				</div>
 			</div>
