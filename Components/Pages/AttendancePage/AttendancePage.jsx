@@ -240,6 +240,7 @@ class AttendancePage extends Component {
 								displayData={this.state.displayData}
 								showModal={this.showModal}
 								markAttendance={this.markAttendance}
+								isStudent={this.state.isStudent}
 							/>
 					}
 					
