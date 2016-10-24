@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel, Checkbox, Button } from "react-bootstrap";
-import "./createAnnouncementTeacher.css";
+import "./CreateAnnouncementTeacher.css";
 import $ from "jquery";
 class createAnnouncementTeacher extends Component {
 	constructor(props) {
@@ -56,7 +56,7 @@ class createAnnouncementTeacher extends Component {
 				channel: this.state.channel
 	        }
 		}).then((response) => {
-			this.props.getAssignments(this.state.message);
+			this.props.getAnnouncements(this.state.sectionTitle);
 		});
 
 	    this.clearInput();

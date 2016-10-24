@@ -15,7 +15,7 @@ class SortAnnouncements extends Component {
 	
 	sortBy(event) {
 		const section = event.target.value;
-		this.props.getAnnouncement(section)
+		this.props.getAnnouncements(section)
 	}
 
 	render() {
@@ -31,7 +31,7 @@ class SortAnnouncements extends Component {
 									onChange={this.sortBy}
 									placeholder="select"
 								>
-									<option value="all">All Sections</option>
+									<option value="all">Select Section</option>
 									{sectionList.map((item, index) =>
 										<option key= {index} value={item.Title}>{item.Title}</option>
 

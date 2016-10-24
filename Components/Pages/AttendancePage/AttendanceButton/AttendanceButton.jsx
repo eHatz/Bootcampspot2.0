@@ -11,10 +11,10 @@ class AttendanceButton extends Component {
 		const { attendanceButtonOnClick, buttonId } = this.props;
 
 		return (
-			<div className="well">
+			<div className="well AttendanceButton_well">
 
-				<Button className="presentButt" onClick={attendanceButtonOnClick} value={buttonId} bsSize="large" block>Mark Present</Button>
-				
+				<Button className="AttendanceButton_button" onClick={attendanceButtonOnClick} value={buttonId} bsSize="large" block>Mark Present</Button>
+
 			</div>
 		)
 	}

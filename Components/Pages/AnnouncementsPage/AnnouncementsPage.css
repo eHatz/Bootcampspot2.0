@@ -5,3 +5,33 @@
 	background-size: cover;
     background-position: 50% 50%;
 }
+
+.announcementsPageCol1 {
+	width: 100%;
+}
+
+.announcementsContent {
+	display: inline-block;
+	color: black;
+	margin: 0px;
+	font-size: 15px;
+	line-height: 30px;
+	border-bottom: 1px solid #d2cfcf;
+	width: 100%;
+}
+
+.announceMessage {
+	padding: 0px 20px;
+	float: left;
+}
+.announceTitle {
+	padding: 0px 20px;
+	float: left;
+	font-weight: bold;
+}
+
+.announceDate {
+	padding: 0px 20px;
+	float: right;
+	font-weight: bold;
+}

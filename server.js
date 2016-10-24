@@ -1,3 +1,4 @@
+"use strict"
 const bodyParser = require('body-parser');
 const path = require('path');
 const express = require('express');
@@ -12,6 +13,7 @@ const ensureLogin = require('connect-ensure-login');
 const sequelize = require('sequelize');
 const models = require("./models");
 const async = require("async");
+const moment = require("moment");
 require('dotenv').config();
 
 //Express Setup
@@ -336,12 +338,47 @@ app.post("/attendance/editAttendance", function(req, res){
 
 app.post("/attendance/studentAttendance", function(req, res){
 	const studentId = req.body.studentId;
-	const today = sequelize.fn("NOW");
+	let today = moment().format("YYYY-MM-DD");
+	let studentTime = moment().format("HH:mm:ss");
+	let studentStatus;
+	let thisSession;
+	let thisUser;
 	console.log(today);
-	User.getSections().then(function(section){
-		return section.getSessions({where:{Date:today}})
-	}).then(function(session){res.send([session])})
+
+	User.findOne({where:{id:studentId}}).then(function(user){
+		thisUser = user;
+		return user.getSections()
+	}).then(function(section){
+		// console.log("section: ", section[0]);
+		return section[0].getSessions({where:{Date:today}})
+	}).then(function(session){
+		// console.log("session ", session[0]);
+		thisSession = session[0];
+		const sessionTime = thisSession.Time;
+		console.log("studentTime, sessionTime: ", studentTime + "//" + sessionTime);
+		studentTime < sessionTime ? studentStatus = "Early" : studentStatus = "Late";
+		return Attendance.create({
+			Status: studentStatus,
+			Date: today,
+			Time: studentTime,
+			Notes: "",
+			SessionId: thisSession.id,
+			UserId: studentId
+		});
+	})/*.then(function(attendance){
+		console.log("attendance; ", attendance);
+		return attendance.setUser(thisUser);
+	}).then(function(attendance){
+		return attendance.setSession(thisSession);
+	})*/.then(function(){
+		return Attendance.findAll({where:{UserId: studentId}});
+	}).then(function(attendanceResults){
+		console.log("attendanceResults: ", attendanceResults);
+		res.send(attendanceResults);
+	})
 })
+
+//========Announcement routes======
 
 app.post('/createAnnouncement', function(req, res) {
 	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
@@ -363,6 +400,7 @@ app.post('/createAnnouncement', function(req, res) {
 		});
 	});
 });
+
 app.post('/getSlackChannels', function(req, res) {
 	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
 		request.post({
@@ -374,42 +412,13 @@ app.post('/getSlackChannels', function(req, res) {
 	});
 });
 
-
-// app.post("/attendance/modal", function(req, res){
-// 	const responseArray = [];
-// 	const id = req.body.AttendanceId;
-// 	Attendance.findOne({where:{id:id}}).then(function(attendance){
-// 		responseArray.push({
-// 			Date: attendance.Date,
-// 			Name: ""
-// 		})
-// 		console.log(attendance);
-// 		return attendance.UserId
-// 	}).then(function(userId){
-// 		return User.findOne({where:{id: userId}})
-// 	}).then(function(user){
-// 		return responseArray[0].Name = user.FirstName + " " + user.LastName
-// 	}).then(function(){
-// 		console.log("modal response:", responseArray)
-// 		res.send(responseArray);
-// 	})
-// })
-
-app.post("/attendance/editAttendance", function(req, res){
-	const reqID = req.body.attendanceId;
-	const reqStatus = req.body.status;
-	console.log("editAttendance reqID: ", reqID);
-	console.log("editAttendance reqStatus: ", reqStatus)
-
-	Attendance.findOne({where:{id:reqID}}).then(function(attendance){
-		attendance.update({
-			Status: reqStatus
-		})
-		return attendance.UserId
-	}).then(function(userId){
-		res.json({userId})
-	})
-})
+app.post('/getAnnouncements', function(req, res) {
+	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
+		section.getAnnouncements().then(function(announcements) {
+			res.json({announcements: announcements});
+		});
+	});
+});
 
 //====Assignment Routes ==================
 app.post('/getAssignments', function(req, res) {
@@ -567,6 +576,40 @@ app.post('/gradeAssignment', function(req, res) {
 		});
 	});
 
+})
+
+								// {type: 'Data', value: item.Subject},
+								// {type: 'Data', value: item.LessonNumber},
+								// {type: 'Data', value: item.Date},
+								// {type: 'Data', value: item.Recording},
+
+//======Sylabus=======
+app.post("/syllabus", function(req, res){
+	const id = req.body.id;
+	let responseArray = [];
+	console.log("syllabus: ", id);
+
+	Section.findAll({
+		include: [{
+			model: User,
+			where: {id: id}
+		}]
+	}).then(function(section){
+		return section[0].getSessions()
+	}).then(function(sessions){
+		sessions.forEach(function(session){
+			responseArray.push({
+				id: session.id,
+				Subject: session.Subject,
+				LessonNumber: session.LessonNumber,
+				Date: session.Date,
+				Recording:session.Recording
+			});
+		})
+		return responseArray;
+	}).then(function(responseArray){
+		res.send(responseArray);
+	})
 })
 
 //====Slack Routes====
