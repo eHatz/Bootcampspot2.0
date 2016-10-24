@@ -3,8 +3,7 @@
 module.exports = function(sequelize, DataTypes) {
 	const Announcement = sequelize.define("Announcement", {
 		Title: DataTypes.STRING,
-		Content: DataTypes.STRING,
-		Date: DataTypes.DATE
+		Content: DataTypes.TEXT
 	}, {
 	classMethods: {
 		associate: function(models) {
