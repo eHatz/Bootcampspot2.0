@@ -184,13 +184,12 @@ class AttendancePage extends Component {
 		const ajaxData = {
 			studentId: id
 		};
-		
+
 		console.log("attendanceButtonOnClick: ", ajaxData);
 
 		this.goAjax("/attendance/studentAttendance", ajaxData).then(function(response){
-			console.log(response);
-		})
-
+			this.viewSingleStudent(id);
+		}.bind(this))
 	}
 
 	render() {

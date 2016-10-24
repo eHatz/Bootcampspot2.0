@@ -338,15 +338,43 @@ app.post("/attendance/editAttendance", function(req, res){
 app.post("/attendance/studentAttendance", function(req, res){
 	const studentId = req.body.studentId;
 	let today = moment().format("YYYY-MM-DD");
+	let studentTime = moment().format("HH:mm:ss");
+	let studentStatus;
+	let thisSession;
+	let thisUser;
 	console.log(today);
-	Section.findOne({
-		include: [{
-			model: User,
-			where: {id: studentId}
-		}]
+
+	User.findOne({where:{id:studentId}}).then(function(user){
+		thisUser = user;
+		return user.getSections()
 	}).then(function(section){
-		return section.getSessions({where:{Date:today}})
-	}).then(function(session){res.send([session])})
+		// console.log("section: ", section[0]);
+		return section[0].getSessions({where:{Date:today}})
+	}).then(function(session){
+		// console.log("session ", session[0]);
+		thisSession = session[0];
+		const sessionTime = thisSession.Time;
+		console.log("studentTime, sessionTime: ", studentTime + "//" + sessionTime);
+		studentTime < sessionTime ? studentStatus = "Early" : studentStatus = "Late";
+		return Attendance.create({
+			Status: studentStatus,
+			Date: today,
+			Time: studentTime,
+			Notes: "",
+			SessionId: thisSession.id,
+			UserId: studentId
+		});
+	})/*.then(function(attendance){
+		console.log("attendance; ", attendance);
+		return attendance.setUser(thisUser);
+	}).then(function(attendance){
+		return attendance.setSession(thisSession);
+	})*/.then(function(){
+		return Attendance.findAll({where:{UserId: studentId}});
+	}).then(function(attendanceResults){
+		console.log("attendanceResults: ", attendanceResults);
+		res.send(attendanceResults);
+	})
 })
 
 //========Announcement routes======
