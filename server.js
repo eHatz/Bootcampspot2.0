@@ -318,6 +318,38 @@ app.post("/attendance/getTeacherSections", function(req, res){
 	 })
 })
 
+app.post('/createAnnouncement', function(req, res) {
+	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
+		section.createAnnouncement({
+			Title: req.body.title, 
+			Content: req.body.message,
+		})
+		.then(function(assignment) {
+			request.post({
+				headers: {'content-type' : 'application/x-www-form-urlencoded'},
+				url: section.SlackWebhook,
+				body: JSON.stringify({
+					'channel': '#' + req.body.channel,
+					'username': 'Announcements', 
+					'text': req.body.title+':\n'+ req.body.message
+				})
+			});
+			res.json({assignment: assignment});
+		});
+	});
+});
+app.post('/getSlackChannels', function(req, res) {
+	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
+		request.post({
+			headers: {'content-type' : 'application/x-www-form-urlencoded'},
+			url: 'https://slack.com/api/channels.list?token=' + section.SlackToken}, 
+		function(error, response, body){
+			res.json({channels: (JSON.parse(body)).channels});
+		});
+	});
+});
+
+
 // app.post("/attendance/modal", function(req, res){
 // 	const responseArray = [];
 // 	const id = req.body.AttendanceId;
@@ -354,6 +386,7 @@ app.post("/attendance/editAttendance", function(req, res){
 	})
 })
 
+
 //====Assignment Routes ==================
 app.post('/getAssignments', function(req, res) {
 	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
@@ -365,18 +398,16 @@ app.post('/getAssignments', function(req, res) {
 
 app.post('/createAssignment', function(req, res) {
 	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
-		section.getUsers().then(function(users) {
-			section.createAssignment({
-				Title: req.body.Title, 
-				Instructions: req.body.Instructions,
-				DueDate: req.body.DueDate,
-				DueTime: req.body.DueTime, 
-				Resources:req.body.Instructions,
-				Type:req.body.Type
-			})
-			.then(function(assignment) {
-				res.json({assignment: assignment});
-			});
+		section.createAssignment({
+			Title: req.body.Title, 
+			Instructions: req.body.Instructions,
+			DueDate: req.body.DueDate,
+			DueTime: req.body.DueTime, 
+			Resources:req.body.Instructions,
+			Type:req.body.Type
+		})
+		.then(function(assignment) {
+			res.json({assignment: assignment});
 		});
 	});
 });
@@ -445,7 +476,6 @@ app.post('/submitAssignment', function(req, res) {
 			submitStatus = 'On Time';
 		}
 		User.findOne({where: {id: userId}}).then(function(user) {
-			console.log('USERINFOOOOOOOOOOOOO', user);
 			assignment.createSubmission({Submission: assignmentLinks, Status: submitStatus})
 			.then(function(submit){
 				user.addSubmission(submit);
@@ -487,7 +517,7 @@ app.post('/gradeAssignment', function(req, res) {
 					//get list of slack users
 					request.post({
 						headers: {'content-type' : 'application/x-www-form-urlencoded'},
-						url: 'https://slack.com/api/users.list' + section.SlackToken}, 
+						url: 'https://slack.com/api/users.list?token=' + section.SlackToken}, 
 					function(error, response, body){
 						var slackUsers = JSON.parse(body).members;
 						// if student's name is in slack channel, send them a message

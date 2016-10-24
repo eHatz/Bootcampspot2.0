@@ -5,11 +5,15 @@
 }
 
 .homeworkAssignDiv{
-    padding: 56px;
     padding-top: 25px;
+
     padding-right: 82px;
     padding-bottom: 9px;
+
     padding-left: 56px;
     background-color: #e4e3e3;
     margin-bottom: 31px;
-    }
+}
+ #assignmentInputs {
+ 	padding-top: 20px;
+ }

@@ -90,7 +90,6 @@ class createAssignmentTeacher extends Component {
 		      					value={this.state.Title}
 		      					placeholder="Title" 
 		      					onChange={this.handleTitleChange}
-		      					required
 		      				/>
 
 							<ControlLabel>Instructions:</ControlLabel>
@@ -99,8 +98,6 @@ class createAssignmentTeacher extends Component {
 		      					value={this.state.Instructions}
 		      					placeholder="Instructions" 
 		      					onChange={this.InstructionsChange}
-		      					required
-
 		      				/>
 
 							<ControlLabel>Due Date</ControlLabel>
@@ -109,7 +106,6 @@ class createAssignmentTeacher extends Component {
 		      					value={this.state.DueDate}
 		      					placeholder="Due Date" 
 		      					onChange={this.DueDateChange}
-		      					required
 		      				/>
 		      				<ControlLabel>Due Time</ControlLabel>
 							<FormControl
@@ -117,7 +113,6 @@ class createAssignmentTeacher extends Component {
 		      					value={this.state.DueTime}
 		      					placeholder="Due Time" 
 		      					onChange={this.DueTimeChange}
-		      					required
 		      				/>
 							<ControlLabel>Resources</ControlLabel>
 							<FormControl
@@ -125,7 +120,6 @@ class createAssignmentTeacher extends Component {
 		      					value={this.state.Resources}
 		      					placeholder="Resources" 
 		      					onChange={this.ResourcesChange}
-		      					required
 							/>
 
 						    <Button type="submit">Submit</Button>

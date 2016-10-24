@@ -7,65 +7,65 @@ import TableRow from "../../Table/TableRow/TableRow.jsx";
 import $ from "jquery";
 
 class AssignmentsPage extends Component {
-		constructor(props, context) {
+	constructor(props, context) {
 
-			super(props, context);
-			this.state = {
-				assignmentList: [],
-				userRole: 'Student',
-				sectionList: []
-			};
-			this.getAssignments = this.getAssignments.bind(this);
-			this.getSections = this.getSections.bind(this);
+		super(props, context);
+		this.state = {
+			assignmentList: [],
+			userRole: null,
+			sectionList: []
+		};
+		this.getAssignments = this.getAssignments.bind(this);
+		this.getSections = this.getSections.bind(this);
+	}
+	componentWillMount() {
+		const { UserInfo, UserSection} = this.props;
+		this.setState({userRole: UserInfo.UserInfo.Role})
+		//prevents errors from occuring if page is reloaded and state is lost
+		if (UserInfo.UserInfo.Role === undefined) {
+
+			$.ajax({
+				url: '/login',
+				type: "GET"
+			}).then((json) => {
+				this.setState({userRole: json.userData.Role})
+				if (json.userData.Role !== 'Admin') {
+					this.getAssignments(json.userSection[0].Title);
+				};
+			});
+			
+		};
+		// && UserSection.UserSection prevents error on reload of page
+		if (UserInfo.UserInfo.Role !== 'Admin' && UserSection.UserSection) {
+			this.getAssignments(UserSection.UserSection[0].Title);
 		}
-		componentWillMount() {
-			const { UserInfo, UserSection} = this.props;
-			this.setState({userRole: UserInfo.UserInfo.Role})
-			//prevents errors from occuring if page is reloaded and state is lost
-			if (UserInfo.UserInfo.Role === undefined) {
+		this.getSections();
+	}
 
-				$.ajax({
-					url: '/login',
-					type: "GET"
-				}).then((json) => {
-					this.setState({userRole: json.userData.Role})
-					if (json.userData.Role !== 'Admin') {
-						this.getAssignments(json.userSection[0].Title);
-					};
-				});
-				
-			};
-			// && UserSection.UserSection prevents error on reload of page
-			if (UserInfo.UserInfo.Role !== 'Admin' && UserSection.UserSection) {
-				this.getAssignments(UserSection.UserSection[0].Title);
-			}
-			this.getSections();
-		}
+	getAssignments(sectionTitle) {
+		const { UserInfo } = this.props;
 
-		getAssignments(sectionTitle) {
-			const { UserInfo } = this.props;
+			$.ajax({
+				url: '/getAssignments',
+				type: "POST",
+				data: {
+					sectionTitle: sectionTitle
+		        }
+			}).then((response) => {
+				this.setState({assignmentList: response});
+			});
 
-				$.ajax({
-					url: '/getAssignments',
-					type: "POST",
-					data: {
-						sectionTitle: sectionTitle
-			        }
-				}).then((response) => {
-					this.setState({assignmentList: response});
-				});
-
-		}
-		
-		getSections() {
-				
-				$.ajax({
-					url: '/admin/getSections',
-					type: "POST"
-				}).then((response) => {
-					this.setState({sectionList: response.section});
-				});
-		}
+	}
+	
+	getSections() {
+			
+			$.ajax({
+				url: '/admin/getSections',
+				type: "POST"
+			}).then((response) => {
+				this.setState({sectionList: response.section});
+			});
+	}
 
 	render() {
 		const { UserInfo, UserSection } = this.props;
