@@ -12,4 +12,11 @@
 
 .AttendancePage_AttendanceStudentViewCol4{
 	width: 25%;
+	align-content: center
 }
+
+.tableButton{
+	overflow: visible;
+	align-content: center;
+}
+

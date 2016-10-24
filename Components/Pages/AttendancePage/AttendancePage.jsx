@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import { browserHistory, Router, Route, Link, withRouter } from 'react-router';
 import $ from "jquery";
 import "./AttendancePage.css";
+//Control components
 import AttendanceMenu from "./AttendanceMenu/AttendanceMenu.jsx";
 import AttendanceButton from "./AttendanceButton/AttendanceButton.jsx";
+//View components
 import AttendanceSessionsView from "./AttendanceSessionsView/AttendanceSessionsView.jsx";
 import AttendanceStudentsView from "./AttendanceStudentsView/AttendanceStudentsView.jsx";
 import AttendanceStudentView from "./AttendanceStudentView/AttendanceStudentView.jsx";
@@ -19,7 +21,7 @@ class AttendancePage extends Component {
 			// currentSectionIndex: 0,
 			view: "", //Determines which view component gets redered.  Must be allSessions, singleSession, or singleStudent
 			isStudent: false, //turns the Admin/Teacher control panel into an attendance button if true
-			displayData: [] //Holds the actual data displayed by the current view component
+			displayData: [], //Holds the data displayed by the current view component
 		}
 
 		this.goAjax = this.goAjax.bind(this);
@@ -32,6 +34,7 @@ class AttendancePage extends Component {
 		this.viewSingleStudent = this.viewSingleStudent.bind(this);
 		this.attendanceMenuSectionHandler = this.attendanceMenuSectionHandler.bind(this);
 		this.attendanceButtonOnClick = this.attendanceButtonOnClick.bind(this);
+		this.markAttendance = this.markAttendance.bind(this);
 	}
 
 	componentWillMount() {
@@ -152,6 +155,7 @@ class AttendancePage extends Component {
 	}
 
 	userStudent(userId){
+		console.log("userStudent")
 		this.setState({
 			isStudent: true
 		});
@@ -159,10 +163,41 @@ class AttendancePage extends Component {
 	}
 
 
-	markAttendance(){
-		
+	markAttendance(id, status){
+		//Grab the Attendance instance ID and selected attendance status from the element that called this method
+		const ajaxData = {
+			attendanceId: id, 
+			status: status
+		}
+		const that = this;
+
+		//Change the attendance status in the DB
+		that.goAjax("/attendance/editAttendance", ajaxData).then(function(response){
+			//And redner the updated status
+			const id = response.userId;
+			that.viewSingleStudent(id);
+		})
 	}
 
+
+
+	// showModal(event){
+	// 	const that = this;
+	// 	//This method is passed into AttendanceStudentView
+	// 	console.log("SHOW MODAL ---", event.currentTarget.getAttribute('value'));
+	// 	const attendanceId = event.currentTarget.getAttribute('value');
+	// 	const ajaxData = {AttendanceId: attendanceId}
+
+	// 	that.goAjax("/attendance/modal", ajaxData).then(function(response){
+	// 		console.log("modal respose: ", response);
+	// 		that.setState({
+	// 			showModal:true,
+	// 			modalDate: response.Date,
+	// 			modalStudent:response.Name,
+	// 			modalId: attendanceId
+	// 		})
+	// 	})
+	// }
 
 	attendanceButtonOnClick(){
 
@@ -203,6 +238,8 @@ class AttendancePage extends Component {
 							:						
 							<AttendanceStudentView
 								displayData={this.state.displayData}
+								showModal={this.showModal}
+								markAttendance={this.markAttendance}
 							/>
 					}
 					
