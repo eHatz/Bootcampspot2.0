@@ -68,7 +68,7 @@ class ViewMySubmission extends Component {
 				) : (
 					<div className="viewSubmissionDiv row remove-all-margin-padding">
 						<h1 className="viewSubmission">Assignment has already been submitted.</h1>
-						<a href={assignment.Instructions}>Instructions</a>
+						<a id="viewSubmissionInstruc" href={assignment.Instructions}>Instructions</a>
 						<h1 className="viewSubmission">{submission[0].Status}</h1>
 
 						{submission[0].Grade ? (
