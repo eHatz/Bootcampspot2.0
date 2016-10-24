@@ -40,6 +40,7 @@ class LoggedIn extends Component {
 					<div className= "col-sm-3 remove-all-margin-padding hideBar">
 						<Navbar
 							location = {location}
+							UserInfo= {UserInfo}
 						/>
 					</div>
 					<div id="pageContent" className= "col-sm-9 remove-all-margin-padding">

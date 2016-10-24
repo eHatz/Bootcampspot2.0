@@ -25,6 +25,7 @@ class LogoutBar extends Component {
 								</div>
 								<NavBar
 									location = {location}
+									UserInfo= {UserInfo}
 								/>
 	
 							</div>
