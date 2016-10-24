@@ -30,6 +30,7 @@ class SortAssignments extends Component {
 									componentClass="select"
 									onChange={this.sortBy}
 									placeholder="select"
+									required
 								>
 									<option value="all">All Sections</option>
 									{sectionList.map((item, index) =>

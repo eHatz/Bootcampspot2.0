@@ -108,15 +108,15 @@ class GradeAssignmentPage extends Component {
 				{this.state.userInfo && this.state.submission ? (
 
 					<div id='gradeAssignmentDiv'>
-						<h1>{this.state.student.FirstName + ' ' + this.state.student.LastName}</h1>
+						<h1 className="assignGrade">{this.state.student.FirstName + ' ' + this.state.student.LastName}</h1>
 						 {this.state.submission.Grade ? (
-							<h1>Grade: {this.state.submission.Grade}</h1>
+							<h1 className="assignGrade">Grade: {this.state.submission.Grade}</h1>
 						):(
-							<h1>Not Graded</h1>
+							<h1 className="assignGrade">Not Graded</h1>
 						)}
 						<a href={this.state.submission.Submission}>View Student Submission</a>
 						<form onSubmit={this.gradeAssignment}>
-							<FormGroup controlId="formBasicText">
+							<FormGroup controlId="formGrade">
 
 								<ControlLabel>Notes</ControlLabel>
 								<FormControl
@@ -147,7 +147,7 @@ class GradeAssignmentPage extends Component {
 									<option value="F">F</option>
 								</FormControl>
 
-							    <Button type="submit">Submit</Button>
+							    <Button id="gradeButt"type="submit">Submit</Button>
 							</FormGroup>
 						
 						</form>

@@ -1,6 +1,9 @@
 .sectionField{
 	margin-right: -11px;
 }
+#formBasicText{
+		margin-bottom: 16px;
+	}	
 
 .sectionDiv{
 	padding-top: 58px;
@@ -25,7 +28,7 @@
 	}
 */
 	#formBasicText{
-		margin-bottom: 30px;
+		margin-bottom: 16px;
 	}	
 
 }

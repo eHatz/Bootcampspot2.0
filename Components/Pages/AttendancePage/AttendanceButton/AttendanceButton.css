@@ -1,4 +1,12 @@
 .well{
 	max-width: 400;
 	margin: 0 auto 10px;
+	text-align: center;
+}
+
+.presentButt{
+	background-color: red;
+    color: white;
+    width: 50%;
+    display: initial;
 }

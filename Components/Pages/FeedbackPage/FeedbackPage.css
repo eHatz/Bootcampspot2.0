@@ -53,15 +53,17 @@
 
 .rightSide{
 	margin-right: 6%;
-	font-size: 20px;
+	font-size: 15px;
 	text-align: right;
+	color:grey;
 	
 }
 .leftSide{
-	font-size: 20px;
+	font-size: 15px;
 	float:left;
 	margin-top: 1%;
 	margin-left: 6%;
+	color:grey;
 
 
 }
@@ -73,7 +75,7 @@ input[type=radio] {
 }
 
 #feedbackInputQuestion{
-	color: black;
+	color: grey;
 	font-size: 210%;
 	margin-left: 3%;
 
@@ -83,7 +85,7 @@ input[type=radio] {
 	margin-left: -3%;
 }
 .radio-inline.radioButt{
-	color:black;
+	color:grey;
 	margin:1%;
 	font-size: 17px;
 	}
@@ -93,11 +95,11 @@ input[type=radio].theCircle{
 }
 
 #inputQuesText{
-	font-size: 21px;
-	margin-left: -3%;
+	font-size: 16px;
 	margin-top: 2%;
 	margin-bottom: 1%;
-	color: black;
+	color:grey;
+	margin-left: 2%;
 }
 .multRads{
 	text-align: center;
@@ -105,9 +107,9 @@ input[type=radio].theCircle{
 
 }
 .commentText{
-	font-size: 21px;
+	font-size: 16px;
 	margin-left: 3%;
-	color:black;
+	color:grey;
 }
 #comment{
 	margin-left: 3%;
@@ -115,18 +117,18 @@ input[type=radio].theCircle{
 }
 
 #exampleSelectText1{
-	color:black;
+	color:grey;
 	font-size:18px; 
 	margin-left: 10%; 
 }
 #exampleSelectText2{
-	color:black;
+	color:grey;
 	font-size:18px; 
 
 }
 .questionTextRad{
 	margin-left: 5%;
-	font-size: 20px;
+	font-size: 16px;
 }
 
 #resetButt{
@@ -164,7 +166,7 @@ input[type=radio].theCircle{
 		
 	}
 	#exampleSelectText1, #exampleSelectText2{
-		color:black;
+		color:grey;
 		font-size: 20px;
 		margin-left: 10%;
 
@@ -172,9 +174,10 @@ input[type=radio].theCircle{
 
 	.multRads{
 		margin-left: 29%;
+		color:grey;
 	}
 	.radio-inline{
-	color:black;
+	color:grey;
 	padding-left: 4%;
 	}
 
@@ -183,7 +186,7 @@ input[type=radio].theCircle{
 		margin-left: 3%;
 	}
 	.questionTextRad{
-		color:black;
+		color:grey;
 		margin-left: 5%;
 		font-size: 22px;
 		margin-right: 5%;
@@ -191,12 +194,12 @@ input[type=radio].theCircle{
 	#inputQuesText{
 		font-size: 22px;
 		margin-left: -1%;
-		color:black;
+		color:grey;
 	}
 	.commentText{
 		margin-left: 2%;
 		font-size: 22px;
-		color:black;
+		color:grey;
 	}
 	#comment{
 		width:90%;
@@ -220,7 +223,7 @@ input[type=radio].theCircle{
 
 @media screen and (max-width: 640px){
 	.tutTxt{
-		color:black;
+		color:grey;
 	}
 	.studentFeedback{
 		height:50%;
@@ -278,13 +281,13 @@ input[type=radio].theCircle{
 		font-size: 13px;
 	}
 	.questionTextRad{
-	color:black;
+	color:grey;
 	margin-left: 10%;
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 14px;
 	}
 	#inputQuesText {
-	color:black;
+	color:grey;
 	margin-left: 7%;
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 13px;
@@ -299,7 +302,7 @@ input[type=radio].theCircle{
 		margin-left: -14px;
 	}
 	.radio-inline.radioButt{
-	color:black;
+	color:grey;
 	margin:1%;
 	font-size: 14px;
 	}

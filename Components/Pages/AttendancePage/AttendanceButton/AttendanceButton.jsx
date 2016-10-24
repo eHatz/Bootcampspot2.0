@@ -17,7 +17,7 @@ class AttendanceButton extends Component {
 
 		return (
 			<div className="well">
-				<Button onClick={attendanceButtonOnClick} bsSize="large" block>Mark Present</Button>
+				<Button className="presentButt" onClick={attendanceButtonOnClick} bsSize="large" block>Mark Present</Button>
 			</div>
 		)
 	}
