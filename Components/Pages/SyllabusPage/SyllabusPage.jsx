@@ -1,10 +1,39 @@
 import React, { Component } from "react";
+import $ from "jquery";
 import "./SyllabusPage.css";
 import LogoutBar from "../../LogoutBar/LogoutBar.jsx";
 import TableRow from "../../Table/TableRow/TableRow.jsx";
 import Navbar from "../../Navbar/Navbar.jsx";
 
 class SyllabusPage extends Component {
+
+	constructor(props){
+		super(props);
+
+		this.state ={
+			displayData: []
+		}
+	}
+
+	componentWillMount(){
+		this.getSyllabus;
+	}
+
+	getSyllabus(){
+		const UserInfo = this.props.UserInfo.UserInfo;
+		const id = UserInfo.id;
+
+		$.ajax({
+				url: "/syllabus",
+				type: "POST",
+				data: {id: id}
+		}).then(function(response){
+			this.setState({
+				displayData: response
+			});
+			return response;
+		})
+	}
 
 	render() {
 
@@ -27,10 +56,34 @@ class SyllabusPage extends Component {
 						<li className="syllabusText">You must give a full effort on every group and individual project.</li>
 					</ul>
 				</div>
-					
-						
-				<div className='row remove-all-margin-padding'>
+								
+
+				<div>
+					<TableRow 
+						columnCount ={[
+							{type: 'Header', value: 'Subject'},
+							{type: 'Header', value: 'Lesson Number'},
+							{type: 'Header', value: 'Date'},
+							{type: 'Header', value: 'Recordings'},
+						]}
+						pageName = 'SyllabusPage'
+					/>
+
+					{displayData.map((item, index) =>
+						<TableRow
+							columnCount ={[
+								{type: 'Data', value: item.Subject},
+								{type: 'Data', value: item.LessonNumber},
+								{type: 'Data', value: item.Date},
+								{type: 'Data', value: item.Recording},
+							]}
+							pageName = 'SyllabusPage'
+							key= {index}
+						/>		
+					)}
+
 				</div>
+
 			</div>
 		);
 	}
