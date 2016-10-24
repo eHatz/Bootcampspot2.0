@@ -32,7 +32,7 @@ class SortAssignments extends Component {
 									placeholder="select"
 									required
 								>
-									<option value="all">All Sections</option>
+									<option value="all">Select Section</option>
 									{sectionList.map((item, index) =>
 										<option key= {index} value={item.Title}>{item.Title}</option>
 

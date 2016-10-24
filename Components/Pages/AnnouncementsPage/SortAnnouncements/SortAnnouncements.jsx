@@ -31,7 +31,7 @@ class SortAnnouncements extends Component {
 									onChange={this.sortBy}
 									placeholder="select"
 								>
-									<option value="all">All Sections</option>
+									<option value="all">Select Section</option>
 									{sectionList.map((item, index) =>
 										<option key= {index} value={item.Title}>{item.Title}</option>
 
