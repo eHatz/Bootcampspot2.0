@@ -6,7 +6,7 @@ const sequelize = require ("sequelize");
 const seedSection = require ("./seedSection");
 const seedUser = require ("./seedUser");
 const seedSessions = require ("./seedSessions");
-// const seedAttendance = require ("./seedSessions")
+const seedAttendance = require ("./seedAttendance");
 
 
 
@@ -19,5 +19,6 @@ function seedIt(modelName, seeder){
     
 //Call seeders here using this format: seedIt("ModelName", seedData);
 // seedIt("Section", seedSection);
-seedIt("User", seedUser);
-//seedIt("Session", seedSessions);
+// seedIt("User", seedUser);
+// seedIt("Session", seedSessions);
+seedIt("Attendance", seedAttendance);
