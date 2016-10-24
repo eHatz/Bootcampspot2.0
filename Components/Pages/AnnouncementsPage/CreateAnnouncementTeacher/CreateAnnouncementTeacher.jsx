@@ -56,7 +56,7 @@ class createAnnouncementTeacher extends Component {
 				channel: this.state.channel
 	        }
 		}).then((response) => {
-			this.props.getAssignments(this.state.message);
+			this.props.getAnnouncements(this.state.sectionTitle);
 		});
 
 	    this.clearInput();

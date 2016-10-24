@@ -411,6 +411,13 @@ app.post('/getSlackChannels', function(req, res) {
 	});
 });
 
+app.post('/getAnnouncements', function(req, res) {
+	Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
+		section.getAnnouncements().then(function(announcements) {
+			res.json({announcements: announcements});
+		});
+	});
+});
 
 // app.post("/attendance/modal", function(req, res){
 // 	const responseArray = [];

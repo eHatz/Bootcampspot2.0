@@ -26,7 +26,7 @@ class TableRow extends Component {
 						)
 						
 					) : (
-						<a href={'#' + rowLink}>	
+						<a href={'#' + rowLink}>
 							{
 								columnCount.map((item, index) =>
 									<TableColumn

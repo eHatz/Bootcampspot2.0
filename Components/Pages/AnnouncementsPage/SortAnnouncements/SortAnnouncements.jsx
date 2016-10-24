@@ -15,7 +15,7 @@ class SortAnnouncements extends Component {
 	
 	sortBy(event) {
 		const section = event.target.value;
-		this.props.getAnnouncement(section)
+		this.props.getAnnouncements(section)
 	}
 
 	render() {
