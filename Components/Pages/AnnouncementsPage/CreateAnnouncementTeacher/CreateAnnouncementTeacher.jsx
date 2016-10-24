@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel, Checkbox, Button } from "react-bootstrap";
-import "./createAnnouncementTeacher.css";
+import "./CreateAnnouncementTeacher.css";
 import $ from "jquery";
 class createAnnouncementTeacher extends Component {
 	constructor(props) {
