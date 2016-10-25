@@ -67,6 +67,7 @@ const Session = models.Session;
 const Submission =models.Submission;
 const Assignment = models.Assignment;
 const Attendance = models.Attendance;
+const Career = models.Career;
 
 //Routes
 app.get('/login', function(req, res){
@@ -209,6 +210,56 @@ app.post('/admin/createSection', function(req, res) {
 	}).then(function(section) {
 		res.json({section:section});
 	});
+});
+
+app.post('/submitCareer', function(req, res) {
+	Career.findOne({where: {UserId: req.body.UserId}}).then(function(career) {
+		if (career) {
+			if (req.body.currentLink === 'Github') {
+				career.update({Github: req.body.submit})
+			} else if (req.body.currentLink === 'Linkedin') {
+				career.update({Linkedin: req.body.submit})
+			} else if (req.body.currentLink === 'StackOverflow') {
+				career.update({StackOverflow: req.body.submit})
+			} else if (req.body.currentLink === 'Resume') {
+				career.update({Resume: req.body.submit})
+			} else if (req.body.currentLink === 'Portfolio') {
+				career.update({Portfolio: req.body.submit})
+			};
+			if (req.body.bio) {
+				career.update({Bio: req.body.bio})
+			};
+
+        } else {
+            User.findOne({where: {id:req.body.UserId} }).then(function(user) {
+               if (req.body.currentLink === 'Github') {
+					user.createCareer({Github: req.body.submit})
+				} else if (req.body.currentLink === 'Linkedin') {
+					user.createCareer({Linkedin: req.body.submit})
+				} else if (req.body.currentLink === 'StackOverflow') {
+					user.createCareer({StackOverflow: req.body.submit})
+				} else if (req.body.currentLink === 'Resume') {
+					user.createCareer({Resume: req.body.submit})
+				} else if (req.body.currentLink === 'Portfolio') {
+					user.createCareer({Portfolio: req.body.submit})
+				};
+				if (req.body.bio) {
+					user.createCareer({Bio: req.body.bio})
+				};
+            })
+        }
+        res.json({career: career});
+	})
+	// Career.create({
+	// 	Title: req.body.Title,
+	// 	Location: req.body.Location,
+	// 	SlackWebhook: req.body.SlackWebhook,
+	// 	SlackToken: req.body.SlackToken,
+	// 	StartDate: req.body.StartDate,
+	// 	EndDate: req.body.EndDate,
+	// }).then(function(section) {
+	// 	res.json({section:section});
+	// });
 });
 
 //====Attendance routes====
