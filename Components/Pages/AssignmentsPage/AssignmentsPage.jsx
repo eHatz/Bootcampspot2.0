@@ -102,7 +102,7 @@ class AssignmentsPage extends Component {
 				
 				<div className='wholeTable'>
 					<TableRow 
-
+						className="onHoverTable "
 						columnCount ={[
 							{type: 'Header', value: 'TITLE'},
 							{type: 'Header', value: 'DUE DATE'},
