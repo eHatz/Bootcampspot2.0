@@ -44,7 +44,7 @@ class TutorRequest extends Component {
 				<div className="row remove-all-margin-padding TutorRequestPage_dropdownDiv">	
 
 					<div className="form-group">
-					  <label htmlFor="sel1">Which cohort are you in?</label>
+					  <label htmlFor="sel1" className="TutorRequestPage_dropQues">Which cohort are you in?</label>
 					  <select className="form-control TutorRequestPage_dropdownMenu">
 					    <option>Choose</option>
 					    <option>Peleg Rosenthal</option>
@@ -59,7 +59,7 @@ class TutorRequest extends Component {
 					</div>
 	
 					<div className="form-group">
-					  <label htmlFor="sel1">Which week of the program are you in?</label>
+					  <label  htmlFor="sel1" className="TutorRequestPage_dropQues">Which week of the program are you in?</label>
 					  <select className="form-control TutorRequestPage_dropdownMenu">
 					    <option>Choose</option>
 					    <option>1</option>

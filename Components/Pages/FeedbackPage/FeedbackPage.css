@@ -55,17 +55,18 @@
 }
 
 .rightSide{
-	margin-right: 6%;
+	margin-right: 79%;
 	font-size: 15px;
 	text-align: right;
 	color:grey;
+	margin-top:4%;
 	
 }
 .leftSide{
 	font-size: 15px;
 	float:left;
 	margin-top: 1%;
-	margin-left: 6%;
+	margin-left: 20%;
 	color:grey;
 
 
@@ -85,7 +86,7 @@ input[type=radio] {
 }
 #usr{
 	width:90%;
-	margin-left: -3%;
+	margin-left: 2%;
 }
 .radio-inline.radioButt{
 	color:grey;
@@ -105,7 +106,7 @@ input[type=radio].theCircle{
 	margin-left: 2%;
 }
 .multRads{
-	text-align: center;
+	/*text-align: center;*/
 	margin-top: 1%;
 
 }
@@ -154,7 +155,7 @@ input[type=radio].theCircle{
 	.rightSide{
 		float:right;
 		margin-right: 15%;
-		margin-top: -3%;
+		margin-top: -5%;
 		text-align: right;
 	}
 	.leftSide{
@@ -185,8 +186,8 @@ input[type=radio].theCircle{
 	}
 
 	#usr{
-		width:90%;
-		margin-left: 3%;
+		width:88%;
+		margin-left: 5%;
 	}
 	.questionTextRad{
 		color:grey;
@@ -196,7 +197,7 @@ input[type=radio].theCircle{
 	}
 	#inputQuesText{
 		font-size: 22px;
-		margin-left: -1%;
+		margin-left: 5%;
 		color:grey;
 	}
 	.commentText{
@@ -246,19 +247,20 @@ input[type=radio].theCircle{
 		width:90%;
 		margin-left: 4%;
 	}
+
 	#exampleSelectText2{
 		margin-left: 4%;
 		font-size: 13px;
 	}
-	
-	
+		
 	.rightSide{
 		float:right;
 		margin-right: 11%;
-		margin-top: -6%;
+		margin-top: -8%;
 		font-size: 13px;
 
 	}
+
 	.leftSide{
 		float:left;
 		margin-top: 1%;
@@ -266,19 +268,16 @@ input[type=radio].theCircle{
 		margin-left: 10%;
 	}
 
-	
-
 	#usr{
 		margin-left: 5%;
 		width: 90%;
 	}
 	
-
 	#comment{
 		margin-left: 2%;
-		width: 93%;
-	
+		width: 93%;	
 	}
+
 	.commentText{
 		margin-left: 3%;
 		font-size: 13px;
@@ -297,24 +296,28 @@ input[type=radio].theCircle{
 	margin-right: 5%;
 	}
 
-	.multRads{
-		margin-left: 32%;
+	div.multRads{
+		text-align: none;
+		margin-left: 35%x;
 	}
 	input[type=radio].theCircle{
 		width:15px;
 		margin-left: -14px;
 	}
+
 	.radio-inline.radioButt{
 	color:grey;
-	margin:1%;
+	margin-left: 4%;
 	font-size: 14px;
 	}
 	#submitButt{
 		background-color:red;
-		font-size: 13px
+		font-size: 13px;
+		width:18%;
 	}
 	#resetButt{
 		font-size: 13px;
+		width: 18%;
 	}
 
 
