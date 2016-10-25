@@ -100,6 +100,7 @@ class createAssignment extends Component {
 					      					value={this.state.Title}
 					      					placeholder="Title" 
 					      					onChange={this.handleTitleChange}
+					      					required
 					      				/>
 				      				</div>
 
@@ -109,6 +110,7 @@ class createAssignment extends Component {
 					      					value={this.state.Instructions}
 					      					placeholder="Instructions" 
 					      					onChange={this.InstructionsChange}
+					      					required
 					      				/>
 				      				</div>
 
@@ -118,6 +120,7 @@ class createAssignment extends Component {
 					      					value={this.state.DueDate}
 					      					placeholder="Due Date" 
 					      					onChange={this.DueDateChange}
+					      					required
 					      				/>
 				      				</div>
 
@@ -127,6 +130,7 @@ class createAssignment extends Component {
 					      					value={this.state.DueTime}
 					      					placeholder="Due Time" 
 					      					onChange={this.DueTimeChange}
+					      					required
 					      				/>
 				      				</div>
 				      			</div>
@@ -146,6 +150,7 @@ class createAssignment extends Component {
 												componentClass="select"
 												onChange={this.sectionChange}
 												placeholder="select"
+												required
 											>
 												<option value="">Select Section</option>
 												{this.props.sectionList.map((item, index) =>
@@ -160,6 +165,7 @@ class createAssignment extends Component {
 												componentClass="select"
 												onChange={this.typeChange}
 												placeholder="select"
+												required
 											>
 												<option value="">Assignment Type</option>
 												<option value="Homework">Homework</option>
