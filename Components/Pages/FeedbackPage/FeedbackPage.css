@@ -19,31 +19,34 @@
 	display: inline-block;
 	color:black;
 	margin-left: 10%;
-
-
 }
+
 #absenceForm{
 	border-radius: 100%;
 	margin-left: 130%;
 	margin-top: 70%;
 }
+
 #tutorSession{
 	border-radius: 100%;
 	margin-left: 220%;
 	margin-top: -20%;
 }
+
 #exampleSelect1{
 	width:90%;
 	color:black;
 	margin-left: 10%;
 	
 }
+
 #exampleSelect2{
 	width:90%;
 	color:black;
 
 	
 }
+
 .tutTxt{
 	font-size: 150%;
 	color:black;

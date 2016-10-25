@@ -10,37 +10,42 @@ class TutorRequest extends Component {
 
 		return (
 
-			<div>			
+			<div className="TutorRequestPage_main">			
 
 				<MenuButtons
 					feedback = "inactive"
 					tutor = "active"
 					absence = "inactive"
 				/>
-				<div className="container">
-					<p className="ptag">Was this week's homework super hard for you? Do you want someone to walk you through the solution and help you understand some of the basics behind the code you're seeing? <br/><br/>If so, we have a wonderful group of senior students who'd love to provide some 1:1 tutoring sessions to get you the extra help you need to be successful. 
-					Please complete the form below to tell us more about where you need help so that we can match you with the right tutor.</p>
+				<div className="TutorRequestPage_p">
+					<p>
+						Was this week's homework super hard for you? Do you want someone to walk you through the solution and help you understand some of the basics behind the code you're seeing?
+					</p>
+
+					<p>
+						If so, we have a wonderful group of senior students who'd love to provide some 1:1 tutoring sessions to get you the extra help you need to be successful.  Please complete the form below to tell us more about where you need help so that we can match you with the right tutor.
+					</p>
 				</div>
-				<div className = "row remove-all-margin-padding">
-					<div className = "container">
-						<div className =" form-group">
-						  <label className= "tutTxt" htmlFor="usr">Full Name</label>
-						  <input type="text" className="form-control tutorInput" />
-						</div>
+
+				<div className = "row remove-all-margin-padding TutorRequestPage_input">
+
+					<div className ="form-group">
+						<label className= "tutTxt" htmlFor="usr">Full Name</label>
+						<input type="text" className="form-control tutorInput" />
 					</div>
-				</div>
-				<div className = "row remove-all-margin-padding">
-					<div className = "container">
-						<div className =" form-group">
-						  <label className= "tutTxt" htmlFor="usr">Email</label>
-						  <input type="email" className="form-control tutorInput" />
-						</div>
+			
+					<div className ="form-group">
+						<label className= "tutTxt" htmlFor="usr">Email</label>
+						<input type="email" className="form-control tutorInput" />
 					</div>
+
 				</div>
-				<div className="row remove-all-margin-padding">		
+
+				<div className="row remove-all-margin-padding TutorRequestPage_dropdownDiv">	
+
 					<div className="form-group">
-					  <label className="cohortSel" htmlFor="sel1">Which cohort are you in?</label>
-					  <select className="form-control" id="cohDropdown">
+					  <label htmlFor="sel1">Which cohort are you in?</label>
+					  <select className="form-control TutorRequestPage_dropdownMenu">
 					    <option>Choose</option>
 					    <option>Peleg Rosenthal</option>
 					    <option>Ahmed Haque</option>
@@ -52,11 +57,10 @@ class TutorRequest extends Component {
 					    <option>Dan Vassallo</option>
 					  </select>
 					</div>
-				</div>
-				<div className="row remove-all-margin-padding">		
+	
 					<div className="form-group">
-					  <label className="weekSel" htmlFor="sel1">Which week of the program are you in?</label>
-					  <select className="form-control" id="weekDropdown">
+					  <label htmlFor="sel1">Which week of the program are you in?</label>
+					  <select className="form-control TutorRequestPage_dropdownMenu">
 					    <option>Choose</option>
 					    <option>1</option>
 					    <option>2</option>
@@ -87,6 +91,7 @@ class TutorRequest extends Component {
 					  </select>
 					</div>
 				</div>
+
 				<div className="row remove-all-margin-padding">
 					<h2 className="quesTut">How comfortable are you with the material covered in class so far?</h2>
 					<h3 className="leftSideTut">Very Shaky</h3>
@@ -99,6 +104,7 @@ class TutorRequest extends Component {
 			 		</div>
 					<h3 className="rightSideTut">Very Confident</h3>
 				</div>
+
 				<div className="row remove-all-margin-padding">
 					<h2 className="quesTut">Which are the best times for you to meet with a tutor?</h2>
 					<div className ="col-md-6 multRads4">
@@ -116,12 +122,13 @@ class TutorRequest extends Component {
 			 			
 			 		</div>
 				</div>
-				<div className="container">
-					<div className="form-group">
-					  <label className="tutComment" htmlFor="comment">Additional Comments</label>
+
+				<div className="form-group TutorRequestPage_comment">
+
+					  <label htmlFor="comment" className="TutorRequestPage_commentLabel">Additional Comments</label>
 					  <textarea className="form-control" rows="5" id="commentSpace"></textarea>
-					</div>
 				</div>
+
 					<input id="resetButtTut" className="btn btn-default" type="reset" value="Reset"/>						
 					<button id="submitTut" type="submit" className="btn btn-default">Submit</button>
 			</div>
