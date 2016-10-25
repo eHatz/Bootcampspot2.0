@@ -168,6 +168,24 @@ app.post('/admin/getUsers', function(req, res) {
 	sortingDesc('sort-nameDesc', 'FirstName');
 });
 
+app.post('/admin/getUser', function(req, res) {
+	User.findOne({where: {id: req.body.userId}}).then(function(user) {
+		res.json({userInfo: user});
+	});
+});
+
+app.post('/admin/updateUser', function(req, res) {
+	User.findOne({where: {id: req.body.userId}}).then(function(user) {
+		user.update({
+			FirstName: req.body.firstName,
+			LastName: req.body.lastName,
+			Email: req.body.email,
+			Role: req.body.role
+		});
+		res.json({userInfo: user});
+	});
+});
+
 app.post('/admin/createUser', function(req, res) {
 
 	User.create({
@@ -250,16 +268,6 @@ app.post('/submitCareer', function(req, res) {
         }
         res.json({career: career});
 	})
-	// Career.create({
-	// 	Title: req.body.Title,
-	// 	Location: req.body.Location,
-	// 	SlackWebhook: req.body.SlackWebhook,
-	// 	SlackToken: req.body.SlackToken,
-	// 	StartDate: req.body.StartDate,
-	// 	EndDate: req.body.EndDate,
-	// }).then(function(section) {
-	// 	res.json({section:section});
-	// });
 });
 
 //====Attendance routes====

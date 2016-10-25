@@ -114,7 +114,9 @@ class AnnouncementsPage extends Component {
 						UserInfo={UserInfo}
 						UserSection={UserSection}
 						sectionList= {this.state.sectionList}
+						channelList = {this.state.channelList}
 						getAnnouncements = {this.getAnnouncements}
+						getSlackChannels = {this.getSlackChannels}
 					/>
 				) : (
 					null
