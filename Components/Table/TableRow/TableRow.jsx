@@ -10,8 +10,8 @@ class TableRow extends Component {
 
 
 		return (
-			<div className= "remove-all-margin-padding">
-				<div className='row remove-all-margin-padding'>
+			<div className= "row remove-all-margin-padding">
+				<div className={'remove-all-margin-padding tableRow' + columnCount[0].type}>
 					{!rowLink  ? (
 						
 						columnCount.map((item, index) =>
