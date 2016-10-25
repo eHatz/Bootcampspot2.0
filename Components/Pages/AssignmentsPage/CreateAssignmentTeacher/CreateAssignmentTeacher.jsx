@@ -82,51 +82,60 @@ class createAssignmentTeacher extends Component {
 			<div className="row remove-all-margin-padding">
 				<div id='assignmentTeacherDiv'>
 					<form onSubmit={this.assignmentCreate}>
+					
 						<FormGroup controlId="formBasicText">
+							<div className="col-md-2">
+								<FormControl
+			      					type="text" 
+			      					value={this.state.Title}
+			      					placeholder="Title" 
+			      					onChange={this.handleTitleChange}
+			      					required
+			      				/>
+		      				</div>
 
-							<ControlLabel>Title</ControlLabel>
-							<FormControl
-		      					type="text" 
-		      					value={this.state.Title}
-		      					placeholder="Title" 
-		      					onChange={this.handleTitleChange}
-		      					required
-		      				/>
+							<div className="col-md-2">
+								<FormControl
+			      					type="text" 
+			      					value={this.state.Instructions}
+			      					placeholder="Instructions" 
+			      					onChange={this.InstructionsChange}
+			      					required
+			      				/>
+		      				</div>
 
-							<ControlLabel>Instructions:</ControlLabel>
-							<FormControl
-		      					type="text" 
-		      					value={this.state.Instructions}
-		      					placeholder="Instructions" 
-		      					onChange={this.InstructionsChange}
-		      					required
-		      				/>
+							<div className="col-md-2">
+								<FormControl
+			      					type="text" 
+			      					value={this.state.DueDate}
+			      					placeholder="Due Date" 
+			      					onChange={this.DueDateChange}
+			      					required
+			      				/>
+		      				</div>
+		      		
+							<div className="col-md-2">
+								<FormControl
+			      					type="text" 
+			      					value={this.state.DueTime}
+			      					placeholder="Due Time" 
+			      					onChange={this.DueTimeChange}
+			      					required
+			      				/>
+		      				</div>
+				
+							<div className="col-md-2">
+								<FormControl
+									type="text" 
+			      					value={this.state.Resources}
+			      					placeholder="Resources" 
+			      					onChange={this.ResourcesChange}
+								/>
+							</div>
 
-							<ControlLabel>Due Date</ControlLabel>
-							<FormControl
-		      					type="text" 
-		      					value={this.state.DueDate}
-		      					placeholder="Due Date" 
-		      					onChange={this.DueDateChange}
-		      					required
-		      				/>
-		      				<ControlLabel>Due Time</ControlLabel>
-							<FormControl
-		      					type="text" 
-		      					value={this.state.DueTime}
-		      					placeholder="Due Time" 
-		      					onChange={this.DueTimeChange}
-		      					required
-		      				/>
-							<ControlLabel>Resources</ControlLabel>
-							<FormControl
-								type="text" 
-		      					value={this.state.Resources}
-		      					placeholder="Resources" 
-		      					onChange={this.ResourcesChange}
-							/>
-
-						    <Button type="submit">Submit</Button>
+						    <div className="col-md-2">
+						    	<Button id="createAssignmentButt" type="submit">Submit</Button>
+					    	</div>
 						</FormGroup>
 					</form>
 				</div>
