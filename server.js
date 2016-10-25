@@ -334,7 +334,7 @@ app.post("/attendance/singleStudent", function(req, res){
 
 			Session.findOne({where:{id:thisItem.SessionId}}).then(function(session){
 				responseArray.push({
-					id: thisItem.SessionId,
+					id: thisItem.id,
 					Class: session.Subject,
 					Date: thisItem.Date,
 					Time: thisItem.Time,
@@ -386,6 +386,7 @@ app.post("/attendance/editAttendance", function(req, res){
 	console.log("editAttendance reqStatus: ", reqStatus)
 
 	Attendance.findOne({where:{id:reqID}}).then(function(attendance){
+		console.log("found attendance: ", attendance)
 		attendance.update({
 			Status: reqStatus
 		})
