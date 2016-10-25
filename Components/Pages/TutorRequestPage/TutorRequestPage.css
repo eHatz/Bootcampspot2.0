@@ -187,14 +187,14 @@
 
 
 @media screen and (max-width: 640px){
-/*	.tutorInput{
+	.tutorInput{
 		width:90%;
 		margin-left: 4%;	
-	}*/
-/*	.tutTxt{
+	}
+	.tutTxt{
 		margin-left: 5%;
-/*		font-size: 13px;
-}*/
+	font-size: 13px;
+	}
 	#cohDropdown{
 		margin-left: 8%;
 		width: 83%;
@@ -213,7 +213,7 @@
 	}
 	.quesTut{
 		font-size:13px;
-		margin-left: 8%;
+		margin-left: 5%;
 		color: black;
 		margin-right: 16px;
 	}
@@ -265,10 +265,10 @@
 		margin-left: 2%;
 		width:95%;
 	}
-/*	input[type=radio].bubble {
+	input[type=radio].bubble {
 		width:31%;
 		margin-left: 26%;
-	}*/
+	}
 		
 	.radioButtTut{
 		width:3.3em;
@@ -284,9 +284,9 @@
 		margin-left: -1px;
 	}
 
-/*	.ptag{
+	.TutorRequestPage_p{
 		font-size: 13px;
-	}*/
+	}
 	#submitTut{
 		background-color: red;
 		font-size: 13px;
@@ -302,7 +302,9 @@
 	.TutorRequestPage_commentLabel{
 		margin-left:2%;
 	}
-
+	#TutorRequestPage_dropQues{
+		font-size: 13px;
+	}
 
 }
 

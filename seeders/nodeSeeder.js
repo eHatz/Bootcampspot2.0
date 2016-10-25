@@ -18,9 +18,9 @@ function seedIt(modelName, seeder){
 }
     
 //Call seeders here using this format: seedIt("ModelName", seedData);
-seedIt("Section", seedSection);
+// seedIt("Section", seedSection);
 seedIt("User", seedUser);
-seedIt("Session", seedSessions);
-seedIt("Attendance", seedAttendance);
+// seedIt("Session", seedSessions);
+// seedIt("Attendance", seedAttendance);
 
 module.exports=seedIt;
