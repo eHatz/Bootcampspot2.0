@@ -9,11 +9,10 @@ class createAnnouncementTeacher extends Component {
 		this.state = {
 			title: "",
 			message: "",
-			sectionTitle: this.props.UserSection.Title,
+			sectionTitle: this.props.UserSection.UserSection[0].Title,
 			channel: ""
 
 		};
-		this.sectionChange = this.sectionChange.bind(this);
 		this.handleTitleChange = this.handleTitleChange.bind(this);
 		this.clearInput = this.clearInput.bind(this);
 		this.announcementCreate = this.announcementCreate.bind(this);
@@ -22,7 +21,8 @@ class createAnnouncementTeacher extends Component {
 	}
 
 	componentWillMount() {
-		this.props.getSlackChannels(this.props.UserSection.Title);
+		this.props.getSlackChannels(this.props.UserSection.UserSection[0].Title);
+		console.log('sectionn', this.props.UserSection.UserSection[0].Title)
 	}
 
 	handleTitleChange(event) {
@@ -45,9 +45,8 @@ class createAnnouncementTeacher extends Component {
 	}
 
 	announcementCreate(event){
-
 		$.ajax({
-			url: '/createAnnouncementTeacher',
+			url: '/createAnnouncement',
 			type: "POST",
 			data: {
 	        	title: this.state.title,
