@@ -76,6 +76,7 @@ class createAnnouncementTeacher extends Component {
 										value={this.state.title}
 										placeholder="Title" 
 										onChange={this.handleTitleChange}
+										required
 									/>
 								</div>
 								<div className="col-md-6">
@@ -83,6 +84,7 @@ class createAnnouncementTeacher extends Component {
 										componentClass="select"
 										onChange={this.channelChange}
 										placeholder="select"
+										required
 									>
 										<option value="">Select Slack Channel</option>
 										{this.props.channelList.map((item, index) =>
@@ -100,6 +102,7 @@ class createAnnouncementTeacher extends Component {
 										value={this.state.message}
 										placeholder="message" 
 										onChange={this.messageChange}
+										required
 									/>
 								</div>
 								<div className="col-md-3">
