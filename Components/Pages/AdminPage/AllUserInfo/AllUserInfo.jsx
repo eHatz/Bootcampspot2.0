@@ -20,6 +20,8 @@ class AllUserInfo extends Component {
 			CareerTab: 'inactive',
 			HomeworkTab: 'inactive',
 			attendanceData: [],
+			userSubmitted: [],
+			userNoSubmitted: []
 			careerData: []
 		};
 		this.getSections = this.getSections.bind(this);
@@ -35,7 +37,9 @@ class AllUserInfo extends Component {
 		this.getUser();
 		this.getSections();
 		this.getStudentAttendance();
-		this.getStudentCareer()
+		this.getUser();
+		this.getAllStudentSubs();
+		this.getStudentCareer();
 	}
 
 	getUser() {
@@ -131,6 +135,8 @@ class AllUserInfo extends Component {
 				userSubmitted: response.usersSubmitted,
 				userNoSubmitted: response.usersNoSubmitted,
 			});
+			console.log('submitted assignments', response.usersSubmitted);
+			console.log('not submitted assignments', response.usersNoSubmitted);
 		});
 	}
 
@@ -200,7 +206,45 @@ class AllUserInfo extends Component {
 
 							</div>
 							<div id="adminHomeworkTab" className={"tab-pane fade in " + this.state.HomeworkTab}>
-								<h1>Homework</h1>
+								<div className='wholeTable'>
+									<TableRow 
+										columnCount ={[
+											{type: 'Header', value: 'ASSIGNMENT'},
+											{type: 'Header', value: 'STATUS'},
+											{type: 'Header', value: 'GRADE'},
+
+										]}
+										pageName = 'adminHwPage'
+									/>
+
+									{this.state.userSubmitted.map((item, index) =>
+										<TableRow
+											columnCount ={[
+												{type: 'Data', value: item.assignment[0].Title},
+												{type: 'Data', value: item.submission.Status},
+												item.submission.Grade ? (
+													{type: 'Data', value: item.submission.Grade}
+												):(
+													{type: 'Data', value: 'Not Graded'}
+												)
+											]}
+											pageName = 'adminHwPage'
+											key= {index}
+										/>
+									)}
+
+									{this.state.userNoSubmitted.map((item, index) =>
+										<TableRow
+											columnCount ={[
+												{type: 'Data', value: item.Title},
+												{type: 'Data', value: 'Not Submitted'},
+												{type: 'Data', value: 'Not Graded'}
+											]}
+											pageName = 'adminHwPage'
+											key= {index}
+										/>
+									)}
+								</div>
 
 							</div>
 						</div>
