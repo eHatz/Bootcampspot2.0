@@ -66,18 +66,18 @@ export default (
 		<Route path="logout" component={Logout} />
 
 		<Route component={LoggedIn}>
-			<Route path="/attendance" component={AttendancePage}/>
-			<Route path="/career" component={CareerPage}/>
-			<Route path="/assignments" component={AssignmentsPage}/>
-			<Route path="/homework/:id" component={ViewAssignment}/>
-			<Route path="/grading/:userId/:assignId" component={GradeAssignmentPage}/>
-			<Route path="/syllabus" component={SyllabusPage}/>
-			<Route path="/feedback" component={FeedbackPage}/>
-			<Route path="/announcements" component={AnnouncementsPage}/>
-			<Route path="/admin" component={AdminPage}/>
-			<Route path="/admin/user/:id" component={AllUserInfo}/>
-			<Route path="/absenceRequest" component={AbsenceRequest}/>
-			<Route path="/tutorRequest" component={TutorRequest}/>
+			<Route path="/attendance" component={AttendancePage} onEnter={requireAuth}/>
+			<Route path="/career" component={CareerPage} onEnter={requireAuth}/>
+			<Route path="/assignments" component={AssignmentsPage} onEnter={requireAuth}/>
+			<Route path="/homework/:id" component={ViewAssignment} onEnter={requireAuth}/>
+			<Route path="/grading/:userId/:assignId" component={GradeAssignmentPage} onEnter={requireAuth}/>
+			<Route path="/syllabus" component={SyllabusPage} onEnter={requireAuth}/>
+			<Route path="/feedback" component={FeedbackPage} onEnter={requireAuth}/>
+			<Route path="/announcements" component={AnnouncementsPage} onEnter={requireAuth}/>
+			<Route path="/admin" component={AdminPage} onEnter={requireAuth}/>
+			<Route path="/admin/user/:id" component={AllUserInfo} onEnter={requireAuth}/>
+			<Route path="/absenceRequest" component={AbsenceRequest} onEnter={requireAuth}/>
+			<Route path="/tutorRequest" component={TutorRequest} onEnter={requireAuth}/>
 			{/*onEnter={requireAuth}*/}
 		</Route>
     </Route>
