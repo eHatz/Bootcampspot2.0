@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel, Checkbox, Button } from "react-bootstrap";
-import "./createUserForm.css";
+import "./CreateUsrForm.css";
 import $ from "jquery";
 
 class createUserForm extends Component {

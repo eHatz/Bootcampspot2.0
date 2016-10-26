@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { browserHistory, Router, Route, Link, withRouter } from 'react-router';
 import { FormGroup, FormControl, ControlLabel, Button } from "react-bootstrap";
 import "./AdminPage.css";
-import CreateUserForm from './createUserForm/createUserForm.jsx';
+import CreateUserForm from './CreateUsrForm/CreateUsrForm.jsx';
 import TableRow from "../../Table/TableRow/TableRow.jsx";
 import SortUsersForm from './SortUsersForm/SortUsersForm.jsx';
 import CreateSectionForm from './CreateSectionForm/CreateSectionForm.jsx';
