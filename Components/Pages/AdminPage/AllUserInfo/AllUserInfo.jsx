@@ -172,32 +172,6 @@ class AllUserInfo extends Component {
 							</div>
 
 							<div id="adminCareerTab" className={"tab-pane fade in " + this.state.CareerTab}>
-	
-								{/*<TableRow 
-																	className="onHoverTable "
-																	columnCount ={[
-																		{type: 'Header', value: 'LinkedIn'},
-																		{type: 'Header', value: 'Github'},
-																		{type: 'Header', value: 'Stack Overflow'},
-																		{type: 'Header', value: 'Resume'},
-																		{type: 'Header', value: 'Portfolio'},
-																		{type: 'Header', value: 'Bio'}
-																	]}
-																	pageName = 'AllUserInfo-Career'
-																/>
-								
-																	<TableRow
-																		columnCount ={[
-																			{type: 'Data', value: careerData.LinkedIn},
-																			{type: 'Data', value: careerData.Github},
-																			{type: 'Data', value: careerData.StackOverflow},
-																			{type: 'Data', value: careerData.Resume},
-																			{type: 'Data', value: careerData.Portfolio},
-																			{type: 'Data', value: careerData.Bio}
-																		]}
-																		pageName = 'AllUserInfo-Career'
-																	/>
-								*/}
 
 								<Well>
 									<a><h4 className="AllUserInfo_h2">LinkedIn: {careerData.LinkedIn}</h4></a>
