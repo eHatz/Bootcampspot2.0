@@ -63,7 +63,7 @@ class AllUserInfo extends Component {
 	}
 
 	render() {
-		console.log(this.props.params.id)
+		console.log('ROLEEEEEEEEEEE', this.state.role)
 		return (
 			
 			<div>
@@ -72,21 +72,35 @@ class AllUserInfo extends Component {
 					UserFormType = 'update'
 					userId= {this.props.params.id}
 				/>
-				<ul className="nav nav-pills">
-					<li onClick={this.AttendanceTabClick} className={this.state.AttendanceTab}>
-						<a data-toggle="pill" href={"#/admin/user/" + this.props.params.id}>Attendance</a>
-					</li>
-					<li onClick={this.CareerTabClick} className={this.state.CareerTab}>
-						<a data-toggle="pill" href={"#/admin/user/" + this.props.params.id}>Career</a>
-					</li>
-					<li onClick={this.HomeworkTabClick} className={this.state.HomeworkTab}>
-						<a data-toggle="pill" href={"#/admin/user/" + this.props.params.id}>Homework</a>
-					</li>
-				</ul>
+				{this.state.role === '' ? (
+					<div>
+						<ul className="nav nav-pills">
+							<li onClick={this.AttendanceTabClick} className={this.state.AttendanceTab}>
+								<a data-toggle="pill" href={"#/admin/user/" + this.props.params.id}>Attendance</a>
+							</li>
+							<li onClick={this.CareerTabClick} className={this.state.CareerTab}>
+								<a data-toggle="pill" href={"#/admin/user/" + this.props.params.id}>Career</a>
+							</li>
+							<li onClick={this.HomeworkTabClick} className={this.state.HomeworkTab}>
+								<a data-toggle="pill" href={"#/admin/user/" + this.props.params.id}>Homework</a>
+							</li>
+						</ul>
 
-				<div className="tab-content">
-					
-				</div>
+						<div className="tab-content">
+							<div id="adminAttendanceTab" className={"tab-pane fade in " + this.state.AttendanceTab}>
+								<h1>attendance</h1>
+							</div>
+							<div id="adminCareerTab" className={"tab-pane fade in " + this.state.CareerTab}>
+								<h1>career</h1>
+							</div>
+							<div id="adminHomeworkTab" className={"tab-pane fade in " + this.state.HomeworkTab}>
+								<h1>Homework</h1>
+							</div>
+						</div>
+					</div>
+				):(
+					null
+				)}
 			</div>
 		);
 	}
