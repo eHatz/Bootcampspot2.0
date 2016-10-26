@@ -244,6 +244,14 @@ app.post('/admin/createSection', function(req, res) {
 	});
 });
 
+app.post("/admin/career", function(req, res){
+	const id = req.body.studentId;
+	let responseObj;
+	Career.findOne({where:{UserId: id}}).then(function(career){
+		res.json(career);
+	})
+})
+
 app.post('/submitCareer', function(req, res) {
 	Career.findOne({where: {UserId: req.body.UserId}}).then(function(career) {
 		if (career) {
