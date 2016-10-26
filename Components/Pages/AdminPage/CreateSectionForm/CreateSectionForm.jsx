@@ -58,7 +58,8 @@ class CreateSectionForm extends Component {
 		this.setState({
 			Title: "",
 			Location: "",
-			Slack: "",
+			SlackWebhook: "",
+			SlackToken: "",
 			StartDate: "",
 			EndDate: ""
 		});
