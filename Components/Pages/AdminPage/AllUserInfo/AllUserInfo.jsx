@@ -85,6 +85,9 @@ class AllUserInfo extends Component {
 				</ul>
 
 				<div className="tab-content">
+
+					
+
 					
 				</div>
 			</div>
