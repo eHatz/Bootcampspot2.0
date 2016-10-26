@@ -4,6 +4,7 @@ import "./AllUserInfo.css";
 import $ from "jquery";
 import CreateUserForm from '../createUserForm/createUserForm.jsx';
 import Attendance from "../../AttendancePage/AttendanceStudentView/AttendanceStudentView.jsx";
+import TableRow from "../../../Table/TableRow/TableRow.jsx";
 class AllUserInfo extends Component {
 	constructor(props) {
 		super(props);
@@ -18,7 +19,9 @@ class AllUserInfo extends Component {
 			AttendanceTab: 'active',
 			CareerTab: 'inactive',
 			HomeworkTab: 'inactive',
-			attendanceData: []
+			attendanceData: [],
+			userSubmitted: [],
+			userNoSubmitted: []
 		};
 		this.getSections = this.getSections.bind(this);
 		this.HomeworkTabClick = this.HomeworkTabClick.bind(this);
@@ -33,6 +36,7 @@ class AllUserInfo extends Component {
 		this.getSections();
 		this.getStudentAttendance();
 		this.getUser();
+		this.getAllStudentSubs();
 	}
 
 	getUser() {
@@ -125,6 +129,8 @@ class AllUserInfo extends Component {
 				userSubmitted: response.usersSubmitted,
 				userNoSubmitted: response.usersNoSubmitted,
 			});
+			console.log('submitted assignments', response.usersSubmitted);
+			console.log('not submitted assignments', response.usersNoSubmitted);
 		});
 	}
 
@@ -166,7 +172,45 @@ class AllUserInfo extends Component {
 								<h1>career</h1>
 							</div>
 							<div id="adminHomeworkTab" className={"tab-pane fade in " + this.state.HomeworkTab}>
-								<h1>Homework</h1>
+								<div className='wholeTable'>
+									<TableRow 
+										columnCount ={[
+											{type: 'Header', value: 'ASSIGNMENT'},
+											{type: 'Header', value: 'STATUS'},
+											{type: 'Header', value: 'GRADE'},
+
+										]}
+										pageName = 'adminHwPage'
+									/>
+
+									{this.state.userSubmitted.map((item, index) =>
+										<TableRow
+											columnCount ={[
+												{type: 'Data', value: item.assignment[0].Title},
+												{type: 'Data', value: item.submission.Status},
+												item.submission.Grade ? (
+													{type: 'Data', value: item.submission.Grade}
+												):(
+													{type: 'Data', value: 'Not Graded'}
+												)
+											]}
+											pageName = 'adminHwPage'
+											key= {index}
+										/>
+									)}
+
+									{this.state.userNoSubmitted.map((item, index) =>
+										<TableRow
+											columnCount ={[
+												{type: 'Data', value: item.Title},
+												{type: 'Data', value: 'Not Submitted'},
+												{type: 'Data', value: 'Not Graded'}
+											]}
+											pageName = 'adminHwPage'
+											key= {index}
+										/>
+									)}
+								</div>
 
 							</div>
 						</div>
