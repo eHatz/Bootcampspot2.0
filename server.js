@@ -562,6 +562,72 @@ app.post('/viewAllSubmissions', function(req, res) {
 	});
 });
 
+app.post('/getAllStudentSubs', function(req, res) {
+	const studentId = req.body.studentId;
+	User.findOne({where: {id: studentId} }).then(function(student) {
+		student.getSubmissions().then(function(submitted) {
+			User.getSection().then(function(section) {
+				section.getAssignments().then(function(assignments) {
+
+					function getAssignments(index) {
+						if (index === submission.length) {
+							return res.json({
+								submissions: submission,
+								usersSubmitted: userSubArr,
+								usersNoSubmitted: userNoArr,
+								assignment: assignment
+							});
+						};
+						for (var i = 0; i < userNoArr.length; i++) {
+							if (userNoArr[i].id === submission[index].UserId) {
+								var singleUser = userNoArr.splice(i,1);
+								userSubArr.push({user: singleUser[0], submission: submission[index]});
+							};
+						};
+						index++;
+						return getAssignments(index);
+					};
+					//getAssignments(index);
+				})
+			})
+		})
+	})
+
+	Assignment.findOne({where: {id: assignmentId} })
+	.then(function(assignment) {
+		assignment.getSection().then(function(section) {
+			section.getUsers().then(function(users) {
+				assignment.getSubmissions()
+				.then(function(submission) {
+					var index = 0;
+					var userSubArr = [];
+					var userNoArr = users;
+					function getUsers(index) {
+						if (index === submission.length) {
+							return res.json({
+								submissions: submission,
+								usersSubmitted: userSubArr,
+								usersNoSubmitted: userNoArr,
+								assignment: assignment
+							});
+						};
+						for (var i = 0; i < userNoArr.length; i++) {
+							if (userNoArr[i].id === submission[index].UserId) {
+								var singleUser = userNoArr.splice(i,1);
+								userSubArr.push({user: singleUser[0], submission: submission[index]});
+							};
+						};
+						index++;
+						return getUsers(index);
+					};
+					getUsers(index);
+				});
+			});
+		});
+	});
+});
+
+
 app.post('/submitAssignment', function(req, res) {
 	const assignmentLinks = req.body.assignmentLinks;
 	const userId = req.body.userId;

@@ -23,6 +23,7 @@ class AllUserInfo extends Component {
 		this.CareerTabClick = this.CareerTabClick.bind(this);
 		this.AttendanceTabClick = this.AttendanceTabClick.bind(this);
 		this.getUser = this.getUser.bind(this);
+		this.getAllStudentSubs = this.getAllStudentSubs.bind(this);
 
 	}
 
@@ -85,6 +86,21 @@ class AllUserInfo extends Component {
 		});
 	}
 
+	getAllStudentSubs(assignmentId) {
+		$.ajax({
+			url: '/getAllStudentSubs',
+			type: "POST",
+			data: {
+				studentId: this.props.params.id
+			}
+		}).then((response) => {
+			this.setState({
+				userSubmitted: response.usersSubmitted,
+				userNoSubmitted: response.usersNoSubmitted,
+			});
+		});
+	}
+
 	render() {
 		console.log('ROLEEEEEEEEEEE', this.state.role)
 		return (
@@ -118,6 +134,7 @@ class AllUserInfo extends Component {
 							</div>
 							<div id="adminHomeworkTab" className={"tab-pane fade in " + this.state.HomeworkTab}>
 								<h1>Homework</h1>
+
 							</div>
 						</div>
 					</div>
