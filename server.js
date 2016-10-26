@@ -70,7 +70,6 @@ const Attendance = models.Attendance;
 const Career = models.Career;
 
 //Removes sequelize's timestamp within a DATEONLY column, and parses the resulting date. 
-
 function fixTheDate(dateObj){
 	let index = dateObj.toString().indexOf(":");
 	return dateObj.toString().slice(0, index-3);
@@ -292,7 +291,13 @@ app.post("/attendance/getAllSessions", function(req, res){
 			SectionId: req.body.section
 		}
 	}).then(function(sessions){
-		console.log("/attendance/getAllSessions: ", sessions);
+		sessions.map(function(session){
+			let thisDate = session.Date;
+			let fixedDate = fixTheDate(thisDate);
+			session.Date = fixedDate;
+		})
+		return sessions;
+	}).then(function(sessions){
 		res.json(sessions);
 	})
 });
@@ -312,12 +317,14 @@ app.post("/attendance/singleSession", function(req, res){
 			} 
 
 			let thisItem = inputArray[i];
+			let fixedDate = fixTheDate(thisItem.Date);
+			console.log("fixedDate: ", fixedDate);
 
 			User.findOne({where:{id:thisItem.UserId}}).then(function(user){
 				responseArray.push({
 					UserId: thisItem.UserId,
 					Name: user.FirstName + " " + user.LastName,
-					Date: thisItem.Date,
+					Date: fixedDate,
 					Time: thisItem.Time,
 					Status: thisItem.Status
 				})
