@@ -27,16 +27,20 @@ class createUserForm extends Component {
 	}
 
 	componentWillMount() {
+
 		this.getUser();
 	}
 
 	getUser() {
+
 		if (this.props.UserFormType === 'update') {
 			$.ajax({
 				url: '/admin/getUser',
 				type: "POST",
 				data: {
+
 					userId: this.props.userId
+
 				}
 			}).then((response) =>{
 				this.setState({
@@ -44,7 +48,9 @@ class createUserForm extends Component {
 					firstName:response.userInfo.FirstName,
 					lastName:response.userInfo.LastName,
 					role:response.userInfo.Role,
+
 					sectionTitle: response.section[0].Title
+
 				});
 			});
 		}
@@ -102,7 +108,9 @@ class createUserForm extends Component {
 				url: '/admin/updateUser',
 				type: "POST",
 				data: {
+
 					userId: this.props.userId,
+
 					email: this.state.email,
 					firstName: this.state.firstName,
 					lastName: this.state.lastName,
@@ -113,7 +121,9 @@ class createUserForm extends Component {
 			});
 
 			this.clearInput();
+
 			this.setState({updated: true});
+
 			event.preventDefault();
 		}
 		
@@ -196,12 +206,16 @@ class createUserForm extends Component {
 									required   
 								>
 									{this.props.UserFormType === 'update' ? (
+
 										<option value={this.state.sectionTitle}>{this.state.sectionTitle}</option>
+
 									):(
 										<option value="">Select Section</option>
 									)}
 									{this.props.sectionList.map((item, index) =>
+
 										this.props.UserFormType === 'update' && item.Title === this.state.sectionTitle ? (
+
 											null
 										):(
 											<option key= {index} value={item.Title}>{item.Title}</option>

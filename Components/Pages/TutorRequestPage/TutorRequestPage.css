@@ -7,7 +7,7 @@
 
 
 .TutorRequestPage_p{
-	color:#343333;
+	color:gray;
 	font-family: 'Roboto Condensed', sans-serif; 
 	font-size: 18px;
 	margin: 4% 0% 2% 6%;
@@ -15,8 +15,10 @@
 }
 
 .TutorRequestPage_dropdownDiv{
+
 	color: grey;
 	font-size: 17px;
+
 	margin: 0% 0% 0% 6%;
 	width: 85%;
 }
@@ -26,7 +28,9 @@
 }
 
 .quesTut{
+
 	color: grey;
+
 	font-family: 'Roboto Condensed', sans-serif; 
 	font-size: 15px;
 	margin-left: 6%;
@@ -62,26 +66,33 @@
 
 .tutTxt{
 	margin-left: 0;
+	color: grey;
 }
 
 .rightSideTut{
 	float:right;
 	margin: -4% 7% 0% 0%;
 	color: grey;
+
 	font-size: 15px;
+
 }
 
 .leftSideTut{ 
 	float:left;
 	margin-left: 6%;
 	margin-top: 3%;
+
 	color: grey;
 	font-size: 15px;
+
 }
 
 .TutorRequestPage_comment{
 	color:grey;
+
 	font-size: 15px;
+
 	width: 85%;
 	margin-left: 6%;
 }
@@ -142,7 +153,7 @@
 		margin-left: 7%;
 	}
 	.radioButtTut2{
-		color: black;
+		color: grey;
 		font-size: 18px;
 		display: inline-block;
 		margin-left: 37px;
@@ -164,7 +175,7 @@
 	}
 
 	.TutorRequestPage_comment{
-		color: black;
+		color: grey;
 		font-size: 22px;
 		margin-top: 4%;
 	}
@@ -173,11 +184,11 @@
 		margin-left: -24px;
 	}*/
 	.cohortSel{
-		color: black;
+		color: grey;
 		font-size: 22px
 	}
 	.weekSel{
-		color: black;
+		color: grey;
 		margin-left: 7%;
 		font-size: 22px
 	}
@@ -227,7 +238,7 @@
 	.quesTut{
 		font-size:13px;
 		margin-left: 5%;
-		color: black;
+		color: grey;
 		margin-right: 16px;
 	}
 	.leftSideTut{
@@ -235,6 +246,7 @@
 		float:left;
 		margin-left: 8%;
 		margin-top: 1%;
+		
 	}
 	.rightSideTut{
 		font-size:12px;
@@ -242,6 +254,7 @@
 		margin-right: 15%;
 		margin-top: -8%;
 		width: 35px;
+	
 	}
 	.radioButtTut2{
 		width: 35px;
@@ -270,7 +283,7 @@
 	}
 	.TutorRequestPage_comment{
 		margin-left: 2%;
-		color: black;
+		color: grey;
 		font-size: 13px;
 		margin-top: 5%;
 	}
@@ -316,7 +329,7 @@
 	.TutorRequestPage_commentLabel{
 		margin-left:2%;
 	}
-	#TutorRequestPage_dropQues{
+	.TutorRequestPage_dropQues{
 		font-size: 13px;
 	}
 

@@ -11,9 +11,9 @@ class MenuButtons extends Component{
 
 			<div>
 				<ul className="nav nav-pills">
-				  <li className={'menuButtons ' + feedback}><a data-toggle="pill" href="#/feedback">Feedback Form</a></li>
-				  <li className={'menuButtons ' + absence}><a data-toggle="pill" href="#/absenceRequest">Absence Request</a></li>
-				  <li className={'menuButtons ' + tutor}><a data-toggle="pill" href="#/tutorRequest">Tutor Request</a></li>
+				  <li className={'menuButtons ' + feedback}><a className= "MenuButtons_a" data-toggle="pill" href="#/feedback">Feedback Form</a></li>
+				  <li className={'menuButtons ' + absence}><a className= "MenuButtons_a" data-toggle="pill" href="#/absenceRequest">Absence Request</a></li>
+				  <li className={'menuButtons ' + tutor}><a className= "MenuButtons_a" data-toggle="pill" href="#/tutorRequest">Tutor Request</a></li>
 				</ul>
 
 				<div className="tab-content">

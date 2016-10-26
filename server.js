@@ -176,9 +176,11 @@ app.post('/admin/getUsers', function(req, res) {
 
 app.post('/admin/getUser', function(req, res) {
 	User.findOne({where: {id: req.body.userId}}).then(function(user) {
+
 		user.getSections().then(function(section) {
 			res.json({userInfo: user, section: section});
 		});
+
 	});
 });
 
@@ -190,12 +192,14 @@ app.post('/admin/updateUser', function(req, res) {
 			Email: req.body.email,
 			Role: req.body.role
 		});
+
 		Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
 			user.getSections().then(function(currSec) {
 				user.removeSection(currSec[0].id)
 			});
 			user.addSection(section.id);
 		});
+
 		res.json({userInfo: user});
 	});
 });

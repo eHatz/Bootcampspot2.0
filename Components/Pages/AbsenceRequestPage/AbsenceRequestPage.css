@@ -1,6 +1,4 @@
-h1{
-	color: grey;
-}
+
 .instructor{
 	color: grey
 }
@@ -70,7 +68,7 @@ h1{
 		width:96%;
 	}
 	#AbsQuest{
-		color: black;
+		color: grey;
 		font-size: 20px;
 		margin-left: 2%;
 	}
@@ -95,6 +93,7 @@ h1{
 		font-size: 13px;
 		margin-left: 6%;
 		margin-right:11px;
+		color:grey;
 	}
 	#submitAbs{
 		background-color:#FF0000;

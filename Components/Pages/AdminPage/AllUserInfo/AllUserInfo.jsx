@@ -13,6 +13,7 @@ class AllUserInfo extends Component {
 			firstName:"",
 			lastName:"",
 			role:"",
+
 			sectionTitle: "",
 			sectionList: [],
 			AttendanceTab: 'active',
@@ -28,7 +29,9 @@ class AllUserInfo extends Component {
 
 	componentWillMount() {
 		this.getSections();
+
 		this.getStudentAttendance();
+
 	}
 
 	getSections() {
@@ -39,6 +42,7 @@ class AllUserInfo extends Component {
 			this.setState({sectionList: response.section});
 		});
 	}
+
 
 	getStudentAttendance(){
 		const ajaxData = {studentId: this.props.params.id};
@@ -63,6 +67,7 @@ class AllUserInfo extends Component {
 	// 			})
 	// 		}.bind(this))
 	// }
+
 
 	//activates/shows user tab
 	AttendanceTabClick(event) {
@@ -90,13 +95,16 @@ class AllUserInfo extends Component {
 	}
 
 	render() {
+
 		console.log('ROLEEEEEEEEEEE', this.state.role)
+
 		return (
 			
 			<div>
 				<CreateUserForm
 					sectionList = {this.state.sectionList}
 					UserFormType = 'update'
+
 					userId= {this.props.params.id}
 				/>
 				{this.state.role === '' ? (
@@ -112,7 +120,6 @@ class AllUserInfo extends Component {
 								<a data-toggle="pill" href={"#/admin/user/" + this.props.params.id}>Homework</a>
 							</li>
 						</ul>
-
 
 						<div className="tab-content">
 							<div id="adminAttendanceTab" className={"tab-pane fade in " + this.state.AttendanceTab}>
@@ -134,6 +141,7 @@ class AllUserInfo extends Component {
 				):(
 					null
 				)}
+
 			</div>
 		);
 	}
