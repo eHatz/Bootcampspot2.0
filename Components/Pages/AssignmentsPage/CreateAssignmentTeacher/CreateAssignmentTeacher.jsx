@@ -84,7 +84,7 @@ class createAssignmentTeacher extends Component {
 					<form onSubmit={this.assignmentCreate}>
 					
 						<FormGroup controlId="formBasicText">
-							<div className="col-md-2">
+							<div className="col-md-2 assignTeachRemovePad">
 								<FormControl
 			      					type="text" 
 			      					value={this.state.Title}
@@ -94,7 +94,7 @@ class createAssignmentTeacher extends Component {
 			      				/>
 		      				</div>
 
-							<div className="col-md-2">
+							<div className="col-md-2 assignTeachRemovePad">
 								<FormControl
 			      					type="text" 
 			      					value={this.state.Instructions}
@@ -104,7 +104,7 @@ class createAssignmentTeacher extends Component {
 			      				/>
 		      				</div>
 
-							<div className="col-md-2">
+							<div className="col-md-2 assignTeachRemovePad">
 								<FormControl
 			      					type="date" 
 			      					value={this.state.DueDate}
@@ -114,7 +114,7 @@ class createAssignmentTeacher extends Component {
 			      				/>
 		      				</div>
 		      		
-							<div className="col-md-2">
+							<div className="col-md-2 assignTeachRemovePad">
 								<FormControl
 			      					type="time" 
 			      					value={this.state.DueTime}
@@ -124,7 +124,7 @@ class createAssignmentTeacher extends Component {
 			      				/>
 		      				</div>
 				
-							<div className="col-md-2">
+							<div className="col-md-2 assignTeachRemovePad">
 								<FormControl
 									type="text" 
 			      					value={this.state.Resources}
@@ -133,7 +133,7 @@ class createAssignmentTeacher extends Component {
 								/>
 							</div>
 
-						    <div className="col-md-2">
+						    <div className="col-md-2 assignTeachRemovePad">
 						    	<Button id="createAssignmentButt" type="submit">Submit</Button>
 					    	</div>
 						</FormGroup>
