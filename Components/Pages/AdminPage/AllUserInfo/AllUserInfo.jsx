@@ -21,7 +21,7 @@ class AllUserInfo extends Component {
 			HomeworkTab: 'inactive',
 			attendanceData: [],
 			userSubmitted: [],
-			userNoSubmitted: []
+			userNoSubmitted: [],
 			careerData: []
 		};
 		this.getSections = this.getSections.bind(this);
