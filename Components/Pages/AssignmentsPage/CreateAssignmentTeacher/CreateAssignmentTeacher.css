@@ -13,3 +13,8 @@
 	background-color: red;
 	color:white;
 }
+
+.assignTeachRemovePad{
+	padding-left: 0;
+	padding-right: 0;
+}
