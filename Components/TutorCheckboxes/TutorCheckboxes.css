@@ -1,6 +1,6 @@
 .chkLabel{
 	margin-left: 71px;
-	color:black;
+	color:grey;
 	font-size: 18px;
 }
 	input[type=radio].bubble2{
@@ -25,7 +25,7 @@
 
 	.chkLabel{
 	margin-left: 71px;
-	color:black;
+	color:grey;
 	font-size: 13px;
 	}
 	input[type=checkbox].box{

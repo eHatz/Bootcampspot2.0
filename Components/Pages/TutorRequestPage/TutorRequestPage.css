@@ -4,7 +4,7 @@
 }
 
 .TutorRequestPage_p{
-	color:#343333;
+	color:gray;
 	font-family: 'Roboto Condensed', sans-serif; 
 	font-size: 18px;
 	margin: 4% 0% 2% 6%;
@@ -12,7 +12,7 @@
 }
 
 .TutorRequestPage_dropdownDiv{
-	color: black;
+	color: gray;
 	font-size: 22px;
 	margin: 0% 0% 0% 6%;
 	width: 85%;
@@ -23,7 +23,7 @@
 }
 
 .quesTut{
-	color: black;
+	color: gray;
 	font-family: 'Roboto Condensed', sans-serif; 
 	font-size: 24px;
 	margin-left: 6%;
@@ -42,7 +42,7 @@
 
 }
 .radioButtTut{
-	color: black;
+	color: grey;
 	font-size: 19px;
 
 }
@@ -54,21 +54,24 @@
 
 .tutTxt{
 	margin-left: 0;
+	color: grey;
 }
 
 .rightSideTut{
 	float:right;
 	margin: -4% 7% 0% 0%;
+	color: grey;
 }
 
 .leftSideTut{ 
 	float:left;
 	margin-left: 6%;
 	margin-top: 3%;
+	color:grey;
 }
 
 .TutorRequestPage_comment{
-	color:black;
+	color:grey;
 	font-size: 22px;
 	width: 85%;
 	margin-left: 6%;
@@ -79,7 +82,7 @@
 }
 
 .radioButtTut2{
-	color:black;
+	color:grey;
 	display: inline-block;
 	font-size: 20px;
 	margin-left: 15%;
@@ -129,7 +132,7 @@
 		margin-left: 7%;
 	}
 	.radioButtTut2{
-		color: black;
+		color: grey;
 		font-size: 18px;
 		display: inline-block;
 		margin-left: 37px;
@@ -151,7 +154,7 @@
 	}
 
 	.TutorRequestPage_comment{
-		color: black;
+		color: grey;
 		font-size: 22px;
 		margin-top: 4%;
 	}
@@ -160,11 +163,11 @@
 		margin-left: -24px;
 	}*/
 	.cohortSel{
-		color: black;
+		color: grey;
 		font-size: 22px
 	}
 	.weekSel{
-		color: black;
+		color: grey;
 		margin-left: 7%;
 		font-size: 22px
 	}
@@ -214,7 +217,7 @@
 	.quesTut{
 		font-size:13px;
 		margin-left: 5%;
-		color: black;
+		color: grey;
 		margin-right: 16px;
 	}
 	.leftSideTut{
@@ -222,6 +225,7 @@
 		float:left;
 		margin-left: 8%;
 		margin-top: 1%;
+		
 	}
 	.rightSideTut{
 		font-size:12px;
@@ -229,10 +233,11 @@
 		margin-right: 15%;
 		margin-top: -8%;
 		width: 35px;
+	
 	}
 	.radioButtTut2{
 		width: 35px;
-		color:black;
+		color:grey;
 		display: inline-block;
 		margin-left: 12%;
 		font-size: 12px;
@@ -240,7 +245,7 @@
 	}
 	.radioButtTut3{
 		margin-left: 11%;
-		color:black;
+		color:grey;
 		font-size: 12px;
 
 	}
@@ -257,7 +262,7 @@
 	}
 	.TutorRequestPage_comment{
 		margin-left: 2%;
-		color: black;
+		color: grey;
 		font-size: 13px;
 		margin-top: 5%;
 	}
@@ -302,7 +307,7 @@
 	.TutorRequestPage_commentLabel{
 		margin-left:2%;
 	}
-	#TutorRequestPage_dropQues{
+	.TutorRequestPage_dropQues{
 		font-size: 13px;
 	}
 

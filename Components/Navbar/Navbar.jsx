@@ -46,14 +46,18 @@ var Navbar = React.createClass ({
 								navLink="/attendance"
 							/>
 						</li>
-						<li className="removeBullets">
-							<NavBarLink
-								name="Career"
-								currentLoc={location.pathname}
-								img="assets/images/career_nav.png"
-								navLink="/career"
-							/>
-						</li>
+						{UserInfo.Role ==='Student' ? (
+							<li className="removeBullets">
+								<NavBarLink
+									name="Career"
+									currentLoc={location.pathname}
+									img="assets/images/career_nav.png"
+									navLink="/career"
+								/>
+							</li>
+						):(
+							null
+						)}
 						<li className="removeBullets">
 					    	<NavBarLink
 					    		name="Feedback"

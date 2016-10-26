@@ -34,6 +34,8 @@ import AnnouncementsPage from "./Components/Pages/AnnouncementsPage/Announcement
 
 import AdminPage from './Components/Pages/AdminPage/AdminPage.jsx';
 
+import AllUserInfo from './Components/Pages/AdminPage/AllUserInfo/AllUserInfo.jsx';
+
 import Login from "./Components/reactlogin/login";
 
 import Logout from "./Components/reactlogin/logout";
@@ -79,6 +81,7 @@ export default (
 			<Route path="/feedback" component={FeedbackPage}/>
 			<Route path="/announcements" component={AnnouncementsPage}/>
 			<Route path="/admin" component={AdminPage}/>
+			<Route path="/admin/user/:id" component={AllUserInfo}/>
 			<Route path="/absenceRequest" component={AbsenceRequest}/>
 			<Route path="/tutorRequest" component={TutorRequest}/>
 			{/*onEnter={requireAuth}*/}

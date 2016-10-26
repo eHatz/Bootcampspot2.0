@@ -119,7 +119,7 @@ class createAnnouncement extends Component {
 									/>
 								</div>
 								<div className="col-md-3">
-							    	<Button id="homeworkButton"type="submit">Submit</Button>
+							    	<Button id="homeworkButton" type="submit">Submit</Button>
 							    </div>
 							</div>
 						</FormGroup>

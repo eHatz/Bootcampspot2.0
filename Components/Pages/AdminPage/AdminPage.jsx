@@ -99,6 +99,7 @@ const AdminPage = withRouter(
 								<CreateUserForm
 									getUsers = {this.getUsers}
 									sectionList = {this.state.sectionList}
+									UserFormType = 'create'
 								/>
 								<SortUsersForm
 									getUsers = {this.getUsers}
@@ -123,7 +124,7 @@ const AdminPage = withRouter(
 												{type: 'Data', value: item.Role},
 											]}
 											pageName = 'adminUserPage'
-											rowLink = {'User/' + item.id}
+											rowLink = {'admin/user/' + item.id}
 											key= {index}
 										/>
 									)}
