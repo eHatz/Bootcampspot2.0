@@ -17,8 +17,8 @@ class NavBarLink extends Component {
 		return (
 			<a id='hover' href={'#' + navLink}>
 				<div className={"NavBarLink_linkDiv " + pageStatus}>
-					<div className="NavBarLink_imageDiv">
-						<img src={img} alt="icon" className="img-responsive"/>
+					<div className="NavBarLink_imageDiv ">
+						<img src={img} alt="icon" className="img-responsive hvr-grow"/>
 						<h3 className="NavBarLink_linkText">{name}</h3>
 					</div>
 				</div>
