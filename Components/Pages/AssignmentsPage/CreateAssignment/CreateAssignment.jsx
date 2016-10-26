@@ -116,7 +116,7 @@ class createAssignment extends Component {
 
 									<div className="col-md-3">
 										<FormControl
-					      					type="text" 
+					      					type="date" 
 					      					value={this.state.DueDate}
 					      					placeholder="Due Date" 
 					      					onChange={this.DueDateChange}
@@ -126,7 +126,7 @@ class createAssignment extends Component {
 
 				      				<div className="col-md-3">
 										<FormControl
-					      					type="text" 
+					      					type="time" 
 					      					value={this.state.DueTime}
 					      					placeholder="Due Time" 
 					      					onChange={this.DueTimeChange}
