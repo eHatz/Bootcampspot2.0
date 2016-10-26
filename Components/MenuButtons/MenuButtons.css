@@ -6,6 +6,9 @@
 	color:black;
 	font-size: 20px;
 }
+.MenuButtons_a{
+	color: black;
+}
 
 @media screen and (max-width: 768px){
 	.menuButtons{
