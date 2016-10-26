@@ -23,14 +23,18 @@ h1{
 }
 #submitAbs{
 		background-color: #FF0000;
-		font-size: 18px;
+		font-size: 16px;
+		color: white;
+		margin-bottom: 30px;
 }
 
 #resetButtAbs{
 	background-color: gray;
-	font-size: 18px;
-	margin-left: 7%;
-	font-size: 18px;
+	font-size: 16px;
+	margin-left:5%;
+	color: white;
+	margin-bottom: 30px;
+	margin-right: 10px;
 }
 .absenceInput{
 	margin-left: 2%;

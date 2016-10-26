@@ -136,16 +136,19 @@ input[type=radio].theCircle{
 }
 
 #resetButt{
-	background-color: gray;
+	background-color: grey;
 	font-size: 15px;
 	margin-left: 3%;
 	width:10%;
-	background-color: gray;
+	color: white;
+	margin-bottom: 30px;
 }
 #submitButt{
 	font-size: 15px;
 	background-color: red;
 	width:10%;
+	color: white;
+	margin-bottom: 30px;
 }
 
 
