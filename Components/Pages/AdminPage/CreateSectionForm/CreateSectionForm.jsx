@@ -58,7 +58,8 @@ class CreateSectionForm extends Component {
 		this.setState({
 			Title: "",
 			Location: "",
-			Slack: "",
+			SlackWebhook: "",
+			SlackToken: "",
 			StartDate: "",
 			EndDate: ""
 		});
@@ -131,7 +132,7 @@ class CreateSectionForm extends Component {
 							
 							<div className="col-md-2 sectionField">
 								<FormControl
-			      					type="text" 
+			      					type="date" 
 			      					value={this.state.StartDate}
 			      					placeholder="Start Date" 
 			      					onChange={this.StartDateChange}
@@ -141,7 +142,7 @@ class CreateSectionForm extends Component {
 
 		      				<div className="col-md-2 sectionField">
 								<FormControl
-			      					type="text" 
+			      					type="date" 
 			      					value={this.state.EndDate}
 			      					placeholder="End Date" 
 			      					onChange={this.EndDateChange}

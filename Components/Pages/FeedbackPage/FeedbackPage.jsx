@@ -22,7 +22,7 @@ const formData=[
 	{
 		question:"3. Do you feel that you have enough academic support?",
 		leftEnd: "Not Enough",
-		rightEnd: "Definitely Enough"
+		rightEnd: "Plenty"
 	},
 	{
 		question: "4. How would you rate the pace of class this week?",
@@ -41,13 +41,13 @@ const formData=[
 	},
 	{
 		question: "7. How engaging was the teacher in his/her instruction?",
-		leftEnd: "Not Engaged",
-		rightEnd: "Very Connected"
+		leftEnd: "Not",
+		rightEnd: "Very"
 	},
 	{
 		question: "8. How knowledgable did your instructor seem in the subject area?",
-		leftEnd: "Not Knowledgable",
-		rightEnd: "Very Knowledgable"
+		leftEnd: "Not Very",
+		rightEnd: "Very"
 	}
 
 ];
@@ -131,6 +131,9 @@ class FeedbackPage extends Component {
 		 				key = { index }
 		 				/>)
 		 		})}
+		 		<input id="resetButt" className="btn btn-default" type="reset" value="Reset"/>
+											
+				<button id="submitButt" type="submit" className="btn btn-default">Submit</button>
 				</div>
 			
 		);
