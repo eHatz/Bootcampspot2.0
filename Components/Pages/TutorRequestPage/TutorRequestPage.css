@@ -1,7 +1,10 @@
 .TutorRequestPage_main{
 	max-width: 100%;
     overflow-x: hidden;
+  
 }
+
+
 
 .TutorRequestPage_p{
 	color:gray;
@@ -12,8 +15,10 @@
 }
 
 .TutorRequestPage_dropdownDiv{
-	color: gray;
-	font-size: 22px;
+
+	color: grey;
+	font-size: 17px;
+
 	margin: 0% 0% 0% 6%;
 	width: 85%;
 }
@@ -23,22 +28,29 @@
 }
 
 .quesTut{
-	color: gray;
+
+	color: grey;
+
 	font-family: 'Roboto Condensed', sans-serif; 
-	font-size: 24px;
+	font-size: 15px;
 	margin-left: 6%;
 }
 
 
 #resetButtTut{
-	background-color: gray;
+	background-color: grey;
 	font-size: 18px;
-	margin-left: 70px;
+	margin-left: 53px;
+	color: white;
+	margin-bottom: 20px;
+	margin-right: 10px;
 }
 
 #submitTut{
 	font-size: 18px;
 	background-color: red;
+	color: white;
+	margin-bottom: 20px;
 
 }
 .radioButtTut{
@@ -61,18 +73,26 @@
 	float:right;
 	margin: -4% 7% 0% 0%;
 	color: grey;
+
+	font-size: 15px;
+
 }
 
 .leftSideTut{ 
 	float:left;
 	margin-left: 6%;
 	margin-top: 3%;
-	color:grey;
+
+	color: grey;
+	font-size: 15px;
+
 }
 
 .TutorRequestPage_comment{
 	color:grey;
-	font-size: 22px;
+
+	font-size: 15px;
+
 	width: 85%;
 	margin-left: 6%;
 }
@@ -84,9 +104,10 @@
 .radioButtTut2{
 	color:grey;
 	display: inline-block;
-	font-size: 20px;
+	font-size: 14px;
 	margin-left: 15%;
 }
+.multiRads4
 
 
 /*input[type=radio].bubble{
@@ -295,6 +316,7 @@
 	#submitTut{
 		background-color: red;
 		font-size: 13px;
+		color: white;
 	}
 	#resetButtTut{
 		margin-left: 7%;
