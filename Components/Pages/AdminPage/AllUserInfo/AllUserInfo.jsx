@@ -29,11 +29,9 @@ class AllUserInfo extends Component {
 
 	componentWillMount() {
 		this.getSections();
-<<<<<<< HEAD
 
-=======
 		this.getStudentAttendance();
->>>>>>> d31ffb3ea62f5f09f5b466a2fb9975115cb97764
+
 	}
 
 	getSections() {
@@ -45,8 +43,7 @@ class AllUserInfo extends Component {
 		});
 	}
 
-<<<<<<< HEAD
-=======
+
 	getStudentAttendance(){
 		const ajaxData = {studentId: this.props.params.id};
 		$.ajax({
@@ -70,7 +67,7 @@ class AllUserInfo extends Component {
 	// 			})
 	// 		}.bind(this))
 	// }
->>>>>>> d31ffb3ea62f5f09f5b466a2fb9975115cb97764
+
 
 	//activates/shows user tab
 	AttendanceTabClick(event) {
@@ -98,12 +95,9 @@ class AllUserInfo extends Component {
 	}
 
 	render() {
-<<<<<<< HEAD
-		console.log(this.props.params.id)
 
-=======
 		console.log('ROLEEEEEEEEEEE', this.state.role)
->>>>>>> d31ffb3ea62f5f09f5b466a2fb9975115cb97764
+
 		return (
 			
 			<div>
@@ -127,13 +121,6 @@ class AllUserInfo extends Component {
 							</li>
 						</ul>
 
-
-<<<<<<< HEAD
-				<div className="tab-content">
-					
-				</div>
-
-=======
 						<div className="tab-content">
 							<div id="adminAttendanceTab" className={"tab-pane fade in " + this.state.AttendanceTab}>
 								<h1>attendance</h1>
@@ -154,7 +141,7 @@ class AllUserInfo extends Component {
 				):(
 					null
 				)}
->>>>>>> d31ffb3ea62f5f09f5b466a2fb9975115cb97764
+
 			</div>
 		);
 	}

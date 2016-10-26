@@ -27,23 +27,20 @@ class createUserForm extends Component {
 	}
 
 	componentWillMount() {
-<<<<<<< HEAD
-=======
+
 		this.getUser();
 	}
 
 	getUser() {
->>>>>>> 71d0e6f9281558d48ba758fa3579d223b949cbc2
+
 		if (this.props.UserFormType === 'update') {
 			$.ajax({
 				url: '/admin/getUser',
 				type: "POST",
 				data: {
-<<<<<<< HEAD
-					userId: this.props.params.id
-=======
+
 					userId: this.props.userId
->>>>>>> 71d0e6f9281558d48ba758fa3579d223b949cbc2
+
 				}
 			}).then((response) =>{
 				this.setState({
@@ -51,11 +48,9 @@ class createUserForm extends Component {
 					firstName:response.userInfo.FirstName,
 					lastName:response.userInfo.LastName,
 					role:response.userInfo.Role,
-<<<<<<< HEAD
-					sectionTitle: response.userInfo.SectionTitle
-=======
+
 					sectionTitle: response.section[0].Title
->>>>>>> 71d0e6f9281558d48ba758fa3579d223b949cbc2
+
 				});
 			});
 		}
@@ -113,10 +108,9 @@ class createUserForm extends Component {
 				url: '/admin/updateUser',
 				type: "POST",
 				data: {
-<<<<<<< HEAD
-=======
+
 					userId: this.props.userId,
->>>>>>> 71d0e6f9281558d48ba758fa3579d223b949cbc2
+
 					email: this.state.email,
 					firstName: this.state.firstName,
 					lastName: this.state.lastName,
@@ -127,10 +121,9 @@ class createUserForm extends Component {
 			});
 
 			this.clearInput();
-<<<<<<< HEAD
-=======
+
 			this.setState({updated: true});
->>>>>>> 71d0e6f9281558d48ba758fa3579d223b949cbc2
+
 			event.preventDefault();
 		}
 		
@@ -213,20 +206,16 @@ class createUserForm extends Component {
 									required   
 								>
 									{this.props.UserFormType === 'update' ? (
-<<<<<<< HEAD
-										<option value="this.props.sectionTitle">{this.props.sectionTitle}</option>
-=======
+
 										<option value={this.state.sectionTitle}>{this.state.sectionTitle}</option>
->>>>>>> 71d0e6f9281558d48ba758fa3579d223b949cbc2
+
 									):(
 										<option value="">Select Section</option>
 									)}
 									{this.props.sectionList.map((item, index) =>
-<<<<<<< HEAD
-										this.props.UserFormType === 'update' && item.Title === this.props.sectionTitle ? (
-=======
+
 										this.props.UserFormType === 'update' && item.Title === this.state.sectionTitle ? (
->>>>>>> 71d0e6f9281558d48ba758fa3579d223b949cbc2
+
 											null
 										):(
 											<option key= {index} value={item.Title}>{item.Title}</option>
