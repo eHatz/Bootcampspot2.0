@@ -12,7 +12,8 @@ class createUserForm extends Component {
 			firstName:"",
 			lastName:"",
 			role:"",
-			sectionTitle: ""
+			sectionTitle: "",
+			updated: false
 		};
 
 		this.handleEmailChange = this.handleEmailChange.bind(this);
@@ -22,15 +23,27 @@ class createUserForm extends Component {
 		this.clearInput = this.clearInput.bind(this);
 		this.userCreate = this.userCreate.bind(this);
 		this.sectionChange = this.sectionChange.bind(this);
+		this.getUser = this.getUser.bind(this);
 	}
 
 	componentWillMount() {
+<<<<<<< HEAD
+=======
+		this.getUser();
+	}
+
+	getUser() {
+>>>>>>> 71d0e6f9281558d48ba758fa3579d223b949cbc2
 		if (this.props.UserFormType === 'update') {
 			$.ajax({
 				url: '/admin/getUser',
 				type: "POST",
 				data: {
+<<<<<<< HEAD
 					userId: this.props.params.id
+=======
+					userId: this.props.userId
+>>>>>>> 71d0e6f9281558d48ba758fa3579d223b949cbc2
 				}
 			}).then((response) =>{
 				this.setState({
@@ -38,7 +51,11 @@ class createUserForm extends Component {
 					firstName:response.userInfo.FirstName,
 					lastName:response.userInfo.LastName,
 					role:response.userInfo.Role,
+<<<<<<< HEAD
 					sectionTitle: response.userInfo.SectionTitle
+=======
+					sectionTitle: response.section[0].Title
+>>>>>>> 71d0e6f9281558d48ba758fa3579d223b949cbc2
 				});
 			});
 		}
@@ -64,11 +81,13 @@ class createUserForm extends Component {
 
 
 	clearInput(){
-		this.setState({
-			email: "",
-			firstName: "",
-			lastName: "",
-		});
+		if (this.props.UserFormType === 'create') {
+			this.setState({
+				email: "",
+				firstName: "",
+				lastName: "",
+			});
+		};
 	}
 
 	userCreate(event){
@@ -94,6 +113,10 @@ class createUserForm extends Component {
 				url: '/admin/updateUser',
 				type: "POST",
 				data: {
+<<<<<<< HEAD
+=======
+					userId: this.props.userId,
+>>>>>>> 71d0e6f9281558d48ba758fa3579d223b949cbc2
 					email: this.state.email,
 					firstName: this.state.firstName,
 					lastName: this.state.lastName,
@@ -104,18 +127,32 @@ class createUserForm extends Component {
 			});
 
 			this.clearInput();
+<<<<<<< HEAD
+=======
+			this.setState({updated: true});
+>>>>>>> 71d0e6f9281558d48ba758fa3579d223b949cbc2
 			event.preventDefault();
 		}
 		
 	}
 	
 	render() {
-
+		const roles = ['Admin', 'Teacher', 'Student'];
 		return (
 			
 			<div className="row remove-all-margin-padding">
 				<div className="createUser">
-					<h4 className="formTitle">Create New User</h4>
+					{this.props.UserFormType === 'create' ? (
+						<h4 className="formTitle">Create New User</h4>
+					): (
+						this.state.updated ? (
+							<h4 className="formTitle">Updated Successfully</h4>
+						) : (
+							<h4 className="formTitle">Update User</h4>
+						)
+						
+					)}
+					
 					<form onSubmit={this.userCreate}>
 						<FormGroup controlId="formBasicText">
 							
@@ -153,10 +190,19 @@ class createUserForm extends Component {
 									placeholder="select"
 									required
 								>
-									<option value="">Select Role</option>
-									<option value='Student'>Student</option>
-									<option value='Teacher'>Teacher</option>
-									<option value='Admin'>Administrator</option>
+									{this.props.UserFormType === 'update' ? (
+										<option value={this.state.role}>{this.state.role}</option>
+									):(
+										<option value="">Select Role</option>
+									)}
+									{roles.map((item, index) =>
+										this.props.UserFormType === 'update' && item === this.state.role ? (
+											null
+										):(
+											<option key= {index} value={item}>{item}</option>
+										)
+									)}
+									
 								</FormControl>
 							</div>
 							<div className="col-md-2 colorBlock"> 
@@ -167,12 +213,20 @@ class createUserForm extends Component {
 									required   
 								>
 									{this.props.UserFormType === 'update' ? (
+<<<<<<< HEAD
 										<option value="this.props.sectionTitle">{this.props.sectionTitle}</option>
+=======
+										<option value={this.state.sectionTitle}>{this.state.sectionTitle}</option>
+>>>>>>> 71d0e6f9281558d48ba758fa3579d223b949cbc2
 									):(
 										<option value="">Select Section</option>
 									)}
 									{this.props.sectionList.map((item, index) =>
+<<<<<<< HEAD
 										this.props.UserFormType === 'update' && item.Title === this.props.sectionTitle ? (
+=======
+										this.props.UserFormType === 'update' && item.Title === this.state.sectionTitle ? (
+>>>>>>> 71d0e6f9281558d48ba758fa3579d223b949cbc2
 											null
 										):(
 											<option key= {index} value={item.Title}>{item.Title}</option>

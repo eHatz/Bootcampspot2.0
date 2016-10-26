@@ -42,14 +42,14 @@
 
 #exampleSelect2{
 	width:90%;
-	color:black;
+	color:grey;
 
 	
 }
 
 .tutTxt{
-	font-size: 150%;
-	color:black;
+	font-size: 120%;
+	color:grey;
 	margin-left: 10%;
 
 }
@@ -80,7 +80,7 @@ input[type=radio] {
 
 #feedbackInputQuestion{
 	color: grey;
-	font-size: 210%;
+	font-size: 150%;
 	margin-left: 3%;
 
 }

@@ -170,7 +170,11 @@ app.post('/admin/getUsers', function(req, res) {
 
 app.post('/admin/getUser', function(req, res) {
 	User.findOne({where: {id: req.body.userId}}).then(function(user) {
-		res.json({userInfo: user});
+
+		user.getSections().then(function(section) {
+			res.json({userInfo: user, section: section});
+		});
+
 	});
 });
 
@@ -182,6 +186,14 @@ app.post('/admin/updateUser', function(req, res) {
 			Email: req.body.email,
 			Role: req.body.role
 		});
+
+		Section.findOne({where: {Title: req.body.sectionTitle} }).then(function(section) {
+			user.getSections().then(function(currSec) {
+				user.removeSection(currSec[0].id)
+			});
+			user.addSection(section.id);
+		});
+
 		res.json({userInfo: user});
 	});
 });
@@ -334,7 +346,7 @@ app.post("/attendance/singleStudent", function(req, res){
 
 			Session.findOne({where:{id:thisItem.SessionId}}).then(function(session){
 				responseArray.push({
-					id: thisItem.SessionId,
+					id: thisItem.id,
 					Class: session.Subject,
 					Date: thisItem.Date,
 					Time: thisItem.Time,
@@ -386,6 +398,7 @@ app.post("/attendance/editAttendance", function(req, res){
 	console.log("editAttendance reqStatus: ", reqStatus)
 
 	Attendance.findOne({where:{id:reqID}}).then(function(attendance){
+		console.log("found attendance: ", attendance)
 		attendance.update({
 			Status: reqStatus
 		})
@@ -541,8 +554,8 @@ app.post('/viewAllSubmissions', function(req, res) {
 							if (userNoArr[i].id === submission[index].UserId) {
 								var singleUser = userNoArr.splice(i,1);
 								userSubArr.push({user: singleUser[0], submission: submission[index]});
-							}
-						}
+							};
+						};
 						index++;
 						return getUsers(index);
 					};
