@@ -51,20 +51,20 @@ class AbsenceRequest extends Component {
 					 			/>)
 					 		})}
 				<div className="row remove-all-margin-padding">		
-				<div className="form-group">
-				  <label className="sel1" htmlFor="sel1">Who is your instructor?</label>
-				  <select className="form-control" id="sel1">
-				    <option>Choose</option>
-				    <option>Peleg Rosenthal</option>
-				    <option>Ahmed Haque</option>
-				    <option>John Doughtery</option>
-				    <option>Michael Stearne</option>
-				    <option>Pavan Katepalli</option>
-				    <option>Jesse Willard</option>
-				    <option>Matt Kim</option>
-				    <option>Dan Vassallo</option>
-				  </select>
-				</div>
+					<div className="form-group">
+					  <label className="sel1" htmlFor="sel1">Who is your instructor?</label>
+					  <select className="form-control" id="sel1">
+					    <option>Choose</option>
+					    <option>Peleg Rosenthal</option>
+					    <option>Ahmed Haque</option>
+					    <option>John Doughtery</option>
+					    <option>Michael Stearne</option>
+					    <option>Pavan Katepalli</option>
+					    <option>Jesse Willard</option>
+					    <option>Matt Kim</option>
+					    <option>Dan Vassallo</option>
+					  </select>
+					</div>
 				</div>
 				{AbsenceRadialQuestData.map((item, index) =>{
 					 			console.log(item);
