@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel, Checkbox, Button, Well } from "react-bootstrap";
 import "./AllUserInfo.css";
 import $ from "jquery";
-import CreateUserForm from '../createUserForm/createUserForm.jsx';
+import CreateUserForm from '../CreateUsrForm/CreateUsrForm.jsx';
 import Attendance from "../../AttendancePage/AttendanceStudentView/AttendanceStudentView.jsx";
 import TableRow from "../../../Table/TableRow/TableRow.jsx";
 class AllUserInfo extends Component {
