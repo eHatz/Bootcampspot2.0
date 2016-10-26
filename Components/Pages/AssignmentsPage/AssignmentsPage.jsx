@@ -45,15 +45,15 @@ class AssignmentsPage extends Component {
 	getAssignments(sectionTitle) {
 		const { UserInfo } = this.props;
 
-			$.ajax({
-				url: '/getAssignments',
-				type: "POST",
-				data: {
-					sectionTitle: sectionTitle
-		        }
-			}).then((response) => {
-				this.setState({assignmentList: response});
-			});
+		$.ajax({
+			url: '/getAssignments',
+			type: "POST",
+			data: {
+				sectionTitle: sectionTitle
+	        }
+		}).then((response) => {
+			this.setState({assignmentList: response});
+		});
 
 	}
 	

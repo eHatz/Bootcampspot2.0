@@ -24,11 +24,35 @@ class AllUserInfo extends Component {
 		this.HomeworkTabClick = this.HomeworkTabClick.bind(this);
 		this.CareerTabClick = this.CareerTabClick.bind(this);
 		this.AttendanceTabClick = this.AttendanceTabClick.bind(this);
+		this.getUser = this.getUser.bind(this);
+		this.getAllStudentSubs = this.getAllStudentSubs.bind(this);
+
 	}
 
 	componentWillMount() {
 		this.getSections();
 		this.getStudentAttendance();
+		this.getUser();
+	}
+
+	getUser() {
+		$.ajax({
+			url: '/admin/getUser',
+			type: "POST",
+			data: {
+				userId: this.props.params.id
+			}
+		}).then((response) =>{
+			if (response.userInfo.Role !== 'Admin') {
+				this.setState({
+					email: response.userInfo.Email,
+					firstName:response.userInfo.FirstName,
+					lastName:response.userInfo.LastName,
+					role:response.userInfo.Role,
+					sectionTitle: response.section[0].Title
+				});
+			};
+		});
 	}
 
 	getSections() {
@@ -89,6 +113,21 @@ class AllUserInfo extends Component {
 		});
 	}
 
+	getAllStudentSubs(assignmentId) {
+		$.ajax({
+			url: '/getAllStudentSubs',
+			type: "POST",
+			data: {
+				studentId: this.props.params.id
+			}
+		}).then((response) => {
+			this.setState({
+				userSubmitted: response.usersSubmitted,
+				userNoSubmitted: response.usersNoSubmitted,
+			});
+		});
+	}
+
 	render() {
 		console.log('ROLEEEEEEEEEEE', this.state.role)
 		return (
@@ -99,7 +138,7 @@ class AllUserInfo extends Component {
 					UserFormType = 'update'
 					userId= {this.props.params.id}
 				/>
-				{this.state.role === '' ? (
+				{this.state.role === 'Student' ? (
 					<div>
 						<ul className="nav nav-pills">
 							<li onClick={this.AttendanceTabClick} className={this.state.AttendanceTab}>
@@ -128,6 +167,7 @@ class AllUserInfo extends Component {
 							</div>
 							<div id="adminHomeworkTab" className={"tab-pane fade in " + this.state.HomeworkTab}>
 								<h1>Homework</h1>
+
 							</div>
 						</div>
 					</div>
