@@ -39,13 +39,22 @@ class createUserForm extends Component {
 					userId: this.props.userId
 				}
 			}).then((response) =>{
-				this.setState({
-					email: response.userInfo.Email,
-					firstName:response.userInfo.FirstName,
-					lastName:response.userInfo.LastName,
-					role:response.userInfo.Role,
-					sectionTitle: response.section[0].Title
-				});
+				if (response.userInfo.Role !== 'Admin') {
+					this.setState({
+						email: response.userInfo.Email,
+						firstName:response.userInfo.FirstName,
+						lastName:response.userInfo.LastName,
+						role:response.userInfo.Role,
+						sectionTitle: response.section[0].Title
+					});
+				} else {
+					this.setState({
+						email: response.userInfo.Email,
+						firstName:response.userInfo.FirstName,
+						lastName:response.userInfo.LastName,
+						role:response.userInfo.Role
+					});
+				}
 			});
 		}
 	}
@@ -195,7 +204,7 @@ class createUserForm extends Component {
 									placeholder="select"
 									required   
 								>
-									{this.props.UserFormType === 'update' ? (
+									{this.props.UserFormType === 'update' && this.state.role !== 'Admin' ? (
 										<option value={this.state.sectionTitle}>{this.state.sectionTitle}</option>
 									):(
 										<option value="">Select Section</option>
