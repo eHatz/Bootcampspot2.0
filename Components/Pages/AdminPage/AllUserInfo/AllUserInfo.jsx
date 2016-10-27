@@ -180,27 +180,27 @@ class AllUserInfo extends Component {
 							<div id="adminCareerTab" className={"tab-pane fade in " + this.state.CareerTab}>
 
 								<Well>
-									<a><h4 className="AllUserInfo_h2">LinkedIn: {careerData.LinkedIn}</h4></a>
+									<a href={careerData.LinkedIn}><h4 className="AllUserInfo_h2">LinkedIn: {careerData.LinkedIn}</h4></a>
 								</Well>
 
 								<Well>
-									<a><h4 className="AllUserInfo_h2">Github: {careerData.Github}</h4></a>
+									<a href={careerData.Github}><h4 className="AllUserInfo_h2">Github: {careerData.Github}</h4></a>
 								</Well>
 
 								<Well>
-									<a><h4 className="AllUserInfo_h2">Stack Overflow: {careerData.StackOverflow}</h4></a>
+									<a href={careerData.StackOverflow}><h4 className="AllUserInfo_h2">Stack Overflow: {careerData.StackOverflow}</h4></a>
 								</Well>
 
 								<Well>
-									<a><h4 className="AllUserInfo_h2">Resume: {careerData.Resume}</h4></a>
+									<a href={careerData.Resume}><h4 className="AllUserInfo_h2">Resume: {careerData.Resume}</h4></a>
 								</Well>
 
 								<Well>
-									<a><h4 className="AllUserInfo_h2">Portfolio: {careerData.Portfolio}</h4></a>
+									<a href={careerData.Portfolio}><h4 className="AllUserInfo_h2">Portfolio: {careerData.Portfolio}</h4></a>
 								</Well>
 
 								<Well>
-									<a><h4 className="AllUserInfo_h2">Bio: {careerData.Bio}</h4></a>
+									<a href={careerData.Bio}><h4 className="AllUserInfo_h2">Bio: {careerData.Bio}</h4></a>
 								</Well>
 
 
