@@ -430,12 +430,13 @@ app.post("/attendance/editAttendance", function(req, res){
 
 app.post("/attendance/studentAttendance", function(req, res){
 	const studentId = req.body.studentId;
-	let today = moment().format("YYYY-MM-DD");
-	let studentTime = moment().format("HH:mm:ss");
+	let today = moment.tz("America/New_York").format("YYYY-MM-DD");
+	let studentTime = moment.tz("America/New_York").format("HH:mm:ss");
 	let studentStatus;
 	let thisSession;
 	let thisUser;
-	console.log(today);
+	console.log("today: ", today);
+	console.log("studentTime: ", studentTime);
 
 	User.findOne({where:{id:studentId}}).then(function(user){
 		thisUser = user;
@@ -723,11 +724,12 @@ app.post("/syllabus", function(req, res){
 		return section[0].getSessions()
 	}).then(function(sessions){
 		sessions.forEach(function(session){
+			let fixedDate = fixTheDate(session.Date);
 			responseArray.push({
 				id: session.id,
 				Subject: session.Subject,
 				LessonNumber: session.LessonNumber,
-				Date: session.Date,
+				Date: fixedDate,
 				Recording:session.Recording
 			});
 		})
