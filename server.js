@@ -667,6 +667,7 @@ app.post('/gradeAssignment', function(req, res) {
 	const notes = req.body.notes;
 	const studentName = req.body.studentName;
 	const grade = req.body.grade;
+	console.log('USERNAME STUFFFFF', assignmentId);
 	Submission.findOne({where: {id: submissionId} })
 	.then(function(submission) {
 		submission.update({Notes: notes, Grade: grade})
@@ -682,6 +683,7 @@ app.post('/gradeAssignment', function(req, res) {
 						// if student's name is in slack channel, send them a message
 						for (var i = 0; i < slackUsers.length; i++) {
 							if (slackUsers[i].real_name.toLowerCase() === studentName.toLowerCase()) {
+								console.log('USERNAME STUFFFFF', slackUsers[i].name);
 								request.post({
 									headers: {'content-type' : 'application/x-www-form-urlencoded'},
 									url: section.SlackWebhook,

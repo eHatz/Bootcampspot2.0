@@ -85,7 +85,7 @@ class GradeAssignmentPage extends Component {
 					graderName: UserInfo.UserInfo.FirstName + ' ' + UserInfo.UserInfo.LastName,
 					grade: this.state.grade,
 					assignmentName: this.state.assignment.Title,
-					assignmentId: this.state.assignment.Id,
+					assignmentId: this.state.assignment.id,
 					studentName: this.state.student.FirstName + ' ' + this.state.student.LastName,
 					submissionId: this.state.submission.id,
 					notes: this.state.notes
