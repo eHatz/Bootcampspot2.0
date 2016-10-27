@@ -8,7 +8,6 @@ class AttendanceSessionsView extends Component {
 	render(){
 
 		let { displayData, viewSingleSession } = this.props;
-		console.log("displayData: ", displayData);
 
 		return (
 			<div>

@@ -116,7 +116,6 @@ class FeedbackPage extends Component {
 				</div>
 					
 				{formData.map((item, index) =>{
-		 			console.log(item);
 		 			return 	(<FeedbackRadialQuest 
 			 			question= { item.question } 
 			 			leftEnd = { item.leftEnd }

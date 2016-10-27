@@ -7,7 +7,6 @@ class HomePage extends Component {
 
 	render() {
 		const { loggedIn, UserInfo, location } = this.props;
-		console.log('home page', loggedIn, UserInfo)
 		return (
 
 			<div>

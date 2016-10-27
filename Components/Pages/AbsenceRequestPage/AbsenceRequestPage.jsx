@@ -44,7 +44,6 @@ class AbsenceRequest extends Component {
 				/>
 			
 				{AbsenceRequestData.map((item, index) =>{
-					 			console.log(item);
 					 			return 	(<AbsenceInputQuest
 						 			question= { item.question } 
 						 			key = { index }
