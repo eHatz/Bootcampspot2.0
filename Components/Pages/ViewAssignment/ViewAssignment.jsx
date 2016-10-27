@@ -112,19 +112,22 @@ class ViewAssignment extends Component {
 						)}
 
 						{this.state.usersNoSubmitted.map((item, index) =>
-
-							<TableRow
-								columnCount ={[
-									{type: 'Data', value: item.FirstName + ' ' + 
-										item.LastName},
-									{type: 'Data', value: 'Not Submitted'},
-									{type: 'Data', value: 'Not Graded'}
-								]}
-								pageName = 'gradeAssignments'
-								// prevent assignment from being graded if it hasnt been submitted yet
-								rowLink = {'homework/'+this.props.params.id}
-								key= {index}
-							/>
+							item.Role === 'Student' ? (
+								<TableRow
+									columnCount ={[
+										{type: 'Data', value: item.FirstName + ' ' + 
+											item.LastName},
+										{type: 'Data', value: 'Not Submitted'},
+										{type: 'Data', value: 'Not Graded'}
+									]}
+									pageName = 'gradeAssignments'
+									// prevent assignment from being graded if it hasnt been submitted yet
+									rowLink = {'homework/'+this.props.params.id}
+									key= {index}
+								/>
+							): (
+								null
+							)
 						)}
 
 					</div>
