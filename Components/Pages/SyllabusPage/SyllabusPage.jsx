@@ -23,13 +23,11 @@ class SyllabusPage extends Component {
 		const UserInfo = this.props.UserInfo.UserInfo;
 		const id = UserInfo.id;
 
-		console.log("getSyllabus: ", UserInfo);
 		$.ajax({
 				url: "/syllabus",
 				type: "POST",
 				data: {id: id}
 		}).then(function(response){
-			console.log("response: ", response)
 			this.setState({
 				displayData: response
 			});

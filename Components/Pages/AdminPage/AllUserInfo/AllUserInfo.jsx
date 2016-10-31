@@ -135,13 +135,10 @@ class AllUserInfo extends Component {
 				userSubmitted: response.usersSubmitted,
 				userNoSubmitted: response.usersNoSubmitted,
 			});
-			console.log('submitted assignments', response.usersSubmitted);
-			console.log('not submitted assignments', response.usersNoSubmitted);
 		});
 	}
 
 	render() {
-		console.log('ROLEEEEEEEEEEE', this.state.role)
 
 		const careerData = this.state.careerData;
 

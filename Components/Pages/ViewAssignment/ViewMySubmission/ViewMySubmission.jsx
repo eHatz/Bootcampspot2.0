@@ -37,7 +37,6 @@ class ViewMySubmission extends Component {
 		
 	render() {
 		const { assignment, submission, UserInfo, UserSection } = this.props;
-		console.log('SUBMISSION', submission);
 		return (
 
 			<div>

@@ -5,7 +5,6 @@ import "./FeedbackRadialQuest.css";
 class FeedbackRadialQuest extends Component{
 
 	render(){
-		console.log(this.props.question)
 		return(
 			<div>
 				<div className="row remove-all-margin-padding">

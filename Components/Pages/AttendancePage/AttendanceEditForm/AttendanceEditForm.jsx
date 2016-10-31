@@ -12,7 +12,6 @@ class AttendanceEditForm extends Component {
 
 	attendanceEditHandler(eventKey, event){
 		const { attendanceId, markAttendance } = this.props;
-		console.log(this.props);
 		markAttendance(attendanceId, eventKey);
 	}
 
@@ -21,7 +20,6 @@ class AttendanceEditForm extends Component {
 
 		const { text } = this.props;
 		const attendanceEditHandler = this.attendanceEditHandler.bind(this);
-		console.log(this.props)
 
 		return (
 			<div>

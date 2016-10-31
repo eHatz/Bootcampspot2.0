@@ -64,7 +64,6 @@ class CareerPage extends Component {
 		.then((response) => {
 			
 		})
-		console.log(this.state.textBoxValue, this.state.currentLink);
 		event.preventDefault();
 		this.clearInput();
 	}
