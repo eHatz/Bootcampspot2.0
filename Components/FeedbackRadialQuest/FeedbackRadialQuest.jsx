@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, FormGroup } from "react-bootstrap";
 import "./FeedbackRadialQuest.css";
 
 class FeedbackRadialQuest extends Component{
 
 	render(){
 		return(
-			<div>
+			<FormGroup controlId={"FeedbackRadialQuest - " + this.props.key}>
 				<div className="row remove-all-margin-padding">
 					<h2 className="questionTextRad">{ this.props.question }</h2>
 				</div>
@@ -28,7 +28,7 @@ class FeedbackRadialQuest extends Component{
 						<h3 className="rightSide">{ this.props.rightEnd }</h3>
 					</div>
 				</div>
-			</div>
+			</FormGroup>
 		)
 	}
 
