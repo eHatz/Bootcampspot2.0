@@ -23,21 +23,25 @@ class HomePage extends Component {
 	open(){
 		this.setState({ showModal: true });
 	}
+	componentWillMount() {
+		if (!this.props.UserInfo.FirstName) {
+			this.setState({ showModal: true });
+		};
+	}
 
 	render() {
 		const { loggedIn, UserInfo, location } = this.props;
-		console.log(this.state.showModal)
 		return (
 
 			<div>
 				<div className="row">
 					<Modal id="homeModal" show={this.state.showModal} onHide={this.close}>
-						<Modal.Header>
+						<Modal.Header className='demoModal-header'>
 								
 							<button className="modalHeaderWidth" type="button" onClick={this.close} data-dismiss="modal" aria-label="Close">
 								<img id="close" src="assets/images/close_button.png"/>
 								<a href="/#">
-									<img id='logoImg' src='/assets/images/logo2.png'/>
+									<img id='demoModal-logo' src='/assets/images/logo2.png'/>
 								</a>
 							</button>
 						</Modal.Header>

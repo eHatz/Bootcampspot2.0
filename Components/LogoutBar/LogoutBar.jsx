@@ -14,7 +14,7 @@ class LogoutBar extends Component {
 					<Modal className="modal left fade" id="myModal" show={showModal} onHide={closeModal}>
 						<div  role="document">
 							<div className="modal-content">
-								<div className="modal-header">
+								<div className="modal-header navModal-header">
 									
 									<button className="modalHeaderWidth" type="button" onClick={closeModal} data-dismiss="modal" aria-label="Close">
 										<img id="close" src="assets/images/close_button.png"/>

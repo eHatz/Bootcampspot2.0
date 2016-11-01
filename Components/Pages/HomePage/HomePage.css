@@ -7,6 +7,17 @@
     
 	
 }
+#demoModal-logo{
+	margin: 40px 0px;
+}
+
+.demoModal-header {
+	border-bottom-color: #EEEEEE;
+	background-color: #343333;
+	padding: 0px;
+	margin: 0px;
+}
+
 .demoButtons {
 	text-align: center;
 	width: 27.333%;
