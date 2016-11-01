@@ -7,6 +7,18 @@
     
 	
 }
+.demoButtons {
+	text-align: center;
+	width: 27.333%;
+	margin: 20px 3%;
+	padding: 10px 0px;
+	background-color: red;
+	border: none;
+}
+#demoInstructions {
+	text-align: center;
+	font-size: 15px;
+}
 #HomePage_login{
 	z-index: 1; 
 	position: absolute; 

@@ -130,6 +130,45 @@ app.get('/login/github/return',
     	req.session.userInfo = req.user;
         res.redirect('/#/login');
 });
+//demo login routes
+app.get('/login/admin', function(req, res) {
+	req.session.userInfo = {
+		id: '1',
+		displayName: 'Admin Demo',
+		username: 'adminDemo',
+		profileUrl: '#',
+		emails: [ { value: 'adminDemo@adminDemo.com' } ],
+		photos: [ { value: '#' } ],
+		provider: 'github'
+	};
+    res.redirect('/#/login');
+});
+
+app.get('/login/student', function(req, res) {
+	req.session.userInfo = {
+		id: '1',
+		displayName: 'Student Demo',
+		username: 'studentDemo',
+		profileUrl: '#',
+		emails: [ { value: 'studentDemo@studentDemo.com' } ],
+		photos: [ { value: '#' } ],
+		provider: 'github'
+	};
+    res.redirect('/#/login');
+});
+
+app.get('/login/teacher', function(req, res) {
+	req.session.userInfo = {
+		id: '1',
+		displayName: 'Teacher Demo',
+		username: 'teacherDemo',
+		profileUrl: '#',
+		emails: [ { value: 'teacherDemo@teacherDemo.com' } ],
+		photos: [ { value: '#' } ],
+		provider: 'github'
+	};
+    res.redirect('/#/login');
+});
 
 app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, './index.html'));
