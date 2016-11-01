@@ -1,30 +1,80 @@
 import React, { Component } from "react";
 import {Grid, Row, Col} from "react-bootstrap";
 import Panel from "../../Panel/Panel.jsx";
+import { Modal, Button } from "react-bootstrap"; //Add to new LogoutBar
 import "./HomePage.css";
-
+import $ from "jquery";
+	
 class HomePage extends Component {
+	constructor(props, context) {
+
+		super(props, context);
+		this.state = {
+			showModal: false
+		};
+		this.open = this.open.bind(this);
+		this.close = this.close.bind(this);
+	}
+
+	close(){
+		this.setState({ showModal: false });
+	}
+
+	open(){
+		this.setState({ showModal: true });
+	}
 
 	render() {
 		const { loggedIn, UserInfo, location } = this.props;
+		console.log(this.state.showModal)
 		return (
 
 			<div>
 				<div className="row">
+					<Modal id="homeModal" show={this.state.showModal} onHide={this.close}>
+						<Modal.Header>
+								
+							<button className="modalHeaderWidth" type="button" onClick={this.close} data-dismiss="modal" aria-label="Close">
+								<img id="close" src="assets/images/close_button.png"/>
+								<a href="/#">
+									<img id='logoImg' src='/assets/images/logo2.png'/>
+								</a>
+							</button>
+						</Modal.Header>
+						<Modal.Body>
+							<p id='demoInstructions'>This is a demo version of the app. Please select 
+							the type of user you would like to login as.</p>
+							<a  href='/login/admin'>
+								<button className="demoButtons btn btn-danger" id="adminLogin" type="button">
+									Login As Admin
+								</button>
+							</a>
+							<a  href='/login/student'>
+								<button className="demoButtons btn btn-danger" id="studentLogin" type="button">
+									Login As Student
+								</button>
+							</a>
+							<a  href='/login/teacher'>
+								<button className="demoButtons btn btn-danger" id="teacherLogin" type="button">
+									Login As Teacher
+								</button>
+							</a>
+						</Modal.Body>
+					</Modal>
 					<div id="HomePage_logoDiv">
 						<a href="/#">
 							<img id="HomePage_logo" src="/assets/images/logo1.png" alt="logo"/>
 						</a>
 						<div>
 							{loggedIn ? (
-								<a href="/#logout">
+								<a href="/#/logout">
 									<div id='HomePage_login'>
 										<h4 id='logoutBar_username'>Hi {UserInfo.FirstName}</h4>
 										<h4 id='logoutBar_logout'>Log Out</h4>
 									</div>
 								</a>
 							) : (
-								<a href="/login/github">
+								<a onClick={this.open}>
 									<img id="HomePage_login" src="/assets/images/githubLogin.png" alt="githubLogo"/>
 								</a>
 							)}
